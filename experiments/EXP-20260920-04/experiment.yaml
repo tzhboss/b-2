@@ -1,0 +1,39 @@
+schema_version: 1
+experiment_id: EXP-20260920-04
+title: Layer-wise absolute and speaker-relative pitch structure in WavLM-large
+
+research_question: >
+  Are absolute pitch, speaker-relative pitch, and speaker pitch baseline represented differently
+  across WavLM-large layers, and does the explicit Relative-versus-Absolute emotion effect become
+  larger at a fixed middle layer than at the final layer?
+
+registered_hypothesis: >
+  Based on EXP-20260920-03, the final WavLM layer makes explicit Absolute and Relative pitch nearly
+  interchangeable for emotion prediction. We hypothesize that this is layer-dependent rather than
+  a complete loss of reference-frame structure: pitch targets will show different linear
+  decodability profiles across WavLM layers, and preregistered middle layer 12 will exhibit a larger
+  Relative-minus-Absolute pitch increment for emotion than final layer 24.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-03]
+protocol_reference: configs/protocols/wavlm_layerwise_pitch_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-04.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: microsoft-wavlm-large local checkpoint
+  selection_rule: fixed before execution
+  selection_metric: null
+  rationale: same checkpoint as EXP-20260920-03
+
+supersedes: []
+superseded_by: []
+role: layer-wise representation and conditional-emotion follow-up

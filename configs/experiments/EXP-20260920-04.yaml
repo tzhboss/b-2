@@ -1,0 +1,33 @@
+schema_version: 1
+experiment_id: EXP-20260920-04
+model:
+  encoder: wavlm-large
+  checkpoint_env: WAVLM_MODEL_DIR
+  frozen: true
+  pooling: masked_mean
+  hidden_layers: all
+  storage_dtype: float16
+dataset:
+  manifest_env: WAVLM_AUDIO_MANIFEST
+  datasets: [esd_english, mead_part0, ravdess_speech]
+seed: [20260920, 20260921, 20260922]
+parameters:
+  n_splits: 4
+  extraction:
+    batch_size: 8
+    num_shards: 7
+  decodability:
+    ridge_alpha: 1.0
+  emotion:
+    layers: [12, 24]
+    ridge_alpha: 1.0
+    class_weight: balanced
+    solver: lsqr
+    bootstrap_reps: 10000
+    representations: [wavlm_only, absolute, relative, hybrid]
+resources:
+  extraction_python: /data/conda/envs/nemo_diarization/bin/python
+  evaluation_python: /data/lc/audio_feature_labeling/.venv/bin/python
+  extraction_gpus: [0,1,2,3,4,5,6]
+outputs:
+  artifact_root: artifacts/EXP-20260920-04

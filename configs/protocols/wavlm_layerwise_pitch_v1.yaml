@@ -1,0 +1,73 @@
+schema_version: 1
+protocol_id: PROTO-WAVLM-LAYERWISE-PITCH-V1
+title: Layer-wise absolute and speaker-relative pitch structure in frozen WavLM-large
+
+research_question_scope: >
+  Determine where absolute pitch, speaker-relative pitch, and implied speaker pitch baseline are
+  linearly decodable across WavLM-large hidden layers, and test whether a fixed middle layer
+  exhibits a larger explicit Relative-versus-Absolute pitch effect on emotion classification than
+  the final layer.
+
+allowed_datasets: [esd_english, mead_part0, ravdess_speech]
+
+controls:
+  - Reuse the audited audio manifest from EXP-20260920-03.
+  - Use the same fixed local WavLM-large checkpoint as EXP-20260920-03.
+  - Freeze WavLM, eval mode, no gradients.
+  - Extract masked-mean pooled hidden states for all 25 returned hidden states, indices 0 through 24.
+  - Use the same four within-speaker-emotion folds and three seeds for downstream emotion comparisons.
+  - Train-only feature scaling for all probes.
+  - Do not choose downstream layers after observing results; layers 12 and 24 are fixed before execution.
+  - Same rows for WavLM-only, Absolute, Relative, and Hybrid within a dataset/layer comparison.
+
+forbidden_uses:
+  - Do not fine-tune WavLM.
+  - Do not use test targets to fit scalers or regressors.
+  - Do not select a best hidden layer and report it as confirmatory evidence in this experiment.
+  - Do not claim unseen-speaker generalization.
+
+analyses:
+  pitch_decodability:
+    layers: all_0_through_24
+    targets: [absolute_pitch_semitone, relative_pitch_semitone, implied_speaker_baseline_semitone]
+    model: ridge_multioutput
+    metrics: [r2, mae]
+  conditional_emotion:
+    layers: [12, 24]
+    conditions: [wavlm_only, absolute, relative, hybrid]
+    metric: macro_f1
+
+criteria:
+  acceptance:
+    - >
+      Support a middle-layer conditional reference-frame effect if layer 12 Relative-minus-Absolute
+      pitch emotion macro-F1 exceeds the layer 24 Relative-minus-Absolute delta by at least 0.0025
+      in at least two datasets, and the layer-12 Relative-minus-Absolute paired-bootstrap 95% CI
+      is above zero in those datasets.
+    - >
+      Support layer-dependent pitch structure if at least one pitch target changes mean
+      cross-validated R2 by at least 0.05 between any preregistered layer blocks
+      (0-4, 5-12, 13-20, 21-24) in at least two datasets.
+  rejection:
+    - >
+      Reject the middle-layer conditional-effect hypothesis if layer 12 and layer 24
+      Relative-minus-Absolute emotion deltas differ by less than 0.001 in every dataset.
+  inconclusive:
+    - Otherwise mark inconclusive for the conditional-effect hypothesis.
+
+required_outputs:
+  - artifacts/EXP-20260920-04/layer_embedding_inventory.json
+  - artifacts/EXP-20260920-04/pitch_decodability_by_fold.csv
+  - artifacts/EXP-20260920-04/pitch_decodability_summary.csv
+  - artifacts/EXP-20260920-04/emotion_metrics_by_fold.csv
+  - artifacts/EXP-20260920-04/emotion_summary.csv
+  - artifacts/EXP-20260920-04/emotion_paired_deltas.csv
+  - artifacts/EXP-20260920-04/run_metadata.json
+
+required_audits:
+  - Confirm 50,669 unique sample IDs and 25 x 1024 pooled hidden states per sample.
+  - Confirm finite hidden states and identical checkpoint hash across shards.
+  - Confirm WavLM eval mode and gradients disabled.
+  - Confirm full emotion-label coverage in every fold.
+  - Confirm layers 12 and 24 were fixed before execution.
+  - Confirm all planned folds and seeds completed.

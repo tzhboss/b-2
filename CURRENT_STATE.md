@@ -2,43 +2,28 @@
 
 ## Phase
 
-Prosody-only and frozen-WavLM reference-frame pilots completed and audited.
+Layer-wise frozen WavLM pitch-structure experiment registered; execution pending.
 
 ## Active research question
 
-How does prosodic reference-frame dependence change between explicit acoustic representations
-and learned speech representations?
+Where across WavLM-large layers are absolute pitch, speaker-relative pitch, and speaker pitch
+baseline linearly decodable, and is the Relative-versus-Absolute emotion effect larger at a
+fixed middle layer than at the final layer?
 
 ## Valid evidence
 
-- EXP-20260920-02: valid, pass. Prosody-only pitch shows a replicated task reversal across ESD,
-  MEAD, and RAVDESS: speaker-relative pitch improves emotion probing while absolute pitch retains
-  substantially more gender-predictive information.
-- EXP-20260920-03: valid, inconclusive under its preregistered WavLM conditional-reversal
-  criterion. Final-layer frozen WavLM-large largely collapses the incremental difference between
-  explicit Absolute and Relative pitch.
-- EXP-20260920-03 additionally shows statistically resolved gains from Hybrid/all-prosody explicit
-  cues over WavLM-only for ESD emotion and smaller gains for MEAD emotion.
+- EXP-20260920-02: valid, pass; strong prosody-only reference-frame interaction.
+- EXP-20260920-03: valid, inconclusive; final-layer WavLM largely removes the incremental
+  Absolute-versus-Relative pitch difference, while explicit Hybrid/all-prosody can still help emotion.
 
 ## Recent key experiments
 
 - EXP-20260920-01 — completed, invalid, inconclusive.
 - EXP-20260920-02 — completed, valid, pass.
 - EXP-20260920-03 — completed, valid, inconclusive.
-
-## Main current interpretation
-
-Reference-frame dependence appears representation-dependent. The strong effect in explicit
-prosody-only probes is largely absent after conditioning on final-layer mean-pooled WavLM-large,
-although combined explicit prosody can still add emotion-relevant information.
-
-## Blocker
-
-The current WavLM result uses only the final layer, known-speaker folds, and a near-saturated
-gender probe. Broader claims require layer-wise analysis, less saturated trait tasks, and
-unseen-speaker/reference-estimation evaluation.
+- EXP-20260920-04 — planned layer-wise pitch decodability and middle-vs-final emotion probe.
 
 ## Next legal step
 
-Register a layer-wise WavLM probe and a less saturated trait target such as speaker identity or
-speaker-baseline prediction before changing the main paper claim.
+Extract all 25 masked-mean pooled hidden states from the fixed WavLM-large checkpoint using the
+audited EXP-03 audio manifest, then execute the registered layer-wise probes and audit them.
