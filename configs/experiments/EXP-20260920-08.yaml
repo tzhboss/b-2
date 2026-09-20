@@ -1,0 +1,17 @@
+schema_version: 1
+experiment_id: EXP-20260920-08
+dataset:
+  source_env: PROSODY_ENRICHED_PARQUET
+  datasets: [esd_english, mead_part0, ravdess_speech, msp, meld]
+seed: [20260920,20260921,20260922]
+parameters:
+  outer_folds: 5
+  classifier:
+    C: 1.0
+    class_weight: balanced
+    max_iter: 3000
+  bootstrap_reps: 10000
+  representations: [absolute, relative, baseline_only, relative_plus_baseline]
+outputs:
+  artifact_root: artifacts/EXP-20260920-08
+entrypoint: scripts/run_pitch_baseline_decomposition.py

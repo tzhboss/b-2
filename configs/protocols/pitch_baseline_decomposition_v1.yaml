@@ -1,0 +1,48 @@
+schema_version: 1
+protocol_id: PROTO-PITCH-BASELINE-DECOMP-V1
+title: Speaker-baseline contribution to emotion prediction
+
+research_question_scope: >
+  Decompose absolute pitch into a stable speaker baseline and within-speaker relative deviation,
+  then test whether the baseline component contributes useful emotion information under
+  speaker-disjoint evaluation, especially in MSP where relative normalization reverses sign.
+
+allowed_datasets: [esd_english, mead_part0, ravdess_speech, msp, meld]
+
+controls:
+  - Speaker-disjoint five-fold evaluation with three fixed seeds.
+  - Evaluate each corpus separately.
+  - Absolute pitch is measured in semitones.
+  - Relative pitch uses the existing speaker-specific relative feature.
+  - Speaker baseline is exactly Absolute minus Relative and is constant within speaker.
+  - Same rows and folds for all representation conditions within a corpus.
+  - Natural corpora use the same filtering policy as EXP-07: speaker-specific neutral/shrunk references, no MSP Unknown, speaker support >10.
+  - LogisticRegression with class_weight balanced and train-only StandardScaler.
+  - Report both utterance-level Macro-F1 and speaker-balanced Macro-F1.
+
+representations:
+  - absolute
+  - relative
+  - baseline_only
+  - relative_plus_baseline
+
+criteria:
+  acceptance:
+    - >
+      MSP baseline-utility mechanism is supported if Relative+Baseline exceeds Relative by at
+      least 0.02 speaker-balanced Macro-F1 with paired-bootstrap 95% CI above zero.
+    - >
+      Additional support is present if Baseline-only exceeds 0.12 speaker-balanced Macro-F1 on MSP.
+  rejection:
+    - >
+      Reject the baseline-utility explanation if Relative+Baseline fails to improve over Relative
+      on MSP and Baseline-only is at or below 0.12.
+  inconclusive:
+    - Otherwise mark inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-08/data_inventory.csv
+  - artifacts/EXP-20260920-08/metrics_by_fold.csv
+  - artifacts/EXP-20260920-08/summary.csv
+  - artifacts/EXP-20260920-08/paired_deltas.csv
+  - artifacts/EXP-20260920-08/run_metadata.json
