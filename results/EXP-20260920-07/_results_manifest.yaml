@@ -1,0 +1,35 @@
+schema_version: 1
+experiment_id: EXP-20260920-07
+runtime_commit: e7031b4321b14ffe0945c1f165749beab64523da
+protocol_reference: configs/protocols/natural_corpus_reference_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-07.yaml
+audit_reference: experiments/EXP-20260920-07/audit.md
+files:
+- path: audit_rows.csv
+  source_artifact: artifacts/EXP-20260920-07/audit_rows.csv
+  sha256: 3902275771ccf133277b43fee1cefea2d079f6a9b679db239b1861758e12606e
+  purpose: Audited EXP-07 natural-corpus result.
+- path: data_inventory.csv
+  source_artifact: artifacts/EXP-20260920-07/data_inventory.csv
+  sha256: a7b44fd145b09bcecec50b5b4ab17c622d80ee67bb7beafe6d0666f38bbfa24b
+  purpose: Audited EXP-07 natural-corpus result.
+- path: metrics_by_fold.csv
+  source_artifact: artifacts/EXP-20260920-07/metrics_by_fold.csv
+  sha256: f9dbfe036e5a766e5cda4589b68167bc01f749b33321b6dcdec39b35bdbdc9f0
+  purpose: Audited EXP-07 natural-corpus result.
+- path: paired_deltas.csv
+  source_artifact: artifacts/EXP-20260920-07/paired_deltas.csv
+  sha256: 9141b5f1f44ec10276e3017dafa5431818e1b645e064723d70967c8247c51cc8
+  purpose: Audited EXP-07 natural-corpus result.
+- path: run_metadata.json
+  source_artifact: artifacts/EXP-20260920-07/run_metadata.json
+  sha256: 99109146364b3b355f8a8f5448179e7ed3de0fb33b4598753515525dec7cbdd7
+  purpose: Audited EXP-07 natural-corpus result.
+- path: summary.csv
+  source_artifact: artifacts/EXP-20260920-07/summary.csv
+  sha256: 34e1324aaf390f62806817ab63a01d3def01121874302a1b51c62f5b405c0509
+  purpose: Audited EXP-07 natural-corpus result.
+promotion:
+  audited: true
+  selected_by_rule: true
+  promoted_at: '2026-09-20T14:18:43+00:00'
