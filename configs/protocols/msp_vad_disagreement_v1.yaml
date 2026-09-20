@@ -1,0 +1,60 @@
+schema_version: 1
+protocol_id: PROTO-MSP-VAD-DISAGREEMENT-V1
+title: Human-rating disagreement robustness of VAD reference-frame effects
+
+research_question_scope: >
+  Test whether the MSP VAD reference-frame findings persist when restricting evaluation to
+  utterances with low human annotator disagreement, and quantify how label disagreement changes
+  raw-VAD and within-speaker-residual predictability.
+
+dataset:
+  name: msp
+  vad_source: MSP labels_detailed.csv individual SAM 1-7 ratings
+  disagreement_source: per-utterance annotator standard deviation
+
+controls:
+  - Use the all-attribute intersection and the same speaker/reference filtering as EXP-16/17.
+  - Merge preserved MSP annotation-agreement data by sample_id.
+  - Five speaker-disjoint folds and three fixed seeds.
+  - For each target and fold, compute disagreement 33rd/67th percentile thresholds on training speakers only.
+  - Apply those fixed thresholds to held-out test utterances to define low, mid, and high disagreement.
+  - Fit models on the full training fold; disagreement strata are evaluation-only.
+  - Use fixed Ridge(alpha=1.0), equal-speaker training weights, and train-only weighted scaling.
+  - Evaluate both raw VAD and diagnostic within-speaker residual VAD.
+  - Residual target uses full-speaker VAD mean only to define the diagnostic target, never as a model input.
+
+representations:
+  - absolute
+  - relative
+  - relative_plus_baseline
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      Raw-VAD baseline robustness is supported if, in the low-disagreement stratum,
+      Relative+Baseline-minus-Relative CCC is >= +0.05 with paired-bootstrap 95% CI above zero
+      for both Arousal and Dominance.
+    - >
+      Within-speaker Relative robustness is supported if, in the low-disagreement stratum,
+      Relative-minus-Absolute residual CCC is >= +0.05 with paired-bootstrap 95% CI above zero
+      for both Arousal and Dominance.
+    - >
+      Label-reliability gradient is supported if the best representation's CCC in low-disagreement
+      exceeds high-disagreement by at least 0.05 for at least two of the six
+      target-by-task cells [3 VAD targets × raw/residual].
+  rejection:
+    - >
+      Reject mechanism robustness if low-disagreement Arousal and Dominance effects both lose
+      their registered direction for raw and residual tasks.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-18/data_inventory.csv
+  - artifacts/EXP-20260920-18/stratum_thresholds.csv
+  - artifacts/EXP-20260920-18/metrics_by_fold.csv
+  - artifacts/EXP-20260920-18/summary.csv
+  - artifacts/EXP-20260920-18/paired_deltas.csv
+  - artifacts/EXP-20260920-18/run_metadata.json

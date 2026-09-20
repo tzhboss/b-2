@@ -1,0 +1,26 @@
+schema_version: 1
+experiment_id: EXP-20260920-18
+dataset:
+  source_env: PROSODY_ENRICHED_PARQUET
+  agreement_env: MSP_ANNOTATION_AGREEMENT
+seed: [20260920, 20260921, 20260922]
+parameters:
+  outer_folds: 5
+  ridge_alpha: 1.0
+  bootstrap_reps: 10000
+  quantiles: [0.33, 0.67]
+  targets:
+    valence:
+      mean: valence_mean_1_7
+      std: valence_std_1_7
+    arousal:
+      mean: arousal_mean_1_7
+      std: arousal_std_1_7
+    dominance:
+      mean: dominance_mean_1_7
+      std: dominance_std_1_7
+  representations: [absolute, relative, relative_plus_baseline]
+  tasks: [raw, residual]
+outputs:
+  artifact_root: artifacts/EXP-20260920-18
+entrypoint: scripts/run_msp_vad_disagreement.py

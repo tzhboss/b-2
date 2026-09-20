@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260920-18
+title: Do VAD reference-frame effects survive low annotator disagreement?
+
+research_question: >
+  Are the raw-VAD baseline advantage and within-speaker Relative advantage robust when evaluation
+  is restricted to MSP utterances on which human annotators agree more strongly?
+
+registered_hypothesis: >
+  Both mechanisms will persist in the low-disagreement stratum: raw Arousal/Dominance will retain
+  strong baseline utility, while within-speaker Arousal/Dominance residuals will retain a Relative
+  advantage. Overall prediction quality should degrade as annotator disagreement increases.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-16, EXP-20260920-17]
+protocol_reference: configs/protocols/msp_vad_disagreement_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-18.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed Ridge alpha and train-only disagreement quantiles
+  selection_metric: null
+  rationale: label-reliability robustness test
+
+supersedes: []
+superseded_by: []
+role: human-label reliability analysis
