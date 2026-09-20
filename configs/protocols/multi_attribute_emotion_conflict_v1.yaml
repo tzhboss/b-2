@@ -1,0 +1,85 @@
+schema_version: 1
+protocol_id: PROTO-MULTI-ATTRIBUTE-EMOTION-CONFLICT-V1
+title: Per-emotion reference-frame analysis for loudness and speaking rate
+
+research_question_scope: >
+  Extend the pitch findings to loudness and speaking rate, testing whether per-emotion
+  Absolute-versus-Relative preferences, speaker-baseline utility, and explicit reference-frame
+  conflict behavior are attribute-dependent across controlled and natural corpora.
+
+allowed_datasets:
+  - esd_english
+  - mead_part0
+  - ravdess_speech
+  - msp
+  - meld
+
+attributes:
+  loudness:
+    absolute: speech_lufs
+    relative: loudness_relative_lu
+    baseline: speech_lufs - loudness_relative_lu
+    conflict_min_absolute_deviation: 1.0
+    conflict_min_relative_magnitude: 1.0
+    conflict_units: dB/LU
+  rate:
+    absolute: log(phoneme_articulation_rate)
+    relative: log(rate_relative_ratio)
+    baseline: log(phoneme_articulation_rate) - log(rate_relative_ratio)
+    conflict_min_absolute_deviation: 0.05
+    conflict_min_relative_magnitude: 0.05
+    conflict_units: natural-log rate units
+
+controls:
+  - Reuse the EXP-09 speaker-disjoint five-fold, three-seed evaluation design.
+  - Evaluate each corpus and attribute separately.
+  - Natural corpora retain only speaker_neutral or speaker_neutral_shrunk references, exclude MSP Unknown, and require speaker support >10 for the attribute.
+  - Same rows and folds are used for Absolute, Relative, Baseline-only, and Relative+Baseline within each corpus/attribute.
+  - LogisticRegression with balanced class weights and train-only StandardScaler.
+  - Primary classwise metric is speaker-balanced one-vs-rest F1; classwise recall is secondary.
+  - Conflict corpus reference is computed from training speakers only as the median of per-speaker absolute medians.
+  - Conflict sets are label-free and use fixed pre-registered magnitude thresholds.
+  - Do not tune thresholds after inspecting results.
+
+representations:
+  - absolute
+  - relative
+  - baseline_only
+  - relative_plus_baseline
+
+criteria:
+  acceptance:
+    - >
+      Cross-attribute class heterogeneity is supported if at least six of the ten
+      corpus-by-attribute cells have a five-emotion Relative-minus-Absolute F1 range >= 0.03.
+    - >
+      Baseline redistribution is supported if at least four corpus-by-attribute cells contain
+      two or more emotions whose Absolute/Relative difference changes by at least 0.02 when the
+      speaker baseline is added back, with paired-bootstrap 95% CI excluding zero.
+    - >
+      Conflict-set relevance is supported if at least eight of ten corpus-by-attribute cells
+      have conflict fraction >= 0.05 and at least four cells have Absolute-minus-Relative
+      conflict accuracy magnitude >= 0.03.
+  rejection:
+    - >
+      Reject broad attribute generality if fewer than three corpus-by-attribute cells show
+      classwise F1 range >= 0.03 and fewer than three cells show conflict-accuracy magnitude >= 0.03.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-10/data_inventory.csv
+  - artifacts/EXP-20260920-10/per_emotion_by_fold.csv
+  - artifacts/EXP-20260920-10/per_emotion_summary.csv
+  - artifacts/EXP-20260920-10/per_emotion_deltas.csv
+  - artifacts/EXP-20260920-10/conflict_by_fold.csv
+  - artifacts/EXP-20260920-10/conflict_summary.csv
+  - artifacts/EXP-20260920-10/run_metadata.json
+
+required_audits:
+  - Confirm baseline decomposition is constant within speaker to floating-point precision.
+  - Confirm speaker-disjoint train/test folds.
+  - Confirm same test rows and conflict mask across representations.
+  - Confirm conflict references are train-only and label-free.
+  - Confirm all five mapped emotion classes are present in every fold.
+  - Confirm all seeds, folds, attributes, classes, and representations complete.

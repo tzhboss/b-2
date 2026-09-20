@@ -1,0 +1,34 @@
+schema_version: 1
+experiment_id: EXP-20260920-10
+dataset:
+  source_env: PROSODY_ENRICHED_PARQUET
+  datasets: [esd_english, mead_part0, ravdess_speech, msp, meld]
+seed: [20260920,20260921,20260922]
+parameters:
+  outer_folds: 5
+  bootstrap_reps: 10000
+  classifier:
+    C: 1.0
+    class_weight: balanced
+    max_iter: 3000
+  attributes:
+    loudness:
+      absolute_column: speech_lufs
+      relative_column: loudness_relative_lu
+      reference_scope_column: loudness_reference_scope
+      absolute_transform: identity
+      relative_transform: identity
+      conflict_min_abs: 1.0
+      conflict_min_rel: 1.0
+    rate:
+      absolute_column: phoneme_articulation_rate
+      relative_column: rate_relative_ratio
+      reference_scope_column: rate_reference_scope
+      absolute_transform: log
+      relative_transform: log
+      conflict_min_abs: 0.05
+      conflict_min_rel: 0.05
+  representations: [absolute, relative, baseline_only, relative_plus_baseline]
+outputs:
+  artifact_root: artifacts/EXP-20260920-10
+entrypoint: scripts/run_multi_attribute_emotion_conflict.py
