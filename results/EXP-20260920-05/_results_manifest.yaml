@@ -1,39 +1,55 @@
 schema_version: 1
 experiment_id: EXP-20260920-05
-runtime_commit: 9907b5c31943883a94138328f21094de3ae99a0b
+runtime_commit: 9995830158f46245d3f7e9c915763d74cc5ac750
 protocol_reference: configs/protocols/unseen_speaker_kshot_pitch_v1.yaml
 experiment_config_reference: configs/experiments/EXP-20260920-05.yaml
 audit_reference: experiments/EXP-20260920-05/audit.md
 files:
+- path: _results_manifest.yaml
+  source_artifact: artifacts/EXP-20260920-05/_results_manifest.yaml
+  sha256: 15900000f3098cbc55b0930234a13e0d48f803a03e887e79cc2118c8761be874
+  purpose: Audited EXP-05 unseen-speaker K-shot result.
+- path: audit_rows.csv
+  source_artifact: artifacts/EXP-20260920-05/audit_rows.csv
+  sha256: 2916d4be913c2c15f7097cc805e4ff4b40cecf474727671f6ed62aeda4425bc0
+  purpose: Audited EXP-05 unseen-speaker K-shot result.
 - path: baseline_estimation.csv
   source_artifact: artifacts/EXP-20260920-05/baseline_estimation.csv
   sha256: 8aab4ca7956f79bc1adce24b68cc10f1892900705f7710c0394d771375e1c195
-  purpose: Audited unseen-speaker K-shot result artifact.
+  purpose: Audited EXP-05 unseen-speaker K-shot result.
+- path: baseline_estimation_by_speaker.csv
+  source_artifact: artifacts/EXP-20260920-05/baseline_estimation_by_speaker.csv
+  sha256: 664d84f9cbbb78f3741a93778619e3950a9271e8c206777dd5f847e57068d6e5
+  purpose: Audited EXP-05 unseen-speaker K-shot result.
+- path: baseline_summary.csv
+  source_artifact: artifacts/EXP-20260920-05/baseline_summary.csv
+  sha256: 15eebcf8323801a13943b78dbb431ad9b1d4509fcea3822df84a9209dfd56b75
+  purpose: Audited EXP-05 unseen-speaker K-shot result.
 - path: enrollment_inventory.csv
   source_artifact: artifacts/EXP-20260920-05/enrollment_inventory.csv
   sha256: db40f5b5257b22837955ebef1b5a7d5eacede4e11660a8efceda8273701005b2
-  purpose: Audited unseen-speaker K-shot result artifact.
+  purpose: Audited EXP-05 unseen-speaker K-shot result.
 - path: metrics_by_fold.csv
   source_artifact: artifacts/EXP-20260920-05/metrics_by_fold.csv
-  sha256: 3fec7964d774ca5a3a96368260260d9f9347ecc93705da966f606010e3990864
-  purpose: Audited unseen-speaker K-shot result artifact.
+  sha256: 4f7a226b11d851fe66de117d5bd7380386638993eeeaa06ac3d4dfbc856a82ea
+  purpose: Audited EXP-05 unseen-speaker K-shot result.
 - path: paired_deltas.csv
   source_artifact: artifacts/EXP-20260920-05/paired_deltas.csv
-  sha256: 2b6f04f3940d5db7fa01107ce84dd7dbbe4ed5b9eab3ff52c13a677f8a86a5e7
-  purpose: Audited unseen-speaker K-shot result artifact.
+  sha256: f16116400be740fc6626632c5b7cc3baa3cd9e72eae00878ea2f892bdfa28b41
+  purpose: Audited EXP-05 unseen-speaker K-shot result.
 - path: run_metadata.json
   source_artifact: artifacts/EXP-20260920-05/run_metadata.json
-  sha256: 88d85b1e65f82601d02c624b903dbba6ba18f2c60a038976d8c58e523bf851a0
-  purpose: Audited unseen-speaker K-shot result artifact.
+  sha256: ff1862193d66be7b1c309413803c487570a24fa593124ddedfca8c48c9baf969
+  purpose: Audited EXP-05 unseen-speaker K-shot result.
 - path: summary.csv
   source_artifact: artifacts/EXP-20260920-05/summary.csv
-  sha256: 473a7b564c4c6261b60c776b34b2aae20225c4594b11357a454b207cb2c49a9a
-  purpose: Audited unseen-speaker K-shot result artifact.
+  sha256: 0fd63a0cf46c1fefeee1e4a51880b0f97827b01128253ca3fa113436a3e2c809
+  purpose: Audited EXP-05 unseen-speaker K-shot result.
 - path: target_hash_checks.csv
   source_artifact: artifacts/EXP-20260920-05/target_hash_checks.csv
   sha256: 6131873f6dab2edc7d0513732cb98408bc4c0c934b9eda0d54d01912dafef625
-  purpose: Audited unseen-speaker K-shot result artifact.
+  purpose: Audited EXP-05 unseen-speaker K-shot result.
 promotion:
   audited: true
   selected_by_rule: true
-  promoted_at: '2026-09-20T12:59:50Z'
+  promoted_at: '2026-09-20T14:02:20+00:00'

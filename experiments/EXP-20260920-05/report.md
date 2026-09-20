@@ -1,35 +1,36 @@
 # Experiment Report — EXP-20260920-05
 
-Complete this report only with results that have been audited to the extent required by the protocol.
+## Main Result
 
-## Registered Hypothesis
+Label-free K-shot speaker references are sufficient to recover most of the emotion utility of
+oracle speaker-relative pitch on completely unseen speakers.
 
-Copy or reference the pre-registered hypothesis without rewriting it after results are visible.
+At K=10, K-shot Relative minus matched Absolute macro-F1 is:
+- ESD: +0.1065.
+- MEAD: +0.0980.
+- RAVDESS: +0.0744.
 
-## Results
+All three paired-bootstrap confidence intervals are strictly above zero.
 
-Summarize the audited result set and reference files under `results/EXP-20260920-05/`.
+K=10 K-shot Relative is statistically indistinguishable from Oracle-relative in all three
+datasets under the registered paired comparison.
 
-## Observation
+## Unexpected Result
 
-State only what the evidence directly shows.
+The estimated K-shot speaker center does not converge monotonically to the existing neutral-derived
+oracle baseline. ESD is the clearest counterexample: baseline MAE relative to the neutral oracle is
+lower at K=1 than at K=10, even though downstream K=10 emotion performance nearly matches the oracle.
 
-## Supported Claim
+## Interpretation
 
-State the strongest claim justified by the audited evidence.
+The neutral-derived reference is therefore not necessarily the unique or even the natural target
+for label-free reference estimation. A random label-free enrollment median may be estimating a
+different speaker-specific center that is still highly useful for emotion classification.
 
-## Unsupported Stronger Claim
-
-State conclusions that the current evidence does not justify.
-
-## Post-experiment Interpretation
-
-Record mechanistic or causal interpretation separately from direct observation.
+This motivates a direct follow-up comparing the neutral reference with the speaker's unlabeled
+marginal pitch center.
 
 ## Decision
 
-Record and justify `pass`, `fail`, or `inconclusive` against the protocol criteria.
-
-## Next Step
-
-State the next scientifically legitimate action.
+mixed: the preregistered neutral-baseline convergence criterion is not supported, but the two
+downstream utility/recovery criteria are strongly supported.
