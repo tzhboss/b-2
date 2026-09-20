@@ -1,29 +1,17 @@
 # CURRENT_STATE.md
 
 ## Phase
-
-Layer-wise frozen WavLM pitch-structure experiment registered; execution pending.
-
-## Active research question
-
-Where across WavLM-large layers are absolute pitch, speaker-relative pitch, and speaker pitch
-baseline linearly decodable, and is the Relative-versus-Absolute emotion effect larger at a
-fixed middle layer than at the final layer?
+Layer-wise WavLM experiment completed and audited; unseen-speaker reference-estimation experiment is next.
 
 ## Valid evidence
+- EXP-20260920-02: valid/pass. Prosody-only pitch has a strong task-dependent Absolute/Relative reversal.
+- EXP-20260920-03: valid/inconclusive. Final-layer WavLM largely removes incremental Absolute-vs-Relative pitch differences.
+- EXP-20260920-04: valid/inconclusive for the primary conditional-effect hypothesis; preregistered layer-dependent pitch structure is supported.
 
-- EXP-20260920-02: valid, pass; strong prosody-only reference-frame interaction.
-- EXP-20260920-03: valid, inconclusive; final-layer WavLM largely removes the incremental
-  Absolute-versus-Relative pitch difference, while explicit Hybrid/all-prosody can still help emotion.
-
-## Recent key experiments
-
-- EXP-20260920-01 — completed, invalid, inconclusive.
-- EXP-20260920-02 — completed, valid, pass.
-- EXP-20260920-03 — completed, valid, inconclusive.
-- EXP-20260920-04 — planned layer-wise pitch decodability and middle-vs-final emotion probe.
+## Main current interpretation
+WavLM strongly contains absolute pitch, speaker-relative pitch, and implied speaker-baseline information.
+Relative-pitch linear decodability is strongest in early/middle layers and decreases substantially in later layers,
+but explicit Relative-vs-Absolute pitch augmentation remains small for emotion once WavLM features are present.
 
 ## Next legal step
-
-Extract all 25 masked-mean pooled hidden states from the fixed WavLM-large checkpoint using the
-audited EXP-03 audio manifest, then execute the registered layer-wise probes and audit them.
+Register and execute an unseen-speaker K-shot reference-estimation experiment with strict enrollment/target separation.
