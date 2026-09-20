@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260920-16
+title: Absolute versus speaker-relative prosody for continuous MSP VAD
+
+research_question: >
+  Do prosodic reference frames affect continuous Valence, Arousal, and Dominance prediction
+  differently under speaker-disjoint MSP-Podcast evaluation?
+
+registered_hypothesis: >
+  Speaker-relative prosody will be more useful for Arousal than for Valence, because within-speaker
+  pitch/loudness/rate deviations more directly track activation. Dominance is left less constrained.
+  Baseline restoration is expected to help some target-attribute cells rather than universally.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-10, EXP-20260920-15]
+protocol_reference: configs/protocols/msp_vad_reference_frame_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-16.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed Ridge alpha
+  selection_metric: null
+  rationale: interpretable continuous reference-frame probe
+
+supersedes: []
+superseded_by: []
+role: continuous-affect extension

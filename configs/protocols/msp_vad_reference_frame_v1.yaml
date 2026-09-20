@@ -1,0 +1,92 @@
+schema_version: 1
+protocol_id: PROTO-MSP-VAD-REFERENCE-FRAME-V1
+title: Speaker-reference effects for continuous MSP VAD regression
+
+research_question_scope: >
+  Test whether Absolute, speaker-relative, speaker-baseline, and Relative+Baseline prosodic
+  representations behave differently for continuous Valence, Arousal, and Dominance prediction
+  on MSP-Podcast.
+
+dataset:
+  name: msp
+  vad_source: MSP labels_detailed.csv individual evaluator SAM ratings
+  vad_aggregation: per-utterance mean across annotators
+  vad_scale: 1-7
+  targets:
+    - valence_mean_1_7
+    - arousal_mean_1_7
+    - dominance_mean_1_7
+
+attributes:
+  pitch:
+    absolute: 12*log2(f0_median_hz)
+    relative: pitch_relative_st
+    baseline: absolute-relative
+  loudness:
+    absolute: speech_lufs
+    relative: loudness_relative_lu
+    baseline: absolute-relative
+  rate:
+    absolute: log(phoneme_articulation_rate)
+    relative: log(rate_relative_ratio)
+    baseline: absolute-relative
+  all:
+    absolute: [pitch_absolute, loudness_absolute, rate_absolute]
+    relative: [pitch_relative, loudness_relative, rate_relative]
+    baseline: [pitch_baseline, loudness_baseline, rate_baseline]
+
+representations:
+  - absolute
+  - relative
+  - baseline_only
+  - relative_plus_baseline
+
+controls:
+  - Use only MSP rows with all three VAD means present.
+  - Exclude speaker_id Unknown.
+  - For every attribute used in a condition, retain only speaker_neutral or speaker_neutral_shrunk reference scopes.
+  - Require more than 10 eligible rows per speaker after attribute filtering.
+  - Use five speaker-disjoint outer folds and three fixed seeds.
+  - Use the exact same rows across representations within each attribute set.
+  - Fit train-only weighted StandardScaler and multi-output Ridge(alpha=1.0).
+  - Give each training speaker equal total sample weight.
+  - Primary metric is speaker-balanced weighted concordance correlation coefficient (CCC).
+  - Secondary metrics are weighted Pearson r, MAE, RMSE, and R2.
+  - Test-speaker evaluation weights give each held-out speaker equal total weight.
+  - No target-specific hyperparameter tuning.
+
+criteria:
+  acceptance:
+    - >
+      Arousal relative-reference utility is supported if Relative-minus-Absolute speaker-balanced
+      CCC is at least +0.02 with paired-bootstrap 95% CI above zero in at least two of the four
+      attribute sets [pitch, loudness, rate, all].
+    - >
+      VAD target-specificity is supported if the range across Valence/Arousal/Dominance of
+      Relative-minus-Absolute CCC is at least 0.02 in at least two attribute sets.
+    - >
+      Baseline redistribution is supported if Relative+Baseline-minus-Relative CCC has absolute
+      magnitude at least 0.02 with paired-bootstrap 95% CI excluding zero in at least two
+      target-by-attribute cells.
+  rejection:
+    - >
+      Reject meaningful VAD reference-frame effects if every target-by-attribute
+      Relative-minus-Absolute absolute CCC difference is below 0.005.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-16/data_inventory.csv
+  - artifacts/EXP-20260920-16/metrics_by_fold.csv
+  - artifacts/EXP-20260920-16/summary.csv
+  - artifacts/EXP-20260920-16/paired_deltas.csv
+  - artifacts/EXP-20260920-16/run_metadata.json
+
+required_audits:
+  - Confirm VAD means are original MSP human SAM aggregates, not model-generated labels.
+  - Confirm train/test speaker overlap is zero.
+  - Confirm Unknown speaker is absent.
+  - Confirm only speaker-specific reference scopes are retained.
+  - Confirm matched row identity across representations within each attribute set.
+  - Confirm each speaker receives equal total train/evaluation weight.
+  - Confirm all targets, attributes, representations, seeds, and folds complete.
