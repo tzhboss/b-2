@@ -43,14 +43,18 @@ def main():
         else:
             paths.append(path_map.get(str(r.sample_id),""))
     df["audio_path"]=paths
-    df["audio_exists"]=df.audio_path.map(lambda p: bool(p) and Path(p).is_file())
+    def path_exists(p):
+        return isinstance(p, str) and p not in {"", "nan", "None"} and Path(p).is_file()
+    df["audio_exists"]=df.audio_path.map(path_exists)
+    bad=df.loc[~df.audio_exists].copy()
+    if len(bad):
+        bad.to_parquet(outroot/"audio_mapping_exclusions.parquet",index=False)
+    df=df.loc[df.audio_exists].copy()
     if not bool(df.audio_exists.all()):
-        bad=df.loc[~df.audio_exists,["sample_id","dataset","audio_path"]]
-        bad.to_csv(outroot/"audio_mapping_failures.csv",index=False)
-        raise RuntimeError(f"missing audio mappings: {len(bad)}")
+        raise RuntimeError("unexpected unresolved audio after exclusion")
     df.to_parquet(outroot/"audio_manifest.parquet",index=False)
     print(df.dataset.value_counts().to_dict())
-    print("rows",len(df),"all_audio_exists",bool(df.audio_exists.all()))
+    print("rows",len(df),"excluded_missing_audio",len(bad),"all_audio_exists",bool(df.audio_exists.all()))
 
 if __name__=="__main__":
     main()
