@@ -112,8 +112,8 @@ def main():
           "mean_oracle_regret":float((out.oracle_f1-out[col]).mean())
         })
     summary=pd.DataFrame(rows)
-    best_fixed=float(summary[summary.policy.eq("training_best_fixed")].mean_f1.iloc[0])
-    summary["gain_vs_training_best_fixed"]=summary.mean_f1-best_fixed
+    best_fixed_mean=float(summary[summary.policy.eq("training_best_fixed")].mean_f1.iloc[0])
+    summary["gain_vs_training_best_fixed"]=summary.mean_f1-best_fixed_mean
 
     by=[]
     for ds,g in out.groupby("dataset"):
