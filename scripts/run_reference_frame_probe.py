@@ -144,6 +144,7 @@ def main() -> None:
                     }
                 )
 
+                all_labels = sorted(sub[label_col].astype(str).unique().tolist())
                 for seed in cfg["seed"]:
                     folds = make_within_speaker_folds(
                         sub, label_col=label_col, n_splits=n_splits, seed=int(seed)
@@ -151,9 +152,13 @@ def main() -> None:
                     for fold in range(n_splits):
                         train = sub[folds != fold]
                         test = sub[folds == fold]
-                        if train[label_col].nunique() < 2 or test[label_col].nunique() < 2:
+                        train_labels = set(train[label_col].astype(str).unique())
+                        test_labels = set(test[label_col].astype(str).unique())
+                        required_labels = set(all_labels)
+                        if train_labels != required_labels or test_labels != required_labels:
                             raise RuntimeError(
-                                f"insufficient classes: {dataset}/{task}/{aset}/seed={seed}/fold={fold}"
+                                f"incomplete class coverage: {dataset}/{task}/{aset}/seed={seed}/fold={fold}; "
+                                f"required={sorted(required_labels)} train={sorted(train_labels)} test={sorted(test_labels)}"
                             )
                         for rep in reps:
                             cols = feature_columns(attrs, rep)
@@ -165,6 +170,7 @@ def main() -> None:
                                 C=float(clf_cfg["C"]),
                                 class_weight=clf_cfg["class_weight"],
                                 max_iter=int(clf_cfg["max_iter"]),
+                                labels=all_labels,
                             )
                             metric_rows.append(
                                 {

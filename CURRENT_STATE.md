@@ -4,7 +4,7 @@ This file is the canonical short current-state summary. Keep it approximately 50
 
 ## Phase
 
-First controlled experiment registered; execution pending.
+Corrected controlled experiment registered; execution pending.
 
 ## Active research question
 
@@ -13,16 +13,17 @@ Does the useful reference frame for explicit prosody depend on both downstream t
 
 ## Valid evidence
 
-None yet. EXP-20260920-01 is registered but not yet executed/audited.
+None yet.
 
 ## Recent key experiments
 
-- EXP-20260920-01 — Absolute vs speaker-relative prosody across affective-state and speaker-trait tasks. Status: planned.
+- EXP-20260920-01 — completed, invalid, inconclusive. Audit found RAVDESS emotion fold-level class-coverage / macro-F1 label-universe inconsistency.
+- EXP-20260920-02 — planned correction with four folds and explicit full-label validation; scientific hypothesis and model choices are inherited unchanged from EXP-01.
 
 ## Blocker
 
-None for the registered pilot. Formal result promotion remains blocked until execution and audit complete.
+Formal evidence remains blocked until EXP-20260920-02 completes and passes audit.
 
 ## Next legal step
 
-Execute EXP-20260920-01 under PROTO-PROSODY-REF-FRAME-V1, audit required outputs, then update authoritative experiment status before promoting any result.
+Execute EXP-20260920-02 under PROTO-PROSODY-REF-FRAME-V2, audit required outputs and full-label coverage, then promote only audited lightweight evidence.

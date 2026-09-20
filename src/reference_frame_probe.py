@@ -73,6 +73,7 @@ def fit_eval(
     C: float,
     class_weight: str | None,
     max_iter: int,
+    labels: list[str],
 ) -> dict[str, float]:
     model = Pipeline(
         [
@@ -92,7 +93,7 @@ def fit_eval(
     pred = model.predict(test[cols].to_numpy())
     y = test[label_col].to_numpy()
     return {
-        "macro_f1": float(f1_score(y, pred, average="macro")),
+        "macro_f1": float(f1_score(y, pred, labels=labels, average="macro", zero_division=0)),
         "accuracy": float(accuracy_score(y, pred)),
         "balanced_accuracy": float(balanced_accuracy_score(y, pred)),
     }
