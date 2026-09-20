@@ -1,35 +1,25 @@
 # Experiment Report — EXP-20260920-14
 
-Complete this report only with results that have been audited to the extent required by the protocol.
+## Main Result
 
-## Registered Hypothesis
+The Absolute-versus-Relative effect is only moderately stable across LogisticRegression and a
+fixed HistGradientBoosting classifier.
 
-Copy or reference the pre-registered hypothesis without rewriting it after results are visible.
+Relative-minus-Absolute effect correlation is rho=0.564 and sign agreement is 70% among cells
+with at least 0.01 Logistic effect magnitude. Baseline-addition effects are even less stable.
 
-## Results
+## Interpretation
 
-Summarize the audited result set and reference files under `results/EXP-20260920-14/`.
+Reference-frame preference is not purely a property of the acoustic variable and corpus.
+Model family changes how much of the same one- or two-dimensional representation can be exploited.
+The strongest controlled-corpus pitch effects remain directionally stable, but several natural-corpus
+effects, especially MSP pitch/rate, attenuate or reverse under HGB.
 
-## Observation
+## Boundary
 
-State only what the evidence directly shows.
-
-## Supported Claim
-
-State the strongest claim justified by the audited evidence.
-
-## Unsupported Stronger Claim
-
-State conclusions that the current evidence does not justify.
-
-## Post-experiment Interpretation
-
-Record mechanistic or causal interpretation separately from direct observation.
+This experiment uses one fixed nonlinear tree model and does not establish a universal
+classifier-capacity law.
 
 ## Decision
 
-Record and justify `pass`, `fail`, or `inconclusive` against the protocol criteria.
-
-## Next Step
-
-State the next scientifically legitimate action.
+inconclusive under preregistered robustness criteria.

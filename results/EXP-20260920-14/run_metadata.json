@@ -1,0 +1,28 @@
+{
+  "experiment_id": "EXP-20260920-14",
+  "source": "/data/lc/audio_feature_labeling/old/legacy_feature_pipeline/derived/final_dataset_enriched.parquet",
+  "seeds": [
+    20260920,
+    20260921,
+    20260922
+  ],
+  "outer_folds": 5,
+  "relative_absolute_spearman": 0.5642857142857142,
+  "baseline_addition_spearman": 0.19999999999999998,
+  "classifier_configs": {
+    "logistic": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "max_iter": 3000
+    },
+    "hgb": {
+      "learning_rate": 0.05,
+      "max_iter": 120,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 50,
+      "l2_regularization": 1.0,
+      "class_weight": "balanced",
+      "early_stopping": false
+    }
+  }
+}
