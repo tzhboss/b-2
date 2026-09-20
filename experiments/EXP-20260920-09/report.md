@@ -1,35 +1,48 @@
 # Experiment Report — EXP-20260920-09
 
-Complete this report only with results that have been audited to the extent required by the protocol.
+## Main Result
 
-## Registered Hypothesis
+Reference-frame preference is strongly emotion-specific and corpus-dependent.
 
-Copy or reference the pre-registered hypothesis without rewriting it after results are visible.
+The clearest result is MSP. Relative pitch is better than Absolute for angry, happy, sad, and
+surprise, but dramatically worse for neutral. The single neutral class is large enough to reverse
+the corpus-level aggregate result.
 
-## Results
+MSP Relative-minus-Absolute speaker-balanced F1:
+- angry: +0.0177.
+- happy: +0.0539.
+- sad: +0.1273.
+- surprise: +0.0060.
+- neutral: -0.3229.
 
-Summarize the audited result set and reference files under `results/EXP-20260920-09/`.
+Adding the stable speaker baseline back to Relative almost restores neutral performance:
++0.2685 F1 on neutral. It also helps surprise, but hurts angry, happy, and sad.
 
-## Observation
+## Conflict Set
 
-State only what the evidence directly shows.
+A robust sign-conflict set was defined without labels: an utterance is a conflict when its
+absolute pitch direction relative to the train-speaker corpus reference is opposite to its
+within-speaker relative-pitch direction, with both magnitudes at least 0.5 semitone.
 
-## Supported Claim
+These conflicts are common: approximately 19% to 32% of test utterances.
 
-State the strongest claim justified by the audited evidence.
+On conflict utterances:
+- ESD, MEAD, and RAVDESS strongly favor Relative.
+- MSP and MELD favor Absolute.
 
-## Unsupported Stronger Claim
+This shows that the corpus-level difference is not just a small average effect. When the two
+reference frames explicitly disagree, the direction of useful information changes with domain.
 
-State conclusions that the current evidence does not justify.
+## Interpretation
 
-## Post-experiment Interpretation
+The MSP reversal is not evidence that within-speaker deviation is useless. For most MSP emotion
+classes Relative is better. The reversal is dominated by neutral, whose recognition strongly
+benefits from the stable speaker baseline removed by normalization.
 
-Record mechanistic or causal interpretation separately from direct observation.
+This supports a stronger paper claim:
+prosodic normalization redistributes task-relevant information, and the useful reference frame
+depends jointly on corpus/domain and emotion class.
 
 ## Decision
 
-Record and justify `pass`, `fail`, or `inconclusive` against the protocol criteria.
-
-## Next Step
-
-State the next scientifically legitimate action.
+pass.

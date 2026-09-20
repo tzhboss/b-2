@@ -1,0 +1,39 @@
+schema_version: 1
+experiment_id: EXP-20260920-09
+runtime_commit: 56e187ae41de0f1684a5c1b5c7bb0952b0319557
+protocol_reference: configs/protocols/per_emotion_conflict_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-09.yaml
+audit_reference: experiments/EXP-20260920-09/audit.md
+files:
+- path: conflict_by_fold.csv
+  source_artifact: artifacts/EXP-20260920-09/conflict_by_fold.csv
+  sha256: b025ed7d2747abf7abe04fee041041139af9230bffcc98bda8656390a85f071f
+  purpose: Audited EXP-09 per-emotion/conflict result.
+- path: conflict_summary.csv
+  source_artifact: artifacts/EXP-20260920-09/conflict_summary.csv
+  sha256: ce2c610b4e3b95aac6ccaaa4374c7bc33a771920dc4f5fdbbee3bb5958673908
+  purpose: Audited EXP-09 per-emotion/conflict result.
+- path: data_inventory.csv
+  source_artifact: artifacts/EXP-20260920-09/data_inventory.csv
+  sha256: e043d34c414e37e010f3c9e72044cf22acb65262c34f16ab17b7182a8b6cf873
+  purpose: Audited EXP-09 per-emotion/conflict result.
+- path: per_emotion_by_fold.csv
+  source_artifact: artifacts/EXP-20260920-09/per_emotion_by_fold.csv
+  sha256: d7b8ca16723cbbf76cd08d1fc52a4df3af354f99a377c9968a1d3454e83fd645
+  purpose: Audited EXP-09 per-emotion/conflict result.
+- path: per_emotion_deltas.csv
+  source_artifact: artifacts/EXP-20260920-09/per_emotion_deltas.csv
+  sha256: 0129cfeb07a9433c2b98d576aaddc6094f77fb3bc8eb7a730b7b1287f936b8fb
+  purpose: Audited EXP-09 per-emotion/conflict result.
+- path: per_emotion_summary.csv
+  source_artifact: artifacts/EXP-20260920-09/per_emotion_summary.csv
+  sha256: e6fdefe143f026e35f52f75c69db3a94e3c7350ba0708c3e33894290fc127cb8
+  purpose: Audited EXP-09 per-emotion/conflict result.
+- path: run_metadata.json
+  source_artifact: artifacts/EXP-20260920-09/run_metadata.json
+  sha256: e934b4d53b85c710bd01454b9063d8b3ac68380f94074ee3c2444ada64250b2b
+  purpose: Audited EXP-09 per-emotion/conflict result.
+promotion:
+  audited: true
+  selected_by_rule: true
+  promoted_at: '2026-09-20T14:41:22+00:00'

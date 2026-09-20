@@ -12,3 +12,4 @@ Human-readable derived index only. If this file conflicts with experiments/<ID>/
 | EXP-20260920-06 | What speaker reference does label-free K-shot pitch estimate? | completed | valid | mixed | PROTO-REFERENCE-TARGET-DIAGNOSTIC-V1 | EXP-20260920-05 |
 | EXP-20260920-07 | Natural-corpus validation of speaker-relative pitch | completed | valid | inconclusive | PROTO-NATURAL-CORPUS-REFERENCE-V1 | EXP-20260920-05, EXP-20260920-06 |
 | EXP-20260920-08 | Why does MSP prefer absolute pitch? | completed | valid | pass | PROTO-PITCH-BASELINE-DECOMP-V1 | EXP-20260920-07 |
+| EXP-20260920-09 | Which emotions prefer absolute or relative pitch? | completed | valid | pass | PROTO-PER-EMOTION-CONFLICT-V1 | EXP-20260920-08 |
