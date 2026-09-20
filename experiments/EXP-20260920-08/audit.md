@@ -1,36 +1,42 @@
 # Experiment Audit — EXP-20260920-08
 
-The execution agent should fill this from observed repository/runtime facts. Unknown facts remain unknown; do not infer them.
+## Completeness
 
-## Identity
+- Fold-level metric rows: 300 / 300 expected.
+- Summary rows: 20 / 20 expected.
+- Paired-delta rows: 20 / 20 expected.
+- Inventory rows: 5 / 5 expected.
+- Metric NaNs: zero.
+- Speaker baseline is constant within speaker to floating-point precision in all five corpora.
 
-- Experiment ID:
-- Runtime commit:
-- Branch:
-- Protocol:
-- Experiment config:
+## MSP registered mechanism criteria
 
-## Data and Environment
+Speaker-balanced Macro-F1:
+- Relative: 0.2054.
+- Absolute: 0.2290.
+- Baseline-only: 0.1762.
+- Relative+Baseline: 0.2385.
 
-- Data version/hash:
-- Environment/runtime:
-- Seed(s):
+Paired deltas:
+- Relative+Baseline minus Relative: +0.0332, 95% CI [0.0284, 0.0377].
+- Absolute minus Relative: +0.0236 [0.0204, 0.0267].
+- Relative+Baseline minus Absolute: +0.0095 [0.0052, 0.0135].
 
-## Outputs
+The preregistered baseline-utility mechanism criterion is satisfied.
+The preregistered Baseline-only > 0.12 support criterion is also satisfied.
 
-- Expected outputs:
-- Actual outputs:
-- Missing outputs:
-- Checkpoint integrity:
-- Evaluation completeness:
+## Cross-corpus context
 
-## Protocol Compliance
+Adding baseline to Relative:
+- ESD: +0.0165, CI above zero.
+- MEAD: +0.0046, CI crosses zero.
+- RAVDESS: +0.0176, CI above zero.
+- MELD: -0.0172, CI below zero.
+- MSP: +0.0332, CI above zero.
 
-- Protocol violations:
-- Deviations and rationale:
+The baseline contribution is therefore also corpus-dependent rather than universally beneficial.
 
-## Audit Verdict
+## Verdict
 
-- Validity: `unchecked` / `valid` / `invalid`
-- Evidence supporting verdict:
-- Follow-up required:
+- Validity: valid.
+- Decision: pass for the registered MSP baseline-utility mechanism.

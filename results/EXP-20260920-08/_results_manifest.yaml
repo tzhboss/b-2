@@ -1,0 +1,31 @@
+schema_version: 1
+experiment_id: EXP-20260920-08
+runtime_commit: b271abbdedbc9369709c018dbe5f07be519d492c
+protocol_reference: configs/protocols/pitch_baseline_decomposition_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-08.yaml
+audit_reference: experiments/EXP-20260920-08/audit.md
+files:
+- path: data_inventory.csv
+  source_artifact: artifacts/EXP-20260920-08/data_inventory.csv
+  sha256: 794a6225b43ac4e32156d8763f772f8bd58add5d4e205737f400965a6228304a
+  purpose: Audited EXP-08 pitch-baseline decomposition result.
+- path: metrics_by_fold.csv
+  source_artifact: artifacts/EXP-20260920-08/metrics_by_fold.csv
+  sha256: 23c38504fa614de7f209e3ea7eb0fb80a8b27ad3c8400822f0575f0d99e84eab
+  purpose: Audited EXP-08 pitch-baseline decomposition result.
+- path: paired_deltas.csv
+  source_artifact: artifacts/EXP-20260920-08/paired_deltas.csv
+  sha256: 5af62cea97cc59307a69b168f1d543689f642347c7c3ba58f5097e6d0962710d
+  purpose: Audited EXP-08 pitch-baseline decomposition result.
+- path: run_metadata.json
+  source_artifact: artifacts/EXP-20260920-08/run_metadata.json
+  sha256: 70d11de9b4179be7cc501ddc5668fe3216a54c44c1c9afb50036eeb72fbb4b2b
+  purpose: Audited EXP-08 pitch-baseline decomposition result.
+- path: summary.csv
+  source_artifact: artifacts/EXP-20260920-08/summary.csv
+  sha256: 01bff78f39d87f58e0e0ca33897470f46e9e0e80e830fe07233e6c5902758b9f
+  purpose: Audited EXP-08 pitch-baseline decomposition result.
+promotion:
+  audited: true
+  selected_by_rule: true
+  promoted_at: '2026-09-20T14:19:22+00:00'

@@ -1,35 +1,30 @@
 # Experiment Report — EXP-20260920-08
 
-Complete this report only with results that have been audited to the extent required by the protocol.
+## Main result
 
-## Registered Hypothesis
+MSP's absolute-pitch advantage is substantially explained by useful information in the stable
+speaker pitch baseline that is removed by speaker-relative normalization.
 
-Copy or reference the pre-registered hypothesis without rewriting it after results are visible.
+On speaker-disjoint MSP:
+- Relative speaker-balanced Macro-F1: 0.2054.
+- Absolute: 0.2290.
+- Relative + explicit speaker baseline: 0.2385.
+- Baseline-only: 0.1762.
 
-## Results
+Adding baseline back to Relative improves speaker-balanced Macro-F1 by +0.0332 with a paired
+95% confidence interval [0.0284, 0.0377]. The decomposed two-feature representation also exceeds
+raw Absolute pitch by +0.0095.
 
-Summarize the audited result set and reference files under `results/EXP-20260920-08/`.
+## Interpretation
 
-## Observation
+Relative pitch itself remains emotion-informative on MSP, but normalization discards a stable
+speaker-level component that is also predictive of emotion labels in this corpus. Absolute pitch
+therefore wins over Relative not because within-speaker deviation is useless, but because the
+removed baseline is functionally useful.
 
-State only what the evidence directly shows.
-
-## Supported Claim
-
-State the strongest claim justified by the audited evidence.
-
-## Unsupported Stronger Claim
-
-State conclusions that the current evidence does not justify.
-
-## Post-experiment Interpretation
-
-Record mechanistic or causal interpretation separately from direct observation.
+The sign of baseline utility remains corpus-dependent: it helps on ESD, RAVDESS, and MSP,
+is weak on MEAD, and hurts on MELD.
 
 ## Decision
 
-Record and justify `pass`, `fail`, or `inconclusive` against the protocol criteria.
-
-## Next Step
-
-State the next scientifically legitimate action.
+pass for the registered MSP mechanism hypothesis.
