@@ -1,0 +1,24 @@
+schema_version: 1
+experiment_id: EXP-20260920-05
+
+dataset:
+  source_env: PROSODY_ENRICHED_PARQUET
+  datasets: [esd_english, mead_part0, ravdess_speech]
+
+seed: [20260920, 20260921, 20260922]
+
+parameters:
+  n_splits: 5
+  enrollment_max_k: 10
+  k_values: [1,2,5,10]
+  classifier:
+    C: 1.0
+    class_weight: balanced
+    max_iter: 3000
+  bootstrap_reps: 10000
+
+resources:
+  python_env: /data/lc/audio_feature_labeling/.venv
+
+outputs:
+  artifact_root: artifacts/EXP-20260920-05

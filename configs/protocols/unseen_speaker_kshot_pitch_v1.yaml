@@ -1,0 +1,75 @@
+schema_version: 1
+protocol_id: PROTO-UNSEEN-SPEAKER-KSHOT-PITCH-V1
+title: Unseen-speaker K-shot pitch reference estimation
+
+research_question_scope: >
+  Test whether speaker-relative pitch remains useful for emotion classification when the test
+  speaker is unseen during classifier training and the speaker baseline must be estimated from a
+  small unlabeled enrollment set rather than an oracle/precomputed speaker reference.
+
+allowed_datasets: [esd_english, mead_part0, ravdess_speech]
+
+controls:
+  - Speaker-disjoint train/test folds.
+  - Five speaker folds and three random seeds.
+  - For every speaker and seed, reserve exactly 10 F0-valid utterances as a fixed unlabeled enrollment pool.
+  - The 10 reserved enrollment utterances are excluded from all emotion-classification targets for every K.
+  - K-shot baselines use nested prefixes K=[1,2,5,10] from the same fixed enrollment pool.
+  - Enrollment selection does not inspect emotion labels.
+  - Speaker baseline estimator is the median of utterance-level absolute log-F0 in semitone coordinates.
+  - Same classification target rows for Absolute, all K-shot Relative, and all K-shot Hybrid conditions.
+  - Same balanced LogisticRegression and train-only StandardScaler for all conditions.
+  - Emotion is evaluated separately within each corpus; no cross-corpus label pooling.
+
+forbidden_uses:
+  - Do not use target-test utterances to estimate speaker baselines.
+  - Do not use emotion labels to select enrollment utterances.
+  - Do not tune K, classifier, or folds after inspecting results.
+  - Do not claim that generic enrollment baseline is identical to dataset-specific neutral-reference definitions.
+
+representations:
+  - absolute
+  - relative_k1
+  - relative_k2
+  - relative_k5
+  - relative_k10
+  - hybrid_k1
+  - hybrid_k2
+  - hybrid_k5
+  - hybrid_k10
+
+metrics:
+  primary: [macro_f1]
+  secondary: [accuracy, balanced_accuracy, baseline_estimation_mae]
+  uncertainty: paired_bootstrap_95ci
+
+criteria:
+  acceptance:
+    - >
+      Support practical unseen-speaker relative pitch if Relative-K10 minus Absolute macro-F1 is
+      at least +0.01 with paired-bootstrap 95% CI above zero in at least two datasets.
+    - >
+      Support reference-budget dependence if Relative-K10 exceeds Relative-K1 by at least +0.005
+      with paired-bootstrap 95% CI above zero in at least two datasets.
+  rejection:
+    - >
+      Reject practical benefit if Relative-K10 minus Absolute is <=0 in all three datasets with
+      upper confidence bounds <=0, or if every absolute mean delta is below 0.0025.
+  inconclusive:
+    - Otherwise mark inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-05/enrollment_inventory.csv
+  - artifacts/EXP-20260920-05/baseline_estimation.csv
+  - artifacts/EXP-20260920-05/metrics_by_fold.csv
+  - artifacts/EXP-20260920-05/summary.csv
+  - artifacts/EXP-20260920-05/paired_deltas.csv
+  - artifacts/EXP-20260920-05/run_metadata.json
+
+required_audits:
+  - Confirm no speaker overlap between train and test within every fold.
+  - Confirm every speaker has exactly 10 fixed enrollment utterances per seed.
+  - Confirm enrollment utterances never appear in classification targets.
+  - Confirm the same target sample IDs are used across every representation/K within a fold.
+  - Confirm enrollment selection is independent of emotion labels.
+  - Confirm all required seeds and folds completed.

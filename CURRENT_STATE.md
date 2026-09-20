@@ -1,17 +1,15 @@
 # CURRENT_STATE.md
 
 ## Phase
-Layer-wise WavLM experiment completed and audited; unseen-speaker reference-estimation experiment is next.
+Unseen-speaker K-shot pitch reference-estimation experiment registered; execution pending.
 
 ## Valid evidence
-- EXP-20260920-02: valid/pass. Prosody-only pitch has a strong task-dependent Absolute/Relative reversal.
-- EXP-20260920-03: valid/inconclusive. Final-layer WavLM largely removes incremental Absolute-vs-Relative pitch differences.
-- EXP-20260920-04: valid/inconclusive for the primary conditional-effect hypothesis; preregistered layer-dependent pitch structure is supported.
+- EXP-20260920-02: valid/pass, prosody-only reference-frame effect.
+- EXP-20260920-03: valid/inconclusive, final-layer WavLM conditional effect small.
+- EXP-20260920-04: valid/inconclusive primary effect; layer-dependent pitch structure supported.
 
-## Main current interpretation
-WavLM strongly contains absolute pitch, speaker-relative pitch, and implied speaker-baseline information.
-Relative-pitch linear decodability is strongest in early/middle layers and decreases substantially in later layers,
-but explicit Relative-vs-Absolute pitch augmentation remains small for emotion once WavLM features are present.
+## Active research question
+Can speaker-relative pitch remain useful when test speakers are unseen and their pitch baseline is estimated from only 1/2/5/10 unlabeled enrollment utterances?
 
 ## Next legal step
-Register and execute an unseen-speaker K-shot reference-estimation experiment with strict enrollment/target separation.
+Execute EXP-20260920-05 with strict speaker-disjoint folds and fixed enrollment/target separation, then audit before promoting results.
