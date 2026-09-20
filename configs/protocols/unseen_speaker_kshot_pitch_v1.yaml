@@ -1,75 +1,79 @@
 schema_version: 1
 protocol_id: PROTO-UNSEEN-SPEAKER-KSHOT-PITCH-V1
-title: Unseen-speaker K-shot pitch reference estimation
+title: Label-free K-shot speaker-reference estimation for relative pitch
 
 research_question_scope: >
-  Test whether speaker-relative pitch remains useful for emotion classification when the test
-  speaker is unseen during classifier training and the speaker baseline must be estimated from a
-  small unlabeled enrollment set rather than an oracle/precomputed speaker reference.
+  Test whether speaker-relative pitch remains useful for emotion classification under
+  speaker-disjoint evaluation when the test speaker baseline is not known and must be estimated
+  from a small label-free enrollment set.
 
 allowed_datasets: [esd_english, mead_part0, ravdess_speech]
 
 controls:
-  - Speaker-disjoint train/test folds.
-  - Five speaker folds and three random seeds.
-  - For every speaker and seed, reserve exactly 10 F0-valid utterances as a fixed unlabeled enrollment pool.
-  - The 10 reserved enrollment utterances are excluded from all emotion-classification targets for every K.
-  - K-shot baselines use nested prefixes K=[1,2,5,10] from the same fixed enrollment pool.
-  - Enrollment selection does not inspect emotion labels.
-  - Speaker baseline estimator is the median of utterance-level absolute log-F0 in semitone coordinates.
-  - Same classification target rows for Absolute, all K-shot Relative, and all K-shot Hybrid conditions.
-  - Same balanced LogisticRegression and train-only StandardScaler for all conditions.
-  - Emotion is evaluated separately within each corpus; no cross-corpus label pooling.
+  - Use explicit pitch only to isolate the reference-frame mechanism.
+  - Use speaker-disjoint outer folds.
+  - Each speaker contributes a label-free enrollment subset sampled without using emotion labels.
+  - Enrollment utterances are excluded from downstream classifier training/evaluation.
+  - The same enrollment and same remaining rows are used for Absolute, Oracle-relative, K-shot-relative, and Hybrid comparisons within each K/seed/fold.
+  - Train speakers and held-out test speakers both use the same K-shot estimation procedure for K-shot conditions.
+  - Oracle-relative uses the precomputed speaker reference only as an upper-bound condition.
+  - Same LogisticRegression classifier, class weighting, and train-only StandardScaler for every condition.
 
 forbidden_uses:
-  - Do not use target-test utterances to estimate speaker baselines.
-  - Do not use emotion labels to select enrollment utterances.
-  - Do not tune K, classifier, or folds after inspecting results.
-  - Do not claim that generic enrollment baseline is identical to dataset-specific neutral-reference definitions.
+  - Do not use emotion labels to choose enrollment utterances.
+  - Do not use held-out test evaluation utterances to estimate the test speaker baseline.
+  - Do not tune K after inspecting results; K values are fixed at [1,2,5,10].
+  - Do not merge emotion labels across corpora; evaluate each corpus separately.
+  - Do not claim unseen-speaker deployment for WavLM from this explicit-prosody experiment.
 
-representations:
-  - absolute
-  - relative_k1
-  - relative_k2
-  - relative_k5
-  - relative_k10
-  - hybrid_k1
-  - hybrid_k2
-  - hybrid_k5
-  - hybrid_k10
+changed_factors:
+  - reference_condition: [absolute, oracle_relative, kshot_relative, oracle_hybrid, kshot_hybrid]
+  - K: [1,2,5,10]
 
 metrics:
   primary: [macro_f1]
-  secondary: [accuracy, balanced_accuracy, baseline_estimation_mae]
-  uncertainty: paired_bootstrap_95ci
+  secondary:
+    - balanced_accuracy
+    - accuracy
+    - baseline_mae_semitone
+    - baseline_abs_error_median_semitone
+    - paired_macro_f1_delta
+
+splits:
+  outer_folds: 5
+  speaker_disjoint: true
+  seeds: [20260920,20260921,20260922]
 
 criteria:
   acceptance:
     - >
-      Support practical unseen-speaker relative pitch if Relative-K10 minus Absolute macro-F1 is
-      at least +0.01 with paired-bootstrap 95% CI above zero in at least two datasets.
+      K-shot reference estimation is supported if K=10 reduces mean absolute baseline error
+      relative to K=1 by at least 25% in all three datasets.
     - >
-      Support reference-budget dependence if Relative-K10 exceeds Relative-K1 by at least +0.005
-      with paired-bootstrap 95% CI above zero in at least two datasets.
+      Downstream utility is supported if K=10 K-shot-relative exceeds matched Absolute by at
+      least 0.01 macro-F1 with paired-bootstrap 95% CI above zero in at least two datasets.
+    - >
+      Practical recovery is supported if K=10 K-shot-relative is within 0.02 macro-F1 of the
+      Oracle-relative upper bound in at least two datasets.
   rejection:
     - >
-      Reject practical benefit if Relative-K10 minus Absolute is <=0 in all three datasets with
-      upper confidence bounds <=0, or if every absolute mean delta is below 0.0025.
+      Reject useful label-free K-shot recovery if K=10 fails to reduce baseline MAE relative to
+      K=1 in at least two datasets and K=10 K-shot-relative fails to beat matched Absolute in all datasets.
   inconclusive:
     - Otherwise mark inconclusive.
 
 required_outputs:
-  - artifacts/EXP-20260920-05/enrollment_inventory.csv
-  - artifacts/EXP-20260920-05/baseline_estimation.csv
+  - artifacts/EXP-20260920-05/baseline_estimation_by_speaker.csv
   - artifacts/EXP-20260920-05/metrics_by_fold.csv
   - artifacts/EXP-20260920-05/summary.csv
   - artifacts/EXP-20260920-05/paired_deltas.csv
+  - artifacts/EXP-20260920-05/baseline_summary.csv
   - artifacts/EXP-20260920-05/run_metadata.json
 
 required_audits:
-  - Confirm no speaker overlap between train and test within every fold.
-  - Confirm every speaker has exactly 10 fixed enrollment utterances per seed.
-  - Confirm enrollment utterances never appear in classification targets.
-  - Confirm the same target sample IDs are used across every representation/K within a fold.
-  - Confirm enrollment selection is independent of emotion labels.
-  - Confirm all required seeds and folds completed.
+  - Confirm outer train/test speaker overlap is zero.
+  - Confirm enrollment/evaluation row overlap is zero for every speaker and K.
+  - Confirm enrollment selection does not use emotion labels.
+  - Confirm matched row identity across all representation conditions within each K/seed/fold.
+  - Confirm full class coverage in every train/test fold.
+  - Confirm all seeds, folds, and K values completed.

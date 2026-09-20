@@ -1,39 +1,38 @@
 schema_version: 1
 experiment_id: EXP-20260920-05
-title: Unseen-speaker K-shot pitch reference estimation
+title: Label-free K-shot relative pitch for unseen speakers
 
 research_question: >
-  Can speaker-relative pitch improve emotion classification for speakers never seen during
-  classifier training when the reference frame is estimated from only 1, 2, 5, or 10 unlabeled
-  enrollment utterances?
+  When test speakers are entirely unseen, how much label-free reference audio is required to
+  estimate a useful speaker pitch baseline, and how close can K-shot relative pitch get to the
+  oracle speaker-relative representation?
 
 registered_hypothesis: >
-  Speaker-relative pitch should retain part of the prosody-only emotion advantage under
-  speaker-disjoint evaluation, but the benefit should depend on reference quality. Increasing the
-  enrollment budget from K=1 to K=10 should reduce speaker-baseline estimation error and improve
-  relative-pitch emotion classification. Hybrid absolute-plus-relative pitch may be more robust
-  than either frame alone at low K.
+  Increasing the number of label-free enrollment utterances will reduce speaker-baseline
+  estimation error. By K=10, K-shot relative pitch should recover a substantial part of the
+  oracle-relative emotion advantage over matched absolute pitch in at least two controlled
+  corpora.
 
 status:
-  execution: completed
-  validity: valid
-  decision: pass
+  execution: planned
+  validity: unchecked
+  decision: pending
 
 parent_experiments: [EXP-20260920-02, EXP-20260920-04]
 protocol_reference: configs/protocols/unseen_speaker_kshot_pitch_v1.yaml
 experiment_config_reference: configs/experiments/EXP-20260920-05.yaml
 
 runtime:
-  commit: 9907b5c31943883a94138328f21094de3ae99a0b
+  commit: null
   branch: main
-  seed: [20260920, 20260921, 20260922]
+  seed: null
 
 selected_checkpoint:
   identifier: null
   selection_rule: null
   selection_metric: null
-  rationale: explicit-pitch probe only; no speech checkpoint
+  rationale: explicit pitch-only probe
 
 supersedes: []
 superseded_by: []
-role: deployment-realistic unseen-speaker reference-budget test
+role: deployment-realistic reference-estimation follow-up
