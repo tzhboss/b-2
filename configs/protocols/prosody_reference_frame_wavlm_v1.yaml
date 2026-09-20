@@ -1,0 +1,92 @@
+schema_version: 1
+
+protocol_id: PROTO-PROSODY-REF-WAVLM-V1
+title: Prosodic reference frames conditioned on frozen WavLM-large representations
+research_question_scope: >
+  Test whether the Absolute-versus-Speaker-Relative prosody interaction observed in explicit
+  prosody probes persists after conditioning on a strong frozen speech representation from
+  WavLM-large.
+
+allowed_datasets:
+  - esd_english
+  - mead_part0
+  - ravdess_speech
+
+forbidden_uses:
+  - Do not fine-tune WavLM.
+  - Do not use test labels to fit scalers, probes, or choose layers/hyperparameters.
+  - Do not change WavLM layer or pooling after inspecting EXP-20260920-03 results.
+  - Do not compare representation conditions on different row subsets.
+  - Do not claim unseen-speaker generalization; folds intentionally retain known speakers.
+  - Do not promote results if audio-to-sample mapping or embedding coverage cannot be audited.
+
+controls:
+  - Frozen local Microsoft WavLM-large checkpoint.
+  - Final hidden layer with attention-mask-aware mean pooling.
+  - Same WavLM embedding for all explicit-prosody conditions.
+  - Same RidgeClassifier linear probe and train-only StandardScaler for all conditions.
+  - Same three seeds and four within-speaker-label folds as corrected EXP-20260920-02.
+  - Every train and test fold must contain the complete dataset-task class set.
+  - Same rows for WavLM-only, WavLM+Absolute, WavLM+Relative, and WavLM+Hybrid within each comparison.
+
+changed_factors:
+  - explicit_reference_frame: [none, absolute, relative, hybrid]
+  - attribute_set: [pitch, all]
+  - task: [emotion, gender]
+
+baselines:
+  - wavlm_only
+  - wavlm_plus_absolute
+  - wavlm_plus_relative
+  - wavlm_plus_hybrid
+
+metrics:
+  primary:
+    - macro_f1
+  secondary:
+    - accuracy
+    - balanced_accuracy
+    - paired_macro_f1_delta
+    - paired_bootstrap_95ci
+
+required_splits:
+  - Four deterministic folds constructed within each speaker and task label.
+required_seeds:
+  - 20260920
+  - 20260921
+  - 20260922
+
+checkpoint_selection_rule: frozen local checkpoint; no selection
+
+criteria:
+  acceptance:
+    - >
+      Conditional task reversal is supported if WavLM+Relative minus WavLM+Absolute for pitch
+      is positive for emotion and negative for gender in at least two datasets, with absolute
+      mean delta >= 0.005 macro-F1 and paired-bootstrap 95% confidence intervals excluding zero.
+  rejection:
+    - >
+      Reject the conditional-reference-frame hypothesis if pitch augmentation shows the same
+      resolved Relative-Absolute direction for emotion and gender across all datasets, or if
+      every absolute mean Relative-Absolute pitch delta is below 0.0025 macro-F1.
+  inconclusive:
+    - >
+      Otherwise mark inconclusive. WavLM-only improvements or Hybrid improvements alone do not
+      satisfy the registered conditional task-reversal criterion.
+
+required_outputs:
+  - artifacts/EXP-20260920-03/audio_manifest.parquet
+  - artifacts/EXP-20260920-03/embedding_inventory.json
+  - artifacts/EXP-20260920-03/metrics_by_fold.csv
+  - artifacts/EXP-20260920-03/summary.csv
+  - artifacts/EXP-20260920-03/paired_deltas.csv
+  - artifacts/EXP-20260920-03/run_metadata.json
+
+required_audits:
+  - Confirm local WavLM checkpoint identity and hash.
+  - Confirm all selected sample IDs map to existing 16 kHz standardized FLAC.
+  - Confirm WavLM is in eval mode and gradients are disabled.
+  - Confirm embedding dimensionality and finite values.
+  - Confirm identical row IDs across all representation conditions.
+  - Confirm train-only scaling and complete label coverage.
+  - Confirm all required seeds and folds completed.

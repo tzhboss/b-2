@@ -1,0 +1,42 @@
+schema_version: 1
+
+experiment_id: EXP-20260920-03
+title: Frozen WavLM-large plus absolute versus speaker-relative prosody
+
+research_question: >
+  After conditioning on frozen WavLM-large speech embeddings, does explicit speaker-relative
+  prosody still provide task- and attribute-dependent information relative to explicit absolute
+  prosody?
+registered_hypothesis: >
+  The pitch reference-frame reversal observed in EXP-20260920-02 will remain detectable after
+  adding explicit prosody to frozen WavLM-large: WavLM plus speaker-relative pitch will outperform
+  WavLM plus absolute pitch for emotion, while WavLM plus absolute pitch will outperform WavLM
+  plus speaker-relative pitch for gender. The effect is expected to be smaller than in the
+  prosody-only probe because WavLM already encodes both state and speaker information. Hybrid
+  augmentation may recover additional trait information but is not required for hypothesis pass.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-02]
+
+protocol_reference: configs/protocols/prosody_reference_frame_wavlm_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-03.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: microsoft-wavlm-large local checkpoint
+  selection_rule: fixed before execution
+  selection_metric: null
+  rationale: existing local general-purpose speech SSL encoder
+
+supersedes: []
+superseded_by: []
+
+role: first model-level conditional reference-frame probe

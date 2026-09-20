@@ -1,0 +1,58 @@
+schema_version: 1
+
+experiment_id: EXP-20260920-03
+model:
+  encoder: wavlm-large
+  checkpoint_env: WAVLM_MODEL_DIR
+  frozen: true
+  hidden_layer: -1
+  pooling: masked_mean
+  storage_dtype: float16
+dataset:
+  source_env: PROSODY_ENRICHED_PARQUET
+  locator_root_env: PROSODY_LOCATOR_V6_ROOT
+  datasets:
+    - esd_english
+    - mead_part0
+    - ravdess_speech
+seed:
+  - 20260920
+  - 20260921
+  - 20260922
+entrypoints:
+  build_manifest: scripts/build_wavlm_audio_manifest.py
+  extract: scripts/extract_wavlm_embeddings.py
+  evaluate: scripts/run_wavlm_reference_probe.py
+
+parameters:
+  n_splits: 4
+  extraction:
+    batch_size: 8
+    num_shards: 7
+  classifier:
+    type: ridge
+    alpha: 1.0
+    class_weight: balanced
+    solver: lsqr
+  tasks:
+    emotion:
+      label: emotion_5class_candidate
+    gender:
+      label: gender_canonical
+  attribute_sets:
+    pitch: [pitch]
+    all: [pitch, loudness, rate]
+  representations:
+    - wavlm_only
+    - absolute
+    - relative
+    - hybrid
+  bootstrap_reps: 10000
+
+resources:
+  extraction_python: /data/conda/envs/nemo_diarization/bin/python
+  evaluation_python: /data/lc/audio_feature_labeling/.venv/bin/python
+  extraction_gpus: [0, 1, 2, 3, 4, 5, 6]
+
+outputs:
+  artifact_root: artifacts/EXP-20260920-03
