@@ -1,0 +1,70 @@
+schema_version: 1
+protocol_id: PROTO-PER-EMOTION-CONFLICT-V1
+title: Per-emotion and reference-frame conflict analysis
+
+research_question_scope: >
+  Identify which emotion labels drive corpus-dependent Absolute-versus-Relative pitch effects,
+  and test model behavior on utterances whose corpus-level absolute pitch direction conflicts
+  with their within-speaker relative pitch direction.
+
+allowed_datasets:
+  - esd_english
+  - mead_part0
+  - ravdess_speech
+  - msp
+  - meld
+
+controls:
+  - Reuse the EXP-08 speaker-disjoint five-fold, three-seed evaluation design.
+  - Evaluate each corpus separately.
+  - Use the same row-filtering policy as EXP-08.
+  - Use LogisticRegression with balanced class weights and train-only StandardScaler.
+  - Representations are Absolute, Relative, Baseline-only, and Relative+Baseline.
+  - Primary classwise metric is speaker-balanced one-vs-rest F1; classwise recall is secondary.
+  - For each outer fold, define the corpus absolute reference using only training speakers:
+    median of per-speaker median absolute pitch, so each training speaker has equal weight.
+  - Define a robust conflict utterance when absolute deviation from the train-speaker reference
+    and speaker-relative pitch have opposite signs and both magnitudes are at least 0.5 semitone.
+  - The conflict-set definition is fixed before execution and does not use emotion labels.
+
+conflict_definition:
+  absolute_direction: sign(abs_pitch_st - train_equal_speaker_median_st)
+  relative_direction: sign(relative_pitch_st)
+  minimum_absolute_magnitude_st: 0.5
+  minimum_relative_magnitude_st: 0.5
+  conflict: directions_are_opposite
+
+criteria:
+  acceptance:
+    - >
+      Emotion-specific reference-frame heterogeneity is supported if the range across five emotions
+      of Relative-minus-Absolute speaker-balanced F1 is at least 0.03 in at least three corpora.
+    - >
+      MSP baseline explanation is class-localized if at least two MSP emotions gain at least 0.02
+      speaker-balanced F1 from Relative+Baseline over Relative with paired-bootstrap 95% CI above zero.
+    - >
+      Conflict-set relevance is supported if conflict utterances constitute at least 5% of eligible
+      test utterances in at least four corpora and Absolute-versus-Relative correctness on the conflict
+      set differs by at least 0.03 in at least two corpora.
+  rejection:
+    - >
+      Reject strong class-localization if every corpus has classwise Relative-minus-Absolute F1 range
+      below 0.015 and conflict-set correctness differences are below 0.015 in every corpus.
+  inconclusive:
+    - Otherwise mark inconclusive for unsupported sub-hypotheses.
+
+required_outputs:
+  - artifacts/EXP-20260920-09/data_inventory.csv
+  - artifacts/EXP-20260920-09/per_emotion_by_fold.csv
+  - artifacts/EXP-20260920-09/per_emotion_summary.csv
+  - artifacts/EXP-20260920-09/per_emotion_deltas.csv
+  - artifacts/EXP-20260920-09/conflict_by_fold.csv
+  - artifacts/EXP-20260920-09/conflict_summary.csv
+  - artifacts/EXP-20260920-09/run_metadata.json
+
+required_audits:
+  - Confirm speaker-disjoint train/test folds.
+  - Confirm conflict threshold uses train-only corpus reference.
+  - Confirm no emotion labels enter conflict-set construction.
+  - Confirm same held-out rows and same conflict mask are used across all representations.
+  - Confirm all seeds/folds/classes completed.
