@@ -1,35 +1,29 @@
 # Experiment Report — EXP-20260920-16
 
-Complete this report only with results that have been audited to the extent required by the protocol.
+## Main Result
 
-## Registered Hypothesis
+Continuous VAD regression produces a different reference-frame pattern from the controlled
+categorical-emotion experiments.
 
-Copy or reference the pre-registered hypothesis without rewriting it after results are visible.
+On MSP-Podcast, Absolute prosody consistently outperforms speaker-relative prosody for Arousal and
+Dominance. The difference is largest for all-attribute and loudness representations.
 
-## Results
+Valence is essentially not predictable from these three low-dimensional prosodic attribute sets:
+CCC remains near zero under every representation.
 
-Summarize the audited result set and reference files under `results/EXP-20260920-16/`.
+## Interpretation
 
-## Observation
+The strong Arousal/Dominance baseline restoration shows that speaker-stable prosodic information is
+not merely nuisance for continuous affect ratings in MSP. Relative-only normalization removes a
+large amount of useful information.
 
-State only what the evidence directly shows.
+The result suggests that raw VAD ratings may contain both:
+1. between-speaker affective priors or stable production differences; and
+2. within-speaker utterance-level affective deviations.
 
-## Supported Claim
-
-State the strongest claim justified by the audited evidence.
-
-## Unsupported Stronger Claim
-
-State conclusions that the current evidence does not justify.
-
-## Post-experiment Interpretation
-
-Record mechanistic or causal interpretation separately from direct observation.
+The next experiment should decompose the VAD target itself into speaker mean plus within-speaker
+residual and test which acoustic reference-frame component predicts each part.
 
 ## Decision
 
-Record and justify `pass`, `fail`, or `inconclusive` against the protocol criteria.
-
-## Next Step
-
-State the next scientifically legitimate action.
+mixed.

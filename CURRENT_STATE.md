@@ -2,14 +2,18 @@
 
 ## Phase
 
-Continuous MSP Valence/Arousal/Dominance reference-frame experiment registered; execution pending.
+Continuous MSP VAD reference-frame experiment completed and audited.
 
-## Active research question
+## Main valid findings
 
-Do Absolute, Relative, speaker-baseline, and hybrid prosodic representations behave differently
-for continuous human-rated Valence, Arousal, and Dominance under speaker-disjoint MSP evaluation?
+- Continuous human-rated MSP Arousal and Dominance strongly prefer Absolute over Relative prosody.
+- Adding stable speaker baseline back to Relative recovers large CCC gains, especially for
+  loudness and all-attribute representations.
+- Valence is essentially not predicted by pitch/loudness/rate alone under any reference frame.
+- The VAD target itself likely mixes between-speaker affective priors with within-speaker state.
 
 ## Next legal step
 
-Run EXP-20260920-16 with speaker-balanced weighted CCC as primary metric, then audit target-specific
-reference-frame effects before adding annotation-agreement stratification.
+Decompose each VAD target into speaker mean plus within-speaker residual, then test whether stable
+prosodic baselines predict between-speaker VAD means while Relative prosody better predicts
+within-speaker VAD deviations.
