@@ -1,0 +1,39 @@
+schema_version: 1
+experiment_id: EXP-20260920-11
+runtime_commit: 67878dd7c0b8dad22b59a4bd9265cacc6bc654c1
+protocol_reference: configs/protocols/reference_preference_predictor_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-11.yaml
+audit_reference: experiments/EXP-20260920-11/audit.md
+files:
+- path: effect_matrix.csv
+  source_artifact: artifacts/EXP-20260920-11/effect_matrix.csv
+  sha256: fc8a602d356f1e7942ef91f72a186987fd2fbe92c8b2b44ad9e4a12a9cad902a
+  purpose: Audited EXP-11 reference-preference prediction result.
+- path: loao_metrics.csv
+  source_artifact: artifacts/EXP-20260920-11/loao_metrics.csv
+  sha256: 5683569bd62f6c5919690dcb31339028b966934bcb82a2401ec3355ad577e4e6
+  purpose: Audited EXP-11 reference-preference prediction result.
+- path: loao_predictions.csv
+  source_artifact: artifacts/EXP-20260920-11/loao_predictions.csv
+  sha256: d69b23824fb982cdd9062d246e128a754669e9e686fbe171ba7484dc89abf783
+  purpose: Audited EXP-11 reference-preference prediction result.
+- path: loco_metrics.csv
+  source_artifact: artifacts/EXP-20260920-11/loco_metrics.csv
+  sha256: be0ed701eec9634d85ffa3d033019564f266f8963ce1483faf48b026a8e4a322
+  purpose: Audited EXP-11 reference-preference prediction result.
+- path: loco_predictions.csv
+  source_artifact: artifacts/EXP-20260920-11/loco_predictions.csv
+  sha256: 59fe4d2ddba81a1ce34361a752b23bde1e9274343821f4e06a4d00bd935a24d5
+  purpose: Audited EXP-11 reference-preference prediction result.
+- path: predictor_features.csv
+  source_artifact: artifacts/EXP-20260920-11/predictor_features.csv
+  sha256: 0b806474450585a221a65d1462c75ffbaf69dd65b16fd8413c1fcc45821e5604
+  purpose: Audited EXP-11 reference-preference prediction result.
+- path: run_metadata.json
+  source_artifact: artifacts/EXP-20260920-11/run_metadata.json
+  sha256: 1ef961507e28f7e6604cf9af5eed4253ee3a0ccf1a8512a1e4adb21bb8917444
+  purpose: Audited EXP-11 reference-preference prediction result.
+promotion:
+  audited: true
+  selected_by_rule: true
+  promoted_at: '2026-09-20T15:13:00+00:00'
