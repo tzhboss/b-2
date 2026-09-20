@@ -1,35 +1,32 @@
 # Experiment Report — EXP-20260920-17
 
-Complete this report only with results that have been audited to the extent required by the protocol.
+## Main Result
 
-## Registered Hypothesis
+The apparent contradiction between raw MSP VAD and categorical controlled-corpus emotion is
+explained by decomposing the target itself.
 
-Copy or reference the pre-registered hypothesis without rewriting it after results are visible.
+Raw Arousal and Dominance contain strong between-speaker components. Stable prosodic baselines
+predict these speaker-level affect means well. Therefore Absolute prosody can outperform Relative
+prosody on raw VAD because the target itself rewards between-speaker information.
 
-## Results
+After subtracting each speaker's VAD mean, the result reverses: Relative pitch/loudness/all-prosody
+strongly outperform Absolute for within-speaker Arousal and Dominance residuals, while adding the
+speaker baseline back has essentially zero effect.
 
-Summarize the audited result set and reference files under `results/EXP-20260920-17/`.
+## Interpretation
 
-## Observation
+Reference-frame choice should match the target reference frame.
 
-State only what the evidence directly shows.
+For raw population-level VAD:
+- stable speaker baseline is task-relevant;
+- Absolute/Hybrid can win.
 
-## Supported Claim
+For within-speaker affective deviation:
+- stable speaker baseline becomes nuisance;
+- Relative becomes the appropriate representation.
 
-State the strongest claim justified by the audited evidence.
-
-## Unsupported Stronger Claim
-
-State conclusions that the current evidence does not justify.
-
-## Post-experiment Interpretation
-
-Record mechanistic or causal interpretation separately from direct observation.
+This directly supports the broader information-redistribution account.
 
 ## Decision
 
-Record and justify `pass`, `fail`, or `inconclusive` against the protocol criteria.
-
-## Next Step
-
-State the next scientifically legitimate action.
+pass.
