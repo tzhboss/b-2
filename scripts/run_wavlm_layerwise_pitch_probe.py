@@ -38,9 +38,15 @@ def bootstrap(v,reps,seed):
     return tuple(map(float,np.quantile(means,[.025,.975])))
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--config",required=True); args=ap.parse_args()
+    ap=argparse.ArgumentParser()
+    ap.add_argument("--config",required=True)
+    ap.add_argument("--dataset",default=None)
+    ap.add_argument("--output-dir",default=None)
+    args=ap.parse_args()
     cfg=yaml.safe_load(Path(args.config).read_text())
     root=Path(cfg["outputs"]["artifact_root"])
+    output_root=Path(args.output_dir) if args.output_dir else root
+    output_root.mkdir(parents=True,exist_ok=True)
     manifest=Path(os.environ[cfg["dataset"]["manifest_env"]]).resolve()
     df=pd.read_parquet(manifest).copy()
     df["absolute_pitch_semitone"]=12.0*np.log2(df["f0_median_hz"].astype(float))
@@ -55,7 +61,8 @@ def main():
 
     dec_rows=[]; emo_rows=[]; inv=[]
     n_splits=int(cfg["parameters"]["n_splits"])
-    for dataset in cfg["dataset"]["datasets"]:
+    datasets=[args.dataset] if args.dataset else cfg["dataset"]["datasets"]
+    for dataset in datasets:
         base=df[df.dataset==dataset].copy()
         sub=base[
             base.emotion_training_usable.fillna(False)
@@ -137,13 +144,13 @@ def main():
                        "delta_macro_f1_mean":float(d.mean()),"ci95_low":lo,"ci95_high":hi,"n_pairs":len(d)})
     deltas=pd.DataFrame(ds)
 
-    inv.to_csv(root/"data_inventory.csv",index=False)
-    dec.to_csv(root/"pitch_decodability_by_fold.csv",index=False)
-    decsum.to_csv(root/"pitch_decodability_summary.csv",index=False)
-    emo.to_csv(root/"emotion_metrics_by_fold.csv",index=False)
-    emosum.to_csv(root/"emotion_summary.csv",index=False)
-    deltas.to_csv(root/"emotion_paired_deltas.csv",index=False)
-    (root/"run_metadata.json").write_text(json.dumps({
+    inv.to_csv(output_root/"data_inventory.csv",index=False)
+    dec.to_csv(output_root/"pitch_decodability_by_fold.csv",index=False)
+    decsum.to_csv(output_root/"pitch_decodability_summary.csv",index=False)
+    emo.to_csv(output_root/"emotion_metrics_by_fold.csv",index=False)
+    emosum.to_csv(output_root/"emotion_summary.csv",index=False)
+    deltas.to_csv(output_root/"emotion_paired_deltas.csv",index=False)
+    (output_root/"run_metadata.json").write_text(json.dumps({
         "experiment_id":cfg["experiment_id"],"embedding_rows":len(ids),"embedding_shape":list(emb.shape),
         "seeds":cfg["seed"],"n_splits":n_splits,"conditional_layers":cfg["parameters"]["emotion"]["layers"]
     },indent=2)+"\n")
