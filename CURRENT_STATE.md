@@ -4,7 +4,7 @@ This file is the canonical short current-state summary. Keep it approximately 50
 
 ## Phase
 
-Corrected controlled experiment registered; execution pending.
+First corrected controlled prosody reference-frame pilot completed, audited, and promoted.
 
 ## Active research question
 
@@ -13,17 +13,27 @@ Does the useful reference frame for explicit prosody depend on both downstream t
 
 ## Valid evidence
 
-None yet.
+- EXP-20260920-02: valid, pass. Audited results are in results/EXP-20260920-02/.
+- Source evidence is a pinned legacy enriched snapshot, not the unfinished current English-final release.
+- Evidence is limited to reference-available / known-speaker controlled-corpus probes.
 
 ## Recent key experiments
 
-- EXP-20260920-01 — completed, invalid, inconclusive. Audit found RAVDESS emotion fold-level class-coverage / macro-F1 label-universe inconsistency.
-- EXP-20260920-02 — planned correction with four folds and explicit full-label validation; scientific hypothesis and model choices are inherited unchanged from EXP-01.
+- EXP-20260920-01 — completed, invalid, inconclusive. Superseded due to a RAVDESS fold-level class-coverage / macro-F1 label-universe issue.
+- EXP-20260920-02 — completed, valid, pass. Four-fold correction with full-label validation.
+
+## Main audited observation
+
+Pitch shows a replicated task reversal across ESD-English, MEAD-part0, and RAVDESS-speech:
+speaker-relative pitch improves emotion macro-F1, while absolute pitch preserves substantially
+more gender-predictive information. Loudness and rate show different patterns, supporting an
+attribute-dependent rather than universal reference-frame effect.
 
 ## Blocker
 
-Formal evidence remains blocked until EXP-20260920-02 completes and passes audit.
+Broader claims require uncontrolled-corpus and unseen-speaker/reference-estimation experiments.
 
 ## Next legal step
 
-Execute EXP-20260920-02 under PROTO-PROSODY-REF-FRAME-V2, audit required outputs and full-label coverage, then promote only audited lightweight evidence.
+Register a follow-up experiment for uncontrolled corpora and/or unseen-speaker reference
+estimation without modifying the completed EXP-20260920-02 hypothesis.

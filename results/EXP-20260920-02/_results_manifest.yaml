@@ -1,0 +1,35 @@
+schema_version: 1
+experiment_id: EXP-20260920-02
+runtime_commit: e04eeda8fc6aff508a41f6b53ba11a391809b219
+protocol_reference: configs/protocols/prosody_reference_frame_v2.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-02.yaml
+audit_reference: experiments/EXP-20260920-02/audit.md
+files:
+- path: data_inventory.csv
+  source_artifact: artifacts/EXP-20260920-02/data_inventory.csv
+  sha256: 99cefa1165ae889c1d76f192466da1a8b5cb546b4a5301a475be1c6605dc65f5
+  purpose: Usable-row, speaker, class, and matched-row identity inventory.
+- path: metrics_by_fold.csv
+  source_artifact: artifacts/EXP-20260920-02/metrics_by_fold.csv
+  sha256: ccd37c1cd0818d7f8e0dd91ae89ba069f1e3a06f0ac1cf330cddfdf8924d2bef
+  purpose: Audited fold-level primary and secondary metrics.
+- path: summary.csv
+  source_artifact: artifacts/EXP-20260920-02/summary.csv
+  sha256: 24e52d2729cf969f014ddaac68440dbf656418781d14f24482e999a947ce964e
+  purpose: Mean and standard-deviation summary across seeds/folds.
+- path: paired_deltas.csv
+  source_artifact: artifacts/EXP-20260920-02/paired_deltas.csv
+  sha256: 005848e380079a329d26452fe1db89a57be6dba2b6b7d5bb455f08dc15cb42c5
+  purpose: Paired representation deltas with bootstrap 95% confidence intervals.
+- path: run_metadata.json
+  source_artifact: artifacts/EXP-20260920-02/run_metadata.json
+  sha256: 5c10c0990de6a0c2cbfaaa88f96fbe21846fbdf7f93374e6aa49e9c9d52a486c
+  purpose: Pinned runtime commit, data hash, environment, seeds, and fold count.
+- path: row_hash_checks.csv
+  source_artifact: artifacts/EXP-20260920-02/row_hash_checks.csv
+  sha256: 0e9ad0a6fa2040bdcf2d792cd085ea5a65b55fd2cabe769e501e209ef4c06cc4
+  purpose: Evidence that representation conditions use identical row IDs.
+promotion:
+  audited: true
+  selected_by_rule: true
+  promoted_at: '2026-09-20T05:44:04Z'
