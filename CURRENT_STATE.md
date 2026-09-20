@@ -2,14 +2,13 @@
 
 ## Phase
 
-Nested confidence-aware routing tested and rejected.
+Classifier-family robustness experiment registered; execution pending.
 
-## Main finding
+## Active research question
 
-Confidence abstention weakens the useful adaptive routing signal; the naive stats-only router from
-EXP-12 remains the stronger practical policy.
+Are Absolute-versus-Relative and baseline-addition effects stable when replacing linear Logistic
+probes with a fixed nonlinear HistGradientBoosting classifier?
 
 ## Next legal step
 
-Test classifier-family robustness of Absolute-versus-Relative effects using a fixed nonlinear
-classifier under the same speaker-disjoint folds across pitch, loudness, rate, and five corpora.
+Run EXP-20260920-14 under matched speaker-disjoint folds across five corpora and three attributes.

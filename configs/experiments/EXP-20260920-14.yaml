@@ -1,0 +1,26 @@
+schema_version: 1
+experiment_id: EXP-20260920-14
+dataset:
+  source_env: PROSODY_ENRICHED_PARQUET
+  datasets: [esd_english, mead_part0, ravdess_speech, msp, meld]
+seed: [20260920,20260921,20260922]
+parameters:
+  outer_folds: 5
+  attributes: [pitch, loudness, rate]
+  representations: [absolute, relative, relative_plus_baseline]
+  classifiers:
+    logistic:
+      C: 1.0
+      class_weight: balanced
+      max_iter: 3000
+    hgb:
+      learning_rate: 0.05
+      max_iter: 120
+      max_leaf_nodes: 15
+      min_samples_leaf: 50
+      l2_regularization: 1.0
+      class_weight: balanced
+      early_stopping: false
+outputs:
+  artifact_root: artifacts/EXP-20260920-14
+entrypoint: scripts/run_classifier_family_robustness.py

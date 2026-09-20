@@ -1,0 +1,35 @@
+schema_version: 1
+experiment_id: EXP-20260920-14
+title: Are reference-frame effects robust to nonlinear classifiers?
+
+research_question: >
+  Do the corpus- and attribute-dependent Absolute-versus-Relative effects survive when replacing
+  linear LogisticRegression with a fixed nonlinear HistGradientBoosting classifier?
+
+registered_hypothesis: >
+  The exact F1 values will change, but the sign and relative ordering of reference-frame effects
+  will remain substantially stable across classifier families.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-10]
+protocol_reference: configs/protocols/classifier_family_robustness_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-14.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed preregistered model hyperparameters
+  selection_metric: null
+  rationale: classifier-family robustness test
+
+supersedes: []
+superseded_by: []
+role: model-family robustness

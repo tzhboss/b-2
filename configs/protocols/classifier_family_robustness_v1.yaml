@@ -1,0 +1,80 @@
+schema_version: 1
+protocol_id: PROTO-CLASSIFIER-FAMILY-ROBUSTNESS-V1
+title: Classifier-family robustness of prosodic reference-frame effects
+
+research_question_scope: >
+  Test whether Absolute-versus-Relative prosody effects persist when moving from the linear
+  LogisticRegression probes used in prior experiments to a fixed nonlinear tree-based classifier.
+
+allowed_datasets:
+  - esd_english
+  - mead_part0
+  - ravdess_speech
+  - msp
+  - meld
+
+attributes:
+  - pitch
+  - loudness
+  - rate
+
+representations:
+  - absolute
+  - relative
+  - relative_plus_baseline
+
+classifier_families:
+  logistic:
+    model: LogisticRegression
+    C: 1.0
+    class_weight: balanced
+    max_iter: 3000
+  nonlinear:
+    model: HistGradientBoostingClassifier
+    learning_rate: 0.05
+    max_iter: 120
+    max_leaf_nodes: 15
+    min_samples_leaf: 50
+    l2_regularization: 1.0
+    class_weight: balanced
+    early_stopping: false
+
+controls:
+  - Use the same attribute transforms, natural-corpus filtering, and speaker-disjoint five-fold split logic as EXP-10.
+  - Use the same three fixed seeds.
+  - Same train/test rows for all classifier families and representations within a corpus/attribute/fold.
+  - No hyperparameter tuning after results.
+  - Primary metric is speaker-balanced multiclass Macro-F1; ordinary Macro-F1 is secondary.
+  - Report Relative-minus-Absolute and Relative+Baseline-minus-Relative deltas for each classifier family.
+
+criteria:
+  acceptance:
+    - >
+      Reference-frame effect robustness is supported if Logistic and nonlinear Relative-minus-Absolute
+      deltas have Spearman correlation >= 0.60 across the 15 corpus-by-attribute cells.
+    - >
+      Direction robustness is supported if sign agreement is >= 0.80 among cells where the absolute
+      Logistic delta is at least 0.01.
+    - >
+      Baseline-mechanism robustness is supported if Relative+Baseline-minus-Relative delta sign
+      agreement is >= 0.70 among cells where the absolute Logistic baseline-addition delta is at least 0.01.
+  rejection:
+    - >
+      Reject broad classifier robustness if Relative-minus-Absolute Spearman correlation < 0.30
+      and direction agreement < 0.60.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-14/data_inventory.csv
+  - artifacts/EXP-20260920-14/metrics_by_fold.csv
+  - artifacts/EXP-20260920-14/summary.csv
+  - artifacts/EXP-20260920-14/deltas.csv
+  - artifacts/EXP-20260920-14/family_comparison.csv
+  - artifacts/EXP-20260920-14/run_metadata.json
+
+required_audits:
+  - Confirm speaker-disjoint folds.
+  - Confirm matched row hashes across classifier families and representations.
+  - Confirm all datasets, attributes, seeds, folds, representations, and classifier families complete.
+  - Confirm no hyperparameter tuning occurred.
