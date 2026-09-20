@@ -1,35 +1,23 @@
 # Experiment Report — EXP-20260920-15
 
-Complete this report only with results that have been audited to the extent required by the protocol.
+## Main Result
 
-## Registered Hypothesis
+Class-level reference-frame effects are substantially more classifier-dependent than the aggregate
+corpus-by-attribute analysis suggested.
 
-Copy or reference the pre-registered hypothesis without rewriting it after results are visible.
+Across 75 corpus × attribute × emotion cells, Logistic-versus-HGB Relative-minus-Absolute effect
+correlation is only 0.234, and only 60% of large Logistic effects preserve sign.
 
-## Results
+## Interpretation
 
-Summarize the audited result set and reference files under `results/EXP-20260920-15/`.
+The acoustic information decomposition remains real, but downstream accessibility depends strongly
+on classifier family. Some effects that look like strong Absolute/Relative preferences under a
+linear probe nearly disappear or reverse under a fixed nonlinear model.
 
-## Observation
-
-State only what the evidence directly shows.
-
-## Supported Claim
-
-State the strongest claim justified by the audited evidence.
-
-## Unsupported Stronger Claim
-
-State conclusions that the current evidence does not justify.
-
-## Post-experiment Interpretation
-
-Record mechanistic or causal interpretation separately from direct observation.
+This means reference-frame utility should be separated conceptually into:
+1. information retained by the representation; and
+2. information extractable by a particular downstream model.
 
 ## Decision
 
-Record and justify `pass`, `fail`, or `inconclusive` against the protocol criteria.
-
-## Next Step
-
-State the next scientifically legitimate action.
+inconclusive under the preregistered robustness criteria.
