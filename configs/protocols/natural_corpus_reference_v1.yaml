@@ -1,0 +1,64 @@
+schema_version: 1
+protocol_id: PROTO-NATURAL-CORPUS-REFERENCE-V1
+title: Speaker-relative pitch on imbalanced natural emotion corpora
+
+research_question_scope: >
+  Test whether the speaker-relative pitch effect observed on controlled acted corpora generalizes
+  to natural/interactional corpora with strong class imbalance and long-tailed speaker frequency.
+
+allowed_datasets: [msp, meld]
+
+eligibility:
+  - emotion_training_usable must be true.
+  - emotion_5class_candidate must be non-empty.
+  - f0_median_hz and pitch_relative_st must be finite.
+  - pitch_reference_scope must be speaker_neutral or speaker_neutral_shrunk.
+  - speaker_id must not be Unknown.
+  - speaker must have more than 10 eligible utterances so K=10 label-free enrollment leaves evaluation data.
+
+controls:
+  - Speaker-disjoint five-fold evaluation.
+  - Three fixed seeds.
+  - K=10 label-free random enrollment per speaker, excluding enrollment rows from classifier train/test.
+  - Same rows for Absolute, Oracle-relative, and K-shot-relative within each seed/fold.
+  - LogisticRegression with class_weight balanced and train-only StandardScaler.
+  - Evaluate each corpus separately; do not merge emotion labels across corpora.
+  - Primary metric is speaker-balanced Macro-F1, where every held-out speaker has equal total sample weight.
+  - Ordinary utterance-level Macro-F1 is reported as secondary.
+
+forbidden_uses:
+  - Do not include MSP speaker_id Unknown.
+  - Do not include dataset_gender_neutral or speaker_all fallback reference rows.
+  - Do not select speakers by emotion label.
+  - Do not tune K or classifier after observing results.
+
+criteria:
+  acceptance:
+    - >
+      Natural-corpus oracle reference effect is supported if Oracle-relative exceeds Absolute by
+      at least 0.005 speaker-balanced Macro-F1 with paired-bootstrap 95% CI above zero in both corpora.
+    - >
+      Label-free deployment recovery is supported if K=10 Relative exceeds Absolute by at least
+      0.005 speaker-balanced Macro-F1 with CI above zero in at least one corpus and is within
+      0.02 of Oracle-relative in both corpora.
+  rejection:
+    - >
+      Reject cross-domain generalization if Oracle-relative fails to beat Absolute in both corpora
+      and K=10 Relative is non-positive in both corpora.
+  inconclusive:
+    - Otherwise mark inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-07/data_inventory.csv
+  - artifacts/EXP-20260920-07/metrics_by_fold.csv
+  - artifacts/EXP-20260920-07/summary.csv
+  - artifacts/EXP-20260920-07/paired_deltas.csv
+  - artifacts/EXP-20260920-07/run_metadata.json
+
+required_audits:
+  - Confirm MSP Unknown is absent.
+  - Confirm only speaker-specific neutral/shrunk reference scopes remain.
+  - Confirm every retained speaker has >10 rows before enrollment.
+  - Confirm train/test speaker overlap is zero.
+  - Confirm enrollment/evaluation overlap is zero.
+  - Confirm all five mapped emotion classes occur in each train/test fold.

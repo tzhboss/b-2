@@ -10,3 +10,4 @@ Human-readable derived index only. If this file conflicts with experiments/<ID>/
 | EXP-20260920-04 | Layer-wise absolute and speaker-relative pitch structure in WavLM-large | completed | valid | mixed | PROTO-WAVLM-LAYERWISE-PITCH-V1 | EXP-20260920-03 |
 | EXP-20260920-05 | Label-free K-shot relative pitch for unseen speakers | completed | valid | mixed | PROTO-UNSEEN-SPEAKER-KSHOT-PITCH-V1 | EXP-20260920-02, EXP-20260920-04 |
 | EXP-20260920-06 | What speaker reference does label-free K-shot pitch estimate? | completed | valid | mixed | PROTO-REFERENCE-TARGET-DIAGNOSTIC-V1 | EXP-20260920-05 |
+| EXP-20260920-07 | Natural-corpus validation of speaker-relative pitch | planned | unchecked | pending | PROTO-NATURAL-CORPUS-REFERENCE-V1 | EXP-20260920-05, EXP-20260920-06 |

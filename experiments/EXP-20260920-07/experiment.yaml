@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260920-07
+title: Natural-corpus validation of speaker-relative pitch
+
+research_question: >
+  Does speaker-relative pitch remain useful on MSP-Podcast and MELD under speaker-disjoint,
+  class-imbalanced, long-tailed natural-speech evaluation?
+
+registered_hypothesis: >
+  Oracle speaker-relative pitch will retain a positive emotion advantage over absolute pitch on
+  both natural corpora. Ten label-free enrollment utterances will recover much of this advantage,
+  although the effect is expected to be smaller and noisier than on controlled corpora.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-05, EXP-20260920-06]
+protocol_reference: configs/protocols/natural_corpus_reference_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-07.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: null
+  selection_metric: null
+  rationale: explicit pitch-only natural-corpus validation
+
+supersedes: []
+superseded_by: []
+role: natural-corpus external-validity test

@@ -1,0 +1,18 @@
+schema_version: 1
+experiment_id: EXP-20260920-07
+dataset:
+  source_env: PROSODY_ENRICHED_PARQUET
+  datasets: [msp, meld]
+seed: [20260920,20260921,20260922]
+parameters:
+  outer_folds: 5
+  K: 10
+  classifier:
+    C: 1.0
+    class_weight: balanced
+    max_iter: 3000
+  bootstrap_reps: 10000
+  representations: [absolute, oracle_relative, kshot_relative]
+outputs:
+  artifact_root: artifacts/EXP-20260920-07
+entrypoint: scripts/run_natural_corpus_reference_probe.py

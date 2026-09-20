@@ -2,20 +2,20 @@
 
 ## Phase
 
-Reference-target diagnostic registered; execution pending.
+Natural-corpus speaker-relative pitch validation registered; execution pending.
 
 ## Active research question
 
-Does label-free K-shot relative pitch work because it estimates a speaker's unlabeled marginal
-pitch center rather than the neutral-derived reference?
+Does the speaker-relative pitch effect survive speaker-disjoint evaluation on class-imbalanced,
+long-tailed natural corpora (MSP-Podcast and MELD)?
 
 ## Valid evidence
 
-- EXP-05 shows unseen-speaker K-shot relative pitch strongly outperforms absolute pitch and
-  reaches oracle-relative downstream performance by K=10, despite non-monotonic error relative
-  to the neutral-derived oracle baseline.
+Controlled-corpus evidence supports strong explicit relative-pitch utility and practical K-shot
+unseen-speaker recovery. EXP-06 shows label-free enrollment converges toward a marginal speaker
+center rather than a privileged neutral anchor.
 
 ## Next legal step
 
-Run EXP-20260920-06 using the exact EXP-05 enrollment/split procedure and compare K-shot estimates
-against neutral and full marginal speaker references.
+Run EXP-20260920-07 after excluding MSP Unknown and non-speaker-specific reference fallbacks;
+evaluate both ordinary and speaker-balanced Macro-F1.
