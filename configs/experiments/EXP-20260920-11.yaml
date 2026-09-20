@@ -1,0 +1,14 @@
+schema_version: 1
+experiment_id: EXP-20260920-11
+dataset:
+  source_env: PROSODY_ENRICHED_PARQUET
+  corpora: [esd_english, mead_part0, ravdess_speech, msp, meld]
+  attributes: [pitch, loudness, rate]
+  emotions: [angry, happy, neutral, sad, surprise]
+parameters:
+  ridge_alpha: 10.0
+  logistic_C: 1.0
+  bootstrap_reps: 10000
+outputs:
+  artifact_root: artifacts/EXP-20260920-11
+entrypoint: scripts/run_reference_preference_predictor.py

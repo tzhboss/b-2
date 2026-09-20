@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260920-11
+title: Can simple statistics predict which prosodic reference frame will work better?
+
+research_question: >
+  Can raw acoustic/class statistics predict the sign and magnitude of Relative-versus-Absolute
+  downstream emotion performance on a held-out corpus or held-out attribute?
+
+registered_hypothesis: >
+  Relative-frame preference will be predictable from the balance between within-speaker class
+  separation and stable speaker-baseline/class-prior association. A combined statistical model
+  should generalize better than attribute/emotion labels alone.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-09, EXP-20260920-10]
+protocol_reference: configs/protocols/reference_preference_predictor_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-11.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: null
+  selection_metric: null
+  rationale: fixed statistical predictor
+
+supersedes: []
+superseded_by: []
+role: cross-validated predictive synthesis
