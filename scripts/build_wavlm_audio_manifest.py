@@ -12,10 +12,10 @@ NEEDED = [
     "loudness_relative_lu","phoneme_articulation_rate","rate_relative_ratio"
 ]
 
-def esd_path(row: pd.Series) -> str:
+def esd_path(row: pd.Series, standardized_root: Path) -> str:
     stem = Path(row["source_parquet"]).stem
     return str(
-        Path("/data/lc/dataset/standardized_audio_16k_mono_flac/esd/data/embedded/en")
+        standardized_root / "esd/data/embedded/en"
         / str(row["speaker_id"]) / str(row["emotion_raw"])
         / f"{stem}_row{int(row['source_row_index']):06d}.flac"
     )
@@ -27,6 +27,7 @@ def main():
     cfg=yaml.safe_load(Path(args.config).read_text())
     src=Path(os.environ[cfg["dataset"]["source_env"]]).resolve()
     locroot=Path(os.environ[cfg["dataset"]["locator_root_env"]]).resolve()
+    standardized_root=Path(os.environ[cfg["dataset"]["standardized_audio_root_env"]]).resolve()
     outroot=Path(cfg["outputs"]["artifact_root"]); outroot.mkdir(parents=True,exist_ok=True)
     df=pd.read_parquet(src,columns=NEEDED)
     df=df[df.dataset.isin(cfg["dataset"]["datasets"])].copy()
@@ -38,7 +39,7 @@ def main():
     paths=[]
     for _,r in df.iterrows():
         if r.dataset=="esd_english":
-            paths.append(esd_path(r))
+            paths.append(esd_path(r, standardized_root))
         else:
             paths.append(path_map.get(str(r.sample_id),""))
     df["audio_path"]=paths
