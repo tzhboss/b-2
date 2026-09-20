@@ -1,0 +1,27 @@
+schema_version: 1
+experiment_id: EXP-20260920-12
+runtime_commit: f3456f6b1701d9db0cac095db9361d5dafc56efd
+protocol_reference: configs/protocols/reference_frame_router_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-12.yaml
+audit_reference: experiments/EXP-20260920-12/audit.md
+files:
+- path: router_by_corpus.csv
+  source_artifact: artifacts/EXP-20260920-12/router_by_corpus.csv
+  sha256: 1377c6d65f96df4c74dae9c379286466d623c12ff4bbf6fd558c706e0c5090df
+  purpose: Audited EXP-12 held-out-corpus router result.
+- path: router_cells.csv
+  source_artifact: artifacts/EXP-20260920-12/router_cells.csv
+  sha256: 60f28deeb4dd2370c55102f74a5cc1dfeebf556a44436bb223bc8081b2d1d9e6
+  purpose: Audited EXP-12 held-out-corpus router result.
+- path: router_summary.csv
+  source_artifact: artifacts/EXP-20260920-12/router_summary.csv
+  sha256: 3c0e1c3630495e1da1d6b73a94053ce2929044a753620326ee21638fcd17c75f
+  purpose: Audited EXP-12 held-out-corpus router result.
+- path: run_metadata.json
+  source_artifact: artifacts/EXP-20260920-12/run_metadata.json
+  sha256: bdc38ae22bb6b17ea561dbe1485cef72df1a79fde39f846241082e8193de3cbc
+  purpose: Audited EXP-12 held-out-corpus router result.
+promotion:
+  audited: true
+  selected_by_rule: true
+  promoted_at: '2026-09-20T15:14:33+00:00'
