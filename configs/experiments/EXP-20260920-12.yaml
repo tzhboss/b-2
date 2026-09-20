@@ -1,0 +1,11 @@
+schema_version: 1
+experiment_id: EXP-20260920-12
+sources:
+  loco_predictions: results/EXP-20260920-11/loco_predictions.csv
+  pitch_summary: results/EXP-20260920-09/per_emotion_summary.csv
+  multi_attribute_summary: results/EXP-20260920-10/per_emotion_summary.csv
+parameters:
+  router_family: stats_only
+outputs:
+  artifact_root: artifacts/EXP-20260920-12
+entrypoint: scripts/run_reference_frame_router.py

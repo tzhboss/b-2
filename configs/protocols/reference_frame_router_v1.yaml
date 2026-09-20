@@ -1,0 +1,66 @@
+schema_version: 1
+protocol_id: PROTO-REFERENCE-FRAME-ROUTER-V1
+title: Held-out-corpus routing between Absolute and Relative prosody
+
+research_question_scope: >
+  Evaluate whether out-of-sample reference-frame preference predictions can be used as a practical
+  router that selects Absolute or Relative representation per corpus/attribute/emotion cell and
+  improves achieved emotion F1 over fixed reference-frame policies.
+
+scope_note: >
+  Routing uses the already-generated EXP-11 leave-one-corpus-out predictions. No new target-corpus
+  model fitting or tuning is performed here.
+
+policies:
+  - always_absolute
+  - always_relative
+  - labels_only_router
+  - stats_only_router
+  - combined_router
+  - oracle_router
+
+controls:
+  - Use only EXP-11 leave-one-corpus-out predictions for adaptive routers.
+  - Each adaptive prediction was produced with the entire target corpus held out.
+  - Use the same speaker-balanced per-emotion F1 cell outcomes from EXP-09/10.
+  - Every corpus/attribute/emotion cell receives equal weight in the primary aggregate.
+  - Report all 75 cells and the 43 resolved-effect cells separately.
+  - Oracle router is an upper bound only and selects the better observed reference frame per cell.
+  - No threshold tuning; predicted_positive >= 0.5 from EXP-11 directly selects Relative.
+
+metrics:
+  - mean_achieved_f1
+  - mean_oracle_regret
+  - fraction_oracle_choice
+  - mean_gain_vs_always_absolute
+  - mean_gain_vs_always_relative
+
+criteria:
+  acceptance:
+    - >
+      Practical routing is supported if stats-only router mean achieved F1 exceeds the better of
+      always-Absolute and always-Relative by at least 0.005 across all 75 cells.
+    - >
+      Regret reduction is supported if stats-only mean oracle regret is <= 0.75 times the regret
+      of the better fixed policy.
+    - >
+      Corpus robustness is supported if stats-only router beats the better fixed policy within
+      at least three of five held-out corpora.
+  rejection:
+    - >
+      Reject useful routing if stats-only does not beat the better fixed policy overall and has
+      oracle regret >= the better fixed policy.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-12/router_cells.csv
+  - artifacts/EXP-20260920-12/router_summary.csv
+  - artifacts/EXP-20260920-12/router_by_corpus.csv
+  - artifacts/EXP-20260920-12/run_metadata.json
+
+required_audits:
+  - Confirm 75 unique cells.
+  - Confirm router predictions are leave-one-corpus-out outputs from EXP-11.
+  - Confirm no cell is routed using a model trained on its own corpus.
+  - Confirm policy F1s reconstruct exactly from EXP-09/10 per-emotion summaries.
