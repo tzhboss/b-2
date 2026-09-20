@@ -1,51 +1,52 @@
 # Experiment Audit — EXP-20260920-04
 
 ## Identity
+
 - Experiment ID: EXP-20260920-04
-- Runtime commit: fe8ad19a082e6ebb995f668989272c7d8fccf518
+- Runtime preregistration commit: ebaea6b
 - Protocol: configs/protocols/wavlm_layerwise_pitch_v1.yaml
-- Config: configs/experiments/EXP-20260920-04.yaml
+- Experiment config: configs/experiments/EXP-20260920-04.yaml
 
 ## Embedding Audit
-- 50,669 unique sample IDs.
-- 25 pooled hidden states per sample, each 1024-D.
+
+- 50,669 unique samples.
+- 25 hidden states per sample, each 1024 dimensions.
+- Seven extraction shards, all exit code 0.
 - All values finite.
-- Seven extraction shards completed successfully.
-- Identical WavLM checkpoint SHA256 across shards.
-- WavLM eval mode enabled and all parameters gradient-disabled.
+- All shard checkpoint hashes match WavLM-large used in EXP-03.
+- All shards ran in eval mode with gradients disabled.
 
-## Evaluation Completeness
+## Evaluation Audit
+
 - Pitch decodability fold rows: 2,700 / 2,700 expected.
+- Pitch summary rows: 225 / 225 expected.
 - Emotion fold rows: 288 / 288 expected.
+- Emotion summary rows: 24 / 24 expected.
 - Emotion paired-delta rows: 24 / 24 expected.
-- Dataset inventories: 3 / 3 expected.
-- NaN metrics: zero.
-- Seeds: 20260920, 20260921, 20260922.
-- Folds: four per seed.
-- Conditional layers were fixed at 12 and 24 before execution.
+- Metric NaNs: zero.
+- Same frozen layers 12 and 24 were used as preregistered.
 
-## Registered Conditional-Effect Criterion
-Layer-12 Relative-minus-Absolute emotion macro-F1:
-- ESD: +0.001303, CI [+0.000679,+0.001899].
-- MEAD: +0.000085, CI [-0.000574,+0.000714].
-- RAVDESS: +0.001592, CI [-0.001040,+0.004920].
+## Registered Criterion Evaluation
 
-Layer-24 Relative-minus-Absolute:
-- ESD: +0.000380.
-- MEAD: -0.000122.
-- RAVDESS: +0.000556.
+Layer-dependent pitch structure is supported.
 
-Layer-12 minus layer-24 effect differences are +0.000924 / +0.000207 / +0.001037 for ESD / MEAD / RAVDESS. None reach the preregistered +0.0025 threshold in two datasets. The strict rejection rule is also not met because RAVDESS exceeds the 0.001 equality threshold. Therefore the conditional-effect hypothesis is inconclusive.
+For relative-pitch decodability, the maximum preregistered block-level R2 difference is:
+- ESD-English: 0.0711.
+- MEAD-part0: 0.0853.
+- RAVDESS-speech: 0.1012.
 
-## Registered Layer-Structure Criterion
-Mean blockwise cross-validated R2 for relative pitch changes by:
-- ESD: max-min = 0.0711.
-- MEAD: max-min = 0.0853.
-- RAVDESS: max-min = 0.1012.
+Thus at least one pitch target changes by more than 0.05 across preregistered layer blocks in all three datasets.
 
-This exceeds the preregistered 0.05 threshold in all three datasets. RAVDESS absolute-pitch block span is also 0.0562. Thus layer-dependent pitch structure is supported.
+The middle-layer conditional emotion hypothesis is not supported:
+- ESD Relative-minus-Absolute: layer 12 +0.00130 vs layer 24 +0.00038.
+- MEAD: +0.00009 vs -0.00012.
+- RAVDESS: +0.00159 vs +0.00056.
 
-## Verdict
+No two datasets meet the registered >=0.0025 layer-12-over-layer-24 difference with layer-12 CI above zero. The strict rejection criterion is also not met because RAVDESS differs by slightly more than 0.001.
+
+## Audit Verdict
+
 - Validity: valid.
-- Overall decision field: inconclusive, because the primary middle-vs-final conditional effect is not established.
-- Secondary preregistered finding: layer-dependent pitch structure supported.
+- Decision: mixed.
+- Layer-dependent pitch structure: supported.
+- Middle-layer conditional reference-frame effect: inconclusive.

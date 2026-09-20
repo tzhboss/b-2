@@ -1,43 +1,55 @@
 schema_version: 1
 experiment_id: EXP-20260920-04
-runtime_commit: fe8ad19a082e6ebb995f668989272c7d8fccf518
+runtime_commit: ebaea6b
 protocol_reference: configs/protocols/wavlm_layerwise_pitch_v1.yaml
 experiment_config_reference: configs/experiments/EXP-20260920-04.yaml
 audit_reference: experiments/EXP-20260920-04/audit.md
 files:
+- path: _results_manifest.yaml
+  source_artifact: artifacts/EXP-20260920-04/_results_manifest.yaml
+  sha256: fb10098bc9cf55457f9fe24cb77ba8caffc0b25a1af04fd33dfc9459d924df23
+  purpose: Audited EXP-04 layer-wise result artifact.
+- path: conditional_layer_check.csv
+  source_artifact: artifacts/EXP-20260920-04/conditional_layer_check.csv
+  sha256: 74215ab9b2f4873886db07f3610a17bcf00280cdd9101bdb10066a10b77d73ac
+  purpose: Audited EXP-04 layer-wise result artifact.
 - path: data_inventory.csv
   source_artifact: artifacts/EXP-20260920-04/data_inventory.csv
   sha256: 416e5e44bfb5975c6f40453d70c00873a0b185442945200d113d7bb2a21a76df
-  purpose: Audited EXP-04 lightweight result artifact.
+  purpose: Audited EXP-04 layer-wise result artifact.
 - path: emotion_metrics_by_fold.csv
   source_artifact: artifacts/EXP-20260920-04/emotion_metrics_by_fold.csv
   sha256: ebf4c1661c398bdb3df0a0f59fcf91c502920897b3dec02e1270bb9b8b51198c
-  purpose: Audited EXP-04 lightweight result artifact.
+  purpose: Audited EXP-04 layer-wise result artifact.
 - path: emotion_paired_deltas.csv
   source_artifact: artifacts/EXP-20260920-04/emotion_paired_deltas.csv
   sha256: e5ea12e473628d08b90f3a6f1535738a3bb2fbbd4474353fdb87a066839afad9
-  purpose: Audited EXP-04 lightweight result artifact.
+  purpose: Audited EXP-04 layer-wise result artifact.
 - path: emotion_summary.csv
   source_artifact: artifacts/EXP-20260920-04/emotion_summary.csv
   sha256: b87dbef7196736dcbbfdbfc297890fbf83170a9bc3560ea7c032bdaf278e26ad
-  purpose: Audited EXP-04 lightweight result artifact.
+  purpose: Audited EXP-04 layer-wise result artifact.
+- path: layer_block_decodability.csv
+  source_artifact: artifacts/EXP-20260920-04/layer_block_decodability.csv
+  sha256: 3d8eec97c863a5c133bc1c6050fbc2605b4874218f3a7ac44169b79101943890
+  purpose: Audited EXP-04 layer-wise result artifact.
 - path: layer_embedding_inventory.json
   source_artifact: artifacts/EXP-20260920-04/layer_embedding_inventory.json
   sha256: db2d50f0d9f408c64f82e58570053f9f41924fe16cad78d5a6329329c9fbd687
-  purpose: Audited EXP-04 lightweight result artifact.
+  purpose: Audited EXP-04 layer-wise result artifact.
 - path: pitch_decodability_by_fold.csv
   source_artifact: artifacts/EXP-20260920-04/pitch_decodability_by_fold.csv
   sha256: 12dc1c7a054eeca90ac3308b564b6738b911a86cb6740b60a3b3f685a259aa21
-  purpose: Audited EXP-04 lightweight result artifact.
+  purpose: Audited EXP-04 layer-wise result artifact.
 - path: pitch_decodability_summary.csv
   source_artifact: artifacts/EXP-20260920-04/pitch_decodability_summary.csv
   sha256: 5ca120d643aaf22af10dc661ddaf7546f6944645843eaf73c6d82dab30738c89
-  purpose: Audited EXP-04 lightweight result artifact.
+  purpose: Audited EXP-04 layer-wise result artifact.
 - path: run_metadata.json
   source_artifact: artifacts/EXP-20260920-04/run_metadata.json
-  sha256: f32eb832b90f239cb2096b9613bb4f2d971202ebbb7a1649590714bc8838f43e
-  purpose: Audited EXP-04 lightweight result artifact.
+  sha256: 07c46bdd89afcf103bdc7b95def0098b21902de0abf4ffcf81a2b4fcb6d5cda7
+  purpose: Audited EXP-04 layer-wise result artifact.
 promotion:
   audited: true
-  selected_by_rule: false
-  promoted_at: '2026-09-20T12:53:56Z'
+  selected_by_rule: true
+  promoted_at: '2026-09-20T13:56:21Z'
