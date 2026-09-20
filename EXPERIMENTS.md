@@ -6,3 +6,4 @@
 | EXP-20260920-03 | Frozen WavLM-large plus absolute versus speaker-relative prosody | completed | valid | inconclusive | PROTO-PROSODY-REF-WAVLM-V1 | EXP-20260920-02 |
 | EXP-20260920-04 | Layer-wise absolute and speaker-relative pitch structure in WavLM-large | completed | valid | inconclusive | PROTO-WAVLM-LAYERWISE-PITCH-V1 | EXP-20260920-03 |
 | EXP-20260920-05 | Unseen-speaker K-shot pitch reference estimation | completed | valid | pass | PROTO-UNSEEN-SPEAKER-KSHOT-PITCH-V1 | EXP-20260920-02, EXP-20260920-04 |
+| EXP-20260920-06 | Frozen WavLM plus K-shot relative pitch for unseen speakers | planned | unchecked | pending | PROTO-WAVLM-UNSEEN-KSHOT-PITCH-V1 | EXP-20260920-03, EXP-20260920-05 |

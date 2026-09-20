@@ -1,0 +1,57 @@
+schema_version: 1
+protocol_id: PROTO-WAVLM-UNSEEN-KSHOT-PITCH-V1
+title: Frozen WavLM plus K-shot speaker-relative pitch under unseen-speaker evaluation
+
+research_question_scope: >
+  Test whether explicit K-shot speaker-relative pitch adds emotion information beyond frozen
+  WavLM-large when classifier train/test speakers are disjoint and speaker baselines are estimated
+  only from the exact unlabeled enrollment pools frozen in EXP-20260920-05.
+
+allowed_datasets: [esd_english, mead_part0, ravdess_speech]
+
+controls:
+  - Reuse EXP-20260920-05 enrollment_inventory.csv exactly.
+  - Reconstruct the same speaker folds and target exclusions as EXP-20260920-05.
+  - Reuse the frozen final-layer mean-pooled WavLM-large embeddings from EXP-20260920-03.
+  - No WavLM fine-tuning.
+  - Compare only preregistered conditions: WavLM-only, WavLM+Absolute, WavLM+Relative-K1,
+    WavLM+Relative-K10, WavLM+Hybrid-K1, WavLM+Hybrid-K10.
+  - Same RidgeClassifier and train-only StandardScaler for every condition.
+  - Evaluate each corpus separately.
+
+forbidden_uses:
+  - Do not change enrollment samples, speaker folds, or target rows after seeing results.
+  - Do not select a WavLM layer using EXP-20260920-04 outcomes; use final layer only.
+  - Do not use test targets to estimate speaker baseline.
+  - Do not fine-tune the speech encoder.
+
+criteria:
+  acceptance:
+    - >
+      Support conditional K-shot reference-frame benefit if WavLM+Relative-K10 exceeds
+      WavLM+Absolute by at least +0.005 macro-F1 with paired-bootstrap 95% CI above zero in
+      at least two datasets.
+    - >
+      Support reference-budget dependence beyond WavLM if WavLM+Relative-K10 exceeds
+      WavLM+Relative-K1 by at least +0.0025 with CI above zero in at least two datasets.
+  rejection:
+    - >
+      Reject added reference-frame benefit if Relative-K10 minus Absolute has absolute mean
+      below 0.0025 in all three datasets.
+  inconclusive:
+    - Otherwise mark inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-06/data_inventory.csv
+  - artifacts/EXP-20260920-06/metrics_by_fold.csv
+  - artifacts/EXP-20260920-06/summary.csv
+  - artifacts/EXP-20260920-06/paired_deltas.csv
+  - artifacts/EXP-20260920-06/target_hash_checks.csv
+  - artifacts/EXP-20260920-06/run_metadata.json
+
+required_audits:
+  - Confirm WavLM embedding coverage for every target row.
+  - Confirm WavLM checkpoint hash matches EXP-20260920-03.
+  - Confirm enrollment inventory hash matches EXP-20260920-05 result artifact.
+  - Confirm identical test target hashes with EXP-20260920-05 for every dataset/seed/fold.
+  - Confirm no speaker overlap and all planned conditions complete.

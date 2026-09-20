@@ -1,0 +1,37 @@
+schema_version: 1
+experiment_id: EXP-20260920-06
+title: Frozen WavLM plus K-shot relative pitch for unseen speakers
+
+research_question: >
+  Does explicit K-shot speaker-relative pitch still improve emotion classification beyond frozen
+  WavLM when speakers are disjoint between classifier train and test?
+
+registered_hypothesis: >
+  The large K-shot relative-pitch advantage from EXP-20260920-05 will shrink after adding WavLM,
+  but a measurable benefit should remain under unseen-speaker evaluation because WavLM final-layer
+  embeddings do not explicitly normalize each unseen speaker using enrollment audio. K=10 should
+  outperform K=1 if reference quality remains relevant after conditioning on WavLM.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-03, EXP-20260920-05]
+protocol_reference: configs/protocols/wavlm_unseen_speaker_kshot_pitch_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-06.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: microsoft-wavlm-large final hidden layer pooled embeddings from EXP-20260920-03
+  selection_rule: fixed before execution
+  selection_metric: null
+  rationale: direct follow-up to EXP-03 and EXP-05 without layer selection
+
+supersedes: []
+superseded_by: []
+role: WavLM-conditioned deployment-realistic reference-budget test
