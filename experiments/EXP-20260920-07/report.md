@@ -1,35 +1,13 @@
 # Experiment Report — EXP-20260920-07
 
-Complete this report only with results that have been audited to the extent required by the protocol.
+The controlled-corpus relative-pitch advantage does not generalize uniformly to natural corpora.
 
-## Registered Hypothesis
+MELD shows a small unresolved positive effect. MSP shows a clear reversal: both oracle relative
+pitch and K=10 label-free relative pitch are worse than absolute pitch under speaker-balanced
+Macro-F1.
 
-Copy or reference the pre-registered hypothesis without rewriting it after results are visible.
+This supports corpus-dependent reference-frame effects and motivates decomposing absolute pitch
+into speaker baseline plus within-speaker deviation to identify which component carries useful
+MSP emotion information.
 
-## Results
-
-Summarize the audited result set and reference files under `results/EXP-20260920-07/`.
-
-## Observation
-
-State only what the evidence directly shows.
-
-## Supported Claim
-
-State the strongest claim justified by the audited evidence.
-
-## Unsupported Stronger Claim
-
-State conclusions that the current evidence does not justify.
-
-## Post-experiment Interpretation
-
-Record mechanistic or causal interpretation separately from direct observation.
-
-## Decision
-
-Record and justify `pass`, `fail`, or `inconclusive` against the protocol criteria.
-
-## Next Step
-
-State the next scientifically legitimate action.
+Decision: inconclusive under the registered two-corpus criterion, with a strong MSP counterexample.
