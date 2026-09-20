@@ -1,0 +1,76 @@
+schema_version: 1
+protocol_id: PROTO-MSP-VAD-TARGET-DECOMPOSITION-V1
+title: Between-speaker versus within-speaker decomposition of MSP VAD
+
+research_question_scope: >
+  Decompose each MSP VAD target into a speaker-level mean and an utterance-level within-speaker
+  residual, then determine whether stable prosodic baselines explain between-speaker VAD structure
+  while speaker-relative prosody better predicts within-speaker VAD deviations.
+
+diagnostic_boundary:
+  - Full-speaker VAD means are used only to define diagnostic target components.
+  - Test-speaker labels are never used as model inputs or fitted statistics.
+  - This experiment does not claim deployment-time access to a test speaker's VAD mean.
+
+dataset:
+  name: msp
+  targets: [valence, arousal, dominance]
+  source: human SAM 1-7 utterance means
+
+controls:
+  - Reuse EXP-16 row filters, transforms, speaker-specific reference scopes, and >10 support rule.
+  - Five speaker-disjoint folds and three fixed seeds.
+  - Equal total training/evaluation weight per speaker for utterance-level residual prediction.
+  - Fixed Ridge(alpha=1.0), train-only weighted scaling.
+  - No target-specific tuning.
+
+analyses:
+  variance_decomposition:
+    - Equal-speaker between variance of speaker VAD means.
+    - Mean within-speaker VAD variance.
+    - ICC-like between/(between+within) fraction.
+  between_speaker:
+    unit: speaker
+    features:
+      - prosodic_baseline
+      - marginal_absolute
+      - marginal_relative
+      - baseline_plus_marginal_relative
+    metric: CCC
+  within_speaker:
+    unit: utterance
+    target: VAD minus full-speaker VAD mean
+    representations:
+      - absolute
+      - relative
+      - baseline_only
+      - relative_plus_baseline
+    primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      Between-speaker affect structure is supported if the ICC-like fraction is at least 0.10 for
+      Arousal or Dominance.
+    - >
+      Stable-baseline predictive structure is supported if all-attribute prosodic baseline predicts
+      speaker-mean Arousal or Dominance with cross-validated CCC >=0.20.
+    - >
+      Within-speaker Relative recovery is supported if Relative-minus-Absolute residual CCC is at
+      least +0.02 with paired-bootstrap 95% CI above zero in at least two attribute sets for
+      Arousal or Dominance.
+  rejection:
+    - >
+      Reject the speaker-level explanation if both Arousal and Dominance ICC-like fractions are
+      below 0.05 and all-attribute baseline speaker-mean CCC is below 0.05 for both targets.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-17/variance_decomposition.csv
+  - artifacts/EXP-20260920-17/between_speaker_metrics.csv
+  - artifacts/EXP-20260920-17/between_speaker_summary.csv
+  - artifacts/EXP-20260920-17/within_speaker_metrics.csv
+  - artifacts/EXP-20260920-17/within_speaker_summary.csv
+  - artifacts/EXP-20260920-17/within_speaker_deltas.csv
+  - artifacts/EXP-20260920-17/run_metadata.json

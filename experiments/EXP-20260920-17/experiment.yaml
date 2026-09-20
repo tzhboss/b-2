@@ -1,0 +1,37 @@
+schema_version: 1
+experiment_id: EXP-20260920-17
+title: Does VAD itself contain speaker-level and within-speaker components?
+
+research_question: >
+  Is the Absolute/Hybrid advantage for MSP Arousal and Dominance driven by between-speaker VAD
+  structure that stable prosodic baselines can predict, while Relative prosody better tracks
+  within-speaker VAD residuals?
+
+registered_hypothesis: >
+  Arousal and Dominance will contain meaningful between-speaker variance. Stable prosodic baselines
+  will predict part of the speaker-level mean, while speaker-relative features will recover
+  relative advantage after speaker-mean VAD is removed from the target.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-16]
+protocol_reference: configs/protocols/msp_vad_target_decomposition_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-17.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed Ridge alpha
+  selection_metric: null
+  rationale: diagnostic variance decomposition
+
+supersedes: []
+superseded_by: []
+role: continuous-affect mechanism decomposition
