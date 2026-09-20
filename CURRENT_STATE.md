@@ -2,17 +2,14 @@
 
 ## Phase
 
-MSP VAD disagreement-robustness experiment completed and audited.
+Deployment-realistic K-shot MSP VAD experiment registered; execution pending.
 
-## Main valid VAD findings
+## Active research question
 
-- Raw Arousal/Dominance contain large between-speaker components predictable from stable prosodic baselines.
-- Within-speaker Arousal/Dominance residuals strongly prefer Relative pitch/loudness/all-prosody.
-- Both effects persist among low-disagreement human SAM ratings.
-- A universal monotonic degradation with annotation disagreement is not supported.
+Can K label-free enrollment utterances estimate an unseen speaker's acoustic center well enough
+for K-shot Hybrid prosody to recover raw Arousal/Dominance baseline utility?
 
 ## Next legal step
 
-Test deployment-realistic K-shot unlabeled acoustic enrollment for raw VAD: estimate each unseen
-speaker's acoustic center from K reference utterances and determine whether K-shot Hybrid recovers
-the oracle/marginal speaker-baseline benefit.
+Run EXP-20260920-19 and compare K-shot Hybrid with Absolute, neutral-oracle Hybrid, and diagnostic
+marginal-oracle Hybrid.

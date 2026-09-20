@@ -1,0 +1,35 @@
+schema_version: 1
+experiment_id: EXP-20260920-19
+title: Can unlabeled K-shot speaker audio recover raw VAD baseline utility?
+
+research_question: >
+  Can K unlabeled enrollment utterances from an unseen speaker estimate a useful acoustic center
+  and recover the raw Arousal/Dominance advantage of Hybrid prosody?
+
+registered_hypothesis: >
+  K-shot center estimation error will shrink with K. By K=10, Hybrid K-shot features will improve
+  raw Arousal and Dominance over Absolute and approach a full marginal-speaker oracle.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-16, EXP-20260920-17, EXP-20260920-18]
+protocol_reference: configs/protocols/msp_vad_kshot_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-19.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed Ridge alpha and fixed K values
+  selection_metric: null
+  rationale: deployment-realistic unlabeled enrollment test
+
+supersedes: []
+superseded_by: []
+role: continuous-affect deployment validation

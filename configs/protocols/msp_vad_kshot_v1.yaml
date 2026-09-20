@@ -1,0 +1,75 @@
+schema_version: 1
+protocol_id: PROTO-MSP-VAD-KSHOT-V1
+title: Label-free K-shot acoustic reference estimation for raw MSP VAD
+
+research_question_scope: >
+  Test whether a small label-free enrollment set from an unseen speaker can estimate the stable
+  acoustic center needed to recover Hybrid raw-VAD performance for Arousal and Dominance.
+
+dataset:
+  name: msp
+  targets: [valence, arousal, dominance]
+  attribute_set: [pitch, loudness, rate]
+
+controls:
+  - Use the same all-attribute MSP filtering as EXP-16/18.
+  - Five speaker-disjoint outer folds and three fixed seeds.
+  - K values are fixed at [1,2,5,10].
+  - Select K enrollment utterances uniformly at random within each speaker without VAD labels.
+  - Enrollment utterances are excluded from downstream train/test rows for every representation.
+  - Estimate K-shot speaker acoustic center as the per-dimension median of absolute pitch/loudness/log-rate.
+  - Train speakers and held-out speakers use the same K-shot construction.
+  - Equal total Ridge training/evaluation weight per speaker.
+  - Fixed multi-output Ridge(alpha=1.0), train-only weighted scaling.
+  - Same remaining rows for all representations within K/seed/fold.
+
+representations:
+  - absolute
+  - kshot_relative
+  - kshot_hybrid
+  - neutral_oracle_relative
+  - neutral_oracle_hybrid
+  - marginal_oracle_relative
+  - marginal_oracle_hybrid
+
+diagnostic_boundary:
+  - Neutral oracle uses the precomputed speaker-specific neutral/shrunk reference.
+  - Marginal oracle uses the full eligible speaker acoustic median and is diagnostic only.
+  - Marginal-oracle results must not be described as deployment-valid.
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      K-shot center convergence is supported if K=10 reduces center MAE relative to K=1 by at
+      least 25% for each of pitch, loudness, and log-rate.
+    - >
+      Deployment Hybrid recovery is supported if K=10 Hybrid exceeds matched Absolute by at least
+      +0.015 CCC for Arousal and +0.010 CCC for Dominance, with paired-bootstrap 95% CIs above zero.
+    - >
+      Oracle recovery is supported if K=10 Hybrid is within 0.02 CCC of marginal-oracle Hybrid for
+      both Arousal and Dominance.
+  rejection:
+    - >
+      Reject practical recovery if K=10 Hybrid fails to exceed Absolute for both Arousal and
+      Dominance and remains more than 0.03 below marginal-oracle Hybrid for both.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-19/data_inventory.csv
+  - artifacts/EXP-20260920-19/center_error_by_speaker.csv
+  - artifacts/EXP-20260920-19/center_error_summary.csv
+  - artifacts/EXP-20260920-19/metrics_by_fold.csv
+  - artifacts/EXP-20260920-19/summary.csv
+  - artifacts/EXP-20260920-19/paired_deltas.csv
+  - artifacts/EXP-20260920-19/run_metadata.json
+
+required_audits:
+  - Confirm speaker-disjoint folds.
+  - Confirm enrollment selection is label-free.
+  - Confirm enrollment/evaluation row overlap is zero.
+  - Confirm matched rows across representations.
+  - Confirm marginal oracle is flagged diagnostic.
+  - Confirm all K/seeds/folds/targets/representations complete.
