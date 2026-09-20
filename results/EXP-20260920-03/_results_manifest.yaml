@@ -1,0 +1,43 @@
+schema_version: 1
+experiment_id: EXP-20260920-03
+runtime_commit: 68f446a4aae9c18f55dfbee4e78857cbd9e5f1ae
+protocol_reference: configs/protocols/prosody_reference_frame_wavlm_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-03.yaml
+audit_reference: experiments/EXP-20260920-03/audit.md
+files:
+- path: audio_manifest.parquet
+  source_artifact: artifacts/EXP-20260920-03/audio_manifest.parquet
+  sha256: ee21bc8868fd0399cab9419ef30a2b162a6cd9572fe3abb3b5055f889b9459fb
+  purpose: Audited sample-to-standardized-audio manifest used for WavLM extraction.
+- path: audio_mapping_exclusions.parquet
+  source_artifact: artifacts/EXP-20260920-03/audio_mapping_exclusions.parquet
+  sha256: 354b84937962ef9457864a068d498579e6241d8b31a36d4101b3a314cd6c287a
+  purpose: Recorded missing-audio exclusions.
+- path: embedding_inventory.json
+  source_artifact: artifacts/EXP-20260920-03/embedding_inventory.json
+  sha256: c10849684196584df1e236879d132b92e97976ab3d95678a319c2225d837e6ed
+  purpose: Embedding coverage, dimension, checkpoint hash, and frozen/eval audit.
+- path: data_inventory.csv
+  source_artifact: artifacts/EXP-20260920-03/data_inventory.csv
+  sha256: 6bc385cf4efb6165db0d3ae7839ae5446fe84a6767422d0af6b68b4af88a1c66
+  purpose: Per-dataset/task/attribute usable-row inventory and row hashes.
+- path: metrics_by_fold.csv
+  source_artifact: artifacts/EXP-20260920-03/metrics_by_fold.csv
+  sha256: 5ed2d80d41a34f6a34a3bf3f3f438d08d5fde2c08c5c0ed8e46b23ac13c0b648
+  purpose: Audited fold-level WavLM probe metrics.
+- path: summary.csv
+  source_artifact: artifacts/EXP-20260920-03/summary.csv
+  sha256: 4cbfe507199ad237238a981b3b028874d13788b0364e59a6c35d0d8f247e2a99
+  purpose: Mean and standard-deviation summary across seeds/folds.
+- path: paired_deltas.csv
+  source_artifact: artifacts/EXP-20260920-03/paired_deltas.csv
+  sha256: ed412a7caad117fd4ee224990726facf15737efa6edde690f2b37f0872323724
+  purpose: Paired representation deltas with bootstrap 95% confidence intervals.
+- path: run_metadata.json
+  source_artifact: artifacts/EXP-20260920-03/run_metadata.json
+  sha256: b7984e5d8be5e5912928a4c72be228ac6b9ffe8f888c6379224319474595fb00
+  purpose: Embedding and evaluation runtime metadata.
+promotion:
+  audited: true
+  selected_by_rule: false
+  promoted_at: '2026-09-20T09:28:36Z'

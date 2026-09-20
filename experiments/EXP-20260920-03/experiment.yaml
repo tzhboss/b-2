@@ -16,9 +16,9 @@ registered_hypothesis: >
   augmentation may recover additional trait information but is not required for hypothesis pass.
 
 status:
-  execution: planned
-  validity: unchecked
-  decision: pending
+  execution: completed
+  validity: valid
+  decision: inconclusive
 
 parent_experiments: [EXP-20260920-02]
 
@@ -26,9 +26,9 @@ protocol_reference: configs/protocols/prosody_reference_frame_wavlm_v1.yaml
 experiment_config_reference: configs/experiments/EXP-20260920-03.yaml
 
 runtime:
-  commit: null
+  commit: 68f446a4aae9c18f55dfbee4e78857cbd9e5f1ae
   branch: main
-  seed: null
+  seed: [20260920, 20260921, 20260922]
 
 selected_checkpoint:
   identifier: microsoft-wavlm-large local checkpoint
