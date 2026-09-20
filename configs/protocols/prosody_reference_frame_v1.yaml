@@ -1,0 +1,90 @@
+schema_version: 1
+
+protocol_id: PROTO-PROSODY-REF-FRAME-V1
+title: Task- and attribute-dependent prosodic reference frames
+research_question_scope: >
+  Test whether absolute, speaker-relative, and hybrid explicit prosodic representations
+  preserve different task-relevant information, and whether their relative utility changes
+  across affective-state versus speaker-trait tasks and across pitch, loudness, and speaking rate.
+
+allowed_datasets:
+  - esd_english
+  - mead_part0
+  - ravdess_speech
+
+forbidden_uses:
+  - Do not use test labels to fit scalers, classifiers, or select hyperparameters.
+  - Do not compare different row subsets across reference-frame conditions within the same dataset/task/attribute set.
+  - Do not treat this pilot as evidence for unseen-speaker generalization; speaker identities are intentionally present in every fold.
+  - Do not promote results if the absolute and relative feature definitions cannot be reproduced from recorded source columns.
+
+controls:
+  - Same rows for Absolute, Relative, and Hybrid within each dataset/task/attribute-set comparison.
+  - Same deterministic within-speaker folds for all representation conditions.
+  - Same LogisticRegression classifier and train-only StandardScaler for all representation conditions.
+  - Same three split seeds and five folds for every condition.
+  - Emotion uses the standardized non-empty emotion_5class_candidate label and emotion_training_usable rows.
+  - Gender uses only male/female gender_canonical labels and task_eligible rows.
+  - Relative features use the existing speaker-reference metadata from the legacy derived catalog; this is a reference-available, known-speaker setting.
+
+changed_factors:
+  - reference_frame: [absolute, relative, hybrid]
+  - attribute_set: [pitch, loudness, rate, all]
+  - task: [emotion, gender]
+
+baselines:
+  - absolute
+  - relative
+  - hybrid
+
+metrics:
+  primary:
+    - macro_f1
+  secondary:
+    - accuracy
+    - balanced_accuracy
+    - paired_macro_f1_delta
+    - paired_bootstrap_95ci
+
+required_splits:
+  - Five deterministic folds constructed within each speaker and task label so every represented speaker contributes to train and test.
+required_seeds:
+  - 20260920
+  - 20260921
+  - 20260922
+
+checkpoint_selection_rule: null
+
+criteria:
+  acceptance:
+    - >
+      Task-dependent reference-frame evidence: for at least one matched attribute set in at least
+      two of the three datasets, Relative-Absolute macro-F1 is positive for emotion and negative
+      for gender, both with absolute mean delta >= 0.01 and paired-bootstrap 95% CIs excluding zero.
+    - >
+      Attribute dependence is additionally supported if the Relative-Absolute effect differs in
+      sign or in statistically resolved winner across pitch, loudness, and rate in at least one
+      task for at least two datasets.
+  rejection:
+    - >
+      Reject the registered task-dependent hypothesis if all usable attributes show the same
+      Relative-Absolute direction for emotion and gender across all three datasets, or if all
+      mean absolute deltas are below 0.005 macro-F1.
+  inconclusive:
+    - >
+      Otherwise mark inconclusive, including cases where effect directions fit the hypothesis but
+      paired uncertainty includes zero or usable-row coverage is insufficient.
+
+required_outputs:
+  - artifacts/EXP-20260920-01/data_inventory.csv
+  - artifacts/EXP-20260920-01/metrics_by_fold.csv
+  - artifacts/EXP-20260920-01/summary.csv
+  - artifacts/EXP-20260920-01/paired_deltas.csv
+  - artifacts/EXP-20260920-01/run_metadata.json
+
+required_audits:
+  - Confirm source parquet identity and row counts.
+  - Confirm identical row IDs across reference-frame conditions for each comparison.
+  - Confirm scalers are fit on training folds only.
+  - Confirm all required seeds and folds completed.
+  - Confirm no output promotion before audit.

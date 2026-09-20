@@ -1,0 +1,40 @@
+schema_version: 1
+
+experiment_id: EXP-20260920-01
+title: Absolute vs speaker-relative prosody across affective-state and speaker-trait tasks
+
+research_question: >
+  Does the useful reference frame for explicit prosody depend on both downstream task
+  (emotion state versus gender trait) and acoustic attribute (pitch, loudness, rate)?
+registered_hypothesis: >
+  Speaker-relative prosody will improve emotion classification relative to absolute prosody,
+  whereas absolute prosody will improve gender classification; the magnitude of this trade-off
+  will vary across pitch, loudness, and rate, with pitch expected to show the strongest
+  trait-versus-state contrast. Hybrid features may recover complementary information and remain
+  competitive with the better single reference frame.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: []
+
+protocol_reference: configs/protocols/prosody_reference_frame_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-01.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: null
+  selection_metric: null
+  rationale: null
+
+supersedes: []
+superseded_by: []
+
+role: first controlled pilot of task-by-attribute prosodic reference-frame hypothesis

@@ -1,0 +1,44 @@
+schema_version: 1
+
+experiment_id: EXP-20260920-01
+model: logistic_regression
+dataset:
+  source_env: PROSODY_ENRICHED_PARQUET
+  datasets:
+    - esd_english
+    - mead_part0
+    - ravdess_speech
+seed:
+  - 20260920
+  - 20260921
+  - 20260922
+entrypoint: scripts/run_reference_frame_probe.py
+
+parameters:
+  n_splits: 5
+  classifier:
+    C: 1.0
+    class_weight: balanced
+    max_iter: 3000
+  tasks:
+    emotion:
+      label: emotion_5class_candidate
+    gender:
+      label: gender_canonical
+  attribute_sets:
+    pitch: [pitch]
+    loudness: [loudness]
+    rate: [rate]
+    all: [pitch, loudness, rate]
+  representations:
+    - absolute
+    - relative
+    - hybrid
+  bootstrap_reps: 10000
+
+resources:
+  device: cpu
+  python_env: /data/lc/audio_feature_labeling/.venv
+
+outputs:
+  artifact_root: artifacts/EXP-20260920-01

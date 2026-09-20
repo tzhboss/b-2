@@ -4,24 +4,25 @@ This file is the canonical short current-state summary. Keep it approximately 50
 
 ## Phase
 
-Repository bootstrap / research question not yet registered.
+First controlled experiment registered; execution pending.
 
 ## Active research question
 
-None registered.
+Does the useful reference frame for explicit prosody depend on both downstream task
+(emotion state versus gender trait) and acoustic attribute (pitch, loudness, rate)?
 
 ## Valid evidence
 
-None registered.
+None yet. EXP-20260920-01 is registered but not yet executed/audited.
 
 ## Recent key experiments
 
-None. No experiment has been created during bootstrap.
+- EXP-20260920-01 — Absolute vs speaker-relative prosody across affective-state and speaker-trait tasks. Status: planned.
 
 ## Blocker
 
-A concrete research question and evidence protocol have not yet been registered.
+None for the registered pilot. Formal result promotion remains blocked until execution and audit complete.
 
 ## Next legal step
 
-Define the first active research question, create its protocol under `configs/protocols/`, then register the first real experiment from `experiments/_TEMPLATE/` with a matching experiment config.
+Execute EXP-20260920-01 under PROTO-PROSODY-REF-FRAME-V1, audit required outputs, then update authoritative experiment status before promoting any result.
