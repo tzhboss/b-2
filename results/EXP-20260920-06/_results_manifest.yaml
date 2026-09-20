@@ -1,0 +1,35 @@
+schema_version: 1
+experiment_id: EXP-20260920-06
+runtime_commit: ee22d9627dd2bdf133fe84a1ae1b178d8c4140f8
+protocol_reference: configs/protocols/reference_target_diagnostic_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-06.yaml
+audit_reference: experiments/EXP-20260920-06/audit.md
+files:
+- path: metrics_by_fold.csv
+  source_artifact: artifacts/EXP-20260920-06/metrics_by_fold.csv
+  sha256: 29e437ba3bceef906764ac7d9bf0fea02aeae894170883478bf6494cf2e692ac
+  purpose: Audited EXP-06 reference-target diagnostic.
+- path: paired_deltas.csv
+  source_artifact: artifacts/EXP-20260920-06/paired_deltas.csv
+  sha256: 8c375ae0e9a480a8e069e217e22f93539faff7ed9cc2a01319bf4ee3d6201774
+  purpose: Audited EXP-06 reference-target diagnostic.
+- path: reference_error_by_speaker.csv
+  source_artifact: artifacts/EXP-20260920-06/reference_error_by_speaker.csv
+  sha256: 00e0c104a57c980c66fc9f961a646bd893bbafd8a1dccd118891c5ce9578e4fb
+  purpose: Audited EXP-06 reference-target diagnostic.
+- path: reference_error_summary.csv
+  source_artifact: artifacts/EXP-20260920-06/reference_error_summary.csv
+  sha256: 3d119a7d8f918745dac654b62757f994a919ad742c44ca5d302a5e71bc7b2d55
+  purpose: Audited EXP-06 reference-target diagnostic.
+- path: run_metadata.json
+  source_artifact: artifacts/EXP-20260920-06/run_metadata.json
+  sha256: 03a2c9c41e6ce255ba2794af36e299f74d6660c4bfe06e381da00f2406a9b070
+  purpose: Audited EXP-06 reference-target diagnostic.
+- path: summary.csv
+  source_artifact: artifacts/EXP-20260920-06/summary.csv
+  sha256: fab339b9462b42a578b39d2e7d8f277e8cffa840262bb7415d6784197ed9cc28
+  purpose: Audited EXP-06 reference-target diagnostic.
+promotion:
+  audited: true
+  selected_by_rule: true
+  promoted_at: '2026-09-20T14:07:07+00:00'

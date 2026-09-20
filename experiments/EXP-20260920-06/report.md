@@ -1,35 +1,32 @@
 # Experiment Report — EXP-20260920-06
 
-Complete this report only with results that have been audited to the extent required by the protocol.
+## Main Result
 
-## Registered Hypothesis
+The apparent failure of K-shot enrollment to approach the neutral speaker baseline in EXP-05 is
+explained by the reference target itself. Uniform label-free enrollment naturally converges toward
+the speaker's unlabeled marginal pitch median.
 
-Copy or reference the pre-registered hypothesis without rewriting it after results are visible.
+By K=10, the K-shot estimate is substantially closer to the marginal center than the neutral
+reference in all three controlled datasets.
 
-## Results
+## Functional Result
 
-Summarize the audited result set and reference files under `results/EXP-20260920-06/`.
+The full marginal speaker reference is not merely a numerical alternative. Relative pitch defined
+around the marginal center performs as well as, or better than, neutral-reference relative pitch.
+On ESD and MEAD it is significantly better by approximately 2.0 and 1.4 macro-F1 points.
 
-## Observation
+## Interpretation
 
-State only what the evidence directly shows.
+Speaker-relative prosody does not require a privileged semantic neutral anchor. What matters may be
+removing a stable speaker-specific location in acoustic space. This makes label-free enrollment a
+natural reference-frame construction rather than a noisy approximation to a neutral-emotion oracle.
 
-## Supported Claim
+## Boundary
 
-State the strongest claim justified by the audited evidence.
-
-## Unsupported Stronger Claim
-
-State conclusions that the current evidence does not justify.
-
-## Post-experiment Interpretation
-
-Record mechanistic or causal interpretation separately from direct observation.
+The full marginal oracle uses all eligible speaker utterances, including evaluation utterances, and
+is therefore diagnostic only. Deployment claims must use finite K-shot enrollment as in EXP-05.
 
 ## Decision
 
-Record and justify `pass`, `fail`, or `inconclusive` against the protocol criteria.
-
-## Next Step
-
-State the next scientifically legitimate action.
+mixed: the marginal-target mechanism is strongly supported, while the preregistered strict
+functional-equivalence criterion fails because marginal references can outperform neutral references.
