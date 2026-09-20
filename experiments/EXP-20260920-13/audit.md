@@ -1,36 +1,33 @@
 # Experiment Audit — EXP-20260920-13
 
-The execution agent should fill this from observed repository/runtime facts. Unknown facts remain unknown; do not infer them.
+## Result
 
-## Identity
+Nested confidence-aware routing does not improve over the naive EXP-12 stats-only router.
 
-- Experiment ID:
-- Runtime commit:
-- Branch:
-- Protocol:
-- Experiment config:
+Aggregate mean F1:
+- Training-best fixed: 0.2149.
+- Naive stats router: 0.2246.
+- Nested router: 0.2177.
+- Oracle: 0.2306.
 
-## Data and Environment
+Nested gain over fixed is only +0.0028, below the preregistered +0.005 threshold.
+Nested oracle regret is 0.0129, about 82.3% of fixed-policy regret and above the required 75%.
 
-- Data version/hash:
-- Environment/runtime:
-- Seed(s):
+Per-corpus nested gain over training-best fixed:
+- ESD: 0.0000.
+- MEAD: -0.00075.
+- MELD: +0.00503.
+- MSP: +0.01101.
+- RAVDESS: -0.00141.
 
-## Outputs
+Only two corpora improve, so the robustness criterion is not met.
 
-- Expected outputs:
-- Actual outputs:
-- Missing outputs:
-- Checkpoint integrity:
-- Evaluation completeness:
+Selected thresholds are training-only and vary by outer corpus:
+ESD 0.8, MEAD 0.5, MELD 0.7, MSP 0.9, RAVDESS 0.6.
 
-## Protocol Compliance
+## Verdict
 
-- Protocol violations:
-- Deviations and rationale:
-
-## Audit Verdict
-
-- Validity: `unchecked` / `valid` / `invalid`
-- Evidence supporting verdict:
-- Follow-up required:
+- Validity: valid.
+- Decision: reject for the registered confidence-aware routing hypothesis.
+- The naive stats-only router remains the better practical policy in this dataset.
+- No additional threshold tuning is justified from these same corpora.

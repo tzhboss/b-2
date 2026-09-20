@@ -2,14 +2,14 @@
 
 ## Phase
 
-Nested confidence-aware reference-frame router registered; execution pending.
+Nested confidence-aware routing tested and rejected.
 
-## Active research question
+## Main finding
 
-Can training-only confidence threshold selection make adaptive Absolute/Relative routing more
-robust across held-out corpora?
+Confidence abstention weakens the useful adaptive routing signal; the naive stats-only router from
+EXP-12 remains the stronger practical policy.
 
 ## Next legal step
 
-Run EXP-20260920-13 with nested leave-one-corpus-out threshold selection and compare against naive
-routing, training-best fixed policy, and oracle.
+Test classifier-family robustness of Absolute-versus-Relative effects using a fixed nonlinear
+classifier under the same speaker-disjoint folds across pitch, loudness, rate, and five corpora.
