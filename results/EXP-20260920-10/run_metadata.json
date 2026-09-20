@@ -1,0 +1,30 @@
+{
+  "experiment_id": "EXP-20260920-10",
+  "source": "/data/lc/audio_feature_labeling/old/legacy_feature_pipeline/derived/final_dataset_enriched.parquet",
+  "seeds": [
+    20260920,
+    20260921,
+    20260922
+  ],
+  "outer_folds": 5,
+  "attributes": {
+    "loudness": {
+      "absolute_column": "speech_lufs",
+      "relative_column": "loudness_relative_lu",
+      "reference_scope_column": "loudness_reference_scope",
+      "absolute_transform": "identity",
+      "relative_transform": "identity",
+      "conflict_min_abs": 1.0,
+      "conflict_min_rel": 1.0
+    },
+    "rate": {
+      "absolute_column": "phoneme_articulation_rate",
+      "relative_column": "rate_relative_ratio",
+      "reference_scope_column": "rate_reference_scope",
+      "absolute_transform": "log",
+      "relative_transform": "log",
+      "conflict_min_abs": 0.05,
+      "conflict_min_rel": 0.05
+    }
+  }
+}

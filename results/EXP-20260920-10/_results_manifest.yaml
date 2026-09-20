@@ -1,0 +1,39 @@
+schema_version: 1
+experiment_id: EXP-20260920-10
+runtime_commit: b1618a41d51ada1a2f1a69901c5e8351ff47ba0e
+protocol_reference: configs/protocols/multi_attribute_emotion_conflict_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-10.yaml
+audit_reference: experiments/EXP-20260920-10/audit.md
+files:
+- path: conflict_by_fold.csv
+  source_artifact: artifacts/EXP-20260920-10/conflict_by_fold.csv
+  sha256: e4d6be67dd1708c5cc6fad21c02302ff5e7e538f81cf92bfa6df140936e999d9
+  purpose: Audited EXP-10 loudness/rate reference-frame result.
+- path: conflict_summary.csv
+  source_artifact: artifacts/EXP-20260920-10/conflict_summary.csv
+  sha256: 98d8e4263f9a206b42b964b459e191ad10224e5f9bcb4b36045023d6cc8a6b74
+  purpose: Audited EXP-10 loudness/rate reference-frame result.
+- path: data_inventory.csv
+  source_artifact: artifacts/EXP-20260920-10/data_inventory.csv
+  sha256: c6d62801e49e3769c11fc5af102c35a613332135a5be29d3854ac374eab09462
+  purpose: Audited EXP-10 loudness/rate reference-frame result.
+- path: per_emotion_by_fold.csv
+  source_artifact: artifacts/EXP-20260920-10/per_emotion_by_fold.csv
+  sha256: ef470b990584c4c79e8dd0cf58c10a8e6eab49dde714912c7a0ec5751c866557
+  purpose: Audited EXP-10 loudness/rate reference-frame result.
+- path: per_emotion_deltas.csv
+  source_artifact: artifacts/EXP-20260920-10/per_emotion_deltas.csv
+  sha256: 0821457ce5b85a366cef44a2badf0aaa6eb0f78b88167993669459c965af1018
+  purpose: Audited EXP-10 loudness/rate reference-frame result.
+- path: per_emotion_summary.csv
+  source_artifact: artifacts/EXP-20260920-10/per_emotion_summary.csv
+  sha256: a72ea3677e69817b85bf8ed61564009ea59d5a44a1c68175b80add3ce3e8ddda
+  purpose: Audited EXP-10 loudness/rate reference-frame result.
+- path: run_metadata.json
+  source_artifact: artifacts/EXP-20260920-10/run_metadata.json
+  sha256: 22bef4a611ce763e4caceaa740d2270d7c25af5dfaa213539d51d869f5b10d82
+  purpose: Audited EXP-10 loudness/rate reference-frame result.
+promotion:
+  audited: true
+  selected_by_rule: true
+  promoted_at: '2026-09-20T15:01:04+00:00'
