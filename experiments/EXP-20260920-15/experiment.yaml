@@ -1,0 +1,35 @@
+schema_version: 1
+experiment_id: EXP-20260920-15
+title: Which reference-frame effects depend on classifier family?
+
+research_question: >
+  At the emotion-class level, which Absolute-versus-Relative effects are robust and which depend
+  strongly on using a linear versus nonlinear classifier?
+
+registered_hypothesis: >
+  Most large class-level reference-frame effects will retain direction across Logistic and HGB,
+  while a minority of natural-corpus classes will show strong classifier interactions.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-14]
+protocol_reference: configs/protocols/per_emotion_classifier_interaction_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-15.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed preregistered classifier families
+  selection_metric: null
+  rationale: mechanism robustness
+
+supersedes: []
+superseded_by: []
+role: class-level classifier interaction diagnostic

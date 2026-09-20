@@ -1,0 +1,48 @@
+schema_version: 1
+protocol_id: PROTO-PER-EMOTION-CLASSIFIER-INTERACTION-V1
+title: Per-emotion classifier-family interaction in prosodic reference frames
+
+research_question_scope: >
+  Determine whether Absolute-versus-Relative and baseline-addition effects are stable at the
+  emotion-class level when replacing LogisticRegression with a fixed HistGradientBoosting model.
+
+allowed_datasets: [esd_english, mead_part0, ravdess_speech, msp, meld]
+attributes: [pitch, loudness, rate]
+representations: [absolute, relative, relative_plus_baseline]
+classifier_families: [logistic, hgb]
+
+controls:
+  - Reuse EXP-14 filtering, transforms, speaker-disjoint folds, seeds, and fixed classifier hyperparameters.
+  - Same held-out rows for both classifier families and all representations.
+  - Primary metric is speaker-balanced one-vs-rest F1 for each emotion class.
+  - No hyperparameter tuning after execution.
+
+criteria:
+  acceptance:
+    - >
+      Class-level robustness is supported if Spearman correlation between Logistic and HGB
+      Relative-minus-Absolute deltas across all 75 corpus-by-attribute-by-emotion cells is >= 0.50.
+    - >
+      Direction robustness is supported if sign agreement is >= 0.75 among cells where absolute
+      Logistic Relative-minus-Absolute delta is >= 0.03.
+    - >
+      Baseline-mechanism class robustness is supported if sign agreement is >= 0.70 among cells
+      where absolute Logistic Relative+Baseline-minus-Relative delta is >= 0.03.
+  diagnostic:
+    - >
+      A cell is classifier-sensitive if the interaction
+      (HGB Relative-minus-Absolute) - (Logistic Relative-minus-Absolute)
+      has absolute magnitude >= 0.05.
+  rejection:
+    - >
+      Reject broad class-level robustness if Spearman correlation < 0.25 and direction agreement
+      < 0.60 on large Logistic cells.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-15/per_emotion_by_fold.csv
+  - artifacts/EXP-20260920-15/per_emotion_summary.csv
+  - artifacts/EXP-20260920-15/per_emotion_deltas.csv
+  - artifacts/EXP-20260920-15/classifier_interactions.csv
+  - artifacts/EXP-20260920-15/run_metadata.json
