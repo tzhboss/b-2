@@ -1,0 +1,35 @@
+schema_version: 1
+experiment_id: EXP-20260920-13
+title: Can nested confidence-aware routing improve corpus robustness?
+
+research_question: >
+  Can a threshold selected entirely within training corpora reduce harmful reference-frame switches
+  on a held-out corpus while preserving the large gains from adaptive routing?
+
+registered_hypothesis: >
+  Confidence-aware abstention will retain the aggregate benefit of stats-only routing while
+  improving per-corpus robustness relative to the naive 0.5 decision rule.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-12]
+protocol_reference: configs/protocols/nested_confidence_router_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-13.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: nested training-only threshold selection
+  selection_metric: mean achieved F1
+  rationale: fixed grid preregistered before execution
+
+supersedes: []
+superseded_by: []
+role: robust policy-learning follow-up

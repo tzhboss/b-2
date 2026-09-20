@@ -2,14 +2,14 @@
 
 ## Phase
 
-Held-out-corpus reference-frame routing completed and audited.
+Nested confidence-aware reference-frame router registered; execution pending.
 
-## Main finding
+## Active research question
 
-Stats-only leave-one-corpus-out routing improves mean F1 by +0.0096 over the best fixed policy and
-reduces oracle regret by about 61.5%, but gains are not positive in every corpus.
+Can training-only confidence threshold selection make adaptive Absolute/Relative routing more
+robust across held-out corpora?
 
 ## Next legal step
 
-Run a nested confidence-aware router: choose confidence threshold and fallback using only inner
-training-corpus cross-validation, then apply the selected policy to the untouched outer corpus.
+Run EXP-20260920-13 with nested leave-one-corpus-out threshold selection and compare against naive
+routing, training-best fixed policy, and oracle.

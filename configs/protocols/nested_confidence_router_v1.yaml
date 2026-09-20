@@ -1,0 +1,61 @@
+schema_version: 1
+protocol_id: PROTO-NESTED-CONFIDENCE-ROUTER-V1
+title: Nested confidence-aware Absolute/Relative routing
+
+research_question_scope: >
+  Test whether confidence-aware abstention and a training-only fixed-policy fallback improve
+  corpus robustness of the EXP-12 stats-only reference-frame router.
+
+outer_split:
+  leave_one_corpus_out: true
+
+inner_selection:
+  leave_one_training_corpus_out: true
+  candidate_probability_thresholds: [0.50, 0.60, 0.70, 0.80, 0.90]
+  selection_metric: mean_achieved_f1
+  tie_break: higher_threshold
+  fallback: better fixed policy estimated from the current training corpora only
+
+routing_rule:
+  - If P(Relative) >= threshold, choose Relative.
+  - If P(Relative) <= 1-threshold, choose Absolute.
+  - Otherwise choose the training-only fallback fixed policy.
+
+controls:
+  - Use the exact EXP-11 stats-only numeric feature matrix and targets.
+  - LogisticRegression C=1, class_weight=balanced, train-only StandardScaler.
+  - Outer test corpus is never used for threshold selection, fallback selection, scaling, or fitting.
+  - Inner held-out corpus is never used for its own model fitting or fallback estimation.
+  - Compare against EXP-12 naive stats-only router, outer-training-best fixed policy, and oracle.
+  - No threshold grid changes after observing results.
+
+criteria:
+  acceptance:
+    - >
+      Aggregate utility is supported if nested router improves mean F1 over the outer-training-best
+      fixed policy by at least 0.005.
+    - >
+      Robustness is supported if nested router beats the outer-training-best fixed policy in at
+      least three of five outer corpora and is not worse by more than 0.005 in any corpus.
+    - >
+      Regret reduction is supported if nested router mean oracle regret is <= 0.75 times the
+      outer-training-best fixed policy regret.
+  rejection:
+    - >
+      Reject confidence-aware routing if nested routing has lower mean F1 than naive EXP-12
+      stats-only routing and fails the robustness criterion.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-13/nested_router_cells.csv
+  - artifacts/EXP-20260920-13/inner_threshold_selection.csv
+  - artifacts/EXP-20260920-13/nested_router_summary.csv
+  - artifacts/EXP-20260920-13/nested_router_by_corpus.csv
+  - artifacts/EXP-20260920-13/run_metadata.json
+
+required_audits:
+  - Confirm five outer corpora and four inner held-out corpora per outer split.
+  - Confirm threshold and fallback are selected without outer-corpus information.
+  - Confirm every outer cell receives exactly one nested-router decision.
+  - Confirm policy F1s match EXP-12 source cells.

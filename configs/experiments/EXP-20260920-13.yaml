@@ -1,0 +1,11 @@
+schema_version: 1
+experiment_id: EXP-20260920-13
+sources:
+  effect_matrix: results/EXP-20260920-11/effect_matrix.csv
+  router_cells: results/EXP-20260920-12/router_cells.csv
+parameters:
+  thresholds: [0.50, 0.60, 0.70, 0.80, 0.90]
+  logistic_C: 1.0
+outputs:
+  artifact_root: artifacts/EXP-20260920-13
+entrypoint: scripts/run_nested_confidence_router.py
