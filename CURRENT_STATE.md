@@ -2,21 +2,20 @@
 
 ## Phase
 
-Unseen-speaker K-shot pitch-reference experiment registered; execution pending.
+Reference-target diagnostic registered; execution pending.
 
 ## Active research question
 
-How much label-free reference audio is required to estimate a useful speaker pitch baseline for
-emotion classification on entirely unseen speakers?
+Does label-free K-shot relative pitch work because it estimates a speaker's unlabeled marginal
+pitch center rather than the neutral-derived reference?
 
 ## Valid evidence
 
-- EXP-20260920-02: explicit prosody-only reference-frame interaction supported.
-- EXP-20260920-03: final-layer WavLM conditional Absolute-vs-Relative effect inconclusive.
-- EXP-20260920-04: layer-dependent pitch structure supported; middle-layer downstream increment inconclusive.
+- EXP-05 shows unseen-speaker K-shot relative pitch strongly outperforms absolute pitch and
+  reaches oracle-relative downstream performance by K=10, despite non-monotonic error relative
+  to the neutral-derived oracle baseline.
 
 ## Next legal step
 
-Run EXP-20260920-05 with speaker-disjoint folds and K=[1,2,5,10] label-free enrollment,
-audit speaker/enrollment leakage, and compare K-shot relative pitch against matched Absolute and
-Oracle-relative upper bounds.
+Run EXP-20260920-06 using the exact EXP-05 enrollment/split procedure and compare K-shot estimates
+against neutral and full marginal speaker references.

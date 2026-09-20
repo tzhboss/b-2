@@ -1,24 +1,24 @@
 schema_version: 1
 experiment_id: EXP-20260920-06
-title: Frozen WavLM plus K-shot relative pitch for unseen speakers
+title: What speaker reference does label-free K-shot pitch estimate?
 
 research_question: >
-  Does explicit K-shot speaker-relative pitch still improve emotion classification beyond frozen
-  WavLM when speakers are disjoint between classifier train and test?
+  Is the strong unseen-speaker K-shot emotion result from EXP-05 explained by label-free
+  enrollment converging toward a speaker marginal pitch center rather than the neutral oracle
+  reference?
 
 registered_hypothesis: >
-  The large K-shot relative-pitch advantage from EXP-20260920-05 will shrink after adding WavLM,
-  but a measurable benefit should remain under unseen-speaker evaluation because WavLM final-layer
-  embeddings do not explicitly normalize each unseen speaker using enrollment audio. K=10 should
-  outperform K=1 if reference quality remains relevant after conditioning on WavLM.
+  Random label-free K-shot medians will converge toward the full unlabeled speaker marginal median,
+  not necessarily toward the neutral-derived reference. The marginal-reference relative feature
+  will retain emotion utility comparable to the neutral-oracle relative feature.
 
 status:
   execution: planned
   validity: unchecked
   decision: pending
 
-parent_experiments: [EXP-20260920-03, EXP-20260920-05]
-protocol_reference: configs/protocols/wavlm_unseen_speaker_kshot_pitch_v1.yaml
+parent_experiments: [EXP-20260920-05]
+protocol_reference: configs/protocols/reference_target_diagnostic_v1.yaml
 experiment_config_reference: configs/experiments/EXP-20260920-06.yaml
 
 runtime:
@@ -27,11 +27,11 @@ runtime:
   seed: null
 
 selected_checkpoint:
-  identifier: microsoft-wavlm-large final hidden layer pooled embeddings from EXP-20260920-03
-  selection_rule: fixed before execution
+  identifier: null
+  selection_rule: null
   selection_metric: null
-  rationale: direct follow-up to EXP-03 and EXP-05 without layer selection
+  rationale: diagnostic explicit-pitch probe
 
 supersedes: []
 superseded_by: []
-role: WavLM-conditioned deployment-realistic reference-budget test
+role: reference-target mechanism diagnostic

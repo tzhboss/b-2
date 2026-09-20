@@ -1,0 +1,46 @@
+schema_version: 1
+protocol_id: PROTO-REFERENCE-TARGET-DIAGNOSTIC-V1
+title: Neutral versus unlabeled marginal speaker pitch reference
+
+research_question_scope: >
+  Determine whether label-free K-shot pitch enrollment is naturally estimating the speaker's
+  unlabeled marginal pitch center rather than the neutral-emotion reference used by the existing
+  oracle-relative feature, and whether the two reference targets are similarly useful for emotion.
+
+allowed_datasets: [esd_english, mead_part0, ravdess_speech]
+
+controls:
+  - Reconstruct exactly the EXP-05 speaker folds and label-free K-shot enrollment algorithm.
+  - Keep K values fixed at [1,2,5,10].
+  - Do not use emotion labels for enrollment selection.
+  - Neutral reference is the existing fixed speaker reference from pitch_relative_st.
+  - Marginal reference is the full eligible-speaker median absolute pitch and is diagnostic/oracle only.
+  - Marginal-oracle downstream results must never be described as deployment-valid because the full speaker pool includes evaluation utterances.
+  - Same speaker-disjoint folds and same classifier family as EXP-05.
+
+criteria:
+  acceptance:
+    - >
+      Marginal-target convergence is supported if K=10 reduces MAE to the marginal speaker median
+      by at least 25% relative to K=1 in all three datasets.
+    - >
+      Target-identity explanation is supported if K=10 is closer to the marginal median than to
+      the neutral reference in at least two datasets.
+    - >
+      Functional equivalence is supported if marginal-oracle relative pitch is within 0.01
+      macro-F1 of neutral-oracle relative pitch in at least two datasets.
+  rejection:
+    - >
+      Reject the marginal-target explanation if K-shot estimates are not closer to the marginal
+      reference in any dataset and marginal-oracle emotion performance is worse than neutral-oracle
+      by more than 0.02 in all datasets.
+  inconclusive:
+    - Otherwise mark inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-06/reference_error_by_speaker.csv
+  - artifacts/EXP-20260920-06/reference_error_summary.csv
+  - artifacts/EXP-20260920-06/metrics_by_fold.csv
+  - artifacts/EXP-20260920-06/summary.csv
+  - artifacts/EXP-20260920-06/paired_deltas.csv
+  - artifacts/EXP-20260920-06/run_metadata.json

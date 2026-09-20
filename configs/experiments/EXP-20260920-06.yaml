@@ -1,29 +1,17 @@
 schema_version: 1
 experiment_id: EXP-20260920-06
-
 dataset:
   source_env: PROSODY_ENRICHED_PARQUET
-  enrollment_env: EXP05_ENROLLMENT_INVENTORY
-  exp05_hash_env: EXP05_TARGET_HASH_CHECKS
   datasets: [esd_english, mead_part0, ravdess_speech]
-
-embeddings:
-  root_env: WAVLM_FINAL_EMBEDDING_ROOT
-  inventory_env: WAVLM_EMBEDDING_INVENTORY
-
 seed: [20260920,20260921,20260922]
-
 parameters:
-  n_splits: 5
-  k_values: [1,10]
+  outer_folds: 5
+  k_values: [1,2,5,10]
   classifier:
-    alpha: 1.0
+    C: 1.0
     class_weight: balanced
-    solver: lsqr
+    max_iter: 3000
   bootstrap_reps: 10000
-  representations: [wavlm_only, absolute, relative_k1, relative_k10, hybrid_k1, hybrid_k10]
-
-resources:
-  python_env: /data/lc/audio_feature_labeling/.venv
 outputs:
   artifact_root: artifacts/EXP-20260920-06
+entrypoint: scripts/run_reference_target_diagnostic.py
