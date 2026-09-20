@@ -2,14 +2,17 @@
 
 ## Phase
 
-MSP VAD annotator-disagreement robustness experiment registered; execution pending.
+MSP VAD disagreement-robustness experiment completed and audited.
 
-## Active research question
+## Main valid VAD findings
 
-Do raw-VAD baseline effects and within-speaker Relative effects survive when evaluation is
-restricted to low-disagreement human SAM ratings?
+- Raw Arousal/Dominance contain large between-speaker components predictable from stable prosodic baselines.
+- Within-speaker Arousal/Dominance residuals strongly prefer Relative pitch/loudness/all-prosody.
+- Both effects persist among low-disagreement human SAM ratings.
+- A universal monotonic degradation with annotation disagreement is not supported.
 
 ## Next legal step
 
-Run EXP-20260920-18 with train-only disagreement quantile thresholds and audit mechanism robustness
-plus the label-reliability gradient.
+Test deployment-realistic K-shot unlabeled acoustic enrollment for raw VAD: estimate each unseen
+speaker's acoustic center from K reference utterances and determine whether K-shot Hybrid recovers
+the oracle/marginal speaker-baseline benefit.

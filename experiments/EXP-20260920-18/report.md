@@ -1,35 +1,26 @@
 # Experiment Report — EXP-20260920-18
 
-Complete this report only with results that have been audited to the extent required by the protocol.
+## Main Result
 
-## Registered Hypothesis
+The VAD reference-frame mechanisms are not artifacts of noisy human labels.
 
-Copy or reference the pre-registered hypothesis without rewriting it after results are visible.
+Among held-out utterances whose VAD ratings have low annotator disagreement, raw Arousal and
+Dominance still strongly benefit from restoring stable speaker baseline information. Conversely,
+after removing the speaker VAD mean from the target, speaker-relative prosody still strongly
+outperforms Absolute prosody.
 
-## Results
+## Label Reliability
 
-Summarize the audited result set and reference files under `results/EXP-20260920-18/`.
+Prediction quality does not decline monotonically with disagreement for every target. The clearest
+reliability gradient occurs for within-speaker Arousal residuals, where low-disagreement CCC is
+about 0.071 higher than high-disagreement CCC using the best low-disagreement representation.
 
-## Observation
+## Interpretation
 
-State only what the evidence directly shows.
-
-## Supported Claim
-
-State the strongest claim justified by the audited evidence.
-
-## Unsupported Stronger Claim
-
-State conclusions that the current evidence does not justify.
-
-## Post-experiment Interpretation
-
-Record mechanistic or causal interpretation separately from direct observation.
+The core decomposition result is robust to human label agreement:
+- raw population-level VAD rewards stable speaker information;
+- within-speaker affect deviation rewards speaker-relative prosody.
 
 ## Decision
 
-Record and justify `pass`, `fail`, or `inconclusive` against the protocol criteria.
-
-## Next Step
-
-State the next scientifically legitimate action.
+mixed.

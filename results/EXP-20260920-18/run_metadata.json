@@ -1,0 +1,16 @@
+{
+  "experiment_id": "EXP-20260920-18",
+  "source": "/data/lc/audio_feature_labeling/old/legacy_feature_pipeline/derived/final_dataset_enriched.parquet",
+  "agreement_source": "/data/lc/audio_feature_labeling/catalog/msp_annotation_agreement.parquet",
+  "quantiles": [
+    0.33,
+    0.67
+  ],
+  "seeds": [
+    20260920,
+    20260921,
+    20260922
+  ],
+  "outer_folds": 5,
+  "threshold_policy": "train-only per-target disagreement quantiles"
+}
