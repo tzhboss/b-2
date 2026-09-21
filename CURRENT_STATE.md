@@ -2,14 +2,13 @@
 
 ## Phase
 
-Nested K-shot sample-efficiency experiment for MSP raw VAD registered; execution pending.
+Fixed-cohort K-shot sample-efficiency experiment registered; execution pending.
 
 ## Active research question
 
-On a fixed common speaker cohort, how many unlabeled enrollment utterances are needed before
-K-shot Hybrid Arousal/Dominance performance saturates near the marginal-speaker oracle?
+Is K=10 already near the practical unlabeled-reference plateau for raw MSP Arousal/Dominance?
 
 ## Next legal step
 
-Run EXP-20260920-20 with nested K=[1,2,5,10,20,50] and audit center convergence, recovered oracle
-gain, and saturation.
+Run EXP-20260920-20 on one fixed >50-support speaker cohort with K=[1,2,5,10,20,50] and audit
+center-error and downstream CCC saturation.

@@ -1,42 +1,44 @@
 schema_version: 1
 protocol_id: PROTO-MSP-VAD-KSHOT-SATURATION-V1
-title: Nested K-shot sample-efficiency for MSP raw VAD
+title: K-shot acoustic-center sample efficiency for raw MSP VAD
 
 research_question_scope: >
-  Measure how rapidly label-free acoustic reference estimation saturates as enrollment grows,
-  using a single common speaker cohort and nested K-shot enrollment sets.
+  On a fixed high-support speaker cohort, quantify how quickly unlabeled K-shot acoustic-center
+  estimation saturates and whether K=10 is already near the practical plateau for raw
+  Arousal/Dominance Hybrid prediction.
 
 dataset:
   name: msp
-  common_cohort_rule: more than 50 eligible all-attribute utterances per speaker
+  fixed_cohort_rule: speaker has more than 50 all-attribute eligible utterances
   targets: [valence, arousal, dominance]
 
 controls:
-  - Use one fixed common cohort for all K values.
-  - K values are [1,2,5,10,20,50].
-  - For each seed and speaker, create one random label-free enrollment ordering.
-  - K-shot enrollment is nested: K1 subset K2 subset K5 subset K10 subset K20 subset K50.
-  - Enrollment utterances are excluded from train/test rows.
-  - Use five speaker-disjoint folds and three fixed seeds.
-  - Use the same Ridge(alpha=1.0), equal-speaker weighting, and transforms as EXP-19.
-  - Primary representation comparison is K-shot Hybrid versus Absolute and marginal-oracle Hybrid.
-  - Marginal oracle is diagnostic only.
+  - Use one fixed >50-support speaker cohort for every K.
+  - K values fixed at [1,2,5,10,20,50].
+  - Same five speaker-disjoint folds and three fixed seeds for every K.
+  - Uniform random label-free enrollment within speaker.
+  - Enrollment rows excluded from downstream train/test.
+  - Fixed median acoustic-center estimator.
+  - Fixed multi-output Ridge(alpha=1.0), equal-speaker weights, train-only scaling.
+  - Compare Absolute, K-shot Hybrid, and diagnostic marginal-oracle Hybrid only.
+  - Same downstream rows for all three representations within K/seed/fold.
+
+primary_metric: speaker-balanced CCC
 
 criteria:
   acceptance:
     - >
-      Center convergence is supported if marginal-center MAE decreases monotonically with K for
-      pitch, loudness, and log-rate, and K=50 MAE is at least 40% lower than K=10 MAE for all three.
+      Center-estimation saturation is supported if, for all three acoustic dimensions,
+      the K=10 to K=50 marginal-center MAE reduction is less than half of the K=1 to K=10 reduction.
     - >
-      K=10 efficiency is supported if it recovers at least 70% of the marginal-oracle Hybrid gain
-      over Absolute for both Arousal and Dominance.
+      Downstream saturation is supported if the Arousal K-shot-Hybrid CCC gain from K=10 to K=50
+      is <0.01 and the Dominance gain is <0.01.
     - >
-      Practical saturation is supported if K=20 Hybrid is within 0.01 CCC of marginal-oracle Hybrid
-      for Arousal and Dominance and the absolute K50-minus-K20 Hybrid CCC change is below 0.005 for both.
+      Practical plateau is supported if K=10 Hybrid is already within 0.01 CCC of K=50 Hybrid
+      for both Arousal and Dominance.
   rejection:
     - >
-      Reject early saturation if K50 improves over K20 by more than 0.015 CCC for either Arousal
-      or Dominance.
+      Reject K=10 plateau if either Arousal or Dominance improves by >=0.02 CCC from K=10 to K=50.
   inconclusive:
     - Otherwise mark unsupported sub-hypotheses inconclusive.
 
@@ -45,5 +47,5 @@ required_outputs:
   - artifacts/EXP-20260920-20/center_error_summary.csv
   - artifacts/EXP-20260920-20/metrics_by_fold.csv
   - artifacts/EXP-20260920-20/summary.csv
-  - artifacts/EXP-20260920-20/paired_deltas.csv
+  - artifacts/EXP-20260920-20/k_deltas.csv
   - artifacts/EXP-20260920-20/run_metadata.json
