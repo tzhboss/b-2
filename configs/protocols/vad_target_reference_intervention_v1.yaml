@@ -1,0 +1,79 @@
+schema_version: 1
+protocol_id: PROTO-VAD-TARGET-REFERENCE-INTERVENTION-V1
+title: Controlled target-reference intervention across MSP and IEMOCAP
+
+research_question_scope: >
+  Hold acoustic inputs, speakers, folds, and model fixed while continuously varying the amount of
+  between-speaker structure in the VAD target. Test whether reference-frame utility changes
+  monotonically with target reference frame.
+
+datasets:
+  - msp
+  - iemocap
+
+target_intervention:
+  formula: global_mean + within_speaker_residual + lambda * (speaker_mean - global_mean)
+  lambda_values: [0.0, 0.25, 0.5, 0.75, 1.0]
+  interpretation:
+    0.0: pure within-speaker target
+    1.0: original raw VAD target
+
+features:
+  shared_acoustic_dimensions:
+    - log/semitone pitch
+    - loudness
+    - log speaking rate
+  reference_construction:
+    absolute: utterance-level acoustic values
+    center: full-speaker marginal median acoustic vector
+    relative: absolute-center
+    hybrid: relative+center
+
+diagnostic_boundary:
+  - Full-speaker acoustic centers and VAD speaker means are diagnostic oracle quantities.
+  - This experiment tests mechanism, not deployment availability.
+  - The intervention is deterministic and uses no model predictions.
+
+controls:
+  - Same rows for every lambda and representation within corpus.
+  - Five speaker-disjoint folds and three fixed seeds.
+  - Equal total train/evaluation weight per speaker.
+  - Fixed multi-output Ridge(alpha=1.0).
+  - Train-only weighted StandardScaler.
+  - No lambda-specific or target-specific tuning.
+
+representations:
+  - absolute
+  - relative
+  - center_only
+  - hybrid
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      Target-reference coupling is supported if the slope of
+      (Relative-minus-Absolute CCC) versus lambda is negative with paired-bootstrap 95% CI below
+      zero for Arousal and Dominance in both MSP and IEMOCAP.
+    - >
+      Center-utility coupling is supported if the slope of
+      (Hybrid-minus-Relative CCC) versus lambda is positive with paired-bootstrap 95% CI above
+      zero for Arousal and Dominance in both corpora.
+    - >
+      Endpoint consistency is supported if Relative-minus-Absolute at lambda=0 is positive for
+      Arousal and Dominance in both corpora.
+  rejection:
+    - >
+      Reject the target-reference mechanism if either corpus shows positive
+      Relative-minus-Absolute slope for both Arousal and Dominance.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-03/data_inventory.csv
+  - artifacts/EXP-20260921-03/metrics_by_fold.csv
+  - artifacts/EXP-20260921-03/summary.csv
+  - artifacts/EXP-20260921-03/effect_curves.csv
+  - artifacts/EXP-20260921-03/slope_tests.csv
+  - artifacts/EXP-20260921-03/run_metadata.json

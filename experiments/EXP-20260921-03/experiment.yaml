@@ -1,0 +1,37 @@
+schema_version: 1
+experiment_id: EXP-20260921-03
+title: Does reference-frame utility track an intervention on target reference frame?
+
+research_question: >
+  If the amount of between-speaker structure in VAD is continuously increased while acoustic
+  inputs and models are held fixed, does utility shift systematically from Relative toward
+  Absolute/Hybrid representations?
+
+registered_hypothesis: >
+  Increasing between-speaker target structure will monotonically reduce Relative-minus-Absolute
+  utility and increase the value of exposing the stable speaker acoustic center.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-17, EXP-20260921-02]
+protocol_reference: configs/protocols/vad_target_reference_intervention_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-03.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed Ridge alpha and fixed lambda grid
+  selection_metric: null
+  rationale: controlled mechanism intervention
+
+supersedes: []
+superseded_by: []
+role: target-reference mechanism test
