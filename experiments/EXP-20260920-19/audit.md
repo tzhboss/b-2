@@ -1,53 +1,58 @@
 # Experiment Audit — EXP-20260920-19
 
-## Completeness and leakage
+## Completeness
 
+- Eligible rows: 195,779.
+- Speakers: 1,911.
 - Fold-level metric rows: 1,260 / 1,260 expected.
 - Paired-delta rows: 72 / 72 expected.
 - Audit rows: 60 / 60 expected.
+- Center-error summary rows: 12 / 12 expected.
 - Metric NaNs: zero.
 - Train/test speaker overlap: zero.
-- Enrollment/evaluation overlap: zero.
-- Enrollment sampling uses no VAD labels.
+- Enrollment/evaluation row overlap: zero.
 
-## K-shot acoustic-center convergence
+## K-shot center convergence
 
-K=1 to K=10 mean absolute error reduction to the full marginal speaker center:
+Mean absolute error to the full marginal speaker acoustic center decreases from K=1 to K=10 by:
 - Pitch: 67.8%.
 - Loudness: 68.7%.
 - Log-rate: 70.6%.
 
-Thus the registered center-convergence criterion is supported.
+The preregistered >=25% convergence criterion is satisfied for all three attributes.
 
-At K=10, K-shot estimates are much closer to the marginal speaker center than to the
-neutral-derived reference:
-- Pitch: 0.680 vs 1.557 semitone-equivalent units.
-- Loudness: 0.696 vs 1.789 LU/dB.
-- Log-rate: 0.055 vs 0.076.
+## K=10 downstream utility
 
-## K=10 raw-VAD Hybrid utility
+K-shot Hybrid minus Absolute:
+- Arousal: +0.01944 CCC, 95% CI [0.01651, 0.02221].
+- Dominance: +0.00923 [0.00739, 0.01091].
+- Valence: +0.01377 [0.01290, 0.01476].
 
-K-shot Hybrid minus Absolute CCC:
-- Arousal: +0.01944, 95% CI [0.01651, 0.02221].
-- Dominance: +0.00923, 95% CI [0.00739, 0.01091].
-- Valence: +0.01377, 95% CI [0.01290, 0.01476].
-
-The preregistered deployment criterion required at least +0.015 Arousal and +0.010 Dominance.
-Arousal passes; Dominance falls short by 0.00077, so the joint criterion is not met.
+Arousal satisfies the preregistered +0.015 criterion.
+Dominance is significantly positive but narrowly misses the preregistered +0.010 threshold by 0.00077.
 
 ## Oracle recovery
 
 K=10 Hybrid minus marginal-oracle Hybrid:
-- Arousal: -0.00529.
-- Dominance: -0.00050.
-- Valence: -0.00280.
+- Arousal: -0.00529 CCC.
+- Dominance: -0.00050 CCC.
+- Valence: -0.00280 CCC.
 
-Arousal and Dominance are both within the preregistered 0.02 oracle-recovery tolerance.
+Thus K=10 is within the preregistered 0.02 oracle gap for both Arousal and Dominance.
+
+## Important boundary
+
+K-shot Relative without baseline is strongly worse than Absolute for raw Arousal/Dominance:
+- Arousal: -0.2734 CCC.
+- Dominance: -0.2257 CCC.
+
+The benefit comes from estimating and exposing the stable acoustic center, not from normalization alone.
 
 ## Verdict
 
 - Validity: valid.
 - Decision: mixed.
 - Center convergence: supported.
-- Deployment Hybrid joint threshold: not fully supported because Dominance narrowly misses the fixed +0.010 criterion.
-- Practical recovery of marginal-oracle Hybrid performance: supported.
+- Arousal deployment recovery: supported.
+- Dominance deployment recovery: strong positive evidence but misses the preregistered effect-size threshold narrowly.
+- Marginal-oracle recovery: supported.

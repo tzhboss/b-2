@@ -2,27 +2,29 @@
 
 ## Main Result
 
-Ten unlabeled enrollment utterances are enough to estimate a useful three-dimensional speaker
-acoustic center for raw MSP VAD prediction.
+A small label-free enrollment set can recover most of the stable speaker information needed for
+raw MSP Arousal/Dominance prediction.
 
-K=10 reduces center-estimation error by roughly 68-71% relative to K=1 and yields Hybrid
-Arousal/Dominance performance very close to a diagnostic full-speaker marginal-center oracle.
+By K=10, acoustic-center estimation error falls by roughly 68-71% across pitch, loudness, and
+speaking rate. K-shot Hybrid improves over Absolute and approaches the full marginal-speaker oracle.
 
-## Deployment Result
+## Arousal
 
-Compared with Absolute prosody:
-- Arousal improves by +0.0194 CCC.
-- Dominance improves by +0.0092 CCC.
-- Valence improves by +0.0138 CCC.
+K=10 Hybrid improves over Absolute by +0.0194 CCC and is only 0.0053 below the marginal-oracle
+Hybrid.
 
-Dominance narrowly misses the preregistered +0.010 deployment threshold, so the experiment is
-formally mixed rather than pass.
+## Dominance
+
+K=10 Hybrid improves over Absolute by +0.0092 CCC and is effectively at the marginal-oracle level
+(-0.0005 CCC). The result is statistically positive but narrowly misses the preregistered +0.010
+effect-size threshold.
 
 ## Interpretation
 
-The stable speaker component needed for raw VAD does not require emotion or VAD labels at
-deployment time. A small unlabeled enrollment set can estimate an acoustic reference that recovers
-most of the full marginal-speaker Hybrid advantage.
+Deployment does not require emotion labels, neutral speech labels, or a full speaker history.
+A small unlabeled reference set is sufficient to estimate a useful speaker acoustic center.
+However, normalization alone is inappropriate for raw VAD: the estimated center must remain
+available to the downstream model, as in the Hybrid representation.
 
 ## Decision
 
