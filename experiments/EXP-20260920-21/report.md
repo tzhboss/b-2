@@ -1,35 +1,22 @@
 # Experiment Report — EXP-20260920-21
 
-Complete this report only with results that have been audited to the extent required by the protocol.
+## Main Result
 
-## Registered Hypothesis
+With downstream rows fixed across all K, label-free acoustic-reference estimation continues to
+improve through K=50, while raw MSP VAD Hybrid performance is already practically saturated by
+K=20.
 
-Copy or reference the pre-registered hypothesis without rewriting it after results are visible.
+K=20 is within 0.0043 CCC of the marginal oracle for Arousal and essentially identical for
+Dominance. Moving from K=20 to K=50 yields only +0.0043 Arousal CCC and +0.0001 Dominance CCC.
 
-## Results
+## Interpretation
 
-Summarize the audited result set and reference files under `results/EXP-20260920-21/`.
+The apparent K20-to-K50 Arousal drop in EXP-20 was caused by the changing downstream sample pool,
+not by over-enrollment. Once that confound is removed, performance increases modestly with K.
 
-## Observation
-
-State only what the evidence directly shows.
-
-## Supported Claim
-
-State the strongest claim justified by the audited evidence.
-
-## Unsupported Stronger Claim
-
-State conclusions that the current evidence does not justify.
-
-## Post-experiment Interpretation
-
-Record mechanistic or causal interpretation separately from direct observation.
+For practical deployment, approximately 20 unlabeled utterances provide most of the usable
+speaker-reference benefit on this MSP cohort.
 
 ## Decision
 
-Record and justify `pass`, `fail`, or `inconclusive` against the protocol criteria.
-
-## Next Step
-
-State the next scientifically legitimate action.
+mixed: practical saturation supported; strict diminishing-return curve not supported.

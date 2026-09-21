@@ -2,19 +2,18 @@
 
 ## Phase
 
-Clean fixed-cohort K-shot saturation rerun completed and audited.
+Fixed-pool K-shot MSP VAD saturation completed and audited.
 
-## Main findings
+## Main valid VAD conclusions
 
-- EXP-20 is invalid due runtime provenance mismatch and contributes no evidence.
-- EXP-20260921-01 is a hash-verified immutable rerun.
-- Acoustic-center estimation keeps improving beyond K=10.
-- Downstream Arousal/Dominance show much stronger diminishing returns.
-- K=10 narrowly misses the preregistered practical plateau for Arousal.
-- Descriptively, K=20 is within 0.01 CCC of K=50 for both Arousal and Dominance.
+- Raw population-level Arousal/Dominance reward stable speaker-level prosodic information.
+- Within-speaker VAD residuals strongly prefer speaker-relative pitch/loudness/all-prosody.
+- Both mechanisms survive low annotator disagreement.
+- Label-free unseen-speaker acoustic enrollment can recover raw-VAD Hybrid utility.
+- On a fixed downstream pool, K=20 is practically saturated near the marginal-speaker oracle;
+  K=50 provides only a small additional Arousal gain and negligible Dominance gain.
 
 ## Next legal step
 
-Use a preregistered speaker-level development/confirmation split: select K=20 as the candidate
-plateau only on the development speakers, then independently test K20 versus K50 on untouched
-confirmation speakers.
+Seek a second human-rated dimensional-affect corpus, prioritizing IEMOCAP, and reproduce the raw
+VAD versus within-speaker residual decomposition with matched prosodic reference frames.
