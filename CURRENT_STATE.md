@@ -2,13 +2,15 @@
 
 ## Phase
 
-VAD target-reference model-family robustness experiment registered; execution pending.
+VAD target-reference coupling is now replicated across MSP/IEMOCAP and robust to linear versus
+quadratic Ridge.
 
-## Active research question
+## Main mechanism finding
 
-Does the target-reference coupling slope survive both linear Ridge and fixed quadratic Ridge?
+For Arousal and Dominance, increasing between-speaker target structure produces significantly
+negative Relative-minus-Absolute slopes in both corpora and both model families.
 
 ## Next legal step
 
-Run EXP-20260921-04 from an immutable runtime bundle and audit Arousal/Dominance slope direction
-across corpus and model family.
+Decompose the intervention by acoustic attribute (pitch, loudness, speaking rate) to identify which
+attributes carry the target-reference coupling and which are weak or corpus-specific.
