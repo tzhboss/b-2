@@ -2,19 +2,23 @@
 
 ## Phase
 
-Extended prosodic attributes validated; speaker-cluster inference next.
+Speaker-cluster inference completed and validated. WavLM embedding-level intervention is next.
 
-## New valid finding
+## Strongest statistical result
 
-Target-reference coupling extends to:
-- F0 variability,
-- pause ratio,
-- voiced ratio,
-- their combined temporal/variability representation.
+MSP target-reference slopes remain strongly negative after speaker-cluster bootstrap:
+- Linear Arousal -0.3188, Dominance -0.1825.
+- Quadratic Arousal -0.3214, Dominance -0.1851.
+All 95% CIs are below zero.
 
-All Arousal/Dominance slopes are significantly negative on MSP.
+IEMOCAP retains negative point estimates under both models but slope CIs cross zero with only
+10 speakers. Its lambda=0 Relative advantage remains significantly positive.
+
+## Extended attributes
+
+F0 variability, pause ratio, and voiced ratio also show significant target-reference coupling on MSP.
 
 ## Next legal step
 
-Run EXP-20260921-15 to replace fold/seed-level uncertainty with speaker-cluster bootstrap on
-complete OOF predictions.
+Repair EXP-20260921-16 extraction using a safe Torch/model-loading environment and run the
+embedding-level target-reference intervention.
