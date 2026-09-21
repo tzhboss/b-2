@@ -2,14 +2,17 @@
 
 ## Phase
 
-Independent IEMOCAP continuous-VAD reference-matching experiment registered; execution pending.
+Independent IEMOCAP VAD validation completed and audited.
 
-## Active research question
+## Main cross-corpus finding
 
-Does the MSP result replicate independently on IEMOCAP: raw VAD benefits from stable speaker
-baseline information while within-speaker VAD residuals benefit from Relative prosody?
+MSP and IEMOCAP differ sharply in between-speaker target structure:
+- MSP raw Arousal/Dominance have large between-speaker components and benefit from speaker baseline.
+- IEMOCAP raw VAD has little between-speaker structure and already favors Relative for Arousal.
+- Within-speaker residual Arousal/Dominance favor Relative in both corpora, with negligible
+  baseline utility after target centering.
 
 ## Next legal step
 
-Execute EXP-20260921-02 from a hash-verified immutable runtime bundle and audit the external
-reference-matching criteria.
+Quantify target-structure coupling across MSP and IEMOCAP: test whether VAD target ICC predicts
+raw Relative-minus-Absolute and baseline-addition utility across corpus-target cells.

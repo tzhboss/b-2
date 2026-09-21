@@ -1,0 +1,21 @@
+{
+  "experiment_id": "EXP-20260921-02",
+  "source_files": [
+    "/data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/train-00000-of-00003.parquet",
+    "/data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/train-00001-of-00003.parquet",
+    "/data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/train-00002-of-00003.parquet"
+  ],
+  "seeds": [
+    20260920,
+    20260921,
+    20260922
+  ],
+  "outer_folds": 5,
+  "speaker_id_rule": "session ID + utterance F/M suffix",
+  "feature_mapping": {
+    "pitch": "12log2(pitch_mean)",
+    "loudness": "relative_db",
+    "rate": "log(speaking_rate)"
+  },
+  "diagnostic_oracle": "full-speaker acoustic median and VAD mean"
+}
