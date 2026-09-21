@@ -116,3 +116,22 @@ EXP-20260920-18.
 - K=20 is universally optimal.
 - WavLM is speaker-invariant.
 - The current work invents speaker normalization.
+
+### 13. "Fold/seed bootstrap treats non-independent units as independent"
+
+Response:
+The main Pitch+Rate uncertainty analysis was re-run using complete OOF predictions and
+speaker-cluster bootstrap. MSP slopes remain strongly significant. IEMOCAP slope CIs widen and
+cross zero with only 10 speakers, and the manuscript should state this explicitly.
+
+Evidence:
+EXP-20260921-15.
+
+### 14. "The mechanism is only an artifact of subtracting average pitch"
+
+Response:
+No. On MSP the same target-reference coupling appears for F0 variability, pause ratio, and voiced
+ratio, with all Arousal/Dominance slope CIs below zero.
+
+Evidence:
+EXP-20260921-14.

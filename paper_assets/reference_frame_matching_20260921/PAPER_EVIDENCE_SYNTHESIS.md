@@ -50,3 +50,42 @@ duplicated under three seed labels. After collapsing to the five unique sessions
 Arousal/Dominance slopes remain negative, but only 2-3 of 5 sessions show negative slopes per
 model-target cell. This should be reported as substantial session heterogeneity and a limitation,
 not as confirmatory evidence.
+
+## Extended attribute validation — EXP-20260921-14
+
+The reference-frame effect is not confined to pitch level, loudness, or speaking rate.
+
+On MSP, Relative-minus-Absolute slope versus between-speaker target strength is significantly
+negative for:
+- F0 variability: Arousal -0.1053; Dominance -0.0789.
+- Pause ratio: Arousal -0.0736; Dominance -0.0593.
+- Voiced ratio: Arousal -0.1598; Dominance -0.1169.
+- Combined variability/temporal set: Arousal -0.2616; Dominance -0.1977.
+
+At the pure within-speaker endpoint, the combined set still favors Relative:
++0.0363 CCC for Arousal and +0.0274 for Dominance.
+
+This broadens the mechanism from acoustic level features to expressive range and temporal/voicing
+organization.
+
+## Corrected independent-unit inference — EXP-20260921-15
+
+The preferred uncertainty analysis now treats speaker as the independent sampling unit.
+
+MSP speaker-cluster bootstrap:
+- Linear Arousal slope -0.3188, 95% CI [-0.3384, -0.2998].
+- Linear Dominance -0.1825, [-0.1969, -0.1683].
+- Quadratic Arousal -0.3214, [-0.3411, -0.3022].
+- Quadratic Dominance -0.1851, [-0.2000, -0.1705].
+
+All four MSP slope intervals remain strictly below zero.
+
+IEMOCAP point slopes remain negative in all four model-target cells, but cluster-bootstrap CIs cross
+zero because only 10 speakers are available. Its pure within-speaker endpoint advantage remains
+positive with CIs above zero.
+
+Therefore:
+- strong inferential support comes from MSP;
+- IEMOCAP contributes directional external replication and a robust within-speaker endpoint, but
+  should not be described as independently significant for the slope under speaker-cluster
+  inference.
