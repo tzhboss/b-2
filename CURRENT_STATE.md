@@ -2,23 +2,31 @@
 
 ## Phase
 
-Speaker-cluster inference completed and validated. WavLM embedding-level intervention is next.
+Extended attributes, corrected speaker-cluster inference, and SSL-level reference-frame
+intervention are complete.
 
-## Strongest statistical result
+## New strongest result
 
-MSP target-reference slopes remain strongly negative after speaker-cluster bootstrap:
-- Linear Arousal -0.3188, Dominance -0.1825.
-- Quadratic Arousal -0.3214, Dominance -0.1851.
-All 95% CIs are below zero.
+The target-reference mechanism replicates directly in frozen WavLM embedding space on IEMOCAP.
 
-IEMOCAP retains negative point estimates under both models but slope CIs cross zero with only
-10 speakers. Its lambda=0 Relative advantage remains significantly positive.
+Layer 12:
+- Arousal slope -0.0829, 95% CI [-0.1309, -0.0359].
+- Dominance -0.0341, [-0.0583, -0.0118].
 
-## Extended attributes
+Layer 24:
+- Arousal -0.0958, [-0.1429, -0.0482].
+- Dominance -0.0455, [-0.0707, -0.0181].
 
-F0 variability, pause ratio, and voiced ratio also show significant target-reference coupling on MSP.
+At lambda=0 Relative embeddings are significantly better in all four cells; at lambda=1 the
+difference reverses and Absolute becomes better.
+
+## Remaining major limitation
+
+A third genuinely independent continuous-affect corpus is still unavailable locally. External
+breadth remains the main unresolved limitation, rather than attribute or model-family breadth.
 
 ## Next legal step
 
-Repair EXP-20260921-16 extraction using a safe Torch/model-loading environment and run the
-embedding-level target-reference intervention.
+Update paper assets and main manuscript to promote EXP-20260921-16 and EXP-20260921-15 into the
+central evidence stack; then reassess whether additional voice-quality extraction would materially
+change the paper.
