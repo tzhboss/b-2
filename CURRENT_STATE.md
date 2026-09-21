@@ -2,25 +2,14 @@
 
 ## Phase
 
-Core experiments are complete enough for manuscript construction; paper synthesis package exists
-and includes explicit claim boundaries.
+Semantically matched MSP/IEMOCAP pitch+rate confirmatory experiment registered.
 
-## Current strongest mechanism
+## Active research question
 
-Target-reference matching is supported by:
-- controlled target intervention across MSP and IEMOCAP;
-- linear/quadratic model robustness;
-- attribute-level decomposition;
-- speaker-center identity permutation;
-- K-shot deployment validation;
-- semantically safe IEMOCAP pitch+rate replication.
-
-## Important boundary
-
-Speaker-ID decodability is only modestly reduced by Relative low-dimensional prosody, so the strong
-gender reversal must not be generalized to universal identity removal.
+Does target-reference coupling replicate across both corpora when exactly the same, clearly defined
+feature family (pitch + speaking rate) is used and loudness is excluded everywhere?
 
 ## Next legal step
 
-Turn the synthesis into a manuscript-ready outline with explicit research questions, claims,
-experiment-to-section mapping, and a minimal set of main-paper versus appendix results.
+Run EXP-20260921-12 from an immutable runtime bundle, audit the eight Arousal/Dominance
+corpus-by-model slopes and endpoints, then consolidate paper-ready tables and figures.

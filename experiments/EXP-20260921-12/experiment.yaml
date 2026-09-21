@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260921-12
+title: Semantically matched cross-corpus pitch+rate reference-frame validation
+
+research_question: >
+  Does the target-reference mechanism replicate across MSP and IEMOCAP when both corpora use
+  exactly the same semantically aligned acoustic feature family: pitch plus speaking rate?
+
+registered_hypothesis: >
+  Relative-minus-Absolute slope versus between-speaker target strength will be significantly
+  negative for Arousal and Dominance in both corpora under both linear and quadratic Ridge.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260921-04, EXP-20260921-09, EXP-20260921-10]
+protocol_reference: configs/protocols/crosscorpus_pitch_rate_reference_matching_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-12.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed feature set and model families
+  selection_metric: null
+  rationale: semantically matched confirmatory external validation
+
+supersedes: []
+superseded_by: []
+role: main-paper confirmatory cross-corpus validation

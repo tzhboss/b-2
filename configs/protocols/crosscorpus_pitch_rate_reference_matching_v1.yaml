@@ -1,0 +1,53 @@
+schema_version: 1
+protocol_id: PROTO-CROSSCORPUS-PITCH-RATE-REFERENCE-MATCHING-V1
+title: Semantically matched MSP/IEMOCAP pitch+rate target-reference validation
+
+research_question_scope: >
+  Using only pitch and speaking rate, which have clear and aligned semantics in both corpora,
+  test whether target-reference coupling replicates across MSP and IEMOCAP under linear and
+  quadratic Ridge.
+
+datasets: [msp, iemocap]
+feature_set: pitch_rate
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+targets: [valence, arousal, dominance]
+model_families: [linear_ridge, quadratic_ridge]
+representations: [absolute, relative, hybrid]
+
+controls:
+  - MSP pitch is 12*log2(f0_median_hz); rate is log(phoneme_articulation_rate).
+  - IEMOCAP pitch is 12*log2(pitch_mean); rate is log(speaking_rate).
+  - Loudness is excluded from both corpora.
+  - Full-speaker marginal median defines pitch/rate center diagnostically.
+  - Target intervention formula matches EXP-20260921-03.
+  - Five speaker-disjoint folds and three fixed seeds.
+  - Equal total train/evaluation weight per speaker.
+  - Fixed Ridge(alpha=1.0); quadratic model uses degree-2 PolynomialFeatures.
+  - No corpus-specific hyperparameter tuning.
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      Cross-corpus mechanism replication is supported if Relative-minus-Absolute slope is
+      significantly negative for Arousal and Dominance in both corpora under both model families.
+    - >
+      Within-speaker endpoint replication is supported if Relative-minus-Absolute at lambda=0 is
+      positive for Arousal and Dominance in both corpora under both model families.
+    - >
+      Strong semantic-match robustness is supported if all eight Arousal/Dominance
+      corpus-by-model slope signs are negative and all eight lambda=0 endpoints are positive.
+  rejection:
+    - >
+      Reject semantically matched replication if either corpus has positive slopes for both
+      Arousal and Dominance under both model families.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-12/data_inventory.csv
+  - artifacts/EXP-20260921-12/metrics_by_fold.csv
+  - artifacts/EXP-20260921-12/effect_curves.csv
+  - artifacts/EXP-20260921-12/slope_tests.csv
+  - artifacts/EXP-20260921-12/run_metadata.json
