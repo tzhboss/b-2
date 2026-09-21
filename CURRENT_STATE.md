@@ -2,13 +2,19 @@
 
 ## Phase
 
-Extended attribute experiment is running; corrected speaker-cluster inference is registered.
+Extended prosodic attributes validated; speaker-cluster inference next.
 
-## Statistical correction
+## New valid finding
 
-EXP-20260921-15 will generate one OOF prediction per utterance under a fixed speaker-disjoint split
-and compute uncertainty by resampling complete speakers, not seed/fold aggregate rows.
+Target-reference coupling extends to:
+- F0 variability,
+- pause ratio,
+- voiced ratio,
+- their combined temporal/variability representation.
+
+All Arousal/Dominance slopes are significantly negative on MSP.
 
 ## Next legal step
 
-Finish EXP-20260921-14, then run EXP-20260921-15 from an immutable runtime bundle.
+Run EXP-20260921-15 to replace fold/seed-level uncertainty with speaker-cluster bootstrap on
+complete OOF predictions.
