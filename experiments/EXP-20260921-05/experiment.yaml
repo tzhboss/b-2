@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260921-05
+title: Which prosodic attributes carry target-reference coupling?
+
+research_question: >
+  When VAD target reference frame is manipulated, do pitch, loudness, and speaking rate show the
+  same coupling strength across MSP and IEMOCAP?
+
+registered_hypothesis: >
+  Pitch and loudness will carry the strongest target-reference coupling. Speaking rate will be
+  weaker and more corpus-dependent.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260921-03, EXP-20260921-04]
+protocol_reference: configs/protocols/vad_target_reference_attribute_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-05.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed Ridge alpha
+  selection_metric: null
+  rationale: attribute-specific mechanism decomposition
+
+supersedes: []
+superseded_by: []
+role: continuous-affect attribute decomposition

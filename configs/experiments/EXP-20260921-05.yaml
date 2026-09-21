@@ -1,0 +1,16 @@
+schema_version: 1
+experiment_id: EXP-20260921-05
+dataset:
+  msp_source_env: PROSODY_ENRICHED_PARQUET
+  iemocap_source_glob: /data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/*.parquet
+seed: [20260920,20260921,20260922]
+parameters:
+  outer_folds: 5
+  ridge_alpha: 1.0
+  bootstrap_reps: 10000
+  lambda_values: [0.0,0.25,0.5,0.75,1.0]
+  attributes: [pitch,loudness,rate]
+  targets: [valence,arousal,dominance]
+outputs:
+  artifact_root: artifacts/EXP-20260921-05
+entrypoint: scripts/run_vad_target_reference_attribute_20260921.py

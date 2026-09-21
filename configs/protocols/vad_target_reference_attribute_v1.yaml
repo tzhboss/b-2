@@ -1,0 +1,52 @@
+schema_version: 1
+protocol_id: PROTO-VAD-TARGET-REFERENCE-ATTRIBUTE-V1
+title: Attribute-specific VAD target-reference intervention
+
+research_question_scope: >
+  Identify whether pitch, loudness, and speaking rate each carry the target-reference coupling
+  observed in the all-attribute representation across MSP and IEMOCAP.
+
+datasets: [msp, iemocap]
+attributes: [pitch, loudness, rate]
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+targets: [valence, arousal, dominance]
+representations: [absolute, relative, hybrid]
+
+controls:
+  - Reuse the EXP-20260921-03 target intervention and marginal speaker-center construction.
+  - Evaluate each acoustic attribute separately.
+  - Five speaker-disjoint folds and three fixed seeds.
+  - Fixed linear Ridge(alpha=1.0), train-only weighted scaling.
+  - Equal total train/evaluation weight per speaker.
+  - Same rows across lambda and representations within corpus/attribute.
+  - No attribute-specific tuning.
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      Pitch coupling is supported if Relative-minus-Absolute slope is significantly negative for
+      Arousal in both corpora and for Dominance in at least one corpus.
+    - >
+      Loudness coupling is supported if Relative-minus-Absolute slope is significantly negative
+      for Arousal and Dominance in both corpora.
+    - >
+      Rate coupling is supported if Relative-minus-Absolute slope is significantly negative for
+      at least two of the four Arousal/Dominance corpus-target cells.
+    - >
+      Cross-attribute target-reference heterogeneity is supported if the absolute slope range across
+      pitch/loudness/rate is >=0.03 for Arousal or Dominance in at least one corpus.
+  rejection:
+    - >
+      Reject attribute-general coupling if fewer than two attributes show any significantly
+      negative Arousal/Dominance slope in either corpus.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-05/data_inventory.csv
+  - artifacts/EXP-20260921-05/metrics_by_fold.csv
+  - artifacts/EXP-20260921-05/effect_curves.csv
+  - artifacts/EXP-20260921-05/slope_tests.csv
+  - artifacts/EXP-20260921-05/run_metadata.json

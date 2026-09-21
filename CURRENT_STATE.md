@@ -2,15 +2,13 @@
 
 ## Phase
 
-VAD target-reference coupling is now replicated across MSP/IEMOCAP and robust to linear versus
-quadratic Ridge.
+Attribute-specific VAD target-reference intervention registered; execution pending.
 
-## Main mechanism finding
+## Active research question
 
-For Arousal and Dominance, increasing between-speaker target structure produces significantly
-negative Relative-minus-Absolute slopes in both corpora and both model families.
+Which of pitch, loudness, and speaking rate carry the target-reference coupling across MSP and
+IEMOCAP?
 
 ## Next legal step
 
-Decompose the intervention by acoustic attribute (pitch, loudness, speaking rate) to identify which
-attributes carry the target-reference coupling and which are weak or corpus-specific.
+Run EXP-20260921-05 from an immutable runtime bundle and audit attribute-specific slopes.
