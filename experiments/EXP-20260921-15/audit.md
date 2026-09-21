@@ -1,50 +1,48 @@
 # Experiment Audit — EXP-20260921-15
 
-## Purpose
+## Integrity
 
-Replace fold/seed-level uncertainty with speaker-cluster inference on complete out-of-fold
-predictions.
-
-## Runtime integrity
-
-- One fixed speaker-disjoint split seed.
-- One OOF prediction per utterance for every representation/target/lambda/model condition.
-- Bootstrap unit: complete speaker.
+- One fixed speaker-disjoint OOF split.
+- Speaker is the resampling unit.
 - 5,000 speaker-cluster bootstrap replicates.
-- Optimized sufficient-statistics implementation is mathematically equivalent to resampling full
-  speaker utterance blocks and recomputing weighted CCC.
+- MSP: 197,020 utterances, 1,915 speakers.
+- IEMOCAP: 10,039 utterances, 10 speakers.
+- Runtime script/config hashes match.
+- Initial slow implementation was interrupted before producing scientific outputs; protocol and
+  inferential definition were unchanged. The completed implementation uses exact speaker-level
+  sufficient statistics to vectorize the same cluster bootstrap.
 
-## MSP results
+## MSP speaker-cluster results
 
-Linear Ridge:
-- Arousal slope: -0.3188, 95% CI [-0.3384, -0.2998].
-- Dominance slope: -0.1825, [-0.1969, -0.1683].
-- lambda=0 Arousal Relative-Absolute: +0.1390, [0.1334, 0.1444].
-- lambda=0 Dominance: +0.0727, [0.0685, 0.0769].
+Relative-minus-Absolute slope versus lambda:
 
-Quadratic Ridge:
-- Arousal slope: -0.3214, 95% CI [-0.3411, -0.3022].
-- Dominance slope: -0.1851, [-0.2000, -0.1705].
-- lambda=0 Arousal: +0.1390, [0.1331, 0.1446].
-- lambda=0 Dominance: +0.0746, [0.0702, 0.0792].
+- Linear Arousal: -0.3188, 95% CI [-0.3384, -0.2998].
+- Linear Dominance: -0.1825, [-0.1969, -0.1683].
+- Quadratic Arousal: -0.3214, [-0.3411, -0.3022].
+- Quadratic Dominance: -0.1851, [-0.2000, -0.1705].
 
-All four MSP slopes remain strongly below zero under speaker-cluster inference.
+All four speaker-cluster CIs are strictly below zero.
 
-## IEMOCAP results
+At lambda=0:
+- Linear Arousal: +0.1390, 95% CI [0.1334, 0.1444].
+- Linear Dominance: +0.0727, [0.0685, 0.0769].
+- Quadratic Arousal: +0.1390, [0.1331, 0.1446].
+- Quadratic Dominance: +0.0746, [0.0702, 0.0792].
 
-Linear Ridge:
-- Arousal slope: -0.0192, 95% CI [-0.0662, +0.0326].
-- Dominance slope: -0.0162, [-0.0484, +0.0123].
+## IEMOCAP speaker-cluster results
 
-Quadratic Ridge:
-- Arousal slope: -0.0281, 95% CI [-0.0758, +0.0256].
-- Dominance slope: -0.0271, [-0.0617, +0.0058].
+Mean slopes remain negative:
 
-All four point estimates retain the negative direction, but none of the speaker-cluster slope CIs
-exclude zero with only 10 speakers.
+- Linear Arousal: -0.0192, CI [-0.0662, +0.0326].
+- Linear Dominance: -0.0162, [-0.0484, +0.0123].
+- Quadratic Arousal: -0.0281, [-0.0758, +0.0256].
+- Quadratic Dominance: -0.0271, [-0.0617, +0.0058].
 
-The pure within-speaker lambda=0 Relative advantage remains positive with speaker-cluster CIs
-strictly above zero for all four IEMOCAP model-target cells.
+With only ten speakers, all slope CIs cross zero. This corrects the earlier fold-level inference:
+IEMOCAP supports the same direction but not a statistically precise slope estimate.
+
+At lambda=0, however, Relative remains significantly better than Absolute for Arousal and
+Dominance under both models.
 
 ## Registered criteria
 
@@ -56,8 +54,7 @@ strictly above zero for all four IEMOCAP model-target cells.
 ## Verdict
 
 - Validity: valid.
-- Decision: pass, with an important statistical boundary.
+- Decision: pass.
 
-The strongest inferential evidence is MSP, where 1,915 speakers support narrow speaker-cluster
-intervals. IEMOCAP independently preserves the effect direction and within-speaker endpoint but is
-underpowered for slope significance at only 10 speakers.
+Primary paper inference should use these speaker-cluster intervals instead of fold/seed bootstrap
+intervals.
