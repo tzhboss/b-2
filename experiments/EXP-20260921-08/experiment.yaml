@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260921-08
+title: Does better unlabeled reference estimation recover the IEMOCAP target-reference slope?
+
+research_question: >
+  On a fixed IEMOCAP downstream pool, do K-shot target-reference slopes converge toward the
+  full-speaker oracle as K increases from 5 to 100?
+
+registered_hypothesis: >
+  Increasing K will reduce acoustic-center error and bring Arousal/Dominance
+  Relative-minus-Absolute slopes closer to the oracle target-reference coupling.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260921-02, EXP-20260921-03, EXP-20260921-07]
+protocol_reference: configs/protocols/iemocap_kshot_reference_quality_curve_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-08.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed nested K sequence and fixed Ridge alpha
+  selection_metric: null
+  rationale: isolate reference-quality effects with fixed downstream rows
+
+supersedes: []
+superseded_by: []
+role: deployment reference-quality diagnostic

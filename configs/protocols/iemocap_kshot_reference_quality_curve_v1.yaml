@@ -1,0 +1,67 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-KSHOT-REFERENCE-QUALITY-CURVE-V1
+title: Fixed-pool IEMOCAP K-shot reference-quality curve
+
+research_question_scope: >
+  Determine whether finite-K speaker-reference noise explains why IEMOCAP K=20 deployment
+  target-reference slopes were directionally correct but statistically unresolved.
+
+dataset: iemocap
+targets: [valence, arousal, dominance]
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+k_values: [5,10,20,50,100]
+
+reference_design:
+  - For each seed and speaker, uniformly sample exactly 100 enrollment utterances once.
+  - Randomly order those 100 utterances once.
+  - K-shot center for each K is the median of the first K enrollment utterances.
+  - Exclude all 100 reserved enrollment utterances from downstream train/test for every K.
+  - Thus downstream rows are identical across all K.
+  - Full-speaker oracle center is computed diagnostically from all eligible utterances.
+
+representations:
+  - absolute
+  - kshot_relative
+  - kshot_hybrid
+  - oracle_relative
+  - oracle_hybrid
+
+controls:
+  - Five speaker-disjoint folds and three fixed seeds.
+  - Same speaker folds and downstream row hashes across all K within seed.
+  - Equal total train/evaluation weight per speaker.
+  - Fixed multi-output Ridge(alpha=1.0), train-only weighted scaling.
+  - No K-specific tuning.
+  - Target intervention remains diagnostic and uses full-speaker VAD mean only to define y_lambda.
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      Reference convergence is supported if K=100 reduces center MAE relative to K=5 by at least
+      50% for pitch, loudness, and log-rate.
+    - >
+      Mechanism convergence is supported if K=100 Relative-minus-Absolute slope is within 0.01
+      absolute slope units of the same-run oracle slope for both Arousal and Dominance.
+    - >
+      High-K deployment coupling is supported if K=100 Relative-minus-Absolute slope is negative
+      with 95% CI below zero for Arousal and Dominance.
+    - >
+      Fixed-pool monotonic approach is supported if the absolute K-shot-to-oracle slope gap at K=100
+      is smaller than at K=5 for both Arousal and Dominance.
+  rejection:
+    - >
+      Reject reference-noise explanation if K=100 center error improves by >=50% in all dimensions
+      but the Arousal and Dominance K-shot slopes both remain farther from oracle than at K=5.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-08/data_inventory.csv
+  - artifacts/EXP-20260921-08/audit_rows.csv
+  - artifacts/EXP-20260921-08/center_error_summary.csv
+  - artifacts/EXP-20260921-08/metrics_by_fold.csv
+  - artifacts/EXP-20260921-08/slope_tests.csv
+  - artifacts/EXP-20260921-08/slope_gap_summary.csv
+  - artifacts/EXP-20260921-08/run_metadata.json

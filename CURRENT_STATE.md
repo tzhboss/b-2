@@ -2,16 +2,13 @@
 
 ## Phase
 
-K=20 deployment target-reference intervention completed and audited.
+Fixed-pool IEMOCAP K-shot reference-quality curve registered; execution pending.
 
-## Main finding
+## Active research question
 
-MSP preserves strong target-reference coupling under K=20 unlabeled reference estimation.
-IEMOCAP preserves the negative slope direction but confidence intervals cross zero, likely due
-the combination of only ten speakers and noisy finite-K center estimates.
+Does increasing K from 5 to 100 on an identical downstream pool make deployment target-reference
+slopes converge toward the full-speaker oracle slopes?
 
 ## Next legal step
 
-On IEMOCAP only, reserve a fixed 100-utterance enrollment pool per speaker and use nested
-K=[5,10,20,50,100] prefixes while keeping all downstream rows fixed. Measure whether K-shot
-target-reference slopes converge toward the full-speaker oracle slopes.
+Run EXP-20260921-08 from an immutable runtime bundle and audit center-error and slope convergence.
