@@ -2,16 +2,15 @@
 
 ## Phase
 
-Nested K-shot VAD sample-efficiency experiment completed; fixed-pool correction required.
+Immutable rerun of K-shot raw-VAD saturation registered; execution pending.
 
-## Main valid result
+## Current status
 
-Acoustic-center estimation improves monotonically through K=50. K=20 already reaches near-oracle
-Arousal/Dominance Hybrid CCC, but the apparent K20-to-K50 Arousal drop is confounded because larger
-K removes more downstream rows.
+- EXP-19: valid/mixed; K=10 unlabeled Hybrid nearly recovers marginal-oracle raw VAD performance.
+- EXP-20: invalid due runtime/output provenance mismatch; no numerical results used.
+- EXP-20260921-01: clean superseding rerun with immutable runtime script/config copies.
 
 ## Next legal step
 
-Reserve the same 50 label-free enrollment utterances for every speaker and every K, keep all
-downstream train/test rows fixed, and estimate the acoustic center from nested prefixes
-K=[1,2,5,10,20,50].
+Execute EXP-20260921-01 from a hash-verified /tmp runtime bundle and audit K=10 versus K=50
+sample-efficiency saturation.

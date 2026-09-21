@@ -1,0 +1,56 @@
+schema_version: 1
+protocol_id: PROTO-MSP-VAD-KSHOT-SATURATION-V2
+title: K-shot acoustic-center sample efficiency for raw MSP VAD
+
+research_question_scope: >
+  On a fixed high-support speaker cohort, quantify how quickly unlabeled K-shot acoustic-center
+  estimation saturates and whether K=10 is already near the practical plateau for raw
+  Arousal/Dominance Hybrid prediction.
+
+dataset:
+  name: msp
+  fixed_cohort_rule: speaker has more than 50 all-attribute eligible utterances
+  targets: [valence, arousal, dominance]
+
+controls:
+  - Use one fixed >50-support speaker cohort for every K.
+  - K values fixed at [1,2,5,10,20,50].
+  - Same five speaker-disjoint folds and three fixed seeds for every K.
+  - Uniform random label-free enrollment within speaker.
+  - Enrollment rows excluded from downstream train/test.
+  - Fixed median acoustic-center estimator.
+  - Fixed multi-output Ridge(alpha=1.0), equal-speaker weights, train-only scaling.
+  - Compare Absolute, K-shot Hybrid, and diagnostic marginal-oracle Hybrid only.
+  - Same downstream rows for all three representations within K/seed/fold.
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      Center-estimation saturation is supported if, for all three acoustic dimensions,
+      the K=10 to K=50 marginal-center MAE reduction is less than half of the K=1 to K=10 reduction.
+    - >
+      Downstream saturation is supported if the Arousal K-shot-Hybrid CCC gain from K=10 to K=50
+      is <0.01 and the Dominance gain is <0.01.
+    - >
+      Practical plateau is supported if K=10 Hybrid is already within 0.01 CCC of K=50 Hybrid
+      for both Arousal and Dominance.
+  rejection:
+    - >
+      Reject K=10 plateau if either Arousal or Dominance improves by >=0.02 CCC from K=10 to K=50.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-20/data_inventory.csv
+  - artifacts/EXP-20260920-20/center_error_summary.csv
+  - artifacts/EXP-20260920-20/metrics_by_fold.csv
+  - artifacts/EXP-20260920-20/summary.csv
+  - artifacts/EXP-20260920-20/k_deltas.csv
+  - artifacts/EXP-20260920-20/run_metadata.json
+
+runtime_integrity:
+  - Execute from immutable /tmp copies of the preregistered script and config.
+  - Record SHA256 of source and runtime copies before execution.
+  - Require source and runtime hashes to match the preregistered commit.

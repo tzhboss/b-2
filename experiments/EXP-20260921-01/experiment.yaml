@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260921-01
+title: Immutable rerun of K-shot raw-VAD saturation
+
+research_question: >
+  On one fixed >50-support MSP speaker cohort, is K=10 already close to K=50 for label-free
+  acoustic-center estimation and raw Arousal/Dominance Hybrid prediction?
+
+registered_hypothesis: >
+  Acoustic-center error will continue decreasing beyond K=10, but downstream CCC gains will show
+  diminishing returns; K=10 will be within 0.01 CCC of K=50 for Arousal and Dominance.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-19, EXP-20260920-20]
+protocol_reference: configs/protocols/msp_vad_kshot_saturation_v2.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-01.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed Ridge alpha and fixed K sequence
+  selection_metric: null
+  rationale: clean rerun after invalid runtime provenance in EXP-20
+
+supersedes: [EXP-20260920-20]
+superseded_by: []
+role: deployment sample-efficiency analysis
