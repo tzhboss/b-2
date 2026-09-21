@@ -280,3 +280,37 @@ confirmatory evidence.
 Speaker-relative low-dimensional prosody only modestly reduces speaker-ID decodability, even though
 gender suppression is strong. We therefore avoid claiming that Relative prosody universally removes
 speaker identity.
+
+### Learned-representation target-reference intervention
+
+We additionally construct reference frames directly in frozen WavLM-large embedding space on
+IEMOCAP. We extract attention-mask-aware temporal mean embeddings from hidden layers 12 and 24.
+For each layer, the Absolute representation is the utterance embedding, the speaker center is the
+coordinate-wise median embedding over that speaker's utterances, and the Relative representation
+subtracts this center from the utterance embedding. Hybrid concatenates Relative and center.
+
+We then repeat the same target-reference lambda intervention under fixed speaker-disjoint folds.
+Uncertainty is computed with speaker-cluster bootstrap.
+
+### 9. Target-reference matching also appears in WavLM embedding space
+
+The WavLM experiment produces a direct preference reversal.
+
+Layer 12:
+- Arousal slope: -0.0829, 95% CI [-0.1309, -0.0359].
+- Dominance slope: -0.0341, [-0.0583, -0.0118].
+
+Layer 24:
+- Arousal slope: -0.0958, 95% CI [-0.1429, -0.0482].
+- Dominance slope: -0.0455, [-0.0707, -0.0181].
+
+At lambda=0, Relative-minus-Absolute is positive in every cell:
++0.0405/+0.0148 at layer 12 and +0.0466/+0.0251 at layer 24 for
+Arousal/Dominance respectively.
+
+At lambda=1, all four differences reverse sign:
+-0.0423/-0.0192 at layer 12 and -0.0490/-0.0204 at layer 24.
+
+Thus the core phenomenon is not restricted to interpretable low-dimensional prosody. A
+speaker-relative transformation of a learned speech representation becomes less appropriate as
+the target contains more between-speaker structure.

@@ -133,3 +133,17 @@ speaker-level target structure is present.
 These findings motivate a shift in how normalization is discussed in speech affect modeling.
 Rather than asking whether speaker normalization improves performance, future work should ask
 which reference frame the task actually requires.
+
+### The mechanism extends beyond handcrafted prosody
+
+The WavLM intervention provides an important boundary test. If target-reference matching were only
+a consequence of explicitly subtracting a scalar pitch or rate baseline, there would be little
+reason to expect the same controlled reversal in a 1024-dimensional learned representation.
+
+Instead, both layer 12 and layer 24 show the same pattern: speaker-relative WavLM embeddings are
+better for pure within-speaker Arousal/Dominance targets, but their advantage decreases as
+between-speaker target structure is added and reverses for the raw target.
+
+This result suggests that the principle is more general than prosodic feature engineering. It
+concerns how stable speaker structure and utterance-level deviation are organized relative to the
+prediction target, even when those components are distributed across a learned representation.
