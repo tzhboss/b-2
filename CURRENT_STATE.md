@@ -2,15 +2,14 @@
 
 ## Phase
 
-Fixed-pool IEMOCAP K-shot reference-quality curve completed and audited.
+IEMOCAP loudness-semantics robustness experiment registered; execution pending.
 
-## Main finding
+## Active research question
 
-Physical speaker-center estimation improves strongly with K, but deployment target-reference slope
-recovery is non-monotonic. K=50 is closer to the oracle mechanism than K=100 for Arousal and
-Dominance on this ten-speaker corpus.
+Does IEMOCAP target-reference coupling survive replacing the undocumented relative_db field with
+physically interpretable 20*log10(rms)?
 
 ## Next legal step
 
-Audit the semantic/provenance meaning of IEMOCAP acoustic fields, especially relative_db, before
-using the IEMOCAP attribute-specific results as paper evidence.
+Run EXP-20260921-09 from an immutable runtime bundle and audit all-attribute and loudness-only
+Arousal/Dominance slopes.

@@ -1,0 +1,59 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-LOUDNESS-SEMANTIC-ROBUSTNESS-V1
+title: IEMOCAP loudness-definition robustness for target-reference coupling
+
+research_question_scope: >
+  Test whether the IEMOCAP target-reference mechanism depends on the semantically ambiguous
+  source field relative_db, by replacing it with physically interpretable utterance RMS dB.
+
+dataset: iemocap
+targets: [valence, arousal, dominance]
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+
+loudness_definitions:
+  source_relative_db:
+    formula: source parquet relative_db
+    caveat: source dataset card provides no computation semantics
+  rms_db:
+    formula: 20*log10(rms)
+    interpretation: utterance RMS amplitude in dB relative to full-scale amplitude 1
+
+analyses:
+  - all_attribute_target_reference_intervention
+  - loudness_only_target_reference_intervention
+
+controls:
+  - Use identical 10,039 utterances and identical speaker-disjoint folds for both loudness definitions.
+  - Pitch is 12*log2(pitch_mean); rate is log(speaking_rate).
+  - Speaker center is full-speaker median per acoustic dimension.
+  - Five speaker-disjoint folds, three fixed seeds.
+  - Fixed multi-output Ridge(alpha=1.0), train-only weighted scaling.
+  - Equal total train/evaluation weight per speaker.
+  - No definition-specific tuning.
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      Core-mechanism robustness is supported if all-attribute Relative-minus-Absolute slope remains
+      negative with 95% CI below zero for Arousal and Dominance using rms_db.
+    - >
+      Loudness-mechanism robustness is supported if loudness-only Relative-minus-Absolute slope
+      remains negative with 95% CI below zero for Arousal and Dominance using rms_db.
+    - >
+      Directional definition consistency is supported if slope signs agree between source_relative_db
+      and rms_db for Arousal and Dominance in both all-attribute and loudness-only analyses.
+  rejection:
+    - >
+      Reject IEMOCAP loudness-based evidence if rms_db reverses the Arousal and Dominance
+      Relative-minus-Absolute slopes to positive in both analyses.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-09/data_inventory.csv
+  - artifacts/EXP-20260921-09/metrics_by_fold.csv
+  - artifacts/EXP-20260921-09/effect_curves.csv
+  - artifacts/EXP-20260921-09/slope_tests.csv
+  - artifacts/EXP-20260921-09/run_metadata.json

@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260921-09
+title: Does IEMOCAP target-reference coupling survive replacing relative_db with RMS dB?
+
+research_question: >
+  Is the IEMOCAP target-reference mechanism robust to a physically interpretable loudness
+  definition rather than the source field relative_db?
+
+registered_hypothesis: >
+  Replacing relative_db with 20*log10(rms) will preserve the negative
+  Relative-minus-Absolute target-reference slope for Arousal and Dominance.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260921-03, EXP-20260921-05, EXP-20260921-08]
+protocol_reference: configs/protocols/iemocap_loudness_semantic_robustness_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-09.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed Ridge alpha and fixed loudness definitions
+  selection_metric: null
+  rationale: feature-semantics robustness audit
+
+supersedes: []
+superseded_by: []
+role: IEMOCAP feature-provenance robustness
