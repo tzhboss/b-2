@@ -1,0 +1,35 @@
+schema_version: 1
+experiment_id: EXP-20260920-21
+title: Does MSP VAD K-shot performance really saturate by K=20?
+
+research_question: >
+  When downstream rows are held identical across K, does label-free speaker-reference quality
+  show diminishing VAD returns and effectively saturate by K=20?
+
+registered_hypothesis: >
+  Acoustic-center error will continue to fall through K=50, but Arousal/Dominance Hybrid CCC will
+  show diminishing returns and be effectively saturated by K=20 on a fixed downstream pool.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-20]
+protocol_reference: configs/protocols/msp_vad_kshot_fixedpool_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-21.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed 50-utterance reserve and nested K prefixes
+  selection_metric: null
+  rationale: remove K-dependent downstream-row confound
+
+supersedes: []
+superseded_by: []
+role: corrected sample-efficiency analysis

@@ -1,0 +1,58 @@
+schema_version: 1
+protocol_id: PROTO-MSP-VAD-KSHOT-FIXEDPOOL-V1
+title: Fixed-pool nested K-shot saturation for MSP VAD
+
+research_question_scope: >
+  Isolate pure acoustic-reference sample efficiency by holding downstream train/test rows fixed
+  across K while varying only how many utterances from a reserved 50-utterance label-free pool
+  are used to estimate the speaker acoustic center?
+
+dataset:
+  name: msp
+  common_cohort_rule: more than 50 eligible all-attribute utterances per speaker
+  reserved_enrollment_per_speaker: 50
+  k_values: [1,2,5,10,20,50]
+
+controls:
+  - Use one common >50 speaker cohort for every K.
+  - For each seed and speaker, generate one random label-free ordering.
+  - Reserve the first 50 utterances from downstream train/test for every K.
+  - Estimate K-shot center from the first K utterances of that same fixed reserved pool.
+  - Therefore downstream rows are identical for K=1,2,5,10,20,50.
+  - Use five speaker-disjoint folds, three fixed seeds, equal-speaker weights, and Ridge(alpha=1.0).
+  - Use only raw MSP VAD targets and all three prosodic attributes.
+  - Marginal-speaker oracle is diagnostic only.
+
+criteria:
+  acceptance:
+    - >
+      Pure center convergence is supported if marginal-center MAE decreases monotonically with K
+      for all three acoustic attributes and K50 MAE is at least 40% below K10 MAE for each.
+    - >
+      Fixed-pool saturation is supported if K20 Hybrid is within 0.01 CCC of marginal-oracle Hybrid
+      for Arousal and Dominance, and |K50-K20| Hybrid CCC is below 0.005 for both.
+    - >
+      Diminishing returns are supported if the matched K20-to-K50 CCC gain is smaller in magnitude
+      than the matched K5-to-K10 gain for both Arousal and Dominance.
+  rejection:
+    - >
+      Reject saturation by K20 if K50 improves Hybrid CCC over K20 by at least 0.015 for either
+      Arousal or Dominance on the fixed downstream pool.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-21/data_inventory.csv
+  - artifacts/EXP-20260920-21/center_error_summary.csv
+  - artifacts/EXP-20260920-21/metrics_by_fold.csv
+  - artifacts/EXP-20260920-21/summary.csv
+  - artifacts/EXP-20260920-21/paired_deltas.csv
+  - artifacts/EXP-20260920-21/k_deltas.csv
+  - artifacts/EXP-20260920-21/run_metadata.json
+
+required_audits:
+  - Confirm one common cohort for all K.
+  - Confirm downstream row identity is exactly equal across K within seed/fold.
+  - Confirm the 50 reserved utterances never enter downstream train/test.
+  - Confirm K-shot sets are nested prefixes of the same 50 reserved utterances.
+  - Confirm speaker-disjoint folds and zero leakage.
