@@ -1,0 +1,16 @@
+schema_version: 1
+experiment_id: EXP-20260921-10
+dataset:
+  iemocap_source_glob: /data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/*.parquet
+seed: [20260920,20260921,20260922]
+parameters:
+  outer_folds: 5
+  ridge_alpha: 1.0
+  bootstrap_reps: 10000
+  lambda_values: [0.0,0.25,0.5,0.75,1.0]
+  targets: [valence,arousal,dominance]
+  feature_sets: [pitch,rate,pitch_rate]
+  model_families: [linear_ridge,quadratic_ridge]
+outputs:
+  artifact_root: artifacts/EXP-20260921-10
+entrypoint: scripts/run_iemocap_pitch_rate_reference_matching_20260921.py

@@ -2,17 +2,14 @@
 
 ## Phase
 
-IEMOCAP loudness semantic robustness completed and rejected.
+Semantically safe IEMOCAP pitch/rate target-reference validation registered; execution pending.
 
-## Critical correction
+## Active research question
 
-The source field relative_db has undocumented semantics and is nearly unrelated to 20*log10(rms).
-Replacing it with RMS dB reverses IEMOCAP Arousal/Dominance target-reference slopes. Therefore
-IEMOCAP loudness and all-feature results that depend on relative_db are not suitable as main
-evidence.
+Does IEMOCAP preserve target-reference coupling when all loudness fields are excluded and only
+pitch plus speaking rate are used?
 
 ## Next legal step
 
-Re-test IEMOCAP target-reference coupling using only semantically clear pitch and speaking-rate
-features. If pitch+rate preserves negative Arousal/Dominance slopes, retain IEMOCAP as an
-independent external validation without loudness.
+Run EXP-20260921-10 from an immutable runtime bundle and audit pitch+rate slopes across linear and
+quadratic Ridge.

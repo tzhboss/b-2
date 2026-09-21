@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260921-10
+title: Does IEMOCAP target-reference coupling survive after removing ambiguous loudness?
+
+research_question: >
+  Using only pitch and speaking rate, does IEMOCAP still show the target-reference matching
+  mechanism across linear and quadratic models?
+
+registered_hypothesis: >
+  Pitch+rate Relative-minus-Absolute slopes will remain significantly negative for Arousal and
+  Dominance under both model families.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260921-04, EXP-20260921-05, EXP-20260921-09]
+protocol_reference: configs/protocols/iemocap_pitch_rate_reference_matching_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-10.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed feature sets and model families
+  selection_metric: null
+  rationale: semantically safe external validation
+
+supersedes: []
+superseded_by: []
+role: external validation without ambiguous loudness

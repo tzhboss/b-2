@@ -1,0 +1,68 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-PITCH-RATE-REFERENCE-MATCHING-V1
+title: Semantically safe IEMOCAP pitch/rate target-reference validation
+
+research_question_scope: >
+  Re-test IEMOCAP target-reference coupling using only acoustic attributes with clear semantics:
+  pitch_mean and speaking_rate. Exclude relative_db and RMS loudness entirely.
+
+dataset: iemocap
+targets: [valence, arousal, dominance]
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+feature_sets:
+  pitch: [pitch]
+  rate: [rate]
+  pitch_rate: [pitch, rate]
+
+acoustic_definitions:
+  pitch_absolute: 12*log2(pitch_mean)
+  rate_absolute: log(speaking_rate)
+  speaker_center: full-speaker median of the corresponding absolute feature
+  relative: absolute-speaker_center
+
+model_families:
+  - linear_ridge
+  - quadratic_ridge
+
+controls:
+  - Use all 10,039 IEMOCAP utterances.
+  - Exclude relative_db and rms from the prediction feature sets.
+  - Five speaker-disjoint folds and three fixed seeds.
+  - Same rows and folds across feature sets, representations, lambdas, and model families.
+  - Equal total train/evaluation weight per speaker.
+  - Fixed Ridge(alpha=1.0); quadratic model uses degree-2 PolynomialFeatures without tuning.
+  - Target intervention uses the same deterministic y_lambda definition as EXP-20260921-03.
+
+representations:
+  - absolute
+  - relative
+  - hybrid
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      Semantically safe external replication is supported if pitch_rate Relative-minus-Absolute
+      slope is negative with 95% CI below zero for Arousal and Dominance under both linear and
+      quadratic Ridge.
+    - >
+      Within-speaker endpoint replication is supported if pitch_rate Relative-minus-Absolute at
+      lambda=0 is positive for Arousal and Dominance under both model families.
+    - >
+      Attribute evidence is supported if rate alone has significantly negative Arousal and
+      Dominance slopes under linear Ridge, and pitch alone has a significantly negative Arousal
+      slope under linear Ridge.
+  rejection:
+    - >
+      Reject semantically safe IEMOCAP replication if pitch_rate slopes are non-negative for both
+      Arousal and Dominance under either model family.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-10/data_inventory.csv
+  - artifacts/EXP-20260921-10/metrics_by_fold.csv
+  - artifacts/EXP-20260921-10/effect_curves.csv
+  - artifacts/EXP-20260921-10/slope_tests.csv
+  - artifacts/EXP-20260921-10/run_metadata.json
