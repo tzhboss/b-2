@@ -2,13 +2,16 @@
 
 ## Phase
 
-Cross-corpus controlled VAD target-reference intervention registered; execution pending.
+Controlled cross-corpus VAD target-reference intervention completed and audited.
 
-## Active research question
+## Main mechanism finding
 
-If between-speaker target structure is increased continuously while inputs and models remain fixed,
-does reference-frame utility shift monotonically from Relative toward Absolute/Hybrid?
+When the between-speaker component of Arousal/Dominance targets is increased continuously while
+inputs and model are held fixed, Relative-minus-Absolute utility decreases significantly in both
+MSP and IEMOCAP. At the pure within-speaker endpoint, Relative is better in all four
+corpus-by-target cells.
 
 ## Next legal step
 
-Run EXP-20260921-03 from an immutable runtime bundle and audit effect slopes across MSP and IEMOCAP.
+Test whether the intervention slope survives a fixed nonlinear feature model
+(Quadratic Ridge) rather than depending on linear Ridge accessibility.
