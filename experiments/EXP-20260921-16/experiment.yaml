@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260921-16
+title: Does target-reference matching survive in frozen WavLM embedding space?
+
+research_question: >
+  When Absolute, Relative, and Hybrid reference frames are constructed directly from frozen WavLM
+  embeddings, does increasing between-speaker target structure make Relative less favorable?
+
+registered_hypothesis: >
+  Relative-minus-Absolute slopes will be negative for Arousal and Dominance at both WavLM layer 12
+  and layer 24, with Relative favored at most pure within-speaker endpoints.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-04, EXP-20260921-12, EXP-20260921-15]
+protocol_reference: configs/protocols/iemocap_wavlm_reference_intervention_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-16.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: 20260920
+  integrity_mode: immutable_runtime_scripts
+
+selected_checkpoint:
+  identifier: microsoft-wavlm-large local checkpoint
+  selection_rule: frozen checkpoint; layers 12 and 24 fixed before result inspection
+  selection_metric: null
+  rationale: learned-representation mechanism extension
+
+supersedes: []
+superseded_by: []
+role: SSL-level confirmatory mechanism test

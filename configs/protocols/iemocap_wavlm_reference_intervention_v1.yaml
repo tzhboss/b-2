@@ -1,0 +1,65 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-WAVLM-REFERENCE-INTERVENTION-V1
+title: WavLM embedding-level target-reference intervention on IEMOCAP
+
+research_question_scope: >
+  Test whether target-reference matching survives in learned speech representations when
+  speaker-relative reference frames are constructed directly in frozen WavLM embedding space.
+
+dataset:
+  name: iemocap
+  source_glob: /data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/*.parquet
+  targets: [arousal,dominance]
+
+encoder:
+  checkpoint: /data/lc/models/microsoft-wavlm-large
+  frozen: true
+  pooled_layers: [12,24]
+  pooling: attention-mask-aware temporal mean
+
+representation:
+  absolute: utterance pooled WavLM embedding
+  speaker_center: coordinate-wise median pooled embedding over all utterances of a speaker
+  relative: absolute-speaker_center
+  hybrid: concatenate(relative,speaker_center)
+
+diagnostic_boundary:
+  - Full-speaker embedding centers are oracle diagnostic references, not deployment assumptions.
+  - The experiment asks whether the reference-frame mechanism generalizes beyond handcrafted prosody.
+
+target_intervention:
+  formula: global_mean + within_speaker_residual + lambda*(speaker_mean-global_mean)
+  lambda_values: [0.0,0.25,0.5,0.75,1.0]
+
+evaluation:
+  split_seed: 20260920
+  outer_folds: 5
+  model: Ridge(alpha=1.0)
+  train_scaling: weighted StandardScaler
+  sample_weighting: equal total train/evaluation weight per speaker
+  inference_unit: speaker
+  speaker_bootstrap_reps: 5000
+
+criteria:
+  acceptance:
+    - >
+      SSL target-reference direction is supported if Relative-minus-Absolute slope is negative for
+      Arousal and Dominance at both layer 12 and layer 24.
+    - >
+      Within-speaker endpoint support is present if Relative-minus-Absolute at lambda=0 is positive
+      for at least three of four layer-by-target cells.
+    - >
+      Strong SSL replication is supported if at least three of four speaker-cluster bootstrap slope
+      CIs exclude zero below.
+  rejection:
+    - >
+      Reject broad SSL extension if both Arousal and Dominance slopes are positive at both layers.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-16/embedding_inventory.csv
+  - artifacts/EXP-20260921-16/oof_predictions.parquet
+  - artifacts/EXP-20260921-16/point_effects.csv
+  - artifacts/EXP-20260921-16/cluster_bootstrap_slopes.csv
+  - artifacts/EXP-20260921-16/run_metadata.json
