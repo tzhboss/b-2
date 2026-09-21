@@ -2,14 +2,25 @@
 
 ## Phase
 
-Content-disjoint speaker-identity decodability audit registered; execution pending.
+Core experiments are complete enough for manuscript construction; paper synthesis package exists
+and includes explicit claim boundaries.
 
-## Active research question
+## Current strongest mechanism
 
-Beyond gender, how much stable speaker identity remains decodable after speaker-relative prosodic
-normalization?
+Target-reference matching is supported by:
+- controlled target intervention across MSP and IEMOCAP;
+- linear/quadratic model robustness;
+- attribute-level decomposition;
+- speaker-center identity permutation;
+- K-shot deployment validation;
+- semantically safe IEMOCAP pitch+rate replication.
+
+## Important boundary
+
+Speaker-ID decodability is only modestly reduced by Relative low-dimensional prosody, so the strong
+gender reversal must not be generalized to universal identity removal.
 
 ## Next legal step
 
-Run EXP-20260921-11 from an immutable runtime bundle and audit speaker-identity suppression and
-baseline restoration under content-disjoint folds.
+Turn the synthesis into a manuscript-ready outline with explicit research questions, claims,
+experiment-to-section mapping, and a minimal set of main-paper versus appendix results.

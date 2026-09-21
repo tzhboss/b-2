@@ -51,3 +51,12 @@ contains between-speaker structure.
 
 The controlled target intervention and center-identity permutation are the strongest mechanism
 experiments supporting this statement.
+
+## Additional trait-information boundary
+
+A content-disjoint speaker-identity audit (EXP-20260921-11) shows that Relative all-prosody reduces
+speaker-ID Macro-F1 consistently, but only modestly (roughly 0.018–0.035 absolute across ESD,
+MEAD, and RAVDESS). Therefore the strong gender reversal should not be generalized to a claim that
+speaker-relative normalization universally removes speaker identity. Explicit speaker baselines
+still contain substantial identity information, and adding them back strongly increases
+speaker-ID decodability.
