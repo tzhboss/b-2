@@ -1,0 +1,13 @@
+schema_version: 1
+experiment_id: EXP-20260921-11
+dataset:
+  source_env: PROSODY_ENRICHED_PARQUET
+seed: [20260920,20260921,20260922]
+parameters:
+  ridge_alpha: 1.0
+  bootstrap_reps: 10000
+  attribute_sets: [pitch,all]
+  representations: [absolute,relative,baseline_only,relative_plus_baseline]
+outputs:
+  artifact_root: artifacts/EXP-20260921-11
+entrypoint: scripts/run_speaker_identity_decodability_20260921.py

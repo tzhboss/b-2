@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260921-11
+title: Does speaker-relative prosody suppress speaker identity beyond gender?
+
+research_question: >
+  Under content-disjoint evaluation, how much speaker identity remains decodable from Absolute
+  versus speaker-relative prosody?
+
+registered_hypothesis: >
+  Relative prosody will substantially reduce speaker-identity decodability compared with Absolute,
+  while explicit speaker baseline information will restore much of that identity signal.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-02, EXP-20260920-04]
+protocol_reference: configs/protocols/speaker_identity_decodability_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-11.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed RidgeClassifier alpha
+  selection_metric: null
+  rationale: content-disjoint representation decodability audit
+
+supersedes: []
+superseded_by: []
+role: speaker-trait representation audit

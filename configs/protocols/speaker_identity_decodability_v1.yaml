@@ -1,0 +1,65 @@
+schema_version: 1
+protocol_id: PROTO-SPEAKER-IDENTITY-DECODABILITY-V1
+title: Content-disjoint speaker-identity decodability from Absolute versus Relative prosody
+
+research_question_scope: >
+  Audit how much stable speaker identity remains decodable after speaker-relative normalization.
+  This is a representation-analysis task, not a deployment speaker-identification protocol.
+
+datasets:
+  - esd_english
+  - mead_part0
+  - ravdess_speech
+
+content_disjoint_split:
+  esd_english: exact transcript string grouped across speakers
+  mead_part0: sentence index parsed from source filename
+  ravdess_speech: statement x repetition parsed from canonical filename
+
+representations:
+  - absolute
+  - relative
+  - baseline_only
+  - relative_plus_baseline
+
+attribute_sets:
+  - pitch
+  - all
+
+controls:
+  - Use only rows with speaker-specific reference scopes for all attributes used.
+  - Require positive pitch and speaking rate values.
+  - No content group may appear in both train and test within a fold.
+  - Every speaker class must occur in train and test for every retained fold.
+  - Use fixed RidgeClassifier(alpha=1.0) with train-only StandardScaler.
+  - No speaker-specific model tuning.
+  - Report macro-F1 and balanced accuracy.
+  - Relative features are the existing normalized representation; this experiment measures residual
+    identity information, not deployment feasibility.
+
+criteria:
+  acceptance:
+    - >
+      Speaker-identity suppression is supported if Relative-minus-Absolute macro-F1 is <= -0.10
+      for pitch in at least two corpora and <= -0.05 for all-prosody in at least two corpora,
+      with paired-bootstrap 95% CIs below zero.
+    - >
+      Baseline identity concentration is supported if baseline_only exceeds Relative by >=0.20
+      macro-F1 in at least two corpora for all-prosody.
+    - >
+      Hybrid restoration is supported if Relative+Baseline recovers at least 80% of the
+      Absolute-minus-Relative macro-F1 gap in at least two corpora.
+  rejection:
+    - >
+      Reject substantial identity suppression if Relative-minus-Absolute absolute macro-F1
+      difference is <0.02 in all corpora and attribute sets.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-11/data_inventory.csv
+  - artifacts/EXP-20260921-11/fold_inventory.csv
+  - artifacts/EXP-20260921-11/metrics_by_fold.csv
+  - artifacts/EXP-20260921-11/summary.csv
+  - artifacts/EXP-20260921-11/paired_deltas.csv
+  - artifacts/EXP-20260921-11/run_metadata.json
