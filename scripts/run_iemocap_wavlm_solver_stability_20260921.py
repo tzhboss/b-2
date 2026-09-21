@@ -82,7 +82,7 @@ def main():
     lab=lab.rename(columns={"EmoAct":"arousal","EmoDom":"dominance"})
 
     ids=[]; blocks=[]; inventory=[]
-    eroot=Path(cfg["outputs"]["embedding_root"])
+    eroot=Path(cfg["inputs"]["embedding_root"])
     for f in sorted(eroot.glob("*.npz")):
         z=np.load(f)
         ids.extend(z["sample_id"].astype(str).tolist())
@@ -178,8 +178,9 @@ def main():
                      "speakers":S})
 
     default=pd.read_csv(cfg["inputs"]["default_results"])
-    comp=pd.DataFrame(boot).merge(default[["layer","target","slope_mean","lambda0_effect"]],
-                                  on=["layer","target"],suffixes=("_lsqr","_default"))
+    comp=pd.DataFrame(boot).merge(
+        default[["layer","target","slope_mean","lambda0_effect"]],
+        on=["layer","target"],suffixes=("_lsqr","_default"))
     comp["slope_abs_diff"]=(comp.slope_mean_lsqr-comp.slope_mean_default).abs()
     comp["lambda0_abs_diff"]=(comp.lambda0_effect_lsqr-comp.lambda0_effect_default).abs()
 
@@ -191,7 +192,8 @@ def main():
     comp.to_csv(root/"solver_comparison.csv",index=False)
     (root/"run_metadata.json").write_text(json.dumps({
       "experiment_id":cfg["experiment_id"],"layers":layers,"rows":len(d),"speakers":len(speakers),
-      "split_seed":cfg["parameters"]["split_seed"],"bootstrap_unit":"speaker","ridge_solver":cfg["parameters"]["ridge_solver"],"ridge_tol":cfg["parameters"]["ridge_tol"]
+      "split_seed":cfg["parameters"]["split_seed"],"bootstrap_unit":"speaker",
+      "ridge_solver":cfg["parameters"]["ridge_solver"],"ridge_tol":cfg["parameters"]["ridge_tol"]
     },indent=2)+"\n")
     print(pd.DataFrame(boot).to_string(index=False))
 
