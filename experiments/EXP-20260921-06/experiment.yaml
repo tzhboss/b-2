@@ -11,18 +11,18 @@ registered_hypothesis: >
   for within-speaker residual targets.
 
 status:
-  execution: planned
-  validity: unchecked
-  decision: pending
+  execution: completed
+  validity: valid
+  decision: pass
 
 parent_experiments: [EXP-20260920-17, EXP-20260921-03, EXP-20260921-05]
 protocol_reference: configs/protocols/vad_speaker_center_permutation_v1.yaml
 experiment_config_reference: configs/experiments/EXP-20260921-06.yaml
 
 runtime:
-  commit: null
+  commit: 8bf05cf1f30e2abe1825637640f1d860e7cef9fa
   branch: main
-  seed: null
+  seed: [20260920, 20260921, 20260922]
   integrity_mode: immutable_tmp_bundle
 
 selected_checkpoint:

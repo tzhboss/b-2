@@ -2,14 +2,16 @@
 
 ## Phase
 
-Speaker-center identity permutation intervention registered; execution pending.
+Speaker-center identity permutation mechanism test completed and audited.
 
-## Active research question
+## Main mechanism finding
 
-Does the raw-VAD Hybrid benefit require the correct speaker-specific acoustic center, while
-within-speaker residual VAD remains insensitive to center identity?
+Correct speaker-center identity is essential for raw MSP Arousal/Dominance Hybrid utility, while
+center identity is nearly irrelevant for within-speaker residual VAD. IEMOCAP shows the same
+direction but much smaller raw effects, consistent with its weak between-speaker target structure.
 
 ## Next legal step
 
-Run EXP-20260921-06 from an immutable runtime bundle and compare true versus speaker-permuted
-center effects.
+Search the local corpus inventory for any additional datasets with genuine continuous
+Valence/Arousal/Dominance annotations. If available, add a third-corpus external validation;
+otherwise consolidate MSP+IEMOCAP into paper-ready statistical tables and figures.
