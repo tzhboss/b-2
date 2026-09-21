@@ -1,0 +1,20 @@
+schema_version: 1
+experiment_id: EXP-20260921-17
+dataset:
+  source_glob: /data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/*.parquet
+parameters:
+  layers: [12,24]
+  split_seed: 20260920
+  outer_folds: 5
+  ridge_alpha: 1.0
+  ridge_solver: lsqr
+  ridge_tol: 1.0e-8
+  bootstrap_reps: 5000
+  lambda_values: [0.0,0.25,0.5,0.75,1.0]
+  targets: [arousal,dominance]
+inputs:
+  embedding_root: artifacts/EXP-20260921-16/embeddings
+  default_results: results/EXP-20260921-16/cluster_bootstrap_slopes.csv
+outputs:
+  artifact_root: artifacts/EXP-20260921-17
+entrypoint: scripts/run_iemocap_wavlm_solver_stability_20260921.py

@@ -1,0 +1,44 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-WAVLM-SOLVER-STABILITY-V1
+title: Numerical solver stability for WavLM target-reference effects
+
+research_question_scope: >
+  Test whether the WavLM Relative-minus-Absolute target-reference effect is stable when Ridge is
+  solved with LSQR instead of the default solver that emitted ill-conditioning warnings.
+
+dataset: iemocap
+layers: [12,24]
+targets: [arousal,dominance]
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+representations: [absolute,relative]
+
+model:
+  family: Ridge
+  alpha: 1.0
+  solver: lsqr
+  tol: 1.0e-8
+
+controls:
+  - Reuse the exact EXP-20260921-16 WavLM embeddings.
+  - Reuse the same speaker-disjoint fold assignment seed 20260920.
+  - Reuse the same full-speaker median embedding centers and target intervention.
+  - Exclude Hybrid because the registered robustness question concerns the primary
+    Relative-minus-Absolute claim.
+  - Use speaker-cluster bootstrap with 5000 replicates.
+
+criteria:
+  acceptance:
+    - All four Arousal/Dominance layer slopes remain negative.
+    - All four lambda=0 Relative-minus-Absolute effects remain positive.
+    - Absolute difference between LSQR and EXP-20260921-16 default-solver slope is <=0.01 in all cells.
+    - Absolute difference between LSQR and default-solver lambda=0 effect is <=0.01 in all cells.
+  rejection:
+    - Any cell reverses slope sign and differs from the default-solver slope by >=0.02.
+  inconclusive:
+    - Otherwise.
+
+required_outputs:
+  - artifacts/EXP-20260921-17/point_effects.csv
+  - artifacts/EXP-20260921-17/cluster_bootstrap_slopes.csv
+  - artifacts/EXP-20260921-17/solver_comparison.csv
+  - artifacts/EXP-20260921-17/run_metadata.json
