@@ -152,3 +152,20 @@ The primary registered WavLM claim is Relative-minus-Absolute, not a small Hybri
 All predictions are finite and the registered Relative-minus-Absolute speaker-cluster effects are
 large and significant. A solver-stability check should be reported before submission if it changes
 any main conclusion.
+
+### 15. "The effect is a trivial artifact of subtracting handcrafted prosodic means"
+
+Response:
+The same target-reference preference reversal appears when reference frames are constructed
+directly in 1024-dimensional frozen WavLM embedding space at both layer 12 and layer 24.
+
+Evidence:
+EXP-20260921-16.
+
+### 16. "High-dimensional WavLM Hybrid Ridge is ill-conditioned"
+
+Response:
+The primary registered WavLM claim is Relative-minus-Absolute, not a small Hybrid ranking.
+All predictions are finite and the registered Relative-minus-Absolute speaker-cluster effects are
+large and significant. A solver-stability check should be reported before submission if it changes
+any main conclusion.
