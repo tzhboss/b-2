@@ -117,10 +117,11 @@ def main():
               lam*(test[f"{t}_spmean"].to_numpy(float)-test[f"{t}_global"].to_numpy(float))
               for t in targets])
             for attr in attrs:
+              prefix={"pitch":"pitch","loudness":"loud","rate":"rate"}[attr]
               reps={
-                "absolute":[f"{attr}_abs"],
-                "relative":[f"{attr}_rel"],
-                "hybrid":[f"{attr}_rel",f"{attr}_center"]
+                "absolute":[f"{prefix}_abs"],
+                "relative":[f"{prefix}_rel"],
+                "hybrid":[f"{prefix}_rel",f"{prefix}_center"]
               }
               for rep,cols in reps.items():
                 pred=fit_predict(train,test,cols,ytr,wtr,float(cfg["parameters"]["ridge_alpha"]))
