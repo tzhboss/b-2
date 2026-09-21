@@ -1,0 +1,15 @@
+schema_version: 1
+experiment_id: EXP-20260921-14
+dataset:
+  source_env: PROSODY_ENRICHED_PARQUET
+seed: [20260920,20260921,20260922]
+parameters:
+  outer_folds: 5
+  ridge_alpha: 1.0
+  bootstrap_reps: 10000
+  lambda_values: [0.0,0.25,0.5,0.75,1.0]
+  targets: [valence,arousal,dominance]
+  attribute_sets: [f0_variability,pause_ratio,voiced_ratio,expanded_temporal]
+outputs:
+  artifact_root: artifacts/EXP-20260921-14
+entrypoint: scripts/run_msp_extended_prosody_reference_intervention_20260921.py

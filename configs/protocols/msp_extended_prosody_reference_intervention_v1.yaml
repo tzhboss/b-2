@@ -1,0 +1,63 @@
+schema_version: 1
+protocol_id: PROTO-MSP-EXTENDED-PROSODY-REFERENCE-INTERVENTION-V1
+title: Extended prosodic attributes under target-reference intervention
+
+research_question_scope: >
+  Test whether target-reference coupling extends beyond pitch level, loudness, and speaking rate
+  to pitch variability and temporal/voicing structure.
+
+dataset: msp
+attributes:
+  f0_variability:
+    absolute: f0_iqr_semitone
+  pause_ratio:
+    absolute: pause_ratio
+  voiced_ratio:
+    absolute: voiced_ratio
+  expanded_temporal:
+    absolute: [f0_iqr_semitone, pause_ratio, voiced_ratio]
+
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+targets: [valence,arousal,dominance]
+representations: [absolute,relative,hybrid]
+
+controls:
+  - Use speakers with >10 eligible utterances.
+  - Speaker center is the marginal median of each attribute.
+  - Relative equals utterance feature minus speaker center.
+  - Hybrid concatenates Relative and center.
+  - Five speaker-disjoint folds and three fixed seeds.
+  - Equal total train/evaluation weight per speaker.
+  - Fixed Linear Ridge(alpha=1.0), train-only weighted scaling.
+  - Same rows across attributes and lambda values.
+  - No attribute-specific tuning.
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      Extended-attribute coupling is supported if Relative-minus-Absolute slope is significantly
+      negative for Arousal or Dominance in at least three of the four attribute sets.
+    - >
+      F0-variability coupling is supported if its Arousal or Dominance slope is negative with
+      95% CI below zero.
+    - >
+      Temporal coupling is supported if pause_ratio or voiced_ratio has a significantly negative
+      Arousal or Dominance slope.
+    - >
+      Within-speaker endpoint consistency is supported if the expanded_temporal Relative-minus-
+      Absolute effect at lambda=0 is positive for Arousal and Dominance.
+  rejection:
+    - >
+      Reject extension beyond level features if none of f0_variability, pause_ratio, or voiced_ratio
+      shows a significantly negative Arousal/Dominance slope.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-14/data_inventory.csv
+  - artifacts/EXP-20260921-14/metrics_by_fold.csv
+  - artifacts/EXP-20260921-14/effect_curves.csv
+  - artifacts/EXP-20260921-14/slope_tests.csv
+  - artifacts/EXP-20260921-14/run_metadata.json
