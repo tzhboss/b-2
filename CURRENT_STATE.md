@@ -2,16 +2,13 @@
 
 ## Phase
 
-Controlled cross-corpus VAD target-reference intervention completed and audited.
+VAD target-reference model-family robustness experiment registered; execution pending.
 
-## Main mechanism finding
+## Active research question
 
-When the between-speaker component of Arousal/Dominance targets is increased continuously while
-inputs and model are held fixed, Relative-minus-Absolute utility decreases significantly in both
-MSP and IEMOCAP. At the pure within-speaker endpoint, Relative is better in all four
-corpus-by-target cells.
+Does the target-reference coupling slope survive both linear Ridge and fixed quadratic Ridge?
 
 ## Next legal step
 
-Test whether the intervention slope survives a fixed nonlinear feature model
-(Quadratic Ridge) rather than depending on linear Ridge accessibility.
+Run EXP-20260921-04 from an immutable runtime bundle and audit Arousal/Dominance slope direction
+across corpus and model family.

@@ -1,0 +1,51 @@
+schema_version: 1
+protocol_id: PROTO-VAD-TARGET-REFERENCE-MODEL-ROBUSTNESS-V1
+title: Model-family robustness of VAD target-reference intervention
+
+research_question_scope: >
+  Test whether the target-reference coupling discovered with linear Ridge persists under a fixed
+  nonlinear quadratic feature model.
+
+datasets: [msp, iemocap]
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+targets: [valence, arousal, dominance]
+representations: [absolute, relative, hybrid]
+model_families:
+  linear_ridge:
+    transform: standardized raw features
+    alpha: 1.0
+  quadratic_ridge:
+    transform: weighted-standardized raw features, polynomial degree 2 without bias, re-standardized
+    alpha: 1.0
+
+controls:
+  - Reuse EXP-20260921-03 dataset construction, target intervention, speaker folds, seeds, and acoustic marginal centers.
+  - Same rows and held-out speakers for both model families.
+  - Equal total train/evaluation weight per speaker.
+  - No family-specific hyperparameter tuning.
+  - Primary mechanism effect is slope of Relative-minus-Absolute CCC versus lambda.
+
+criteria:
+  acceptance:
+    - >
+      Mechanism robustness is supported if Relative-minus-Absolute slope is negative with 95% CI
+      below zero for Arousal and Dominance in both corpora under both model families.
+    - >
+      Endpoint robustness is supported if Relative-minus-Absolute at lambda=0 is positive for
+      Arousal and Dominance in both corpora under both model families.
+    - >
+      Family consistency is supported if all eight Arousal/Dominance corpus-by-model slope signs
+      agree with the linear-Ridge target-reference direction.
+  rejection:
+    - >
+      Reject broad model robustness if quadratic Ridge shows positive Relative-minus-Absolute slopes
+      for both Arousal and Dominance in either corpus.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-04/data_inventory.csv
+  - artifacts/EXP-20260921-04/metrics_by_fold.csv
+  - artifacts/EXP-20260921-04/effect_curves.csv
+  - artifacts/EXP-20260921-04/slope_tests.csv
+  - artifacts/EXP-20260921-04/run_metadata.json

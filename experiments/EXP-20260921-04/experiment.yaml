@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260921-04
+title: Is VAD target-reference coupling robust to nonlinear feature access?
+
+research_question: >
+  Does the negative Relative-minus-Absolute slope versus between-speaker target strength persist
+  under both linear Ridge and a fixed quadratic Ridge model?
+
+registered_hypothesis: >
+  The target-reference coupling direction will remain negative for Arousal and Dominance in both
+  MSP and IEMOCAP under both model families.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260921-03]
+protocol_reference: configs/protocols/vad_target_reference_model_robustness_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-04.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed alpha and fixed polynomial degree
+  selection_metric: null
+  rationale: model-family mechanism robustness
+
+supersedes: []
+superseded_by: []
+role: continuous-affect model robustness
