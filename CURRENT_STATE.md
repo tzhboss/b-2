@@ -2,16 +2,14 @@
 
 ## Phase
 
-Semantically matched cross-corpus confirmatory validation completed.
+Strict IEMOCAP leave-one-session-out confirmatory experiment registered.
 
-## Main confirmatory finding
+## Active research question
 
-Using only pitch + speaking rate, Relative-minus-Absolute CCC decreases significantly as
-between-speaker Arousal/Dominance target structure increases in both MSP and IEMOCAP under both
-linear and quadratic Ridge. At the pure within-speaker endpoint, Relative is better in every
-confirmatory cell.
+Does the semantically safe Pitch+Rate target-reference mechanism survive holding out an entire
+dyadic session, not merely individual speakers?
 
 ## Next legal step
 
-Consolidate paper-ready evidence: main tables, figures, claim-evidence matrix, and main-text versus
-appendix experiment assignment.
+Run EXP-20260921-13 from an immutable runtime bundle and audit session/speaker overlap plus
+Arousal/Dominance slopes.

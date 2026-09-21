@@ -1,0 +1,56 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-SESSION-DISJOINT-REFERENCE-MATCHING-V1
+title: IEMOCAP leave-one-session-out target-reference validation
+
+research_question_scope: >
+  Test whether the semantically safe Pitch+Rate target-reference mechanism survives a stricter
+  leave-one-session-out evaluation that excludes both speakers and the shared recording/dialogue
+  environment of the held-out IEMOCAP session.
+
+dataset:
+  name: iemocap
+  sessions: [Ses01,Ses02,Ses03,Ses04,Ses05]
+  held_out_unit: session
+
+features:
+  - pitch
+  - speaking_rate
+  - no loudness fields
+
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+targets: [valence,arousal,dominance]
+model_families: [linear_ridge,quadratic_ridge]
+representations: [absolute,relative,hybrid]
+
+controls:
+  - Exactly five leave-one-session-out folds.
+  - A held-out fold contains both speakers from one session.
+  - No session appears in both train and test.
+  - Full-speaker marginal pitch/rate centers are diagnostic only.
+  - Target intervention matches EXP-20260921-12.
+  - Equal total train/evaluation weight per speaker.
+  - Fixed Ridge(alpha=1.0), no tuning.
+
+criteria:
+  acceptance:
+    - >
+      Session-disjoint mechanism replication is supported if Relative-minus-Absolute slope is
+      negative for Arousal and Dominance under both model families, and at least three of four
+      95% CIs exclude zero below.
+    - >
+      Within-speaker endpoint replication is supported if Relative-minus-Absolute at lambda=0 is
+      positive for Arousal and Dominance under both model families.
+  rejection:
+    - >
+      Reject session-disjoint replication if both Arousal and Dominance slopes are positive under
+      either model family.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-13/data_inventory.csv
+  - artifacts/EXP-20260921-13/fold_inventory.csv
+  - artifacts/EXP-20260921-13/metrics_by_fold.csv
+  - artifacts/EXP-20260921-13/effect_curves.csv
+  - artifacts/EXP-20260921-13/slope_tests.csv
+  - artifacts/EXP-20260921-13/run_metadata.json

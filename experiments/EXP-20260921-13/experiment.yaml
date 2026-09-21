@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260921-13
+title: Does IEMOCAP target-reference coupling survive leave-one-session-out evaluation?
+
+research_question: >
+  Does the Pitch+Rate target-reference mechanism survive when an entire IEMOCAP session,
+  including both speakers and shared recording/dialogue context, is held out?
+
+registered_hypothesis: >
+  Relative-minus-Absolute target-reference slopes will remain negative for Arousal and Dominance
+  under both linear and quadratic Ridge, with positive within-speaker endpoints.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260921-10, EXP-20260921-12]
+protocol_reference: configs/protocols/iemocap_session_disjoint_reference_matching_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-13.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed leave-one-session-out folds
+  selection_metric: null
+  rationale: stricter external-validation split
+
+supersedes: []
+superseded_by: []
+role: session-disjoint confirmatory external validation
