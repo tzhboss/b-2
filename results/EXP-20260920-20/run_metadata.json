@@ -1,0 +1,21 @@
+{
+  "experiment_id": "EXP-20260920-20",
+  "source": "/data/lc/audio_feature_labeling/old/legacy_feature_pipeline/derived/final_dataset_enriched.parquet",
+  "seeds": [
+    20260920,
+    20260921,
+    20260922
+  ],
+  "outer_folds": 5,
+  "k_values": [
+    1,
+    2,
+    5,
+    10,
+    20,
+    50
+  ],
+  "common_min_support": 51,
+  "enrollment": "single nested random order per speaker, no VAD labels",
+  "marginal_oracle": "diagnostic full eligible speaker median"
+}

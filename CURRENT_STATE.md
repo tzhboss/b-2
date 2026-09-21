@@ -2,13 +2,16 @@
 
 ## Phase
 
-Fixed-cohort K-shot sample-efficiency experiment registered; execution pending.
+Nested K-shot VAD sample-efficiency experiment completed; fixed-pool correction required.
 
-## Active research question
+## Main valid result
 
-Is K=10 already near the practical unlabeled-reference plateau for raw MSP Arousal/Dominance?
+Acoustic-center estimation improves monotonically through K=50. K=20 already reaches near-oracle
+Arousal/Dominance Hybrid CCC, but the apparent K20-to-K50 Arousal drop is confounded because larger
+K removes more downstream rows.
 
 ## Next legal step
 
-Run EXP-20260920-20 on one fixed >50-support speaker cohort with K=[1,2,5,10,20,50] and audit
-center-error and downstream CCC saturation.
+Reserve the same 50 label-free enrollment utterances for every speaker and every K, keep all
+downstream train/test rows fixed, and estimate the acoustic center from nested prefixes
+K=[1,2,5,10,20,50].
