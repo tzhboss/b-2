@@ -41,3 +41,12 @@ A compact decomposition is x_su = μ_s + δ_su and y_su = speaker_mean_s + ε_su
 Working claim: Representation reference frame should match target reference frame.
 
 This is stronger and more defensible than saying speaker-relative prosody is always better, because it explains both wins and failures under one mechanism.
+
+## Session-disjoint IEMOCAP sensitivity
+
+A stricter leave-one-session-out analysis was attempted in EXP-20260921-13. The original
+inferential implementation was invalid because the same deterministic five session folds were
+duplicated under three seed labels. After collapsing to the five unique sessions, mean
+Arousal/Dominance slopes remain negative, but only 2-3 of 5 sessions show negative slopes per
+model-target cell. This should be reported as substantial session heterogeneity and a limitation,
+not as confirmatory evidence.
