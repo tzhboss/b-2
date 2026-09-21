@@ -1,35 +1,29 @@
 # Experiment Report — EXP-20260920-19
 
-Complete this report only with results that have been audited to the extent required by the protocol.
+## Main Result
 
-## Registered Hypothesis
+Ten unlabeled enrollment utterances are enough to estimate a useful three-dimensional speaker
+acoustic center for raw MSP VAD prediction.
 
-Copy or reference the pre-registered hypothesis without rewriting it after results are visible.
+K=10 reduces center-estimation error by roughly 68-71% relative to K=1 and yields Hybrid
+Arousal/Dominance performance very close to a diagnostic full-speaker marginal-center oracle.
 
-## Results
+## Deployment Result
 
-Summarize the audited result set and reference files under `results/EXP-20260920-19/`.
+Compared with Absolute prosody:
+- Arousal improves by +0.0194 CCC.
+- Dominance improves by +0.0092 CCC.
+- Valence improves by +0.0138 CCC.
 
-## Observation
+Dominance narrowly misses the preregistered +0.010 deployment threshold, so the experiment is
+formally mixed rather than pass.
 
-State only what the evidence directly shows.
+## Interpretation
 
-## Supported Claim
-
-State the strongest claim justified by the audited evidence.
-
-## Unsupported Stronger Claim
-
-State conclusions that the current evidence does not justify.
-
-## Post-experiment Interpretation
-
-Record mechanistic or causal interpretation separately from direct observation.
+The stable speaker component needed for raw VAD does not require emotion or VAD labels at
+deployment time. A small unlabeled enrollment set can estimate an acoustic reference that recovers
+most of the full marginal-speaker Hybrid advantage.
 
 ## Decision
 
-Record and justify `pass`, `fail`, or `inconclusive` against the protocol criteria.
-
-## Next Step
-
-State the next scientifically legitimate action.
+mixed.

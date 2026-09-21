@@ -2,14 +2,18 @@
 
 ## Phase
 
-Deployment-realistic K-shot MSP VAD experiment registered; execution pending.
+MSP raw-VAD K-shot deployment experiment completed and audited.
 
-## Active research question
+## Main valid VAD findings
 
-Can K label-free enrollment utterances estimate an unseen speaker's acoustic center well enough
-for K-shot Hybrid prosody to recover raw Arousal/Dominance baseline utility?
+- Raw Arousal/Dominance reward stable speaker-level prosodic information.
+- Within-speaker VAD residuals strongly prefer Relative pitch/loudness/all-prosody.
+- These mechanisms survive low human-label disagreement.
+- Label-free K-shot acoustic enrollment converges toward a speaker marginal acoustic center.
+- K=10 Hybrid is already within 0.006 CCC of the marginal-oracle Hybrid for Arousal and within
+  0.001 CCC for Dominance.
 
 ## Next legal step
 
-Run EXP-20260920-19 and compare K-shot Hybrid with Absolute, neutral-oracle Hybrid, and diagnostic
-marginal-oracle Hybrid.
+Measure K-shot sample-efficiency and saturation beyond K=10 using preregistered K=20 and K=50
+without changing the estimator or model.
