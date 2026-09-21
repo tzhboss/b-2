@@ -1,0 +1,16 @@
+schema_version: 1
+experiment_id: EXP-20260921-02
+dataset:
+  source_glob: /data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/*.parquet
+seed: [20260920,20260921,20260922]
+parameters:
+  outer_folds: 5
+  ridge_alpha: 1.0
+  bootstrap_reps: 10000
+  targets:
+    valence: EmoVal
+    arousal: EmoAct
+    dominance: EmoDom
+outputs:
+  artifact_root: artifacts/EXP-20260921-02
+entrypoint: scripts/run_iemocap_vad_reference_matching_20260921.py

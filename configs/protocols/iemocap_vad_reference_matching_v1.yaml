@@ -1,0 +1,72 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-VAD-REFERENCE-MATCHING-V1
+title: Independent IEMOCAP validation of VAD reference-frame matching
+
+research_question_scope: >
+  Test on IEMOCAP whether raw dimensional affect benefits from stable speaker acoustic baselines,
+  while within-speaker VAD residuals benefit from speaker-relative prosody.
+
+dataset:
+  source_glob: /data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/*.parquet
+  targets:
+    arousal: EmoAct
+    valence: EmoVal
+    dominance: EmoDom
+  target_scale: 1-5
+  speaker_id: derived from session ID plus utterance speaker suffix F/M
+
+features:
+  pitch_absolute: 12*log2(pitch_mean)
+  loudness_absolute: relative_db
+  rate_absolute: log(speaking_rate)
+  speaker_center: full-speaker marginal median per acoustic dimension
+  relative: absolute-speaker_center
+  baseline: speaker_center
+
+diagnostic_boundary:
+  - Full-speaker acoustic centers and full-speaker VAD means are diagnostic oracle quantities.
+  - They are used to test the reference-frame mechanism, not deployment availability.
+  - No IEMOCAP result was used to design MSP experiments.
+
+controls:
+  - Use all rows with finite VAD and all three acoustic features.
+  - Five speaker-disjoint folds, three fixed seeds.
+  - Equal total train/evaluation weight per speaker.
+  - Fixed multi-output Ridge(alpha=1.0), train-only weighted scaling.
+  - Same rows across all representations and tasks.
+  - Raw target uses original VAD.
+  - Residual target subtracts full-speaker VAD mean for diagnostic within-speaker analysis.
+
+representations:
+  - absolute
+  - relative
+  - baseline_only
+  - relative_plus_baseline
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      Between-speaker VAD structure is supported if ICC-like between-speaker fraction is >=0.10
+      for Arousal or Dominance.
+    - >
+      Raw baseline utility is supported if Relative+Baseline-minus-Relative CCC is >=+0.02 with
+      paired-bootstrap 95% CI above zero for both Arousal and Dominance.
+    - >
+      Within-speaker reference matching is supported if Relative-minus-Absolute residual CCC is
+      >=+0.02 with paired-bootstrap 95% CI above zero for both Arousal and Dominance.
+  rejection:
+    - >
+      Reject external reference-matching replication if Arousal and Dominance both fail to show
+      the expected raw baseline and residual Relative directions.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-02/data_inventory.csv
+  - artifacts/EXP-20260921-02/variance_decomposition.csv
+  - artifacts/EXP-20260921-02/metrics_by_fold.csv
+  - artifacts/EXP-20260921-02/summary.csv
+  - artifacts/EXP-20260921-02/paired_deltas.csv
+  - artifacts/EXP-20260921-02/run_metadata.json

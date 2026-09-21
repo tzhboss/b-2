@@ -1,0 +1,35 @@
+schema_version: 1
+experiment_id: EXP-20260921-02
+title: Independent IEMOCAP validation of VAD reference-frame matching
+
+research_question: >
+  Does the MSP reference-frame matching result replicate on IEMOCAP continuous VAD?
+
+registered_hypothesis: >
+  Raw Arousal/Dominance will benefit from restoring stable speaker acoustic baseline information,
+  while within-speaker Arousal/Dominance residuals will benefit from speaker-relative prosody.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-17, EXP-20260921-01]
+protocol_reference: configs/protocols/iemocap_vad_reference_matching_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-02.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed Ridge alpha
+  selection_metric: null
+  rationale: independent-corpus mechanism validation
+
+supersedes: []
+superseded_by: []
+role: external continuous-affect validation

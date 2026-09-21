@@ -2,18 +2,14 @@
 
 ## Phase
 
-Fixed-pool K-shot MSP VAD saturation completed and audited.
+Independent IEMOCAP continuous-VAD reference-matching experiment registered; execution pending.
 
-## Main valid VAD conclusions
+## Active research question
 
-- Raw population-level Arousal/Dominance reward stable speaker-level prosodic information.
-- Within-speaker VAD residuals strongly prefer speaker-relative pitch/loudness/all-prosody.
-- Both mechanisms survive low annotator disagreement.
-- Label-free unseen-speaker acoustic enrollment can recover raw-VAD Hybrid utility.
-- On a fixed downstream pool, K=20 is practically saturated near the marginal-speaker oracle;
-  K=50 provides only a small additional Arousal gain and negligible Dominance gain.
+Does the MSP result replicate independently on IEMOCAP: raw VAD benefits from stable speaker
+baseline information while within-speaker VAD residuals benefit from Relative prosody?
 
 ## Next legal step
 
-Seek a second human-rated dimensional-affect corpus, prioritizing IEMOCAP, and reproduce the raw
-VAD versus within-speaker residual decomposition with matched prosodic reference frames.
+Execute EXP-20260921-02 from a hash-verified immutable runtime bundle and audit the external
+reference-matching criteria.
