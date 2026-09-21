@@ -2,13 +2,15 @@
 
 ## Phase
 
-Fixed-pool IEMOCAP K-shot reference-quality curve registered; execution pending.
+Fixed-pool IEMOCAP K-shot reference-quality curve completed and audited.
 
-## Active research question
+## Main finding
 
-Does increasing K from 5 to 100 on an identical downstream pool make deployment target-reference
-slopes converge toward the full-speaker oracle slopes?
+Physical speaker-center estimation improves strongly with K, but deployment target-reference slope
+recovery is non-monotonic. K=50 is closer to the oracle mechanism than K=100 for Arousal and
+Dominance on this ten-speaker corpus.
 
 ## Next legal step
 
-Run EXP-20260921-08 from an immutable runtime bundle and audit center-error and slope convergence.
+Audit the semantic/provenance meaning of IEMOCAP acoustic fields, especially relative_db, before
+using the IEMOCAP attribute-specific results as paper evidence.
