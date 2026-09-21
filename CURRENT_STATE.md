@@ -2,15 +2,19 @@
 
 ## Phase
 
-Immutable rerun of K-shot raw-VAD saturation registered; execution pending.
+Clean fixed-cohort K-shot saturation rerun completed and audited.
 
-## Current status
+## Main findings
 
-- EXP-19: valid/mixed; K=10 unlabeled Hybrid nearly recovers marginal-oracle raw VAD performance.
-- EXP-20: invalid due runtime/output provenance mismatch; no numerical results used.
-- EXP-20260921-01: clean superseding rerun with immutable runtime script/config copies.
+- EXP-20 is invalid due runtime provenance mismatch and contributes no evidence.
+- EXP-20260921-01 is a hash-verified immutable rerun.
+- Acoustic-center estimation keeps improving beyond K=10.
+- Downstream Arousal/Dominance show much stronger diminishing returns.
+- K=10 narrowly misses the preregistered practical plateau for Arousal.
+- Descriptively, K=20 is within 0.01 CCC of K=50 for both Arousal and Dominance.
 
 ## Next legal step
 
-Execute EXP-20260921-01 from a hash-verified /tmp runtime bundle and audit K=10 versus K=50
-sample-efficiency saturation.
+Use a preregistered speaker-level development/confirmation split: select K=20 as the candidate
+plateau only on the development speakers, then independently test K20 versus K50 on untouched
+confirmation speakers.
