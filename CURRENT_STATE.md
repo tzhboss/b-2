@@ -2,16 +2,13 @@
 
 ## Phase
 
-Speaker-center identity permutation mechanism test completed and audited.
+Deployment-realistic K=20 target-reference intervention registered; execution pending.
 
-## Main mechanism finding
+## Active research question
 
-Correct speaker-center identity is essential for raw MSP Arousal/Dominance Hybrid utility, while
-center identity is nearly irrelevant for within-speaker residual VAD. IEMOCAP shows the same
-direction but much smaller raw effects, consistent with its weak between-speaker target structure.
+Does target-reference coupling survive when speaker-relative acoustic centers are estimated from
+only 20 unlabeled enrollment utterances per speaker?
 
 ## Next legal step
 
-Search the local corpus inventory for any additional datasets with genuine continuous
-Valence/Arousal/Dominance annotations. If available, add a third-corpus external validation;
-otherwise consolidate MSP+IEMOCAP into paper-ready statistical tables and figures.
+Run EXP-20260921-07 from an immutable runtime bundle and audit K-shot coupling slopes.

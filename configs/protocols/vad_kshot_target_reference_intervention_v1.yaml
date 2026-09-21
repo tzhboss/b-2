@@ -1,0 +1,61 @@
+schema_version: 1
+protocol_id: PROTO-VAD-KSHOT-TARGET-REFERENCE-INTERVENTION-V1
+title: Deployment-realistic K-shot target-reference intervention
+
+research_question_scope: >
+  Test whether target-reference coupling survives when speaker-relative prosody is constructed from
+  only K=20 unlabeled enrollment utterances rather than a full-speaker oracle center.
+
+datasets: [msp, iemocap]
+targets: [valence, arousal, dominance]
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+k_enrollment: 20
+
+reference_estimation:
+  - Uniformly sample 20 unlabeled utterances per speaker using a fixed seed.
+  - Estimate pitch/loudness/log-rate center as the per-dimension median.
+  - Exclude enrollment utterances from downstream train/test.
+  - Use the same enrollment set across all lambda values and representations within a seed.
+  - No VAD/emotion label is used for reference estimation.
+
+representations:
+  - absolute
+  - kshot_relative
+  - kshot_hybrid
+
+controls:
+  - Restrict to speakers with more than 20 eligible utterances.
+  - Five speaker-disjoint folds and three fixed seeds.
+  - Same downstream utterance rows for every lambda/representation.
+  - Equal total train/evaluation weight per speaker.
+  - Fixed multi-output Ridge(alpha=1.0), train-only weighted scaling.
+  - Target intervention remains diagnostic and uses full-speaker VAD mean only to define y_lambda.
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      Deployment target-reference coupling is supported if the slope of
+      K-shot-Relative-minus-Absolute CCC versus lambda is significantly negative
+      (95% CI below zero) for Arousal and Dominance in both corpora.
+    - >
+      Deployment endpoint matching is supported if K-shot Relative minus Absolute at lambda=0 is
+      positive for Arousal and Dominance in both corpora.
+    - >
+      K-shot center-utility coupling is supported if K-shot-Hybrid-minus-K-shot-Relative slope is
+      positive with 95% CI above zero for Arousal and Dominance in MSP.
+  rejection:
+    - >
+      Reject deployment mechanism transfer if either corpus shows positive
+      K-shot-Relative-minus-Absolute slopes for both Arousal and Dominance.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-07/data_inventory.csv
+  - artifacts/EXP-20260921-07/audit_rows.csv
+  - artifacts/EXP-20260921-07/metrics_by_fold.csv
+  - artifacts/EXP-20260921-07/effect_curves.csv
+  - artifacts/EXP-20260921-07/slope_tests.csv
+  - artifacts/EXP-20260921-07/run_metadata.json

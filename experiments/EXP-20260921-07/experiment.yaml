@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260921-07
+title: Does target-reference coupling survive K=20 unlabeled speaker enrollment?
+
+research_question: >
+  Does the target-reference matching mechanism survive when Relative/Hybrid prosody uses only
+  K=20 unlabeled enrollment utterances per speaker?
+
+registered_hypothesis: >
+  K-shot Relative-minus-Absolute utility will decline as between-speaker target structure
+  increases, reproducing the oracle-center mechanism under deployment-style reference estimation.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-21, EXP-20260921-03, EXP-20260921-06]
+protocol_reference: configs/protocols/vad_kshot_target_reference_intervention_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-07.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed K=20 and fixed Ridge alpha
+  selection_metric: null
+  rationale: deployment-realistic mechanism validation
+
+supersedes: []
+superseded_by: []
+role: deployment mechanism validation
