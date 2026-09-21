@@ -2,14 +2,16 @@
 
 ## Phase
 
-Semantically matched MSP/IEMOCAP pitch+rate confirmatory experiment registered.
+Semantically matched cross-corpus confirmatory validation completed.
 
-## Active research question
+## Main confirmatory finding
 
-Does target-reference coupling replicate across both corpora when exactly the same, clearly defined
-feature family (pitch + speaking rate) is used and loudness is excluded everywhere?
+Using only pitch + speaking rate, Relative-minus-Absolute CCC decreases significantly as
+between-speaker Arousal/Dominance target structure increases in both MSP and IEMOCAP under both
+linear and quadratic Ridge. At the pure within-speaker endpoint, Relative is better in every
+confirmatory cell.
 
 ## Next legal step
 
-Run EXP-20260921-12 from an immutable runtime bundle, audit the eight Arousal/Dominance
-corpus-by-model slopes and endpoints, then consolidate paper-ready tables and figures.
+Consolidate paper-ready evidence: main tables, figures, claim-evidence matrix, and main-text versus
+appendix experiment assignment.
