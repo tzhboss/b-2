@@ -86,12 +86,40 @@ def add_components(d):
         d[f"{t}_within"]=d[t]-d[f"{t}_spmean"]
     return d
 
-def cluster_effect(frame, target, lam):
-    g=frame[(frame.target==target)&(frame["lambda"]==lam)]
-    # one sampled speaker occurrence has equal total mass
-    counts=g.groupby("cluster_instance").size()
-    w=g.cluster_instance.map(lambda s:1.0/counts[s]).to_numpy(float)
-    return weighted_ccc(g.y_true,g.pred_relative,w)-weighted_ccc(g.y_true,g.pred_absolute,w)
+def ccc_from_moments(a):
+    my=a[:,0]; ey2=a[:,1]; mp=a[:,2]; ep2=a[:,3]; eyp=a[:,4]
+    vy=ey2-my*my
+    vp=ep2-mp*mp
+    cov=eyp-my*mp
+    den=vy+vp+(my-mp)**2
+    out=np.full(len(my),np.nan,float)
+    ok=den>0
+    out[ok]=2*cov[ok]/den[ok]
+    return out
+
+def per_speaker_moments(g, speakers):
+    rows=[]
+    for sp in speakers:
+        z=g[g.speaker_id==sp]
+        y=z.y_true.to_numpy(float)
+        pa=z.pred_absolute.to_numpy(float)
+        pr=z.pred_relative.to_numpy(float)
+        rows.append([
+            y.mean(), np.mean(y*y),
+            pa.mean(), np.mean(pa*pa), np.mean(y*pa),
+            pr.mean(), np.mean(pr*pr), np.mean(y*pr)
+        ])
+    return np.asarray(rows,float)
+
+def effects_from_counts(counts, stats_by_lambda, lambdas, n_speakers):
+    effects=[]
+    w=counts.astype(float)/float(n_speakers)
+    for lam in lambdas:
+        a=w @ stats_by_lambda[lam]
+        abs_m=np.column_stack([a[:,0],a[:,1],a[:,2],a[:,3],a[:,4]])
+        rel_m=np.column_stack([a[:,0],a[:,1],a[:,5],a[:,6],a[:,7]])
+        effects.append(ccc_from_moments(rel_m)-ccc_from_moments(abs_m))
+    return np.column_stack(effects)
 
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--config",required=True); args=ap.parse_args()
@@ -154,21 +182,31 @@ def main():
             effects.append(eff)
             points.append({"dataset":ds,"model_family":fam,"target":t,"lambda":lam,
                            "relative_minus_absolute":eff})
-          point_slope=float(np.polyfit(lambdas,effects,1)[0])
           rng=np.random.default_rng(stable_seed(ds,fam,t,"speaker_bootstrap"))
+          stats_by_lambda={}
+          for lam in lambdas:
+              g=ff[(ff.target==t)&(ff["lambda"]==lam)]
+              stats_by_lambda[lam]=per_speaker_moments(g,speakers)
+
+          point_counts=np.ones((1,len(speakers)),dtype=np.int64)
+          point_effects=effects_from_counts(point_counts,stats_by_lambda,lambdas,len(speakers))[0]
+          point_slope=float(np.polyfit(lambdas,point_effects,1)[0])
+
           bs_slopes=np.empty(B,float)
           bs_l0=np.empty(B,float)
-          for b in range(B):
-            samp=rng.choice(speakers,size=len(speakers),replace=True)
-            pieces=[]
-            for occ,sp in enumerate(samp):
-                z=ff[(ff.target==t)&(ff.speaker_id==sp)].copy()
-                z["cluster_instance"]=occ
-                pieces.append(z)
-            q=pd.concat(pieces,ignore_index=True)
-            ev=[cluster_effect(q,t,lam) for lam in lambdas]
-            bs_slopes[b]=np.polyfit(lambdas,ev,1)[0]
-            bs_l0[b]=ev[0]
+          pvec=np.full(len(speakers),1.0/len(speakers),dtype=float)
+          chunk=250
+          off=0
+          x=np.asarray(lambdas,float)
+          xc=x-x.mean()
+          denom=float(xc@xc)
+          while off<B:
+              n=min(chunk,B-off)
+              counts=rng.multinomial(len(speakers),pvec,size=n)
+              eff=effects_from_counts(counts,stats_by_lambda,lambdas,len(speakers))
+              bs_slopes[off:off+n]=(eff @ xc)/denom
+              bs_l0[off:off+n]=eff[:,0]
+              off+=n
           slo,shi=np.quantile(bs_slopes,[.025,.975])
           elo,ehi=np.quantile(bs_l0,[.025,.975])
           boots.append({"dataset":ds,"model_family":fam,"target":t,
