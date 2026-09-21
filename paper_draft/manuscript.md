@@ -104,8 +104,8 @@ that their usefulness depends on which reference frame the task is asking the mo
 
 ## Contributions
 
-1. We formulate prosodic normalization as a reference-frame choice by decomposing both acoustic
-   features and affect targets into between-speaker and within-speaker components.
+1. We formulate prosodic normalization and target centering within a common reference-frame
+   analysis, explicitly connecting two established between/within-speaker decompositions.
 2. We introduce a controlled target-reference intervention that continuously varies
    between-speaker target strength without changing acoustic inputs or model architecture.
 3. We provide confirmatory cross-corpus evidence on MSP-Podcast and IEMOCAP, using semantically
@@ -124,12 +124,14 @@ that their usefulness depends on which reference frame the task is asking the mo
 ## 2.1 Speaker normalization as nuisance suppression
 
 Speaker normalization has a long history in speech emotion recognition. Bone, Lee, and Narayanan
-(2012) proposed an unsupervised cross-corpus arousal-rating framework based on interpretable
-prosodic features. Their method explicitly scores pitch, intensity, and voice-quality features
-relative to a speaker's neutral-state model, and they note that only a small amount of speaker
-reference speech may be sufficient. This is an especially close precursor to any claim involving
-speaker-relative prosody, arousal, or enrollment-based reference estimation. Our contribution is
-therefore **not** the use of a speaker baseline for affect prediction.
+(2012), and the extended IEEE T-AFFC study by Bone et al. (2014), are especially close precursors.
+Their cross-corpus arousal framework constructs a speaker-specific baseline model for a small set of
+interpretable vocal features and scores utterances relative to that baseline. The journal study
+explicitly presents a scale-continuous arousal measure, prefers neutral speech for baseline
+estimation, and provides evidence that labeled neutral data are not always necessary. These works
+already establish speaker-relative prosody, continuous arousal scoring, cross-corpus evaluation,
+and limited-reference baseline estimation. Our contribution is therefore **not** the use of a
+speaker baseline, relative prosody, continuous arousal prediction, or small enrollment sets.
 
 Busso et al. (2013) introduced Iterative Feature Normalization (IFN), estimating normalization
 parameters from automatically identified neutral speech and applying the transformation to both
@@ -189,9 +191,15 @@ between-speaker factors and within-speaker phrase-level variation separately and
 variation at both levels (e.g., Quené, 2008; Jacewicz, Fox, and Wei, 2010). Similar considerations
 apply to pitch and voice-quality measures.
 
-We adopt this decomposition for an affective prediction question. The experimental element that is
-most distinctive here is to apply the same decomposition to the **target**, and then manipulate the
-target's between-speaker component while keeping the acoustic observations fixed.
+We adopt this decomposition for an affective prediction question. Importantly, person-mean
+centering and the statistical separation of within-person and between-person variation are
+themselves standard tools in multilevel and affect-dynamics research. We therefore do not claim
+novelty for target centering as a statistical operation.
+
+The distinctive experimental step is to connect the two reference-frame choices: we continuously
+manipulate the target's between-speaker component while holding acoustic observations, splits, and
+model family fixed, and then test whether the preferred **acoustic representation** changes with
+that target intervention.
 
 ## 2.5 Positioning of the present work
 
@@ -204,12 +212,16 @@ The closest prior work already establishes all of the following ingredients sepa
 - speaker embeddings themselves can retain emotion information;
 - prosody contains both between- and within-speaker variation.
 
-Our contribution is the link between these observations. We formulate and test a
+Our contribution is the controlled link between these observations. Neither side of the link is
+new in isolation: speaker-relative normalization is established in SER, and within-person versus
+between-person centering is established in multilevel affect research. We formulate and test a
 **target-reference matching principle**: the usefulness of speaker normalization depends on
 whether the target asks for within-speaker deviation or retains stable between-speaker structure.
 
-This distinction is tested directly through target intervention and speaker-center permutation,
-rather than inferred only from comparing model accuracies before and after normalization.
+The empirical contribution is that target reference frame is treated as an intervention variable.
+We vary the between-speaker target component continuously while keeping the acoustic observations
+and models fixed, test the resulting Relative-versus-Absolute slope, and then use speaker-center
+permutation to isolate whether correct speaker-center identity explains raw-target utility.
 
 # 3. Method
 
@@ -774,66 +786,71 @@ submission.
    "A Robust Unsupervised Arousal Rating Framework using Prosody with Cross-Corpora Evaluation."
    Interspeech 2012. DOI: 10.21437/Interspeech.2012-123.
 
-2. Busso, C., Mariooryad, S., Metallinou, A., Narayanan, S. S. (2013).
+2. Bone, D., Lee, C.-C., Narayanan, S. S. (2014).
+   "Robust Unsupervised Arousal Rating: A Rule-Based Framework with Knowledge-Inspired Vocal Features."
+   IEEE Transactions on Affective Computing, 5(2), 201-213.
+   DOI: 10.1109/TAFFC.2014.2326393.
+
+3. Busso, C., Mariooryad, S., Metallinou, A., Narayanan, S. S. (2013).
    "Iterative Feature Normalization Scheme for Automatic Emotion Detection from Speech."
    IEEE Transactions on Affective Computing, 4(4), 386-397.
    DOI: 10.1109/T-AFFC.2013.26.
 
-3. Mariooryad, S., Busso, C. (2014).
+4. Mariooryad, S., Busso, C. (2014).
    "Compensating for speaker or lexical variabilities in speech for emotion recognition."
    Speech Communication, 57, 1-12.
    DOI: 10.1016/j.specom.2013.07.011.
 
-4. Sridhar, K., Parthasarathy, S., Busso, C. (2018).
+5. Sridhar, K., Parthasarathy, S., Busso, C. (2018).
    "Role of Regularization in the Prediction of Valence from Speech."
    Interspeech 2018.
 
-5. Gat, I., Aronowitz, H., Zhu, W., Morais, E., Hoory, R. (2022).
+6. Gat, I., Aronowitz, H., Zhu, W., Morais, E., Hoory, R. (2022).
    "Speaker Normalization for Self-Supervised Speech Emotion Recognition."
    ICASSP 2022, 7342-7346.
    DOI: 10.1109/ICASSP43922.2022.9747460.
 
-6. Sridhar, K., Busso, C. (2022).
+7. Sridhar, K., Busso, C. (2022).
    "Unsupervised Personalization of an Emotion Recognition System: The Unique Properties of the
    Externalization of Valence in Speech."
    IEEE Transactions on Affective Computing.
    DOI: 10.1109/TAFFC.2022.3187336.
 
-7. Tran, M., Yin, Y., Soleymani, M. (2023).
+8. Tran, M., Yin, Y., Soleymani, M. (2023).
    "Personalized Adaptation with Pre-trained Speech Encoders for Continuous Emotion Recognition."
    Interspeech 2023, 636-640.
    DOI: 10.21437/Interspeech.2023-2170.
 
-8. Triantafyllopoulos, A., Schuller, B. (2024).
+9. Triantafyllopoulos, A., Schuller, B. (2024).
    "Enrolment-based personalisation for improving individual-level fairness in speech emotion
    recognition."
    Interspeech 2024, 3729-3733.
    DOI: 10.21437/Interspeech.2024-98.
 
-9. Lu, C., Zong, Y., Lian, H., Zhao, Y., Schuller, B., Zheng, W. (2024).
+10. Lu, C., Zong, Y., Lian, H., Zhao, Y., Schuller, B., Zheng, W. (2024).
    "Improving Speaker-independent Speech Emotion Recognition Using Dynamic Joint Distribution
    Adaptation."
    ICASSP 2024.
    DOI: 10.1109/ICASSP48485.2024.10447452.
 
-10. Ulgen, I. R., Du, Z., Busso, C., Sisman, B. (2024).
+11. Ulgen, I. R., Du, Z., Busso, C., Sisman, B. (2024).
     "Revealing Emotional Clusters in Speaker Embeddings: A Contrastive Learning Strategy for
     Speech Emotion Recognition."
     ICASSP 2024.
     DOI: 10.1109/ICASSP48485.2024.10447060.
 
-11. Jacewicz, E., Fox, R. A., Wei, L. (2010).
+12. Jacewicz, E., Fox, R. A., Wei, L. (2010).
     "Between-speaker and within-speaker variation in speech tempo of American English."
     Journal of the Acoustical Society of America, 128(2), 839-850.
     DOI: 10.1121/1.3459842.
 
-12. Quené, H. (2008).
+13. Quené, H. (2008).
     "Multilevel modeling of between-speaker and within-speaker variation in spontaneous speech
     tempo."
     Journal of the Acoustical Society of America, 123(2), 1104-1113.
     DOI: 10.1121/1.2821762.
 
-13. Shi, X., Li, X., Toda, T. (2025).
+14. Shi, X., Li, X., Toda, T. (2025).
     "Speaker-Aware Multi-Task Learning for Speech Emotion Recognition."
     Interspeech 2025.
     DOI: 10.21437/Interspeech.2025-1439.

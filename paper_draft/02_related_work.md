@@ -3,12 +3,14 @@
 ## 2.1 Speaker normalization as nuisance suppression
 
 Speaker normalization has a long history in speech emotion recognition. Bone, Lee, and Narayanan
-(2012) proposed an unsupervised cross-corpus arousal-rating framework based on interpretable
-prosodic features. Their method explicitly scores pitch, intensity, and voice-quality features
-relative to a speaker's neutral-state model, and they note that only a small amount of speaker
-reference speech may be sufficient. This is an especially close precursor to any claim involving
-speaker-relative prosody, arousal, or enrollment-based reference estimation. Our contribution is
-therefore **not** the use of a speaker baseline for affect prediction.
+(2012), and the extended IEEE T-AFFC study by Bone et al. (2014), are especially close precursors.
+Their cross-corpus arousal framework constructs a speaker-specific baseline model for a small set of
+interpretable vocal features and scores utterances relative to that baseline. The journal study
+explicitly presents a scale-continuous arousal measure, prefers neutral speech for baseline
+estimation, and provides evidence that labeled neutral data are not always necessary. These works
+already establish speaker-relative prosody, continuous arousal scoring, cross-corpus evaluation,
+and limited-reference baseline estimation. Our contribution is therefore **not** the use of a
+speaker baseline, relative prosody, continuous arousal prediction, or small enrollment sets.
 
 Busso et al. (2013) introduced Iterative Feature Normalization (IFN), estimating normalization
 parameters from automatically identified neutral speech and applying the transformation to both
@@ -68,9 +70,15 @@ between-speaker factors and within-speaker phrase-level variation separately and
 variation at both levels (e.g., Quené, 2008; Jacewicz, Fox, and Wei, 2010). Similar considerations
 apply to pitch and voice-quality measures.
 
-We adopt this decomposition for an affective prediction question. The experimental element that is
-most distinctive here is to apply the same decomposition to the **target**, and then manipulate the
-target's between-speaker component while keeping the acoustic observations fixed.
+We adopt this decomposition for an affective prediction question. Importantly, person-mean
+centering and the statistical separation of within-person and between-person variation are
+themselves standard tools in multilevel and affect-dynamics research. We therefore do not claim
+novelty for target centering as a statistical operation.
+
+The distinctive experimental step is to connect the two reference-frame choices: we continuously
+manipulate the target's between-speaker component while holding acoustic observations, splits, and
+model family fixed, and then test whether the preferred **acoustic representation** changes with
+that target intervention.
 
 ## 2.5 Positioning of the present work
 
@@ -83,9 +91,13 @@ The closest prior work already establishes all of the following ingredients sepa
 - speaker embeddings themselves can retain emotion information;
 - prosody contains both between- and within-speaker variation.
 
-Our contribution is the link between these observations. We formulate and test a
+Our contribution is the controlled link between these observations. Neither side of the link is
+new in isolation: speaker-relative normalization is established in SER, and within-person versus
+between-person centering is established in multilevel affect research. We formulate and test a
 **target-reference matching principle**: the usefulness of speaker normalization depends on
 whether the target asks for within-speaker deviation or retains stable between-speaker structure.
 
-This distinction is tested directly through target intervention and speaker-center permutation,
-rather than inferred only from comparing model accuracies before and after normalization.
+The empirical contribution is that target reference frame is treated as an intervention variable.
+We vary the between-speaker target component continuously while keeping the acoustic observations
+and models fixed, test the resulting Relative-versus-Absolute slope, and then use speaker-center
+permutation to isolate whether correct speaker-center identity explains raw-target utility.

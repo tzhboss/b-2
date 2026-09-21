@@ -74,8 +74,8 @@ that their usefulness depends on which reference frame the task is asking the mo
 
 ## Contributions
 
-1. We formulate prosodic normalization as a reference-frame choice by decomposing both acoustic
-   features and affect targets into between-speaker and within-speaker components.
+1. We formulate prosodic normalization and target centering within a common reference-frame
+   analysis, explicitly connecting two established between/within-speaker decompositions.
 2. We introduce a controlled target-reference intervention that continuously varies
    between-speaker target strength without changing acoustic inputs or model architecture.
 3. We provide confirmatory cross-corpus evidence on MSP-Podcast and IEMOCAP, using semantically

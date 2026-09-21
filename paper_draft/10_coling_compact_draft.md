@@ -92,8 +92,10 @@ Modern methods retain the same nuisance-suppression motivation. Gat et al. (2022
 suppressed speaker characteristics in SSL-based SER, while Lu et al. (2024) treated speakers as
 domains and learned speaker-invariant emotion representations.
 
-Our contribution is therefore not speaker normalization itself. We ask when normalization should
-help or hurt.
+Our contribution is therefore not speaker normalization itself. Likewise, person-mean centering is
+a standard way to separate within- and between-person effects in multilevel affect research. The
+novelty we investigate is the **coupling between these two choices**: we ask whether changing the
+target reference frame changes which acoustic reference frame is useful.
 
 ### Speaker dependence and personalization
 

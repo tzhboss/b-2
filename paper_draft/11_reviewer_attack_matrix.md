@@ -9,9 +9,13 @@ Closest evidence:
 - Busso et al. 2013 normalize speaker variability for emotion recognition.
 
 Response:
-Do not claim normalization novelty.
-Claim the controlled target-reference mechanism:
-the same representation changes utility as target between-speaker structure is manipulated.
+Do not claim normalization novelty. Bone et al. 2012/2014 already provide speaker-baseline,
+speaker-relative, cross-corpus arousal scoring, including limited-reference conditions.
+Do not claim target-centering novelty either; within-person/between-person centering is standard in
+multilevel affect research.
+Claim the controlled **coupling**:
+the same acoustic representation changes utility as target between-speaker structure is
+systematically manipulated.
 
 Evidence:
 EXP-20260921-12 and EXP-20260921-06.

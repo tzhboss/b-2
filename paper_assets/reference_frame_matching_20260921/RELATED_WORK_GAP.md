@@ -7,6 +7,10 @@
 Prior SER work has long treated speaker-dependent acoustic variation as a nuisance to compensate.
 
 Representative examples:
+- Bone, Lee, and Narayanan (2012; extended in IEEE T-AFFC 2014): constructs per-speaker vocal
+  baselines and produces continuous arousal scores relative to those baselines, including evidence
+  for operation without labeled neutral reference in some settings. This is the closest procedural
+  precursor and rules out novelty claims around relative arousal or speaker-baseline enrollment.
 - Busso et al., Iterative Feature Normalization Scheme for Automatic Emotion Detection from Speech
   (IEEE Transactions on Affective Computing, 2013): estimates speaker normalization statistics while
   aiming to preserve inter-emotional variability.
@@ -44,11 +48,13 @@ normalization/reference frame.
 
 The current evidence is not simply that speaker normalization helps.
 
-The supported mechanism is:
+The supported mechanism is not either decomposition by itself. Speaker normalization is prior
+SER practice, and person-mean centering is standard multilevel methodology. The contribution is
+their controlled interaction:
 
-1. Decompose acoustic prosody into stable speaker center and within-speaker deviation.
-2. Decompose the target into between-speaker and within-speaker components.
-3. Manipulate the amount of between-speaker target structure while holding inputs/model fixed.
+1. Represent acoustic prosody in Absolute, Relative, and Hybrid speaker reference frames.
+2. Treat the target's between-speaker component as a controlled intervention variable.
+3. Manipulate that target component while holding acoustic inputs/model fixed.
 4. Observe a systematic change in Relative-versus-Absolute utility.
 5. Show that the effect survives two corpora, aligned Pitch+Rate features, and linear/quadratic
    model families.
