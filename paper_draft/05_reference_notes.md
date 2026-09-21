@@ -29,6 +29,8 @@ submission.
 6. Sridhar, K., Busso, C. (2022).
    "Unsupervised Personalization of an Emotion Recognition System: The Unique Properties of the
    Externalization of Valence in Speech."
+   IEEE Transactions on Affective Computing.
+   DOI: 10.1109/TAFFC.2022.3187336.
 
 7. Tran, M., Yin, Y., Soleymani, M. (2023).
    "Personalized Adaptation with Pre-trained Speech Encoders for Continuous Emotion Recognition."
