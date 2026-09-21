@@ -1,0 +1,10 @@
+claim_id,claim,evidence,status,boundary
+C1,Explicit prosody reference frame is task-dependent,EXP-20260920-02,supported,"Relative pitch improves categorical emotion but strongly hurts gender/trait decoding across ESD, MEAD, RAVDESS."
+C2,Categorical emotion reference preference is class- and attribute-dependent,EXP-20260920-09; EXP-20260920-10,supported,Per-emotion and per-attribute effects change sign; no universal Relative winner.
+C3,WavLM retains both absolute and relative reference information,EXP-20260920-04,supported,"Absolute, relative, and implied baseline pitch are highly decodable; relative information weakens in later layers."
+C4,Raw VAD preference depends on target between-speaker structure,EXP-20260920-17; EXP-20260921-02; EXP-20260921-03,supported,Controlled lambda intervention yields significantly negative Relative-minus-Absolute slopes for Arousal/Dominance in MSP and IEMOCAP.
+C5,Target-reference coupling is model-family robust,EXP-20260921-04,supported,Linear and quadratic Ridge preserve negative Arousal/Dominance slopes in both corpora.
+C6,"Coupling is attribute-dependent, not pitch-only",EXP-20260921-05,supported,"Pitch, loudness, and rate all show coupling somewhere; magnitude differs strongly by corpus/attribute."
+C7,Correct speaker-center identity causes raw-VAD Hybrid utility,EXP-20260921-06,supported,Permuting speaker centers destroys large MSP raw Arousal/Dominance gains while residual targets are nearly unchanged.
+C8,Unlabeled enrollment can recover useful speaker reference,EXP-20260920-19; EXP-20260921-01; EXP-20260921-07; EXP-20260921-08,supported_with_boundary,K-shot Hybrid is useful; K about 20 is near practical saturation in MSP. IEMOCAP K-shot slope recovery is noisier/non-monotonic.
+C9,IEMOCAP external replication survives without ambiguous loudness,EXP-20260921-10,supported,Pitch+rate slopes remain significantly negative for Arousal/Dominance under linear and quadratic Ridge.
