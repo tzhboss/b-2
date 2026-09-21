@@ -1,0 +1,37 @@
+schema_version: 1
+experiment_id: EXP-20260921-15
+title: Speaker-cluster inference for the main target-reference effect
+
+research_question: >
+  Does the Pitch+Rate target-reference coupling remain robust when uncertainty is computed by
+  resampling speakers rather than fold/seed aggregate scores?
+
+registered_hypothesis: >
+  MSP Arousal/Dominance Relative-minus-Absolute slopes will remain significantly negative under
+  speaker-cluster bootstrap for both Linear and Quadratic Ridge. IEMOCAP mean slopes will retain
+  the negative direction, with wider uncertainty due to only 10 speakers.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260921-12, EXP-20260921-13]
+protocol_reference: configs/protocols/pitch_rate_speaker_cluster_inference_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-15.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: 20260920
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed OOF split, no tuning
+  selection_metric: null
+  rationale: corrected independent-unit inference
+
+supersedes: []
+superseded_by: []
+role: primary statistical robustness

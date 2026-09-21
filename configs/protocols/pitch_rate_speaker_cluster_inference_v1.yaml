@@ -1,0 +1,56 @@
+schema_version: 1
+protocol_id: PROTO-PITCH-RATE-SPEAKER-CLUSTER-INFERENCE-V1
+title: Speaker-cluster inference for target-reference matching
+
+research_question_scope: >
+  Re-estimate uncertainty for the main Pitch+Rate target-reference effect using speaker-level
+  resampling of complete out-of-fold predictions rather than seed/fold means.
+
+datasets: [msp, iemocap]
+features: [pitch, speaking_rate]
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+targets: [arousal,dominance]
+model_families: [linear_ridge,quadratic_ridge]
+representations: [absolute,relative]
+
+inference:
+  split_seed: 20260920
+  outer_folds: 5
+  bootstrap_unit: speaker
+  bootstrap_reps: 5000
+  procedure:
+    - Generate exactly one OOF prediction for every eligible utterance using one fixed speaker-disjoint fold assignment.
+    - Keep every utterance from a sampled speaker together.
+    - Sample speakers with replacement within corpus.
+    - Give each sampled speaker occurrence equal total weight.
+    - Recompute CCC(Relative)-CCC(Absolute) separately at each lambda for every bootstrap replicate.
+    - Fit the lambda slope inside each bootstrap replicate.
+  rationale: >
+    Speaker is the independent sampling unit for the primary mechanism claim. This avoids treating
+    repeated seeds or folds as independent observations.
+
+criteria:
+  acceptance:
+    - >
+      MSP speaker-cluster replication is supported if Arousal and Dominance slopes have 95% CIs
+      below zero under both model families.
+    - >
+      IEMOCAP direction replication is supported if all four mean slopes are negative; because
+      IEMOCAP has only 10 speakers, CI width is treated as a limitation rather than a mandatory
+      significance criterion.
+    - >
+      Pure within-speaker endpoint replication is supported if mean Relative-minus-Absolute CCC at
+      lambda=0 is positive for Arousal and Dominance in both corpora and both model families.
+  rejection:
+    - >
+      Reject speaker-cluster robustness if either MSP target has a non-negative mean slope under
+      both model families.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-15/data_inventory.csv
+  - artifacts/EXP-20260921-15/oof_predictions.parquet
+  - artifacts/EXP-20260921-15/point_effects.csv
+  - artifacts/EXP-20260921-15/cluster_bootstrap_slopes.csv
+  - artifacts/EXP-20260921-15/run_metadata.json

@@ -2,16 +2,13 @@
 
 ## Phase
 
-Extended interpretable-prosody target-reference experiment registered.
+Extended attribute experiment is running; corrected speaker-cluster inference is registered.
 
-## Active additions
+## Statistical correction
 
-- F0 variability via f0_iqr_semitone.
-- Pause ratio.
-- Voiced ratio.
-- Combined expanded temporal/variability representation.
+EXP-20260921-15 will generate one OOF prediction per utterance under a fixed speaker-disjoint split
+and compute uncertainty by resampling complete speakers, not seed/fold aggregate rows.
 
 ## Next legal step
 
-Run EXP-20260921-14 from an immutable runtime bundle and audit whether target-reference coupling
-extends beyond pitch/loudness/rate level features.
+Finish EXP-20260921-14, then run EXP-20260921-15 from an immutable runtime bundle.
