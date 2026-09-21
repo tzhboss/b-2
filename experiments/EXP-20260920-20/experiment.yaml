@@ -1,0 +1,35 @@
+schema_version: 1
+experiment_id: EXP-20260920-20
+title: How many unlabeled utterances are enough for MSP VAD?
+
+research_question: >
+  On a fixed >50-utterance speaker cohort, how quickly does nested label-free acoustic enrollment
+  approach marginal-oracle Hybrid performance for raw Arousal and Dominance?
+
+registered_hypothesis: >
+  Acoustic-center estimation will improve monotonically with K, while Hybrid VAD performance will
+  show diminishing returns and be effectively saturated by K=20.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-19]
+protocol_reference: configs/protocols/msp_vad_kshot_saturation_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260920-20.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed nested K sequence
+  selection_metric: null
+  rationale: sample-efficiency follow-up
+
+supersedes: []
+superseded_by: []
+role: deployment sample-efficiency analysis

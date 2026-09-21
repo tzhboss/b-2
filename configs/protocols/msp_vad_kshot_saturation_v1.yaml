@@ -1,0 +1,49 @@
+schema_version: 1
+protocol_id: PROTO-MSP-VAD-KSHOT-SATURATION-V1
+title: Nested K-shot sample-efficiency for MSP raw VAD
+
+research_question_scope: >
+  Measure how rapidly label-free acoustic reference estimation saturates as enrollment grows,
+  using a single common speaker cohort and nested K-shot enrollment sets.
+
+dataset:
+  name: msp
+  common_cohort_rule: more than 50 eligible all-attribute utterances per speaker
+  targets: [valence, arousal, dominance]
+
+controls:
+  - Use one fixed common cohort for all K values.
+  - K values are [1,2,5,10,20,50].
+  - For each seed and speaker, create one random label-free enrollment ordering.
+  - K-shot enrollment is nested: K1 subset K2 subset K5 subset K10 subset K20 subset K50.
+  - Enrollment utterances are excluded from train/test rows.
+  - Use five speaker-disjoint folds and three fixed seeds.
+  - Use the same Ridge(alpha=1.0), equal-speaker weighting, and transforms as EXP-19.
+  - Primary representation comparison is K-shot Hybrid versus Absolute and marginal-oracle Hybrid.
+  - Marginal oracle is diagnostic only.
+
+criteria:
+  acceptance:
+    - >
+      Center convergence is supported if marginal-center MAE decreases monotonically with K for
+      pitch, loudness, and log-rate, and K=50 MAE is at least 40% lower than K=10 MAE for all three.
+    - >
+      K=10 efficiency is supported if it recovers at least 70% of the marginal-oracle Hybrid gain
+      over Absolute for both Arousal and Dominance.
+    - >
+      Practical saturation is supported if K=20 Hybrid is within 0.01 CCC of marginal-oracle Hybrid
+      for Arousal and Dominance and the absolute K50-minus-K20 Hybrid CCC change is below 0.005 for both.
+  rejection:
+    - >
+      Reject early saturation if K50 improves over K20 by more than 0.015 CCC for either Arousal
+      or Dominance.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260920-20/data_inventory.csv
+  - artifacts/EXP-20260920-20/center_error_summary.csv
+  - artifacts/EXP-20260920-20/metrics_by_fold.csv
+  - artifacts/EXP-20260920-20/summary.csv
+  - artifacts/EXP-20260920-20/paired_deltas.csv
+  - artifacts/EXP-20260920-20/run_metadata.json
