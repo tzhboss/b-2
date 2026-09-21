@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260921-06
+title: Does Hybrid VAD utility require the correct speaker center?
+
+research_question: >
+  If Relative features are fixed but speaker centers are reassigned across speakers, does raw
+  Arousal/Dominance performance lose the Hybrid benefit while residual VAD remains unchanged?
+
+registered_hypothesis: >
+  Correct speaker-center identity will matter strongly for raw MSP Arousal/Dominance but minimally
+  for within-speaker residual targets.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-17, EXP-20260921-03, EXP-20260921-05]
+protocol_reference: configs/protocols/vad_speaker_center_permutation_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-06.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed Ridge alpha and fixed permutation count
+  selection_metric: null
+  rationale: direct speaker-center identity intervention
+
+supersedes: []
+superseded_by: []
+role: baseline-identity mechanism test

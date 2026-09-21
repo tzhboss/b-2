@@ -1,0 +1,16 @@
+schema_version: 1
+experiment_id: EXP-20260921-06
+dataset:
+  msp_source_env: PROSODY_ENRICHED_PARQUET
+  iemocap_source_glob: /data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/*.parquet
+seed: [20260920,20260921,20260922]
+parameters:
+  outer_folds: 5
+  ridge_alpha: 1.0
+  permutation_reps: 10
+  bootstrap_reps: 10000
+  targets: [valence,arousal,dominance]
+  tasks: [raw,residual]
+outputs:
+  artifact_root: artifacts/EXP-20260921-06
+entrypoint: scripts/run_vad_speaker_center_permutation_20260921.py

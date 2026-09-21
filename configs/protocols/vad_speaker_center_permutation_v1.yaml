@@ -1,0 +1,57 @@
+schema_version: 1
+protocol_id: PROTO-VAD-SPEAKER-CENTER-PERMUTATION-V1
+title: Speaker-center identity permutation test for VAD
+
+research_question_scope: >
+  Test whether the usefulness of Hybrid prosody comes from the correct speaker-specific center,
+  rather than merely exposing extra center-valued features.
+
+datasets: [msp, iemocap]
+targets: [valence, arousal, dominance]
+tasks: [raw, residual]
+representations:
+  - relative
+  - true_hybrid
+  - permuted_hybrid
+
+intervention:
+  - Keep Relative acoustic features fixed.
+  - For permuted_hybrid, replace each speaker's center vector with another speaker's center.
+  - Use a derangement within train speakers and a separate derangement within test speakers.
+  - Preserve the center marginal distribution while destroying speaker-center identity.
+  - Repeat with 10 fixed permutation replicates per seed/fold.
+
+controls:
+  - Use the same all-attribute marginal-center construction as EXP-20260921-03.
+  - Five speaker-disjoint folds and three fixed seeds.
+  - Fixed linear Ridge(alpha=1.0), train-only weighted scaling.
+  - Equal total train/evaluation weight per speaker.
+  - Same utterance rows and Relative features across true/permuted conditions.
+  - Residual VAD subtracts the full-speaker VAD mean diagnostically.
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      MSP raw center-identity utility is supported if true_hybrid minus mean-permuted_hybrid CCC
+      is >=+0.05 with 95% CI above zero for both Arousal and Dominance.
+    - >
+      Residual center irrelevance is supported if absolute true-minus-permuted CCC is <0.01 for
+      Arousal and Dominance in both MSP and IEMOCAP.
+    - >
+      Raw-versus-residual contrast is supported if the true-minus-permuted effect is at least
+      0.05 larger on raw than residual targets for both MSP Arousal and Dominance.
+  rejection:
+    - >
+      Reject speaker-center identity as an MSP mechanism if raw true-minus-permuted effects are
+      non-positive for both Arousal and Dominance.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-06/data_inventory.csv
+  - artifacts/EXP-20260921-06/metrics_by_fold.csv
+  - artifacts/EXP-20260921-06/permutation_effects_by_fold.csv
+  - artifacts/EXP-20260921-06/effect_summary.csv
+  - artifacts/EXP-20260921-06/run_metadata.json
