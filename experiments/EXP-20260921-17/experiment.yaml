@@ -1,37 +1,28 @@
 schema_version: 1
 experiment_id: EXP-20260921-17
-title: Full interpretable prosody target-reference matching
+title: Is the WavLM target-reference result stable to Ridge solver choice?
 
 research_question: >
-  Does target-reference matching remain robust when all currently validated interpretable prosodic
-  attributes are combined into one full MSP representation?
+  Do the primary Relative-minus-Absolute WavLM effects remain unchanged when Ridge is fit with
+  the numerically stable LSQR solver?
 
 registered_hypothesis: >
-  Relative-minus-Absolute slopes will remain significantly negative for Arousal and Dominance under
-  both Linear and Quadratic Ridge, while Relative will be favored at the pure within-speaker
-  endpoint.
+  All four slopes will remain negative, all four lambda=0 effects positive, and slope/endpoint
+  changes versus the default solver will be <=0.01.
 
 status:
-  execution: planned
-  validity: unchecked
-  decision: pending
+  execution: completed
+  validity: valid
+  decision: pass
 
-parent_experiments: [EXP-20260921-14, EXP-20260921-15]
-protocol_reference: configs/protocols/msp_full_interpretable_prosody_cluster_v1.yaml
+parent_experiments: [EXP-20260921-16]
+protocol_reference: configs/protocols/iemocap_wavlm_solver_stability_v1.yaml
 experiment_config_reference: configs/experiments/EXP-20260921-17.yaml
 
 runtime:
-  commit: null
+  commit: 8e9458c22412cfd269f39c3940fcdf3ca23d7e95
   branch: main
   seed: 20260920
   integrity_mode: immutable_tmp_bundle
 
-selected_checkpoint:
-  identifier: null
-  selection_rule: fixed full feature set and fixed models
-  selection_metric: null
-  rationale: paper-ready combined interpretable representation
-
-supersedes: []
-superseded_by: []
-role: full interpretable representation confirmation
+role: numerical-stability robustness

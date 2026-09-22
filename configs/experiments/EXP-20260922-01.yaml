@@ -1,0 +1,15 @@
+schema_version: 1
+experiment_id: EXP-20260922-01
+dataset:
+  source_env: PROSODY_ENRICHED_PARQUET
+parameters:
+  split_seed: 20260920
+  outer_folds: 5
+  ridge_alpha: 1.0
+  bootstrap_reps: 5000
+  lambda_values: [0.0,0.25,0.5,0.75,1.0]
+  targets: [arousal,dominance]
+  model_families: [linear_ridge,quadratic_ridge]
+outputs:
+  artifact_root: artifacts/EXP-20260922-01
+entrypoint: scripts/run_msp_full_interpretable_prosody_cluster_20260921.py

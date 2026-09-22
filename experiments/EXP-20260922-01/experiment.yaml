@@ -1,0 +1,37 @@
+schema_version: 1
+experiment_id: EXP-20260922-01
+title: Full interpretable prosody target-reference matching
+
+research_question: >
+  Does target-reference matching remain robust when all currently validated interpretable prosodic
+  attributes are combined into one full MSP representation?
+
+registered_hypothesis: >
+  Relative-minus-Absolute slopes will remain significantly negative for Arousal and Dominance under
+  both Linear and Quadratic Ridge, while Relative will be favored at the pure within-speaker
+  endpoint.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260921-14, EXP-20260921-15]
+protocol_reference: configs/protocols/msp_full_interpretable_prosody_cluster_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260922-01.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: 20260920
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed full feature set and fixed models
+  selection_metric: null
+  rationale: paper-ready combined interpretable representation
+
+supersedes: []
+superseded_by: []
+role: full interpretable representation confirmation
