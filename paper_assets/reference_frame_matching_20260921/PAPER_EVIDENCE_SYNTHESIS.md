@@ -120,3 +120,42 @@ by at most 1.01e-6. All signs and confidence conclusions are unchanged.
 
 This removes the ill-conditioned-matrix warning as a plausible explanation for the WavLM
 reference-frame effect.
+
+## Statistical inference update — speaker is the independent unit
+
+EXP-20260921-15 replaces fold/seed bootstrap inference for the main Pitch+Rate mechanism with
+speaker-cluster bootstrap on complete out-of-fold predictions.
+
+MSP remains strongly confirmed:
+- Linear Arousal slope: -0.3188, 95% CI [-0.3384, -0.2998].
+- Linear Dominance: -0.1825, [-0.1969, -0.1683].
+- Quadratic Arousal: -0.3214, [-0.3411, -0.3022].
+- Quadratic Dominance: -0.1851, [-0.2000, -0.1705].
+
+IEMOCAP remains directionally consistent but low-powered:
+- all four Pitch+Rate mean slopes remain negative;
+- all four 10-speaker cluster-bootstrap slope CIs cross zero.
+
+Therefore the manuscript should say:
+- strong confirmatory target-reference slope evidence on MSP;
+- directionally consistent external support on IEMOCAP;
+- significant pure within-speaker Relative advantage in both corpora.
+
+Do not retain the older statement that the IEMOCAP Pitch+Rate slopes are significantly negative.
+
+## Learned-representation extension — WavLM
+
+EXP-20260921-16 directly repeats the target-reference intervention in frozen WavLM embedding space
+on IEMOCAP.
+
+Speaker-cluster slopes:
+- Layer 12 Arousal: -0.0829, 95% CI [-0.1309, -0.0359].
+- Layer 12 Dominance: -0.0341, [-0.0583, -0.0118].
+- Layer 24 Arousal: -0.0958, [-0.1429, -0.0482].
+- Layer 24 Dominance: -0.0455, [-0.0707, -0.0181].
+
+All four pure within-speaker endpoints favor Relative embeddings with CIs above zero.
+At lambda=1, all four preferences reverse toward Absolute.
+
+This is direct evidence that target-reference matching is not limited to handcrafted prosodic
+features.

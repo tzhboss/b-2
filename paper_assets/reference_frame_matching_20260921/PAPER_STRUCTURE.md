@@ -58,9 +58,12 @@ Use this as motivation, not the final mechanism claim.
 EXP-20260920-17:
 MSP VAD target decomposition.
 
-EXP-20260921-12:
-Main confirmatory lambda intervention with semantically matched Pitch+Rate across MSP and IEMOCAP,
-linear and quadratic Ridge.
+EXP-20260921-12 + EXP-20260921-15:
+Main Pitch+Rate lambda intervention with semantically matched features across MSP and IEMOCAP,
+followed by speaker-cluster inference.
+
+Use EXP-20260921-15 confidence intervals in the manuscript. MSP is strongly confirmed; IEMOCAP is
+directionally consistent but low-powered with only ten speakers.
 
 This should be the central results section.
 
@@ -81,7 +84,16 @@ Label-free K-shot enrollment.
 Use EXP-21 as the corrected fixed-downstream-pool result.
 Approximately K=20 recovers most practical utility on MSP.
 
-## 8. Representation-Level Analysis
+## 8. Learned-Representation Generalization
+
+EXP-20260921-16:
+Construct Absolute, speaker-Relative, and Hybrid reference frames directly in frozen WavLM
+embedding space on IEMOCAP. Layers 12 and 24 both show significantly negative Arousal/Dominance
+target-reference slopes under speaker-cluster bootstrap.
+
+This should now be a main result, not merely appendix analysis.
+
+## 9. Representation-Level Analysis
 
 EXP-20260920-04:
 WavLM decodes Absolute, Relative, and implied baseline pitch across layers.
@@ -90,7 +102,7 @@ Constrain claim:
 WavLM preserves multiple frames; explicit Relative augmentation does not universally improve
 emotion after WavLM.
 
-## 9. Robustness and Boundaries
+## 10. Robustness and Boundaries
 
 Include:
 - model-family robustness
@@ -100,7 +112,7 @@ Include:
 - session-disjoint IEMOCAP sensitivity and limited session count
 - speaker-ID decodability constraint
 
-## 10. Discussion
+## 11. Discussion
 
 Main interpretation:
 Normalization redistributes information rather than universally removing noise.

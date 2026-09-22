@@ -186,3 +186,33 @@ The primary registered WavLM claim is Relative-minus-Absolute, not a small Hybri
 All predictions are finite and the registered Relative-minus-Absolute speaker-cluster effects are
 large and significant. A solver-stability check should be reported before submission if it changes
 any main conclusion.
+
+### 13. "Fold/seed bootstrap treats correlated units as independent"
+
+Response:
+The main inferential analysis has been replaced by a speaker-cluster bootstrap on complete OOF
+predictions. MSP remains strongly significant under speaker-level resampling. IEMOCAP is correctly
+reported as directionally consistent but underpowered for slope inference with only ten speakers.
+
+Evidence:
+EXP-20260921-15.
+
+### 14. "The effect is a handcrafted-feature arithmetic artifact"
+
+Response:
+The same target-reference intervention was repeated directly in frozen WavLM embedding space.
+At both layer 12 and layer 24, Arousal and Dominance show significantly negative
+Relative-minus-Absolute slopes under speaker-cluster bootstrap, with Relative favored at lambda=0
+and Absolute favored at lambda=1.
+
+Evidence:
+EXP-20260921-16.
+
+### 15. "The effect only applies to mean pitch/loudness/rate levels"
+
+Response:
+MSP F0 variability, pause ratio, and voiced ratio all show significant target-reference coupling.
+The mechanism therefore extends to expressive range and temporal/voicing structure.
+
+Evidence:
+EXP-20260921-14.
