@@ -1,0 +1,37 @@
+schema_version: 1
+experiment_id: EXP-20260922-02
+title: Can unlabeled K-shot enrollment recover the full interpretable-prosody Hybrid benefit?
+
+research_question: >
+  After combining all six validated interpretable prosodic attributes, can a moderate unlabeled
+  enrollment set recover the raw Arousal/Dominance Hybrid benefit without full-speaker oracle centers?
+
+registered_hypothesis: >
+  K=20 will already recover most of the usable Hybrid benefit: it will exceed Absolute for both
+  Arousal and Dominance, K=20-to-K=50 gains will be below 0.01 CCC for both targets, and K=50
+  will lie within 0.01 CCC of the full-speaker marginal-oracle Hybrid for both targets.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260920-21, EXP-20260922-01]
+protocol_reference: configs/protocols/msp_full_interpretable_kshot_fixedpool_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260922-02.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: [20260920,20260921,20260922]
+  integrity_mode: immutable_tmp_bundle
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed six-feature representation, fixed Ridge alpha, fixed nested K sequence
+  selection_metric: null
+  rationale: practical deployment validation of the full interpretable representation
+
+supersedes: []
+superseded_by: []
+role: full interpretable representation deployment validation

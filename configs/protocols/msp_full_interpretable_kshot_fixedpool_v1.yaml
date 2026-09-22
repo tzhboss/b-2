@@ -1,0 +1,63 @@
+schema_version: 1
+protocol_id: PROTO-MSP-FULL-INTERPRETABLE-KSHOT-FIXEDPOOL-V1
+title: Fixed-pool unlabeled K-shot recovery for full interpretable prosody
+
+research_question_scope: >
+  Test whether the raw-target Hybrid benefit of the six-attribute interpretable prosody
+  representation can be recovered from a small unlabeled speaker-enrollment set rather than
+  full-speaker oracle centers.
+
+dataset: msp
+
+features:
+  pitch_level: 12*log2(f0_median_hz)
+  pitch_variability: f0_iqr_semitone
+  loudness: speech_lufs
+  speaking_rate: log(phoneme_articulation_rate)
+  pause_ratio: pause_ratio
+  voiced_ratio: voiced_ratio
+
+design:
+  - Use speakers with more than 50 eligible utterances.
+  - Reserve exactly 50 unlabeled utterances per speaker before downstream modeling.
+  - Use nested K prefixes from the same speaker-specific reserve for K in [1,2,5,10,20,50].
+  - Keep downstream train/test rows identical across K within each seed.
+  - Estimate each six-dimensional speaker center by coordinate-wise median over enrollment utterances.
+  - Compare Absolute, K-shot Hybrid, and full-speaker marginal-oracle Hybrid.
+  - Use speaker-disjoint five-fold evaluation and equal-speaker weighting.
+  - Use three enrollment/fold seeds: [20260920,20260921,20260922].
+  - Use Ridge(alpha=1.0) on raw Arousal and Dominance.
+
+primary_metric: speaker-balanced CCC
+
+criteria:
+  acceptance:
+    - >
+      Practical full-prosody recovery is supported if K=20 K-shot Hybrid exceeds Absolute
+      for both Arousal and Dominance.
+    - >
+      A K=20 plateau is supported if the K=20 to K=50 Hybrid CCC gain is <0.01
+      for both Arousal and Dominance.
+    - >
+      Oracle proximity is supported if K=50 K-shot Hybrid is within 0.01 CCC of
+      marginal-oracle Hybrid for both Arousal and Dominance.
+  rejection:
+    - >
+      Reject practical recovery if K=50 K-shot Hybrid fails to exceed Absolute for either
+      Arousal or Dominance.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260922-02/data_inventory.csv
+  - artifacts/EXP-20260922-02/center_error_summary.csv
+  - artifacts/EXP-20260922-02/metrics_by_fold.csv
+  - artifacts/EXP-20260922-02/summary.csv
+  - artifacts/EXP-20260922-02/paired_deltas.csv
+  - artifacts/EXP-20260922-02/k_deltas.csv
+  - artifacts/EXP-20260922-02/run_metadata.json
+
+runtime_integrity:
+  - Execute from immutable /tmp copies of the preregistered script and config.
+  - Record SHA256 of source and runtime copies before execution.
+  - Require source and runtime hashes to match the preregistered commit.
