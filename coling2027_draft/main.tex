@@ -63,7 +63,8 @@ This decomposition leads to our central hypothesis:
 If the target is dominated by within-speaker deviations, Relative features should be advantageous.
 As the target contains more stable between-speaker structure, the advantage of Relative should diminish and correctly aligned speaker-center information can become useful.
 
-Prior work already establishes that speaker-relative prosody and enrollment can improve emotion recognition \citep{bone2012arousal,bone2014arousal,busso2013normalization,mariooryad2014compensating}, while a parallel literature shows benefits from personalization and speaker-aware modeling \citep{sridhar2022personalization,tran2023personalized,triantafyllopoulos2024enrolment,ulgen2024emotional}.
+Prior work shows both sides of this design choice.
+Speaker normalization can improve categorical and continuous affect prediction \citep{busso2013normalization,dang2016factor,gat2022speaker}, while personalization, enrollment, and speaker-aware modeling can also improve SER \citep{triantafyllopoulos2024enrolment,shi2025speaker}.
 Our question is not whether either strategy can work.
 Instead, we ask \emph{when} the two apparently opposing strategies should help.
 We test this by manipulating target reference frame directly rather than comparing unrelated datasets or models.
@@ -95,29 +96,45 @@ Our contributions are:
 
 Speaker normalization has a long history in affective speech processing.
 Prosodic features scored relative to speaker-specific references can improve robustness, including cross-corpus arousal estimation \citep{bone2012arousal,bone2014arousal}.
-Iterative normalization and compensation methods similarly reduce speaker and lexical variability for emotion recognition \citep{busso2013normalization,mariooryad2014compensating}.
-The same motivation extends to self-supervised representations: \citet{gat2022speaker} explicitly normalize speaker information for SSL-based SER.
+Iterative normalization and compensation methods likewise reduce speaker and lexical variability for emotion recognition \citep{busso2013normalization,mariooryad2014compensating}.
+For continuous emotion prediction, \citet{dang2016factor} explicitly decompose the acoustic feature space into speaker- and emotion-related subspaces and report improved arousal prediction after speaker normalization.
+The same nuisance-removal motivation extends to learned representations: \citet{gat2022speaker} adversarially suppress speaker information for SSL-based SER, while \citet{ruggiero2025eta} linearly decompose WavLM representations into speaker-specific and speaker-independent components for content-driven speech tasks.
 
-These studies primarily frame stable speaker variation as a nuisance to be removed.
-That framing is appropriate when the desired output is speaker-independent state information.
-However, it does not imply that stable speaker information is useless for every target.
-Our contribution is an explanatory intervention: we manipulate the amount of between-speaker structure in the \emph{target} and test whether the preferred acoustic reference frame changes with it.
+These studies establish that removing stable speaker variation can improve generalization.
+Our question is different.
+We do not introduce a new normalizer or claim that speaker invariance is universally desirable.
+Instead, we manipulate how much stable between-speaker structure is present in the \emph{target} while holding utterances, acoustic inputs, folds, and model family fixed, and test whether the preferred representation changes accordingly.
 
 \subsection{Personalization and speaker-aware affect modeling}
 
 A complementary line of work explicitly retains or exploits speaker information.
 Unsupervised personalization can improve affect recognition when speakers differ systematically in affect expression \citep{sridhar2022personalization}.
 Pretrained encoders can be personalized with speaker-specific adaptation \citep{tran2023personalized}, and enrollment has been studied both for accuracy and individual-level fairness \citep{triantafyllopoulos2024enrolment}.
+Recent systems also learn explicitly speaker-aware emotion representations \citep{shi2025speaker}, while inference-only speaker adaptation has been used to calibrate SER predictions to an unseen speaker's vocal range \citep{lachut2025inference}.
 Speaker embeddings themselves can contain emotion-relevant structure \citep{ulgen2024emotional}.
 
-Normalization and personalization are therefore not mutually exclusive empirical facts.
+Normalization and personalization are therefore not contradictory empirical findings.
+They optimize different uses of speaker information.
 Our reference-frame account predicts both: stable speaker information is nuisance for a within-person target but can be signal for a population-level target containing between-speaker structure.
 
 \subsection{Between- and within-speaker variation}
 
 Speech production exhibits substantial between- and within-speaker variation even for basic temporal properties \citep{jacewicz2010tempo,quene2008multilevel}.
-This motivates treating speaker means and within-speaker deviations as distinct statistical objects rather than assuming that one is an imperfect version of the other.
-We apply the same distinction to both acoustic predictors and affect targets and use it as the basis of a controlled intervention.
+Affective speech work has also modeled systematic speaker-dependent differences.
+For example, \citet{grimm2006modeling} describe speaker-specific emotion-expression bias and amplification, separating a speaker's neutral location from the range over which that speaker expresses emotion.
+These results motivate treating speaker means and within-speaker deviations as distinct statistical objects rather than assuming that one is merely a noisier version of the other.
+
+Our study applies this distinction symmetrically to predictors and targets.
+The key intervention is not only to estimate a speaker reference, but to construct a controlled family of targets that moves from a purely within-speaker residual to the original population-level label.
+This makes it possible to test reference-frame matching directly.
+
+\subsection{Positioning of the present work}
+
+The closest prior literature contains the main ingredients separately: speaker-normalized continuous affect prediction \citep{dang2016factor}, explicit speaker-dependent affect baselines \citep{grimm2006modeling}, speaker-invariant SSL representations \citep{gat2022speaker,ruggiero2025eta}, and enrollment-based or speaker-aware personalization \citep{triantafyllopoulos2024enrolment,shi2025speaker}.
+Our contribution is an explanatory test connecting these directions.
+We ask whether the utility of normalization changes as a function of target reference frame itself.
+We then test that mechanism with correct-versus-permuted speaker centers, speaker-cluster inference, frozen WavLM embeddings, and unlabeled K-shot reference estimation.
+Thus the contribution is a reference-frame account and controlled evidence for it, rather than a claim to invent speaker normalization or personalization.
 
 \section{Method}
 
