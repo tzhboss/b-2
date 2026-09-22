@@ -1,0 +1,57 @@
+schema_version: 1
+protocol_id: PROTO-MSP-FULL-INTERPRETABLE-PROSODY-CLUSTER-V1
+title: Full interpretable prosody target-reference matching with speaker-cluster inference
+
+research_question_scope: >
+  Test whether target-reference matching remains strong when all currently validated,
+  interpretable MSP prosodic attributes are combined in one representation.
+
+dataset: msp
+
+features:
+  pitch_level: 12*log2(f0_median_hz)
+  pitch_variability: f0_iqr_semitone
+  loudness: speech_lufs
+  speaking_rate: log(phoneme_articulation_rate)
+  pause_ratio: pause_ratio
+  voiced_ratio: voiced_ratio
+
+representations:
+  absolute: all six utterance-level attributes
+  relative: all six attributes minus speaker marginal medians
+  hybrid: concatenate(relative, speaker centers)
+
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+targets: [arousal,dominance]
+model_families: [linear_ridge,quadratic_ridge]
+
+inference:
+  split_seed: 20260920
+  outer_folds: 5
+  bootstrap_unit: speaker
+  bootstrap_reps: 5000
+
+criteria:
+  acceptance:
+    - >
+      Full-prosody coupling is supported if Relative-minus-Absolute slope is negative with
+      speaker-cluster 95% CI below zero for Arousal and Dominance under both model families.
+    - >
+      Within-speaker endpoint support is present if Relative-minus-Absolute at lambda=0 is positive
+      with 95% CI above zero for Arousal and Dominance under both model families.
+    - >
+      Hybrid decomposition utility is supported if Hybrid exceeds Relative at lambda=1 for both
+      targets under both models.
+  rejection:
+    - >
+      Reject full-representation robustness if either target has a non-negative mean slope under
+      both model families.
+  inconclusive:
+    - Otherwise mark unsupported sub-hypotheses inconclusive.
+
+required_outputs:
+  - artifacts/EXP-20260921-17/data_inventory.csv
+  - artifacts/EXP-20260921-17/oof_predictions.parquet
+  - artifacts/EXP-20260921-17/cluster_bootstrap_summary.csv
+  - artifacts/EXP-20260921-17/point_effects.csv
+  - artifacts/EXP-20260921-17/run_metadata.json
