@@ -33,3 +33,19 @@ Cross-validated R² for Absolute pitch, speaker-relative pitch, and implied spea
 frozen WavLM-large hidden representations on ESD. Relative-pitch accessibility is strongest in
 early/middle layers and decreases toward the final layers, while speaker-baseline information
 remains strongly decodable.
+
+
+## Figure 5 — WavLM target-reference intervention
+
+**Target-reference matching in frozen WavLM embedding space.**
+Speaker-cluster CCC(Relative) − CCC(Absolute) as between-speaker target strength increases from
+lambda=0 to lambda=1 for IEMOCAP Arousal and Dominance at WavLM layers 12 and 24. All four slopes
+are significantly negative; Relative is favored at the pure within-speaker endpoint and Absolute
+is favored at the raw-target endpoint.
+
+## Figure 6 — Extended prosodic attributes
+
+**Target-reference coupling beyond acoustic level features.**
+Relative-minus-Absolute slope versus target between-speaker strength for F0 variability, pause
+ratio, voiced ratio, and their combined representation on MSP. All Arousal and Dominance slopes
+are significantly negative.

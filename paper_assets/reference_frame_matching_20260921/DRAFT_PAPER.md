@@ -344,29 +344,33 @@ both Linear and Quadratic Ridge.
 
 Slope of CCC(Relative) − CCC(Absolute) versus λ:
 
-Linear Ridge:
-- MSP Arousal: -0.3181, 95% CI [-0.3264, -0.3082]
-- MSP Dominance: -0.1821, [-0.1878, -0.1750]
-- IEMOCAP Arousal: -0.02245, [-0.03772, -0.00838]
-- IEMOCAP Dominance: -0.01089, [-0.01684, -0.00348]
+Using speaker as the independent bootstrap unit, MSP shows strong confirmatory slopes:
 
-Quadratic Ridge:
-- MSP Arousal: -0.3207, 95% CI [-0.3293, -0.3103]
-- MSP Dominance: -0.1846, [-0.1906, -0.1771]
-- IEMOCAP Arousal: -0.02646, [-0.04310, -0.01134]
-- IEMOCAP Dominance: -0.01752, [-0.02440, -0.00994]
+- Linear Arousal: -0.3188, 95% CI [-0.3384, -0.2998]
+- Linear Dominance: -0.1825, [-0.1969, -0.1683]
+- Quadratic Arousal: -0.3214, [-0.3411, -0.3022]
+- Quadratic Dominance: -0.1851, [-0.2000, -0.1705]
 
-All eight confirmatory slopes are significantly negative.
+IEMOCAP point slopes are directionally consistent but less precise with only ten speakers:
 
-At λ=0, Relative is better than Absolute in every Arousal/Dominance corpus-target-model cell:
+- Linear Arousal: -0.0192, 95% CI [-0.0662, +0.0326]
+- Linear Dominance: -0.0162, [-0.0484, +0.0123]
+- Quadratic Arousal: -0.0281, [-0.0758, +0.0256]
+- Quadratic Dominance: -0.0271, [-0.0617, +0.0058]
 
-- MSP Linear: +0.1389 Arousal, +0.0727 Dominance
-- MSP Quadratic: +0.1389 Arousal, +0.0746 Dominance
-- IEMOCAP Linear: +0.1363 Arousal, +0.0458 Dominance
-- IEMOCAP Quadratic: +0.1551 Arousal, +0.0486 Dominance
+Thus the slope mechanism is strongly confirmed on MSP and directionally replicated, but not
+independently significant, on IEMOCAP under speaker-cluster inference.
 
-The central mechanism therefore survives corpus change, semantically matched features, and
-nonlinear feature access.
+At λ=0, Relative is better than Absolute in every Arousal/Dominance corpus-target-model cell,
+with speaker-cluster confidence intervals above zero in both corpora:
+
+- MSP Linear: +0.1390 Arousal, +0.0727 Dominance
+- MSP Quadratic: +0.1390 Arousal, +0.0746 Dominance
+- IEMOCAP Linear: +0.1375 Arousal, +0.0456 Dominance
+- IEMOCAP Quadratic: +0.1462 Arousal, +0.0458 Dominance
+
+The strongest inferential evidence for the slope comes from MSP, while IEMOCAP robustly supports
+the pure within-speaker endpoint and the same negative point-slope direction.
 
 ### 5. Correct speaker-center identity is necessary for raw Hybrid utility
 
@@ -427,7 +431,38 @@ Implied speaker baseline remains very strongly decodable throughout the network.
 This shows that SSL representations do not simply become speaker-invariant. Instead, reference-frame
 information remains available but is reorganized with depth.
 
-### 8. Boundaries
+
+### 8. Target-reference matching survives in WavLM embedding space
+
+We next construct Absolute, Relative, and Hybrid reference frames directly in frozen WavLM-large
+embedding space on IEMOCAP. For each speaker, the center is the coordinate-wise median embedding;
+Relative subtracts this center and Hybrid concatenates Relative with the center.
+
+At hidden layer 12, speaker-cluster Relative-minus-Absolute slopes are:
+- Arousal: -0.0829, 95% CI [-0.1309, -0.0359]
+- Dominance: -0.0341, [-0.0583, -0.0118]
+
+At layer 24:
+- Arousal: -0.0958, 95% CI [-0.1429, -0.0482]
+- Dominance: -0.0455, [-0.0707, -0.0181]
+
+All four slope intervals are below zero. At λ=0, Relative is significantly better in all four
+layer-by-target cells; at λ=1, Absolute is better in all four. The same reference preference
+reversal therefore appears in a 1024-dimensional learned speech representation rather than only
+in handcrafted scalar prosodic attributes.
+
+The default Ridge solver emitted ill-conditioning warnings in this high-dimensional setting.
+Repeating the full probe with LSQR at tolerance 1e-8 changed the primary slopes by at most
+1.65e-6 and the lambda=0 endpoint effects by at most 1.01e-6, leaving all conclusions unchanged.
+
+### Numerical stability of the WavLM result
+
+A high-precision LSQR sensitivity reproduces the WavLM target-reference slopes almost exactly.
+Across the four layer-by-target cells, the maximum absolute slope change is 1.65e-6 and the maximum
+lambda=0 effect change is 1.01e-6. The learned-representation result is therefore insensitive to
+the Ridge solver used.
+
+### 9. Boundaries
 
 The mechanism is strongest for Arousal and Dominance. Valence is weak under these low-dimensional
 prosodic features and should not be overinterpreted.
@@ -593,7 +628,7 @@ which reference frame the task actually requires.
   File: fig3_emotion_gender_pitch_reversal.png
 - Figure 4: WavLM layer-wise reference-frame decodability.
   File: fig4_wavlm_reference_decodability_esd.png
-
+- Figure 5: Direct WavLM target-reference intervention.\n  File: fig5_wavlm_target_reference_intervention.png\n- Figure 6: Extended prosodic attribute slopes.\n  File: fig6_extended_prosody_slopes.png\n
 ### Main tables
 
 - Table 1: Confirmatory Pitch+Rate slopes.
@@ -604,7 +639,7 @@ which reference frame the task actually requires.
   File: table3_categorical_pitch_reversal.csv
 - Table 4: MSP K-shot Hybrid performance.
   File: table4_kshot_msp.csv
-
+- Table 6: Speaker-cluster main inference.\n  File: table6_speaker_cluster_main_inference.csv\n- Table 7: WavLM target-reference slopes.\n  File: table7_wavlm_target_reference_slopes.csv\n- Table 8: Extended attribute slopes.\n  File: table8_extended_attribute_slopes.csv\n
 ### Appendix / supplement
 
 - WavLM layer blocks and full layer curves.

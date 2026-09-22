@@ -178,33 +178,39 @@ This directly supports the idea that speaker baseline utility depends on target 
 ### 4. Controlled target intervention confirms target-reference matching
 
 The cleanest confirmatory experiment uses only Pitch+Rate in both MSP and IEMOCAP and evaluates
-both Linear and Quadratic Ridge.
+both Linear and Quadratic Ridge. Primary uncertainty is computed by speaker-cluster bootstrap.
 
-Slope of CCC(Relative) − CCC(Absolute) versus λ:
+On MSP, Relative-minus-Absolute slope versus lambda is strongly negative:
 
-Linear Ridge:
-- MSP Arousal: -0.3181, 95% CI [-0.3264, -0.3082]
-- MSP Dominance: -0.1821, [-0.1878, -0.1750]
-- IEMOCAP Arousal: -0.02245, [-0.03772, -0.00838]
-- IEMOCAP Dominance: -0.01089, [-0.01684, -0.00348]
+- Linear Arousal: -0.3188, 95% CI [-0.3384, -0.2998]
+- Linear Dominance: -0.1825, [-0.1969, -0.1683]
+- Quadratic Arousal: -0.3214, [-0.3411, -0.3022]
+- Quadratic Dominance: -0.1851, [-0.2000, -0.1705]
 
-Quadratic Ridge:
-- MSP Arousal: -0.3207, 95% CI [-0.3293, -0.3103]
-- MSP Dominance: -0.1846, [-0.1906, -0.1771]
-- IEMOCAP Arousal: -0.02646, [-0.04310, -0.01134]
-- IEMOCAP Dominance: -0.01752, [-0.02440, -0.00994]
+All four MSP slope intervals remain strictly below zero when speaker is treated as the independent
+sampling unit.
 
-All eight confirmatory slopes are significantly negative.
+IEMOCAP shows the same point-slope direction but substantially wider uncertainty with only ten
+speakers:
 
-At λ=0, Relative is better than Absolute in every Arousal/Dominance corpus-target-model cell:
+- Linear Arousal: -0.0192, 95% CI [-0.0662, +0.0326]
+- Linear Dominance: -0.0162, [-0.0484, +0.0123]
+- Quadratic Arousal: -0.0281, [-0.0758, +0.0256]
+- Quadratic Dominance: -0.0271, [-0.0617, +0.0058]
 
-- MSP Linear: +0.1389 Arousal, +0.0727 Dominance
-- MSP Quadratic: +0.1389 Arousal, +0.0746 Dominance
-- IEMOCAP Linear: +0.1363 Arousal, +0.0458 Dominance
-- IEMOCAP Quadratic: +0.1551 Arousal, +0.0486 Dominance
+Thus IEMOCAP provides directional external support rather than an independently significant slope
+replication under speaker-cluster inference.
 
-The central mechanism therefore survives corpus change, semantically matched features, and
-nonlinear feature access.
+At lambda=0, Relative remains better than Absolute in every Arousal/Dominance corpus-target-model
+cell, with speaker-cluster intervals above zero:
+
+- MSP Linear: +0.1390 Arousal, +0.0727 Dominance
+- MSP Quadratic: +0.1390 Arousal, +0.0746 Dominance
+- IEMOCAP Linear: +0.1375 Arousal, +0.0456 Dominance
+- IEMOCAP Quadratic: +0.1462 Arousal, +0.0458 Dominance
+
+The strongest slope evidence therefore comes from MSP, while both corpora support the pure
+within-speaker Relative advantage.
 
 ### 5. Correct speaker-center identity is necessary for raw Hybrid utility
 
@@ -315,70 +321,14 @@ Thus the core phenomenon is not restricted to interpretable low-dimensional pros
 speaker-relative transformation of a learned speech representation becomes less appropriate as
 the target contains more between-speaker structure.
 
-### Learned-representation target-reference intervention
 
-We additionally construct reference frames directly in frozen WavLM-large embedding space on
-IEMOCAP. We extract attention-mask-aware temporal mean embeddings from hidden layers 12 and 24.
-For each layer, the Absolute representation is the utterance embedding, the speaker center is the
-coordinate-wise median embedding over that speaker's utterances, and the Relative representation
-subtracts this center from the utterance embedding. Hybrid concatenates Relative and center.
+### 10. Numerical solver sensitivity
 
-We then repeat the same target-reference lambda intervention under fixed speaker-disjoint folds.
-Uncertainty is computed with speaker-cluster bootstrap.
+The high-dimensional WavLM probe was repeated with Ridge solver=LSQR and tolerance 1e-8.
+All four Arousal/Dominance slope signs and all four lambda=0 endpoint signs were unchanged.
 
-### 9. Target-reference matching also appears in WavLM embedding space
+The maximum absolute change versus the default solver was:
+- slope: 1.65e-6;
+- lambda=0 Relative-minus-Absolute effect: 1.01e-6.
 
-The WavLM experiment produces a direct preference reversal.
-
-Layer 12:
-- Arousal slope: -0.0829, 95% CI [-0.1309, -0.0359].
-- Dominance slope: -0.0341, [-0.0583, -0.0118].
-
-Layer 24:
-- Arousal slope: -0.0958, 95% CI [-0.1429, -0.0482].
-- Dominance slope: -0.0455, [-0.0707, -0.0181].
-
-At lambda=0, Relative-minus-Absolute is positive in every cell:
-+0.0405/+0.0148 at layer 12 and +0.0466/+0.0251 at layer 24 for
-Arousal/Dominance respectively.
-
-At lambda=1, all four differences reverse sign:
--0.0423/-0.0192 at layer 12 and -0.0490/-0.0204 at layer 24.
-
-Thus the core phenomenon is not restricted to interpretable low-dimensional prosody. A
-speaker-relative transformation of a learned speech representation becomes less appropriate as
-the target contains more between-speaker structure.
-
-### Learned-representation target-reference intervention
-
-We additionally construct reference frames directly in frozen WavLM-large embedding space on
-IEMOCAP. We extract attention-mask-aware temporal mean embeddings from hidden layers 12 and 24.
-For each layer, the Absolute representation is the utterance embedding, the speaker center is the
-coordinate-wise median embedding over that speaker's utterances, and the Relative representation
-subtracts this center from the utterance embedding. Hybrid concatenates Relative and center.
-
-We then repeat the same target-reference lambda intervention under fixed speaker-disjoint folds.
-Uncertainty is computed with speaker-cluster bootstrap.
-
-### 9. Target-reference matching also appears in WavLM embedding space
-
-The WavLM experiment produces a direct preference reversal.
-
-Layer 12:
-- Arousal slope: -0.0829, 95% CI [-0.1309, -0.0359].
-- Dominance slope: -0.0341, [-0.0583, -0.0118].
-
-Layer 24:
-- Arousal slope: -0.0958, 95% CI [-0.1429, -0.0482].
-- Dominance slope: -0.0455, [-0.0707, -0.0181].
-
-At lambda=0, Relative-minus-Absolute is positive in every cell:
-+0.0405/+0.0148 at layer 12 and +0.0466/+0.0251 at layer 24 for
-Arousal/Dominance respectively.
-
-At lambda=1, all four differences reverse sign:
--0.0423/-0.0192 at layer 12 and -0.0490/-0.0204 at layer 24.
-
-Thus the core phenomenon is not restricted to interpretable low-dimensional prosody. A
-speaker-relative transformation of a learned speech representation becomes less appropriate as
-the target contains more between-speaker structure.
+Thus the learned-representation result is not a numerical artifact of the default Ridge solve.

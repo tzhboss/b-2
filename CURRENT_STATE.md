@@ -2,25 +2,36 @@
 
 ## Phase
 
-WavLM embedding-level target-reference intervention completed and passed.
+Core reference-frame experiments and numerical robustness checks are complete.
 
-## New strongest extension
+## Strongest current evidence
 
-On IEMOCAP frozen WavLM embeddings:
-- layer 12 Arousal/Dominance slopes are significantly negative;
-- layer 24 Arousal/Dominance slopes are significantly negative;
-- all four pure within-speaker endpoints significantly favor Relative;
-- Arousal slope is negative for all 10 speakers at both layers.
+1. MSP explicit Pitch+Rate target intervention:
+   strong speaker-cluster slope confirmation under linear and quadratic Ridge.
+2. IEMOCAP explicit Pitch+Rate:
+   negative point slopes but wide speaker-cluster slope CIs with only 10 speakers; pure
+   within-speaker Relative endpoint is robust.
+3. MSP extended attributes:
+   F0 variability, pause ratio, voiced ratio, and their combination all show target-reference
+   coupling.
+4. IEMOCAP WavLM embedding intervention:
+   layer 12 and layer 24 Arousal/Dominance slopes all significantly negative under speaker-cluster
+   inference; pure within-speaker endpoints all significantly favor Relative.
+5. WavLM numerical solver sensitivity:
+   LSQR reproduces the default-solver effects to within 1.7e-6.
 
-Therefore target-reference matching is not limited to handcrafted prosodic level features.
+## Main paper interpretation
 
-## Statistical status
+The target-reference mechanism is no longer confined to handcrafted scalar prosody. It appears in
+both interpretable prosodic attributes and high-dimensional learned speech representations.
 
-- MSP explicit Pitch+Rate: strong speaker-cluster confirmation.
-- IEMOCAP explicit Pitch+Rate: directionally consistent slopes but low-powered slope CIs.
-- IEMOCAP WavLM: strong speaker-consistent and speaker-cluster target-reference effect.
+## Remaining high-value gap
+
+External breadth remains the main limitation. A third licensed continuous-affect corpus or
+MSP-Conversation contextual labels would be valuable if access becomes available. Standard
+voice-quality features are secondary to this gap.
 
 ## Next legal step
 
-Run a fixed numerical-solver sensitivity for the WavLM Ridge probe because the default solver
-reported ill-conditioned matrix warnings. Then update the paper evidence hierarchy and figures.
+Update the manuscript evidence hierarchy, figures, and claims to reflect speaker-cluster inference,
+extended attributes, WavLM direct intervention, and solver stability.

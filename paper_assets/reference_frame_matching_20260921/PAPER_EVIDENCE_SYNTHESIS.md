@@ -111,44 +111,12 @@ as the target changes from within-speaker to population-level.
 This materially reduces the risk that the paper is merely documenting an arithmetic property of
 handcrafted pitch/rate normalization.
 
-## Learned representation validation — EXP-20260921-16
 
-The main mechanism also appears when reference frames are constructed directly in frozen WavLM
-embedding space rather than from handcrafted prosodic attributes.
+## Numerical solver stability — EXP-20260921-17
 
-Speaker-cluster Relative-minus-Absolute slopes:
+The WavLM intervention is numerically stable. Replacing the default Ridge solver with LSQR at
+tolerance 1e-8 changes the four primary slopes by at most 1.65e-6 and the lambda=0 endpoint effects
+by at most 1.01e-6. All signs and confidence conclusions are unchanged.
 
-- Layer 12 Arousal: -0.0829, 95% CI [-0.1309, -0.0359].
-- Layer 12 Dominance: -0.0341, [-0.0583, -0.0118].
-- Layer 24 Arousal: -0.0958, [-0.1429, -0.0482].
-- Layer 24 Dominance: -0.0455, [-0.0707, -0.0181].
-
-All four slope intervals are below zero.
-
-At lambda=0, Relative WavLM embeddings are significantly better in all four cells. At lambda=1,
-Absolute embeddings are better in all four cells. The reference preference therefore crosses zero
-as the target changes from within-speaker to population-level.
-
-This materially reduces the risk that the paper is merely documenting an arithmetic property of
-handcrafted pitch/rate normalization.
-
-## Learned representation validation — EXP-20260921-16
-
-The main mechanism also appears when reference frames are constructed directly in frozen WavLM
-embedding space rather than from handcrafted prosodic attributes.
-
-Speaker-cluster Relative-minus-Absolute slopes:
-
-- Layer 12 Arousal: -0.0829, 95% CI [-0.1309, -0.0359].
-- Layer 12 Dominance: -0.0341, [-0.0583, -0.0118].
-- Layer 24 Arousal: -0.0958, [-0.1429, -0.0482].
-- Layer 24 Dominance: -0.0455, [-0.0707, -0.0181].
-
-All four slope intervals are below zero.
-
-At lambda=0, Relative WavLM embeddings are significantly better in all four cells. At lambda=1,
-Absolute embeddings are better in all four cells. The reference preference therefore crosses zero
-as the target changes from within-speaker to population-level.
-
-This materially reduces the risk that the paper is merely documenting an arithmetic property of
-handcrafted pitch/rate normalization.
+This removes the ill-conditioned-matrix warning as a plausible explanation for the WavLM
+reference-frame effect.
