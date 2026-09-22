@@ -6,7 +6,6 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{microtype}
-\usepackage{inconsolata}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{amsmath}
@@ -231,6 +230,13 @@ On IEMOCAP, all four point slopes are also negative, but cluster intervals cross
 Importantly, the pure within-speaker endpoint remains clearly positive in both corpora.
 The direction is therefore consistent, while evidential strength differs substantially by corpus size.
 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/target_reference_matching.png}
+    \caption{Controlled target-reference intervention with semantically matched Pitch+Rate features. As between-speaker target structure increases from the within-speaker endpoint toward the raw target, the Relative-minus-Absolute advantage decreases.}
+    \label{fig:targetmatching}
+\end{figure}
+
 \begin{table}[t]
 \centering
 \small
@@ -263,6 +269,7 @@ The mechanism is therefore not driven by one prosodic dimension or one linear de
 \begin{table}[t]
 \centering
 \small
+\setlength{\tabcolsep}{3pt}
 \begin{tabular}{llrrr}
 \toprule
 Model & Target & R-A slope & R-A @0 & H-R @1\\
@@ -312,6 +319,13 @@ Layer & Target & R-A slope & R-A @0\\
 This distinction matters for interpretation.
 The hand-engineered cross-corpus experiment is low-powered on IEMOCAP after correcting the independent resampling unit, whereas the high-dimensional learned representation yields a robust negative target-reference slope.
 The shared qualitative mechanism is thus not tied to one manually chosen prosodic parameterization.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/wavlm_target_reference.png}
+    \caption{The same target-reference intervention in frozen WavLM-large embedding space on IEMOCAP. Speaker-relative embeddings are preferred near the within-speaker endpoint, while the preference shifts as stable between-speaker target structure is restored.}
+    \label{fig:wavlmmatching}
+\end{figure}
 
 \subsection{Unlabeled enrollment recovers practical center utility}
 
