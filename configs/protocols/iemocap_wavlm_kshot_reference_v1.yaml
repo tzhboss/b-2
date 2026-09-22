@@ -1,0 +1,62 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-WAVLM-KSHOT-REFERENCE-V1
+title: Label-free K-shot WavLM speaker-reference estimation
+
+research_question_scope: >
+  Test whether the WavLM target-reference effect from EXP-20260921-16 can be recovered when the
+  speaker center is estimated from a small unlabeled enrollment set rather than the full speaker
+  utterance pool.
+
+dataset: iemocap
+embedding_source: artifacts/EXP-20260921-16/embeddings
+layers: [12,24]
+targets: [arousal,dominance]
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+k_values: [1,5,10,20,50]
+enrollment_pool_size: 50
+enrollment_seeds: [20260920,20260921,20260922]
+
+design:
+  - For each enrollment seed and speaker, reserve exactly 50 utterances before downstream modeling.
+  - The same non-enrollment downstream rows are used for every K within that seed.
+  - K-shot center is the coordinate-wise median of the first K utterances in the reserved,
+    seed-specific enrollment order.
+  - Enrollment affect labels are never used to estimate the acoustic reference.
+  - Absolute uses the same downstream rows but no speaker center.
+  - Oracle Relative uses the full-speaker embedding median only as a diagnostic ceiling.
+  - Speaker-disjoint folds use fixed split seed 20260920.
+  - Ridge(alpha=1.0) uses the default solver, justified by EXP-20260921-17 solver equivalence.
+  - Because Ridge predictions are linear in the target, fit lambda endpoints 0 and 1 and obtain
+    intermediate lambda predictions by exact linear interpolation.
+
+inference:
+  - Speaker is the independent resampling unit.
+  - Enrollment seeds are repeated nuisance realizations, not independent samples.
+  - Within each speaker-bootstrap replicate, compute the effect for each enrollment seed and then
+    average across enrollment seeds before fitting the lambda slope.
+  - 5000 speaker-cluster bootstrap replicates.
+
+criteria:
+  acceptance:
+    - >
+      K=20 deployment direction is supported if all four layer-by-target K-shot
+      Relative-minus-Absolute slopes are negative.
+    - >
+      K=20 within-speaker endpoint support is present if lambda=0 K-shot Relative-minus-Absolute is
+      positive in at least three of four cells.
+    - >
+      K=50 oracle recovery is supported if all four slope signs match oracle and at least three of
+      four absolute slope gaps are <=0.03.
+  rejection:
+    - >
+      Reject practical reference recovery if K=50 reverses the oracle slope sign in both targets at
+      either layer.
+  inconclusive:
+    - Otherwise.
+
+required_outputs:
+  - artifacts/EXP-20260921-18/data_inventory.csv
+  - artifacts/EXP-20260921-18/effect_curves.csv
+  - artifacts/EXP-20260921-18/slope_summary.csv
+  - artifacts/EXP-20260921-18/oracle_comparison.csv
+  - artifacts/EXP-20260921-18/run_metadata.json

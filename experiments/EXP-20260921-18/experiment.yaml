@@ -1,0 +1,28 @@
+schema_version: 1
+experiment_id: EXP-20260921-18
+title: Can unlabeled K-shot enrollment recover WavLM reference-frame matching?
+
+research_question: >
+  Can a small unlabeled enrollment set estimate speaker-specific WavLM centers well enough to
+  recover the target-reference effect without full-speaker oracle centers?
+
+registered_hypothesis: >
+  K=20 will preserve the negative target-reference slope direction in all four layer-by-target
+  cells, and K=50 will approach the oracle slope in most cells.
+
+status:
+  execution: planned
+  validity: unchecked
+  decision: pending
+
+parent_experiments: [EXP-20260921-16, EXP-20260921-17]
+protocol_reference: configs/protocols/iemocap_wavlm_kshot_reference_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260921-18.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: [20260920,20260921,20260922]
+  integrity_mode: immutable_tmp_bundle
+
+role: learned-reference deployment validation
