@@ -1,14 +1,14 @@
 schema_version: 1
 experiment_id: EXP-20260921-17
-title: WavLM target-reference numerical solver sensitivity
+title: Is the WavLM target-reference result stable to Ridge solver choice?
 
 research_question: >
-  Are the EXP-20260921-16 WavLM target-reference slopes robust to a numerically stable LSQR Ridge
-  solver?
+  Do the primary Relative-minus-Absolute WavLM effects remain unchanged when Ridge is fit with
+  the numerically stable LSQR solver?
 
 registered_hypothesis: >
-  All four layer-by-target slope signs and lambda=0 endpoint signs will match EXP-20260921-16,
-  with absolute slope changes no larger than 0.02.
+  All four slopes will remain negative, all four lambda=0 effects positive, and slope/endpoint
+  changes versus the default solver will be <=0.01.
 
 status:
   execution: planned
@@ -16,7 +16,7 @@ status:
   decision: pending
 
 parent_experiments: [EXP-20260921-16]
-protocol_reference: configs/protocols/iemocap_wavlm_solver_sensitivity_v1.yaml
+protocol_reference: configs/protocols/iemocap_wavlm_solver_stability_v1.yaml
 experiment_config_reference: configs/experiments/EXP-20260921-17.yaml
 
 runtime:
@@ -25,4 +25,4 @@ runtime:
   seed: 20260920
   integrity_mode: immutable_tmp_bundle
 
-role: numerical robustness
+role: numerical-stability robustness
