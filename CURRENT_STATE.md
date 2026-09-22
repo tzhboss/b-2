@@ -2,36 +2,34 @@
 
 ## Phase
 
-Core reference-frame experiments and numerical robustness checks are complete.
+Extended prosodic attributes, corrected speaker-cluster inference, and WavLM-level
+target-reference intervention are complete.
 
-## Strongest current evidence
+## Strongest new findings
 
-1. MSP explicit Pitch+Rate target intervention:
-   strong speaker-cluster slope confirmation under linear and quadratic Ridge.
-2. IEMOCAP explicit Pitch+Rate:
-   negative point slopes but wide speaker-cluster slope CIs with only 10 speakers; pure
-   within-speaker Relative endpoint is robust.
-3. MSP extended attributes:
-   F0 variability, pause ratio, voiced ratio, and their combination all show target-reference
-   coupling.
-4. IEMOCAP WavLM embedding intervention:
-   layer 12 and layer 24 Arousal/Dominance slopes all significantly negative under speaker-cluster
-   inference; pure within-speaker endpoints all significantly favor Relative.
-5. WavLM numerical solver sensitivity:
-   LSQR reproduces the default-solver effects to within 1.7e-6.
+### Extended attributes
+Target-reference coupling extends to F0 variability, pause ratio, and voiced ratio on MSP.
 
-## Main paper interpretation
+### Corrected inference
+MSP slopes remain strongly negative under speaker-cluster bootstrap.
+IEMOCAP hand-engineered Pitch+Rate slope means remain negative but CIs cross zero because there are
+only ten speakers; pure within-speaker endpoints remain significant.
 
-The target-reference mechanism is no longer confined to handcrafted scalar prosody. It appears in
-both interpretable prosodic attributes and high-dimensional learned speech representations.
+### Learned representation
+Frozen WavLM layer 12 and 24 show significant negative Arousal/Dominance target-reference slopes
+under speaker-cluster bootstrap on IEMOCAP, with all four pure within-speaker endpoints favoring
+Relative embeddings.
 
-## Remaining high-value gap
+## Paper interpretation
 
-External breadth remains the main limitation. A third licensed continuous-affect corpus or
-MSP-Conversation contextual labels would be valuable if access becomes available. Standard
-voice-quality features are secondary to this gap.
+The main mechanism is now supported at two levels:
+1. interpretable prosodic attributes;
+2. learned SSL representation space.
+
+The paper should no longer present WavLM only as a decodability appendix; EXP-20260921-16 is a
+direct mechanism generalization and belongs in the main results or a strong secondary section.
 
 ## Next legal step
 
-Update the manuscript evidence hierarchy, figures, and claims to reflect speaker-cluster inference,
-extended attributes, WavLM direct intervention, and solver stability.
+Update the manuscript, figures, and claim-evidence matrix to replace fold-level inference with
+speaker-cluster inference and to add the WavLM target-reference intervention.
