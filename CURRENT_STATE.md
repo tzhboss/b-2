@@ -2,17 +2,25 @@
 
 ## Phase
 
-Speaker-cluster inference completed and audited; WavLM embedding intervention extraction completed.
+WavLM embedding-level target-reference intervention completed and passed.
 
-## Statistical conclusion
+## New strongest extension
 
-- MSP target-reference slopes remain strongly negative under speaker-cluster bootstrap.
-- IEMOCAP slope means remain negative, but 10-speaker cluster-bootstrap CIs cross zero.
-- Pure within-speaker Relative advantage is robust in both corpora.
+On IEMOCAP frozen WavLM embeddings:
+- layer 12 Arousal/Dominance slopes are significantly negative;
+- layer 24 Arousal/Dominance slopes are significantly negative;
+- all four pure within-speaker endpoints significantly favor Relative;
+- Arousal slope is negative for all 10 speakers at both layers.
 
-Main paper inference should use EXP-20260921-15 rather than fold/seed CIs.
+Therefore target-reference matching is not limited to handcrafted prosodic level features.
+
+## Statistical status
+
+- MSP explicit Pitch+Rate: strong speaker-cluster confirmation.
+- IEMOCAP explicit Pitch+Rate: directionally consistent slopes but low-powered slope CIs.
+- IEMOCAP WavLM: strong speaker-consistent and speaker-cluster target-reference effect.
 
 ## Next legal step
 
-Run EXP-20260921-16 WavLM embedding-level target-reference probe using completed layer-12/layer-24
-IEMOCAP embeddings.
+Run a fixed numerical-solver sensitivity for the WavLM Ridge probe because the default solver
+reported ill-conditioned matrix warnings. Then update the paper evidence hierarchy and figures.

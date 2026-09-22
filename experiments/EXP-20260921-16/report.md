@@ -1,15 +1,18 @@
 # Experiment Report — EXP-20260921-16
 
-The target-reference effect is not confined to handcrafted prosodic features.
+Target-reference matching survives in frozen WavLM embedding space.
 
-Speaker-relative WavLM embeddings outperform Absolute embeddings for pure within-speaker
+Speaker-relative WavLM embeddings are better than Absolute embeddings for pure within-speaker
 Arousal/Dominance targets at both layer 12 and layer 24. As between-speaker target structure is
-added, this advantage decreases monotonically and reverses for the raw target.
+restored, the Relative advantage decreases systematically; all four layer-by-target slopes are
+negative with speaker-cluster confidence intervals below zero.
 
-All four speaker-cluster slope confidence intervals are below zero.
+The result is also speaker-consistent: all ten speakers show a negative Arousal slope at both
+layers, and 8-9 of ten show a negative Dominance slope.
 
-This directly addresses the concern that the earlier result could be a trivial consequence of
-subtracting handcrafted pitch/rate statistics: the same phenomenon appears in a 1024-dimensional
-learned speech representation.
+This directly weakens the interpretation that the earlier mechanism is a trivial consequence of
+subtracting scalar handcrafted prosodic features. The same reference-frame interaction appears
+when the reference operation is applied to 1024-dimensional learned speech embeddings.
 
-Decision: pass.
+A numerical-solver sensitivity is retained as the next check because default Ridge emitted
+ill-conditioning warnings in the high-dimensional setting.
