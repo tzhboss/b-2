@@ -393,7 +393,22 @@ correct speaker prior and disappears when the target no longer contains speaker-
 IEMOCAP shows much smaller raw center-identity effects, consistent with its weak between-speaker
 target structure.
 
-### 6. About 20 unlabeled enrollment utterances recover most practical speaker-reference utility
+### 6. The mechanism extends beyond acoustic level features
+
+On MSP, target-reference coupling also appears for acoustic dynamics and temporal structure.
+
+Relative-minus-Absolute slopes for Arousal / Dominance are:
+
+- F0 variability: -0.105 / -0.079
+- Pause ratio: -0.074 / -0.059
+- Voiced ratio: -0.160 / -0.117
+- Combined variability/temporal set: -0.262 / -0.198
+
+All corresponding confidence intervals are below zero. At the pure within-speaker endpoint, the
+combined representation still favors Relative for both Arousal and Dominance. The mechanism is
+therefore not restricted to mean pitch, loudness, or speaking-rate levels.
+
+### 7. About 20 unlabeled enrollment utterances recover most practical speaker-reference utility
 
 In the corrected fixed-downstream-pool MSP experiment, K-shot Hybrid CCC is:
 
@@ -415,7 +430,24 @@ identical for Dominance (+0.00036 relative to oracle).
 Therefore deployment does not require affect labels or a full speaker history to recover most of
 the usable speaker-reference benefit.
 
-### 7. WavLM retains multiple reference frames
+### 8. Target-reference matching extends to frozen WavLM embeddings
+
+We repeat the target intervention directly in frozen WavLM-large representation space on IEMOCAP.
+For each speaker we compute a coordinate-wise median embedding center and construct Absolute,
+Relative, and Hybrid embedding frames.
+
+Speaker-cluster Relative-minus-Absolute slopes are:
+
+- Layer 12 Arousal: -0.0829, 95% CI [-0.1309, -0.0359]
+- Layer 12 Dominance: -0.0341, [-0.0583, -0.0118]
+- Layer 24 Arousal: -0.0958, [-0.1429, -0.0482]
+- Layer 24 Dominance: -0.0455, [-0.0707, -0.0181]
+
+All four pure within-speaker endpoints significantly favor Relative embeddings, while all four
+raw-target endpoints favor Absolute embeddings. This directly shows that target-reference matching
+is not a handcrafted-prosody artifact.
+
+### 9. WavLM retains multiple reference frames
 
 Frozen WavLM-large representations preserve highly decodable information about Absolute pitch,
 Relative pitch, and implied speaker baseline.
@@ -462,7 +494,7 @@ Across the four layer-by-target cells, the maximum absolute slope change is 1.65
 lambda=0 effect change is 1.01e-6. The learned-representation result is therefore insensitive to
 the Ridge solver used.
 
-### 9. Boundaries
+### 10. Boundaries
 
 The mechanism is strongest for Arousal and Dominance. Valence is weak under these low-dimensional
 prosodic features and should not be overinterpreted.

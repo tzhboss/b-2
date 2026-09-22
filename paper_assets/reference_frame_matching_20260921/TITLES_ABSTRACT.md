@@ -21,30 +21,29 @@ Why this is the best default:
 ## Abstract — conference version
 
 Speaker normalization is widely used in speech emotion recognition because prosodic measurements
-such as pitch and speaking rate vary strongly across speakers. This practice implicitly treats
-stable speaker variation as nuisance. We argue that this assumption is incomplete: whether a
-speaker baseline is nuisance or useful information depends on the reference frame of the target.
+vary strongly across speakers. This practice often treats stable speaker variation as nuisance.
+We instead ask when speaker baseline information should be removed and when it should be preserved.
 
-We decompose an utterance-level prosodic feature into a stable speaker component and a
-within-speaker deviation, and analogously decompose continuous affect targets into between-speaker
-and within-speaker components. This yields Absolute, speaker-Relative, and Hybrid prosodic
-representations and motivates a target-reference matching hypothesis.
+We decompose utterance-level representations and continuous affect targets into between-speaker and
+within-speaker components, yielding Absolute, speaker-Relative, and Hybrid reference frames.
+Across categorical emotion tasks, Relative pitch improves emotion recognition while suppressing
+stable speaker-trait information. On MSP-Podcast, speaker-cluster inference over 1,915 speakers
+shows that Relative-minus-Absolute Arousal and Dominance CCC decreases strongly as the
+between-speaker component of the target is increased. On IEMOCAP, the same handcrafted
+Pitch+Speaking-Rate slopes remain directionally negative but are imprecise with only ten speakers,
+while the pure within-speaker endpoint robustly favors Relative representations.
 
-Across ESD, MEAD, and RAVDESS, speaker-relative pitch improves categorical emotion recognition
-while strongly reducing gender decodability, showing that normalization redistributes rather than
-uniformly improves task-relevant information. We then directly manipulate the between-speaker
-component of Arousal and Dominance targets. Using only semantically aligned pitch and speaking rate,
-Relative-minus-Absolute CCC decreases significantly as between-speaker target strength increases in
-both MSP-Podcast and IEMOCAP, under both linear and quadratic regression. At the pure
-within-speaker endpoint, Relative is better in every confirmatory corpus-target-model condition.
-
-A speaker-center permutation intervention further shows that raw MSP Arousal/Dominance benefits
-require the correct speaker center, while center identity becomes nearly irrelevant after the
-target is centered within speaker. Finally, approximately 20 unlabeled enrollment utterances
-recover most of the practical speaker-reference benefit on MSP.
+We further repeat the intervention directly in frozen WavLM-large embedding space. At both layer 12
+and layer 24, Arousal and Dominance show significantly negative target-reference slopes under
+speaker-cluster bootstrap; Relative embeddings are favored for pure within-speaker targets and the
+preference reverses for raw targets. A speaker-center permutation experiment shows that raw MSP
+Arousal/Dominance gains require the correct speaker center, while center identity becomes nearly
+irrelevant after target centering. Additional experiments extend the effect to F0 variability,
+pause ratio, and voiced ratio, and label-free K-shot enrollment recovers most practical
+speaker-reference utility on MSP.
 
 These results support a simple principle: **representation reference frame should match target
-reference frame**. Speaker normalization is therefore better understood as an information
+reference frame**. Speaker normalization is therefore better viewed as an information
 transformation than as a universally beneficial invariance operation.
 
 ## Abstract — shorter version
