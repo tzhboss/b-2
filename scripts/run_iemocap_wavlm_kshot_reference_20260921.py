@@ -62,6 +62,21 @@ def effect_from_counts(counts,abs_stats,rel_stats,S):
     a=w@abs_stats; r=w@rel_stats
     return ccc_from_moments(r)-ccc_from_moments(a)
 
+def frame_stats_by_lambda(fr,speakers,lambdas):
+    out={}
+    for lam in lambdas:
+        y=(1-lam)*fr.y0.to_numpy()+lam*fr.y1.to_numpy()
+        pa=(1-lam)*fr.abs0.to_numpy()+lam*fr.abs1.to_numpy()
+        pr=(1-lam)*fr.rel0.to_numpy()+lam*fr.rel1.to_numpy()
+        abs_rows=[]; rel_rows=[]
+        for sp in speakers:
+            idx=np.flatnonzero(fr.speaker_id.to_numpy()==sp)
+            yy=y[idx]; aa=pa[idx]; rr=pr[idx]
+            abs_rows.append([yy.mean(),np.mean(yy*yy),aa.mean(),np.mean(aa*aa),np.mean(yy*aa)])
+            rel_rows.append([yy.mean(),np.mean(yy*yy),rr.mean(),np.mean(rr*rr),np.mean(yy*rr)])
+        out[float(lam)]=(np.asarray(abs_rows,float),np.asarray(rel_rows,float))
+    return out
+
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument("--config",required=True); args=ap.parse_args()
     cfg=yaml.safe_load(Path(args.config).read_text())
@@ -162,9 +177,9 @@ def main():
                     pos,a0,a1=abs_pred[t][fold]
                     _,o0,o1=oracle_pred[t][fold]
                     for q,ii in enumerate(pos):
-                        rec.append((ii,fold,a0[q],a1[q],o0[q],o1[q],y0[ii],y1[ii]))
+                        rec.append((ii,fold,dd.iloc[ii].speaker_id,a0[q],a1[q],o0[q],o1[q],y0[ii],y1[ii]))
                 oracle_frames[(eseed,layer,t)]=pd.DataFrame(
-                    rec,columns=["pos","fold","abs0","abs1","rel0","rel1","y0","y1"])
+                    rec,columns=["pos","fold","speaker_id","abs0","abs1","rel0","rel1","y0","y1"])
 
             for K in k_values:
                 centers={sp:np.median(Hfull[enroll_idx[sp][:K]],axis=0) for sp in speakers}
@@ -207,10 +222,6 @@ def main():
         for t in targets:
           # Oracle
           fr=oracle_frames[(eseed,layer,t)].copy()
-          spids=d.iloc[np.flatnonzero(np.ones(len(d),dtype=bool))]  # unused placeholder
-          # map downstream position back through all_frames shared structure
-          ref=all_frames[(eseed,k_values[0],layer,t)]
-          fr["speaker_id"]=ref.sort_values("sample_id").speaker_id.to_numpy() if False else ref.speaker_id.to_numpy()
           for lam in lambdas:
             y=(1-lam)*fr.y0.to_numpy()+lam*fr.y1.to_numpy()
             pa=(1-lam)*fr.abs0.to_numpy()+lam*fr.abs1.to_numpy()
@@ -233,57 +244,52 @@ def main():
     curves=pd.DataFrame(curves)
     oracle_curves=pd.DataFrame(oracle_curves)
 
-    # Summary slopes and speaker bootstrap. For bootstrap, use each seed-specific utterance frame
-    # and average seed-level effects within each replicate.
+    # Summary slopes and speaker bootstrap. Enrollment seeds are repeated nuisance realizations;
+    # speaker is the only bootstrap unit. Precompute per-speaker sufficient statistics once.
     summaries=[]
     B=int(pars["bootstrap_reps"])
     x=lambdas; xc=x-x.mean(); denom=float(xc@xc)
+    stat_cache={}
+    for eseed in map(int,pars["enrollment_seeds"]):
+      for K in k_values:
+        for layer in layers:
+          for t in targets:
+            stat_cache[(eseed,K,layer,t)]=frame_stats_by_lambda(
+                all_frames[(eseed,K,layer,t)],speakers,lambdas)
+
     for K in k_values:
       for layer in layers:
         for t in targets:
+          # Point estimate: average seed-level effect curves with equal speaker weight.
           seed_effects=[]
           for eseed in map(int,pars["enrollment_seeds"]):
-            g=curves[(curves.enrollment_seed==eseed)&(curves.K==K)&
-                     (curves.layer==layer)&(curves.target==t)].sort_values("lambda")
-            seed_effects.append(g.relative_minus_absolute.to_numpy(float))
-          point=np.mean(np.vstack(seed_effects),axis=0)
+            vals=[]
+            for lam in lambdas:
+                aa,rr=stat_cache[(eseed,K,layer,t)][float(lam)]
+                counts=np.ones((1,len(speakers)),dtype=np.int64)
+                vals.append(float(effect_from_counts(counts,aa,rr,len(speakers))[0]))
+            seed_effects.append(vals)
+          point=np.mean(np.asarray(seed_effects,float),axis=0)
           point_slope=float(point@xc/denom)
+
           rng=np.random.default_rng(stable_seed("boot",K,layer,t))
-          bs_s=np.empty(B); bs_l0=np.empty(B)
           pvec=np.full(len(speakers),1.0/len(speakers))
-          for b in range(B):
-            counts=rng.multinomial(len(speakers),pvec)
+          bs_s=np.empty(B); bs_l0=np.empty(B)
+          chunk=250; off=0
+          while off<B:
+            n=min(chunk,B-off)
+            counts=rng.multinomial(len(speakers),pvec,size=n)
             seed_curves=[]
             for eseed in map(int,pars["enrollment_seeds"]):
-                fr=all_frames[(eseed,K,layer,t)]
-                vals=[]
+                eff_cols=[]
                 for lam in lambdas:
-                    y=(1-lam)*fr.y0.to_numpy()+lam*fr.y1.to_numpy()
-                    pa=(1-lam)*fr.abs0.to_numpy()+lam*fr.abs1.to_numpy()
-                    pr=(1-lam)*fr.rel0.to_numpy()+lam*fr.rel1.to_numpy()
-                    # per-speaker moments
-                    tmp=fr[["speaker_id"]].copy()
-                    tmp["y"]=y; tmp["pa"]=pa; tmp["pr"]=pr
-                    arr=[]
-                    for sp in speakers:
-                        z=tmp[tmp.speaker_id==sp]
-                        yy=z.y.to_numpy(float); aa=z.pa.to_numpy(float); rr=z.pr.to_numpy(float)
-                        arr.append([yy.mean(),np.mean(yy*yy),aa.mean(),np.mean(aa*aa),np.mean(yy*aa),
-                                    rr.mean(),np.mean(rr*rr),np.mean(yy*rr)])
-                    arr=np.asarray(arr,float)
-                    w=counts.astype(float)/len(speakers)
-                    a=w@arr
-                    def c(myp):
-                        my,ey2,mp,ep2,eyp=myp
-                        vy=ey2-my*my; vp=ep2-mp*mp; cov=eyp-my*mp
-                        den2=vy+vp+(my-mp)**2
-                        return 2*cov/den2 if den2>0 else np.nan
-                    vals.append(c([a[0],a[1],a[5],a[6],a[7]])-
-                                c([a[0],a[1],a[2],a[3],a[4]]))
-                seed_curves.append(vals)
-            eff=np.mean(np.asarray(seed_curves,float),axis=0)
-            bs_s[b]=eff@xc/denom
-            bs_l0[b]=eff[0]
+                    aa,rr=stat_cache[(eseed,K,layer,t)][float(lam)]
+                    eff_cols.append(effect_from_counts(counts,aa,rr,len(speakers)))
+                seed_curves.append(np.column_stack(eff_cols))
+            eff=np.mean(np.stack(seed_curves,axis=0),axis=0)
+            bs_s[off:off+n]=(eff@xc)/denom
+            bs_l0[off:off+n]=eff[:,0]
+            off+=n
           slo,shi=np.quantile(bs_s,[.025,.975]); elo,ehi=np.quantile(bs_l0,[.025,.975])
           summaries.append({"K":K,"layer":layer,"target":t,
                             "slope_mean":point_slope,"slope_ci95_low":float(slo),"slope_ci95_high":float(shi),
