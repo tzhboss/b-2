@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260923-06
+title: WavLM target-reference matching under IEMOCAP session-disjoint retraining
+
+research_question: >
+  Does the WavLM target-reference effect survive when each IEMOCAP conversation session is held out
+  intact rather than splitting the two conversational partners across train and test folds?
+
+registered_hypothesis: >
+  Mean Relative-minus-Absolute lambda slopes will remain negative for layer 12 and 24 Arousal and
+  Dominance, with at least three of five held-out sessions agreeing in sign for every cell.
+
+status:
+  execution: registered
+  validity: pending
+  decision: pending
+
+parent_experiments: [EXP-20260921-16, EXP-20260921-17]
+protocol_reference: configs/protocols/iemocap_wavlm_session_loso_reference_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260923-06.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: reuse_frozen_embeddings_session_loso_retraining
+
+selected_checkpoint:
+  identifier: artifacts/EXP-20260921-16/embeddings
+  selection_rule: exact frozen WavLM embeddings used by the original experiment
+  selection_metric: null
+  rationale: isolate split-protocol robustness without changing representation
+
+supersedes: []
+superseded_by: []
+role: audit remediation and external protocol robustness

@@ -1,0 +1,40 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-WAVLM-SESSION-LOSO-REFERENCE-V1
+title: IEMOCAP WavLM reference matching with leave-one-session-out retraining
+
+scope: >
+  Repair the session-independence limitation of EXP-20260921-16. Reuse the frozen WavLM layer-12
+  and layer-24 embeddings, but retrain the fixed Ridge readout five times, each time holding out one
+  complete IEMOCAP session (both speakers) for evaluation.
+
+dataset: iemocap
+sessions: [Ses01,Ses02,Ses03,Ses04,Ses05]
+layers: [12,24]
+targets: [arousal,dominance]
+lambda_values: [0.0,0.25,0.5,0.75,1.0]
+ridge_alpha: 1.0
+
+representations:
+  absolute: frozen WavLM utterance embedding
+  relative: utterance embedding minus that speaker's oracle unlabeled median embedding
+
+evaluation:
+  primary_effect: slope over lambda of CCC(Relative)-CCC(Absolute)
+  weighting: equal speaker weight within each held-out session
+  report:
+    - slope for every held-out session
+    - number of negative session slopes out of five
+    - mean slope across sessions
+    - leave-one-session-out sensitivity range of the mean slope
+  inference_note: >
+    Five sessions are too few for strong population inference. This is a protocol-robustness test,
+    not a claim of precise asymptotic significance.
+
+criteria:
+  supportive:
+    - Mean session slope is negative in all four layer×target cells.
+    - At least three of five held-out sessions have negative slopes in each cell.
+  strong:
+    - All five held-out-session slopes are negative in all four cells.
+  weakening:
+    - Mean slope reverses sign or fewer than three sessions agree for any primary cell.
