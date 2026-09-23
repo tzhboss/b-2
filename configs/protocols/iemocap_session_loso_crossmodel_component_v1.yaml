@@ -1,0 +1,24 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-SESSION-LOSO-CROSSMODEL-COMPONENT-V1
+title: Strict session-disjoint absolute SER cross-model component attribution
+task: raw absolute IEMOCAP Arousal/Dominance regression
+relative_role: diagnostic decomposition only
+fold_policy: five leave-one-session-out folds; both speakers from a held-out session stay entirely in test
+models: [pitch_rate_linear, pitch_rate_quadratic, wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+metrics: [overall_ccc, between_ccc, within_ccc]
+inference:
+  independent_unit: speaker
+  paired_bootstrap: true
+  shared_draws_across_models: true
+  bootstrap_reps: 10000
+  bootstrap_seed: 20260924
+criteria:
+  pass:
+    - at least one between-minus-within cross-model contrast CI excludes zero under strict session LOSO
+  mixed:
+    - component profiles differ in point estimates but profile contrasts are uncertain
+  reject:
+    - cross-model differences collapse to effectively scalar shifts
+notes:
+  - Absolute SER is the real task; Between/Within are diagnostic views only.
+  - Frozen embeddings are reused; all regression heads are retrained in each session fold.
