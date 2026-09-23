@@ -1,0 +1,67 @@
+{
+  "experiment_id": "EXP-20260924-07",
+  "validity": "valid",
+  "decision": "mixed",
+  "task": "raw absolute IEMOCAP Arousal/Dominance",
+  "relative_role": "diagnostic input transformation only",
+  "common_samples": 10039,
+  "speakers": 10,
+  "fold_policy": "strict leave-one-session-out",
+  "folds": [
+    {
+      "fold": 0,
+      "heldout_session": "Ses01",
+      "n_sessions": 1,
+      "n_speakers": 2,
+      "n_samples": 1819
+    },
+    {
+      "fold": 1,
+      "heldout_session": "Ses02",
+      "n_sessions": 1,
+      "n_speakers": 2,
+      "n_samples": 1811
+    },
+    {
+      "fold": 2,
+      "heldout_session": "Ses03",
+      "n_sessions": 1,
+      "n_speakers": 2,
+      "n_samples": 2136
+    },
+    {
+      "fold": 3,
+      "heldout_session": "Ses04",
+      "n_sessions": 1,
+      "n_speakers": 2,
+      "n_samples": 2103
+    },
+    {
+      "fold": 4,
+      "heldout_session": "Ses05",
+      "n_sessions": 1,
+      "n_speakers": 2,
+      "n_samples": 2170
+    }
+  ],
+  "speaker_fold_max": 1,
+  "row_counts": {
+    "oof": 301170,
+    "component_metrics": 90,
+    "method_component_deltas": 90,
+    "method_profile_contrasts": 60,
+    "rank_summary": 30,
+    "center_audit": 5
+  },
+  "nan_inf_check": "pass",
+  "registered_hypothesis_checks": {
+    "relative_minus_absolute_point_negative": 10,
+    "relative_minus_absolute_sig_negative": 6,
+    "hybrid_minus_relative_point_positive": 7,
+    "hybrid_minus_relative_sig_positive": 1,
+    "required_each": 6
+  },
+  "numerical_warning_observed": true,
+  "interpretation": "Under strict session LOSO, removing the speaker center consistently shifts performance away from Between-speaker calibration relative to Within-speaker tracking (10/10 point-negative, 6/10 significantly negative). Adding the center back in naive high-dimensional Hybrid is directionally positive in 7/10 cells but significantly positive in only 1/10, so the registered restoration criterion is not met. Absolute SER remains the real task; this is a diagnostic mechanism result.",
+  "follow_up": "Run matched LSQR sensitivity because the default Ridge solve emitted ill-conditioned-matrix warnings; do not reinterpret Relative as a deployment objective."
+}
