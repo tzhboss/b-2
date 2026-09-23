@@ -1,0 +1,11 @@
+experiment_id: EXP-20260923-03
+dataset_glob: /data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/*.parquet
+model_dir: /data/lc/s-r/assets/models/emotion2vec_plus_large
+embedding_file: artifacts/EXP-20260923-03/iemocap_emotion2vec_plus_large.npz
+output_root: results/EXP-20260923-03
+split_seed: 20260920
+outer_folds: 5
+ridge_alpha: 1.0
+bootstrap_reps: 10000
+bootstrap_seed: 20260923
+batch_size: 8

@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260923-03
+title: emotion2vec standard absolute VAD component profile on IEMOCAP
+
+research_question: >
+  Does an emotion-specialized speech representation show a different Overall/Between/Within
+  performance profile from WavLM and hand-engineered Pitch+Rate on the same standard absolute task?
+
+registered_hypothesis: >
+  emotion2vec may improve Within-speaker affect tracking disproportionately relative to its Overall
+  performance, potentially changing at least one pairwise ordering versus the existing model panel.
+
+status:
+  execution: registered
+  validity: pending
+  decision: pending
+
+parent_experiments: [EXP-20260923-02]
+protocol_reference: configs/protocols/iemocap_emotion2vec_component_profile_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260923-03.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: 20260920
+  integrity_mode: local_frozen_model_plus_speaker_disjoint_oof
+
+selected_checkpoint:
+  identifier: /data/lc/s-r/assets/models/emotion2vec_plus_large/model.pt
+  selection_rule: fixed local emotion2vec+ large checkpoint
+  selection_metric: null
+  rationale: emotion-specialized backbone, no tuning on current results
+
+supersedes: []
+superseded_by: []
+role: route-A emotion-specialized backbone gating

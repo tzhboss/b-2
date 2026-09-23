@@ -1,0 +1,40 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-EMOTION2VEC-COMPONENT-PROFILE-V1
+title: emotion2vec standard-task Overall/Between/Within profile on IEMOCAP
+
+scope: >
+  Add an emotion-specialized 1024-D representation to the Route-A gating panel. Keep the target
+  unchanged: raw absolute Arousal and Dominance. Extract official utterance emotion2vec+ large
+  embeddings for the same IEMOCAP utterances used by the WavLM experiment, fit fixed Ridge on
+  speaker-disjoint folds, and diagnose OOF predictions with Overall, Between, and Within CCC.
+
+dataset_glob: /data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/*.parquet
+model_dir: /data/lc/s-r/assets/models/emotion2vec_plus_large
+targets: [arousal, dominance]
+split_seed: 20260920
+outer_folds: 5
+ridge_alpha: 1.0
+
+representation:
+  name: emotion2vec_plus_large
+  dimension: 1024
+  granularity: utterance
+  normalization: official encoder L2-normalized output
+
+diagnostics:
+  overall: equal-speaker-weighted pooled CCC on raw labels
+  between: CCC across speaker mean truth/prediction
+  within: equal-speaker-weighted pooled CCC after within-speaker centering
+  bootstrap_unit: speaker
+  bootstrap_reps: 10000
+
+criteria:
+  route_a_support:
+    - Compare emotion2vec with EXP-20260923-02 WavLM/Pitch+Rate on the common 10,039 utterances.
+    - Strong support requires at least one pairwise Overall-versus-Within ordering reversal or a materially different component profile.
+  weak:
+    - emotion2vec preserves essentially the same Overall and Within ordering/profile as existing backbones.
+
+notes:
+  - This is a standard absolute SER task. Within is diagnostic only.
+  - Session-disjoint robustness is separate.
