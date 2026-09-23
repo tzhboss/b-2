@@ -13,8 +13,8 @@ def decode(blob):
 
 def extract_model(name,model_id,files,out_root,device,batch_size,cache_dir):
     mroot=out_root/name; mroot.mkdir(parents=True,exist_ok=True)
-    fe=AutoFeatureExtractor.from_pretrained(model_id,cache_dir=cache_dir)
-    model=AutoModel.from_pretrained(model_id,cache_dir=cache_dir).to(device).eval()
+    fe=AutoFeatureExtractor.from_pretrained(model_id,cache_dir=cache_dir,token=False)
+    model=AutoModel.from_pretrained(model_id,cache_dir=cache_dir,token=False).to(device).eval()
     for p in model.parameters(): p.requires_grad_(False)
     inv=[]
     for src in files:
