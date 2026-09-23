@@ -2,7 +2,7 @@
 
 Human-readable derived index only. The authoritative record is each `experiments/<ID>/experiment.yaml`; if this file conflicts with a YAML record, the YAML wins.
 
-Current inventory: **59 registered experiments; 58 completed.**
+Current inventory: **59 registered experiments; 59 completed.**
 
 | ID | Title | Execution | Validity | Decision | Protocol | Parent |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -68,4 +68,4 @@ Current inventory: **59 registered experiments; 58 completed.**
 
 | EXP-20260924-07 | Session-disjoint Absolute/Relative/Hybrid component intervention across frozen speech backbones | completed | valid | mixed | iemocap_session_loso_arh_component_v1 | EXP-20260924-03, EXP-20260924-05 |
 
-| EXP-20260924-08 | LSQR sensitivity for session-disjoint Absolute/Relative/Hybrid intervention | registered | pending | pending | iemocap_session_loso_arh_lsqr_v1 | EXP-20260924-07, EXP-20260924-06 |
+| EXP-20260924-08 | LSQR sensitivity for session-disjoint Absolute/Relative/Hybrid intervention | completed | valid | mixed | iemocap_session_loso_arh_lsqr_v1 | EXP-20260924-07, EXP-20260924-06 |

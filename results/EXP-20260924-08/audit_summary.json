@@ -1,0 +1,19 @@
+{
+  "experiment_id": "EXP-20260924-08",
+  "validity": "valid",
+  "decision": "mixed",
+  "solver": "lsqr",
+  "solver_tolerance": "sklearn default",
+  "reference_experiment": "EXP-20260924-07",
+  "reference_sig_relative_minus_absolute_cells": 6,
+  "reference_sig_ra_same_sign": 6,
+  "reference_sig_ra_still_significant": 5,
+  "lsqr_hybrid_minus_relative_point_positive": 8,
+  "lsqr_hybrid_minus_relative_sig_positive": 0,
+  "hybrid_restoration_threshold": 6,
+  "component_cells_compared": 90,
+  "max_abs_component_ccc_change": 0.40679553649736827,
+  "cells_abs_change_ge_0_01": 22,
+  "interpretation": "All 6 reference significant Relative-minus-Absolute profile effects preserve sign, and Hybrid-minus-Relative remains far below the 6/10 significance threshold (0/10). However, one reference effect loses significance and default-tolerance LSQR changes some Between CCC cells substantially (max 0.407), so numerical robustness is mixed rather than pass.",
+  "follow_up": "Run high-precision LSQR with tol=1e-10, matching EXP-20260923-08, before attributing the large component-level shifts to solver family."
+}
