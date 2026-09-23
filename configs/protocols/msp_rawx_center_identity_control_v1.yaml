@@ -1,0 +1,31 @@
+schema_version: 1
+protocol_id: PROTO-MSP-RAWX-CENTER-IDENTITY-CONTROL-V1
+title: Same-budget speaker-center identity control while preserving raw utterance features
+
+scope: >
+  Address the identifiability limitation of the earlier Relative+center permutation. Preserve the
+  original utterance features x in every condition and append either the correct speaker center
+  mu_s or a deranged center pi(mu_s). This tests whether correct speaker-level pairing adds
+  predictive information beyond raw x, without destroying recoverability of x.
+
+dataset: msp
+features: [pitch,loudness,rate]
+targets: [arousal,dominance]
+tasks: [raw,residual]
+conditions:
+  raw: x
+  raw_plus_true_center: [x,mu_s]
+  raw_plus_permuted_center: [x,pi(mu_s)]
+split_seeds: [20260920,20260921,20260922]
+outer_folds: 5
+permutation_reps: 20
+seed_derivation: sha256-first-8-bytes
+
+primary_questions:
+  - Does [x;mu_s] exceed raw x on standard raw VAD?
+  - Does [x;mu_s] exceed [x;pi(mu_s)] when both retain the same raw x and dimensional budget?
+  - Does the identity-specific advantage shrink after target centering?
+
+interpretation_boundary: >
+  A positive result identifies predictive value in the correctly paired observed speaker-level
+  component under this corpus and readout. It does not by itself prove a stable biological/personality trait or a causal source.

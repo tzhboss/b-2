@@ -1,0 +1,36 @@
+schema_version: 1
+experiment_id: EXP-20260923-07
+title: Same-budget raw-x speaker-center identity control
+
+research_question: >
+  Does a correctly paired speaker center add value beyond the unchanged raw utterance features when
+  compared with an equally sized but wrong-speaker center?
+
+registered_hypothesis: >
+  On MSP raw Arousal and Dominance, [x;mu_s] will outperform [x;pi(mu_s)] and raw x; the
+  correct-versus-permuted gap will be much smaller for within-speaker residual targets.
+
+status:
+  execution: registered
+  validity: pending
+  decision: pending
+
+parent_experiments: [EXP-20260921-06, EXP-20260923-04]
+protocol_reference: configs/protocols/msp_rawx_center_identity_control_v1.yaml
+experiment_config_reference: null
+
+runtime:
+  commit: null
+  branch: main
+  seed: [20260920,20260921,20260922]
+  integrity_mode: corrected_sha256_randomization
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed three-feature Ridge control
+  selection_metric: null
+  rationale: preserve raw x and isolate center identity under equal feature budget
+
+supersedes: []
+superseded_by: []
+role: mechanism-identification control
