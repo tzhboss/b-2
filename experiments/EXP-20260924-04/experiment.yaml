@@ -1,0 +1,28 @@
+schema_version: 1
+experiment_id: EXP-20260924-04
+title: Ridge-alpha sensitivity of Absolute/Relative/Hybrid component effects
+research_question: >
+  Are the component-direction conclusions and Hybrid under-recovery from EXP-20260924-03 robust
+  to the fixed Ridge regularization strength, or are they a single-alpha geometry artifact?
+registered_hypothesis: >
+  The Relative-minus-Absolute Between-minus-Within direction will remain negative across a broad
+  matched-alpha grid, while Hybrid-vs-Absolute gaps may vary in magnitude but will not disappear
+  systematically at a different fixed alpha.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260924-03]
+protocol_reference: configs/protocols/iemocap_arh_alpha_sensitivity_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260924-04.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: 20260920
+  integrity_mode: fixed_matched_alpha_grid_no_selection
+selected_checkpoint:
+  identifier: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+  selection_rule: same frozen backbone panel as EXP-20260924-03
+  selection_metric: null
+  rationale: sensitivity only; no checkpoint or alpha selected from test results
+supersedes: []
+superseded_by: []
+role: route-A regularization sensitivity
+

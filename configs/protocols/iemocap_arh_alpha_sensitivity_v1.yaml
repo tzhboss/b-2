@@ -1,0 +1,29 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-ARH-ALPHA-SENSITIVITY-V1
+title: Fixed Ridge-alpha sensitivity for Absolute/Relative/Hybrid component attribution
+scope: >
+  Repeat the raw-absolute IEMOCAP representation intervention from EXP-20260924-03 at a fixed
+  log-scale alpha grid. Every reported alpha is a sensitivity point; no best alpha is selected.
+alphas: [0.01, 0.1, 1.0, 10.0, 100.0]
+backbones: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+methods: [absolute, relative, hybrid]
+target: raw absolute [arousal, dominance]
+folds: {outer: 5, split_seed: 20260920, unit: speaker}
+inference: {bootstrap_unit: speaker, bootstrap_reps: 5000, bootstrap_seed: 20260924}
+primary_checks:
+  - Sign stability of Relative-minus-Absolute Between-minus-Within across all five alphas.
+  - Sign stability of Hybrid-minus-Absolute Overall CCC across all five alphas.
+  - Sign stability of Hybrid-minus-Relative Between-minus-Within across all five alphas.
+criteria:
+  pass:
+    - Relative-minus-Absolute Between-minus-Within is negative at every alpha in at least 8 of 10 backbone-target cells.
+    - Hybrid-minus-Absolute Overall is non-positive at every alpha in at least 6 of 10 cells.
+  mixed:
+    - The Relative mechanism is stable, but Hybrid recovery materially changes sign across alpha in at least 3 cells.
+  reject:
+    - Relative-minus-Absolute Between-minus-Within changes sign across alpha in at least 3 cells.
+notes:
+  - Matched alpha is used across methods at each sensitivity point.
+  - Test-set results are not used to choose an alpha.
+  - Absolute SER remains the real task; Relative is diagnostic input transformation only.
+

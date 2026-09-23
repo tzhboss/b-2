@@ -2,7 +2,7 @@
 
 Human-readable derived index only. The authoritative record is each `experiments/<ID>/experiment.yaml`; if this file conflicts with a YAML record, the YAML wins.
 
-Current inventory: **54 registered experiments; 54 completed.**
+Current inventory: **55 registered experiments; 54 completed.**
 
 | ID | Title | Execution | Validity | Decision | Protocol | Parent |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -60,3 +60,4 @@ Current inventory: **54 registered experiments; 54 completed.**
 | EXP-20260924-01 | Paired cross-model Overall/Between/Within attribution on IEMOCAP | completed | valid | mixed | iemocap_paired_crossmodel_component_attribution_v1 | EXP-20260923-02, EXP-20260923-03 |
 | EXP-20260924-02 | HuBERT and wav2vec2 extension of IEMOCAP component profiles | completed | valid | pass | iemocap_hubert_wav2vec2_component_extension_v1 | EXP-20260924-01 |
 | EXP-20260924-03 | Absolute/Relative/Hybrid component intervention across frozen speech backbones | completed | valid | mixed | iemocap_absolute_relative_hybrid_component_v1 | EXP-20260924-02, EXP-20260923-01 |
+| EXP-20260924-04 | Ridge-alpha sensitivity of Absolute/Relative/Hybrid component effects | registered | pending | pending | iemocap_arh_alpha_sensitivity_v1 | EXP-20260924-03 |
