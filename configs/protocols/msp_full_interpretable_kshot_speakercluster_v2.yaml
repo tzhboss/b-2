@@ -46,7 +46,7 @@ criteria:
     - K50-minus-K20 point gain is below 0.01 for both targets; confidence intervals are reported, not used to redefine the threshold post hoc.
 
 required_outputs:
-  - paired_oof_predictions.parquet
+  - paired_oof_seed_<seed>.parquet
   - enrollment_audit.csv
   - fold_audit.csv
   - speaker_cluster_deltas.csv
