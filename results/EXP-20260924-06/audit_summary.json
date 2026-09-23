@@ -1,0 +1,94 @@
+{
+  "experiment_id": "EXP-20260924-06",
+  "common_samples": 10039,
+  "speakers": 10,
+  "sessions": [
+    "Ses01",
+    "Ses02",
+    "Ses03",
+    "Ses04",
+    "Ses05"
+  ],
+  "fold_policy": "leave-one-session-out",
+  "models": [
+    "pitch_rate_linear",
+    "pitch_rate_quadratic",
+    "wavlm_layer12",
+    "wavlm_layer24",
+    "emotion2vec_plus_large",
+    "hubert_base_ls960",
+    "wav2vec2_base"
+  ],
+  "bootstrap_unit": "speaker",
+  "bootstrap_reps": 10000,
+  "profile_contrast_cells": 42,
+  "significant_profile_contrast_cells": 6,
+  "significant_profile_contrasts": [
+    {
+      "target": "arousal",
+      "comparison": "hubert_base_ls960-wav2vec2_base",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.12317879253691488,
+      "ci95_low": 0.011856291093674927,
+      "ci95_high": 0.446343179146768,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "emotion2vec_plus_large-hubert_base_ls960",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": -0.17648776347638562,
+      "ci95_low": -0.595087587459667,
+      "ci95_high": -0.04293349617787011,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "emotion2vec_plus_large-wav2vec2_base",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": -0.11062692894291859,
+      "ci95_low": -0.37005541746508674,
+      "ci95_high": -0.008144827397728257,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "hubert_base_ls960-pitch_rate_linear",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.45065174828480314,
+      "ci95_low": 0.040793036686607026,
+      "ci95_high": 1.0027654901240093,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "hubert_base_ls960-wavlm_layer12",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.4049706161512174,
+      "ci95_low": 0.12393593852906284,
+      "ci95_high": 0.6671936870341836,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "wav2vec2_base-wavlm_layer12",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.33910978161775035,
+      "ci95_low": 0.019605188180901994,
+      "ci95_high": 0.5692000438203266,
+      "ci_excludes_zero": true
+    }
+  ],
+  "suggested_decision": "pass",
+  "reference_experiment": "EXP-20260924-05",
+  "solver": "lsqr",
+  "reference_solver": "auto/default",
+  "component_cells_compared": 42,
+  "max_abs_component_ccc_change": 0.012271186880160823,
+  "cells_abs_change_ge_0_01": 1,
+  "reference_significant_profile_contrasts": 6,
+  "reference_significant_profile_contrasts_same_sign": 6,
+  "reference_significant_profile_contrasts_still_significant": 6,
+  "decision": "mixed",
+  "decision_reason": "All 6 reference significant Between-minus-Within contrasts preserve sign and remain significant under LSQR, but one component CCC cell changes by 0.01227, exceeding the preregistered 0.01 pass threshold."
+}

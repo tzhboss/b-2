@@ -2,7 +2,7 @@
 
 Human-readable derived index only. The authoritative record is each `experiments/<ID>/experiment.yaml`; if this file conflicts with a YAML record, the YAML wins.
 
-Current inventory: **57 registered experiments; 56 completed.**
+Current inventory: **57 registered experiments; 57 completed.**
 
 | ID | Title | Execution | Validity | Decision | Protocol | Parent |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -64,4 +64,4 @@ Current inventory: **57 registered experiments; 56 completed.**
 
 | EXP-20260924-05 | Session-disjoint cross-model Overall/Between/Within attribution on IEMOCAP | completed | valid | pass | iemocap_session_loso_crossmodel_component_v1 | EXP-20260924-02, EXP-20260923-06 |
 
-| EXP-20260924-06 | LSQR sensitivity for session-disjoint cross-model component attribution | registered | pending | pending | iemocap_session_loso_crossmodel_lsqr_v1 | EXP-20260924-05, EXP-20260923-08 |
+| EXP-20260924-06 | LSQR sensitivity for session-disjoint cross-model component attribution | completed | valid | mixed | iemocap_session_loso_crossmodel_lsqr_v1 | EXP-20260924-05, EXP-20260923-08 |
