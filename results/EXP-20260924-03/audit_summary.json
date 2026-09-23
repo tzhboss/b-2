@@ -1,0 +1,88 @@
+{
+  "experiment_id": "EXP-20260924-03",
+  "validity": "valid",
+  "decision": "mixed",
+  "oof_rows": 301170,
+  "samples": 10039,
+  "speakers": 10,
+  "backbones": 5,
+  "primary_counts": {
+    "relative_minus_absolute_between_minus_within_sig_negative": 6,
+    "hybrid_minus_relative_between_minus_within_sig_positive": 3,
+    "relative_minus_absolute_point_negative": 10,
+    "hybrid_minus_relative_point_positive": 7
+  },
+  "hybrid_minus_absolute_overall": [
+    {
+      "model": "wavlm_layer12",
+      "target": "arousal",
+      "delta_ccc": -0.0185481384719572,
+      "ci95_low": -0.0372938750691295,
+      "ci95_high": -0.0001857841765619
+    },
+    {
+      "model": "wavlm_layer12",
+      "target": "dominance",
+      "delta_ccc": 0.0014918421553185,
+      "ci95_low": -0.0142234502617347,
+      "ci95_high": 0.019025408477387
+    },
+    {
+      "model": "wavlm_layer24",
+      "target": "arousal",
+      "delta_ccc": -0.0211475465465301,
+      "ci95_low": -0.0363610450971509,
+      "ci95_high": -0.0021137282494797
+    },
+    {
+      "model": "wavlm_layer24",
+      "target": "dominance",
+      "delta_ccc": -0.0079563149744237,
+      "ci95_low": -0.0183464605284849,
+      "ci95_high": 0.0014798028107903
+    },
+    {
+      "model": "emotion2vec_plus_large",
+      "target": "arousal",
+      "delta_ccc": -0.1586814101694251,
+      "ci95_low": -0.316990870107001,
+      "ci95_high": -0.0109127096509896
+    },
+    {
+      "model": "emotion2vec_plus_large",
+      "target": "dominance",
+      "delta_ccc": -0.0605123532127122,
+      "ci95_low": -0.0965285636602817,
+      "ci95_high": -0.0198747926818819
+    },
+    {
+      "model": "hubert_base_ls960",
+      "target": "arousal",
+      "delta_ccc": -0.0153762087812098,
+      "ci95_low": -0.0327414707828874,
+      "ci95_high": 0.0005691065874886
+    },
+    {
+      "model": "hubert_base_ls960",
+      "target": "dominance",
+      "delta_ccc": -0.0124835698239893,
+      "ci95_low": -0.0232763148161315,
+      "ci95_high": -0.0014409555167672
+    },
+    {
+      "model": "wav2vec2_base",
+      "target": "arousal",
+      "delta_ccc": -0.0135982748843411,
+      "ci95_low": -0.0361824991519114,
+      "ci95_high": 0.0075010626223216
+    },
+    {
+      "model": "wav2vec2_base",
+      "target": "dominance",
+      "delta_ccc": -0.03967587482621,
+      "ci95_low": -0.0763157441404553,
+      "ci95_high": -0.0081078850621709
+    }
+  ],
+  "interpretation": "Center removal preferentially destroys Between-speaker calibration while leaving Within mostly intact, but naive high-dimensional Hybrid does not reliably restore the center effect across all backbones. Because [H-C,C] retains H algebraically, Hybrid underperformance may reflect Ridge scaling/regularization and limited training-speaker geometry rather than information loss; follow-up alpha sensitivity is required."
+}
