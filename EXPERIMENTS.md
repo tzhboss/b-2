@@ -2,7 +2,7 @@
 
 Human-readable derived index only. The authoritative record is each `experiments/<ID>/experiment.yaml`; if this file conflicts with a YAML record, the YAML wins.
 
-Current inventory: **53 registered experiments; 52 completed.**
+Current inventory: **53 registered experiments; 53 completed.**
 
 | ID | Title | Execution | Validity | Decision | Protocol | Parent |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -58,4 +58,4 @@ Current inventory: **53 registered experiments; 52 completed.**
 | EXP-20260923-09 | Published PLDC mechanism under Overall/Between/Within attribution | completed | valid | pass | msp_pldc_component_attribution_v1 | EXP-20260923-01 |
 | EXP-20260923-10 | Published continuous-SER factor-analysis normalization under component attribution | completed | valid | pass | msp_dang2016_fa_normalization_attribution_v1 | EXP-20260923-01 |
 | EXP-20260924-01 | Paired cross-model Overall/Between/Within attribution on IEMOCAP | completed | valid | mixed | iemocap_paired_crossmodel_component_attribution_v1 | EXP-20260923-02, EXP-20260923-03 |
-| EXP-20260924-02 | HuBERT and wav2vec2 extension of IEMOCAP component profiles | registered | pending | pending | iemocap_hubert_wav2vec2_component_extension_v1 | EXP-20260924-01 |
+| EXP-20260924-02 | HuBERT and wav2vec2 extension of IEMOCAP component profiles | completed | valid | pass | iemocap_hubert_wav2vec2_component_extension_v1 | EXP-20260924-01 |

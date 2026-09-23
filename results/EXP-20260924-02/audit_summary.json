@@ -1,0 +1,116 @@
+{
+  "experiment_id": "EXP-20260924-02",
+  "validity": "valid",
+  "decision": "pass",
+  "common_samples": 10039,
+  "n_speakers": 10,
+  "models": [
+    "pitch_rate_linear",
+    "pitch_rate_quadratic",
+    "wavlm_layer12",
+    "wavlm_layer24",
+    "emotion2vec_plus_large",
+    "hubert_base_ls960",
+    "wav2vec2_base"
+  ],
+  "pairwise_component_delta_cells": 126,
+  "significant_pairwise_component_delta_cells": 93,
+  "profile_contrast_cells": 42,
+  "significant_profile_contrast_cells": 9,
+  "significant_profile_contrasts": [
+    {
+      "target": "arousal",
+      "comparison": "emotion2vec_plus_large-hubert_base_ls960",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": -0.2046435221294104,
+      "ci95_low": -0.7721520389207168,
+      "ci95_high": -0.0113705043711605,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "arousal",
+      "comparison": "hubert_base_ls960-wav2vec2_base",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.1665251147316659,
+      "ci95_low": 0.032341019385924,
+      "ci95_high": 0.5380722197335484,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "emotion2vec_plus_large-hubert_base_ls960",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": -0.2174470183690909,
+      "ci95_low": -0.6896471216915381,
+      "ci95_high": -0.0751579708612225,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "emotion2vec_plus_large-wav2vec2_base",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": -0.111734748952796,
+      "ci95_low": -0.3359153457662941,
+      "ci95_high": -0.0243471386671092,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "hubert_base_ls960-pitch_rate_linear",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.5030654389048177,
+      "ci95_low": 0.0851979591594701,
+      "ci95_high": 1.016207398332624,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "hubert_base_ls960-pitch_rate_quadratic",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.4389099499862924,
+      "ci95_low": 0.0258296588173971,
+      "ci95_high": 0.989300078733027,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "hubert_base_ls960-wav2vec2_base",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.1057122694162949,
+      "ci95_low": 0.0153635452427858,
+      "ci95_high": 0.3978672401399836,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "hubert_base_ls960-wavlm_layer12",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.4139963172393451,
+      "ci95_low": 0.0985845531071803,
+      "ci95_high": 0.7111364346781813,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "hubert_base_ls960-wavlm_layer24",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.2055105679371505,
+      "ci95_low": 0.0124791795541599,
+      "ci95_high": 0.5020269083212329,
+      "ci_excludes_zero": true
+    }
+  ],
+  "checkpoint_commits": {
+    "hubert_base_ls960": "dba3bb02fda4248b6e082697eee756de8fe8aa8a",
+    "wav2vec2_base": "0b5b8e868dd84f03fd87d01f9c4ff0f080fecfe8"
+  },
+  "interpretation": "HuBERT shows a significantly more Between-oriented profile than several backbones, including wav2vec2 on both arousal and dominance. Standard absolute SER remains the task; this is a diagnostic component-orientation difference, not a claim that Between/Within are alternative objectives.",
+  "rankings": {
+    "arousal/overall": "wavlm_layer12 > wavlm_layer24 > hubert_base_ls960 > wav2vec2_base > emotion2vec_plus_large > pitch_rate_quadratic > pitch_rate_linear",
+    "arousal/between": "wavlm_layer24 > hubert_base_ls960 > wavlm_layer12 > wav2vec2_base > emotion2vec_plus_large > pitch_rate_quadratic > pitch_rate_linear",
+    "arousal/within": "wavlm_layer12 > wavlm_layer24 > hubert_base_ls960 > wav2vec2_base > emotion2vec_plus_large > pitch_rate_quadratic > pitch_rate_linear",
+    "dominance/overall": "wavlm_layer24 > wavlm_layer12 > hubert_base_ls960 > emotion2vec_plus_large > wav2vec2_base > pitch_rate_quadratic > pitch_rate_linear",
+    "dominance/between": "hubert_base_ls960 > wav2vec2_base > wavlm_layer24 > emotion2vec_plus_large > wavlm_layer12 > pitch_rate_quadratic > pitch_rate_linear",
+    "dominance/within": "wavlm_layer24 > wavlm_layer12 > hubert_base_ls960 > emotion2vec_plus_large > wav2vec2_base > pitch_rate_quadratic > pitch_rate_linear"
+  }
+}
