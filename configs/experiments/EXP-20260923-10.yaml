@@ -1,0 +1,15 @@
+schema_version: 1
+experiment_id: EXP-20260923-10
+dataset: {source_env: PROSODY_ENRICHED_PARQUET}
+seed: [20260920,20260921,20260922]
+parameters:
+  outer_folds: 5
+  ridge_alpha: 1.0
+  em_iterations: 10
+  latent_dims: [1,2,3,5]
+  covariance: diagonal
+  bootstrap_reps: 5000
+  bootstrap_seed: 20260923
+  targets: [arousal,dominance]
+outputs: {artifact_root: results/EXP-20260923-10}
+entrypoint: scripts/run_msp_dang2016_fa_normalization_20260923.py

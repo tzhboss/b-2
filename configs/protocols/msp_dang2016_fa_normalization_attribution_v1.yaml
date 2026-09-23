@@ -1,0 +1,42 @@
+schema_version: 1
+protocol_id: PROTO-MSP-DANG2016-FA-NORMALIZATION-ATTRIBUTION-V1
+title: Factor-analysis speaker normalization with component attribution
+literature:
+  method: Factor Analysis Based Speaker Normalisation for Continuous Emotion Prediction
+  citation: Dang, Sethu, Ambikairajah, Interspeech 2016
+  doi: 10.21437/Interspeech.2016-880
+  fidelity_note: >
+    Implements x_ij = mu + F y_i + epsilon_ij, EM estimation, and x_tilde = x - F E[y_i] - mu.
+    The original paper used high-dimensional ComParE features and RVM; here the normalization
+    mechanism is reimplemented on the common six-feature MSP representation with fixed Ridge.
+dataset: msp
+task: standard absolute VAD regression
+features: [pitch, f0var, loud, rate, pause, voiced]
+targets: [arousal, dominance]
+outer_folds: 5
+split_seeds: [20260920,20260921,20260922]
+ridge_alpha: 1.0
+factor_analysis:
+  em_iterations: 10
+  covariance: diagonal
+  latent_dims: [1,2,3,5]
+  initialization: deterministic_svd
+  train_speaker_factors: posterior means under training speakers
+  test_speaker_factors: posterior means from all unlabeled utterances of each held-out speaker
+  normalization: x_tilde = x - mu - F*E[y_s]
+evaluation:
+  metrics: [overall_ccc, between_ccc, within_ccc]
+  inference_unit: speaker
+  bootstrap_reps: 5000
+  bootstrap_seed: 20260923
+registered_questions:
+  - Does published speaker normalization preferentially reduce Between calibration?
+  - Does any Overall gain/loss conceal a different effect on Within tracking?
+  - Is the component profile stable across factor dimensions?
+criteria:
+  informative_support:
+    - Between and Within effects materially differ for at least two latent dimensions.
+  strong_support:
+    - The Between-versus-Within profile is stable for at least three of four latent dimensions.
+  weak:
+    - All three metrics move nearly identically or effects are negligible at every dimension.

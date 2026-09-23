@@ -1,0 +1,26 @@
+schema_version: 1
+experiment_id: EXP-20260923-10
+title: Published continuous-SER factor-analysis normalization under component attribution
+research_question: >
+  When the Dang et al. 2016 factor-analysis speaker-normalization mechanism is applied to the same
+  standard absolute MSP VAD task, does its Overall effect arise from a distinct Between/Within trade-off?
+registered_hypothesis: >
+  Speaker-factor subtraction will affect Between-speaker calibration more strongly than
+  within-speaker centered tracking, so Overall CCC alone will not fully describe the method's effect.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260923-01]
+protocol_reference: configs/protocols/msp_dang2016_fa_normalization_attribution_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260923-10.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: [20260920,20260921,20260922]
+  integrity_mode: method_faithful_common_representation_reimplementation
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed six-feature Ridge readout; preregistered latent-dimension sensitivity
+  selection_metric: null
+  rationale: isolate published normalization mechanism rather than reproduce its original backend
+supersedes: []
+superseded_by: []
+role: published-normalization-method attribution
