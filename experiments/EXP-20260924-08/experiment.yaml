@@ -1,0 +1,27 @@
+schema_version: 1
+experiment_id: EXP-20260924-08
+title: LSQR sensitivity for session-disjoint Absolute/Relative/Hybrid intervention
+research_question: >
+  Are the EXP-20260924-07 session-LOSO Absolute/Relative/Hybrid component conclusions robust to
+  replacing Ridge's default direct solver with LSQR while keeping the raw absolute SER task fixed?
+registered_hypothesis: >
+  All 6 significant Relative-minus-Absolute Between-minus-Within effects from EXP-20260924-07 will
+  preserve sign, and Hybrid-minus-Relative will not newly satisfy the 6/10 significance threshold solely
+  because of the solver change.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260924-07, EXP-20260924-06]
+protocol_reference: configs/protocols/iemocap_session_loso_arh_lsqr_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260924-08.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: identical_session_loso_folds_solver_only_change
+selected_checkpoint:
+  identifier: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+  selection_rule: exact panel from EXP-20260924-07
+  selection_metric: null
+  rationale: numerical sensitivity only
+supersedes: []
+superseded_by: []
+role: route-A numerical robustness

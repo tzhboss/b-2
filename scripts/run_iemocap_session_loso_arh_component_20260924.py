@@ -22,8 +22,8 @@ def weights(df):
     c=df.speaker_id.astype(str).value_counts(); w=df.speaker_id.astype(str).map(lambda s:1/c[s]).to_numpy(float)
     return w/w.mean()
 
-def fit(xtr,xte,ytr,w,alpha):
-    sc=StandardScaler(); sc.fit(xtr,sample_weight=w); m=Ridge(alpha=alpha)
+def fit(xtr,xte,ytr,w,alpha,solver="auto"):
+    sc=StandardScaler(); sc.fit(xtr,sample_weight=w); m=Ridge(alpha=alpha,solver=solver)
     m.fit(sc.transform(xtr),ytr,sample_weight=w); return m.predict(sc.transform(xte))
 
 def load_simple(pattern):
@@ -50,6 +50,7 @@ def main():
     speakers=sorted(d.speaker_id.unique()); sessions=sorted(d.session_id.unique())
     if sessions!=["Ses01","Ses02","Ses03","Ses04","Ses05"]: raise RuntimeError(f"unexpected sessions {sessions}")
     fmap={s:i for i,s in enumerate(sessions)}
+    solver=str(cfg.get("ridge_solver","auto"))
     models=load_wavlm(cfg["embeddings"]["wavlm"])
     for name,pat in cfg["embeddings"].items():
         if name=="wavlm": continue
@@ -67,7 +68,7 @@ def main():
         preds={m:np.empty_like(Y) for m in feats}
         for fold in range(int(cfg["outer_folds"])):
             tr=sf!=fold; te=sf==fold; w=weights(q.loc[tr])
-            for meth,X in feats.items(): preds[meth][te]=fit(X[tr],X[te],Y[tr],w,float(cfg["ridge_alpha"]))
+            for meth,X in feats.items(): preds[meth][te]=fit(X[tr],X[te],Y[tr],w,float(cfg["ridge_alpha"]),solver)
         center_rows.append({"model":model_name,"rows":len(q),"speakers":len(speakers),"embedding_dim":H.shape[1],"hybrid_dim":feats["hybrid"].shape[1],"median_center_norm":float(np.median([np.linalg.norm(v) for v in centers.values()]))})
         for j,target in enumerate(["arousal","dominance"]):
             aligned={}; boot={}; ns=len(speakers); counts=rng.multinomial(ns,np.full(ns,1/ns),size=int(cfg["bootstrap_reps"])).astype(float)
@@ -96,7 +97,7 @@ def main():
     pd.DataFrame(contrast_rows).to_csv(root/"method_profile_contrasts.csv",index=False)
     pd.DataFrame(rank_rows).to_csv(root/"rank_summary.csv",index=False)
     pd.DataFrame(center_rows).to_csv(root/"center_audit.csv",index=False)
-    meta={"experiment_id":cfg["experiment_id"],"task":"raw absolute VAD","relative_role":"diagnostic representation only","center":"full-speaker unlabeled coordinate-wise median (oracle diagnostic)","fold_policy":"strict leave-one-session-out","sessions":sessions,"bootstrap_unit":"speaker","bootstrap_reps":cfg["bootstrap_reps"],"git_head":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()}
+    meta={"experiment_id":cfg["experiment_id"],"task":"raw absolute VAD","relative_role":"diagnostic representation only","center":"full-speaker unlabeled coordinate-wise median (oracle diagnostic)","fold_policy":"strict leave-one-session-out","sessions":sessions,"ridge_solver":solver,"bootstrap_unit":"speaker","bootstrap_reps":cfg["bootstrap_reps"],"git_head":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()}
     (root/"run_metadata.json").write_text(json.dumps(meta,indent=2)+"\n")
     c=pd.DataFrame(contrast_rows); print(c[c.ci_excludes_zero].to_string(index=False))
 if __name__=="__main__": main()

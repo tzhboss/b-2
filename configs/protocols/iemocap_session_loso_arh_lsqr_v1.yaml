@@ -1,0 +1,21 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-SESSION-LOSO-ARH-LSQR-V1
+title: LSQR solver sensitivity for session-disjoint ARH attribution
+parent: EXP-20260924-07
+change: Ridge solver only, auto/default -> lsqr
+fixed:
+  task: raw absolute IEMOCAP Arousal/Dominance
+  folds: five strict leave-one-session-out folds
+  backbones: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+  ridge_alpha: 1.0
+  representations: [absolute, relative, hybrid]
+  bootstrap_unit: speaker
+  bootstrap_reps: 10000
+criteria:
+  pass:
+    - all 6 reference significant Relative-minus-Absolute Between-minus-Within effects preserve sign
+    - Hybrid-minus-Relative remains below the 6/10 significant-positive threshold
+  mixed:
+    - reference signs are preserved but one or more significance calls change
+  reject:
+    - any reference significant Relative-minus-Absolute effect flips sign broadly
