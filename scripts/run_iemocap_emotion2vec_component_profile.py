@@ -25,6 +25,7 @@ def moments(df):
  w=np.column_stack([np.zeros(len(g)),np.zeros(len(g)),np.maximum(g.my2-g.my**2,0),np.maximum(g.mp2-g.mp**2,0),g.myp-g.my*g.mp]).astype(float)
  return o,b,w
 cfg=yaml.safe_load(Path('configs/experiments/EXP-20260923-03.yaml').read_text())
+root=Path(cfg['output_root']); root.mkdir(parents=True,exist_ok=True)
 frames=[pd.read_parquet(f,columns=['file','EmoAct','EmoDom']) for f in sorted(glob.glob(cfg['dataset_glob']))]
 d=pd.concat(frames,ignore_index=True).dropna().copy(); d['sample_id']=d.file.astype(str); d['speaker_id']=d.file.map(speaker_id); d=d.rename(columns={'EmoAct':'arousal','EmoDom':'dominance'})
 ids=[]; blocks=[]
