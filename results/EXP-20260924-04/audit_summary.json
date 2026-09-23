@@ -1,0 +1,44 @@
+{
+  "experiment_id": "EXP-20260924-04",
+  "status": "pass",
+  "validity": "valid",
+  "task": "raw absolute VAD",
+  "alpha_grid": [
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "models": [
+    "wavlm_layer12",
+    "wavlm_layer24",
+    "emotion2vec_plus_large",
+    "hubert_base_ls960",
+    "wav2vec2_base"
+  ],
+  "targets": [
+    "arousal",
+    "dominance"
+  ],
+  "bootstrap_unit": "speaker",
+  "bootstrap_reps": 5000,
+  "row_counts": {
+    "alpha_component_metrics.csv": 450,
+    "alpha_method_deltas.csv": 450,
+    "alpha_profile_contrasts.csv": 150,
+    "sign_stability.csv": 30
+  },
+  "nan_inf_cells": {
+    "alpha_component_metrics.csv": 0,
+    "alpha_method_deltas.csv": 0,
+    "alpha_profile_contrasts.csv": 0,
+    "sign_stability.csv": 0
+  },
+  "hypothesis_checks": {
+    "relative_minus_absolute_profile_negative_all_model_target_pairs": true,
+    "hybrid_minus_absolute_profile_negative_all_model_target_pairs": true,
+    "hybrid_minus_relative_profile_sign_change_pairs": 2
+  },
+  "interpretation": "Across all 10 model-target pairs, Relative-minus-Absolute and Hybrid-minus-Absolute Between-minus-Within profile contrasts remain negative over the full matched-alpha grid. This supports that the core component direction and Hybrid under-recovery are not single-alpha artifacts. Hybrid-minus-Relative is less stable for 2/10 pairs, which is retained as a boundary condition rather than used for post-hoc alpha selection."
+}
