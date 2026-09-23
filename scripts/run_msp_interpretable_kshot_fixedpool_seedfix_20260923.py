@@ -112,8 +112,7 @@ def main():
             selected_ids=sorted(d.loc[em,"sample_id"].astype(str).tolist())
             enrollment_audits.append({
                 "seed":int(seed),"K":int(k),"n_rows":len(selected_ids),
-                "selection_sha256":hashlib.sha256("
-".join(selected_ids).encode()).hexdigest(),
+                "selection_sha256":hashlib.sha256("\n".join(selected_ids).encode()).hexdigest(),
                 "seed_key":int(seed_key)
             })
             kest={sp:g[abs_cols].median().to_numpy(float) for sp,g in d.loc[em].groupby("speaker_id")}
@@ -177,8 +176,7 @@ def main():
                     "train_speakers":len(train_s),"test_speakers":len(test_s),
                     "speaker_overlap":len(train_s&test_s),
                     "reserve_eval_overlap":int(np.any(reserve_mask&(tr|te))),
-                    "test_row_sha256":hashlib.sha256("
-".join(test.sample_id.astype(str)).encode()).hexdigest()
+                    "test_row_sha256":hashlib.sha256("\n".join(test.sample_id.astype(str)).encode()).hexdigest()
                 })
 
             pd.DataFrame(oof_rows).to_parquet(root/f"paired_oof_seed_{int(seed)}_K{int(k)}.parquet",index=False)
