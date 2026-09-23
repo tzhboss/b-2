@@ -1,0 +1,29 @@
+schema_version: 1
+experiment_id: EXP-20260924-01
+title: Paired cross-model Overall/Between/Within attribution on IEMOCAP
+research_question: >
+  On the unchanged standard absolute IEMOCAP VAD task, are performance differences among
+  hand-engineered Prosody, frozen WavLM, and emotion2vec concentrated in different
+  Overall/Between-speaker/Within-speaker components?
+registered_hypothesis: >
+  Model advantages will be component-specific: at least one paired model comparison will show
+  a statistically distinguishable Between-versus-Within profile even when Overall alone suggests
+  a single scalar ordering.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260923-02, EXP-20260923-03]
+protocol_reference: configs/protocols/iemocap_paired_crossmodel_component_attribution_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260924-01.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: 20260924
+  integrity_mode: reuse_immutable_common_oof_predictions
+selected_checkpoint:
+  identifier: null
+  selection_rule: include all preregistered Prosody/WavLM panel members plus fixed emotion2vec+ large
+  selection_metric: null
+  rationale: avoid post-result backbone cherry-picking; compare all existing common OOF predictions
+supersedes: []
+superseded_by: []
+role: route-A paired cross-model component attribution
+

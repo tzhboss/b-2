@@ -1,0 +1,14 @@
+schema_version: 1
+experiment_id: EXP-20260924-01
+pitch_rate_oof: results/EXP-20260921-15/oof_predictions.parquet
+wavlm_oof: results/EXP-20260921-16/oof_predictions.parquet
+emotion2vec_oof:
+  arousal: results/EXP-20260923-03/oof_arousal.parquet
+  dominance: results/EXP-20260923-03/oof_dominance.parquet
+output_root: results/EXP-20260924-01
+lambda_filter: 1.0
+targets: [arousal, dominance]
+bootstrap_reps: 10000
+bootstrap_seed: 20260924
+entrypoint: scripts/run_iemocap_paired_crossmodel_component_attribution_20260924.py
+

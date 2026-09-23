@@ -1,0 +1,43 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-PAIRED-CROSSMODEL-COMPONENT-ATTRIBUTION-V1
+title: Paired Overall/Between/Within comparison across Prosody, WavLM, and emotion2vec
+scope: >
+  Reuse immutable OOF predictions on the same ordinary absolute Arousal/Dominance task.
+  Relative targets are not deployment tasks and are not compared here.
+models:
+  - pitch_rate_linear
+  - pitch_rate_quadratic
+  - wavlm_layer12
+  - wavlm_layer24
+  - emotion2vec_plus_large
+targets: [arousal, dominance]
+prediction_condition: absolute
+sample_policy: exact common 10039-utterance intersection
+fold_policy: require emotion2vec and WavLM speaker-to-fold maps to match exactly
+metrics:
+  overall_ccc: equal-speaker-weighted pooled CCC on raw labels
+  between_ccc: CCC across speaker mean truth and prediction
+  within_ccc: equal-speaker-weighted pooled CCC after within-speaker centering
+inference:
+  independent_unit: speaker
+  paired_bootstrap: true
+  shared_bootstrap_draws_across_models: true
+  bootstrap_reps: 10000
+  bootstrap_seed: 20260924
+contrasts:
+  - pairwise component CCC deltas with paired 95% speaker-cluster bootstrap CI
+  - between-minus-within delta-of-deltas
+  - overall-minus-within delta-of-deltas
+criteria:
+  pass:
+    - At least one pairwise component delta CI excludes zero and the pattern differs across components.
+    - Or at least one between-minus-within paired contrast CI excludes zero.
+  mixed:
+    - Point profiles differ but paired component/profile contrasts remain uncertain.
+  reject:
+    - Cross-model differences are effectively scalar and component contrasts are uninformative.
+notes:
+  - Overall absolute SER remains the real task.
+  - Between and Within are diagnostic decompositions, not alternate deployment objectives.
+  - CCC components are not additive; delta-of-deltas are profile contrasts, not variance shares.
+

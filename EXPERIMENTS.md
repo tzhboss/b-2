@@ -2,7 +2,7 @@
 
 Human-readable derived index only. The authoritative record is each `experiments/<ID>/experiment.yaml`; if this file conflicts with a YAML record, the YAML wins.
 
-Current inventory: **41 registered experiments; all completed.**
+Current inventory: **52 registered experiments; 51 completed.**
 
 | ID | Title | Execution | Validity | Decision | Protocol | Parent |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -47,3 +47,14 @@ Current inventory: **41 registered experiments; all completed.**
 | EXP-20260921-18 | Can unlabeled K-shot enrollment recover WavLM reference-frame matching? | completed | valid | pass | iemocap_wavlm_kshot_reference_v1 | EXP-20260921-16, EXP-20260921-17 |
 | EXP-20260922-01 | Full interpretable prosody target-reference matching | completed | valid | pass | msp_full_interpretable_prosody_cluster_v1 | EXP-20260921-14, EXP-20260921-15 |
 | EXP-20260922-02 | Can unlabeled K-shot enrollment recover the full interpretable-prosody Hybrid benefit? | completed | valid | pass | msp_full_interpretable_kshot_fixedpool_v1 | EXP-20260920-21, EXP-20260922-01 |
+| EXP-20260923-01 | Standard absolute SER Overall/Between/Within diagnostic decomposition | completed | valid | mixed | standard_ser_component_diagnostics_v1 | EXP-20260920-17, EXP-20260922-01 |
+| EXP-20260923-02 | Cross-model Overall/Between/Within profiles on IEMOCAP | completed | valid | mixed | iemocap_crossmodel_component_profiles_v1 | EXP-20260921-15, EXP-20260921-16, EXP-20260923-01 |
+| EXP-20260923-03 | emotion2vec standard absolute VAD component profile on IEMOCAP | completed | valid | weak_for_rank_reversal | iemocap_emotion2vec_component_profile_v1 | EXP-20260923-02 |
+| EXP-20260923-04 | Corrected MSP center-permutation randomization audit | completed | valid | pass | msp_center_permutation_seedfix_v1 | EXP-20260921-06, EXP-20260923-01 |
+| EXP-20260923-05 | Corrected full-prosody K-shot recovery with speaker-cluster inference | completed | valid | pass | msp_full_interpretable_kshot_speakercluster_v2 | EXP-20260922-02, EXP-20260923-01 |
+| EXP-20260923-06 | WavLM target-reference matching under IEMOCAP session-disjoint retraining | completed | valid | pass | iemocap_wavlm_session_loso_reference_v1 | EXP-20260921-16, EXP-20260921-17 |
+| EXP-20260923-07 | Same-budget raw-x speaker-center identity control | completed | valid | mixed | msp_rawx_center_identity_control_v1 | EXP-20260921-06, EXP-20260923-04 |
+| EXP-20260923-08 | LSQR sensitivity for WavLM session-disjoint target-reference matching | completed | valid | pass | iemocap_wavlm_session_loso_reference_v1 | EXP-20260923-06, EXP-20260921-17 |
+| EXP-20260923-09 | Published PLDC mechanism under Overall/Between/Within attribution | completed | valid | pass | msp_pldc_component_attribution_v1 | EXP-20260923-01 |
+| EXP-20260923-10 | Published continuous-SER factor-analysis normalization under component attribution | completed | valid | pass | msp_dang2016_fa_normalization_attribution_v1 | EXP-20260923-01 |
+| EXP-20260924-01 | Paired cross-model Overall/Between/Within attribution on IEMOCAP | registered | pending | pending | iemocap_paired_crossmodel_component_attribution_v1 | EXP-20260923-02, EXP-20260923-03 |
