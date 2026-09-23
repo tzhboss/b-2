@@ -1,0 +1,37 @@
+schema_version: 1
+experiment_id: EXP-20260923-04
+title: Corrected MSP center-permutation randomization audit
+
+research_question: >
+  Does the correct-speaker-center advantage from EXP-20260921-06 survive genuinely independent
+  center derangements after repairing the seed derivation bug?
+
+registered_hypothesis: >
+  Distinct permutation reps will produce distinct mappings and nonzero randomization variance, while
+  the large raw-target correct-center advantage for Arousal and Dominance will remain positive and
+  the residual-target advantage will remain much smaller.
+
+status:
+  execution: registered
+  validity: pending
+  decision: pending
+
+parent_experiments: [EXP-20260921-06, EXP-20260923-01]
+protocol_reference: configs/protocols/msp_center_permutation_seedfix_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260923-04.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: [20260920,20260921,20260922]
+  integrity_mode: corrected_sha256_randomization
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed historical three-feature center-permutation design
+  selection_metric: null
+  rationale: isolate the seed bug repair before adding new controls
+
+supersedes: []
+superseded_by: []
+role: audit remediation

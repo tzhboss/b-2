@@ -1,0 +1,40 @@
+schema_version: 1
+protocol_id: PROTO-MSP-CENTER-PERMUTATION-SEEDFIX-V1
+title: Corrected speaker-center permutation with auditable independent randomizations
+
+scope: >
+  Repair the random-seed derivation defect in EXP-20260921-06 without overwriting the historical
+  result. Re-run the MSP true-center versus permuted-center control with genuinely distinct
+  derangements. This experiment establishes randomization robustness and stores mapping hashes.
+  Inferential uncertainty is not based on seed×fold pseudo-replication.
+
+dataset: msp
+features: [pitch, loudness, rate]
+targets: [arousal, dominance]
+tasks: [raw, residual]
+split_seeds: [20260920, 20260921, 20260922]
+outer_folds: 5
+permutation_reps: 20
+ridge_alpha: 1.0
+
+randomization:
+  seed_derivation: sha256-first-8-bytes
+  require_unique_mapping_hashes_within_cell: true
+  store_mapping_hashes: true
+
+primary_descriptive_estimand:
+  description: >
+    For each split seed/fold/task/target, true-center Hybrid CCC minus the mean CCC over genuinely
+    distinct permuted-center Hybrid fits. Report the distribution across randomization cells.
+  note: >
+    This experiment is a seed/randomization remediation. Speaker-cluster inferential uncertainty
+    is handled in a separate follow-up rather than treating seed×fold as independent speakers.
+
+criteria:
+  pass:
+    - Every permutation cell has more than one distinct mapping hash across reps.
+    - Mean correct-center advantage remains positive for MSP raw Arousal and Dominance.
+    - Residual-target advantage remains near zero relative to the raw-target advantage.
+  fail:
+    - Mapping hashes remain duplicated because of seed derivation.
+    - Correct-center raw-target advantage changes sign for either Arousal or Dominance.
