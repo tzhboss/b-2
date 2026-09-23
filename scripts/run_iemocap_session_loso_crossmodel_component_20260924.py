@@ -25,7 +25,7 @@ def weights(df):
     w=df.speaker_id.astype(str).map(lambda s:1.0/c[s]).to_numpy(float)
     return w/w.mean()
 
-def fit_predict(xtr,xte,ytr,wtr,alpha,quadratic=False):
+def fit_predict(xtr,xte,ytr,wtr,alpha,quadratic=False,solver="auto"):
     sc=StandardScaler(); sc.fit(xtr,sample_weight=wtr)
     a,b=sc.transform(xtr),sc.transform(xte)
     if quadratic:
@@ -33,7 +33,7 @@ def fit_predict(xtr,xte,ytr,wtr,alpha,quadratic=False):
         a,b=poly.fit_transform(a),poly.transform(b)
         sc2=StandardScaler(); sc2.fit(a,sample_weight=wtr)
         a,b=sc2.transform(a),sc2.transform(b)
-    m=Ridge(alpha=alpha); m.fit(a,ytr,sample_weight=wtr)
+    m=Ridge(alpha=alpha,solver=solver); m.fit(a,ytr,sample_weight=wtr)
     return m.predict(b)
 
 def load_simple(pattern):
@@ -88,7 +88,7 @@ def main():
     models={"pitch_rate_linear":(prosody,False),"pitch_rate_quadratic":(prosody,True)}
     for name,(tab,arr) in emb.items(): models[name]=(align_matrix(q,tab,arr,name),False)
     Y=q[["arousal","dominance"]].to_numpy(float)
-    preds={name:np.empty_like(Y) for name in models}; audit=[]; alpha=float(cfg["ridge_alpha"])
+    preds={name:np.empty_like(Y) for name in models}; audit=[]; alpha=float(cfg["ridge_alpha"]); solver=str(cfg.get("ridge_solver","auto"))
     for fold,held in enumerate(sessions):
         tr=q.session_id.to_numpy()!=held; te=~tr
         trs=set(q.loc[tr,"session_id"]); tes=set(q.loc[te,"session_id"])
@@ -96,7 +96,7 @@ def main():
         if trs & tes or trp & tep: raise RuntimeError(f"split leakage {held}")
         w=weights(q.loc[tr])
         for name,(X,quadratic) in models.items():
-            preds[name][te]=fit_predict(X[tr],X[te],Y[tr],w,alpha,quadratic)
+            preds[name][te]=fit_predict(X[tr],X[te],Y[tr],w,alpha,quadratic,solver)
             for target in ["arousal","dominance"]:
                 audit.append({"model":name,"target":target,"fold":fold,"heldout_session":held,
                               "train_rows":int(tr.sum()),"test_rows":int(te.sum()),
@@ -155,7 +155,7 @@ def main():
     (root/"audit_summary.json").write_text(json.dumps(summary,indent=2)+"\n")
     (root/"run_metadata.json").write_text(json.dumps({"experiment_id":cfg["experiment_id"],
         "task":"raw absolute VAD","relative_role":"diagnostic decomposition only",
-        "fold_policy":"strict leave-one-session-out","ridge_alpha":alpha,
+        "fold_policy":"strict leave-one-session-out","ridge_alpha":alpha,"ridge_solver":solver,
         "bootstrap_seed":cfg["bootstrap_seed"],
         "git_head":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()},indent=2)+"\n")
     print(pd.DataFrame(ranks).to_string(index=False))

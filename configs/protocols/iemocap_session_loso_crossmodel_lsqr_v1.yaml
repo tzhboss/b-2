@@ -1,0 +1,20 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-SESSION-LOSO-CROSSMODEL-LSQR-V1
+title: Solver sensitivity for strict session-disjoint cross-model absolute SER
+parent: EXP-20260924-05
+change: Ridge solver only, auto/default -> lsqr
+fixed:
+  task: raw absolute IEMOCAP Arousal/Dominance
+  folds: five strict leave-one-session-out folds
+  models: [pitch_rate_linear, pitch_rate_quadratic, wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+  ridge_alpha: 1.0
+  bootstrap_unit: speaker
+  bootstrap_reps: 10000
+criteria:
+  pass:
+    - maximum absolute change in component CCC versus EXP-20260924-05 is below 0.01
+    - signs of all EXP-20260924-05 significant Between-minus-Within contrasts are preserved
+  mixed:
+    - signs are preserved but some component CCC changes reach 0.01
+  reject:
+    - any previously significant profile contrast flips sign
