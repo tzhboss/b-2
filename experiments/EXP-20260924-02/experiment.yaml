@@ -1,0 +1,27 @@
+schema_version: 1
+experiment_id: EXP-20260924-02
+title: HuBERT and wav2vec2 extension of IEMOCAP component profiles
+research_question: >
+  Do additional canonical self-supervised speech backbones change the Overall/Between-speaker/Within-speaker
+  profile observed for Prosody, WavLM, and emotion2vec on the same standard absolute IEMOCAP VAD task?
+registered_hypothesis: >
+  If component attribution reflects representation family rather than only scalar model quality,
+  at least one HuBERT or wav2vec2 comparison will show a paired Between-versus-Within profile contrast.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260924-01]
+protocol_reference: configs/protocols/iemocap_hubert_wav2vec2_component_extension_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260924-02.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: 20260920
+  integrity_mode: frozen_public_checkpoints_speaker_disjoint_oof
+selected_checkpoint:
+  identifier: [facebook/hubert-base-ls960, facebook/wav2vec2-base]
+  selection_rule: fixed canonical base-size public checkpoints; final hidden layer only
+  selection_metric: null
+  rationale: avoid post-result layer selection and keep added SSL backbones comparable in scale
+supersedes: []
+superseded_by: []
+role: route-A extended SSL backbone gating
+

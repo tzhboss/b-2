@@ -1,0 +1,38 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-HUBERT-WAV2VEC2-COMPONENT-EXTENSION-V1
+title: Frozen HuBERT/wav2vec2 extension of standard absolute SER component profiles
+scope: >
+  Add two frozen base-size SSL backbones to the existing IEMOCAP panel without changing the task.
+  Relative remains diagnostic only; all model training predicts raw absolute Arousal/Dominance.
+models:
+  hubert_base_ls960: facebook/hubert-base-ls960
+  wav2vec2_base: facebook/wav2vec2-base
+representation:
+  layer: final hidden layer
+  pooling: attention-mask-aware mean over valid frames
+  fine_tuning: none
+readout:
+  model: Ridge
+  alpha: 1.0
+  outer_folds: 5
+  split_seed: 20260920
+  sample_weighting: equal speaker weight
+targets: [arousal, dominance]
+metrics: [overall_ccc, between_speaker_ccc, within_speaker_centered_ccc]
+inference:
+  paired_bootstrap_unit: speaker
+  bootstrap_reps: 10000
+  bootstrap_seed: 20260924
+  common_sample_requirement: 10039
+criteria:
+  pass:
+    - At least one added-backbone Between-minus-Within paired delta-of-deltas CI excludes zero.
+  mixed:
+    - Added backbones change scalar rankings or component point profiles but component-orientation contrasts remain uncertain.
+  reject:
+    - Added backbones are redundant and add no useful evidence beyond the existing panel.
+notes:
+  - Overall CCC is the real SER outcome.
+  - Between and Within are diagnostic decomposition only.
+  - No layer or checkpoint is selected on these results.
+

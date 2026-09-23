@@ -1,0 +1,28 @@
+schema_version: 1
+experiment_id: EXP-20260924-02
+dataset_glob: /data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/*.parquet
+embedding_root: artifacts/EXP-20260924-02/embeddings
+hf_cache: /data/lc/tzh/artifacts/EXP-20260924-02/hf_cache
+output_root: results/EXP-20260924-02
+panel_output_root: results/EXP-20260924-02
+models:
+  hubert_base_ls960: facebook/hubert-base-ls960
+  wav2vec2_base: facebook/wav2vec2-base
+targets: [arousal, dominance]
+batch_size: 8
+split_seed: 20260920
+outer_folds: 5
+ridge_alpha: 1.0
+bootstrap_reps: 10000
+bootstrap_seed: 20260924
+lambda_filter: 1.0
+pitch_rate_oof: results/EXP-20260921-15/oof_predictions.parquet
+wavlm_oof: results/EXP-20260921-16/oof_predictions.parquet
+emotion2vec_oof:
+  arousal: results/EXP-20260923-03/oof_arousal.parquet
+  dominance: results/EXP-20260923-03/oof_dominance.parquet
+entrypoints:
+  extract: scripts/extract_iemocap_hubert_wav2vec2_20260924.py
+  oof: scripts/run_iemocap_hubert_wav2vec2_oof_20260924.py
+  panel: scripts/run_iemocap_extended_ssl_panel_20260924.py
+
