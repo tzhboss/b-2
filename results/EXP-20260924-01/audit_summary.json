@@ -1,0 +1,24 @@
+{
+  "experiment_id": "EXP-20260924-01",
+  "validity": "valid",
+  "decision": "mixed",
+  "common_samples_per_target": {
+    "arousal": 10039,
+    "dominance": 10039
+  },
+  "n_speakers": 10,
+  "fold_map_match_emotion2vec_wavlm": true,
+  "pairwise_component_delta_cells": 60,
+  "significant_pairwise_component_delta_cells": 41,
+  "profile_contrast_cells": 40,
+  "significant_profile_contrast_cells": 0,
+  "interpretation": "Backbone performance differences are clear, but no paired Between-vs-Within or Overall-vs-Within delta-of-deltas CI excludes zero. Treat cross-model component-orientation differences as unresolved; do not claim a rank-reversal/component-specific backbone effect.",
+  "rankings": {
+    "arousal/overall": "wavlm_layer12 > wavlm_layer24 > emotion2vec_plus_large > pitch_rate_quadratic > pitch_rate_linear",
+    "arousal/between": "wavlm_layer24 > wavlm_layer12 > emotion2vec_plus_large > pitch_rate_quadratic > pitch_rate_linear",
+    "arousal/within": "wavlm_layer12 > wavlm_layer24 > emotion2vec_plus_large > pitch_rate_quadratic > pitch_rate_linear",
+    "dominance/overall": "wavlm_layer24 > wavlm_layer12 > emotion2vec_plus_large > pitch_rate_quadratic > pitch_rate_linear",
+    "dominance/between": "wavlm_layer24 > emotion2vec_plus_large > wavlm_layer12 > pitch_rate_quadratic > pitch_rate_linear",
+    "dominance/within": "wavlm_layer24 > wavlm_layer12 > emotion2vec_plus_large > pitch_rate_quadratic > pitch_rate_linear"
+  }
+}

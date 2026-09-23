@@ -2,7 +2,7 @@
 
 Human-readable derived index only. The authoritative record is each `experiments/<ID>/experiment.yaml`; if this file conflicts with a YAML record, the YAML wins.
 
-Current inventory: **52 registered experiments; 51 completed.**
+Current inventory: **52 registered experiments; 52 completed.**
 
 | ID | Title | Execution | Validity | Decision | Protocol | Parent |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -57,4 +57,4 @@ Current inventory: **52 registered experiments; 51 completed.**
 | EXP-20260923-08 | LSQR sensitivity for WavLM session-disjoint target-reference matching | completed | valid | pass | iemocap_wavlm_session_loso_reference_v1 | EXP-20260923-06, EXP-20260921-17 |
 | EXP-20260923-09 | Published PLDC mechanism under Overall/Between/Within attribution | completed | valid | pass | msp_pldc_component_attribution_v1 | EXP-20260923-01 |
 | EXP-20260923-10 | Published continuous-SER factor-analysis normalization under component attribution | completed | valid | pass | msp_dang2016_fa_normalization_attribution_v1 | EXP-20260923-01 |
-| EXP-20260924-01 | Paired cross-model Overall/Between/Within attribution on IEMOCAP | registered | pending | pending | iemocap_paired_crossmodel_component_attribution_v1 | EXP-20260923-02, EXP-20260923-03 |
+| EXP-20260924-01 | Paired cross-model Overall/Between/Within attribution on IEMOCAP | completed | valid | mixed | iemocap_paired_crossmodel_component_attribution_v1 | EXP-20260923-02, EXP-20260923-03 |
