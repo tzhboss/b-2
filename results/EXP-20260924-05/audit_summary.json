@@ -1,0 +1,97 @@
+{
+  "experiment_id": "EXP-20260924-05",
+  "common_samples": 10039,
+  "speakers": 10,
+  "sessions": [
+    "Ses01",
+    "Ses02",
+    "Ses03",
+    "Ses04",
+    "Ses05"
+  ],
+  "fold_policy": "leave-one-session-out",
+  "models": [
+    "pitch_rate_linear",
+    "pitch_rate_quadratic",
+    "wavlm_layer12",
+    "wavlm_layer24",
+    "emotion2vec_plus_large",
+    "hubert_base_ls960",
+    "wav2vec2_base"
+  ],
+  "bootstrap_unit": "speaker",
+  "bootstrap_reps": 10000,
+  "profile_contrast_cells": 42,
+  "significant_profile_contrast_cells": 6,
+  "significant_profile_contrasts": [
+    {
+      "target": "arousal",
+      "comparison": "hubert_base_ls960-wav2vec2_base",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.1183172926103111,
+      "ci95_low": 0.007718839631537778,
+      "ci95_high": 0.43166887838687995,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "emotion2vec_plus_large-hubert_base_ls960",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": -0.17808064706328897,
+      "ci95_low": -0.5851082663871137,
+      "ci95_high": -0.04581496886378238,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "emotion2vec_plus_large-wav2vec2_base",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": -0.11296645389461141,
+      "ci95_low": -0.35997284166476434,
+      "ci95_high": -0.011650149134297091,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "hubert_base_ls960-pitch_rate_linear",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.4529211120093671,
+      "ci95_low": 0.04501743033302509,
+      "ci95_high": 1.0048020923355232,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "hubert_base_ls960-wavlm_layer12",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.4148156568916685,
+      "ci95_low": 0.13120558634880572,
+      "ci95_high": 0.6790302163995445,
+      "ci_excludes_zero": true
+    },
+    {
+      "target": "dominance",
+      "comparison": "wav2vec2_base-wavlm_layer12",
+      "contrast": "between_minus_within",
+      "delta_of_deltas": 0.34970146372299094,
+      "ci95_low": 0.02459128062849897,
+      "ci95_high": 0.5814371940097911,
+      "ci_excludes_zero": true
+    }
+  ],
+  "suggested_decision": "pass",
+  "row_count_checks": {
+    "component_metrics": 42,
+    "pairwise_component_deltas": 126,
+    "pairwise_profile_contrasts": 42,
+    "rank_rows": 6,
+    "training_audit": 70
+  },
+  "leakage_checks": {
+    "session_overlap_rows": 0,
+    "speaker_overlap_rows": 0
+  },
+  "nan_inf_check": "pass",
+  "numerical_warning_observed": true,
+  "numerical_follow_up": "Run matched LSQR sensitivity before treating solver-specific magnitudes as final."
+}
