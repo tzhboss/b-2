@@ -1,0 +1,23 @@
+{
+  "experiment_id": "EXP-20260923-05",
+  "source": "/data/lc/audio_feature_labeling/old/legacy_feature_pipeline/derived/final_dataset_enriched.parquet",
+  "seeds": [
+    20260920,
+    20260921,
+    20260922
+  ],
+  "outer_folds": 5,
+  "k_values": [
+    1,
+    2,
+    5,
+    10,
+    20,
+    50
+  ],
+  "reserve_k": 50,
+  "fixed_downstream_pool": true,
+  "seed_derivation": "sha256 first 8 bytes -> uint32",
+  "formal_inference": "separate paired speaker-cluster bootstrap from OOF predictions",
+  "enrollment": "nested prefix of one fixed 50-utterance label-free reserve per speaker"
+}
