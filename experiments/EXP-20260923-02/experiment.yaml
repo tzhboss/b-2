@@ -1,0 +1,37 @@
+schema_version: 1
+experiment_id: EXP-20260923-02
+title: Cross-model Overall/Between/Within profiles on IEMOCAP
+
+research_question: >
+  On the unchanged standard absolute VAD task, do hand-engineered Pitch+Rate and frozen WavLM
+  models have different Overall, Between-speaker, and Within-speaker performance profiles?
+
+registered_hypothesis: >
+  Model ranking under conventional Overall CCC will not fully determine ranking under Within-speaker
+  CCC; at least one target will show a ranking change, indicating that a single Overall score hides
+  distinct capabilities.
+
+status:
+  execution: registered
+  validity: pending
+  decision: pending
+
+parent_experiments: [EXP-20260921-15, EXP-20260921-16, EXP-20260923-01]
+protocol_reference: configs/protocols/iemocap_crossmodel_component_profiles_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260923-02.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: 20260923
+  integrity_mode: reuse_immutable_oof_predictions
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: existing preregistered OOF predictions at lambda=1
+  selection_metric: null
+  rationale: direct diagnostic comparison without retraining or model selection
+
+supersedes: []
+superseded_by: []
+role: route-A cross-model gating

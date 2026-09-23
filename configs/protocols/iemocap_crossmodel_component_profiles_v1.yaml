@@ -1,0 +1,53 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-CROSSMODEL-COMPONENT-PROFILES-V1
+title: Cross-model Overall/Between/Within profiles on standard IEMOCAP VAD
+
+scope: >
+  Compare existing OOF predictions from hand-engineered Pitch+Rate and frozen WavLM models on the
+  same ordinary absolute Arousal/Dominance task. No relative target is treated as a deployment task.
+
+sources:
+  pitch_rate: results/EXP-20260921-15/oof_predictions.parquet
+  wavlm: results/EXP-20260921-16/oof_predictions.parquet
+
+source_filter:
+  dataset_for_pitch_rate: iemocap
+  lambda: 1.0
+
+models:
+  - pitch_rate_linear
+  - pitch_rate_quadratic
+  - wavlm_layer12
+  - wavlm_layer24
+
+prediction_condition: absolute
+targets: [arousal, dominance]
+
+metrics:
+  overall_ccc: equal-speaker-weighted pooled CCC
+  between_ccc: CCC across speaker mean truth and mean prediction
+  within_ccc: equal-speaker-weighted pooled CCC after within-speaker centering
+
+inference:
+  independent_unit: speaker
+  bootstrap_reps: 10000
+  bootstrap_seed: 20260923
+  require_common_sample_intersection: true
+
+registered_questions:
+  - Does the model ranking under Overall CCC differ from the ranking under Within-speaker CCC?
+  - Can a model with stronger Overall performance be weaker at Within-speaker affect tracking?
+  - How much of each model's standard-task performance profile is associated with Between-speaker calibration?
+
+criteria:
+  strong_route_a_support:
+    - At least one target shows a non-identical Overall versus Within model ranking.
+    - Preferably at least one pairwise model ordering reverses between Overall and Within.
+  informative:
+    - Profiles differ materially even without a full pairwise reversal.
+  weak:
+    - Overall and Within rankings are identical and pairwise differences scale similarly across all models.
+
+notes:
+  - Ten IEMOCAP speakers limit inferential power; use this as a gating cross-model experiment.
+  - Session-disjoint retraining remains a separate required robustness experiment.
