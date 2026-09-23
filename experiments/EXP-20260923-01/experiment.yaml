@@ -1,0 +1,38 @@
+schema_version: 1
+experiment_id: EXP-20260923-01
+title: Standard absolute SER Overall/Between/Within diagnostic decomposition
+
+research_question: >
+  When models are trained and evaluated on the ordinary absolute VAD task, do conventional Overall
+  scores hide distinct between-speaker calibration and within-speaker affect-tracking abilities?
+
+registered_hypothesis: >
+  Speaker-relative representations will improve Within diagnostics while sacrificing Between
+  calibration, whereas Hybrid representations will recover Between information. Therefore the
+  representation preferred by Overall CCC need not be the representation preferred for Within
+  affect tracking.
+
+status:
+  execution: registered
+  validity: pending
+  decision: pending
+
+parent_experiments: [EXP-20260920-17, EXP-20260922-01]
+protocol_reference: configs/protocols/standard_ser_component_diagnostics_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260923-01.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: 20260923
+  integrity_mode: reuse_immutable_oof_predictions
+
+selected_checkpoint:
+  identifier: results/EXP-20260922-01/oof_predictions.parquet
+  selection_rule: fixed lambda=1 standard absolute target predictions
+  selection_metric: null
+  rationale: no retraining; diagnostic re-evaluation of existing OOF predictions
+
+supersedes: []
+superseded_by: []
+role: route-A gating diagnostic

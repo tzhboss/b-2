@@ -1,0 +1,50 @@
+schema_version: 1
+protocol_id: PROTO-STANDARD-SER-COMPONENT-DIAGNOSTICS-V1
+title: Overall/between/within diagnostics for standard absolute VAD
+
+scope: >
+  Keep the deployed task unchanged: predict the original absolute Arousal and Dominance labels.
+  Relative targets are not treated as a new task. Instead, evaluate each set of standard-task OOF
+  predictions along three diagnostic views: pooled overall CCC, CCC across speaker means
+  (between-speaker calibration), and CCC after centering truth and prediction within each speaker
+  (within-speaker affect tracking).
+
+primary_dataset: msp
+source_predictions: results/EXP-20260922-01/oof_predictions.parquet
+source_filter:
+  lambda: 1.0
+targets: [arousal, dominance]
+model_families: [linear_ridge, quadratic_ridge]
+representations: [absolute, relative, hybrid]
+
+metrics:
+  overall_ccc: equal-speaker-weighted pooled CCC on original absolute labels
+  between_ccc: CCC across per-speaker mean truth and mean prediction
+  within_ccc: equal-speaker-weighted pooled CCC after within-speaker centering of truth and prediction
+
+inference:
+  independent_unit: speaker
+  bootstrap_reps: 5000
+  bootstrap_seed: 20260923
+  paired_resampling: true
+
+registered_questions:
+  - Do representation rankings differ between Overall, Between, and Within diagnostics?
+  - Does speaker normalization trade between-speaker calibration for within-speaker tracking?
+  - Does Hybrid recover between-speaker calibration without erasing within-speaker tracking?
+
+criteria:
+  strong_support:
+    - Relative-minus-Absolute within_ccc is positive for both Arousal and Dominance.
+    - Relative-minus-Absolute between_ccc is negative for both Arousal and Dominance.
+    - Hybrid-minus-Relative between_ccc is positive for both targets.
+    - At least one target/model-family cell has a different Overall winner and Within winner.
+  informative_mixed:
+    - Component profiles differ materially but not all directional criteria hold.
+  weak_for_route_a:
+    - Overall, Between, and Within rankings are effectively identical across all cells.
+
+notes:
+  - This is a diagnostic analysis of standard absolute SER, not a new relative-label deployment task.
+  - CCC is not additively decomposed; Between and Within are complementary diagnostic views.
+  - All uncertainty is paired speaker-cluster bootstrap.
