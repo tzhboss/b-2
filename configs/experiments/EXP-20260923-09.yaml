@@ -1,0 +1,14 @@
+schema_version: 1
+experiment_id: EXP-20260923-09
+dataset: {source_env: PROSODY_ENRICHED_PARQUET}
+seed: [20260920,20260921,20260922]
+parameters:
+  outer_folds: 5
+  ridge_alpha: 1.0
+  top_k_values: [1,5,10,20,50]
+  shift_modes: [mu,sigma,mu_sigma]
+  bootstrap_reps: 5000
+  bootstrap_seed: 20260923
+  targets: [arousal,dominance]
+outputs: {artifact_root: results/EXP-20260923-09}
+entrypoint: scripts/run_msp_pldc_component_attribution_20260923.py

@@ -1,0 +1,27 @@
+schema_version: 1
+experiment_id: EXP-20260923-09
+title: Published PLDC mechanism under Overall/Between/Within attribution
+research_question: >
+  When a published continuous-SER personalization/calibration mechanism is applied to the unchanged
+  absolute VAD task, which component of performance does it alter?
+registered_hypothesis: >
+  Mu-only and sigma-only calibration will produce different component profiles: mu shift leaves the
+  within-centered metric unchanged by construction while altering speaker-level calibration; sigma
+  shift preserves per-speaker prediction means while altering within-speaker variation.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260923-01]
+protocol_reference: configs/protocols/msp_pldc_component_attribution_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260923-09.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: [20260920,20260921,20260922]
+  integrity_mode: method_faithful_common_representation_reimplementation
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed six-feature Ridge baseline; no post-result k selection
+  selection_metric: null
+  rationale: isolate PLDC mechanism from backbone changes
+supersedes: []
+superseded_by: []
+role: published-personalization-method attribution

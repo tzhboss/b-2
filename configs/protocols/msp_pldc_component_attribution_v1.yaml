@@ -1,0 +1,37 @@
+schema_version: 1
+protocol_id: PROTO-MSP-PLDC-COMPONENT-ATTRIBUTION-V1
+title: Method-faithful PLDC reimplementation with Overall/Between/Within attribution
+literature:
+  method: Personalized Label Distribution Calibration (PLDC)
+  citation: Tran, Yin, Soleymani, Interspeech 2023
+  doi: 10.21437/Interspeech.2023-2170
+  fidelity_note: Reimplements the published post-inference calibration equations on the common six-feature MSP representation and fixed Ridge baseline; not an exact HuBERT/PAPT reproduction.
+dataset: msp
+task: standard absolute VAD regression
+features: [pitch, f0var, loud, rate, pause, voiced]
+targets: [arousal, dominance]
+outer_folds: 5
+split_seeds: [20260920,20260921,20260922]
+ridge_alpha: 1.0
+pldc:
+  speaker_vector: mean of train-standardized six-feature utterance vectors
+  similarity: cosine
+  top_k_values: [1,5,10,20,50]
+  shift_modes: [mu, sigma, mu_sigma]
+  target_speaker_prediction_statistics: unlabeled test-speaker baseline predictions
+  retrieved_label_statistics: average per-speaker train-label mean/std over top-k speakers
+evaluation:
+  metrics: [overall_ccc, between_ccc, within_ccc]
+  inference_unit: speaker
+  bootstrap_reps: 5000
+  bootstrap_seed: 20260923
+registered_questions:
+  - Does published-style personalized calibration alter Overall, Between, and Within differently?
+  - Does sigma-only shift primarily alter Within while preserving speaker means?
+  - Does mu-only shift alter Between while leaving within-centered predictions unchanged?
+criteria:
+  informative_support:
+    - Mu and sigma shift modes show distinct component profiles.
+    - At least one setting changes Overall while attribution reveals a different changed component.
+  weak:
+    - Effects are negligible at all k.
