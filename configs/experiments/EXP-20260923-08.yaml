@@ -1,0 +1,15 @@
+schema_version: 1
+experiment_id: EXP-20260923-08
+dataset:
+  source_glob: /data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/*.parquet
+parameters:
+  layers: [12,24]
+  ridge_alpha: 1.0
+  lambda_values: [0.0,0.25,0.5,0.75,1.0]
+  targets: [arousal,dominance]
+  solver: lsqr
+  tol: 1.0e-10
+outputs:
+  artifact_root: results/EXP-20260923-08
+  embedding_root: artifacts/EXP-20260921-16/embeddings
+entrypoint: scripts/run_iemocap_wavlm_session_loso_lsqr_20260923.py

@@ -1,0 +1,37 @@
+schema_version: 1
+experiment_id: EXP-20260923-08
+title: LSQR sensitivity for WavLM session-disjoint target-reference matching
+
+research_question: >
+  Are the EXP-20260923-06 leave-one-session-out WavLM slopes robust to replacing the default Ridge
+  linear solve with high-precision LSQR?
+
+registered_hypothesis: >
+  All four mean session slopes will remain negative, all four cells will retain at least 4/5
+  negative held-out sessions, and the absolute change in mean slope versus EXP-20260923-06 will be
+  below 0.005.
+
+status:
+  execution: registered
+  validity: pending
+  decision: pending
+
+parent_experiments: [EXP-20260923-06, EXP-20260921-17]
+protocol_reference: configs/protocols/iemocap_wavlm_session_loso_reference_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260923-08.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: fixed_embeddings_high_precision_lsqr
+
+selected_checkpoint:
+  identifier: artifacts/EXP-20260921-16/embeddings
+  selection_rule: exact same frozen embeddings and session folds as EXP-20260923-06
+  selection_metric: null
+  rationale: isolate numerical solver sensitivity
+
+supersedes: []
+superseded_by: []
+role: numerical robustness
