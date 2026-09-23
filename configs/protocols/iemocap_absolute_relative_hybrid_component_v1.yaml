@@ -1,0 +1,49 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-ABSOLUTE-RELATIVE-HYBRID-COMPONENT-V1
+title: Raw-absolute SER component attribution under Absolute/Relative/Hybrid representations
+scope: >
+  Keep raw absolute Arousal/Dominance as the only supervised target. Relative is an input-space
+  diagnostic transformation, not an alternate deployment task.
+backbones: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+representation:
+  absolute: utterance embedding H
+  speaker_center: full-speaker unlabeled coordinate-wise median embedding C
+  relative: H-C
+  hybrid: concatenate(H-C, C)
+diagnostic_boundary:
+  - Full-speaker centers are oracle unlabeled diagnostic references, not deployment assumptions.
+  - No affect labels are used to construct C.
+readout:
+  model: Ridge
+  alpha: 1.0
+  outer_folds: 5
+  split_seed: 20260920
+  target: raw absolute [arousal, dominance]
+  sample_weighting: equal speaker weight
+metrics:
+  - overall_ccc
+  - between_speaker_ccc
+  - within_speaker_centered_ccc
+inference:
+  paired_bootstrap_unit: speaker
+  bootstrap_reps: 10000
+  bootstrap_seed: 20260924
+primary_comparisons:
+  - relative_minus_absolute
+  - hybrid_minus_relative
+  - hybrid_minus_absolute
+primary_mechanism:
+  - Relative-minus-Absolute Between-minus-Within should be negative if centering removes speaker-level calibration preferentially.
+  - Hybrid-minus-Relative Between-minus-Within should be positive if adding the center restores speaker-level calibration preferentially.
+criteria:
+  pass:
+    - At least 6 of 10 backbone-target cells have Relative-minus-Absolute Between-minus-Within CI below zero.
+    - At least 6 of 10 backbone-target cells have Hybrid-minus-Relative Between-minus-Within CI above zero.
+  mixed:
+    - Directions are broadly consistent but one or both count thresholds are not met.
+  reject:
+    - The registered component-direction pattern is absent or reverses broadly.
+notes:
+  - Hybrid-vs-Absolute Overall CCC is secondary; this is a mechanism experiment, not a leaderboard.
+  - CCC components are diagnostic profiles and are not additive variance shares.
+

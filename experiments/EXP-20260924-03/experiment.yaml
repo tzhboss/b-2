@@ -1,0 +1,28 @@
+schema_version: 1
+experiment_id: EXP-20260924-03
+title: Absolute/Relative/Hybrid component intervention across frozen speech backbones
+research_question: >
+  On the unchanged raw absolute IEMOCAP VAD task, which component of performance is changed when
+  frozen speech embeddings are represented as Absolute, speaker-centered Relative, or Hybrid?
+registered_hypothesis: >
+  Removing the speaker center will reduce Between-speaker calibration more than Within-speaker tracking,
+  while adding the center back in Hybrid will restore Between-speaker performance with much smaller
+  effect on Within-speaker tracking across multiple backbones.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260924-02, EXP-20260923-01]
+protocol_reference: configs/protocols/iemocap_absolute_relative_hybrid_component_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260924-03.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: 20260920
+  integrity_mode: frozen_embeddings_common_raw_absolute_task
+selected_checkpoint:
+  identifier: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+  selection_rule: all available frozen backbones from the preregistered Route-A cross-model panel
+  selection_metric: null
+  rationale: no post-result backbone selection
+supersedes: []
+superseded_by: []
+role: route-A representation-intervention component attribution
+
