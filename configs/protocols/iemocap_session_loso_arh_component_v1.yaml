@@ -1,0 +1,32 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-SESSION-LOSO-ARH-COMPONENT-V1
+title: Session-disjoint raw-absolute SER attribution under Absolute/Relative/Hybrid representations
+parent: EXP-20260924-03
+task: raw absolute IEMOCAP Arousal/Dominance regression
+fold_policy: five strict leave-one-session-out folds
+backbones: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+representation:
+  absolute: H
+  speaker_center: full-speaker unlabeled coordinate-wise median C
+  relative: H-C
+  hybrid: concatenate(H-C, C)
+diagnostic_boundary:
+  - Relative is an input-space diagnostic only, never the supervised target.
+  - Full-speaker centers are oracle unlabeled references and are not deployment assumptions.
+readout:
+  model: Ridge
+  alpha: 1.0
+  sample_weighting: equal speaker weight
+metrics: [overall_ccc, between_speaker_ccc, within_speaker_centered_ccc]
+inference:
+  paired_bootstrap_unit: speaker
+  bootstrap_reps: 10000
+  bootstrap_seed: 20260924
+criteria:
+  pass:
+    - at least 6/10 Relative-minus-Absolute Between-minus-Within CIs are below zero
+    - at least 6/10 Hybrid-minus-Relative Between-minus-Within CIs are above zero
+  mixed:
+    - point directions are broadly consistent but one or both CI-count thresholds are not met
+  reject:
+    - the mechanism direction is absent or broadly reversed

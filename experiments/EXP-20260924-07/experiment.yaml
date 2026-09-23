@@ -1,0 +1,26 @@
+schema_version: 1
+experiment_id: EXP-20260924-07
+title: Session-disjoint Absolute/Relative/Hybrid component intervention across frozen speech backbones
+research_question: >
+  Does the Relative-centering mechanism from EXP-20260924-03 survive strict leave-one-IEMOCAP-session-out
+  retraining when raw absolute Arousal/Dominance remains the only supervised task?
+registered_hypothesis: >
+  Relative-minus-Absolute Between-minus-Within will remain negative in at least 6/10 backbone-target cells,
+  while Hybrid-minus-Relative will remain positive in at least 6/10 cells under strict session LOSO.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260924-03, EXP-20260924-05]
+protocol_reference: configs/protocols/iemocap_session_loso_arh_component_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260924-07.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: null
+  integrity_mode: frozen_embeddings_session_loso_raw_absolute_task
+selected_checkpoint:
+  identifier: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+  selection_rule: exact SSL backbone panel from EXP-20260924-03
+  selection_metric: null
+  rationale: protocol robustness only; no model selection
+supersedes: []
+superseded_by: []
+role: route-A session-disjoint representation-intervention attribution
