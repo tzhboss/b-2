@@ -1,0 +1,55 @@
+schema_version: 1
+protocol_id: PROTO-MSP-FULL-INTERPRETABLE-KSHOT-SPEAKERCLUSTER-V2
+title: Corrected fixed-pool K-shot recovery with independent enrollment seeds and speaker-cluster inference
+
+scope: >
+  Repair EXP-20260922-02 without overwriting it. Use SHA-256-derived random seeds so the three
+  enrollment seeds genuinely select different per-speaker reserves. Preserve the fixed downstream
+  pool within each seed across K. Save paired OOF predictions and infer uncertainty by resampling
+  speakers, while treating the three seeds as repeated modeling conditions rather than independent
+  observational units.
+
+dataset: msp
+features: [pitch, f0var, loud, rate, pause, voiced]
+targets: [arousal, dominance]
+split_enrollment_seeds: [20260920, 20260921, 20260922]
+outer_folds: 5
+k_values: [1,2,5,10,20,50]
+reserve_k: 50
+ridge_alpha: 1.0
+
+randomization:
+  seed_derivation: sha256-first-8-bytes
+  require_distinct_reserve_hashes_across_seeds: true
+  nested_k_within_seed: true
+
+inference:
+  independent_unit: speaker
+  bootstrap_reps: 5000
+  seed_handling: >
+    For each speaker bootstrap resample, compute the OOF CCC or paired CCC contrast separately
+    under each modeling/enrollment seed and average the resulting statistic across seeds.
+    Seeds are never resampled as independent speakers.
+
+primary_estimands:
+  - K20 Hybrid minus Absolute for Arousal and Dominance.
+  - K50 Hybrid minus Absolute.
+  - K50 minus K20 Hybrid.
+  - K50 Hybrid minus marginal-oracle Hybrid.
+
+criteria:
+  practical_recovery:
+    - K20 Hybrid-minus-Absolute mean is positive for both targets.
+  oracle_proximity:
+    - Absolute K50-to-oracle gap is below 0.01 for both targets.
+  plateau:
+    - K50-minus-K20 point gain is below 0.01 for both targets; confidence intervals are reported, not used to redefine the threshold post hoc.
+
+required_outputs:
+  - paired_oof_predictions.parquet
+  - enrollment_audit.csv
+  - fold_audit.csv
+  - speaker_cluster_deltas.csv
+  - speaker_cluster_k_deltas.csv
+  - summary_by_seed.csv
+  - run_metadata.json

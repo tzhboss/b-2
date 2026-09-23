@@ -1,0 +1,37 @@
+schema_version: 1
+experiment_id: EXP-20260923-05
+title: Corrected full-prosody K-shot recovery with speaker-cluster inference
+
+research_question: >
+  After repairing enrollment randomization and using speaker-cluster uncertainty, how much of the
+  standard absolute-VAD Hybrid benefit can 20 or 50 unlabeled enrollment utterances recover?
+
+registered_hypothesis: >
+  Distinct seeds will yield genuinely different enrollment pools. K20 and K50 Hybrid will remain
+  better than Absolute for Arousal and Dominance, K50 will remain close to the marginal oracle, and
+  uncertainty will be reported from paired speaker-cluster bootstrap rather than seed×fold pairs.
+
+status:
+  execution: registered
+  validity: pending
+  decision: pending
+
+parent_experiments: [EXP-20260922-02, EXP-20260923-01]
+protocol_reference: configs/protocols/msp_full_interpretable_kshot_speakercluster_v2.yaml
+experiment_config_reference: configs/experiments/EXP-20260923-05.yaml
+
+runtime:
+  commit: null
+  branch: main
+  seed: [20260920,20260921,20260922]
+  integrity_mode: corrected_sha256_randomization_plus_paired_speaker_cluster
+
+selected_checkpoint:
+  identifier: null
+  selection_rule: fixed historical six-feature Ridge design
+  selection_metric: null
+  rationale: isolate statistical/randomization remediation without model tuning
+
+supersedes: []
+superseded_by: []
+role: audit remediation and practical deployment validation

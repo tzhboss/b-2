@@ -1,0 +1,21 @@
+schema_version: 1
+experiment_id: EXP-20260923-05
+dataset:
+  source_env: PROSODY_ENRICHED_PARQUET
+seed: [20260920,20260921,20260922]
+parameters:
+  outer_folds: 5
+  k_values: [1,2,5,10,20,50]
+  reserve_k: 50
+  min_support_exclusive: 50
+  ridge_alpha: 1.0
+  bootstrap_reps: 5000
+  bootstrap_seed: 20260923
+  features: [pitch,f0var,loud,rate,pause,voiced]
+  targets:
+    arousal: arousal_mean_1_7
+    dominance: dominance_mean_1_7
+outputs:
+  artifact_root: results/EXP-20260923-05
+training_entrypoint: scripts/run_msp_interpretable_kshot_fixedpool_seedfix_20260923.py
+inference_entrypoint: scripts/run_kshot_speaker_cluster_inference_20260923.py
