@@ -1,0 +1,16 @@
+{
+  "experiment_id": "EXP-20260923-01",
+  "source_oof": "results/EXP-20260922-01/oof_predictions.parquet",
+  "lambda_filter": 1.0,
+  "interpretation": "standard absolute-label OOF predictions; relative is diagnostic only",
+  "metrics": {
+    "overall": "equal-speaker-weighted pooled CCC",
+    "between": "CCC across speaker mean truth/prediction",
+    "within": "equal-speaker-weighted pooled CCC after centering truth/prediction within speaker"
+  },
+  "bootstrap_unit": "speaker",
+  "bootstrap_reps": 5000,
+  "bootstrap_seed": 20260923,
+  "rows_after_filter": 788056,
+  "speakers": 1915
+}
