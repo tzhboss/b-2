@@ -1,0 +1,27 @@
+schema_version: 1
+experiment_id: EXP-20260924-14
+title: Paired component-balanced maximin versus PLDC and ensemble controls
+research_question: >
+  Under identical nested session-LOSO absolute SER evaluation, does the decomposition-guided
+  component-balanced maximin method outperform or match published PLDC calibration and strong
+  generic ensemble controls across Overall, Between, and Within components?
+registered_hypothesis: >
+  Component-balanced maximin will retain positive Overall/Between/Within deltas over nested best-single,
+  and will be competitive with PLDC mu+sigma and inner-CV convex ensemble without sacrificing either component.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260924-10, EXP-20260924-11, EXP-20260924-13]
+protocol_reference: configs/protocols/iemocap_component_balanced_vs_pldc_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260924-14.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: 20260920
+  integrity_mode: paired_common_oof_no_retraining
+selected_checkpoint:
+  identifier: [component_balanced_maximin, pldc_mu_sigma, inner_convex_ssl_ensemble, nested_best_single]
+  selection_rule: fixed methods from completed preregistered parent experiments
+  selection_metric: null
+  rationale: no post-result model fitting or hyperparameter selection
+supersedes: []
+superseded_by: []
+role: route-A published-method and strong-control benchmark

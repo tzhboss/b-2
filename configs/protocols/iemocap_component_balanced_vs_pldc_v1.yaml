@@ -1,0 +1,32 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-COMPONENT-BALANCED-VS-PLDC-V1
+title: Paired comparison of decomposition-guided maximin against PLDC and ensemble controls
+task: raw absolute IEMOCAP Arousal/Dominance regression
+split: inherited identical 5-session LOSO outer folds with nested session-LOSO selection
+sources:
+  exp10: results/EXP-20260924-10/oof_predictions.parquet
+  exp11: results/EXP-20260924-11/oof_predictions.parquet
+methods:
+  - nested_best_single
+  - inner_convex_ssl_ensemble
+  - pldc_mu
+  - pldc_sigma
+  - pldc_mu_sigma
+  - component_balanced_maximin
+metrics: [overall_ccc, between_ccc, within_ccc]
+inference:
+  independent_unit: speaker
+  paired_bootstrap: true
+  bootstrap_reps: 10000
+  bootstrap_seed: 20260924
+criteria:
+  pass:
+    - component_balanced_maximin remains positive on all three components versus nested best-single for both targets
+    - and is non-inferior in point estimate to at least one strong control on Overall for each target
+  mixed:
+    - joint gains survive versus best-single but strong controls remain better on one or more targets
+  reject:
+    - joint component gains fail under paired common-OOF comparison
+notes:
+  - PLDC is a published personalization/calibration baseline.
+  - Absolute SER remains the deployment task; Between/Within are diagnostic components.
