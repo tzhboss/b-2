@@ -1,0 +1,16 @@
+schema_version: 1
+experiment_id: EXP-20260924-13
+dataset_glob: /data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/*.parquet
+embeddings:
+  wavlm: artifacts/EXP-20260921-16/embeddings/*.npz
+  emotion2vec_plus_large: artifacts/EXP-20260923-03/embeddings/*.npz
+  hubert_base_ls960: artifacts/EXP-20260924-02/embeddings/hubert_base_ls960/*.npz
+  wav2vec2_base: artifacts/EXP-20260924-02/embeddings/wav2vec2_base/*.npz
+output_root: results/EXP-20260924-13
+ridge_alpha: 1.0
+ridge_solver: lsqr
+evaluation_enrollment_k: 10
+bootstrap_reps: 10000
+bootstrap_seed: 20260924
+entrypoint: scripts/run_iemocap_component_balanced_ensemble_20260924.py
+reference_results: results/EXP-20260924-11

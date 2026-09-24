@@ -1,0 +1,22 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-COMPONENT-BALANCED-LSQR-SENSITIVITY-V1
+title: LSQR sensitivity for nested component-balanced ensemble
+parent: EXP-20260924-11
+change:
+  ridge_solver: lsqr
+fixed:
+  task: raw absolute IEMOCAP Arousal/Dominance
+  outer_split: five leave-one-session-out folds
+  inner_split: leave-one-session-out over the four outer-training sessions
+  candidate_models: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+  evaluation_enrollment_k: 10
+  ensemble_objectives: [overall_convex, component_balanced_mean, component_balanced_maximin]
+  bootstrap_reps: 10000
+criteria:
+  pass:
+    - maximin has positive point deltas versus nested best-single on Overall, Between, and Within for at least one target
+    - all six maximin-vs-best delta signs match EXP-20260924-11
+  mixed:
+    - main directions survive but one or more component signs change
+  reject:
+    - simultaneous-improvement result disappears under LSQR

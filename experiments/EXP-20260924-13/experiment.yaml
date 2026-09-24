@@ -1,0 +1,27 @@
+schema_version: 1
+experiment_id: EXP-20260924-13
+title: LSQR sensitivity for component-balanced maximin ensemble
+research_question: >
+  Does the component-balanced maximin result from EXP-20260924-11 survive replacing Ridge's default
+  solver with LSQR under the same nested session-LOSO protocol?
+registered_hypothesis: >
+  The maximin ensemble will retain positive point deltas over nested best-single on Overall, Between,
+  and Within for at least one target, and the sign of all six maximin-vs-best component deltas will
+  match EXP-20260924-11.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260924-11, EXP-20260924-06]
+protocol_reference: configs/protocols/iemocap_component_balanced_lsqr_sensitivity_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260924-13.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: 20260920
+  integrity_mode: identical_nested_session_loso_solver_only_change
+selected_checkpoint:
+  identifier: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+  selection_rule: exact candidate panel and nested protocol from EXP-20260924-11
+  selection_metric: unchanged component-balanced maximin objective
+  rationale: isolate numerical solver sensitivity
+supersedes: []
+superseded_by: []
+role: route-A numerical robustness for decomposition-guided method
