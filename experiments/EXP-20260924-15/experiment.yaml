@@ -1,0 +1,27 @@
+schema_version: 1
+experiment_id: EXP-20260924-15
+title: Cross-dataset MSP component-balanced absolute-prosody ensemble
+research_question: >
+  Does the Overall/Between/Within decomposition guide a jointly improving absolute-SER ensemble on MSP,
+  using only absolute interpretable prosodic inputs and strict nested speaker-disjoint selection?
+registered_hypothesis: >
+  Across three preregistered speaker-split seeds, component-balanced maximin will have positive mean
+  deltas over nested best-single on Overall, Between, and Within for both Arousal and Dominance, with
+  the sign of each of the six component deltas agreeing in at least two of three seeds.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260922-01, EXP-20260923-01, EXP-20260924-11, EXP-20260924-14]
+protocol_reference: configs/protocols/msp_absolute_prosody_component_balanced_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260924-15.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: [20260920, 20260921, 20260922]
+  integrity_mode: nested_speaker_disjoint_absolute_inputs_only
+selected_checkpoint:
+  identifier: [pitch_level, pitch_shape, loudness, temporal, full_linear, full_quadratic]
+  selection_rule: fixed interpretable absolute-feature candidate panel preregistered before results
+  selection_metric: inner component-balanced maximin with nondecreasing Overall constraint
+  rationale: cross-dataset replication of decomposition-guided method without Relative deployment input
+supersedes: []
+superseded_by: []
+role: route-A cross-dataset method validation

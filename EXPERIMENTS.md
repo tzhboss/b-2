@@ -2,7 +2,7 @@
 
 Human-readable derived index only. The authoritative record is each `experiments/<ID>/experiment.yaml`; if this file conflicts with a YAML record, the YAML wins.
 
-Current inventory: **65 registered experiments; 65 completed.**
+Current inventory: **66 registered experiments; 65 completed.**
 
 | ID | Title | Execution | Validity | Decision | Protocol | Parent |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -81,3 +81,5 @@ Current inventory: **65 registered experiments; 65 completed.**
 | EXP-20260924-13 | LSQR sensitivity for component-balanced maximin ensemble | completed | valid | pass | iemocap_component_balanced_lsqr_sensitivity_v1 | EXP-20260924-11, EXP-20260924-06 |
 
 | EXP-20260924-14 | Paired component-balanced maximin versus PLDC and ensemble controls | completed | valid | pass | iemocap_component_balanced_vs_pldc_v1 | EXP-20260924-10, EXP-20260924-11, EXP-20260924-13 |
+
+| EXP-20260924-15 | Cross-dataset MSP component-balanced absolute-prosody ensemble | registered | pending | pending | msp_absolute_prosody_component_balanced_v1 | EXP-20260922-01, EXP-20260923-01, EXP-20260924-11, EXP-20260924-14 |

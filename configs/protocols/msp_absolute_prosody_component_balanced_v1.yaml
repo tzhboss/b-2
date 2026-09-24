@@ -1,0 +1,40 @@
+schema_version: 1
+protocol_id: PROTO-MSP-ABS-PROSODY-COMPONENT-BALANCED-V1
+task: standard absolute MSP Arousal/Dominance regression
+relative_role: diagnostic decomposition only; no Relative representation is used as model input
+data:
+  source: /data/lc/audio_feature_labeling/old/legacy_feature_pipeline/derived/final_dataset_enriched.parquet
+  subset: exact EXP-20260923-09 quality/reference filtering with speakers having >10 retained utterances
+outer_split:
+  unit: speaker
+  folds: 5
+  seeds: [20260920, 20260921, 20260922]
+inner_split:
+  unit: speaker
+  folds: 4
+  nested: true
+candidates:
+  pitch_level: [pitch_abs]
+  pitch_shape: [pitch_abs, f0var_abs]
+  loudness: [loud_abs]
+  temporal: [rate_abs, pause_abs, voiced_abs]
+  full_linear: [pitch_abs, f0var_abs, loud_abs, rate_abs, pause_abs, voiced_abs]
+  full_quadratic: [pitch_abs, f0var_abs, loud_abs, rate_abs, pause_abs, voiced_abs]
+objective:
+  baseline: inner Overall-best single candidate
+  maximin: maximize min(Between gain, Within gain) subject to Overall >= baseline Overall
+controls: [equal_ensemble, inner_overall_convex_ensemble]
+metrics: [overall_ccc, between_ccc, within_ccc]
+inference:
+  bootstrap_unit: speaker
+  paired_bootstrap: true
+  same_speaker_draws_across_seeds: true
+  bootstrap_reps: 5000
+criteria:
+  pass:
+    - mean maximin-vs-best delta is positive for Overall, Between, and Within on both targets
+    - each of the six delta signs is positive in at least 2 of 3 seeds
+  mixed:
+    - joint gains occur for only one target or seed stability is incomplete
+  reject:
+    - decomposition-guided maximin does not produce joint component gains
