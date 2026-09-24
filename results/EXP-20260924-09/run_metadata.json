@@ -1,0 +1,19 @@
+{
+  "experiment_id": "EXP-20260924-09",
+  "task": "raw absolute VAD",
+  "relative_role": "diagnostic representation only",
+  "center": "full-speaker unlabeled coordinate-wise median (oracle diagnostic)",
+  "fold_policy": "strict leave-one-session-out",
+  "sessions": [
+    "Ses01",
+    "Ses02",
+    "Ses03",
+    "Ses04",
+    "Ses05"
+  ],
+  "ridge_solver": "lsqr",
+  "ridge_tol": 1e-10,
+  "bootstrap_unit": "speaker",
+  "bootstrap_reps": 10000,
+  "git_head": "7b96fc8caf344c6a42fe3b3e8edde0ebdcdeeca9"
+}
