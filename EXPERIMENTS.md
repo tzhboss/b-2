@@ -2,7 +2,7 @@
 
 Human-readable derived index only. The authoritative record is each `experiments/<ID>/experiment.yaml`; if this file conflicts with a YAML record, the YAML wins.
 
-Current inventory: **63 registered experiments; 62 completed.**
+Current inventory: **63 registered experiments; 63 completed.**
 
 | ID | Title | Execution | Validity | Decision | Protocol | Parent |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -76,4 +76,4 @@ Current inventory: **63 registered experiments; 62 completed.**
 
 | EXP-20260924-11 | Component-balanced maximin ensemble under nested session LOSO | completed | valid | pass | iemocap_component_balanced_ensemble_v1 | EXP-20260924-10, EXP-20260924-05 |
 
-| EXP-20260924-12 | PCM-protocol fixed-split comparison for component-balanced absolute SER | registered | pending | pending | iemocap_pcm_fixed_split_comparison_v1 | EXP-20260924-11 |
+| EXP-20260924-12 | PCM-protocol fixed-split comparison for component-balanced absolute SER | completed | valid | pass | iemocap_pcm_fixed_split_comparison_v1 | EXP-20260924-11 |

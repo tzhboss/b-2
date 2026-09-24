@@ -9,12 +9,12 @@ registered_hypothesis: >
   The component-balanced maximin ensemble will retain positive validation-selected gains over the best single
   SSL model on the fixed Session-5 test set and remain competitive with the published PCM reference
   (Arousal 0.744, Dominance 0.557) without test-set model selection.
-status: {execution: registered, validity: pending, decision: pending}
+status: {execution: completed, validity: valid, decision: pass}
 parent_experiments: [EXP-20260924-11]
 protocol_reference: configs/protocols/iemocap_pcm_fixed_split_comparison_v1.yaml
 experiment_config_reference: configs/experiments/EXP-20260924-12.yaml
 runtime:
-  commit: null
+  commit: 7ffcff2
   branch: main
   seed: 20260920
   integrity_mode: pcm_matched_session_split_validation_only_selection
