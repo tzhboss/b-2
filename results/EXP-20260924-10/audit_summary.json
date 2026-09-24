@@ -1,0 +1,26 @@
+{
+  "experiment_id": "EXP-20260924-10",
+  "validity": "valid",
+  "decision": "mixed",
+  "task": "raw absolute IEMOCAP Arousal/Dominance",
+  "outer_split": "5-session LOSO",
+  "inner_split": "nested session LOSO within each outer training set",
+  "common_samples": 10039,
+  "speakers": 10,
+  "primary_enrollment_k": 10,
+  "evaluation_rows_per_target": 9939,
+  "methods": [
+    "nested_best_single",
+    "equal_ssl_ensemble",
+    "inner_convex_ssl_ensemble",
+    "pldc_mu",
+    "pldc_sigma",
+    "pldc_mu_sigma",
+    "component_aware",
+    "component_aware_pldc_mu",
+    "component_aware_pldc_mu_sigma"
+  ],
+  "positive_all_three_targets_for_primary": [],
+  "no_outer_selection_leakage": "by construction; all selection uses pair-held inner predictions excluding the outer session",
+  "fit_warning_count_total": 30
+}
