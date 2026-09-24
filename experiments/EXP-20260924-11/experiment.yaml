@@ -9,12 +9,12 @@ registered_hypothesis: >
   Under strict nested IEMOCAP session LOSO, a component-balanced maximin convex ensemble chosen only
   on inner folds will obtain positive point deltas over nested best-single on Overall, Between, and
   Within for at least one target, and will not be dominated by the ordinary Overall-optimized convex ensemble.
-status: {execution: registered, validity: pending, decision: pending}
+status: {execution: completed, validity: valid, decision: pass}
 parent_experiments: [EXP-20260924-10, EXP-20260924-05]
 protocol_reference: configs/protocols/iemocap_component_balanced_ensemble_v1.yaml
 experiment_config_reference: configs/experiments/EXP-20260924-11.yaml
 runtime:
-  commit: null
+  commit: d751e48
   branch: main
   seed: 20260920
   integrity_mode: nested_session_loso_component_constrained_simplex
