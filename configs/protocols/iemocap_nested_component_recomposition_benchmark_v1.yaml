@@ -1,0 +1,43 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-NESTED-COMPONENT-RECOMPOSITION-BENCHMARK-V1
+title: Nested session-LOSO benchmark for decomposition-guided absolute SER
+task: raw absolute IEMOCAP Arousal/Dominance regression
+outer_split: five leave-one-session-out folds
+inner_split: leave-one-session-out over the four outer-training sessions
+models: [pitch_rate_linear, pitch_rate_quadratic, wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+primary_enrollment_k: 10
+enrollment_policy: deterministic label-free sample selection per held-out speaker; enrollment utterances excluded from evaluation for every method
+methods:
+  - nested_best_single
+  - equal_ssl_ensemble
+  - inner_convex_ssl_ensemble
+  - pldc_mu
+  - pldc_sigma
+  - pldc_mu_sigma
+  - component_aware
+  - component_aware_pldc_mu
+  - component_aware_pldc_mu_sigma
+selection:
+  nested_best_single: maximize inner Overall CCC
+  between_expert: maximize inner Between CCC
+  within_expert: maximize inner Within CCC
+  convex_weights: maximize inner Overall CCC under simplex constraints
+  pldc_neighbor_k: choose from [1,3,5] by inner Overall CCC of PLDC mu+sigma
+metrics: [overall_ccc, between_ccc, within_ccc]
+inference:
+  independent_unit: speaker
+  paired_bootstrap: true
+  bootstrap_reps: 10000
+  bootstrap_seed: 20260924
+criteria:
+  pass:
+    - primary component-aware PLDC mu+sigma has positive point deltas versus nested best-single on Overall, Between, and Within for at least one target
+    - no outer-session information is used for method/model/hyperparameter selection
+  mixed:
+    - decomposition-guided recomposition improves only one component or fails to beat strong controls consistently
+  reject:
+    - component-aware recomposition is dominated by ordinary ensemble or best-single baselines
+notes:
+  - Standard absolute SER remains the only prediction task.
+  - Relative quantities are used only for diagnostic decomposition/recomposition and never as target labels.
+  - PLDC is a common-representation reimplementation inspired by published unsupervised personalized calibration; exact-paper numbers are not claimed.

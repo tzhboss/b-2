@@ -1,0 +1,29 @@
+schema_version: 1
+experiment_id: EXP-20260924-10
+title: Nested session-LOSO component-aware recomposition versus ensemble and PLDC baselines
+research_question: >
+  Does the Overall/Between/Within decomposition provide actionable information for standard absolute SER,
+  such that a component-aware recomposition can improve both Between-speaker calibration and Within-speaker
+  tracking relative to strong single-model, generic ensemble, and published-style PLDC calibration baselines?
+registered_hypothesis: >
+  Under strict nested IEMOCAP session LOSO with label-free K=10 enrollment, the preregistered
+  component-aware PLDC mu+sigma recomposition will have positive point deltas versus nested best-single
+  absolute SER on Overall, Between, and Within for at least one target, while ordinary equal/convex
+  ensembles and single-model PLDC provide controls for generic ensembling and personalization.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260924-05, EXP-20260923-09, EXP-20260923-05]
+protocol_reference: configs/protocols/iemocap_nested_component_recomposition_benchmark_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260924-10.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: 20260920
+  integrity_mode: nested_session_loso_label_free_enrollment
+selected_checkpoint:
+  identifier: [pitch_rate_linear, pitch_rate_quadratic, wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+  selection_rule: all model/expert/ensemble choices are made only from inner session-LOSO predictions inside each outer training split
+  selection_metric: inner Overall CCC for best-single/PLDC base; inner Between CCC for Between expert; inner Within CCC for Within expert
+  rationale: prohibit post-hoc model choice on the outer held-out session
+supersedes: []
+superseded_by: []
+role: route-A decomposition-guided method validation and strong-baseline benchmark
