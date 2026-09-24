@@ -8,12 +8,12 @@ registered_hypothesis: >
   The maximin ensemble will retain positive point deltas over nested best-single on Overall, Between,
   and Within for at least one target, and the sign of all six maximin-vs-best component deltas will
   match EXP-20260924-11.
-status: {execution: registered, validity: pending, decision: pending}
+status: {execution: completed, validity: valid, decision: pass}
 parent_experiments: [EXP-20260924-11, EXP-20260924-06]
 protocol_reference: configs/protocols/iemocap_component_balanced_lsqr_sensitivity_v1.yaml
 experiment_config_reference: configs/experiments/EXP-20260924-13.yaml
 runtime:
-  commit: null
+  commit: d28b71b
   branch: main
   seed: 20260920
   integrity_mode: identical_nested_session_loso_solver_only_change
