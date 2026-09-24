@@ -1,0 +1,38 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-COMPONENT-BALANCED-ENSEMBLE-V1
+title: Nested component-balanced convex ensemble for standard absolute SER
+task: raw absolute IEMOCAP Arousal/Dominance regression
+outer_split: five leave-one-session-out folds
+inner_split: leave-one-session-out over the four outer-training sessions
+candidate_models: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+evaluation_subset: same deterministic K=10 label-free enrollment exclusion as EXP-20260924-10 for exact paired comparison
+methods:
+  - nested_best_single
+  - equal_ssl_ensemble
+  - inner_convex_ssl_ensemble
+  - component_balanced_mean
+  - component_balanced_maximin
+optimization:
+  ordinary_convex: maximize inner Overall CCC on simplex
+  component_balanced_mean: maximize mean of inner Overall, Between, Within CCC on simplex
+  component_balanced_maximin:
+    objective: maximize the minimum inner improvement over nested best-single across Between and Within
+    constraint: inner Overall CCC must not decrease versus nested best-single
+    weights: nonnegative and sum to one
+metrics: [overall_ccc, between_ccc, within_ccc]
+inference:
+  independent_unit: speaker
+  paired_bootstrap: true
+  bootstrap_reps: 10000
+  bootstrap_seed: 20260924
+criteria:
+  pass:
+    - component_balanced_maximin has positive point deltas versus nested best-single on Overall, Between, and Within for at least one target
+    - all selection uses only inner folds
+  mixed:
+    - component balancing helps some components but ordinary Overall-optimized ensembling remains stronger
+  reject:
+    - component-balanced weighting degrades both components or Overall relative to strong controls
+notes:
+  - Standard absolute SER remains the only task.
+  - Between/Within enter only as inner-fold diagnostic constraints/objectives.

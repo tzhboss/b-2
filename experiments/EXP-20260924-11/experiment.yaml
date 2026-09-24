@@ -1,0 +1,28 @@
+schema_version: 1
+experiment_id: EXP-20260924-11
+title: Component-balanced maximin ensemble under nested session LOSO
+research_question: >
+  Can the Overall/Between/Within decomposition directly guide ensemble weighting so that a standard
+  absolute SER system improves both Between-speaker calibration and Within-speaker tracking rather
+  than merely improving Overall CCC?
+registered_hypothesis: >
+  Under strict nested IEMOCAP session LOSO, a component-balanced maximin convex ensemble chosen only
+  on inner folds will obtain positive point deltas over nested best-single on Overall, Between, and
+  Within for at least one target, and will not be dominated by the ordinary Overall-optimized convex ensemble.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260924-10, EXP-20260924-05]
+protocol_reference: configs/protocols/iemocap_component_balanced_ensemble_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260924-11.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: 20260920
+  integrity_mode: nested_session_loso_component_constrained_simplex
+selected_checkpoint:
+  identifier: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+  selection_rule: all ensemble weights are selected only from inner session-LOSO predictions
+  selection_metric: maximin improvement over inner best-single on Between and Within with Overall constrained non-decreasing
+  rationale: direct decomposition-guided optimization without test-session access
+supersedes: []
+superseded_by: []
+role: route-A decomposition-guided method validation

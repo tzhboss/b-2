@@ -2,7 +2,7 @@
 
 Human-readable derived index only. The authoritative record is each `experiments/<ID>/experiment.yaml`; if this file conflicts with a YAML record, the YAML wins.
 
-Current inventory: **61 registered experiments; 61 completed.**
+Current inventory: **62 registered experiments; 61 completed.**
 
 | ID | Title | Execution | Validity | Decision | Protocol | Parent |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -73,3 +73,5 @@ Current inventory: **61 registered experiments; 61 completed.**
 | EXP-20260924-09 | High-precision LSQR sensitivity for session-disjoint Absolute/Relative/Hybrid intervention | completed | valid | pass | iemocap_session_loso_arh_lsqr_highprecision_v1 | EXP-20260924-07, EXP-20260924-08, EXP-20260923-08 |
 
 | EXP-20260924-10 | Nested session-LOSO component-aware recomposition versus ensemble and PLDC baselines | completed | valid | mixed | iemocap_nested_component_recomposition_benchmark_v1 | EXP-20260924-05, EXP-20260923-09, EXP-20260923-05 |
+
+| EXP-20260924-11 | Component-balanced maximin ensemble under nested session LOSO | registered | pending | pending | iemocap_component_balanced_ensemble_v1 | EXP-20260924-10, EXP-20260924-05 |
