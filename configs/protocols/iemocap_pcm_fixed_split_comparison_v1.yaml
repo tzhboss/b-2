@@ -1,0 +1,29 @@
+schema_version: 1
+protocol_id: PROTO-IEMOCAP-PCM-FIXED-SPLIT-COMPARISON-V1
+title: PCM-aligned IEMOCAP fixed split
+task: raw absolute IEMOCAP Arousal/Dominance regression
+split:
+  train: [Ses01, Ses02, Ses03]
+  validation: [Ses04]
+  test: [Ses05]
+candidate_models: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+methods: [best_single, equal_ssl_ensemble, validation_convex_ssl_ensemble, component_balanced_mean, component_balanced_maximin]
+selection:
+  best_single: maximize validation Overall CCC
+  validation_convex_ssl_ensemble: maximize validation Overall CCC on simplex
+  component_balanced_mean: maximize mean validation Overall/Between/Within CCC
+  component_balanced_maximin: maximize minimum validation improvement over best-single across Between/Within subject to non-decreasing Overall
+metrics: [overall_ccc, between_ccc, within_ccc]
+published_context:
+  paper: Ryu et al., Interspeech 2025, Pitch Contour Model
+  doi: 10.21437/Interspeech.2025-1233
+  arousal_ccc: 0.744
+  dominance_ccc: 0.557
+  comparability: same IEMOCAP train/validation/test sessions and CCC dimensions; model architecture/training differ
+criteria:
+  pass:
+    - component-balanced maximin improves test Overall/Between/Within point estimates over validation-selected best single on at least one target
+  mixed:
+    - gains are partial or ordinary Overall-optimized convex ensembling is stronger
+  reject:
+    - decomposition-guided weighting degrades the fixed-split test substantially

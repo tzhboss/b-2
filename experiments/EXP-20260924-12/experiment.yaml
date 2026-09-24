@@ -1,0 +1,28 @@
+schema_version: 1
+experiment_id: EXP-20260924-12
+title: PCM-protocol fixed-split comparison for component-balanced absolute SER
+research_question: >
+  Under the exact IEMOCAP speaker-independent split used by PCM (Sessions 1-3 train, Session 4 validation,
+  Session 5 test), how do frozen SSL single/ensemble/component-balanced absolute SER systems compare to the
+  published PCM Arousal and Dominance CCC reference values?
+registered_hypothesis: >
+  The component-balanced maximin ensemble will retain positive validation-selected gains over the best single
+  SSL model on the fixed Session-5 test set and remain competitive with the published PCM reference
+  (Arousal 0.744, Dominance 0.557) without test-set model selection.
+status: {execution: registered, validity: pending, decision: pending}
+parent_experiments: [EXP-20260924-11]
+protocol_reference: configs/protocols/iemocap_pcm_fixed_split_comparison_v1.yaml
+experiment_config_reference: configs/experiments/EXP-20260924-12.yaml
+runtime:
+  commit: null
+  branch: main
+  seed: 20260920
+  integrity_mode: pcm_matched_session_split_validation_only_selection
+selected_checkpoint:
+  identifier: [wavlm_layer12, wavlm_layer24, emotion2vec_plus_large, hubert_base_ls960, wav2vec2_base]
+  selection_rule: train on Sessions 1-3; choose model/weights using Session 4 only; evaluate Session 5 once
+  selection_metric: validation Overall CCC for best/convex and decomposition-guided validation objective for maximin
+  rationale: match the published PCM split without test leakage
+supersedes: []
+superseded_by: []
+role: external-protocol SOTA context
