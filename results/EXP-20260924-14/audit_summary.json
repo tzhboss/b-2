@@ -1,0 +1,26 @@
+{
+  "experiment_id": "EXP-20260924-14",
+  "validity": "valid",
+  "decision": "pass",
+  "task": "raw absolute IEMOCAP Arousal/Dominance",
+  "split": "identical nested 5-session LOSO",
+  "bootstrap_unit": "speaker",
+  "bootstrap_reps": 10000,
+  "methods": [
+    "nested_best_single",
+    "inner_convex_ssl_ensemble",
+    "pldc_mu",
+    "pldc_sigma",
+    "pldc_mu_sigma",
+    "component_balanced_maximin"
+  ],
+  "checks": {
+    "arousal_positive_all_three_vs_best": true,
+    "arousal_overall_noninferior_point_to_pldc": true,
+    "arousal_overall_noninferior_point_to_convex": false,
+    "dominance_positive_all_three_vs_best": true,
+    "dominance_overall_noninferior_point_to_pldc": true,
+    "dominance_overall_noninferior_point_to_convex": false
+  },
+  "interpretation": "Direct paired common-OOF comparison against published PLDC mu+sigma and strong generic convex ensemble; no retraining or post-result tuning in this experiment."
+}
