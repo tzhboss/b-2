@@ -83,10 +83,20 @@ def main():
         maximin="component_balanced_maximin"
         for refm in ["nested_best_single","inner_convex_ssl_ensemble","pldc_mu_sigma"]:
             for metric in ["overall","between","within"]:
-                rec=[r for r in delta_rows if r["target"]==target and r["metric"]==metric
-                     and r["comparison"]==f"{maximin}-{refm}"][0]
-                summary_rows.append({"target":target,"method":maximin,"reference":refm,
-                                     **{k:rec[k] for k in ["metric","delta_ccc","ci95_low","ci95_high","ci_excludes_zero"]}})
+                direct=[r for r in delta_rows if r["target"]==target and r["metric"]==metric
+                        and r["comparison"]==f"{maximin}-{refm}"]
+                if direct:
+                    rec=direct[0]
+                    vals={k:rec[k] for k in ["metric","delta_ccc","ci95_low","ci95_high","ci_excludes_zero"]}
+                else:
+                    rev=[r for r in delta_rows if r["target"]==target and r["metric"]==metric
+                         and r["comparison"]==f"{refm}-{maximin}"]
+                    if not rev:
+                        raise RuntimeError(f"missing paired contrast {target}/{metric}/{maximin}/{refm}")
+                    rec=rev[0]
+                    vals={"metric":metric,"delta_ccc":-rec["delta_ccc"],"ci95_low":-rec["ci95_high"],
+                          "ci95_high":-rec["ci95_low"],"ci_excludes_zero":rec["ci_excludes_zero"]}
+                summary_rows.append({"target":target,"method":maximin,"reference":refm,**vals})
 
     pd.DataFrame(align_rows).to_csv(root/"sample_alignment.csv",index=False)
     pd.DataFrame(metric_rows).to_csv(root/"component_metrics.csv",index=False)
