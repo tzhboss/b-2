@@ -14,3 +14,21 @@ __pycache__/
 
 # Large reproducible OOF shards for corrected K-shot experiment; retained server-side.
 results/EXP-20260923-05/paired_oof_seed_*.parquet
+
+# Runtime logs are server-side artifacts.
+logs/
+*.log
+
+# Per-sample prediction tables are reproducible runtime artifacts, not formal Git evidence.
+results/**/oof_predictions.parquet
+results/**/test_predictions.parquet
+results/**/paired_oof*.parquet
+results/**/oof_*.parquet
+
+# LaTeX/render build products.
+*.aux
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+_rendercheck/

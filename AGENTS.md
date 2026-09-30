@@ -21,6 +21,11 @@ This file is the canonical home for agent and engineering operating rules.
 15. Keep protocol rules separate from one-run experiment configuration.
 16. Keep raw artifacts separate from promoted research results.
 17. Keep changes Git-traceable; do not overwrite unrelated user work.
+18. Do not commit per-sample OOF/test prediction tables; keep them under server-side artifacts even when they are useful for later re-analysis.
+19. Do not commit runtime logs, embeddings, model checkpoints, raw datasets, or raw audio.
+20. Promote only lightweight audited evidence to `results/`: aggregate metrics, confidence intervals, component deltas, selection/training audits, manifests, and other reviewer-facing evidence.
+21. Treat 10 MB as a review threshold for any new tracked result file; files approaching 100 MB require an external artifact store and must not enter Git history.
+22. Before pushing, inspect staged files and large Git blobs; a successful experiment does not justify committing all of its runtime outputs.
 
 ## Minimal context for an ordinary experiment task
 

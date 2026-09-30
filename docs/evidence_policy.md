@@ -79,3 +79,27 @@ An output may enter formal `results/` only when:
 - the results manifest records provenance.
 
 If these conditions are not satisfied, keep the output in artifacts or leave the result unpromoted.
+
+## Git retention and result granularity
+
+Git stores the scientific record, not the complete runtime dump. The default retention rule is semantic rather than extension-based.
+
+Commit to Git when an output is lightweight and necessary to understand, audit, or cite the experiment, including:
+
+- aggregate Overall / Between / Within metrics and confidence intervals;
+- fold-, seed-, speaker-, or condition-level summaries needed for audit;
+- selection, training, leakage, mapping, alignment, and runtime-integrity audits;
+- experiment reports, manifests, protocol/config files, and paper-facing tables/figures.
+
+Do not commit outputs whose primary role is to reproduce later computation rather than document the conclusion, including:
+
+- per-utterance OOF/test predictions and prediction shards;
+- embeddings, hidden states, feature caches, checkpoints, optimizer states, and model caches;
+- runtime logs and temporary files;
+- raw/copyrighted datasets or audio.
+
+These files remain server-side under `artifacts/`, `logs/`, or another experiment-scoped external storage location. If a large artifact must be published, use an external artifact store, release asset, or archival service and record its identifier/hash in the experiment metadata or report rather than placing the payload in Git history.
+
+Size is a secondary guardrail: review any newly tracked result file above 10 MB. A file near or above GitHub's 100 MB object limit is prohibited from normal Git history even if it is reproducible.
+
+Compiled manuscript PDFs may be retained for explicit submission/release milestones, but transient LaTeX/render build products are not research evidence and remain ignored.
