@@ -32,3 +32,34 @@ results/**/oof_*.parquet
 *.fls
 *.out
 _rendercheck/
+
+# Runtime logs
+logs/
+*.log
+
+# Row-level / reproducible prediction artifacts
+results/**/oof_predictions.parquet
+results/**/oof_*.parquet
+results/**/paired_oof*.parquet
+results/**/test_predictions.parquet
+results/**/audio_manifest.parquet
+
+# Model / representation artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+**/embeddings/
+**/embedding_cache/
+**/feature_cache/
+
+# LaTeX build products
+coling2027_draft/*.aux
+coling2027_draft/*.bbl
+coling2027_draft/*.blg
+coling2027_draft/*.fdb_latexmk
+coling2027_draft/*.fls
+coling2027_draft/*.log
+coling2027_draft/*.out
+coling2027_draft/main.pdf
+coling2027_draft/_rendercheck/
