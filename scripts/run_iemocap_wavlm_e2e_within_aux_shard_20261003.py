@@ -116,6 +116,8 @@ def train_variant(cfg,variant,fe,paths,yz,wtr,sw,orders,device,init_seed):
                 torch.nn.utils.clip_grad_norm_(model.parameters(),clip)
                 scaler.step(opt); scaler.update(); opt.zero_grad(set_to_none=True)
             num+=float(loss.detach().cpu())*len(ids_np); den+=len(ids_np)
+            if step % 200 == 0:
+                print("STEP",variant,"epoch",epoch+1,"step",step,"of",(len(order)+bs-1)//bs,"loss",round(float(loss.detach().cpu()),6),flush=True)
         final_loss=num/max(den,1)
         print("EPOCH",variant,epoch+1,"loss",round(final_loss,6),flush=True)
     return model,float(final_loss)
