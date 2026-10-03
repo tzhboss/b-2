@@ -1,0 +1,19 @@
+schema_version: 1
+experiment_id: EXP-20261003-06
+manifest: /data/lc/tzh/artifacts/EXP-20261003-06/msp_manifest.parquet
+wavlm_embeddings: /data/lc/tzh/artifacts/EXP-20261003-06/embeddings/*.npz
+wavlm_layer: 12
+output_root: /data/lc/tzh/results/EXP-20261003-06
+seeds: [20260920, 20260921, 20260922]
+outer_folds: 5
+hidden_dims: [128, 64]
+dropout: 0.10
+epochs: 40
+batch_size: 1024
+learning_rate: 0.002
+weight_decay: 0.0001
+aux_weight: 1.0
+bootstrap_reps: 3000
+bootstrap_seed: 20261003
+entrypoint: scripts/run_msp_wavlm_within_aux_shard_20261003.py
+merge_entrypoint: scripts/merge_msp_wavlm_within_aux_20261003.py
