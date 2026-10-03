@@ -71,12 +71,16 @@ def batch_inputs(fe,paths,device,max_seconds=None):
 
 def wmse(pred,target,weight):
     per=(pred-target).pow(2).mean(1)
-    return (per*weight).mean()
+    return (per*weight).sum()/weight.sum()
 
 def make_model(cfg,device,init_seed):
     random.seed(init_seed); np.random.seed(init_seed); torch.manual_seed(init_seed)
     if torch.cuda.is_available(): torch.cuda.manual_seed_all(init_seed)
-    m=Model(cfg["model_dir"],cfg["hidden_dims"],float(cfg["dropout"]),bool(cfg.get("gradient_checkpointing",True))).to(device)
+    m=Model(cfg["model_dir"],cfg["hidden_dims"],float(cfg["dropout"]),bool(cfg.get("gradient_checkpointing",True)))
+    m.wavlm=m.wavlm.to(device)
+    m.trunk=m.trunk.to(device)
+    m.overall=m.overall.to(device)
+    m.within=m.within.to(device)
     return m
 
 def train_variant(cfg,variant,fe,paths,yz,wtr,sw,orders,device,init_seed):
