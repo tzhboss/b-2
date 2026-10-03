@@ -30,13 +30,16 @@ def equal_speaker_weights(s):
     w=pd.Series(s).astype(str).map(lambda x:1.0/vc[x]).to_numpy(np.float32)
     return w/w.mean()
 
-def load_audio(path):
+def load_audio(path,max_seconds=None):
     y,sr=sf.read(path,dtype="float32",always_2d=False)
     if y.ndim>1: y=y.mean(axis=1)
     if sr!=16000:
         t=torch.from_numpy(np.asarray(y,dtype=np.float32)).unsqueeze(0)
         y=torchaudio.functional.resample(t,sr,16000).squeeze(0).numpy()
-    return np.asarray(y,dtype=np.float32)
+    y=np.asarray(y,dtype=np.float32)
+    if max_seconds is not None:
+        y=y[:int(round(float(max_seconds)*16000))]
+    return y
 
 class Model(nn.Module):
     def __init__(self, model_dir, hidden_dims, dropout, gradient_checkpointing=True):
@@ -61,14 +64,14 @@ class Model(nn.Module):
         z=self.trunk(pooled)
         return self.overall(z),self.within(z)
 
-def batch_inputs(fe,paths,device):
-    audio=[load_audio(p) for p in paths]
+def batch_inputs(fe,paths,device,max_seconds=None):
+    audio=[load_audio(p,max_seconds=max_seconds) for p in paths]
     x=fe(audio,sampling_rate=16000,padding=True,return_attention_mask=True,return_tensors="pt")
     return x.input_values.to(device),x.attention_mask.to(device)
 
 def wmse(pred,target,weight):
     per=(pred-target).pow(2).mean(1)
-    return (per*weight).sum()/weight.sum()
+    return (per*weight).mean()
 
 def make_model(cfg,device,init_seed):
     random.seed(init_seed); np.random.seed(init_seed); torch.manual_seed(init_seed)
@@ -92,7 +95,7 @@ def train_variant(cfg,variant,fe,paths,yz,wtr,sw,orders,device,init_seed):
         model.train(); opt.zero_grad(set_to_none=True); num=0.; den=0
         for step,st in enumerate(range(0,len(order),bs)):
             ids_np=order[st:st+bs]
-            iv,am=batch_inputs(fe,[paths[i] for i in ids_np],device)
+            iv,am=batch_inputs(fe,[paths[i] for i in ids_np],device,cfg.get("max_audio_seconds"))
             yb=Y[ids_np].to(device); wb=W[ids_np].to(device); swb=SW[ids_np].to(device)
             with torch.autocast(device_type="cuda",dtype=torch.float16,enabled=(device.type=="cuda")):
                 o,w=model(iv,am)
@@ -117,7 +120,7 @@ def train_variant(cfg,variant,fe,paths,yz,wtr,sw,orders,device,init_seed):
 def predict(cfg,model,fe,paths,device,ymean,ystd):
     model.eval(); bs=int(cfg.get("eval_batch_size",2)); out=[]
     for st in range(0,len(paths),bs):
-        iv,am=batch_inputs(fe,paths[st:st+bs],device)
+        iv,am=batch_inputs(fe,paths[st:st+bs],device,cfg.get("max_audio_seconds"))
         with torch.autocast(device_type="cuda",dtype=torch.float16,enabled=(device.type=="cuda")):
             o,_=model(iv,am)
         out.append(o.float().cpu().numpy())
@@ -192,6 +195,7 @@ def main():
       "train_speakers":len(set(trsp)),"test_speakers":len(set(tesp)),"speaker_overlap":0,
       "model_dir":cfg["model_dir"],"feature_extractor_frozen":True,"transformer_encoder_trainable":True,
       "gradient_checkpointing":bool(cfg.get("gradient_checkpointing",True)),
+      "max_audio_seconds":cfg.get("max_audio_seconds"),
       "total_parameters":int(total),"trainable_parameters":int(trainable),"losses":losses,
       "test_speaker_history_or_mean_used_as_input":False
     }
