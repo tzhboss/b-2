@@ -31,8 +31,7 @@ def speaker_moments(z,ycol,pcol,kind):
             yy=y; pp=p
         else: raise ValueError(kind)
         rows.append([str(sp),yy.mean(),pp.mean(),np.mean(yy*yy),np.mean(pp*pp),np.mean(yy*pp)])
-    a=pd.DataFrame(rows,columns=["speaker_id","my","mp","y2","p2","yp"])
-    return a
+    return pd.DataFrame(rows,columns=["speaker_id","my","mp","y2","p2","yp"])
 
 def unweighted_ccc(y,p):
     y=np.asarray(y,float); p=np.asarray(p,float)
@@ -48,23 +47,35 @@ def main():
     O=pd.concat([pd.read_parquet(f) for f in files],ignore_index=True)
     key=["sample_id","seed"]
     if O.duplicated(key).any(): raise RuntimeError("duplicate OOF sample/seed")
+    if not np.isfinite(O.select_dtypes(include=[np.number]).to_numpy()).all(): raise RuntimeError("nonfinite OOF")
     O.to_parquet(root/"oof_predictions.parquet",index=False)
 
-    metric_rows=[]; moment_cache={}
+    metric_rows=[]; raw_rows=[]; moment_cache={}
     for seed in [int(x) for x in cfg["seeds"]]:
         zs=O[O.seed.eq(seed)].copy()
         for t in TARGETS:
             ycol=f"y_{t}"
+            raw={}
             for v,prefix in VARIANTS.items():
                 pcol=f"{prefix}_{t}"
-                uw=unweighted_ccc(zs[ycol],zs[pcol])
+                uw=unweighted_ccc(zs[ycol],zs[pcol]); raw[v]=uw
                 for kind in ["overall","between","within"]:
                     sm=speaker_moments(zs,ycol,pcol,kind)
                     moment_cache[(seed,t,v,kind)]=sm
                     pt=float(ccc_from_m(sm[["my","mp","y2","p2","yp"]].to_numpy().mean(0)))
                     metric_rows.append({"seed":seed,"target":t,"variant":v,"metric":kind,
                                         "speaker_balanced_ccc":pt,"unweighted_overall_ccc":uw if kind=="overall" else np.nan})
+            raw_rows.append({"seed":seed,"target":t,
+                             "A_raw_ccc":raw["A_standard"],"C_raw_ccc":raw["C_within_aux"],
+                             "delta_raw_ccc":raw["C_within_aux"]-raw["A_standard"]})
     M=pd.DataFrame(metric_rows); M.to_csv(root/"component_metrics_by_seed.csv",index=False)
+    R=pd.DataFrame(raw_rows); R.to_csv(root/"standard_raw_ccc_by_seed.csv",index=False)
+    RS=R.groupby("target",as_index=False).agg(
+        A_raw_ccc_mean=("A_raw_ccc","mean"),
+        C_raw_ccc_mean=("C_raw_ccc","mean"),
+        delta_raw_ccc_mean=("delta_raw_ccc","mean"),
+        positive_seeds=("delta_raw_ccc",lambda x:int((x>0).sum())))
+    RS.to_csv(root/"standard_raw_ccc_summary.csv",index=False)
 
     reps=int(cfg.get("bootstrap_reps",3000)); ns=int(O.speaker_id.nunique())
     paired=[]
@@ -97,6 +108,8 @@ def main():
       "shards":len(files),"duplicate_oof_keys":int(O.duplicated(key).sum())
     }
     (root/"audit_summary.json").write_text(json.dumps(audit,indent=2)+"\n")
-    print(P.to_string(index=False)); print(json.dumps(audit,indent=2))
+    print("RAW STANDARD CCC"); print(RS.to_string(index=False))
+    print("\nPAIRED COMPONENT DELTAS"); print(P.to_string(index=False))
+    print(json.dumps(audit,indent=2))
 
 if __name__=="__main__": main()
