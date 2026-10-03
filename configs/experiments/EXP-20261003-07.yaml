@@ -1,0 +1,23 @@
+schema_version: 1
+experiment_id: EXP-20261003-07
+dataset_glob: /data/lc/dataset/iemocap/source/AbstractTTS_IEMOCAP/data/*.parquet
+audio_root: /data/lc/dataset/iemocap/data/IEMOCAP
+model_dir: /data/lc/models/microsoft-wavlm-large
+output_root: /data/lc/tzh/results/EXP-20261003-07
+sessions: [Ses01, Ses02, Ses03, Ses04, Ses05]
+seeds: [20261002, 20261003, 20261004]
+hidden_dims: [128, 64]
+dropout: 0.10
+epochs: 3
+batch_size: 2
+eval_batch_size: 2
+grad_accum_steps: 4
+encoder_lr: 0.00001
+head_lr: 0.0001
+weight_decay: 0.0001
+grad_clip: 1.0
+aux_weight: 1.0
+gradient_checkpointing: true
+bootstrap_reps: 3000
+bootstrap_seed: 20261003
+entrypoint: scripts/run_iemocap_wavlm_e2e_within_aux_shard_20261003.py
