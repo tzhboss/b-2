@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os, subprocess, sys
+import os, subprocess
 from pathlib import Path
 
 root=Path("/data/lc/tzh")
@@ -10,7 +10,7 @@ outdir=str(root/"artifacts/EXP-20261003-06/embeddings")
 logdir=root/"logs"; logdir.mkdir(parents=True,exist_ok=True)
 Path(outdir).mkdir(parents=True,exist_ok=True)
 procs=[]
-for i in [4,5,6]:
+for i in range(7):
     outfile=Path(outdir)/f"shard-{i:02d}-of-07.npz"
     if outfile.exists():
         print("SKIP existing",outfile,flush=True)
