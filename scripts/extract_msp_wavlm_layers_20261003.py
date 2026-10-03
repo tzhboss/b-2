@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import soundfile as sf
 import torch
+import torchaudio
 from transformers import Wav2Vec2FeatureExtractor, WavLMModel
 
 LAYERS=[12,24]
@@ -22,8 +23,10 @@ def sha256(path: Path, chunk=8*1024*1024):
 def load_audio(path: str):
     y,sr=sf.read(path,dtype="float32",always_2d=False)
     if y.ndim>1: y=y.mean(axis=1)
-    if sr!=16000: raise RuntimeError(f"unexpected sample rate {sr}: {path}")
-    return y
+    if sr!=16000:
+        t=torch.from_numpy(np.asarray(y,dtype=np.float32)).unsqueeze(0)
+        y=torchaudio.functional.resample(t,sr,16000).squeeze(0).numpy()
+    return np.asarray(y,dtype=np.float32)
 
 def main():
     ap=argparse.ArgumentParser()
@@ -77,7 +80,8 @@ def main():
         "model_dir":str(model_dir),
         "model_bin_sha256":sha256(model_bin) if model_bin.exists() else None,
         "torch_version":torch.__version__,"device":args.device,
-        "eval_mode":not model.training,"requires_grad_any":any(p.requires_grad for p in model.parameters())
+        "eval_mode":not model.training,"requires_grad_any":any(p.requires_grad for p in model.parameters()),
+        "resample_policy":"torchaudio.functional.resample to 16 kHz when needed"
     }
     (outdir/f"shard-{args.shard_index:02d}-meta.json").write_text(json.dumps(meta,indent=2)+"\n")
     print(json.dumps(meta),flush=True)
