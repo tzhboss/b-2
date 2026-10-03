@@ -33,6 +33,7 @@ def launch(gpu,task):
     env=os.environ.copy()
     env["CUDA_VISIBLE_DEVICES"]=str(gpu)
     env["PYTORCH_CUDA_ALLOC_CONF"]="expandable_segments:True"
+    env["CUDA_DEVICE_MEMORY_SHARED_CACHE"]=f"/tmp/cudevshr-exp07-gpu{gpu}.cache"
     log_path=LOGDIR/f"EXP-20261003-07-{seed}-{sess}.log"
     log=open(log_path,"w")
     cmd=[PY,str(ENTRY),"--config",str(CFG),"--seed",str(seed),"--held-session",sess]
@@ -42,6 +43,7 @@ def launch(gpu,task):
 
 for gpu in range(min(7,len(pending))):
     launch(gpu,pending.pop(0))
+    time.sleep(8)
 
 while running:
     time.sleep(20)
@@ -58,6 +60,7 @@ while running:
             failed.append((seed,sess,rc,str(log_path)))
         elif pending:
             launch(gpu,pending.pop(0))
+            time.sleep(8)
     if failed:
         for gpu,(p,task,log,log_path) in list(running.items()):
             p.terminate()
