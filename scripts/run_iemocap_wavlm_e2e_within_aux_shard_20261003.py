@@ -85,6 +85,7 @@ def make_model(cfg,device,init_seed):
 
 def train_variant(cfg,variant,fe,paths,yz,wtr,sw,orders,device,init_seed):
     model=make_model(cfg,device,init_seed)
+    print("MODEL_READY",variant,flush=True)
     enc=[p for n,p in model.named_parameters() if n.startswith("wavlm.") and p.requires_grad]
     head=[p for n,p in model.named_parameters() if not n.startswith("wavlm.") and p.requires_grad]
     opt=torch.optim.AdamW([
