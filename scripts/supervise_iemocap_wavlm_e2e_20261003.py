@@ -60,6 +60,7 @@ def wait_initial_model_ready(gpu,timeout=300):
 
 for gpu in range(min(7,len(pending))):
     launch(gpu,pending.pop(0))
+    time.sleep(8)
     if not wait_initial_model_ready(gpu):
         p,task,log,log_path=running[gpu]
         rc=p.poll()
@@ -81,6 +82,7 @@ while running:
             failed.append((seed,sess,rc,str(log_path)))
         elif pending:
             launch(gpu,pending.pop(0))
+            time.sleep(8)
             if not wait_initial_model_ready(gpu):
                 p2,task2,log2,log_path2=running[gpu]
                 rc2=p2.poll()
