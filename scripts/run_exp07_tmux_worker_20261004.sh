@@ -15,6 +15,7 @@ LOGROOT="$ROOT/logs"
 FAILROOT="$OUTROOT/worker_failures"
 mkdir -p "$LOGROOT" "$FAILROOT"
 cd "$ROOT"
+RUNNER_SHA="$(sha256sum "$ENTRY" | cut -d ' ' -f1)"
 
 run_one() {
   local seed="$1" sess="$2"
@@ -34,7 +35,7 @@ run_one() {
   for attempt in 1 2; do
     echo "START gpu=$GPU seed=$seed session=$sess attempt=$attempt $(date -Is)" | tee -a "$log"
     set +e
-    CUDA_VISIBLE_DEVICES="$GPU" "$PY" "$ENTRY" --config "$CFG" --seed "$seed" --held-session "$sess" >> "$log" 2>&1
+    SER_SUPERVISED_RUN=1 SER_RUNNER_SHA256="$RUNNER_SHA" CUDA_VISIBLE_DEVICES="$GPU" "$PY" "$ENTRY" --config "$CFG" --seed "$seed" --held-session "$sess" >> "$log" 2>&1
     rc=$?
     set -e
     if [ "$rc" -eq 0 ] && [ -f "$out/predictions.parquet" ] && [ -f "$out/audit.json" ]; then
