@@ -46,8 +46,9 @@ class Model(nn.Module):
         super().__init__()
         self.wavlm=WavLMModel.from_pretrained(model_dir,local_files_only=True)
         self.wavlm.feature_extractor._freeze_parameters()
+        self.wavlm.enable_input_require_grads()
         if gradient_checkpointing:
-            self.wavlm.gradient_checkpointing_enable()
+            self.wavlm.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
         h1,h2=hidden_dims
         self.trunk=nn.Sequential(
             nn.Linear(self.wavlm.config.hidden_size,h1),nn.LayerNorm(h1),nn.GELU(),nn.Dropout(dropout),
