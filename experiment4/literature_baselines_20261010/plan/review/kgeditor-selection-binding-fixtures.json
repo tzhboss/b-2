@@ -1,0 +1,51 @@
+{
+  "status": "PASS_FIXTURE_EXPECTATIONS",
+  "auditor_sha256": "8c16adf9a98a05af384a96c04fd411deb84fb8c61dc4b3d2e4ba39bcb7fa1dfa",
+  "cases": [
+    {
+      "case": "valid",
+      "failures": [],
+      "matched": [
+        [
+          6171,
+          0.9
+        ]
+      ]
+    },
+    {
+      "case": "wrong_selected_epoch",
+      "failures": [
+        "selected epoch monitor equals declared selection score"
+      ],
+      "matched": [
+        [
+          6171,
+          0.4
+        ]
+      ]
+    },
+    {
+      "case": "missing_epoch19",
+      "failures": [
+        "one logged validation monitor for each completed epoch"
+      ],
+      "matched": [
+        [
+          6171,
+          0.9
+        ]
+      ]
+    },
+    {
+      "case": "wrong_step",
+      "failures": [
+        "selected checkpoint optimizer step corresponds to epoch",
+        "selected epoch has logged monitor at its checkpoint step",
+        "selected epoch monitor equals declared selection score",
+        "logged epoch tag links selected step to selected epoch"
+      ],
+      "matched": []
+    }
+  ],
+  "scope": "synthetic selection binding only; no model inference or native artifact PASS"
+}

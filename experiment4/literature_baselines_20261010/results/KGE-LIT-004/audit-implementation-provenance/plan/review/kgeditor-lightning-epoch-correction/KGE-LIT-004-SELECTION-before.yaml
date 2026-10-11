@@ -1,0 +1,18 @@
+id: KGE-LIT-004-SELECTION
+status: waiting_for_cpu_audits
+registration_status: REGISTERED
+registered_utc: '2026-10-10T13:21:14.424180+00:00'
+coordinator_sha256: cf27b9c0f6aa30a8ff118721c6ea6d0d6f577a0a3d98f18d322874d51e598441
+auditor_sha256: 8c16adf9a98a05af384a96c04fd411deb84fb8c61dc4b3d2e4ba39bcb7fa1dfa
+jobs:
+- id: kgeditor-e-fb15k237-s0
+  stage: waiting_for_cpu_audit
+- id: kgeditor-e-wn18rr-s0
+  stage: blocked_prerequisite_failed
+  status: NO_PASS
+  prerequisite: cpu_audit_failed
+active_processes: []
+no_automatic_promotion: true
+scope: Read-only added epoch/step/score provenance binding; original training and
+  audit code frozen
+coordinator_pid: 674894

@@ -1,0 +1,131 @@
+{
+  "status": "PASS_EXPLORATORY_AUDITED_SEED17_PARAMETER_GEOMETRY",
+  "rows": [
+    {
+      "method": "SharedFrozenFull",
+      "seed": 17,
+      "processed_entities": 3753,
+      "accepted_updates": 3753,
+      "zero_fallbacks": 0,
+      "step_status_counts": {
+        "direct_target": 2300,
+        "slsqp_0": 1453
+      },
+      "source_squared_distance": 59.63332747117106,
+      "exact_source_rows": 2300,
+      "max_absolute_movement_to_radius_ratio": 0.3542950354052752,
+      "source_target_max_movement_to_radius_ratio": 0.35548664509250844,
+      "source_target_bounds_ok_all_steps": true,
+      "projected_steps_initially_violate_rank_guards": 1453,
+      "rows_within_one_percent_of_radius": 0,
+      "old_parameters_exactly_unchanged": true
+    },
+    {
+      "method": "CapacityFrozenFull",
+      "seed": 17,
+      "processed_entities": 3753,
+      "accepted_updates": 3753,
+      "zero_fallbacks": 0,
+      "step_status_counts": {
+        "direct_target": 2347,
+        "slsqp_0": 1406
+      },
+      "source_squared_distance": 59.112223987646196,
+      "exact_source_rows": 2347,
+      "max_absolute_movement_to_radius_ratio": 0.3542950354052752,
+      "source_target_max_movement_to_radius_ratio": 0.35548664509250844,
+      "source_target_bounds_ok_all_steps": true,
+      "projected_steps_initially_violate_rank_guards": 1406,
+      "rows_within_one_percent_of_radius": 0,
+      "old_parameters_exactly_unchanged": true
+    },
+    {
+      "method": "SharedFrozenScoped",
+      "seed": 17,
+      "processed_entities": 3753,
+      "accepted_updates": 3753,
+      "zero_fallbacks": 0,
+      "step_status_counts": {
+        "direct_target": 2736,
+        "slsqp_0": 1017
+      },
+      "source_squared_distance": 28.441327107748435,
+      "exact_source_rows": 2736,
+      "max_absolute_movement_to_radius_ratio": 0.3542950354052752,
+      "source_target_max_movement_to_radius_ratio": 0.35548664509250844,
+      "source_target_bounds_ok_all_steps": true,
+      "projected_steps_initially_violate_rank_guards": 1017,
+      "rows_within_one_percent_of_radius": 0,
+      "old_parameters_exactly_unchanged": true
+    },
+    {
+      "method": "CapacityFrozenScoped",
+      "seed": 17,
+      "processed_entities": 3753,
+      "accepted_updates": 3753,
+      "zero_fallbacks": 0,
+      "step_status_counts": {
+        "direct_target": 2799,
+        "slsqp_0": 954
+      },
+      "source_squared_distance": 27.875476224029043,
+      "exact_source_rows": 2799,
+      "max_absolute_movement_to_radius_ratio": 0.3542950354052752,
+      "source_target_max_movement_to_radius_ratio": 0.35548664509250844,
+      "source_target_bounds_ok_all_steps": true,
+      "projected_steps_initially_violate_rank_guards": 954,
+      "rows_within_one_percent_of_radius": 0,
+      "old_parameters_exactly_unchanged": true
+    }
+  ],
+  "pairs": [
+    {
+      "scope": "Full",
+      "seed": 17,
+      "changed_new_rows": 106,
+      "source_distance_improved_rows": 87,
+      "source_distance_worsened_rows": 5,
+      "max_row_change_l2": 0.2342078660489504,
+      "total_source_squared_distance_delta": -0.5211034835248654
+    },
+    {
+      "scope": "Scoped",
+      "seed": 17,
+      "changed_new_rows": 108,
+      "source_distance_improved_rows": 97,
+      "source_distance_worsened_rows": 3,
+      "max_row_change_l2": 0.2342078660489504,
+      "total_source_squared_distance_delta": -0.5658508837193905
+    }
+  ],
+  "source_sha256": {
+    "tables/common-comparison-v4/table.json": "139b5ca48ea7d40a23b829f4c1369872f29705558c7f438886de756997585f99",
+    "artifacts/incremental/newentityonly-distmult-s17/best.pt": "271fc956663f366943b7ad7db4f3b7f7a2fa4bf65c0af95ce73fd77fd023dbf0",
+    "artifacts/incremental/newentityonly-distmult-s17/initial.pt": "d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7",
+    "artifacts/incremental/newentityonly-distmult-s17/training-receipt.json": "e8c7261e88fa4acc74f7b43048d4a32d1cc0011dc6f7bf854a86d8e33004cacb",
+    "artifacts/incremental/shared-graph-full-s17/best.pt": "d324a9caee91df9142d542b29ef643d50960ed36da0be51130968b065e6aa7c4",
+    "artifacts/incremental/shared-graph-full-s17/training-receipt.json": "b2204a0eb40ff72a7149f14d8954ff9f7fb1fc9eae7048aee4cef873f9fc5095",
+    "artifacts/incremental/shared-graph-full-s17/steps.json": "bac2cdaae678e1b9e408b37b134bd698a4c01e30a64b3a14bb77269f6447cbde",
+    "artifacts/incremental/shared-graph-full-s17/shared-replay.npz": "a17bcad115ed682b3113896a8fe9c035c3f9169bffa8b7dca00247bf371f9b31",
+    "artifacts/incremental/capacity-full-s17/best.pt": "1ed5dde1c4845354bcd521e9d9ebcd0d5dab8e2acf1764ba5ff947db4866127e",
+    "artifacts/incremental/capacity-full-s17/training-receipt.json": "82d6d23d5db9935afb91fef58eaa6b234c63e2c5934900d3afa86eb75f6f640d",
+    "artifacts/incremental/capacity-full-s17/steps.json": "df3e701e6dbf173f9cd868a29562ac46f350587c6c3162b137b13ed9db8c0ad6",
+    "artifacts/incremental/capacity-full-s17/shared-replay.npz": "d1446033c532008e4bc2dd5449da860c4c8ac70d291ac492b7c1fdc9eaee73a7",
+    "artifacts/incremental/shared-graph-scoped-s17/best.pt": "135c7915d09bc5dda219ad0c8f033b888b7e9ca75cd90f81f9f6d3ab6f3a3445",
+    "artifacts/incremental/shared-graph-scoped-s17/training-receipt.json": "caa032ec476313b9a1580ad0dc76679c30a7810d12336ca51a673feab28e5f0c",
+    "artifacts/incremental/shared-graph-scoped-s17/steps.json": "56f5369cbaae0a4c56ea1dc9c9cec2dd400c311abe8feb48e63e53a2e965fd9a",
+    "artifacts/incremental/shared-graph-scoped-s17/shared-replay.npz": "97190bbdf1202b5993365a6f5e7b4de23ca2b666eeebfabaca83eb0e1cb89828",
+    "artifacts/incremental/capacity-scoped-s17/best.pt": "afd464672333045edffb572921c8505c9d04bff8983e9f6ff823952b776510f6",
+    "artifacts/incremental/capacity-scoped-s17/training-receipt.json": "5e0e41cee31d1e035c4db4f146e3b6cebbb4c5921b467ab0ec8496dc3f32afe5",
+    "artifacts/incremental/capacity-scoped-s17/steps.json": "a8133f1f8bae4709c041af484cea1c343d1e755d17403fcd2ac086cab350da07",
+    "artifacts/incremental/capacity-scoped-s17/shared-replay.npz": "e2259141cdd5fab7f71a5a145af740f065c1804d1006a49af913c8fc5d4b7473"
+  },
+  "optimization_or_training": false,
+  "new_valid_or_test_metrics_read": false,
+  "registered_utility_decision": false,
+  "limits": [
+    "Single-seed endpoint diagnostic; parameter distance is not retrieval utility.",
+    "Remaining rank constraints are not individually attributed causally here.",
+    "No active source, scope, update order, norm budget or gate changed."
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "id": "KGE-ENTITY-COMMON-RANK-CAPACITY-037",
+  "scope": "Fixed full/scoped frozen-old rank projection with TRAIN-certified saturated query exemptions; three-seed exposed development comparison",
+  "source_root": "../literature_baselines_20261010",
+  "dataset": "repos/FastKGE/data/FB_CKGE",
+  "source_audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "source_template": "newentityonly-distmult-s{seed}",
+  "verified_proposal_template": "proposal-qppred-s{seed}",
+  "scope_directory": "artifacts/rank-capacity-scope35",
+  "k": 10,
+  "score_batch": 256,
+  "preflight_updates": 8,
+  "preflight_joint_updates": 4,
+  "full_recount_every_updates": 128,
+  "progress_every_updates": 128,
+  "budget_seconds_per_job": 7200,
+  "parameter_budget": {
+    "max_old_rows": 64,
+    "old_penalty": 4.0,
+    "old_radius_fraction": 0.1
+  },
+  "solver": {
+    "guard_margin": 1E-08,
+    "ftol": 1E-10,
+    "maxiter": 200,
+    "max_cut_rounds": 8,
+    "cut_rows_per_round": 64,
+    "primal_tolerance": 1E-10,
+    "movement_tolerance": 1E-08
+  },
+  "validation_seed": 124,
+  "validation_queries_per_split": 1024,
+  "available_gpu_indices": [
+    1,
+    2
+  ],
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-FULL-INDEX-EQUIVALENCE-034/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-RANK-CAPACITY-PREFLIGHT-036/experiment.yaml"
+  ],
+  "max_concurrent_audits": 4,
+  "worker": "scripts/run_graph_with_preparation_costs.py",
+  "log_directory": "logs/rank-capacity37",
+  "output_directory": "artifacts/rank-capacity37-checks",
+  "jobs": [
+    {
+      "id": "capacity-full-s17",
+      "method": "CapacityFrozenFull",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "capacity-scoped-s17",
+      "method": "CapacityFrozenScoped",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    },
+    {
+      "id": "capacity-full-s29",
+      "method": "CapacityFrozenFull",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "capacity-scoped-s29",
+      "method": "CapacityFrozenScoped",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    },
+    {
+      "id": "capacity-full-s43",
+      "method": "CapacityFrozenFull",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "capacity-scoped-s43",
+      "method": "CapacityFrozenScoped",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    }
+  ],
+  "auditor": "scripts/run_graph_with_preparation_costs.py",
+  "preflight_per_job": true,
+  "gpu_queue_dependencies": [
+    "experiments/KGE-ENTITY-COMMON-RANK-CAPACITY-PREFLIGHT-036/experiment.yaml"
+  ],
+  "required_dependency_statuses": {
+    "experiments/KGE-ENTITY-COMMON-RANK-CAPACITY-PREFLIGHT-036/experiment.yaml": "completed_audited_artifact_checks_only"
+  },
+  "utility_new_mrr_ratio": 0.98,
+  "utility_old_loss_ratio": 0.75,
+  "utility_direction_mrr_ratio": 0.98,
+  "utility_direction_hits10_ratio": 0.95,
+  "cpu_threads_per_job": 2,
+  "capacity_diagnostic_directory": "artifacts/rank-capacity-diagnostic/strict-train-v2",
+  "original_scope_directory": "artifacts/shared-rank-scope24",
+  "utility_exempt_train_nonworse": true,
+  "utility_no_boundary_ties": true,
+  "additional_preparation_costs": [
+    {
+      "path": "artifacts/shared-rank-scope24/shared-rank-scope-s{seed}/receipt.json",
+      "elapsed_field": "elapsed_s",
+      "amortization": 1
+    },
+    {
+      "path": "artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json",
+      "elapsed_field": "elapsed_s",
+      "amortization": 3
+    },
+    {
+      "path": "artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json",
+      "elapsed_field": "elapsed_s",
+      "amortization": 3
+    }
+  ],
+  "additional_method_limits": [
+    "TRAIN-certified capacity exemptions explicitly waive old TRUE/P membership at selected affected keys; no all-old-knowledge guarantee.",
+    "Independent utility includes old TRAIN truth loss and MRR costs at exempted keys; final common evaluation is unchanged.",
+    "Original024 preparation plus035 and amortized three-seed certificate costs included; untimed split-integrity setup excluded."
+  ]
+}

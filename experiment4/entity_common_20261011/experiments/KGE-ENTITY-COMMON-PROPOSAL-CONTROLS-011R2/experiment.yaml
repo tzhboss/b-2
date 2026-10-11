@@ -1,0 +1,17 @@
+id: KGE-ENTITY-COMMON-PROPOSAL-CONTROLS-011R2
+status: completed_synthetic_controls_only
+config: configs/safe-proposal-controls-r2.json
+protocol: plan/safe-proposal-protocol.md
+scope: Independent synthetic oracle and safety tests only; no real graph run
+old_failure: KGE-ENTITY-COMMON-PROPOSAL-CONTROLS-011
+repair: 'Test had initialized at exact optimum: bound0 made no-update the optimum;
+  bound1 makes maxiter1 exercise actual failure. Producer/ordinary cases/tolerances
+  unchanged.'
+registered_utc: '2026-10-10T19:23:40.559741+00:00'
+frozen_input_sha256:
+  src/safe_proposal.py: 1d59ab00ed48cf660738265f4dd31a2d3dbdd1c87a6f292f6334f619e334b947
+  scripts/check_safe_proposal_controls_v2.py: 5b17b4b73e92806188d1360cec1a5c459123dd3d228ce07121fa5612c45450e8
+  configs/safe-proposal-controls-r2.json: d070288a04a3e8625702705c51ce9bae8378b377d827287c7f84d3e80e6141e2
+  plan/safe-proposal-protocol.md: 5f4be68ddde812610fcd28706cd5c0a3ae4a9019e133f72738b0071f58dcdc14
+active_processes: []
+exit_code: 0

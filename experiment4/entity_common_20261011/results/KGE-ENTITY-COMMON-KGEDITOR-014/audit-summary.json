@@ -1,0 +1,30 @@
+{
+  "jobs_total": 2,
+  "jobs_passed": 1,
+  "audits": [
+    {
+      "id": "kgeditor-common-r3-s29",
+      "scope_checks": 209,
+      "full_train_query_coverage": 37214,
+      "native_steps_replayed": 2,
+      "max_native_delta_error": 2.2649765014648438e-06,
+      "alias_receipt": {
+        "cpu_constructor_shared_storage": true,
+        "operational_storage_disjoint": true,
+        "restored_model_embedding_equals_clean_base": true,
+        "cpu_restore_rule": "Clone conditioner embedding to reproduce native GPU disjoint storage before loading learner"
+      },
+      "limits": [
+        "Two native CPU step replays, full TRAIN coverage, parameter scope; not independent full optimizer retraining."
+      ],
+      "status": "PASS_COMMON_LM_ONLINE_AND_RANK_AUDIT",
+      "failures": [],
+      "candidate_score_checks": 1080768,
+      "max_abs_logit_error": 4.76837158203125e-06,
+      "max_initial_logit_error": 1.0967254638671875e-05,
+      "rank_mismatches": 0,
+      "old_queries": 74428,
+      "new_queries": 12406
+    }
+  ]
+}

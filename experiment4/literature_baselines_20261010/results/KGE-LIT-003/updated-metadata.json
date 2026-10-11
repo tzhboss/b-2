@@ -1,0 +1,1760 @@
+{
+  "method": "SAGE",
+  "commit": "d40a6031c8a1eb8dae15454b9b4da7ac2c41c7f9",
+  "origin": "https://github.com/lyfxjtu/Dynamic-Embedding.git",
+  "tag_refs": "d40a6031c8a1eb8dae15454b9b4da7ac2c41c7f9 refs/tags/V1.0",
+  "defaults": {
+    "-formula": "Two",
+    "-emb_dim": 180,
+    "-emb_dim2": 210,
+    "-emb_dim3": 250,
+    "-emb_dim4": 270,
+    "-emb_dim5": 290,
+    "-gpu": 1,
+    "-dataset": "FACT",
+    "-epoch_num": 200,
+    "-new_dim_epoch_num": 1,
+    "-num_samples_for_retrain": 1000,
+    "-expand_dim": false,
+    "-use_difficult_samples": false,
+    "-snapshot_num": 5,
+    "-loss_name": "Margin",
+    "-train_new": true,
+    "-skip_previous": "False",
+    "-lifelong_name": "LKGE",
+    "-optimizer_name": "Adam",
+    "-embedding_model": "TransE",
+    "-margin": 8.0,
+    "-batch_size": 2048,
+    "-learning_rate": 0.0001,
+    "-l2": 0.0,
+    "-neg_ratio": 10,
+    "-patience": 3,
+    "-regular_weight": 0.01,
+    "-reconstruct_weight": 0.1,
+    "-using_regular_loss": "True",
+    "-using_reconstruct_loss": "True",
+    "-using_embedding_transfer": "False",
+    "-using_finetune": "True",
+    "-save_path": "./checkpoint/",
+    "-data_path": "./data/",
+    "-log_path": "./logs/",
+    "-num_layer": 1,
+    "-num_workers": 1,
+    "-valid_metrics": "mrr",
+    "-valid": true,
+    "-note": "",
+    "-seed": 55,
+    "-rank_export_dir": null,
+    "-result_export_dir": "res_diff_datasets/"
+  },
+  "source_sha256": {
+    "Readme.md": "fba7caf710b3dea4f70d4b95ead29c45f34a6109e7c8b0e13c50e0256deaa397",
+    "main.py": "453fdd3f836507fa7bfe3465aa557b15c94362ca940b81ac6eb4948bcebe81e4",
+    "requirements.txt": "d0ab878024a97618d8bc3ecddcf4df816b06fff02955125e6101445a950ad377",
+    "src/config.py": "54481b2c79f910792fcfe239defbc7ed9f82e174980d72ba8efeeb784d2e5768",
+    "src/data_load/KnowledgeGraph.py": "51606a2152e268df3d9ba001a80fde05e6c9b11856c7a27a4e8d39b5f490167f",
+    "src/data_load/data_loader.py": "dc01e61d861e6be0e341c6a3994f64f3e6db1b673a2b596869e20da48df71e78",
+    "src/model/BaseModel.py": "15e611760cd6e672b7bf243991398c3b312eeb6f2a5bb3e0903195c542212923",
+    "src/model/CWR.py": "8a1a321579d4acaf6c2ec7ea0d0cf69931f7ff156760d65eec68cf6712323de6",
+    "src/model/EMR.py": "642f3f7eff1c286ec7162fa3b14528a96981d1b8463682d45ff619a4e6a91f1a",
+    "src/model/EWC.py": "1d66f3ff2d5e35464e7d3d05274419d7214710b53c192bc1c50204041ac54f43",
+    "src/model/GEM.py": "3fc88a7f0c6dfca48fd172f783bd5dbee1e17aee1a37ddc9cb2eabdb07a09cce",
+    "src/model/LAN.py": "d1349d38b041ee27d54faef5f576101c54e39fd66ee8ef991b7f58487dcb2647",
+    "src/model/LKGE.py": "8f213510a1b73a409da532e6e35a28c441968bb311d589f571c03cc366c3369d",
+    "src/model/MEAN.py": "cfba4a5ca497ec012853224a93ac44be3bce5d79fd62be960ccdc08eb9d01e3d",
+    "src/model/PNN.py": "ca36fdb78b407190cb7cd5d45eecb9acf20fb74cfcbd8b151af11aceb36ffffd",
+    "src/model/SI.py": "dc1ed100f280b0097f69282eb0225968fef8f7f48cae9f28242b26c483c92af3",
+    "src/model/Snapshot_only.py": "b57cfc5b2db4c61e9fb3754084368e89b09fafa675424850626db57ab6f13d2a",
+    "src/model/finetune.py": "657cc2865461515ed7d8fe987a21b0f94b2fdc11be6dae3867ff916424e092e7",
+    "src/model/model_process.py": "eb203fb0d6371bdcba370211b94f1cf10c4bb07f6bd28ef23acdad3290b9a17f",
+    "src/model/retraining.py": "40dda606dcdbae4ffe11b55bb88e1f86d12ed98f7cdf51f3e49e8b51abd59b27",
+    "src/parse_args.py": "aa8915cd608bd2629a4d04210b6f6dd63d403c16f51a5ca9f9f885178dadd9ac",
+    "src/test.py": "d04460381b70d99492d551625f58f1f7461d32df1ee1641e5852e6d175f38675",
+    "src/train.py": "c4de58bb08272aea0838b9e272a6eb72a99a5d6599ac35bf3ccfa4b175eeaf56",
+    "src/utils.py": "c1b183f7b039c5533879fa91ea7ede25df89a14d0f496e1cd0aef08876310e50"
+  },
+  "datasets": [
+    {
+      "dataset": "ENTITY",
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "train": 27832,
+          "valid": 9278,
+          "test": 9278,
+          "bidirectional_test_queries": 18556,
+          "cumulative_entities": 2909,
+          "cumulative_relations_without_inverse": 233,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 1,
+          "train": 43265,
+          "valid": 14423,
+          "test": 14423,
+          "bidirectional_test_queries": 28846,
+          "cumulative_entities": 5817,
+          "cumulative_relations_without_inverse": 236,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 2,
+          "train": 44269,
+          "valid": 14758,
+          "test": 14758,
+          "bidirectional_test_queries": 29516,
+          "cumulative_entities": 8725,
+          "cumulative_relations_without_inverse": 236,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 3,
+          "train": 42302,
+          "valid": 14102,
+          "test": 14102,
+          "bidirectional_test_queries": 28204,
+          "cumulative_entities": 11633,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 4,
+          "train": 28394,
+          "valid": 9466,
+          "test": 9466,
+          "bidirectional_test_queries": 18932,
+          "cumulative_entities": 14541,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": []
+        }
+      ],
+      "totals": {
+        "train": 186062,
+        "valid": 62027,
+        "test": 62027
+      },
+      "files": [
+        {
+          "path": "0/train.txt",
+          "sha256": "861c451e9079d5369ebf4e983c16e3879e63c498fea36f3755c7d4895736bee1",
+          "bytes": 2121944
+        },
+        {
+          "path": "0/valid.txt",
+          "sha256": "256d04ed48d8b4d37a96b496904a96930b237cd442f5e2f7d0c6ef05ea0d8f39",
+          "bytes": 709419
+        },
+        {
+          "path": "0/test.txt",
+          "sha256": "d874206a169d5f3d4d028d5afdbc8746d7309dcacc11752aedbe5a8f3fb82cad",
+          "bytes": 713421
+        },
+        {
+          "path": "1/train.txt",
+          "sha256": "eb49f6783ea1f2a4f131db51decfc32f39262aa48b5c029e8c8415b29f0f561d",
+          "bytes": 3293050
+        },
+        {
+          "path": "1/valid.txt",
+          "sha256": "0c4ffb0233667a4834f39de219b3cd9cc376f447da5f0a50d8fc2fe03d8d9c9a",
+          "bytes": 1096946
+        },
+        {
+          "path": "1/test.txt",
+          "sha256": "f9844a62e42c94be2d78b5ada7f205633f1b144d8a58ba89f6f08f4f31254957",
+          "bytes": 1098203
+        },
+        {
+          "path": "2/train.txt",
+          "sha256": "e42fafeb84244db3b5da4d7a2449b19ad72847d4cf8c7e89482847e6415a199a",
+          "bytes": 3339549
+        },
+        {
+          "path": "2/valid.txt",
+          "sha256": "f997b0a9c509b1a0997f19b07a2f68b5ba4c513b24b480118c55b25415d924f4",
+          "bytes": 1116991
+        },
+        {
+          "path": "2/test.txt",
+          "sha256": "6a5a1c376895f998e1e99383b4dae2586f287b793aa461e51d4005d757ffab9a",
+          "bytes": 1118559
+        },
+        {
+          "path": "3/train.txt",
+          "sha256": "71ba4abc173b57a718bae35e3a43b1f7dc3b3355af71951a527740d6818fb254",
+          "bytes": 3228393
+        },
+        {
+          "path": "3/valid.txt",
+          "sha256": "0aa0c1ecec3e00289640d14c2741cf601e99f426dea5b9b22040fe35d636036c",
+          "bytes": 1076128
+        },
+        {
+          "path": "3/test.txt",
+          "sha256": "7380489fa0bc0d34ae755395332be55cb92a9298ad92a3a5d12acb57c9b963ec",
+          "bytes": 1074484
+        },
+        {
+          "path": "4/train.txt",
+          "sha256": "07e8325818f457729432bc5cb03ab4f1f0dd582974b614d5bc5a2e32ae74f9d9",
+          "bytes": 2279435
+        },
+        {
+          "path": "4/valid.txt",
+          "sha256": "73312c06d5e1e92469e31585a32709cd3b6656ca02c06b2aed78f31786d366eb",
+          "bytes": 759745
+        },
+        {
+          "path": "4/test.txt",
+          "sha256": "84d00c7b75876a7c0d85107b96a634a408d2dd44b67904210e394aa8c8bb2789",
+          "bytes": 763509
+        }
+      ],
+      "split_contract": "author-distributed five incremental 3:1:1 splits; not regenerated",
+      "maximum_main_training_optimizer_steps": 37000,
+      "optimizer_steps_per_epoch_by_snapshot": [
+        28,
+        43,
+        44,
+        42,
+        28
+      ]
+    },
+    {
+      "dataset": "FACT",
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "train": 37214,
+          "valid": 12405,
+          "test": 12405,
+          "bidirectional_test_queries": 24810,
+          "cumulative_entities": 10513,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 1,
+          "train": 37213,
+          "valid": 12405,
+          "test": 12405,
+          "bidirectional_test_queries": 24810,
+          "cumulative_entities": 12779,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 2,
+          "train": 37213,
+          "valid": 12405,
+          "test": 12405,
+          "bidirectional_test_queries": 24810,
+          "cumulative_entities": 13586,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 3,
+          "train": 37213,
+          "valid": 12405,
+          "test": 12405,
+          "bidirectional_test_queries": 24810,
+          "cumulative_entities": 13894,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 4,
+          "train": 37213,
+          "valid": 12405,
+          "test": 12405,
+          "bidirectional_test_queries": 24810,
+          "cumulative_entities": 14541,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": []
+        }
+      ],
+      "totals": {
+        "train": 186066,
+        "valid": 62025,
+        "test": 62025
+      },
+      "files": [
+        {
+          "path": "0/train.txt",
+          "sha256": "de315d7db0073fcbc505511d8e36825e0b2acc338cade67fa26638e5c27d1045",
+          "bytes": 2710665
+        },
+        {
+          "path": "0/valid.txt",
+          "sha256": "ee970ab01af429812dbc32c4174f017d0842b57fa2d737bb232026f35973ba68",
+          "bytes": 905564
+        },
+        {
+          "path": "0/test.txt",
+          "sha256": "9908d692c8c310b6d669cd1fd0e89ef183fada5170ba4341f56cd17314045ce2",
+          "bytes": 906538
+        },
+        {
+          "path": "1/train.txt",
+          "sha256": "790cf4f5a2d471c4a49d7c93b2500c20d5bf62c60e0f896263f381b740a03f28",
+          "bytes": 2719263
+        },
+        {
+          "path": "1/valid.txt",
+          "sha256": "53b5e3927d8cb24810a38e437962980cea3d02a9f4b95bbc56dd9280c9bd3774",
+          "bytes": 900330
+        },
+        {
+          "path": "1/test.txt",
+          "sha256": "e7e28af1dcd40aaa2d326eed30641f341b0c26cac888fad5cd0ad9849274baf9",
+          "bytes": 905896
+        },
+        {
+          "path": "2/train.txt",
+          "sha256": "292f922ddbff7608c90b936b136f508d567713842577168e186b395401989d7e",
+          "bytes": 2765062
+        },
+        {
+          "path": "2/valid.txt",
+          "sha256": "96dd4788c4f5bb7f0f2118b8e016bbbf07f80436aecc733de9e4e34520880300",
+          "bytes": 926774
+        },
+        {
+          "path": "2/test.txt",
+          "sha256": "3962471621f9347ae98bcdd4b1116f8628c171e20d50fc4090f4acb5fb9f1981",
+          "bytes": 922312
+        },
+        {
+          "path": "3/train.txt",
+          "sha256": "e39a5ae30f3096c4e71969d790fe14fc0ec1c711d6b46f1aed76d8c39cd71cd8",
+          "bytes": 2868118
+        },
+        {
+          "path": "3/valid.txt",
+          "sha256": "550719f94e9cd476da6e063231ad86291f4e5cca90b91beeb658b5a92ccb0223",
+          "bytes": 955944
+        },
+        {
+          "path": "3/test.txt",
+          "sha256": "b3e7ada6026ed4a6c4f0f825107dd7c88ed168f67237abdb69bf41c3a2de3a58",
+          "bytes": 957913
+        },
+        {
+          "path": "4/train.txt",
+          "sha256": "e8c17a74678450bc382f6e420477a7f1f93b2ec3ea0e28dc89a3e453a46d6b4c",
+          "bytes": 3206571
+        },
+        {
+          "path": "4/valid.txt",
+          "sha256": "bc951b1753b8a7409ed9f031a8f8f61e650c75198156de956c7115d7fec7e92a",
+          "bytes": 1069543
+        },
+        {
+          "path": "4/test.txt",
+          "sha256": "cea839bc3aa2777fb5fc6afed0d7cf00dcec6f5ea57ab07112bdd183fcb7c75d",
+          "bytes": 1069283
+        }
+      ],
+      "split_contract": "author-distributed five incremental 3:1:1 splits; not regenerated",
+      "maximum_main_training_optimizer_steps": 37000,
+      "optimizer_steps_per_epoch_by_snapshot": [
+        37,
+        37,
+        37,
+        37,
+        37
+      ]
+    },
+    {
+      "dataset": "HYBRID",
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "train": 34535,
+          "valid": 11513,
+          "test": 11513,
+          "bidirectional_test_queries": 23026,
+          "cumulative_entities": 8631,
+          "cumulative_relations_without_inverse": 86,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 1,
+          "train": 12523,
+          "valid": 4175,
+          "test": 4175,
+          "bidirectional_test_queries": 8350,
+          "cumulative_entities": 10043,
+          "cumulative_relations_without_inverse": 102,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 2,
+          "train": 52809,
+          "valid": 17604,
+          "test": 17604,
+          "bidirectional_test_queries": 35208,
+          "cumulative_entities": 12780,
+          "cumulative_relations_without_inverse": 151,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 3,
+          "train": 62003,
+          "valid": 20668,
+          "test": 20668,
+          "bidirectional_test_queries": 41336,
+          "cumulative_entities": 14395,
+          "cumulative_relations_without_inverse": 209,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 4,
+          "train": 24194,
+          "valid": 8066,
+          "test": 8066,
+          "bidirectional_test_queries": 16132,
+          "cumulative_entities": 14541,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": []
+        }
+      ],
+      "totals": {
+        "train": 186064,
+        "valid": 62026,
+        "test": 62026
+      },
+      "files": [
+        {
+          "path": "0/train.txt",
+          "sha256": "2303ab449b996465f85e6b0344875fb71800df8bc999051ea5f776e29b89f760",
+          "bytes": 2484611
+        },
+        {
+          "path": "0/valid.txt",
+          "sha256": "051b256c86180d3e9c07acb21189d72ae8f43301e50285d785bfbe6bef522941",
+          "bytes": 828636
+        },
+        {
+          "path": "0/test.txt",
+          "sha256": "c117e7075bb27fa98192d4869b88d66c8f8015bf6204ce222516f6ce7466c064",
+          "bytes": 827752
+        },
+        {
+          "path": "1/train.txt",
+          "sha256": "94a22b36bb3cf0d3335a8bb79709e08ed1d4f3698c8db6cd054f41615763ef1a",
+          "bytes": 950102
+        },
+        {
+          "path": "1/valid.txt",
+          "sha256": "46e755f35075c0971eca6f12020ff1dd2eac267add59228f04834e8b215b15a1",
+          "bytes": 317188
+        },
+        {
+          "path": "1/test.txt",
+          "sha256": "bab1e120809b61b0567ca61667406050e3779e8341cc33c7c4c604240552a24f",
+          "bytes": 318288
+        },
+        {
+          "path": "2/train.txt",
+          "sha256": "b1fd97cf6ff6d02e5142059a9da9cf6390b59786ea85f56844e6babd73f85b21",
+          "bytes": 3875221
+        },
+        {
+          "path": "2/valid.txt",
+          "sha256": "cac54f8ab65b34aa7a9c4d348d6363f9ce88f313e0e6f2aea6f31d966c17f643",
+          "bytes": 1295804
+        },
+        {
+          "path": "2/test.txt",
+          "sha256": "8c3f2393bac47dd9f7d12a4ccec393eeea583a30f5e96f4f903243f43194552d",
+          "bytes": 1292481
+        },
+        {
+          "path": "3/train.txt",
+          "sha256": "a5a4d156bc2863308ed6dc4c178d37cab3e4b101ebdb1a5cbd640027a07a2192",
+          "bytes": 5110475
+        },
+        {
+          "path": "3/valid.txt",
+          "sha256": "561062442d57be0b42320203306c0c5ecaff74f191c605e8f8ac41bb96f1f399",
+          "bytes": 1702931
+        },
+        {
+          "path": "3/test.txt",
+          "sha256": "7fa33b659ebceb0d620d37f97592fa8be1c4ec0b54d935f1dab4f6d09d27cdae",
+          "bytes": 1705515
+        },
+        {
+          "path": "4/train.txt",
+          "sha256": "fbd0eacf8327cbe8a19c24f264ec1e685d5c653d144eaa94b63e282135bea53a",
+          "bytes": 1849542
+        },
+        {
+          "path": "4/valid.txt",
+          "sha256": "a591b5d61994bf87c120641173dc9a1a64e51dd08fe0cd7babd8067c1e13f95b",
+          "bytes": 616973
+        },
+        {
+          "path": "4/test.txt",
+          "sha256": "466441b2333656e73f74c06395cae0c0f4c7c0b5a73738e4debd43d9b34f316b",
+          "bytes": 614257
+        }
+      ],
+      "split_contract": "author-distributed five incremental 3:1:1 splits; not regenerated",
+      "maximum_main_training_optimizer_steps": 36800,
+      "optimizer_steps_per_epoch_by_snapshot": [
+        34,
+        13,
+        52,
+        61,
+        24
+      ]
+    },
+    {
+      "dataset": "RELATION",
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "train": 59291,
+          "valid": 19764,
+          "test": 19764,
+          "bidirectional_test_queries": 39528,
+          "cumulative_entities": 11561,
+          "cumulative_relations_without_inverse": 49,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 1,
+          "train": 56119,
+          "valid": 18708,
+          "test": 18708,
+          "bidirectional_test_queries": 37416,
+          "cumulative_entities": 13344,
+          "cumulative_relations_without_inverse": 96,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 2,
+          "train": 39680,
+          "valid": 13228,
+          "test": 13228,
+          "bidirectional_test_queries": 26456,
+          "cumulative_entities": 13755,
+          "cumulative_relations_without_inverse": 143,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 3,
+          "train": 18018,
+          "valid": 6007,
+          "test": 6007,
+          "bidirectional_test_queries": 12014,
+          "cumulative_entities": 14387,
+          "cumulative_relations_without_inverse": 190,
+          "auxiliary": []
+        },
+        {
+          "snapshot": 4,
+          "train": 12956,
+          "valid": 4319,
+          "test": 4319,
+          "bidirectional_test_queries": 8638,
+          "cumulative_entities": 14541,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": []
+        }
+      ],
+      "totals": {
+        "train": 186064,
+        "valid": 62026,
+        "test": 62026
+      },
+      "files": [
+        {
+          "path": "0/train.txt",
+          "sha256": "0c2d44880b622e220451dd1463bc72a1d10694ffc7253d7c7d32831caadf9f72",
+          "bytes": 3905852
+        },
+        {
+          "path": "0/valid.txt",
+          "sha256": "25bc49c999f2bb9aa5633a4beac2ca6a4e95e8183fb3e080c9c1cc3920ab1683",
+          "bytes": 1306339
+        },
+        {
+          "path": "0/test.txt",
+          "sha256": "ed610f7c3af376e5bc7f4c3ed18fd1484b8e3b52977bc0716980de895f9c1ca0",
+          "bytes": 1297644
+        },
+        {
+          "path": "1/train.txt",
+          "sha256": "d6fb74ad9979b0ad0c4eded5458c243cb6eafee5fafb2f4e6f66608b11cc450f",
+          "bytes": 4357561
+        },
+        {
+          "path": "1/valid.txt",
+          "sha256": "92bcf01eedb199fe925e9e28160869d056a51d55c234bdaf8058c3e4be2cf854",
+          "bytes": 1452427
+        },
+        {
+          "path": "1/test.txt",
+          "sha256": "931b052774c10207a507077c3434760c2f9de50bd0112db95cbc8b0ba9705e2c",
+          "bytes": 1462436
+        },
+        {
+          "path": "2/train.txt",
+          "sha256": "292857624260e5d5648be5d8790fa4146e33eacc0627a473fe8d689ba4ea5d99",
+          "bytes": 3379119
+        },
+        {
+          "path": "2/valid.txt",
+          "sha256": "5dba616a367a421c4bbfc2b3fe44dac9792daf1e834b77abd8506275bd5fa51b",
+          "bytes": 1130790
+        },
+        {
+          "path": "2/test.txt",
+          "sha256": "35741d46ca78e402ceda8b0446d316afacef8db9d4ec1c6d21bf69166c22bcf9",
+          "bytes": 1125394
+        },
+        {
+          "path": "3/train.txt",
+          "sha256": "5888a4eaccfcd2b96af7dad9fd247b7bd5f55af0c1d45e4e184487989f63b12f",
+          "bytes": 1554721
+        },
+        {
+          "path": "3/valid.txt",
+          "sha256": "528d7df7a207ace3ea99e56b44f858ae7b547385db5cfcbc50cc5bb4aa7c5a86",
+          "bytes": 519162
+        },
+        {
+          "path": "3/test.txt",
+          "sha256": "b99b7721b1dcbb7bd617cd761f3e84bb910f3122ae3c65b435a84088bc5238d7",
+          "bytes": 517429
+        },
+        {
+          "path": "4/train.txt",
+          "sha256": "440954d383eca9a649bbf4e3126ec52832a4c8d64a97df5d80c44b59e245e4c0",
+          "bytes": 1068794
+        },
+        {
+          "path": "4/valid.txt",
+          "sha256": "10909759c9adc458e5076a14865d098b746a984a1c734299a9a38ba3ff753153",
+          "bytes": 358175
+        },
+        {
+          "path": "4/test.txt",
+          "sha256": "b42905ac5758d57a807c8e490e89b6ed80ceecdb264975dc5484ea3f553b00fd",
+          "bytes": 353933
+        }
+      ],
+      "split_contract": "author-distributed five incremental 3:1:1 splits; not regenerated",
+      "maximum_main_training_optimizer_steps": 36600,
+      "optimizer_steps_per_epoch_by_snapshot": [
+        58,
+        55,
+        39,
+        18,
+        13
+      ]
+    },
+    {
+      "dataset": "graph_equal",
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "train": 34581,
+          "valid": 11527,
+          "test": 11528,
+          "bidirectional_test_queries": 23056,
+          "cumulative_entities": 2908,
+          "cumulative_relations_without_inverse": 226,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "d190c85c621cd63728abdb4063b04336711884f58d7d1805a58e53aa4e110632",
+              "bytes": 4546701
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "61eff8b16ed3c0437ce0c189684062519effec4be4a349824469c2595d2c6f35",
+              "bytes": 42017
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "a34607065c121e972c1c5a9adbd130ed3ab2cc9035fffa1dc3afa4426f228d27",
+              "bytes": 30334
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "d8ad73e335e303144353d16f6c1fcf1c90ace47c68e1b5f2718c272a3e455689",
+              "bytes": 923330
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "b350ae0b6ad4fbf08aa4dfdb4dc26406f30ce4232ee0109be87ee28f29191081",
+              "bytes": 421919
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "c7e4906493bc7ca8f70b079f5a1b4ff86ce19f0249014b30fdf9ea003a2ab022",
+              "bytes": 77136
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "50a1437ca389c41c55b33fccbbb3a8e41d4a73500278a76c6f7b592f4dadbc31",
+              "bytes": 75348
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "cc99bb642b4d18de95feaa9d62277d899e6a68098f0ad7a3a085d06e773e46fb",
+              "bytes": 2719275
+            }
+          ]
+        },
+        {
+          "snapshot": 1,
+          "train": 37213,
+          "valid": 12404,
+          "test": 12406,
+          "bidirectional_test_queries": 24812,
+          "cumulative_entities": 5816,
+          "cumulative_relations_without_inverse": 235,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "981ac05d543b70ebe02674381c97b1d2cc55dcf41c3f21d3f1a1ba6a1fdf8af5",
+              "bytes": 4872014
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "030a9ba4be1c60173437a1d22370f10353e34e5c4abed70f122012144684bf7c",
+              "bytes": 85234
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "0e880d76a7219cc0c970bb0a59ab848ccc87ffad228a87a5ce2045e3ce0bdd49",
+              "bytes": 31656
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "479c60ddcf7d0dea00c84b876054edc4ee183e4c04b16e1ee98deb4fb5f8246d",
+              "bytes": 1050301
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "4e7a091870ba6199ccf344adc2532d87432378f6ea4133080fe5daf3304a50f9",
+              "bytes": 476149
+            },
+            {
+              "name": "train_layers.txt",
+              "sha256": "6653a8159d1b5116405228dc8b1df16fe6a590765f7e77ad67cacf8811dbb1ad",
+              "bytes": 2917792
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "a02f14997598e91593a206336d64816497df8a202402ddb2c6851273a6549e42",
+              "bytes": 140846
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "41ea7f4bb7da73a97ddf9eae9cb1f8c2b097dfee874bf8ece6989596b23a8b23",
+              "bytes": 146299
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "b2760a7b5ef9ce7d0a2ef9d26e161200218ed7f5007534a9c6c7b38991434c40",
+              "bytes": 2917792
+            }
+          ]
+        },
+        {
+          "snapshot": 2,
+          "train": 37213,
+          "valid": 12404,
+          "test": 12406,
+          "bidirectional_test_queries": 24812,
+          "cumulative_entities": 8724,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "5e8ee91295784aa7f98c4272752f8a9503e491c33b6ea9d0ca572616f457141f",
+              "bytes": 4755517
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "05446f4724e429553c05b5bb1d598156480cebb6c9c8e4243185dc961cffee8d",
+              "bytes": 128381
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "9201bc0faa18ef4cda805c713238e79b86c4c74836a1808f60750ec3e63abc24",
+              "bytes": 32102
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "757466bd9c167e51eb0033e022dec4fd39d9c8ea8caae47eb2a6aace9cfa644e",
+              "bytes": 1053044
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "174b9ae22abb799dfd556af3dd4099ae8b9631e4f9abf37f4293720c8f8dc3fe",
+              "bytes": 479856
+            },
+            {
+              "name": "train_layers.txt",
+              "sha256": "ebbfabc7310ce53170af52e6d370aeb0e63966c1dbf1f92011d209b386304e7b",
+              "bytes": 2849256
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "466e8bad659a1066a7ee1f08e62550be1498a65f6b8b58708e5c9299cb03b15b",
+              "bytes": 183715
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "f9915b4096aec80882f62bd28e4d429d4042a684cce86205afb63f9adedb4894",
+              "bytes": 207178
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "1e06a4fc80ed1a6a5ba1f2c00f11a9a515e56847a41321a5dc499f4a2c7f26a2",
+              "bytes": 2849256
+            }
+          ]
+        },
+        {
+          "snapshot": 3,
+          "train": 37213,
+          "valid": 12404,
+          "test": 12406,
+          "bidirectional_test_queries": 24812,
+          "cumulative_entities": 11632,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "7dd4507507184b5c367a571a833704d7a116103fff4fcb8da69e4bde19eeb9c6",
+              "bytes": 4656191
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "c56e25858840d0afe70df4f0b2b0b98e0472176e97899915af6af57c8649d100",
+              "bytes": 172938
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "9201bc0faa18ef4cda805c713238e79b86c4c74836a1808f60750ec3e63abc24",
+              "bytes": 32102
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "0473e428592452b32352ee6736e2cdebf367721596da6b926f2ad14645a27270",
+              "bytes": 1047935
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "02b0d7cc1d9ec575c55433b95958e9e18fb6af653857613de3bd2086246b6ea8",
+              "bytes": 500128
+            },
+            {
+              "name": "train_layers.txt",
+              "sha256": "cdb204426b6c9133ef6d75218f7ef7288a50d6b75bb692d05d9711e3be6323c6",
+              "bytes": 2769065
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "b2bb5bc1fcb1f23c126fb9ded7793ae2e28e21c6110cf44b5b3b0138e1ef683f",
+              "bytes": 215283
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "59e9a7016d3eebdce01f59e697285d5c243dbdc9218d411c577270268036630c",
+              "bytes": 258530
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "23beddb49bcac7a5e110b2119450446b9e59bfeae096b958b4a403190878fe6a",
+              "bytes": 2769065
+            }
+          ]
+        },
+        {
+          "snapshot": 4,
+          "train": 39846,
+          "valid": 13282,
+          "test": 13283,
+          "bidirectional_test_queries": 26566,
+          "cumulative_entities": 14541,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "e5e368d60f28e6e997e4032f1cb17cea1fb68a70fb198fd9fe036964453dcd81",
+              "bytes": 4959353
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "a4262f16148a82aacc3e04737413fc923082bcdb1a8fe15a57cc5138bfb7ee33",
+              "bytes": 218551
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "9201bc0faa18ef4cda805c713238e79b86c4c74836a1808f60750ec3e63abc24",
+              "bytes": 32102
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "58718e442657ecd443df67268b7bbf61f176d1aabf353661b51f205a9b725bc6",
+              "bytes": 1159789
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "585a6d27d9db35404a4616584dda21347ebc26895f429961d2f1dcca85dd1197",
+              "bytes": 544150
+            },
+            {
+              "name": "train_layers.txt",
+              "sha256": "f50c0ce88136a157680422c75d37a37bf7934551a13d3561a574993f444020f1",
+              "bytes": 2930503
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "d53561837a296b7e160a0111f7c8df1bfd6aac1e2040456365e089e53d7f994d",
+              "bytes": 306635
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "ee0cd0d4abf8ba04565329a0bfd28474d448cf44e6fd1be759b3b0bb8445ffad",
+              "bytes": 350532
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "6b9ab682419c387e17df91b49388437ddbcf503777e1a521f1cf9efd8e2b8e62",
+              "bytes": 2930503
+            }
+          ]
+        }
+      ],
+      "totals": {
+        "train": 186066,
+        "valid": 62021,
+        "test": 62029
+      },
+      "files": [
+        {
+          "path": "0/train.txt",
+          "sha256": "908bda2e78367af8ed705584715c870e8af8d00be69b7fd60b2d55d72336f356",
+          "bytes": 2719275
+        },
+        {
+          "path": "0/valid.txt",
+          "sha256": "4d116654e52f7aba6ba6759364151892fd4f3653f6733008d96433401d589f0b",
+          "bytes": 912981
+        },
+        {
+          "path": "0/test.txt",
+          "sha256": "cee8d1818154ba740ddae275b4524e415e48e245dbc8022b8b8e1171d3466f7f",
+          "bytes": 914445
+        },
+        {
+          "path": "1/train.txt",
+          "sha256": "ebe16669a4e0f2121985a2a6ba9b0c8bb70703082dc3790ed75cffca5051c622",
+          "bytes": 2917792
+        },
+        {
+          "path": "1/valid.txt",
+          "sha256": "5a5b7252c171d2fbe807c52bda9c5bb444ffa53467399a4645ac3238b00a66d4",
+          "bytes": 978562
+        },
+        {
+          "path": "1/test.txt",
+          "sha256": "5524264c7aacadefa40a73fd80c320319fe390d3ef290275bac86456eeaef9c7",
+          "bytes": 975660
+        },
+        {
+          "path": "2/train.txt",
+          "sha256": "2dfaeddbe1d3c0546f769828484f5c53013b85af16a11796f39d8c9af92522ea",
+          "bytes": 2849256
+        },
+        {
+          "path": "2/valid.txt",
+          "sha256": "b2aa221dbf7f33ca8ebc88e7a3742cc2b8e679fced189c9231914a5c1e64a124",
+          "bytes": 955054
+        },
+        {
+          "path": "2/test.txt",
+          "sha256": "6ca6d95442b3bffe47ca3df2b4abcb36048bcb0d7f073184ed9baa91edc59ea5",
+          "bytes": 951207
+        },
+        {
+          "path": "3/train.txt",
+          "sha256": "da432adcbc5cf0bae43b09a3ffee664ef702b7bc17d5bbab3336378e0a51bfed",
+          "bytes": 2769065
+        },
+        {
+          "path": "3/valid.txt",
+          "sha256": "23d8be03800eb9389ba3fa50fbb1e1dfbb0a0c0d20ff6098e4ccc2c66604c75b",
+          "bytes": 933880
+        },
+        {
+          "path": "3/test.txt",
+          "sha256": "a8ee628451be436ad49276fa2c7fed05562d5e69f21c58f920543a2e9ec5f22e",
+          "bytes": 953246
+        },
+        {
+          "path": "4/train.txt",
+          "sha256": "b141844778765f87361d4931567fc417cdd8216c8b8d3a126e4360e4557027fc",
+          "bytes": 2930503
+        },
+        {
+          "path": "4/valid.txt",
+          "sha256": "0a14fdd66594bd35424dbc4059b24ad35c11ca98b503b24d8c76a853228817c9",
+          "bytes": 1015530
+        },
+        {
+          "path": "4/test.txt",
+          "sha256": "d68ee40d99bf1da39501f03769c9b3f42f34260d7bc2b997b936681d779f02ab",
+          "bytes": 1013320
+        }
+      ],
+      "split_contract": "author-distributed five incremental 3:1:1 splits; not regenerated",
+      "maximum_main_training_optimizer_steps": 36800,
+      "optimizer_steps_per_epoch_by_snapshot": [
+        34,
+        37,
+        37,
+        37,
+        39
+      ]
+    },
+    {
+      "dataset": "graph_higher",
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "train": 6000,
+          "valid": 2000,
+          "test": 2000,
+          "bidirectional_test_queries": 4000,
+          "cumulative_entities": 900,
+          "cumulative_relations_without_inverse": 197,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "4545eb78f13904f1552a8b7cee148f9e604f2f532cd18d7d9330f5d4dea62f69",
+              "bytes": 788721
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "681f519aa582361aeb33e98c55579118d9cac4b1a0d892c0817321812f29a75b",
+              "bytes": 12290
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "d0a1bf3d4785fefc0138f84c14fcc7488ab76bfa1aba34dc9ca0c5cdefa48e84",
+              "bytes": 26626
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "7b22f99b9431cfdf4eae6dc49a781b6bfdde09c68bb3d37c3ec11b64f0626af6",
+              "bytes": 151486
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "014a91cabf40c6ed8634e938c818c94678296fb16de72a7a44b7f7e293a305ed",
+              "bytes": 65855
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "09f074653b775c467f79a0589d0d7c4eaac7832ebc852dcf86fdd5c184e90255",
+              "bytes": 22432
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "eac0cc84f66228288d285e17c566a5c96218392effd50ada5354b2fa786024c8",
+              "bytes": 22325
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "5053b0038724aec316f7977323cceedf3b0ff17a682ef870fc6ef7084b64280e",
+              "bytes": 470594
+            }
+          ]
+        },
+        {
+          "snapshot": 1,
+          "train": 12000,
+          "valid": 4000,
+          "test": 4000,
+          "bidirectional_test_queries": 8000,
+          "cumulative_entities": 1838,
+          "cumulative_relations_without_inverse": 221,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "5ac7aff2fb28ad3755f6d56a52b90207d3cf27e3dd6510b246ef6297d4d2d7ab",
+              "bytes": 1595167
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "aa5fac6899f8e4de1a981a7bfc24704d0ddd2fef3e1919f216b070d4e0c5508e",
+              "bytes": 26136
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "b7f247e757359e47f52be9f0ff8b54d7eb1fb6879b8432cbe43a6f10fcd2a0ff",
+              "bytes": 29740
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "cd6e5f4e46de65ff1a9015d5824b0b094da8acbb5b897774c1e2cc6edca25a06",
+              "bytes": 317626
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "67430925d977d4c519ce172dc358c558cc2efe2b95a9e28804894b2452288f15",
+              "bytes": 147461
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "cadf021c3f3e074dc9bbd01509065dfbd5956c93f17cd2b330bb779e97e34afd",
+              "bytes": 43008
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "2786b124cca268b6a4e7c7a0ebca256b90363a15deedfd7a683f902df5b9f791",
+              "bytes": 44518
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "b6cee97c453289dca763b9506dd2e8686874f1cdd4c3ff6fd7fe2a46437e711c",
+              "bytes": 952835
+            }
+          ]
+        },
+        {
+          "snapshot": 2,
+          "train": 24000,
+          "valid": 8000,
+          "test": 8000,
+          "bidirectional_test_queries": 16000,
+          "cumulative_entities": 3714,
+          "cumulative_relations_without_inverse": 234,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "b1e97b73e62e18fc72ad945ee3bb482382ca9ac2235746553d0927f7dba156c9",
+              "bytes": 3151508
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "16e5e1e8723d5c1447103711f2139b8d54403dec27877b844daa88bbc0d5077e",
+              "bytes": 54016
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "03cbb608cd829266e2908cbfea92ed6240db2d88b6ac2aa0eed6c5545e64c869",
+              "bytes": 31464
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "fef6f7c0d41a31f860eabdb1f7e81c02638865831883f33cf1abe60345e28dd8",
+              "bytes": 676609
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "a02255b03a54b524f6ab5fba7ca30af678e418ca6ef577834da166049aa4dbb2",
+              "bytes": 304129
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "d6eefcccc4ad202da69201c33312554ac4d68a87403802845169a34387636911",
+              "bytes": 89474
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "5e1e10690056bba1c11d3ffb7cc6e53caca5013b4cb5d1f8fa7b7b143ad9e161",
+              "bytes": 92438
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "9e4b18be7b42c8e5e421dd437862ecbfdb3f5000893745c68d0538e7300ec702",
+              "bytes": 1888655
+            }
+          ]
+        },
+        {
+          "snapshot": 3,
+          "train": 48000,
+          "valid": 16000,
+          "test": 16000,
+          "bidirectional_test_queries": 32000,
+          "cumulative_entities": 7467,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "ebf6e0c66fd0fa1fc68ae2eeb344cdaee27797392584add86fccb342e7bff7a9",
+              "bytes": 6216007
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "fa301bb91f8a3642dd031a306efb68353a46d2ac8528e1b22f8608a314bf60b6",
+              "bytes": 109750
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "efd5964fbe4842ae1412d1a607b9f66cfde9763577173e1afd05b62e803db354",
+              "bytes": 32102
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "974da3a0c0f0e96429a02d75991561ebf7c030575b1e4b4d10c756d2b913aa10",
+              "bytes": 1353614
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "53fec3762efee43c4edd3a9ec2736c2f6e86f6a52416c6cf4afff71d102b3135",
+              "bytes": 616497
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "02922a1e077a4849dee1f8adb851cecdebf6ad5d00b2670ef562b287766bba24",
+              "bytes": 182821
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "5fb0f3495b5b8511274854ecdd7467cbe47dadfc347f6a4d1284b89b075ab8c5",
+              "bytes": 190633
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "0c476f60f17b3f28bf16a90cb038117e581f526d19037af9059087a76daf5083",
+              "bytes": 3721860
+            }
+          ]
+        },
+        {
+          "snapshot": 4,
+          "train": 96069,
+          "valid": 32023,
+          "test": 32024,
+          "bidirectional_test_queries": 64048,
+          "cumulative_entities": 14541,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "95b516768ef5572dc984498c53f601bf64bdc10d3ec60319585e30bd6888d1f4",
+              "bytes": 12038373
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "a4262f16148a82aacc3e04737413fc923082bcdb1a8fe15a57cc5138bfb7ee33",
+              "bytes": 218551
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "efd5964fbe4842ae1412d1a607b9f66cfde9763577173e1afd05b62e803db354",
+              "bytes": 32102
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "08b6cb63172bba3dd2a2b60813c7861e27e4f490e9838e3a0a538e90c18e2a6e",
+              "bytes": 2650939
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "0b0c82710ffae92c826b1da143c1481deb179388491229d2d4f7cd57f2fbd166",
+              "bytes": 1288602
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "9dfe3cb6c171defaa5552af3faf42fb7cbe41b1f875113137be7931265b76bcd",
+              "bytes": 365453
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "f99efb30c18c27cb73bdcd94efe74fecc094850f4e456726cb0b904b271a9093",
+              "bytes": 384214
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "14314820dfe591034309da4c7ab126aa498ef403a4a3d38d727bca33c3a9099d",
+              "bytes": 7138834
+            }
+          ]
+        }
+      ],
+      "totals": {
+        "train": 186069,
+        "valid": 62023,
+        "test": 62024
+      },
+      "files": [
+        {
+          "path": "0/train.txt",
+          "sha256": "7f30d57646ad6556fa91965ddbff7636e060ba584b0fe1aa829bb3708e9ca689",
+          "bytes": 470594
+        },
+        {
+          "path": "0/valid.txt",
+          "sha256": "c9ae3c3660a19f381ea7671d77ef86f296ae84c1a4ee694bd39184255917e8ba",
+          "bytes": 158064
+        },
+        {
+          "path": "0/test.txt",
+          "sha256": "4ee98038a4734db106a75f119269660d1f2d4313a0642b5fea2be7dffde72b58",
+          "bytes": 160063
+        },
+        {
+          "path": "1/train.txt",
+          "sha256": "c9f2524edf92472effc8e3fda52827798ba73050f943c8879437dcff6c88b511",
+          "bytes": 952835
+        },
+        {
+          "path": "1/valid.txt",
+          "sha256": "30b3d56941b072f2bd2f4924a05cd399c4e8e1d9e007bba48eaacd0f4539fd34",
+          "bytes": 321628
+        },
+        {
+          "path": "1/test.txt",
+          "sha256": "bde85f4bd88828a17e2f467f7369a3fc23b1fbcf64ef816e66440a4541ede7f4",
+          "bytes": 320704
+        },
+        {
+          "path": "2/train.txt",
+          "sha256": "1dee8085fe31ae836423bbd58a273569c9db7ff5156ef13cffaaa08a9d918187",
+          "bytes": 1888655
+        },
+        {
+          "path": "2/valid.txt",
+          "sha256": "143b214439ae88b9622de5ebefa8a91cbeb0293aa8409d3fdc0d0440aed9c56a",
+          "bytes": 631919
+        },
+        {
+          "path": "2/test.txt",
+          "sha256": "c3bd75191ff93fdde331c99d586fc2b23a8c9f6ef6fd5cfebdb75bcfda9d691a",
+          "bytes": 630934
+        },
+        {
+          "path": "3/train.txt",
+          "sha256": "2cef37f5080d33905b6b7a56cda6de3c8b0f3e1627d5e654f792f177afe7c2d6",
+          "bytes": 3721860
+        },
+        {
+          "path": "3/valid.txt",
+          "sha256": "675491fa2ffa1627d6abecc6a7aac3ecbe84d9fc85fd606aa372bc3d116a8d01",
+          "bytes": 1250960
+        },
+        {
+          "path": "3/test.txt",
+          "sha256": "d1de539c5503cbfec72e4567ca417877825ea93d218a995ef827b6c79396bc1d",
+          "bytes": 1243187
+        },
+        {
+          "path": "4/train.txt",
+          "sha256": "93e882c171017211c5c605d132e037a83f9de30d3f8f45da75a0b9241cee7989",
+          "bytes": 7138834
+        },
+        {
+          "path": "4/valid.txt",
+          "sha256": "028fb8d0deb99713bbeb3f16c6df9c81de224c688421da8090be5455fe87cdda",
+          "bytes": 2447690
+        },
+        {
+          "path": "4/test.txt",
+          "sha256": "6a92be8e2f1137d81b96f57f341524df9f8434ce70869230d654e91bbe36b668",
+          "bytes": 2451849
+        }
+      ],
+      "split_contract": "author-distributed five incremental 3:1:1 splits; not regenerated",
+      "maximum_main_training_optimizer_steps": 36600,
+      "optimizer_steps_per_epoch_by_snapshot": [
+        6,
+        12,
+        24,
+        47,
+        94
+      ]
+    },
+    {
+      "dataset": "graph_lower",
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "train": 96000,
+          "valid": 32000,
+          "test": 32000,
+          "bidirectional_test_queries": 64000,
+          "cumulative_entities": 7505,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "4042fa98f47540c641f4d6afc005a7c484e62fcbbe1d56f83f392ac61460119b",
+              "bytes": 12523520
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+              "bytes": 110316
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+              "bytes": 32102
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "1d569bf623be51c415d61db8a9bf6f90207dfd15ab65ce0b86317965e3e9813e",
+              "bytes": 2659158
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "c54ca4ab6f5ca1ccbf193aeabc1c637316a391a2eaea47308cb90a9ad1a3f649",
+              "bytes": 1212735
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "2d60061159bfaf141de43285d091766879c1867e31c4b15349af676e228ee1ed",
+              "bytes": 201790
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "47cc85cffb050d3a26aaeb734b8ac7cd9838074e902be00223c86a295690b124",
+              "bytes": 199285
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "158736d95943a52efe61dc3d084778e642a8649b90890dcf36c69c6b299b7154",
+              "bytes": 7502568
+            }
+          ]
+        },
+        {
+          "snapshot": 1,
+          "train": 48000,
+          "valid": 16000,
+          "test": 16000,
+          "bidirectional_test_queries": 32000,
+          "cumulative_entities": 11258,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "5de13b37ca48a16b8ab4afb171964ba67ba9c161b9fd2320c4fd10644cb7abf4",
+              "bytes": 6025055
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+              "bytes": 167067
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+              "bytes": 32102
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "7a1baded48497d9ae8b1d7ce84fd1b15a5dd529b73ac7766f0f3dbec9eb354df",
+              "bytes": 1355911
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "e8d196bba1623fed72712a47aa43d45f95442c8eff32d12596a213138adb7ade",
+              "bytes": 633963
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "07904c9c39f26543e67e1bca19f9d6094fb3bbf80eaa8376185628f224c2c62e",
+              "bytes": 242217
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "34b3b96ffc1bda70990f0198eab2bcac2db5a0cf8a7bdb19ad4f71aa9f48f863",
+              "bytes": 273154
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "117d53c52607e15ac0451b83955fb58f4f337e543f959db101518594f31505c0",
+              "bytes": 3601043
+            }
+          ]
+        },
+        {
+          "snapshot": 2,
+          "train": 24000,
+          "valid": 8000,
+          "test": 8000,
+          "bidirectional_test_queries": 16000,
+          "cumulative_entities": 13134,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "20833096add0da587506b969ffe1acaa9add27a897f3b411398131f8f998c91c",
+              "bytes": 2986918
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "7ebcd8b2ee18e69965eee1fc8ce6d750ae3ddbfbb3f19d47c3eabf8b856b889f",
+              "bytes": 196542
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+              "bytes": 32102
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "fa9aa7e51f3ec9735cedc2bdb67a557e6027e00bddc06a9311e9253f6ad57f76",
+              "bytes": 675467
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "f1f59ef32b2088b9fd72db023a11f2e68786d3d0b182f3310e50f59c97904685",
+              "bytes": 334512
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "7a916c73b8770080e7d94756d3a0356f701460041bb68906afe79a7cc34378a3",
+              "bytes": 174956
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "060925dcbe1646c7b99dca6d7a8e9d3c36079a98a3b90f090a849e0a37ce0b58",
+              "bytes": 239055
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "57db3e86fca07156134958294b7e54d905502a9e0e35b67d15a701a9ea14e864",
+              "bytes": 1750987
+            }
+          ]
+        },
+        {
+          "snapshot": 3,
+          "train": 12000,
+          "valid": 4000,
+          "test": 4000,
+          "bidirectional_test_queries": 8000,
+          "cumulative_entities": 14072,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "37583399163ca163f582cc85dd6a77a2fb7bf414e44375de72e60956145dcf19",
+              "bytes": 1490652
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "11090342d689fbaeed68ccc28e612b348532639f185e0bd26cc326502166511e",
+              "bytes": 211208
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+              "bytes": 32102
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "45b8e3168056311ec7f424e190831ce614dcd6332a8a0087f0e825defea46ea6",
+              "bytes": 352098
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "90f773d8a03c7ae17706cb02227de62fe4ab327c80527add126838516f3c0551",
+              "bytes": 162767
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "0e1e8175c5d82d01caa5e7afe0574f52cea02d4aea754d66759447f90c4e336d",
+              "bytes": 139208
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "61007bbb904ed40d9b54a2dd8796016102709eae5f4f588ccf131df339b16fe1",
+              "bytes": 214124
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "5a4804a8787c38ad362cdde978f822cee2b6dd28f0f92fc1de4ab39c32075230",
+              "bytes": 877261
+            }
+          ]
+        },
+        {
+          "snapshot": 4,
+          "train": 6069,
+          "valid": 2023,
+          "test": 2024,
+          "bidirectional_test_queries": 4048,
+          "cumulative_entities": 14541,
+          "cumulative_relations_without_inverse": 237,
+          "auxiliary": [
+            {
+              "name": "all_triples.txt",
+              "sha256": "3e0a59f2ec9cca373d6529b43881dc0dc37c7276fa06961a37319c52afff7763",
+              "bytes": 763631
+            },
+            {
+              "name": "entity2id.txt",
+              "sha256": "a4262f16148a82aacc3e04737413fc923082bcdb1a8fe15a57cc5138bfb7ee33",
+              "bytes": 218551
+            },
+            {
+              "name": "relation2id.txt",
+              "sha256": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+              "bytes": 32102
+            },
+            {
+              "name": "train_edges_betweenness.txt",
+              "sha256": "d767fcabdda30fedbd057073fdddd47aa0bac097db62b7a272d5f33bf8486e12",
+              "bytes": 188223
+            },
+            {
+              "name": "train_id.txt",
+              "sha256": "a9af13e4c4b989a4e9a124a4048379118a6e79b4ad5fabc73db682fd45bbb72e",
+              "bytes": 80285
+            },
+            {
+              "name": "train_nodes_betweenness.txt",
+              "sha256": "f06700f007f11d32e993dfd992f80b4c9b64e273ab28f3af98f18b3e3fc9a3d0",
+              "bytes": 96368
+            },
+            {
+              "name": "train_nodes_degree.txt",
+              "sha256": "9799f4b78ec9febe7d38d4f8e3136c6620635453c91bf38861cdfab31f539672",
+              "bytes": 170676
+            },
+            {
+              "name": "train_sorted_by_edges_betweenness.txt",
+              "sha256": "871060241bb3e7b636a7140da20e9667cb93001571a345a3db3db013a544022b",
+              "bytes": 453602
+            }
+          ]
+        }
+      ],
+      "totals": {
+        "train": 186069,
+        "valid": 62023,
+        "test": 62024
+      },
+      "files": [
+        {
+          "path": "0/train.txt",
+          "sha256": "07158c44d5db8cd2b20116c9bd2aaa31ea0b705c52af419cc540ceb32dbb7bba",
+          "bytes": 7502568
+        },
+        {
+          "path": "0/valid.txt",
+          "sha256": "8039de5443893644a5487a7664493c4fa6c4dda7c340f8e194258a41de2a37a6",
+          "bytes": 2509675
+        },
+        {
+          "path": "0/test.txt",
+          "sha256": "c564a7ccf024ccfabb4abe4d65ab31ec5591271df33f573416fff6a6bb1bd5bb",
+          "bytes": 2511277
+        },
+        {
+          "path": "1/train.txt",
+          "sha256": "7f7626d91c66ed05e35e3183e9cd55a21e626b56d1f50e4d1254e1bd2c466d55",
+          "bytes": 3601043
+        },
+        {
+          "path": "1/valid.txt",
+          "sha256": "54e5ff6c941f0d9c249bf6d2231266de3504b8caf6a8125a1d91ffd45ca2c263",
+          "bytes": 1204854
+        },
+        {
+          "path": "1/test.txt",
+          "sha256": "9c98e756e3e7b6565d09bb0e64e935dfb64370ed999fd13f01e2237a771ab38f",
+          "bytes": 1219158
+        },
+        {
+          "path": "2/train.txt",
+          "sha256": "c7929e6d87a44293b710603251c4e765958af11c846bc03453c043c4d1e36663",
+          "bytes": 1750987
+        },
+        {
+          "path": "2/valid.txt",
+          "sha256": "6534d82710b1e294988f75b23fb8697eb8ca69698e9fb2005f1ade4efd009e08",
+          "bytes": 616421
+        },
+        {
+          "path": "2/test.txt",
+          "sha256": "252c0601bcd478275e16aea18277f6b720ad52325bb3ac86003713c4228d3a48",
+          "bytes": 619510
+        },
+        {
+          "path": "3/train.txt",
+          "sha256": "29efcd6f5b62ea734d3d6fe35b8023da2bdb6d39e0a1c113fe389ba6d94a3075",
+          "bytes": 877261
+        },
+        {
+          "path": "3/valid.txt",
+          "sha256": "751569f00eb3517bd7f303ec8fb36addbcc1192274c89228dca335e65b3f9313",
+          "bytes": 306950
+        },
+        {
+          "path": "3/test.txt",
+          "sha256": "4748de17f461af8b9c7dac7f835dbce794b7654127c7169de17b22834c976a90",
+          "bytes": 306441
+        },
+        {
+          "path": "4/train.txt",
+          "sha256": "d6be27159eb3b45e90faec02295f5202187e3d23d869a9fe66eabb24d924aa1e",
+          "bytes": 453602
+        },
+        {
+          "path": "4/valid.txt",
+          "sha256": "db5e7164ba6fb7de129281adbeaa609042a2f87975554ca9f6a89b96395d4cb3",
+          "bytes": 155459
+        },
+        {
+          "path": "4/test.txt",
+          "sha256": "b4407e47d89fb8f9242bfb8dd2e61cad4fc9d643edad911858107d0341f687cf",
+          "bytes": 154570
+        }
+      ],
+      "split_contract": "author-distributed five incremental 3:1:1 splits; not regenerated",
+      "maximum_main_training_optimizer_steps": 36600,
+      "optimizer_steps_per_epoch_by_snapshot": [
+        94,
+        47,
+        24,
+        12,
+        6
+      ]
+    }
+  ],
+  "archives": [],
+  "preparation_only": true,
+  "training_launched": false,
+  "primary_sources": [
+    {
+      "url": "https://arxiv.org/pdf/2508.11347v1",
+      "path": "provenance/paper.pdf",
+      "status": "downloaded",
+      "sha256": "6238a172953ae9fbafe068f2b9458cbeb4585ba79c4019a20197623d7b95a62e",
+      "bytes": 1066040,
+      "page_count": 12,
+      "repository_or_release_lines": [
+        "To facilitate reproducibility, we release the source code and data",
+        "at: https://doi.org/10.5281/zenodo.15520114."
+      ]
+    },
+    {
+      "url": "https://zenodo.org/api/records/15520115",
+      "path": "provenance/zenodo-release.json",
+      "status": "downloaded",
+      "sha256": "e4b2e13a370ab357e68921e26785937253265dd94e5e552b48e8fdb0b9b19b36",
+      "bytes": 3937
+    }
+  ]
+}

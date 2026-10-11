@@ -1,0 +1,58 @@
+id: KGE-ENTITY-COMMON-SHARED-GRAPH-UTILITY-032
+status: batch_terminal_reaudit_original_records_unchanged
+config: configs/shared-graph-utility32.json
+protocol: plan/shared-graph-evaluation-repair-protocol.md
+scope: Independent fixed VALID utility replay of unchanged027 models after evaluation-only
+  repair
+registered_utc: '2026-10-11T05:58:35.211295+00:00'
+frozen_input_sha256:
+  configs/shared-graph-utility32.json: abd0c994777f6336dcc77929a33fb83e15e9b47a88191dc55cf2c497365d0781
+  plan/shared-graph-evaluation-repair-protocol.md: 513d171c5d81199aecaf4ad45711eecc007ea3a3099c3081efb23eaa61a119e4
+  scripts/coordinate_cpu_audits_v2.py: 15a15423f6f56419f27aefe209a5668f9ae6f90ead6295a3a26f0b4f2017ba09
+  scripts/audit_shared_graph_utility.py: a91d0e22bbffaf89bcd1080a22293c36131dc51634932a19e9510cf2f4ea5353
+  configs/shared-graph-eval30.json: 23270b5a0e619179c284a68ee46b19f01de44bcfd670dc1c81b6f6e7aee7764b
+  configs/shared-graph-utility28.json: c5b0a43128a1fb4555b8315feed76eeb104435d90b969c79b316c93248590551
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+active_processes: []
+coordinator_pid: 762416
+jobs:
+  shared-graph-full-s17:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  shared-graph-scoped-s17:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  shared-graph-joint-s17:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  shared-graph-full-s29:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  shared-graph-scoped-s29:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  shared-graph-joint-s29:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  shared-graph-full-s43:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  shared-graph-scoped-s43:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  shared-graph-joint-s43:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+queued_jobs: []
+aggregation_exit_code: 0
+result_directory: results/KGE-ENTITY-COMMON-SHARED-GRAPH-UTILITY-032

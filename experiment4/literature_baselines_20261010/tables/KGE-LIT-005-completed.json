@@ -1,0 +1,1038 @@
+{
+  "id": "KGE-LIT-005",
+  "status": "PASS_DERIVED_NUMERICS_WITH_LIMITATIONS",
+  "scope": "CPU_DERIVED_NUMERICS_AND_PROVENANCE",
+  "checks": 10944511,
+  "failures": 0,
+  "queries": 496208,
+  "independent_score_replays": 0,
+  "all_query_native_replay_exact": true,
+  "runs": [
+    {
+      "id": "incde-entity-s3407",
+      "dataset": "ENTITY",
+      "queries": 124054,
+      "derived_checks": 2723037,
+      "overall": {
+        "native_replay": {
+          "mrr": 0.25319617795346705,
+          "hits1": 0.15051509826365939,
+          "hits3": 0.2949280152191787,
+          "hits10": 0.4484821126283715
+        },
+        "candidate_expansion_only": {
+          "mrr": 0.1844022247843073,
+          "hits1": 0.10817869637415964,
+          "hits3": 0.2062730746287907,
+          "hits10": 0.3327421929159882
+        },
+        "strict_rank_old_candidates": {
+          "mrr": 0.25319617795346705,
+          "hits1": 0.15051509826365939,
+          "hits3": 0.2949280152191787,
+          "hits10": 0.4484821126283715
+        },
+        "strict_rank_final_candidates": {
+          "mrr": 0.1844022247843073,
+          "hits1": 0.10817869637415964,
+          "hits3": 0.2062730746287907,
+          "hits10": 0.3327421929159882
+        },
+        "current_filter_final_candidates": {
+          "mrr": 0.1990098504848012,
+          "hits1": 0.11715059570832057,
+          "hits3": 0.22736066551662987,
+          "hits10": 0.35595788930626987
+        }
+      },
+      "task_table": [
+        {
+          "task_snapshot": 0,
+          "queries": 18556,
+          "old_candidates": 2909,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.3084242533115543,
+              "hits1": 0.18780987281741754,
+              "hits3": 0.36284759646475534,
+              "hits10": 0.5400409571028238
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.1577722221548461,
+              "hits1": 0.09231515412804484,
+              "hits3": 0.1794028885535676,
+              "hits10": 0.2766221168355249
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.3084242533115543,
+              "hits1": 0.18780987281741754,
+              "hits3": 0.36284759646475534,
+              "hits10": 0.5400409571028238
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.1577722221548461,
+              "hits1": 0.09231515412804484,
+              "hits3": 0.1794028885535676,
+              "hits10": 0.2766221168355249
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.17755366083500804,
+              "hits1": 0.10562621254580729,
+              "hits3": 0.2044082776460444,
+              "hits10": 0.3087949989221815
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.854979521448588,
+          "native_candidate_rank_worse_fraction": 0.854979521448588,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 13645
+        },
+        {
+          "task_snapshot": 1,
+          "queries": 28846,
+          "old_candidates": 5817,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.23795823098005703,
+              "hits1": 0.1423074256396034,
+              "hits3": 0.27112944602371214,
+              "hits10": 0.42328225750537335
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.1397135027251901,
+              "hits1": 0.0806004298689593,
+              "hits3": 0.14757678707619773,
+              "hits10": 0.2550440269014768
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.23795823098005703,
+              "hits1": 0.1423074256396034,
+              "hits3": 0.27112944602371214,
+              "hits10": 0.42328225750537335
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.1397135027251901,
+              "hits1": 0.0806004298689593,
+              "hits3": 0.14757678707619773,
+              "hits10": 0.2550440269014768
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.15474195580059463,
+              "hits1": 0.08905914164875546,
+              "hits3": 0.16948623725993206,
+              "hits10": 0.28340151147472786
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.873015322748388,
+          "native_candidate_rank_worse_fraction": 0.873015322748388,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 19668
+        },
+        {
+          "task_snapshot": 2,
+          "queries": 29516,
+          "old_candidates": 8725,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.23039955285565214,
+              "hits1": 0.13402900121967745,
+              "hits3": 0.26785472286217643,
+              "hits10": 0.4096761078736956
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.16635422199488314,
+              "hits1": 0.09527036183764738,
+              "hits3": 0.18295161946063151,
+              "hits10": 0.3082395988616344
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.23039955285565214,
+              "hits1": 0.13402900121967745,
+              "hits3": 0.26785472286217643,
+              "hits10": 0.4096761078736956
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.16635422199488314,
+              "hits1": 0.09527036183764738,
+              "hits3": 0.18295161946063151,
+              "hits10": 0.3082395988616344
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.18349025392754142,
+              "hits1": 0.10611193928716628,
+              "hits3": 0.20809052717170348,
+              "hits10": 0.33337850657270635
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.8210123322943488,
+          "native_candidate_rank_worse_fraction": 0.8210123322943488,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 17122
+        },
+        {
+          "task_snapshot": 3,
+          "queries": 28204,
+          "old_candidates": 11633,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.23409245828720246,
+              "hits1": 0.13710821160119133,
+              "hits3": 0.2723727130903418,
+              "hits10": 0.4179549000141824
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.1981281780653647,
+              "hits1": 0.11739469578783152,
+              "hits3": 0.21833782442206778,
+              "hits10": 0.36040987094029214
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.23409245828720246,
+              "hits1": 0.13710821160119133,
+              "hits3": 0.2723727130903418,
+              "hits10": 0.4179549000141824
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.1981281780653647,
+              "hits1": 0.11739469578783152,
+              "hits3": 0.21833782442206778,
+              "hits10": 0.36040987094029214
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.2160608169308632,
+              "hits1": 0.12810239682314564,
+              "hits3": 0.2459225641752943,
+              "hits10": 0.3860445326903985
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.7071337398950504,
+          "native_candidate_rank_worse_fraction": 0.7071337398950504,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 12999
+        },
+        {
+          "task_snapshot": 4,
+          "queries": 18932,
+          "old_candidates": 14541,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.2862834454320613,
+              "hits1": 0.17214240439467568,
+              "hits3": 0.3404289034439045,
+              "hits10": 0.5031164166490598
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.2862834454320613,
+              "hits1": 0.17214240439467568,
+              "hits3": 0.3404289034439045,
+              "hits10": 0.5031164166490598
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.2862834454320613,
+              "hits1": 0.17214240439467568,
+              "hits3": 0.3404289034439045,
+              "hits10": 0.5031164166490598
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.2862834454320613,
+              "hits1": 0.17214240439467568,
+              "hits3": 0.3404289034439045,
+              "hits10": 0.5031164166490598
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.2862834454320613,
+              "hits1": 0.17214240439467568,
+              "hits3": 0.3404289034439045,
+              "hits10": 0.5031164166490598
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.0,
+          "native_candidate_rank_worse_fraction": 0.0,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 0
+        }
+      ],
+      "terminal_sha256": "18590840ae51adc6c2f81bf53548d7c629f34904acf936764091e709b9911a95",
+      "all_query_native_replay_exact": true,
+      "independent_all_score_recomputation": false,
+      "controller_metric_max_abs_delta": 0.0
+    },
+    {
+      "id": "incde-relation-s3407",
+      "dataset": "RELATION",
+      "queries": 124052,
+      "derived_checks": 2755525,
+      "overall": {
+        "native_replay": {
+          "mrr": 0.19834289287211196,
+          "hits1": 0.1103247025440944,
+          "hits3": 0.23378905620223778,
+          "hits10": 0.3669428949150356
+        },
+        "candidate_expansion_only": {
+          "mrr": 0.1981363284531653,
+          "hits1": 0.11028439686583046,
+          "hits3": 0.23363589462483475,
+          "hits10": 0.36642698223325704
+        },
+        "strict_rank_old_candidates": {
+          "mrr": 0.19834289287211196,
+          "hits1": 0.1103247025440944,
+          "hits3": 0.23378905620223778,
+          "hits10": 0.3669428949150356
+        },
+        "strict_rank_final_candidates": {
+          "mrr": 0.1981363284531653,
+          "hits1": 0.11028439686583046,
+          "hits3": 0.23363589462483475,
+          "hits10": 0.36642698223325704
+        },
+        "current_filter_final_candidates": {
+          "mrr": 0.1981363284531653,
+          "hits1": 0.11028439686583046,
+          "hits3": 0.23363589462483475,
+          "hits10": 0.36642698223325704
+        }
+      },
+      "task_table": [
+        {
+          "task_snapshot": 0,
+          "queries": 39528,
+          "old_candidates": 11561,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.2132887520459875,
+              "hits1": 0.11209775349119612,
+              "hits3": 0.2702135195304594,
+              "hits10": 0.39723740133576196
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.21272575467847332,
+              "hits1": 0.11199655940093099,
+              "hits3": 0.2697328476017001,
+              "hits10": 0.39574478850435135
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.2132887520459875,
+              "hits1": 0.11209775349119612,
+              "hits3": 0.2702135195304594,
+              "hits10": 0.39723740133576196
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.21272575467847332,
+              "hits1": 0.11199655940093099,
+              "hits3": 0.2697328476017001,
+              "hits10": 0.39574478850435135
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.21272575467847332,
+              "hits1": 0.11199655940093099,
+              "hits3": 0.2697328476017001,
+              "hits10": 0.39574478850435135
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.2762345679012346,
+          "native_candidate_rank_worse_fraction": 0.2762345679012346,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 0
+        },
+        {
+          "task_snapshot": 1,
+          "queries": 37416,
+          "old_candidates": 13344,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.15239918665088364,
+              "hits1": 0.074353217874706,
+              "hits3": 0.17872033354714562,
+              "hits10": 0.3051101133205046
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.15234475482029308,
+              "hits1": 0.07432649134060296,
+              "hits3": 0.17872033354714562,
+              "hits10": 0.30500320718409235
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.15239918665088364,
+              "hits1": 0.074353217874706,
+              "hits3": 0.17872033354714562,
+              "hits10": 0.3051101133205046
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.15234475482029308,
+              "hits1": 0.07432649134060296,
+              "hits3": 0.17872033354714562,
+              "hits10": 0.30500320718409235
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.15234475482029308,
+              "hits1": 0.07432649134060296,
+              "hits3": 0.17872033354714562,
+              "hits10": 0.30500320718409235
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.12270151806713706,
+          "native_candidate_rank_worse_fraction": 0.12270151806713706,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 0
+        },
+        {
+          "task_snapshot": 2,
+          "queries": 26456,
+          "old_candidates": 13755,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.18628999462753967,
+              "hits1": 0.11195947989114001,
+              "hits3": 0.20297853039008165,
+              "hits10": 0.33610523132748715
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.1862700436808617,
+              "hits1": 0.11195947989114001,
+              "hits3": 0.20297853039008165,
+              "hits10": 0.33610523132748715
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.18628999462753967,
+              "hits1": 0.11195947989114001,
+              "hits3": 0.20297853039008165,
+              "hits10": 0.33610523132748715
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.1862700436808617,
+              "hits1": 0.11195947989114001,
+              "hits3": 0.20297853039008165,
+              "hits10": 0.33610523132748715
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.1862700436808617,
+              "hits1": 0.11195947989114001,
+              "hits3": 0.20297853039008165,
+              "hits10": 0.33610523132748715
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.10863320229815543,
+          "native_candidate_rank_worse_fraction": 0.10863320229815543,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 0
+        },
+        {
+          "task_snapshot": 3,
+          "queries": 12014,
+          "old_candidates": 14387,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.2828111968253415,
+              "hits1": 0.19019477276510738,
+              "hits3": 0.3205427001831197,
+              "hits10": 0.4571333444314966
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.28274409796256667,
+              "hits1": 0.19019477276510738,
+              "hits3": 0.3205427001831197,
+              "hits10": 0.45705010820709174
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.2828111968253415,
+              "hits1": 0.19019477276510738,
+              "hits3": 0.3205427001831197,
+              "hits10": 0.4571333444314966
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.28274409796256667,
+              "hits1": 0.19019477276510738,
+              "hits3": 0.3205427001831197,
+              "hits10": 0.45705010820709174
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.28274409796256667,
+              "hits1": 0.19019477276510738,
+              "hits3": 0.3205427001831197,
+              "hits10": 0.45705010820709174
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.07133344431496587,
+          "native_candidate_rank_worse_fraction": 0.07133344431496587,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 0
+        },
+        {
+          "task_snapshot": 4,
+          "queries": 8638,
+          "old_candidates": 14541,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.24839140674254842,
+              "hits1": 0.14193100254688584,
+              "hits3": 0.2793470710812688,
+              "hits10": 0.4651539708265802
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.24839140674254842,
+              "hits1": 0.14193100254688584,
+              "hits3": 0.2793470710812688,
+              "hits10": 0.4651539708265802
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.24839140674254842,
+              "hits1": 0.14193100254688584,
+              "hits3": 0.2793470710812688,
+              "hits10": 0.4651539708265802
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.24839140674254842,
+              "hits1": 0.14193100254688584,
+              "hits3": 0.2793470710812688,
+              "hits10": 0.4651539708265802
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.24839140674254842,
+              "hits1": 0.14193100254688584,
+              "hits3": 0.2793470710812688,
+              "hits10": 0.4651539708265802
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.0,
+          "native_candidate_rank_worse_fraction": 0.0,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 0
+        }
+      ],
+      "terminal_sha256": "f3167c90ac2c7ff8db18ed24cfca5b2f2a7507591235ddbd3ce5450da376430e",
+      "all_query_native_replay_exact": true,
+      "independent_all_score_recomputation": false,
+      "controller_metric_max_abs_delta": 2.7755575615628914e-17
+    },
+    {
+      "id": "incde-fact-s3407",
+      "dataset": "FACT",
+      "queries": 124050,
+      "derived_checks": 2742142,
+      "overall": {
+        "native_replay": {
+          "mrr": 0.2186124231396728,
+          "hits1": 0.12931882305521966,
+          "hits3": 0.2520515920999597,
+          "hits10": 0.39529222087867794
+        },
+        "candidate_expansion_only": {
+          "mrr": 0.2152439108980807,
+          "hits1": 0.12765014107214834,
+          "hits3": 0.24806126561870215,
+          "hits10": 0.38852075775896816
+        },
+        "strict_rank_old_candidates": {
+          "mrr": 0.2186124231396728,
+          "hits1": 0.12931882305521966,
+          "hits3": 0.2520515920999597,
+          "hits10": 0.39529222087867794
+        },
+        "strict_rank_final_candidates": {
+          "mrr": 0.2152439108980807,
+          "hits1": 0.12765014107214834,
+          "hits3": 0.24806126561870215,
+          "hits10": 0.38852075775896816
+        },
+        "current_filter_final_candidates": {
+          "mrr": 0.23591436041989497,
+          "hits1": 0.1441999193873438,
+          "hits3": 0.2761708988311165,
+          "hits10": 0.4109391374445788
+        }
+      },
+      "task_table": [
+        {
+          "task_snapshot": 0,
+          "queries": 24810,
+          "old_candidates": 10513,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.23678378937921923,
+              "hits1": 0.15461507456670698,
+              "hits3": 0.27029423619508264,
+              "hits10": 0.39141475211608223
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.22908049637037778,
+              "hits1": 0.1509471987101975,
+              "hits3": 0.26062071745264004,
+              "hits10": 0.37686416767432485
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.23678378937921923,
+              "hits1": 0.15461507456670698,
+              "hits3": 0.27029423619508264,
+              "hits10": 0.39141475211608223
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.22908049637037778,
+              "hits1": 0.1509471987101975,
+              "hits3": 0.26062071745264004,
+              "hits10": 0.37686416767432485
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.254324764950562,
+              "hits1": 0.1713422007255139,
+              "hits3": 0.29338976219266427,
+              "hits10": 0.40584441757355905
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.5977428456267634,
+          "native_candidate_rank_worse_fraction": 0.5977428456267634,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 15394
+        },
+        {
+          "task_snapshot": 1,
+          "queries": 24810,
+          "old_candidates": 12779,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.2175146890573189,
+              "hits1": 0.13466344216041917,
+              "hits3": 0.2521966948810963,
+              "hits10": 0.37646110439338976
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.2135682665389492,
+              "hits1": 0.13256751309955664,
+              "hits3": 0.24772269246271664,
+              "hits10": 0.36811769447803305
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.2175146890573189,
+              "hits1": 0.13466344216041917,
+              "hits3": 0.2521966948810963,
+              "hits10": 0.37646110439338976
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.2135682665389492,
+              "hits1": 0.13256751309955664,
+              "hits3": 0.24772269246271664,
+              "hits10": 0.36811769447803305
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.240410243326318,
+              "hits1": 0.1550987505038291,
+              "hits3": 0.2833131801692866,
+              "hits10": 0.39564691656590084
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.5466344216041918,
+          "native_candidate_rank_worse_fraction": 0.5466344216041918,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 15614
+        },
+        {
+          "task_snapshot": 2,
+          "queries": 24810,
+          "old_candidates": 13586,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.21324902447111366,
+              "hits1": 0.12849657396211206,
+              "hits3": 0.24627166465135025,
+              "hits10": 0.37823458282950423
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.21044875936243249,
+              "hits1": 0.12700523982265216,
+              "hits3": 0.2429665457476824,
+              "hits10": 0.37275292220878675
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.21324902447111366,
+              "hits1": 0.12849657396211206,
+              "hits3": 0.24627166465135025,
+              "hits10": 0.37823458282950423
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.21044875936243249,
+              "hits1": 0.12700523982265216,
+              "hits3": 0.2429665457476824,
+              "hits10": 0.37275292220878675
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.23756026272437888,
+              "hits1": 0.14917372027408304,
+              "hits3": 0.28024989923417976,
+              "hits10": 0.39903264812575573
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.4784764207980653,
+          "native_candidate_rank_worse_fraction": 0.4784764207980653,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 15735
+        },
+        {
+          "task_snapshot": 3,
+          "queries": 24810,
+          "old_candidates": 13894,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.2110203201278638,
+              "hits1": 0.1199919387343813,
+              "hits3": 0.2426440951229343,
+              "hits10": 0.39613059250302296
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.2086277395557957,
+              "hits1": 0.1189036678758565,
+              "hits3": 0.24014510278113663,
+              "hits10": 0.39064893188230554
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.2110203201278638,
+              "hits1": 0.1199919387343813,
+              "hits3": 0.2426440951229343,
+              "hits10": 0.39613059250302296
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.2086277395557957,
+              "hits1": 0.1189036678758565,
+              "hits3": 0.24014510278113663,
+              "hits10": 0.39064893188230554
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.2327822384353675,
+              "hits1": 0.1365578395808142,
+              "hits3": 0.2750503829101169,
+              "hits10": 0.4199516324062878
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.33486497380088676,
+          "native_candidate_rank_worse_fraction": 0.33486497380088676,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 15112
+        },
+        {
+          "task_snapshot": 4,
+          "queries": 24810,
+          "old_candidates": 14541,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.21449429266284842,
+              "hits1": 0.10882708585247884,
+              "hits3": 0.24885126964933493,
+              "hits10": 0.43422007255139056
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.21449429266284842,
+              "hits1": 0.10882708585247884,
+              "hits3": 0.24885126964933493,
+              "hits10": 0.43422007255139056
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.21449429266284842,
+              "hits1": 0.10882708585247884,
+              "hits3": 0.24885126964933493,
+              "hits10": 0.43422007255139056
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.21449429266284842,
+              "hits1": 0.10882708585247884,
+              "hits3": 0.24885126964933493,
+              "hits10": 0.43422007255139056
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.21449429266284842,
+              "hits1": 0.10882708585247884,
+              "hits3": 0.24885126964933493,
+              "hits10": 0.43422007255139056
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.0,
+          "native_candidate_rank_worse_fraction": 0.0,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 0
+        }
+      ],
+      "terminal_sha256": "235daf65610d840d7b4948ef4580139e508a22dd16378336eb55d382aa404645",
+      "all_query_native_replay_exact": true,
+      "independent_all_score_recomputation": false,
+      "controller_metric_max_abs_delta": 2.7755575615628914e-17
+    },
+    {
+      "id": "incde-hybrid-s3407",
+      "dataset": "HYBRID",
+      "queries": 124052,
+      "derived_checks": 2723807,
+      "overall": {
+        "native_replay": {
+          "mrr": 0.22477696186124882,
+          "hits1": 0.1322348692483797,
+          "hits3": 0.26404249830716153,
+          "hits10": 0.40088833714893757
+        },
+        "candidate_expansion_only": {
+          "mrr": 0.1864304126083092,
+          "hits1": 0.10252152323219295,
+          "hits3": 0.21536130009995808,
+          "hits10": 0.35119949698513525
+        },
+        "strict_rank_old_candidates": {
+          "mrr": 0.22477696186124882,
+          "hits1": 0.1322348692483797,
+          "hits3": 0.26404249830716153,
+          "hits10": 0.40088833714893757
+        },
+        "strict_rank_final_candidates": {
+          "mrr": 0.1864304126083092,
+          "hits1": 0.10252152323219295,
+          "hits3": 0.21536130009995808,
+          "hits10": 0.35119949698513525
+        },
+        "current_filter_final_candidates": {
+          "mrr": 0.20198752855811952,
+          "hits1": 0.11537097346274143,
+          "hits3": 0.23627188598329732,
+          "hits10": 0.36743462418985584
+        }
+      },
+      "task_table": [
+        {
+          "task_snapshot": 0,
+          "queries": 23026,
+          "old_candidates": 8631,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.23872038099842088,
+              "hits1": 0.1313732302614436,
+              "hits3": 0.2906714149222618,
+              "hits10": 0.43976374533136453
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.14123946057394676,
+              "hits1": 0.06358030052983583,
+              "hits3": 0.15864674715538957,
+              "hits10": 0.30031269000260574
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.23872038099842088,
+              "hits1": 0.1313732302614436,
+              "hits3": 0.2906714149222618,
+              "hits10": 0.43976374533136453
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.14123946057394676,
+              "hits1": 0.06358030052983583,
+              "hits3": 0.15864674715538957,
+              "hits10": 0.30031269000260574
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.16821899573202834,
+              "hits1": 0.08364457569703813,
+              "hits3": 0.20068618083905151,
+              "hits10": 0.3278467818987232
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.882002953183358,
+          "native_candidate_rank_worse_fraction": 0.882002953183358,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 17346
+        },
+        {
+          "task_snapshot": 1,
+          "queries": 8350,
+          "old_candidates": 10043,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.31116923070453906,
+              "hits1": 0.20574850299401198,
+              "hits3": 0.36203592814371255,
+              "hits10": 0.5107784431137724
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.1748544122783885,
+              "hits1": 0.0844311377245509,
+              "hits3": 0.2007185628742515,
+              "hits10": 0.36131736526946107
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.31116923070453906,
+              "hits1": 0.20574850299401198,
+              "hits3": 0.36203592814371255,
+              "hits10": 0.5107784431137724
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.1748544122783885,
+              "hits1": 0.0844311377245509,
+              "hits3": 0.2007185628742515,
+              "hits10": 0.36131736526946107
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.2217330852834888,
+              "hits1": 0.13137724550898203,
+              "hits3": 0.2510179640718563,
+              "hits10": 0.40311377245508984
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.8809580838323353,
+          "native_candidate_rank_worse_fraction": 0.8809580838323353,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 6221
+        },
+        {
+          "task_snapshot": 2,
+          "queries": 35208,
+          "old_candidates": 12780,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.21639151481537428,
+              "hits1": 0.1280674846625767,
+              "hits3": 0.24804021813224267,
+              "hits10": 0.3887468757100659
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.17743037859708777,
+              "hits1": 0.09648375369234265,
+              "hits3": 0.2011474664848898,
+              "hits10": 0.3404055896387185
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.21639151481537428,
+              "hits1": 0.1280674846625767,
+              "hits3": 0.24804021813224267,
+              "hits10": 0.3887468757100659
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.17743037859708777,
+              "hits1": 0.09648375369234265,
+              "hits3": 0.2011474664848898,
+              "hits10": 0.3404055896387185
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.19254367380956205,
+              "hits1": 0.11099750056805271,
+              "hits3": 0.21770620313565098,
+              "hits10": 0.3544364917064304
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.8070324926153147,
+          "native_candidate_rank_worse_fraction": 0.8070324926153147,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 20066
+        },
+        {
+          "task_snapshot": 3,
+          "queries": 41336,
+          "old_candidates": 14395,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.2076439427067354,
+              "hits1": 0.11343622992065028,
+              "hits3": 0.2469760015482872,
+              "hits10": 0.3861041223146894
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.20758592943985094,
+              "hits1": 0.11343622992065028,
+              "hits3": 0.2469518095606735,
+              "hits10": 0.3860315463518483
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.2076439427067354,
+              "hits1": 0.11343622992065028,
+              "hits3": 0.2469760015482872,
+              "hits10": 0.3861041223146894
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.20758592943985094,
+              "hits1": 0.11343622992065028,
+              "hits3": 0.2469518095606735,
+              "hits10": 0.3860315463518483
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.21690262079417888,
+              "hits1": 0.11897619508418812,
+              "hits3": 0.26202341784401006,
+              "hits10": 0.3990226437004064
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.07284207470485775,
+          "native_candidate_rank_worse_fraction": 0.07284207470485775,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 10585
+        },
+        {
+          "task_snapshot": 4,
+          "queries": 16132,
+          "old_candidates": 14541,
+          "final_candidates": 14541,
+          "scores": {
+            "native_replay": {
+              "mrr": 0.222359945091358,
+              "hits1": 0.15267790726506322,
+              "hits3": 0.2539672700223159,
+              "hits10": 0.3529010662038185
+            },
+            "candidate_expansion_only": {
+              "mrr": 0.222359945091358,
+              "hits1": 0.15267790726506322,
+              "hits3": 0.2539672700223159,
+              "hits10": 0.3529010662038185
+            },
+            "strict_rank_old_candidates": {
+              "mrr": 0.222359945091358,
+              "hits1": 0.15267790726506322,
+              "hits3": 0.2539672700223159,
+              "hits10": 0.3529010662038185
+            },
+            "strict_rank_final_candidates": {
+              "mrr": 0.222359945091358,
+              "hits1": 0.15267790726506322,
+              "hits3": 0.2539672700223159,
+              "hits10": 0.3529010662038185
+            },
+            "current_filter_final_candidates": {
+              "mrr": 0.222359945091358,
+              "hits1": 0.15267790726506322,
+              "hits3": 0.2539672700223159,
+              "hits10": 0.3529010662038185
+            }
+          },
+          "strict_candidate_rank_worse_fraction": 0.0,
+          "native_candidate_rank_worse_fraction": 0.0,
+          "tie_fraction": 0.0,
+          "queries_with_later_filtered_truths": 0
+        }
+      ],
+      "terminal_sha256": "dea02c3b67985b1d368db54a64298cfda655f1c002b7a773ea0dd7a3020c3382",
+      "all_query_native_replay_exact": true,
+      "independent_all_score_recomputation": false,
+      "controller_metric_max_abs_delta": 2.7755575615628914e-17
+    }
+  ],
+  "limitations": [
+    "CPU provenance, query/filter contracts, numeric derivations and necessary rank identities only.",
+    "No independent embedding-score or CUDA all-query rank recomputation.",
+    "Source native PASS is bound and consumed, not independently repeated by this script.",
+    "Rank identities and tie bounds are necessary checks; they cannot certify score provenance alone.",
+    "Native validation-best precision, historical competitors and single-seed limits remain.",
+    "No canonical changes or formal result promotion."
+  ],
+  "protocol": "independently implemented Pons-motivated fixed-checkpoint five-arm evaluation diagnostic, not author paper full replication",
+  "utc": "2026-10-10T12:39:07.667548+00:00"
+}

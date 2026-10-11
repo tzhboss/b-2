@@ -1,0 +1,63 @@
+id: KGE-LIT-003
+status: terminal_audited_qualified_evidence
+registration_status: REGISTERED
+registered_utc: '2026-10-10T11:49:10Z'
+active_processes: []
+jobs:
+- id: sage-fact-s55
+  method: SAGE
+  status: failed
+  gpu: 6
+  pid: 646824
+  started_monotonic: 960237.38273862
+  started_utc: '2026-10-10T11:49:23Z'
+  log: runs/sage-fact-s55/run.log
+  exit_code: 0
+  elapsed_s: 1779.56712410599
+  terminal_utc: '2026-10-10T12:19:02Z'
+  source_inputs_unchanged: false
+  source_error: AssertionError('repos/SAGE/provenance/preparation_manifest.json')
+  log_sha256: 7d23afb34f4b106bc2e77a1a2080f27d04c639b4c49b9cf819fffb44b443245d
+expected_jobs: 1
+jobs_manifest_sha256: 3d31b5a36b28aff0aa155d8fb1c26bef3b4831a22c53091a857d9c79c51a6165
+scheduler_sha256: 0becdfa0221d3072e8e6a264d23bc4207374076b33ed2f81810ea24889cb55bb
+jobs_manifest: configs/experiments/KGE-LIT-003-jobs.json
+audit:
+  status: FAIL_RETAINED
+  scientific_artifact_status: PASS_SAMPLED_POST_TRAIN_REPLAY
+  scientific_checks: 825
+  scientific_failures: 0
+  independent_sample_replays: 120
+  original_producer_integrity_fail_retained: true
+  adjudication: SUPPORTED_NONCONSUMED_METADATA_DRIFT
+  qualification: All frozen scientific worktree/code/data/config files intact; only
+    unused original repository provenance manifest changed. Numerical results are
+    qualified evidence, not clean reproduction.
+  evidence_directory: results/KGE-LIT-003
+  summary_sha256: 44ca92dc2c21ad58b0600bf938084ac0d916154bce1915b66d17e049f41cfbc2
+user_objective: full released SAGE native implementation; explicit paper-code boundaries
+scheduler_pid: 646750
+resource_observation:
+  utc: '2026-10-10T12:19:03Z'
+  gpus:
+    0:
+      free_mb: 10269
+      utilization: 0
+    1:
+      free_mb: 2917
+      utilization: 68
+    2:
+      free_mb: 8045
+      utilization: 5
+    3:
+      free_mb: 9547
+      utilization: 6
+    4:
+      free_mb: 18915
+      utilization: 57
+    5:
+      free_mb: 23845
+      utilization: 0
+    6:
+      free_mb: 24109
+      utilization: 0

@@ -1,0 +1,26 @@
+{
+  "id": "KGE-ENTITY-COMMON-REAL-INDEX-EQUIVALENCE-033",
+  "scope": "Bitwise V2/V3 replay of three audited eight-step real TRAIN fixtures; no complete method or utility claim",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "worker": "scripts/check_shared_graph_equivalence.py",
+  "source_canonical": "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-PREFLIGHT-026/experiment.yaml",
+  "source_config_sha256": "b27b9d3d1245d831d7f20d446004e1c3c08db3a0c0459a72d5c838e136bb00d4",
+  "source_directory": "artifacts/shared-preflight",
+  "solver_modules": ["shared_rank_solver_v2", "shared_rank_solver_v3"],
+  "expected_steps": 8,
+  "budget_seconds_per_job": 600,
+  "available_gpu_indices": [2],
+  "max_concurrent_audits": 1,
+  "log_directory": "logs/shared-graph-equivalence33",
+  "output_directory": "artifacts/shared-graph-equivalence33",
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-027/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-EVAL-030/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-NATIVE-REAUDIT-031/experiment.yaml"
+  ],
+  "jobs": [
+    {"id": "real-index-full-s17", "source_job": "shared-preflight-full-s17"},
+    {"id": "real-index-scoped-s17", "source_job": "shared-preflight-scoped-s17"},
+    {"id": "real-index-joint-s17", "source_job": "shared-preflight-joint-s17"}
+  ]
+}

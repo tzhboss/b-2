@@ -1,0 +1,179 @@
+{
+  "status": "PASS_WITH_LIMITATIONS",
+  "master": {
+    "run": "KGE-LIT-004-master",
+    "status": "PASS_WITH_LIMITATIONS",
+    "checks": 6,
+    "failure_count": 0,
+    "failures": [],
+    "missing_evidence": [],
+    "evidence": {
+      "current_canonical_sha256": "6c66326b0d5d8d13216179142c9a8adf6a37e530ef4f11ecaab85ae341572063",
+      "canonical_status": "producer_terminal_pending_audit",
+      "master_manifest_sha256": "314b14fa671d140b579ba5e728afd6efb36349e34404d2f04a8ef33d2442a58b",
+      "source": "exact canonical byte snapshot at audit start; canonical remains mutable runtime record",
+      "canonical_job_states": {
+        "kgeditor-e-fb15k237-s0": "terminal_unreviewed",
+        "kgeditor-e-wn18rr-s0": "terminal_unreviewed"
+      },
+      "canonical_changed_during_audit": false,
+      "canonical_end_sha256": "6c66326b0d5d8d13216179142c9a8adf6a37e530ef4f11ecaab85ae341572063"
+    }
+  },
+  "runs": [
+    {
+      "run": "kgeditor-e-fb15k237-s0",
+      "status": "PASS_WITH_LIMITATIONS",
+      "checks": 330947,
+      "failure_count": 0,
+      "failures": [],
+      "missing_evidence": [],
+      "evidence": {
+        "registered_inputs": {
+          "current_input_count": 30,
+          "copied_source_count": 14,
+          "model_revision": "a103204def5465ac090935c925451eef6692f2cc",
+          "dataset_revision": "18a560856826fdcfab5b328829f550ce0f9e5a7a"
+        },
+        "training_checkpoint": {
+          "best_model_path": "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/logger/version_0/checkpoints/model-epoch=12-Eval/hits3=0.9708-valid_flipped=0.000000.ckpt",
+          "best_model_score": 0.9708360433578491,
+          "global_step": 30860,
+          "current_epoch": 19,
+          "checkpoint_epoch": 13,
+          "checkpoint_training_epoch": 12,
+          "checkpoint_global_step": 20059,
+          "checkpoint_sha256": "6c53dc4d5db393a5eb54c3c319a975fe5fa93f2e00f70615423982f6c2bd924c"
+        },
+        "logged_selection": {
+          "monitor_samples": 20,
+          "maximum_logged_hits3": 0.9708360433578491,
+          "logged_epoch_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        "token_contract": {
+          "entities": 14951,
+          "relations": 237,
+          "base_vocab": 30522,
+          "entity_text_source": "entity2textlong.txt",
+          "relation_text_count": 1345,
+          "independent_reconstruction": "WordPiece input/label/mask/placeholder contract only; no model scores",
+          "condition_tokens": "not present in observation JSONL; frozen source binding only"
+        },
+        "edit_exposure_multiplicity": {
+          "unique_rows": 3086,
+          "exposures": 3086,
+          "max_source_multiplicity": 1,
+          "identity_note": "edit duplicate candidates count possible identities, not unique attribution"
+        },
+        "locality_exposure_multiplicity": {
+          "unique_rows": 3088,
+          "exposures": 12344,
+          "max_source_multiplicity": 4,
+          "identity_note": "edit duplicate candidates count possible identities, not unique attribution"
+        },
+        "recalculated_metrics": {
+          "row_count": 15430,
+          "edit": {
+            "count": 3086,
+            "mean_rank_before": 5618.275437459494,
+            "mean_rank_after": 9.107258587167856,
+            "mrr_after": 0.8706219911389623,
+            "unique_source_rows": 3086,
+            "hits1_after": 0.7793259883344135,
+            "hits3_after": 0.9581983149708361,
+            "hits5_after": 0.9656513285806869,
+            "article_ER_roc": 0.9983789939299796
+          },
+          "locality": {
+            "count": 12344,
+            "mean_rank_before": 2.830362929358393,
+            "mean_rank_after": 14.099238496435515,
+            "mrr_after": 0.6924264563105472,
+            "unique_source_rows": 3088,
+            "hits1_after": 0.5259235255994815,
+            "hits3_after": 0.848347375243033,
+            "hits5_after": 0.9285482825664291,
+            "baseline_hits3_count": 10734,
+            "article_RK_at3": 0.975591578162847,
+            "article_RK_roc": 0.7992541987232893
+          }
+        },
+        "drop_last": {
+          "source_test": 3087,
+          "evaluated_edits": 3086,
+          "omitted_zero_based_rows": [
+            3086
+          ]
+        },
+        "article_comparison": {
+          "primary": "https://arxiv.org/html/2301.10405v8 Table2 / Eqs3,4",
+          "metric_order": [
+            "Succ@1",
+            "Succ@3",
+            "ER_roc",
+            "RK@3",
+            "RK_roc"
+          ],
+          "article": [
+            0.866,
+            0.986,
+            0.999,
+            0.874,
+            0.635
+          ],
+          "exposed_run": [
+            0.7793259883344135,
+            0.9581983149708361,
+            0.9983789939299796,
+            0.975591578162847,
+            0.7992541987232893
+          ],
+          "difference": [
+            -0.08667401166558653,
+            -0.027801685029163914,
+            -0.0006210060700203579,
+            0.10159157816284703,
+            0.16425419872328928
+          ],
+          "claim": "descriptive comparison only; different locality exposure weighting, reused validation and rank tie backend"
+        },
+        "export_sha256": "51d55537a8ad40ccc13478b2dcca304d803b73fc08cf82125e1eaebd8572c8ad"
+      }
+    }
+  ],
+  "verification_scope": "CPU hashes/checkpoint metadata, independent token-source contract and exported rank aggregate arithmetic",
+  "unverified": [
+    "No model forward/GPU inference; full candidate logits unavailable, so exported ranks/top3 cannot be proven from all scores.",
+    "Finite target logits checked for range/serialization only; score recomputation is outside this auditor.",
+    "Source features/targets/masks verified; condition-token exports are unavailable.",
+    "20 epochs and checkpoint selection checked from steps, metadata and logged scalar evidence, not external execution observation."
+  ],
+  "protocol_limits": [
+    "edit_test reused to select checkpoint: native exposed evaluation, not untouched heldout.",
+    "8 locality probes per edit2 batch, repeated worker-local exposures, not a full unique L-Test evaluation.",
+    "workers4 replaces32; locality weighting and rank tie backend may differ from article.",
+    "ER_roc/RK_roc are mean-rank rate changes, not ROC AUC; no SOTA/novelty claim."
+  ],
+  "read_only": true
+}

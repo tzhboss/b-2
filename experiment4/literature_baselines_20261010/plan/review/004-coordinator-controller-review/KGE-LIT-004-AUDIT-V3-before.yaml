@@ -1,0 +1,62 @@
+id: KGE-LIT-004-AUDIT-V3
+status: all_audits_terminal_pending_controller_review
+registration_status: REGISTERED
+registered_utc: '2026-10-10T13:33:37.737880+00:00'
+native_master_sha256: 314b14fa671d140b579ba5e728afd6efb36349e34404d2f04a8ef33d2442a58b
+implementation_sha256:
+  code/audit_kgeditor_native_v2.py: ee004305ad0f01d985622833ba89a1fecaa339d752c3f1a4451af6d77b792b37
+  code/replay_kgeditor_samples_v3_native_alias.py: e1c3630e2de328d1024c572314bcc6bd40a0dbcf51188243ccc4eb4381e8f222
+coordinator_sha256: dd43d6d7e73556e08499e6f86cdd39734efe3abb68ac8bde4ad02fbc34b412bc
+active_processes: []
+audit:
+  status: not_started
+scope: CPU numerical provenance audit v2 plus fixed160 sample replay under source-proven
+  native shared-embedding restore; qualified effective model semantics
+sampling:
+  batches: 16
+  examples_per_batch: 10
+  rank_top3: exact
+  target_logit_atol: 0.0001
+resource_policy: GPU4/5 only after its corresponding native producer terminal; at
+  least23000MB free and utilization<=20; twoCPUthreads
+no_automatic_promotion: true
+supersedes: KGE-LIT-004-AUDIT-V2
+jobs:
+- id: kgeditor-e-fb15k237-s0
+  gpu: 4
+  stage: completed_sample_audited
+  pid: 682091
+  cpu_audit_exit_code: 0
+  cpu_audit_elapsed_s: 60.03202578402124
+  cpu_audit_report: logs/kgeditor-e-fb15k237-s0-independent-cpu-audit-v2.json
+  cpu_audit_report_sha256: 8c9ba1cd14f275c0ee80112d2143399d1c85f79f86f0fda75ddc191ad129da65
+  sample_replay_exit_code: 0
+  sample_replay_elapsed_s: 45.032199064968154
+  sample_replay_report: audit-replays/kgeditor-e-fb15k237-s0-v3/replay-report.json
+  sample_replay_report_sha256: 447f0b9e1a5ba6dcc7cd43eae706aacaad49e6f647c25de5508c2d5f673bdb00
+  status: PASS_WITH_LIMITATIONS
+  checked_examples: 160
+  max_absolute_logit_error: 0
+- id: kgeditor-e-wn18rr-s0
+  gpu: 5
+  stage: completed_sample_audited
+  cpu_audit_exit_code: 0
+  cpu_audit_report: logs/kgeditor-e-wn18rr-s0-independent-cpu-audit-v2.json
+  cpu_audit_report_sha256: 626abab3415453d32342f0ef2f653882ac38034560a8f163619c63dede881444
+  cpu_audit_reused_unchanged: true
+  pid: 676441
+  sample_replay_exit_code: 0
+  sample_replay_elapsed_s: 45.027889132965356
+  sample_replay_report: audit-replays/kgeditor-e-wn18rr-s0-v3/replay-report.json
+  sample_replay_report_sha256: bcac5b0c2fa3cc1994078dc28c6a2bf7aac563fc719418dc9f6c3019c77d74d7
+  status: PASS_WITH_LIMITATIONS
+  checked_examples: 160
+  max_absolute_logit_error: 0
+reuse_cpu_audit:
+  kgeditor-e-wn18rr-s0:
+    report: logs/kgeditor-e-wn18rr-s0-independent-cpu-audit-v2.json
+    sha256: 626abab3415453d32342f0ef2f653882ac38034560a8f163619c63dede881444
+retained_failures:
+- logs/kgeditor-e-wn18rr-s0-independent-cpu-audit.json
+- audit-replays/kgeditor-e-wn18rr-s0-v2/replay-report.json
+coordinator_pid: 676438

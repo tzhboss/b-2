@@ -1,0 +1,36 @@
+id: KGE-ENTITY-COMMON-SHARED-RANK-SCOPE-024
+status: completed_audited_artifact_checks_only
+config: configs/shared-rank-scope24.json
+protocol: plan/shared-rank-scope-protocol.md
+scope: Full TRAIN shared-reference scope compilation and guard-scorer scaling for
+  three common seeds; no graph method utility
+registered_utc: '2026-10-11T03:57:07.333776+00:00'
+frozen_input_sha256:
+  configs/shared-rank-scope24.json: 65a358f3599f4e5ba92f333b24ab6d871643a371d6cf014dc597017cbac915dd
+  plan/shared-rank-scope-protocol.md: bc49343d8574111df9f4e24d932005a987418e66f5154148b2724991b734cb5d
+  scripts/coordinate_artifact_checks.py: 770ecab1869cc2daee5076f772bed8064fc075db1a449071b4df52f0a739521e
+  scripts/run_shared_rank_scope.py: 8873687094e2d1907ca1c70b0500cdb13963d00005cd7d3eb7c6ccd0d6f6cf2f
+  src/shared_rank_scope.py: e351d1fe0a1e72feb30fe33a0887bea92e8b761a0656dad9ac5500fb406c57be
+  src/shared_rank_cache_v2.py: 8980fac50a992a74f1dd339c582ad3d1382c0fb140688cf87c1a6c6a4c7abaad
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+  configs/task-projection19.json: ec7512c8bb38b8ae353e4cb1414c53545b103c876949282ef7d2f1815fdee825
+  results/KGE-ENTITY-COMMON-SHARED-RANK-CACHE-023R3/summary.json: ba9923105aa87d0ba8aca3b1a25153eb990ae60d0a57cc719ccb26b071b24075
+active_processes: []
+coordinator_pid: 746430
+jobs:
+  shared-rank-scope-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-rank-scope-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-rank-scope-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+queued_jobs: []
+queued_audits: []
+result_directory: results/KGE-ENTITY-COMMON-SHARED-RANK-SCOPE-024

@@ -1,0 +1,277 @@
+{
+  "consumed_input_sha256": {
+    "ranks/train4_test0_post_train.npz": "335e0e31782de27e1d136177e3c8abea85c1de226a12da474d042d70258eec99",
+    "ranks/train4_test1_post_train.npz": "419b8525df46c5cbaba3e7f74af878e1753c99e0d69f80128d4af23bac882839",
+    "ranks/train4_test2_post_train.npz": "18eaeb29b1df503b821b8872ba05ea6a88b1e96ffebbc04565481cce830b8c40",
+    "ranks/train4_test3_post_train.npz": "ea9db028eff8fea535600f0737b0c28d6421b3d6ca9a2bc167741ffe87fb4f99",
+    "ranks/train4_test4_post_train.npz": "194f0fd948b7c2adf222b0c298098b98cd643dcbf77f289823e43f64974f42bb",
+    "checkpoint/HYBRID/4model_best.tar": "25da26ba96f89e4d82eb53f6edb3972fc7afc9cd5976aa481f802aab986f2034",
+    "registered-job.json": "ac74fb484551f15455a5379658c982ee503a4cd8f2d852724362e0aa4875ce8d",
+    "terminal.json": "ab42a8c03ccacda99dd00c6977b355c3b617c3fac4a94ba0aa3315bc6d551592"
+  },
+  "copied_input_manifest_sha256": "8f0c48c8410e52113f3d251f7b810bdb5362c86b70ecb504abe9d74543743d39",
+  "runtime_torch": "2.5.1+cu124",
+  "runtime_numpy": "2.4.0",
+  "runtime_device": "NVIDIA GeForce RTX 3090",
+  "id": "incde-hybrid-s3407",
+  "status": "terminal_unreviewed",
+  "registration_sha256": "e36e51c12d983f5875d326e94f3755d2dccf8b3d39af719a76daacabdd79111a",
+  "source_audit_sha256": "68afa824529c4889627f0fda18d17a81a0b6c1dd69d66e5cfb5e0ecc673f1ffc",
+  "checkpoint_sha256": "25da26ba96f89e4d82eb53f6edb3972fc7afc9cd5976aa481f802aab986f2034",
+  "full_process_elapsed_s": 44.532892185030505,
+  "queries": 124052,
+  "checks": 248104,
+  "all_query_native_replay_exact": true,
+  "task_table": [
+    {
+      "task_snapshot": 0,
+      "queries": 23026,
+      "old_candidates": 8631,
+      "final_candidates": 14541,
+      "scores": {
+        "native_replay": {
+          "mrr": 0.23872038099842088,
+          "hits1": 0.1313732302614436,
+          "hits3": 0.2906714149222618,
+          "hits10": 0.43976374533136453
+        },
+        "candidate_expansion_only": {
+          "mrr": 0.14123946057394676,
+          "hits1": 0.06358030052983583,
+          "hits3": 0.15864674715538957,
+          "hits10": 0.30031269000260574
+        },
+        "strict_rank_old_candidates": {
+          "mrr": 0.23872038099842088,
+          "hits1": 0.1313732302614436,
+          "hits3": 0.2906714149222618,
+          "hits10": 0.43976374533136453
+        },
+        "strict_rank_final_candidates": {
+          "mrr": 0.14123946057394676,
+          "hits1": 0.06358030052983583,
+          "hits3": 0.15864674715538957,
+          "hits10": 0.30031269000260574
+        },
+        "current_filter_final_candidates": {
+          "mrr": 0.16821899573202834,
+          "hits1": 0.08364457569703813,
+          "hits3": 0.20068618083905151,
+          "hits10": 0.3278467818987232
+        }
+      },
+      "strict_candidate_rank_worse_fraction": 0.882002953183358,
+      "native_candidate_rank_worse_fraction": 0.882002953183358,
+      "tie_fraction": 0.0,
+      "queries_with_later_filtered_truths": 17346
+    },
+    {
+      "task_snapshot": 1,
+      "queries": 8350,
+      "old_candidates": 10043,
+      "final_candidates": 14541,
+      "scores": {
+        "native_replay": {
+          "mrr": 0.31116923070453906,
+          "hits1": 0.20574850299401198,
+          "hits3": 0.36203592814371255,
+          "hits10": 0.5107784431137724
+        },
+        "candidate_expansion_only": {
+          "mrr": 0.17485441227838847,
+          "hits1": 0.0844311377245509,
+          "hits3": 0.2007185628742515,
+          "hits10": 0.36131736526946107
+        },
+        "strict_rank_old_candidates": {
+          "mrr": 0.31116923070453906,
+          "hits1": 0.20574850299401198,
+          "hits3": 0.36203592814371255,
+          "hits10": 0.5107784431137724
+        },
+        "strict_rank_final_candidates": {
+          "mrr": 0.17485441227838847,
+          "hits1": 0.0844311377245509,
+          "hits3": 0.2007185628742515,
+          "hits10": 0.36131736526946107
+        },
+        "current_filter_final_candidates": {
+          "mrr": 0.2217330852834888,
+          "hits1": 0.13137724550898203,
+          "hits3": 0.2510179640718563,
+          "hits10": 0.40311377245508984
+        }
+      },
+      "strict_candidate_rank_worse_fraction": 0.8809580838323353,
+      "native_candidate_rank_worse_fraction": 0.8809580838323353,
+      "tie_fraction": 0.0,
+      "queries_with_later_filtered_truths": 6221
+    },
+    {
+      "task_snapshot": 2,
+      "queries": 35208,
+      "old_candidates": 12780,
+      "final_candidates": 14541,
+      "scores": {
+        "native_replay": {
+          "mrr": 0.21639151481537428,
+          "hits1": 0.1280674846625767,
+          "hits3": 0.24804021813224267,
+          "hits10": 0.3887468757100659
+        },
+        "candidate_expansion_only": {
+          "mrr": 0.17743037859708777,
+          "hits1": 0.09648375369234265,
+          "hits3": 0.2011474664848898,
+          "hits10": 0.3404055896387185
+        },
+        "strict_rank_old_candidates": {
+          "mrr": 0.21639151481537428,
+          "hits1": 0.1280674846625767,
+          "hits3": 0.24804021813224267,
+          "hits10": 0.3887468757100659
+        },
+        "strict_rank_final_candidates": {
+          "mrr": 0.17743037859708777,
+          "hits1": 0.09648375369234265,
+          "hits3": 0.2011474664848898,
+          "hits10": 0.3404055896387185
+        },
+        "current_filter_final_candidates": {
+          "mrr": 0.19254367380956205,
+          "hits1": 0.11099750056805271,
+          "hits3": 0.21770620313565098,
+          "hits10": 0.3544364917064304
+        }
+      },
+      "strict_candidate_rank_worse_fraction": 0.8070324926153147,
+      "native_candidate_rank_worse_fraction": 0.8070324926153147,
+      "tie_fraction": 0.0,
+      "queries_with_later_filtered_truths": 20066
+    },
+    {
+      "task_snapshot": 3,
+      "queries": 41336,
+      "old_candidates": 14395,
+      "final_candidates": 14541,
+      "scores": {
+        "native_replay": {
+          "mrr": 0.20764394270673536,
+          "hits1": 0.11343622992065028,
+          "hits3": 0.2469760015482872,
+          "hits10": 0.3861041223146894
+        },
+        "candidate_expansion_only": {
+          "mrr": 0.207585929439851,
+          "hits1": 0.11343622992065028,
+          "hits3": 0.2469518095606735,
+          "hits10": 0.3860315463518483
+        },
+        "strict_rank_old_candidates": {
+          "mrr": 0.20764394270673536,
+          "hits1": 0.11343622992065028,
+          "hits3": 0.2469760015482872,
+          "hits10": 0.3861041223146894
+        },
+        "strict_rank_final_candidates": {
+          "mrr": 0.207585929439851,
+          "hits1": 0.11343622992065028,
+          "hits3": 0.2469518095606735,
+          "hits10": 0.3860315463518483
+        },
+        "current_filter_final_candidates": {
+          "mrr": 0.21690262079417888,
+          "hits1": 0.11897619508418812,
+          "hits3": 0.26202341784401006,
+          "hits10": 0.3990226437004064
+        }
+      },
+      "strict_candidate_rank_worse_fraction": 0.07284207470485775,
+      "native_candidate_rank_worse_fraction": 0.07284207470485775,
+      "tie_fraction": 0.0,
+      "queries_with_later_filtered_truths": 10585
+    },
+    {
+      "task_snapshot": 4,
+      "queries": 16132,
+      "old_candidates": 14541,
+      "final_candidates": 14541,
+      "scores": {
+        "native_replay": {
+          "mrr": 0.222359945091358,
+          "hits1": 0.15267790726506322,
+          "hits3": 0.2539672700223159,
+          "hits10": 0.3529010662038185
+        },
+        "candidate_expansion_only": {
+          "mrr": 0.222359945091358,
+          "hits1": 0.15267790726506322,
+          "hits3": 0.2539672700223159,
+          "hits10": 0.3529010662038185
+        },
+        "strict_rank_old_candidates": {
+          "mrr": 0.222359945091358,
+          "hits1": 0.15267790726506322,
+          "hits3": 0.2539672700223159,
+          "hits10": 0.3529010662038185
+        },
+        "strict_rank_final_candidates": {
+          "mrr": 0.222359945091358,
+          "hits1": 0.15267790726506322,
+          "hits3": 0.2539672700223159,
+          "hits10": 0.3529010662038185
+        },
+        "current_filter_final_candidates": {
+          "mrr": 0.222359945091358,
+          "hits1": 0.15267790726506322,
+          "hits3": 0.2539672700223159,
+          "hits10": 0.3529010662038185
+        }
+      },
+      "strict_candidate_rank_worse_fraction": 0.0,
+      "native_candidate_rank_worse_fraction": 0.0,
+      "tie_fraction": 0.0,
+      "queries_with_later_filtered_truths": 0
+    }
+  ],
+  "overall": {
+    "native_replay": {
+      "mrr": 0.22477696186124882,
+      "hits1": 0.1322348692483797,
+      "hits3": 0.26404249830716153,
+      "hits10": 0.40088833714893757
+    },
+    "candidate_expansion_only": {
+      "mrr": 0.18643041260830923,
+      "hits1": 0.10252152323219295,
+      "hits3": 0.21536130009995808,
+      "hits10": 0.35119949698513525
+    },
+    "strict_rank_old_candidates": {
+      "mrr": 0.22477696186124882,
+      "hits1": 0.1322348692483797,
+      "hits3": 0.26404249830716153,
+      "hits10": 0.40088833714893757
+    },
+    "strict_rank_final_candidates": {
+      "mrr": 0.18643041260830923,
+      "hits1": 0.10252152323219295,
+      "hits3": 0.21536130009995808,
+      "hits10": 0.35119949698513525
+    },
+    "current_filter_final_candidates": {
+      "mrr": 0.20198752855811952,
+      "hits1": 0.11537097346274143,
+      "hits3": 0.23627188598329732,
+      "hits10": 0.36743462418985584
+    }
+  },
+  "output_sha256": {
+    "test0.npz": "522999886df25b976f3f0809d1564cbbb5e0901a66705c22b6437d91722c101f",
+    "test1.npz": "da657c7fa34b8236f418ebcf2f055e94c6ad955ffb87dbebbc001624aceba2c7",
+    "test2.npz": "d8e50b2b2d8bf61b4a87600552371f10a073aae769400c9012b8b553c4cc0e33",
+    "test3.npz": "4193130afd9601d4520b6bba08d6fb295e3dcd6a43379052ea98e2bd52d973b9",
+    "test4.npz": "4a11bf34c4cd7bef35bf30f82ea1c6f46f8db824bb6301c2829a24db99403d00"
+  },
+  "implementation_sha256": "313903da5d506a4086bcc0846cb712c764089929f6899f1734aa5b710655af78"
+}

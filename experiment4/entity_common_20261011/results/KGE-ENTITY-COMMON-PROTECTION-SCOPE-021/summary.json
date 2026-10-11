@@ -1,0 +1,135 @@
+{
+  "status": "PASS_TRAIN_SCOPE_DIAGNOSTIC_ONLY",
+  "test_read": false,
+  "seeds": [
+    {
+      "seed": 17,
+      "new_train_old_head_new_gold_facts": 16757,
+      "unique_queries": 8514,
+      "pred_boundary_locked_facts": 11290,
+      "true_rank10_locked_facts": 8051,
+      "union_locked_facts": 11290,
+      "pred_only_locked_facts": 3239,
+      "union_fraction": 0.6737482842990988,
+      "model_checks": [
+        {
+          "model": "proposal-qppred-s17",
+          "facts_checked": 11290,
+          "all_new_gold_strictly_below_boundary": true,
+          "minimum_old_competitor_rank_lower_bound": 11,
+          "new_gold_top10_impossible_under_this_fixed_old_model": true
+        },
+        {
+          "model": "taskprojection-task_query-s17",
+          "facts_checked": 11290,
+          "all_new_gold_strictly_below_boundary": true,
+          "minimum_old_competitor_rank_lower_bound": 11,
+          "new_gold_top10_impossible_under_this_fixed_old_model": true
+        }
+      ]
+    },
+    {
+      "seed": 29,
+      "new_train_old_head_new_gold_facts": 16757,
+      "unique_queries": 8514,
+      "pred_boundary_locked_facts": 11289,
+      "true_rank10_locked_facts": 7869,
+      "union_locked_facts": 11289,
+      "pred_only_locked_facts": 3420,
+      "union_fraction": 0.6736886077460166,
+      "model_checks": [
+        {
+          "model": "proposal-qppred-s29",
+          "facts_checked": 11289,
+          "all_new_gold_strictly_below_boundary": true,
+          "minimum_old_competitor_rank_lower_bound": 11,
+          "new_gold_top10_impossible_under_this_fixed_old_model": true
+        },
+        {
+          "model": "taskprojection-task_query-s29",
+          "facts_checked": 11289,
+          "all_new_gold_strictly_below_boundary": true,
+          "minimum_old_competitor_rank_lower_bound": 11,
+          "new_gold_top10_impossible_under_this_fixed_old_model": true
+        }
+      ]
+    },
+    {
+      "seed": 43,
+      "new_train_old_head_new_gold_facts": 16757,
+      "unique_queries": 8514,
+      "pred_boundary_locked_facts": 11324,
+      "true_rank10_locked_facts": 7985,
+      "union_locked_facts": 11324,
+      "pred_only_locked_facts": 3339,
+      "union_fraction": 0.6757772871038968,
+      "model_checks": [
+        {
+          "model": "proposal-qppred-s43",
+          "facts_checked": 11324,
+          "all_new_gold_strictly_below_boundary": true,
+          "minimum_old_competitor_rank_lower_bound": 11,
+          "new_gold_top10_impossible_under_this_fixed_old_model": true
+        },
+        {
+          "model": "taskprojection-task_query-s43",
+          "facts_checked": 11324,
+          "all_new_gold_strictly_below_boundary": true,
+          "minimum_old_competitor_rank_lower_bound": 11,
+          "new_gold_top10_impossible_under_this_fixed_old_model": true
+        }
+      ]
+    }
+  ],
+  "elapsed_s": 14.224056435981765,
+  "input_sha256": {
+    "configs/task-projection19.json": "ec7512c8bb38b8ae353e4cb1414c53545b103c876949282ef7d2f1815fdee825",
+    "artifacts/incremental/proposal-qppred-s17/best.pt": "0035364cbdbf746728df72c726e39185e8a46e3d969a95dd7657641c7a5029d5",
+    "artifacts/incremental/proposal-qppred-s17/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+    "artifacts/incremental/proposal-qppred-s17/training-receipt.json": "d12e807da08a4920550e3bb2db7dd15bc5f04e5e789626209895c961bf34eb2a",
+    "artifacts/incremental/taskprojection-task_query-s17/best.pt": "96a955b35e275a578260928ae28ce404c3cedb3dbc892603f68bd8185bb83599",
+    "artifacts/incremental/taskprojection-task_query-s17/audit.json": "3062eaec6539f2128e1ee97e245eacf97297051281a6ed9f6a74eda4490e8a2c",
+    "artifacts/incremental/taskprojection-task_query-s17/training-receipt.json": "6c01ec2fad7c0776dc0db77874895e37d07b8aed0cb9074b3eff91c1666a3570",
+    "artifacts/rank-train-guards/s17/guards.npz": "400a0e3d10b2fbaa8348a5f659407c7335f1d51ad9d839e449f53c25086e0190",
+    "artifacts/rank-train-guards/s17/receipt.json": "51958955049cc98841839669f790f64f4e7d47059b8853e3bfd4ccbc88c89931",
+    "artifacts/incremental/proposal-qppred-s17/projection-replay.npz": "91323db0135e05afb5e59b09d577870341f7f7b51a5f9f15af85f0b29c5b44ec",
+    "artifacts/incremental/proposal-qppred-s29/best.pt": "13f6ce0354239e1e8dab686454d50e19d52de67c8c9b7e234ec81c2dcd1fba0a",
+    "artifacts/incremental/proposal-qppred-s29/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+    "artifacts/incremental/proposal-qppred-s29/training-receipt.json": "1781fd6b0142ae22a7426ad7bdc42f2d5e11e3fd9b7c2007e9fbade32b5658a5",
+    "artifacts/incremental/taskprojection-task_query-s29/best.pt": "ec890c8307cbe26b4acb080b574b239413cb7ffbd5715d5a3055676754605138",
+    "artifacts/incremental/taskprojection-task_query-s29/audit.json": "3062eaec6539f2128e1ee97e245eacf97297051281a6ed9f6a74eda4490e8a2c",
+    "artifacts/incremental/taskprojection-task_query-s29/training-receipt.json": "82d19d686c7f2ce357147e90bc65bc038667bd75ef15c98b5103f19ea430f141",
+    "artifacts/rank-train-guards/s29/guards.npz": "8734f4b4f4a179bc6da48311e6ab9afd36d2d2e704c25bff6f69a6aca61f2219",
+    "artifacts/rank-train-guards/s29/receipt.json": "d1c89e9c5934874eff3eb8c46e0bbc8a1692175c644b571b5e2fadc736fa26fb",
+    "artifacts/incremental/proposal-qppred-s29/projection-replay.npz": "3e647356175f8f87e408be267aeb4a9106d072933b1505af5eb2b3ce90dbf677",
+    "artifacts/incremental/proposal-qppred-s43/best.pt": "0aca4d9fa38baff9c1c54aea6009c00cca36d4299590ae0be4cdc10f1bba724b",
+    "artifacts/incremental/proposal-qppred-s43/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+    "artifacts/incremental/proposal-qppred-s43/training-receipt.json": "6abf62132ebe50e83b78e8e6af18bb02c9aa8f46a4ad697282a01e07bb701769",
+    "artifacts/incremental/taskprojection-task_query-s43/best.pt": "1ddc71c6e434bb91412b2d65294ccae476732b2270346e8dd00549879b78d688",
+    "artifacts/incremental/taskprojection-task_query-s43/audit.json": "3062eaec6539f2128e1ee97e245eacf97297051281a6ed9f6a74eda4490e8a2c",
+    "artifacts/incremental/taskprojection-task_query-s43/training-receipt.json": "0d9b8eb92ed8381cb53c70449cc46d4a7c780e0fae5c7123f97f4eb9c7853572",
+    "artifacts/rank-train-guards/s43/guards.npz": "a0c32172574c0f07b11e505d724f592696ea7f6a00f30597df31de0bddf5dced",
+    "artifacts/rank-train-guards/s43/receipt.json": "95598df479e5435aed3c80e577a260d8d0932e6f86925bcf834a00b76910b52d",
+    "artifacts/incremental/proposal-qppred-s43/projection-replay.npz": "18be58cd62bf76b67a0947c445fbd68893c59490c334e140a70e29082e3ad4a2",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938"
+  },
+  "constructive_synthetic_example": {
+    "old_true_ranks_retained": true,
+    "new_answer_enters_top10": true,
+    "unaffected_relation_prediction_set_unchanged": true,
+    "changed_old_entity_as_head_replayed": true,
+    "affected_old_prediction_set_changes": true,
+    "old_vector_movement": 1.5
+  },
+  "limits": [
+    "Descriptive diagnosis after exposed019/020; not a new preregistered scientific discovery.",
+    "Locked-query argument requires frozen oldE/R and strict boundary separation; ties are checked, not silently ruled out.",
+    "TRAIN sufficient barrier subset only; not full causal attribution for VALID/TEST loss.",
+    "Toy demonstrates possibility of competitor redistribution, not a trained graph method or all-query guarantee.",
+    "Unlabelled old competitor is not certified false knowledge; whole real protection scope remains required."
+  ]
+}

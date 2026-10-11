@@ -1,0 +1,736 @@
+{
+  "scope": "Evaluation configuration repair and full audits of unchanged027 terminal weights; no retraining or gate changes",
+  "jobs_passed": 9,
+  "jobs_total": 9,
+  "rows": [
+    {
+      "result": {
+        "id": "shared-graph-full-s17",
+        "scope": "Unchanged027 weights, evaluation-only missing thread configuration repair",
+        "checkpoint_sha256": "d324a9caee91df9142d542b29ef643d50960ed36da0be51130968b065e6aa7c4",
+        "training_receipt_sha256": "b2204a0eb40ff72a7149f14d8954ff9f7fb1fc9eae7048aee4cef873f9fc5095",
+        "source_failed_log_sha256": "166c3f35334591d31532cf1c8e2dc68b98e43f02548fedaf8665eec575f6d0d5",
+        "evaluation": {
+          "id": "shared-graph-full-s17",
+          "method": "SharedFrozenFull",
+          "seed": 17,
+          "kind": "DistMult",
+          "candidates": 11258,
+          "old_before": {
+            "queries": 74428,
+            "raw_mrr": 0.17151552566595352,
+            "hits1": 0.0932847852958564,
+            "hits10": 0.3447627237061321
+          },
+          "old_after": {
+            "queries": 74428,
+            "raw_mrr": 0.1694523803780027,
+            "hits1": 0.09290858279142258,
+            "hits10": 0.34081259740957703
+          },
+          "new_after": {
+            "queries": 12406,
+            "raw_mrr": 0.1385909662110308,
+            "hits1": 0.08310494921812027,
+            "hits10": 0.24472029663066258
+          },
+          "old_top10_loss": 0.011457521434138737,
+          "old_top10_protected": 25660,
+          "same_pool_top10_loss": 0.0005370328932647124,
+          "mean_rank_displacement": 203.22867737948084,
+          "old_parameter_l2": 0.0,
+          "relation_parameter_l2": 0.0,
+          "evaluation_elapsed_s": 8.640462200972252
+        },
+        "retrained": false,
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      },
+      "audit": {
+        "status": "PASS_COMMON_INFERENCE_ALL3753_PATCHES_AND_FULL_TERMINAL_SCOPE",
+        "checks": 52,
+        "failures": [],
+        "candidate_score_checks": 720512,
+        "max_abs_score_error": 2.842170943040401e-14,
+        "fixture_rank_mismatches": 0,
+        "auditor_sha256": "56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719",
+        "limits": [
+          "64 full candidate rows replayed; no independent optimizer retraining or whole-table score reconstruction."
+        ],
+        "solver_audit": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "failures": [],
+          "preflight": false,
+          "patches_replayed": 3753,
+          "modified_row_steps_replayed": 3753,
+          "terminal_query_groups_replayed": 68270,
+          "reference_members_retained": 235882,
+          "terminal_cpu_counts_exact": true,
+          "absolute_budgets_checked": true,
+          "train_only_parameter_selection_rebuilt": true,
+          "weights_and_radii_independently_checked": true,
+          "unselected_old_rows_unchanged": true,
+          "test_read": false,
+          "valid_read": false,
+          "elapsed_s": 1046.4594849350397,
+          "receipt_sha256": "b2204a0eb40ff72a7149f14d8954ff9f7fb1fc9eae7048aee4cef873f9fc5095",
+          "limits": [
+            "Complete patch identity/bounds replay and entire terminal scope; utility remains separate.",
+            "All-step GPU guards logged and terminal entire CPU scope replayed; intermediate CPU full scopes not repeated."
+          ]
+        },
+        "retrained": false,
+        "evaluation_only_config_repair": true,
+        "source_checkpoint_sha256": "d324a9caee91df9142d542b29ef643d50960ed36da0be51130968b065e6aa7c4",
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      }
+    },
+    {
+      "result": {
+        "id": "shared-graph-scoped-s17",
+        "scope": "Unchanged027 weights, evaluation-only missing thread configuration repair",
+        "checkpoint_sha256": "135c7915d09bc5dda219ad0c8f033b888b7e9ca75cd90f81f9f6d3ab6f3a3445",
+        "training_receipt_sha256": "caa032ec476313b9a1580ad0dc76679c30a7810d12336ca51a673feab28e5f0c",
+        "source_failed_log_sha256": "ff83c36fc7563605b3117970351f3b4e1c675674fd8a865f348aef2dd63f6cf9",
+        "evaluation": {
+          "id": "shared-graph-scoped-s17",
+          "method": "SharedFrozenScoped",
+          "seed": 17,
+          "kind": "DistMult",
+          "candidates": 11258,
+          "old_before": {
+            "queries": 74428,
+            "raw_mrr": 0.17151552566595352,
+            "hits1": 0.0932847852958564,
+            "hits10": 0.3447627237061321
+          },
+          "old_after": {
+            "queries": 74428,
+            "raw_mrr": 0.1692804205607533,
+            "hits1": 0.0928951469876928,
+            "hits10": 0.33985865534476273
+          },
+          "new_after": {
+            "queries": 12406,
+            "raw_mrr": 0.13896696599948083,
+            "hits1": 0.08302434305980977,
+            "hits10": 0.24665484443011446
+          },
+          "old_top10_loss": 0.014224473889321902,
+          "old_top10_protected": 25660,
+          "same_pool_top10_loss": 0.0026404117252181694,
+          "mean_rank_displacement": 206.34165905304457,
+          "old_parameter_l2": 0.0,
+          "relation_parameter_l2": 0.0,
+          "evaluation_elapsed_s": 8.767838070983998
+        },
+        "retrained": false,
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      },
+      "audit": {
+        "status": "PASS_COMMON_INFERENCE_ALL3753_PATCHES_AND_FULL_TERMINAL_SCOPE",
+        "checks": 52,
+        "failures": [],
+        "candidate_score_checks": 720512,
+        "max_abs_score_error": 2.842170943040401e-14,
+        "fixture_rank_mismatches": 0,
+        "auditor_sha256": "56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719",
+        "limits": [
+          "64 full candidate rows replayed; no independent optimizer retraining or whole-table score reconstruction."
+        ],
+        "solver_audit": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "failures": [],
+          "preflight": false,
+          "patches_replayed": 3753,
+          "modified_row_steps_replayed": 3753,
+          "terminal_query_groups_replayed": 68260,
+          "reference_members_retained": 221202,
+          "terminal_cpu_counts_exact": true,
+          "absolute_budgets_checked": true,
+          "train_only_parameter_selection_rebuilt": true,
+          "weights_and_radii_independently_checked": true,
+          "unselected_old_rows_unchanged": true,
+          "test_read": false,
+          "valid_read": false,
+          "elapsed_s": 1079.1217649399769,
+          "receipt_sha256": "caa032ec476313b9a1580ad0dc76679c30a7810d12336ca51a673feab28e5f0c",
+          "limits": [
+            "Complete patch identity/bounds replay and entire terminal scope; utility remains separate.",
+            "All-step GPU guards logged and terminal entire CPU scope replayed; intermediate CPU full scopes not repeated."
+          ]
+        },
+        "retrained": false,
+        "evaluation_only_config_repair": true,
+        "source_checkpoint_sha256": "135c7915d09bc5dda219ad0c8f033b888b7e9ca75cd90f81f9f6d3ab6f3a3445",
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      }
+    },
+    {
+      "result": {
+        "id": "shared-graph-joint-s17",
+        "scope": "Unchanged027 weights, evaluation-only missing thread configuration repair",
+        "checkpoint_sha256": "d75dd777fec46c3d20848371a5849ba4fa4a0e65c6aa269fa8bb072861c42a07",
+        "training_receipt_sha256": "712be531465d8e4753e0271cbb77abd7b0c9e8a7d8d178c0e9f49f4237dfbf58",
+        "source_failed_log_sha256": "0a7b68925b96dbda53f127ff7d809d9cef705a6d8e57458c2b59f31fbe603bb7",
+        "evaluation": {
+          "id": "shared-graph-joint-s17",
+          "method": "SharedJointScoped",
+          "seed": 17,
+          "kind": "DistMult",
+          "candidates": 11258,
+          "old_before": {
+            "queries": 74428,
+            "raw_mrr": 0.17151552566595352,
+            "hits1": 0.0932847852958564,
+            "hits10": 0.3447627237061321
+          },
+          "old_after": {
+            "queries": 74428,
+            "raw_mrr": 0.1652346230766612,
+            "hits1": 0.09136346536249798,
+            "hits10": 0.3276186381469339
+          },
+          "new_after": {
+            "queries": 12406,
+            "raw_mrr": 0.12428343834165505,
+            "hits1": 0.07399645332903435,
+            "hits10": 0.21763662743833628
+          },
+          "old_top10_loss": 0.04992205767731878,
+          "old_top10_protected": 25660,
+          "same_pool_top10_loss": 0.0029536809129559185,
+          "mean_rank_displacement": 211.41074595582307,
+          "old_parameter_l2": 0.9814437812063262,
+          "relation_parameter_l2": 0.0,
+          "evaluation_elapsed_s": 8.472257802030072
+        },
+        "retrained": false,
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      },
+      "audit": {
+        "status": "PASS_COMMON_INFERENCE_ALL3753_PATCHES_AND_FULL_TERMINAL_SCOPE",
+        "checks": 54,
+        "failures": [],
+        "candidate_score_checks": 720512,
+        "max_abs_score_error": 2.842170943040401e-14,
+        "fixture_rank_mismatches": 0,
+        "auditor_sha256": "56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719",
+        "limits": [
+          "64 full candidate rows replayed; no independent optimizer retraining or whole-table score reconstruction."
+        ],
+        "solver_audit": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "failures": [],
+          "preflight": false,
+          "patches_replayed": 3753,
+          "modified_row_steps_replayed": 3891,
+          "terminal_query_groups_replayed": 68260,
+          "reference_members_retained": 221202,
+          "terminal_cpu_counts_exact": true,
+          "absolute_budgets_checked": true,
+          "train_only_parameter_selection_rebuilt": true,
+          "weights_and_radii_independently_checked": true,
+          "unselected_old_rows_unchanged": true,
+          "test_read": false,
+          "valid_read": false,
+          "elapsed_s": 1295.694951153011,
+          "receipt_sha256": "712be531465d8e4753e0271cbb77abd7b0c9e8a7d8d178c0e9f49f4237dfbf58",
+          "limits": [
+            "Complete patch identity/bounds replay and entire terminal scope; utility remains separate.",
+            "All-step GPU guards logged and terminal entire CPU scope replayed; intermediate CPU full scopes not repeated."
+          ]
+        },
+        "retrained": false,
+        "evaluation_only_config_repair": true,
+        "source_checkpoint_sha256": "d75dd777fec46c3d20848371a5849ba4fa4a0e65c6aa269fa8bb072861c42a07",
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      }
+    },
+    {
+      "result": {
+        "id": "shared-graph-full-s29",
+        "scope": "Unchanged027 weights, evaluation-only missing thread configuration repair",
+        "checkpoint_sha256": "0b03fcfbf6fc20882bec4d9cc1a8ed97e1a0b012230b7933e7d7bef20a0819fe",
+        "training_receipt_sha256": "e86d655873295071b5213ccee6e41e5e77d2f1df14e04376173fd9900b118212",
+        "source_failed_log_sha256": "1ee40eb8edafb3a02f039ef7eb29b32e4d89429cdc50f625ca7f75a0ad17a04d",
+        "evaluation": {
+          "id": "shared-graph-full-s29",
+          "method": "SharedFrozenFull",
+          "seed": 29,
+          "kind": "DistMult",
+          "candidates": 11258,
+          "old_before": {
+            "queries": 74428,
+            "raw_mrr": 0.1715277888024236,
+            "hits1": 0.09403719030472403,
+            "hits10": 0.34184715429677004
+          },
+          "old_after": {
+            "queries": 74428,
+            "raw_mrr": 0.1690146181211578,
+            "hits1": 0.09351319395926265,
+            "hits10": 0.33678185629064333
+          },
+          "new_after": {
+            "queries": 12406,
+            "raw_mrr": 0.1416067768003599,
+            "hits1": 0.08479767854264066,
+            "hits10": 0.25318394325326454
+          },
+          "old_top10_loss": 0.014817435050898086,
+          "old_top10_protected": 25443,
+          "same_pool_top10_loss": 0.0005876503028659254,
+          "mean_rank_displacement": 248.9103160101037,
+          "old_parameter_l2": 0.0,
+          "relation_parameter_l2": 0.0,
+          "evaluation_elapsed_s": 8.335033485898748
+        },
+        "retrained": false,
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      },
+      "audit": {
+        "status": "PASS_COMMON_INFERENCE_ALL3753_PATCHES_AND_FULL_TERMINAL_SCOPE",
+        "checks": 52,
+        "failures": [],
+        "candidate_score_checks": 720512,
+        "max_abs_score_error": 2.842170943040401e-14,
+        "fixture_rank_mismatches": 0,
+        "auditor_sha256": "56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719",
+        "limits": [
+          "64 full candidate rows replayed; no independent optimizer retraining or whole-table score reconstruction."
+        ],
+        "solver_audit": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "failures": [],
+          "preflight": false,
+          "patches_replayed": 3753,
+          "modified_row_steps_replayed": 3753,
+          "terminal_query_groups_replayed": 68256,
+          "reference_members_retained": 234610,
+          "terminal_cpu_counts_exact": true,
+          "absolute_budgets_checked": true,
+          "train_only_parameter_selection_rebuilt": true,
+          "weights_and_radii_independently_checked": true,
+          "unselected_old_rows_unchanged": true,
+          "test_read": false,
+          "valid_read": false,
+          "elapsed_s": 1086.5330115520628,
+          "receipt_sha256": "e86d655873295071b5213ccee6e41e5e77d2f1df14e04376173fd9900b118212",
+          "limits": [
+            "Complete patch identity/bounds replay and entire terminal scope; utility remains separate.",
+            "All-step GPU guards logged and terminal entire CPU scope replayed; intermediate CPU full scopes not repeated."
+          ]
+        },
+        "retrained": false,
+        "evaluation_only_config_repair": true,
+        "source_checkpoint_sha256": "0b03fcfbf6fc20882bec4d9cc1a8ed97e1a0b012230b7933e7d7bef20a0819fe",
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      }
+    },
+    {
+      "result": {
+        "id": "shared-graph-scoped-s29",
+        "scope": "Unchanged027 weights, evaluation-only missing thread configuration repair",
+        "checkpoint_sha256": "1d44307122e2b26a62816ceba748a3967ff5a81fd9ca9f6e552e2926f1353321",
+        "training_receipt_sha256": "5c8b234bb9cde1d80be481e9ed092aa6f1cf137a1935fba9cae52272b3b69110",
+        "source_failed_log_sha256": "a975c1f03a7b6b60dca4bd3097b88c0815edffd3201f0da6fd8e1b840057d5be",
+        "evaluation": {
+          "id": "shared-graph-scoped-s29",
+          "method": "SharedFrozenScoped",
+          "seed": 29,
+          "kind": "DistMult",
+          "candidates": 11258,
+          "old_before": {
+            "queries": 74428,
+            "raw_mrr": 0.1715277888024236,
+            "hits1": 0.09403719030472403,
+            "hits10": 0.34184715429677004
+          },
+          "old_after": {
+            "queries": 74428,
+            "raw_mrr": 0.16886095334288895,
+            "hits1": 0.09345945074434353,
+            "hits10": 0.3359622722631268
+          },
+          "new_after": {
+            "queries": 12406,
+            "raw_mrr": 0.14194225498110402,
+            "hits1": 0.08479767854264066,
+            "hits10": 0.25302273093664357
+          },
+          "old_top10_loss": 0.017214951067091144,
+          "old_top10_protected": 25443,
+          "same_pool_top10_loss": 0.0023506012114637015,
+          "mean_rank_displacement": 251.4295292094373,
+          "old_parameter_l2": 0.0,
+          "relation_parameter_l2": 0.0,
+          "evaluation_elapsed_s": 8.51365251711104
+        },
+        "retrained": false,
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      },
+      "audit": {
+        "status": "PASS_COMMON_INFERENCE_ALL3753_PATCHES_AND_FULL_TERMINAL_SCOPE",
+        "checks": 52,
+        "failures": [],
+        "candidate_score_checks": 720512,
+        "max_abs_score_error": 2.842170943040401e-14,
+        "fixture_rank_mismatches": 0,
+        "auditor_sha256": "56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719",
+        "limits": [
+          "64 full candidate rows replayed; no independent optimizer retraining or whole-table score reconstruction."
+        ],
+        "solver_audit": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "failures": [],
+          "preflight": false,
+          "patches_replayed": 3753,
+          "modified_row_steps_replayed": 3753,
+          "terminal_query_groups_replayed": 68246,
+          "reference_members_retained": 220056,
+          "terminal_cpu_counts_exact": true,
+          "absolute_budgets_checked": true,
+          "train_only_parameter_selection_rebuilt": true,
+          "weights_and_radii_independently_checked": true,
+          "unselected_old_rows_unchanged": true,
+          "test_read": false,
+          "valid_read": false,
+          "elapsed_s": 1064.7460323739797,
+          "receipt_sha256": "5c8b234bb9cde1d80be481e9ed092aa6f1cf137a1935fba9cae52272b3b69110",
+          "limits": [
+            "Complete patch identity/bounds replay and entire terminal scope; utility remains separate.",
+            "All-step GPU guards logged and terminal entire CPU scope replayed; intermediate CPU full scopes not repeated."
+          ]
+        },
+        "retrained": false,
+        "evaluation_only_config_repair": true,
+        "source_checkpoint_sha256": "1d44307122e2b26a62816ceba748a3967ff5a81fd9ca9f6e552e2926f1353321",
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      }
+    },
+    {
+      "result": {
+        "id": "shared-graph-joint-s29",
+        "scope": "Unchanged027 weights, evaluation-only missing thread configuration repair",
+        "checkpoint_sha256": "7e6753bccda62a16547d41d32ae54bcabfeefab5c1b322b94c9c72830ef69c1c",
+        "training_receipt_sha256": "42db1c06817abaa3bde2a9e875f3ddbe261b16bc3b5c8b3dcdf70a2cf435b743",
+        "source_failed_log_sha256": "3309ba57873d5e565e19a3daca571c228ffe6040535b2ec2957cf9aab08b206f",
+        "evaluation": {
+          "id": "shared-graph-joint-s29",
+          "method": "SharedJointScoped",
+          "seed": 29,
+          "kind": "DistMult",
+          "candidates": 11258,
+          "old_before": {
+            "queries": 74428,
+            "raw_mrr": 0.1715277888024236,
+            "hits1": 0.09403719030472403,
+            "hits10": 0.34184715429677004
+          },
+          "old_after": {
+            "queries": 74428,
+            "raw_mrr": 0.16693700268877018,
+            "hits1": 0.09254581609071855,
+            "hits10": 0.3298355457623475
+          },
+          "new_after": {
+            "queries": 12406,
+            "raw_mrr": 0.13534998236763265,
+            "hits1": 0.07988070288570047,
+            "hits10": 0.2411736256650008
+          },
+          "old_top10_loss": 0.035255276500412686,
+          "old_top10_protected": 25443,
+          "same_pool_top10_loss": 0.0027574360365247266,
+          "mean_rank_displacement": 253.45227602515183,
+          "old_parameter_l2": 1.1178535951035897,
+          "relation_parameter_l2": 0.0,
+          "evaluation_elapsed_s": 8.441412715008482
+        },
+        "retrained": false,
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      },
+      "audit": {
+        "status": "PASS_COMMON_INFERENCE_ALL3753_PATCHES_AND_FULL_TERMINAL_SCOPE",
+        "checks": 54,
+        "failures": [],
+        "candidate_score_checks": 720512,
+        "max_abs_score_error": 2.842170943040401e-14,
+        "fixture_rank_mismatches": 0,
+        "auditor_sha256": "56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719",
+        "limits": [
+          "64 full candidate rows replayed; no independent optimizer retraining or whole-table score reconstruction."
+        ],
+        "solver_audit": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "failures": [],
+          "preflight": false,
+          "patches_replayed": 3753,
+          "modified_row_steps_replayed": 3849,
+          "terminal_query_groups_replayed": 68246,
+          "reference_members_retained": 220056,
+          "terminal_cpu_counts_exact": true,
+          "absolute_budgets_checked": true,
+          "train_only_parameter_selection_rebuilt": true,
+          "weights_and_radii_independently_checked": true,
+          "unselected_old_rows_unchanged": true,
+          "test_read": false,
+          "valid_read": false,
+          "elapsed_s": 1403.376243512961,
+          "receipt_sha256": "42db1c06817abaa3bde2a9e875f3ddbe261b16bc3b5c8b3dcdf70a2cf435b743",
+          "limits": [
+            "Complete patch identity/bounds replay and entire terminal scope; utility remains separate.",
+            "All-step GPU guards logged and terminal entire CPU scope replayed; intermediate CPU full scopes not repeated."
+          ]
+        },
+        "retrained": false,
+        "evaluation_only_config_repair": true,
+        "source_checkpoint_sha256": "7e6753bccda62a16547d41d32ae54bcabfeefab5c1b322b94c9c72830ef69c1c",
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      }
+    },
+    {
+      "result": {
+        "id": "shared-graph-full-s43",
+        "scope": "Unchanged027 weights, evaluation-only missing thread configuration repair",
+        "checkpoint_sha256": "646c44f25fa518bfe30e4023432e793b721fc7174eedd8a2163949e3e314575d",
+        "training_receipt_sha256": "637a2fe451174481d36546091671b302cbd78c0cdd1128e81386a5b4893c029e",
+        "source_failed_log_sha256": "90963e7ce6b4bbf2ab64a3358bb9cab6eb95cf6f8d45217c2b5ce4b70bc20fcf",
+        "evaluation": {
+          "id": "shared-graph-full-s43",
+          "method": "SharedFrozenFull",
+          "seed": 43,
+          "kind": "DistMult",
+          "candidates": 11258,
+          "old_before": {
+            "queries": 74428,
+            "raw_mrr": 0.17145413103008614,
+            "hits1": 0.09305637663245016,
+            "hits10": 0.34320417047347773
+          },
+          "old_after": {
+            "queries": 74428,
+            "raw_mrr": 0.1680086222518147,
+            "hits1": 0.09246520126833987,
+            "hits10": 0.33561294136615255
+          },
+          "new_after": {
+            "queries": 12406,
+            "raw_mrr": 0.13922172747872333,
+            "hits1": 0.08326616153474126,
+            "hits10": 0.25326454941157506
+          },
+          "old_top10_loss": 0.02211869715001566,
+          "old_top10_protected": 25544,
+          "same_pool_top10_loss": 0.0004482696790389098,
+          "mean_rank_displacement": 350.3027086580319,
+          "old_parameter_l2": 0.0,
+          "relation_parameter_l2": 0.0,
+          "evaluation_elapsed_s": 8.381782343029045
+        },
+        "retrained": false,
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      },
+      "audit": {
+        "status": "PASS_COMMON_INFERENCE_ALL3753_PATCHES_AND_FULL_TERMINAL_SCOPE",
+        "checks": 52,
+        "failures": [],
+        "candidate_score_checks": 720512,
+        "max_abs_score_error": 2.842170943040401e-14,
+        "fixture_rank_mismatches": 0,
+        "auditor_sha256": "56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719",
+        "limits": [
+          "64 full candidate rows replayed; no independent optimizer retraining or whole-table score reconstruction."
+        ],
+        "solver_audit": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "failures": [],
+          "preflight": false,
+          "patches_replayed": 3753,
+          "modified_row_steps_replayed": 3753,
+          "terminal_query_groups_replayed": 68275,
+          "reference_members_retained": 234090,
+          "terminal_cpu_counts_exact": true,
+          "absolute_budgets_checked": true,
+          "train_only_parameter_selection_rebuilt": true,
+          "weights_and_radii_independently_checked": true,
+          "unselected_old_rows_unchanged": true,
+          "test_read": false,
+          "valid_read": false,
+          "elapsed_s": 1167.5104338929523,
+          "receipt_sha256": "637a2fe451174481d36546091671b302cbd78c0cdd1128e81386a5b4893c029e",
+          "limits": [
+            "Complete patch identity/bounds replay and entire terminal scope; utility remains separate.",
+            "All-step GPU guards logged and terminal entire CPU scope replayed; intermediate CPU full scopes not repeated."
+          ]
+        },
+        "retrained": false,
+        "evaluation_only_config_repair": true,
+        "source_checkpoint_sha256": "646c44f25fa518bfe30e4023432e793b721fc7174eedd8a2163949e3e314575d",
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      }
+    },
+    {
+      "result": {
+        "id": "shared-graph-scoped-s43",
+        "scope": "Unchanged027 weights, evaluation-only missing thread configuration repair",
+        "checkpoint_sha256": "e16904e9cd085bd77da5a187d0ca48b9f3a3970eee8f0b0d3b7e46f8843ab1bd",
+        "training_receipt_sha256": "d08240398e89cd68640c6487f45264186d3272e7a9b28130174a8835ad4ec593",
+        "source_failed_log_sha256": "4a6a13f03c7bf2325c0092afef88048afa69b06919301c0c0864ba93995b3666",
+        "evaluation": {
+          "id": "shared-graph-scoped-s43",
+          "method": "SharedFrozenScoped",
+          "seed": 43,
+          "kind": "DistMult",
+          "candidates": 11258,
+          "old_before": {
+            "queries": 74428,
+            "raw_mrr": 0.17145413103008614,
+            "hits1": 0.09305637663245016,
+            "hits10": 0.34320417047347773
+          },
+          "old_after": {
+            "queries": 74428,
+            "raw_mrr": 0.16790321821362725,
+            "hits1": 0.09245176546461009,
+            "hits10": 0.33508894502069114
+          },
+          "new_after": {
+            "queries": 12406,
+            "raw_mrr": 0.13990004963758057,
+            "hits1": 0.08391101080122522,
+            "hits10": 0.25447364178623244
+          },
+          "old_top10_loss": 0.02364547447541497,
+          "old_top10_protected": 25544,
+          "same_pool_top10_loss": 0.0014344629729245114,
+          "mean_rank_displacement": 352.3400870640082,
+          "old_parameter_l2": 0.0,
+          "relation_parameter_l2": 0.0,
+          "evaluation_elapsed_s": 8.380447230068967
+        },
+        "retrained": false,
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      },
+      "audit": {
+        "status": "PASS_COMMON_INFERENCE_ALL3753_PATCHES_AND_FULL_TERMINAL_SCOPE",
+        "checks": 52,
+        "failures": [],
+        "candidate_score_checks": 720512,
+        "max_abs_score_error": 2.842170943040401e-14,
+        "fixture_rank_mismatches": 0,
+        "auditor_sha256": "56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719",
+        "limits": [
+          "64 full candidate rows replayed; no independent optimizer retraining or whole-table score reconstruction."
+        ],
+        "solver_audit": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "failures": [],
+          "preflight": false,
+          "patches_replayed": 3753,
+          "modified_row_steps_replayed": 3753,
+          "terminal_query_groups_replayed": 68267,
+          "reference_members_retained": 219292,
+          "terminal_cpu_counts_exact": true,
+          "absolute_budgets_checked": true,
+          "train_only_parameter_selection_rebuilt": true,
+          "weights_and_radii_independently_checked": true,
+          "unselected_old_rows_unchanged": true,
+          "test_read": false,
+          "valid_read": false,
+          "elapsed_s": 1110.68319083401,
+          "receipt_sha256": "d08240398e89cd68640c6487f45264186d3272e7a9b28130174a8835ad4ec593",
+          "limits": [
+            "Complete patch identity/bounds replay and entire terminal scope; utility remains separate.",
+            "All-step GPU guards logged and terminal entire CPU scope replayed; intermediate CPU full scopes not repeated."
+          ]
+        },
+        "retrained": false,
+        "evaluation_only_config_repair": true,
+        "source_checkpoint_sha256": "e16904e9cd085bd77da5a187d0ca48b9f3a3970eee8f0b0d3b7e46f8843ab1bd",
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      }
+    },
+    {
+      "result": {
+        "id": "shared-graph-joint-s43",
+        "scope": "Unchanged027 weights, evaluation-only missing thread configuration repair",
+        "checkpoint_sha256": "8da1b14639a1bd74d21ee346350c87a08684ab33e98e866da5b3ef762f9dbe4c",
+        "training_receipt_sha256": "6dec6f7e7f20723a4701e9a5e506de4f139cb4db21b49a479a83daa7fe743836",
+        "source_failed_log_sha256": "fa64d1912e44e2af4ea47010856ffde3937a472ff2fc023560a629c12b07a3d9",
+        "evaluation": {
+          "id": "shared-graph-joint-s43",
+          "method": "SharedJointScoped",
+          "seed": 43,
+          "kind": "DistMult",
+          "candidates": 11258,
+          "old_before": {
+            "queries": 74428,
+            "raw_mrr": 0.17145413103008614,
+            "hits1": 0.09305637663245016,
+            "hits10": 0.34320417047347773
+          },
+          "old_after": {
+            "queries": 74428,
+            "raw_mrr": 0.16705249460140306,
+            "hits1": 0.09194120492287848,
+            "hits10": 0.3332482399097114
+          },
+          "new_after": {
+            "queries": 12406,
+            "raw_mrr": 0.13813265659659987,
+            "hits1": 0.08278252458487828,
+            "hits10": 0.2520554570369176
+          },
+          "old_top10_loss": 0.02904791731913561,
+          "old_top10_protected": 25544,
+          "same_pool_top10_loss": 0.0016137708445400753,
+          "mean_rank_displacement": 353.0736282044392,
+          "old_parameter_l2": 0.5641405422646889,
+          "relation_parameter_l2": 0.0,
+          "evaluation_elapsed_s": 8.411293394048698
+        },
+        "retrained": false,
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      },
+      "audit": {
+        "status": "PASS_COMMON_INFERENCE_ALL3753_PATCHES_AND_FULL_TERMINAL_SCOPE",
+        "checks": 54,
+        "failures": [],
+        "candidate_score_checks": 720512,
+        "max_abs_score_error": 2.842170943040401e-14,
+        "fixture_rank_mismatches": 0,
+        "auditor_sha256": "56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719",
+        "limits": [
+          "64 full candidate rows replayed; no independent optimizer retraining or whole-table score reconstruction."
+        ],
+        "solver_audit": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "failures": [],
+          "preflight": false,
+          "patches_replayed": 3753,
+          "modified_row_steps_replayed": 3831,
+          "terminal_query_groups_replayed": 68267,
+          "reference_members_retained": 219292,
+          "terminal_cpu_counts_exact": true,
+          "absolute_budgets_checked": true,
+          "train_only_parameter_selection_rebuilt": true,
+          "weights_and_radii_independently_checked": true,
+          "unselected_old_rows_unchanged": true,
+          "test_read": false,
+          "valid_read": false,
+          "elapsed_s": 1244.9759709229693,
+          "receipt_sha256": "6dec6f7e7f20723a4701e9a5e506de4f139cb4db21b49a479a83daa7fe743836",
+          "limits": [
+            "Complete patch identity/bounds replay and entire terminal scope; utility remains separate.",
+            "All-step GPU guards logged and terminal entire CPU scope replayed; intermediate CPU full scopes not repeated."
+          ]
+        },
+        "retrained": false,
+        "evaluation_only_config_repair": true,
+        "source_checkpoint_sha256": "8da1b14639a1bd74d21ee346350c87a08684ab33e98e866da5b3ef762f9dbe4c",
+        "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+id: KGE-ENTITY-COMMON-SHARED-RANK-CACHE-023R2
+status: failed_synthetic_cache_controls_retained
+config: configs/shared-rank-cache23r2.json
+protocol: plan/shared-rank-cache-protocol.md
+scope: Same synthetic cache controls; restored installed Triton in-tree backend discovery
+  only
+registered_utc: '2026-10-11T03:47:37.178226+00:00'
+frozen_input_sha256:
+  configs/shared-rank-cache23r2.json: dcdb9086487f25ed3dd1f5c9dfbb5959892754f8d10e24b89a3fc01eac48db54
+  plan/shared-rank-cache-protocol.md: f0e9930131afa9e57ef827e456c00ca59a30c94fe7efdb2e89738e1be8733bfd
+  src/shared_rank_cache.py: 4300a0db4e9e01454b834c239d30cee4c81a667a6fdfdaf1e33644423a40bd90
+  scripts/check_shared_rank_cache.py: d829563721d786775a87e782a7647b64fce0da05bcff9fe3f7395832688a47b7
+retained_failed_attempt: KGE-ENTITY-COMMON-SHARED-RANK-CACHE-023
+repair: Process-local TRITON_BACKENDS_IN_TREE=1; no scientific code/options changes
+active_processes: []
+exit_code: 1
+failure_evidence: experiments/KGE-ENTITY-COMMON-SHARED-RANK-CACHE-023R2/failure.json

@@ -1,0 +1,273 @@
+{
+  "scope": "Unchanged KGEditor artifacts: strict native GPU delta replay, original CPU inference and full coverage checks; original CPU failures retained",
+  "jobs_passed": 3,
+  "jobs_total": 3,
+  "rows": [
+    {
+      "result": {
+        "scope_checks": 209,
+        "full_train_query_coverage": 37214,
+        "native_steps_replayed": 2,
+        "max_native_delta_error": 0.0,
+        "alias_receipt": {
+          "cpu_constructor_shared_storage": true,
+          "operational_storage_disjoint": true,
+          "restored_model_embedding_equals_clean_base": true,
+          "cpu_restore_rule": "Clone conditioner embedding to reproduce native GPU disjoint storage before loading learner"
+        },
+        "limits": [
+          "Two native GPU step replays, full TRAIN coverage, parameter scope; not independent full optimizer retraining.",
+          "Native steps replayed on GPU; original CPU delta failures remain unchanged."
+        ],
+        "native_delta_replay_device": "GPU float32",
+        "original_native_delta_tolerance": 1e-05,
+        "source_original_audit_sha256": "05434984f24f40b92119d48b77e15963f05814c33ba6314c10fd98a79db295b1",
+        "source_original_audit": {
+          "scope_checks": 209,
+          "full_train_query_coverage": 37214,
+          "native_steps_replayed": 2,
+          "max_native_delta_error": 3.337860107421875e-06,
+          "alias_receipt": {
+            "cpu_constructor_shared_storage": true,
+            "operational_storage_disjoint": true,
+            "restored_model_embedding_equals_clean_base": true,
+            "cpu_restore_rule": "Clone conditioner embedding to reproduce native GPU disjoint storage before loading learner"
+          },
+          "limits": [
+            "Two native CPU step replays, full TRAIN coverage, parameter scope; not independent full optimizer retraining."
+          ],
+          "status": "PASS_COMMON_LM_ONLINE_AND_RANK_AUDIT",
+          "failures": [],
+          "candidate_score_checks": 1080768,
+          "max_abs_logit_error": 5.4836273193359375e-06,
+          "max_initial_logit_error": 1.1444091796875e-05,
+          "rank_mismatches": 0,
+          "old_queries": 74428,
+          "new_queries": 12406
+        },
+        "source_checkpoint_sha256": "6c5f878776616cc43c6b6f2e07e5cbd3fd51be8528d052888b247e780436c42b",
+        "source_training_receipt_sha256": "ceb7b7dc6ef7145f712b86de1d143c2a55ae0c22de33f80f3bc931b9ac631841",
+        "retrained": false
+      },
+      "audit": {
+        "scope_checks": 209,
+        "full_train_query_coverage": 37214,
+        "native_steps_replayed": 2,
+        "max_native_delta_error": 0.0,
+        "alias_receipt": {
+          "cpu_constructor_shared_storage": true,
+          "operational_storage_disjoint": true,
+          "restored_model_embedding_equals_clean_base": true,
+          "cpu_restore_rule": "Clone conditioner embedding to reproduce native GPU disjoint storage before loading learner"
+        },
+        "limits": [
+          "Two native GPU step replays, full TRAIN coverage, parameter scope; not independent full optimizer retraining.",
+          "Native steps replayed on GPU; original CPU delta failures remain unchanged."
+        ],
+        "native_delta_replay_device": "GPU float32",
+        "original_native_delta_tolerance": 1e-05,
+        "source_original_audit_sha256": "05434984f24f40b92119d48b77e15963f05814c33ba6314c10fd98a79db295b1",
+        "source_original_audit": {
+          "scope_checks": 209,
+          "full_train_query_coverage": 37214,
+          "native_steps_replayed": 2,
+          "max_native_delta_error": 3.337860107421875e-06,
+          "alias_receipt": {
+            "cpu_constructor_shared_storage": true,
+            "operational_storage_disjoint": true,
+            "restored_model_embedding_equals_clean_base": true,
+            "cpu_restore_rule": "Clone conditioner embedding to reproduce native GPU disjoint storage before loading learner"
+          },
+          "limits": [
+            "Two native CPU step replays, full TRAIN coverage, parameter scope; not independent full optimizer retraining."
+          ],
+          "status": "PASS_COMMON_LM_ONLINE_AND_RANK_AUDIT",
+          "failures": [],
+          "candidate_score_checks": 1080768,
+          "max_abs_logit_error": 5.4836273193359375e-06,
+          "max_initial_logit_error": 1.1444091796875e-05,
+          "rank_mismatches": 0,
+          "old_queries": 74428,
+          "new_queries": 12406
+        },
+        "source_checkpoint_sha256": "6c5f878776616cc43c6b6f2e07e5cbd3fd51be8528d052888b247e780436c42b",
+        "source_training_receipt_sha256": "ceb7b7dc6ef7145f712b86de1d143c2a55ae0c22de33f80f3bc931b9ac631841",
+        "retrained": false,
+        "status": "PASS_COMMON_LM_NATIVE_GPU_DELTA_CPU_RANK_AUDIT",
+        "failures": [],
+        "candidate_score_checks": 1080768,
+        "max_abs_logit_error": 5.4836273193359375e-06,
+        "max_initial_logit_error": 1.1444091796875e-05,
+        "rank_mismatches": 0,
+        "old_queries": 74428,
+        "new_queries": 12406
+      }
+    },
+    {
+      "result": {
+        "scope_checks": 209,
+        "full_train_query_coverage": 37214,
+        "native_steps_replayed": 2,
+        "max_native_delta_error": 0.0,
+        "alias_receipt": {
+          "cpu_constructor_shared_storage": true,
+          "operational_storage_disjoint": true,
+          "restored_model_embedding_equals_clean_base": true,
+          "cpu_restore_rule": "Clone conditioner embedding to reproduce native GPU disjoint storage before loading learner"
+        },
+        "limits": [
+          "Two native GPU step replays, full TRAIN coverage, parameter scope; not independent full optimizer retraining.",
+          "Native steps replayed on GPU; original CPU delta failures remain unchanged."
+        ],
+        "native_delta_replay_device": "GPU float32",
+        "original_native_delta_tolerance": 1e-05,
+        "source_original_audit_sha256": "482a4c87bea760d73f4685297c7268650911f14341daea4e371bf1af447ca9a8",
+        "source_original_audit": {
+          "scope_checks": 209,
+          "full_train_query_coverage": 37214,
+          "native_steps_replayed": 2,
+          "max_native_delta_error": 2.2649765014648438e-06,
+          "alias_receipt": {
+            "cpu_constructor_shared_storage": true,
+            "operational_storage_disjoint": true,
+            "restored_model_embedding_equals_clean_base": true,
+            "cpu_restore_rule": "Clone conditioner embedding to reproduce native GPU disjoint storage before loading learner"
+          },
+          "limits": [
+            "Two native CPU step replays, full TRAIN coverage, parameter scope; not independent full optimizer retraining."
+          ],
+          "status": "PASS_COMMON_LM_ONLINE_AND_RANK_AUDIT",
+          "failures": [],
+          "candidate_score_checks": 1080768,
+          "max_abs_logit_error": 4.76837158203125e-06,
+          "max_initial_logit_error": 1.0967254638671875e-05,
+          "rank_mismatches": 0,
+          "old_queries": 74428,
+          "new_queries": 12406
+        },
+        "source_checkpoint_sha256": "f0415710695e0b277d8b105c400a7a5e26efb3237d86bd23cceb9bbff9bb4448",
+        "source_training_receipt_sha256": "0dacf91d33cb84b246a79177ac1fe71e5a5c0e57462ef9d985290fbc1fd375ae",
+        "retrained": false
+      },
+      "audit": {
+        "scope_checks": 209,
+        "full_train_query_coverage": 37214,
+        "native_steps_replayed": 2,
+        "max_native_delta_error": 0.0,
+        "alias_receipt": {
+          "cpu_constructor_shared_storage": true,
+          "operational_storage_disjoint": true,
+          "restored_model_embedding_equals_clean_base": true,
+          "cpu_restore_rule": "Clone conditioner embedding to reproduce native GPU disjoint storage before loading learner"
+        },
+        "limits": [
+          "Two native GPU step replays, full TRAIN coverage, parameter scope; not independent full optimizer retraining.",
+          "Native steps replayed on GPU; original CPU delta failures remain unchanged."
+        ],
+        "native_delta_replay_device": "GPU float32",
+        "original_native_delta_tolerance": 1e-05,
+        "source_original_audit_sha256": "482a4c87bea760d73f4685297c7268650911f14341daea4e371bf1af447ca9a8",
+        "source_original_audit": {
+          "scope_checks": 209,
+          "full_train_query_coverage": 37214,
+          "native_steps_replayed": 2,
+          "max_native_delta_error": 2.2649765014648438e-06,
+          "alias_receipt": {
+            "cpu_constructor_shared_storage": true,
+            "operational_storage_disjoint": true,
+            "restored_model_embedding_equals_clean_base": true,
+            "cpu_restore_rule": "Clone conditioner embedding to reproduce native GPU disjoint storage before loading learner"
+          },
+          "limits": [
+            "Two native CPU step replays, full TRAIN coverage, parameter scope; not independent full optimizer retraining."
+          ],
+          "status": "PASS_COMMON_LM_ONLINE_AND_RANK_AUDIT",
+          "failures": [],
+          "candidate_score_checks": 1080768,
+          "max_abs_logit_error": 4.76837158203125e-06,
+          "max_initial_logit_error": 1.0967254638671875e-05,
+          "rank_mismatches": 0,
+          "old_queries": 74428,
+          "new_queries": 12406
+        },
+        "source_checkpoint_sha256": "f0415710695e0b277d8b105c400a7a5e26efb3237d86bd23cceb9bbff9bb4448",
+        "source_training_receipt_sha256": "0dacf91d33cb84b246a79177ac1fe71e5a5c0e57462ef9d985290fbc1fd375ae",
+        "retrained": false,
+        "status": "PASS_COMMON_LM_NATIVE_GPU_DELTA_CPU_RANK_AUDIT",
+        "failures": [],
+        "candidate_score_checks": 1080768,
+        "max_abs_logit_error": 4.76837158203125e-06,
+        "max_initial_logit_error": 1.0967254638671875e-05,
+        "rank_mismatches": 0,
+        "old_queries": 74428,
+        "new_queries": 12406
+      }
+    },
+    {
+      "result": {
+        "scope_checks": 209,
+        "full_train_query_coverage": 37214,
+        "native_steps_replayed": 2,
+        "max_native_delta_error": 0.0,
+        "alias_receipt": {
+          "cpu_constructor_shared_storage": true,
+          "operational_storage_disjoint": true,
+          "restored_model_embedding_equals_clean_base": true,
+          "cpu_restore_rule": "Clone conditioner embedding to reproduce native GPU disjoint storage before loading learner"
+        },
+        "limits": [
+          "Two native GPU step replays, full TRAIN coverage, parameter scope; not independent full optimizer retraining.",
+          "Native steps replayed on GPU; original CPU delta failures remain unchanged."
+        ],
+        "native_delta_replay_device": "GPU float32",
+        "original_native_delta_tolerance": 1e-05,
+        "source_original_audit_sha256": "1c3a428ca0abcfd714fb77b1b89e55b6b8be3ea4025dd7b6b9f490f5a3bbf05e",
+        "source_original_audit": {
+          "status": "FAIL_RETAINED",
+          "failures": [
+            "AssertionError('Native delta CPU replay mismatch')"
+          ]
+        },
+        "source_checkpoint_sha256": "8fa4b185b49c893b078f741b1ff3a1aa1b01614d9a250380fd8de815c7d1f586",
+        "source_training_receipt_sha256": "bce41a5dee90313481655d2f78b2af622f96e6d0d985b7f3918b3946b9190d8b",
+        "retrained": false
+      },
+      "audit": {
+        "scope_checks": 209,
+        "full_train_query_coverage": 37214,
+        "native_steps_replayed": 2,
+        "max_native_delta_error": 0.0,
+        "alias_receipt": {
+          "cpu_constructor_shared_storage": true,
+          "operational_storage_disjoint": true,
+          "restored_model_embedding_equals_clean_base": true,
+          "cpu_restore_rule": "Clone conditioner embedding to reproduce native GPU disjoint storage before loading learner"
+        },
+        "limits": [
+          "Two native GPU step replays, full TRAIN coverage, parameter scope; not independent full optimizer retraining.",
+          "Native steps replayed on GPU; original CPU delta failures remain unchanged."
+        ],
+        "native_delta_replay_device": "GPU float32",
+        "original_native_delta_tolerance": 1e-05,
+        "source_original_audit_sha256": "1c3a428ca0abcfd714fb77b1b89e55b6b8be3ea4025dd7b6b9f490f5a3bbf05e",
+        "source_original_audit": {
+          "status": "FAIL_RETAINED",
+          "failures": [
+            "AssertionError('Native delta CPU replay mismatch')"
+          ]
+        },
+        "source_checkpoint_sha256": "8fa4b185b49c893b078f741b1ff3a1aa1b01614d9a250380fd8de815c7d1f586",
+        "source_training_receipt_sha256": "bce41a5dee90313481655d2f78b2af622f96e6d0d985b7f3918b3946b9190d8b",
+        "retrained": false,
+        "status": "PASS_COMMON_LM_NATIVE_GPU_DELTA_CPU_RANK_AUDIT",
+        "failures": [],
+        "candidate_score_checks": 1080768,
+        "max_abs_logit_error": 7.152557373046875e-06,
+        "max_initial_logit_error": 1.1742115020751953e-05,
+        "rank_mismatches": 0,
+        "old_queries": 74428,
+        "new_queries": 12406
+      }
+    }
+  ]
+}

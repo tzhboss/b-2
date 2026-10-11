@@ -1,0 +1,41 @@
+{
+  "id": "KGE-ENTITY-COMMON-STATIC-INDEX-029",
+  "scope": "Static-index bitwise equivalence and prepared TRAIN grouping timing only; no method utility",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "seed": 20261011,
+  "cases": 64,
+  "steps": 6,
+  "entities": 15,
+  "dimension": 4,
+  "k": 3,
+  "budget_seconds": 600,
+  "solver": {
+    "guard_margin": 1e-08,
+    "ftol": 1e-10,
+    "maxiter": 200,
+    "max_cut_rounds": 8,
+    "cut_rows_per_round": 64,
+    "primal_tolerance": 1e-10,
+    "movement_tolerance": 1e-08
+  },
+  "benchmark_repetitions": 8,
+  "benchmark_scope": "artifacts/shared-rank-scope24/shared-rank-scope-s17/scope.npz",
+  "worker": "scripts/check_shared_rank_index.py",
+  "aggregate_worker": "scripts/check_shared_rank_index.py",
+  "reaudit_directory": "artifacts/shared-rank-index29",
+  "log_directory": "logs/shared-rank-index29",
+  "max_concurrent_audits": 2,
+  "dependencies": [
+    "experiments/KGE-ENTITY-COMMON-SHARED-RANK-SOLVER-025R2/experiment.yaml"
+  ],
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-027/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-014/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-017/experiment.yaml"
+  ],
+  "jobs": [
+    {
+      "id": "static-index-controls-s20261011"
+    }
+  ]
+}

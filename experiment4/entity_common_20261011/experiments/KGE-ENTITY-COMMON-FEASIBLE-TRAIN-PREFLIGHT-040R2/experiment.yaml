@@ -1,0 +1,67 @@
+id: KGE-ENTITY-COMMON-FEASIBLE-TRAIN-PREFLIGHT-040R2
+status: completed_audited_train_preflight_only
+config: configs/feasible-train40r2.json
+protocol: plan/feasible-train40r2-protocol.md
+registered_utc: '2026-10-11T11:27:16.816183+00:00'
+frozen_input_sha256:
+  configs/feasible-train40r2.json: 12e44d40ef900878610d0d014792cb7309afddb696220b7f356f97d8721eb8c2
+  src/feasible_train_optimization.py: b54cad1d96492e043bf2151381249ec26dff480d6cdbd80516c585a19f02061c
+  src/feasible_train_optimization_v2.py: 25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5
+  scripts/control_feasible_train41.py: cb9401cb9e3a3e9129540fcae38d436ba92e516088f5eac011dd4b56aa5d8981
+  scripts/run_feasible_train40.py: fdb4dcf933eed0fb516a7a9262949ed6abb201abcdbf833e6d47fae9cb1d8579
+  scripts/run_feasible_train_v2.py: b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a
+  scripts/coordinate_feasible_experiment.py: 5b2ae9c0888b7b5edb0f49c2f1ed6c66713d10ce9cbb7d4b3b647c3ce4f72656
+  scripts/register_feasible_train40r2.py: d7467a576d8409514f2156b5361526e8d69a85365d437e2444e3d3ba86ef9b2f
+  plan/feasible-train40r2-protocol.md: dd7f2f8f5ef585ecf49071ab06e62b1c78817e5fd7a22e10e060d634cb265c1f
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+  src/shared_rank_scope.py: e351d1fe0a1e72feb30fe33a0887bea92e8b761a0656dad9ac5500fb406c57be
+  src/shared_rank_graph.py: bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a
+  src/shared_rank_cache_v2.py: 8980fac50a992a74f1dd339c582ad3d1382c0fb140688cf87c1a6c6a4c7abaad
+  src/shared_rank_solver_v2.py: a274789e9552aa0aff020a880dbffcff1b1278987712c87a685dde185d17d06d
+  results/KGE-ENTITY-COMMON-FEASIBLE-TRAIN-PREFLIGHT-040/summary.json: 5a71efcabf6e08650b7d22b220dba8c19a30152dc19261ca2be399a3338116c6
+controls:
+  status: PASS_ACTIVE_RANK_CUT_TRAIN_DESCENT_AND_UNCHANGED_BUDGET_FALLBACK
+  prior_controls:
+    status: PASS_SCALAR_ALIAS_GRADIENT_AND_TRAIN_IMPROVEMENT_WITH_FULL_GUARDS
+    scalar_score_checks: 384
+    gradient_components_checked: 192
+    max_gradient_error: 3.705685758248478e-10
+    toy_before_loss: 1.3862943611198906
+    toy_after_loss: 0.7439845321336873
+    graph_utility_asserted: false
+  active_cut_rounds: 1
+  constrained_loss_before: 2.006408868078168
+  constrained_loss_after: 1.350733499856727
+  guard_rank: 2
+  scientific_utility_asserted: false
+active_processes: []
+jobs:
+  feasible-train-full-s17-r2:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  feasible-train-scoped-s17-r2:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  feasible-train-full-s29-r2:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  feasible-train-scoped-s29-r2:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  feasible-train-full-s43-r2:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  feasible-train-scoped-s43-r2:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+scientific_utility_asserted: false
+coordinator_pid: 800817
+result_directory: results/KGE-ENTITY-COMMON-FEASIBLE-TRAIN-PREFLIGHT-040R2
+completed_utc: '2026-10-11T11:28:29.836406+00:00'

@@ -1,0 +1,12 @@
+diff --git a/src/model/BaseModel.py b/src/model/BaseModel.py
+index 6fbb62e..4fd1c1d 100644
+--- a/src/model/BaseModel.py
++++ b/src/model/BaseModel.py
+@@ -1,5 +1,6 @@
+ from src.utils import *
+-from torch_scatter import scatter_add, scatter_mean, scatter_max
++# Compatibility: upstream imports torch_scatter but has no scatter calls in IncDE.
++# No algorithm, tensor computation, parameter or training behavior is changed.
+ 
+ class BaseModel(nn.Module):
+     def __init__(self, args, kg) -> None:

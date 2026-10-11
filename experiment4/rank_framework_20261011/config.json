@@ -1,0 +1,132 @@
+{
+  "jobs": [
+    {
+      "method": "KGEditor",
+      "dataset": "FB15K237",
+      "id": "kgeditor-e-fb15k237-s0",
+      "run": "runs/kgeditor-e-fb15k237-s0",
+      "python": "environment/kgeditor38/bin/python",
+      "auditor": "audit_lm_metrics.py",
+      "audit": "results/KGE-LIT-004/kgeditor-e-fb15k237-s0/independent-cpu-audit-v2.json",
+      "runner": "evaluate_lm_editor.py"
+    },
+    {
+      "method": "KGEditor",
+      "dataset": "WN18RR",
+      "id": "kgeditor-e-wn18rr-s0",
+      "run": "runs/kgeditor-e-wn18rr-s0",
+      "python": "environment/kgeditor38/bin/python",
+      "auditor": "audit_lm_metrics.py",
+      "audit": "results/KGE-LIT-004/kgeditor-e-wn18rr-s0/independent-cpu-audit-v2.json",
+      "runner": "evaluate_lm_editor.py"
+    },
+    {
+      "id": "incde-entity-s3407",
+      "python": "environment/downloads/bin/python",
+      "adapter": "direct",
+      "dataset": "ENTITY",
+      "run": "runs/incde-entity-s3407",
+      "runner": "evaluate_checkpoints.py",
+      "auditor": "audit_checkpoint_ranks.py",
+      "audit": "results/KGE-LIT-001/incde-entity-s3407/audit.json",
+      "method": "IncDE"
+    },
+    {
+      "id": "incde-relation-s3407",
+      "python": "environment/downloads/bin/python",
+      "adapter": "direct",
+      "dataset": "RELATION",
+      "run": "runs/incde-relation-s3407",
+      "runner": "evaluate_checkpoints.py",
+      "auditor": "audit_checkpoint_ranks.py",
+      "audit": "results/KGE-LIT-001/incde-relation-s3407/audit.json",
+      "method": "IncDE"
+    },
+    {
+      "id": "incde-fact-s3407",
+      "python": "environment/downloads/bin/python",
+      "adapter": "direct",
+      "dataset": "FACT",
+      "run": "runs/incde-fact-s3407",
+      "runner": "evaluate_checkpoints.py",
+      "auditor": "audit_checkpoint_ranks.py",
+      "audit": "results/KGE-LIT-001/incde-fact-s3407/audit.json",
+      "method": "IncDE"
+    },
+    {
+      "id": "incde-hybrid-s3407",
+      "python": "environment/downloads/bin/python",
+      "adapter": "direct",
+      "dataset": "HYBRID",
+      "run": "runs/incde-hybrid-s3407",
+      "runner": "evaluate_checkpoints.py",
+      "auditor": "audit_checkpoint_ranks.py",
+      "audit": "results/KGE-LIT-001/incde-hybrid-s3407/audit.json",
+      "method": "IncDE"
+    },
+    {
+      "id": "fastkge-fbckge-s3407",
+      "python": "environment/downloads/bin/python",
+      "adapter": "merged_lora",
+      "dataset": "FB_CKGE",
+      "run": "runs/fastkge-fbckge-s3407",
+      "runner": "evaluate_checkpoints.py",
+      "auditor": "audit_checkpoint_ranks.py",
+      "audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+      "method": "FastKGE"
+    },
+    {
+      "id": "stark-fbckge-s3407",
+      "python": "environment/downloads/bin/python",
+      "adapter": "merged_lora",
+      "dataset": "FB_CKGE",
+      "run": "runs/stark-fbckge-s3407",
+      "runner": "evaluate_checkpoints.py",
+      "auditor": "audit_checkpoint_ranks.py",
+      "audit": "results/KGE-LIT-002/stark-fbckge-s3407/independent-audit.json",
+      "method": "STARK"
+    },
+    {
+      "id": "lkge-clean-fact-s55",
+      "python": "environment/downloads/bin/python",
+      "adapter": "direct",
+      "dataset": "FACT",
+      "run": "runs/lkge-clean-fact-s55",
+      "runner": "evaluate_checkpoints.py",
+      "auditor": "audit_checkpoint_ranks.py",
+      "audit": "results/KGE-LIT-006/independent-audit.json",
+      "method": "LKGE validation-selection revision"
+    },
+    {
+      "id": "sage-fact-s55",
+      "python": "environment/downloads/bin/python",
+      "adapter": "direct",
+      "dataset": "FACT",
+      "run": "runs/sage-fact-s55",
+      "exploratory": true,
+      "runner": "evaluate_checkpoints.py",
+      "auditor": "audit_checkpoint_ranks.py",
+      "audit": "results/KGE-LIT-003/scientific-audit.json",
+      "method": "SAGE"
+    },
+    {
+      "auditor": "audit_rank_metrics.py",
+      "id": "rank-distmult",
+      "python": "environment/downloads/bin/python",
+      "kind": "distmult",
+      "dataset": "FB15k237",
+      "method": "Rank/QP",
+      "runner": "evaluate_rank_vectors.py"
+    },
+    {
+      "auditor": "audit_rank_metrics.py",
+      "id": "rank-complex",
+      "python": "environment/downloads/bin/python",
+      "kind": "complex",
+      "dataset": "FB15k237",
+      "method": "Rank/QP",
+      "runner": "evaluate_rank_vectors.py"
+    }
+  ],
+  "id": "KGE-RANK-EVAL-001"
+}

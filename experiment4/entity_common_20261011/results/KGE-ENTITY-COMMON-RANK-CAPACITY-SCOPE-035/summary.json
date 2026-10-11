@@ -1,0 +1,313 @@
+{
+  "scope": "TRAIN-certified saturated query reference exemptions; structural scope audit only, no model updates or utility",
+  "jobs_passed": 3,
+  "jobs_total": 3,
+  "rows": [
+    {
+      "result": {
+        "id": "shared-rank-scope-s17",
+        "seed": 17,
+        "test_read": false,
+        "valid_read": false,
+        "split_integrity_evidence_reads_valid_test": true,
+        "elapsed_s": 4.2803878209088,
+        "input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/configs/task-projection19.json": "ec7512c8bb38b8ae353e4cb1414c53545b103c876949282ef7d2f1815fdee825",
+          "/data/lc/tzh/experiment4/entity_common_20261011/scripts/diagnose_rank_capacity.py": "6ad593bf2f1e0b7f447a4411cdab01495dc990214e9cf64ee13de95a56537bfe",
+          "/data/lc/tzh/experiment4/entity_common_20261011/src/rank_capacity.py": "aa9198d86422d4d520307225c911d459addb467526204340e5526bd3259a8b3e",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/initial.pt": "d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/scope.npz": "c6f9ff5aca629f7d3b0bd7ddb8b1a9d90745d1b510edc5e786959d0df1f5984d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/receipt.json": "e226e96bb184322d343b8aedb3ca38c93a4ac66dc6169e7cb9b4889b843b3f61",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/audit.json": "1f003257c58577842c603deae5406a6a673d4502b318254af4238b9af2df4173",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/training-receipt.json": "d12e807da08a4920550e3bb2db7dd15bc5f04e5e789626209895c961bf34eb2a",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s17/guards.npz": "400a0e3d10b2fbaa8348a5f659407c7335f1d51ad9d839e449f53c25086e0190",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s17/receipt.json": "51958955049cc98841839669f790f64f4e7d47059b8853e3bfd4ccbc88c89931",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/initial.pt": "73da0eb88e62176738d0da2a5d1cfd3e7d54d85aa0af6cc5766ad818526151d6",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/scope.npz": "4b9e6e976701fd0bec76a697fafb56721cb14a40e0579bb423ab3bcb5ea89d66",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/receipt.json": "6f8bd9439a575a1990f9c6fae624fadcd7745ab15ca7d217559a6ba750c89393",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/audit.json": "e4d0470354fb9272158df7629634c34057e1163138881ac657c36da7de82f848",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/training-receipt.json": "1781fd6b0142ae22a7426ad7bdc42f2d5e11e3fd9b7c2007e9fbade32b5658a5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s29/guards.npz": "8734f4b4f4a179bc6da48311e6ab9afd36d2d2e704c25bff6f69a6aca61f2219",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s29/receipt.json": "d1c89e9c5934874eff3eb8c46e0bbc8a1692175c644b571b5e2fadc736fa26fb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/initial.pt": "95e70f431788cad45126d3e4a404a557c9ecd12ed2822aec0ecc534bb6b8e131",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/audit.json": "2dcc19b46dfbfdc14f0a6eb638e90c4f3bf219e60bab6a3505cc1b8c415546bd",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/scope.npz": "a6dea19a290eb470846731bde5c767842968e336b8dcf238578ffffd0dface8a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/receipt.json": "f470ba845e8aa5a56ccc4b2eb868c6303f3535462233d4821b931747a21e50db",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/audit.json": "baa6a55a78d37e2972233d762c5f3ac2063db3686b1ec794a1b4ded966a063ca",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/training-receipt.json": "6abf62132ebe50e83b78e8e6af18bb02c9aa8f46a4ad697282a01e07bb701769",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s43/guards.npz": "a0c32172574c0f07b11e505d724f592696ea7f6a00f30597df31de0bddf5dced",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s43/receipt.json": "95598df479e5435aed3c80e577a260d8d0932e6f86925bcf834a00b76910b52d",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/test.txt": "e5192a8dd2405d74433eceee72cabba04640dd8cf31ef763bc039824a9725232",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/test.txt": "6150c2575bb256859c0ca7166d881000bb7fadbc096a3a09a99f7777b69a7860",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/certificates.npz": "944bbddbd480a365e998bae7e50907941969f82401199cd255f37d831e0e6297",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json": "f9e7899ea167971dabd81f646edc084587a2804c438118c530a2d28bcd10f064",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/dataset-split-audit.json": "a4050d6fc55d15fe8da8b4c01eb16fcffc163a9fcf225f0cd8b3181cf2394381"
+        },
+        "output_sha256": {
+          "scope.npz": "e57774b09ec556364e6484a856e54a64dc5c29ce46a6097c057b0dc2829f974a"
+        },
+        "exempted_queries": 321,
+        "removed": {
+          "full": {
+            "query_keys": 321,
+            "reference_members": 3207
+          },
+          "scoped": {
+            "query_keys": 321,
+            "reference_members": 3207
+          }
+        },
+        "scope": "Explicit removal of reference members only at TRAIN-certified saturated affected queries",
+        "implementation_sha256": "b185c0c2779358fda1b87add4b06da69d60fbb193884e69d7b3953b17c9dde97",
+        "limits": [
+          "Changes TRUE and Prediction preservation at certified TRAIN query keys.",
+          "No blanket old-knowledge preservation or old MRR guarantee.",
+          "Outside certified keys, every source reference is retained exactly.",
+          "Structural preparation only; trained utility requires separate unchanged gates."
+        ]
+      },
+      "audit": {
+        "status": "PASS_ALL_RETAINED_AND_EXEMPTED_REFERENCE_IDENTITIES",
+        "failures": [],
+        "references_independently_reconstructed": 450670,
+        "exempted_queries": 321,
+        "removed": {
+          "full": {
+            "query_keys": 321,
+            "reference_members": 3207
+          },
+          "scoped": {
+            "query_keys": 321,
+            "reference_members": 3207
+          }
+        },
+        "test_read": false,
+        "valid_read": false,
+        "receipt_sha256": "78130b1ef9eaed4866828a7b342ebc48cf7f8c094bd742771bf9db9090dad954",
+        "elapsed_s": 5.209256300004199,
+        "limits": [
+          "Independent reference identity replay; score certification inherits bound TRAIN diagnostic and native GPU evidence.",
+          "No model update or utility result. Separate global split-integrity evidence read VALID/TEST."
+        ]
+      }
+    },
+    {
+      "result": {
+        "id": "shared-rank-scope-s29",
+        "seed": 29,
+        "test_read": false,
+        "valid_read": false,
+        "split_integrity_evidence_reads_valid_test": true,
+        "elapsed_s": 4.536626531044021,
+        "input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/configs/task-projection19.json": "ec7512c8bb38b8ae353e4cb1414c53545b103c876949282ef7d2f1815fdee825",
+          "/data/lc/tzh/experiment4/entity_common_20261011/scripts/diagnose_rank_capacity.py": "6ad593bf2f1e0b7f447a4411cdab01495dc990214e9cf64ee13de95a56537bfe",
+          "/data/lc/tzh/experiment4/entity_common_20261011/src/rank_capacity.py": "aa9198d86422d4d520307225c911d459addb467526204340e5526bd3259a8b3e",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/initial.pt": "d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/scope.npz": "c6f9ff5aca629f7d3b0bd7ddb8b1a9d90745d1b510edc5e786959d0df1f5984d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/receipt.json": "e226e96bb184322d343b8aedb3ca38c93a4ac66dc6169e7cb9b4889b843b3f61",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/audit.json": "1f003257c58577842c603deae5406a6a673d4502b318254af4238b9af2df4173",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/training-receipt.json": "d12e807da08a4920550e3bb2db7dd15bc5f04e5e789626209895c961bf34eb2a",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s17/guards.npz": "400a0e3d10b2fbaa8348a5f659407c7335f1d51ad9d839e449f53c25086e0190",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s17/receipt.json": "51958955049cc98841839669f790f64f4e7d47059b8853e3bfd4ccbc88c89931",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/initial.pt": "73da0eb88e62176738d0da2a5d1cfd3e7d54d85aa0af6cc5766ad818526151d6",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/scope.npz": "4b9e6e976701fd0bec76a697fafb56721cb14a40e0579bb423ab3bcb5ea89d66",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/receipt.json": "6f8bd9439a575a1990f9c6fae624fadcd7745ab15ca7d217559a6ba750c89393",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/audit.json": "e4d0470354fb9272158df7629634c34057e1163138881ac657c36da7de82f848",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/training-receipt.json": "1781fd6b0142ae22a7426ad7bdc42f2d5e11e3fd9b7c2007e9fbade32b5658a5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s29/guards.npz": "8734f4b4f4a179bc6da48311e6ab9afd36d2d2e704c25bff6f69a6aca61f2219",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s29/receipt.json": "d1c89e9c5934874eff3eb8c46e0bbc8a1692175c644b571b5e2fadc736fa26fb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/initial.pt": "95e70f431788cad45126d3e4a404a557c9ecd12ed2822aec0ecc534bb6b8e131",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/audit.json": "2dcc19b46dfbfdc14f0a6eb638e90c4f3bf219e60bab6a3505cc1b8c415546bd",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/scope.npz": "a6dea19a290eb470846731bde5c767842968e336b8dcf238578ffffd0dface8a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/receipt.json": "f470ba845e8aa5a56ccc4b2eb868c6303f3535462233d4821b931747a21e50db",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/audit.json": "baa6a55a78d37e2972233d762c5f3ac2063db3686b1ec794a1b4ded966a063ca",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/training-receipt.json": "6abf62132ebe50e83b78e8e6af18bb02c9aa8f46a4ad697282a01e07bb701769",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s43/guards.npz": "a0c32172574c0f07b11e505d724f592696ea7f6a00f30597df31de0bddf5dced",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s43/receipt.json": "95598df479e5435aed3c80e577a260d8d0932e6f86925bcf834a00b76910b52d",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/test.txt": "e5192a8dd2405d74433eceee72cabba04640dd8cf31ef763bc039824a9725232",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/test.txt": "6150c2575bb256859c0ca7166d881000bb7fadbc096a3a09a99f7777b69a7860",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/certificates.npz": "944bbddbd480a365e998bae7e50907941969f82401199cd255f37d831e0e6297",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json": "f9e7899ea167971dabd81f646edc084587a2804c438118c530a2d28bcd10f064",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/dataset-split-audit.json": "a4050d6fc55d15fe8da8b4c01eb16fcffc163a9fcf225f0cd8b3181cf2394381"
+        },
+        "output_sha256": {
+          "scope.npz": "f6b5066650593bddc524fa67239b8ef1218e2618593a6fe18e544912d3c72e83"
+        },
+        "exempted_queries": 324,
+        "removed": {
+          "full": {
+            "query_keys": 324,
+            "reference_members": 3237
+          },
+          "scoped": {
+            "query_keys": 324,
+            "reference_members": 3237
+          }
+        },
+        "scope": "Explicit removal of reference members only at TRAIN-certified saturated affected queries",
+        "implementation_sha256": "b185c0c2779358fda1b87add4b06da69d60fbb193884e69d7b3953b17c9dde97",
+        "limits": [
+          "Changes TRUE and Prediction preservation at certified TRAIN query keys.",
+          "No blanket old-knowledge preservation or old MRR guarantee.",
+          "Outside certified keys, every source reference is retained exactly.",
+          "Structural preparation only; trained utility requires separate unchanged gates."
+        ]
+      },
+      "audit": {
+        "status": "PASS_ALL_RETAINED_AND_EXEMPTED_REFERENCE_IDENTITIES",
+        "failures": [],
+        "references_independently_reconstructed": 448192,
+        "exempted_queries": 324,
+        "removed": {
+          "full": {
+            "query_keys": 324,
+            "reference_members": 3237
+          },
+          "scoped": {
+            "query_keys": 324,
+            "reference_members": 3237
+          }
+        },
+        "test_read": false,
+        "valid_read": false,
+        "receipt_sha256": "cfedd5c9bf258f888e1c780a665d06ee9cef41e97d394ca32a29ceb91c79a18e",
+        "elapsed_s": 5.073590453946963,
+        "limits": [
+          "Independent reference identity replay; score certification inherits bound TRAIN diagnostic and native GPU evidence.",
+          "No model update or utility result. Separate global split-integrity evidence read VALID/TEST."
+        ]
+      }
+    },
+    {
+      "result": {
+        "id": "shared-rank-scope-s43",
+        "seed": 43,
+        "test_read": false,
+        "valid_read": false,
+        "split_integrity_evidence_reads_valid_test": true,
+        "elapsed_s": 4.423884206917137,
+        "input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/configs/task-projection19.json": "ec7512c8bb38b8ae353e4cb1414c53545b103c876949282ef7d2f1815fdee825",
+          "/data/lc/tzh/experiment4/entity_common_20261011/scripts/diagnose_rank_capacity.py": "6ad593bf2f1e0b7f447a4411cdab01495dc990214e9cf64ee13de95a56537bfe",
+          "/data/lc/tzh/experiment4/entity_common_20261011/src/rank_capacity.py": "aa9198d86422d4d520307225c911d459addb467526204340e5526bd3259a8b3e",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/initial.pt": "d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/scope.npz": "c6f9ff5aca629f7d3b0bd7ddb8b1a9d90745d1b510edc5e786959d0df1f5984d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/receipt.json": "e226e96bb184322d343b8aedb3ca38c93a4ac66dc6169e7cb9b4889b843b3f61",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/audit.json": "1f003257c58577842c603deae5406a6a673d4502b318254af4238b9af2df4173",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/training-receipt.json": "d12e807da08a4920550e3bb2db7dd15bc5f04e5e789626209895c961bf34eb2a",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s17/guards.npz": "400a0e3d10b2fbaa8348a5f659407c7335f1d51ad9d839e449f53c25086e0190",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s17/receipt.json": "51958955049cc98841839669f790f64f4e7d47059b8853e3bfd4ccbc88c89931",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/initial.pt": "73da0eb88e62176738d0da2a5d1cfd3e7d54d85aa0af6cc5766ad818526151d6",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/scope.npz": "4b9e6e976701fd0bec76a697fafb56721cb14a40e0579bb423ab3bcb5ea89d66",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/receipt.json": "6f8bd9439a575a1990f9c6fae624fadcd7745ab15ca7d217559a6ba750c89393",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/audit.json": "e4d0470354fb9272158df7629634c34057e1163138881ac657c36da7de82f848",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/training-receipt.json": "1781fd6b0142ae22a7426ad7bdc42f2d5e11e3fd9b7c2007e9fbade32b5658a5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s29/guards.npz": "8734f4b4f4a179bc6da48311e6ab9afd36d2d2e704c25bff6f69a6aca61f2219",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s29/receipt.json": "d1c89e9c5934874eff3eb8c46e0bbc8a1692175c644b571b5e2fadc736fa26fb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/initial.pt": "95e70f431788cad45126d3e4a404a557c9ecd12ed2822aec0ecc534bb6b8e131",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/audit.json": "2dcc19b46dfbfdc14f0a6eb638e90c4f3bf219e60bab6a3505cc1b8c415546bd",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/scope.npz": "a6dea19a290eb470846731bde5c767842968e336b8dcf238578ffffd0dface8a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/receipt.json": "f470ba845e8aa5a56ccc4b2eb868c6303f3535462233d4821b931747a21e50db",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/audit.json": "baa6a55a78d37e2972233d762c5f3ac2063db3686b1ec794a1b4ded966a063ca",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/training-receipt.json": "6abf62132ebe50e83b78e8e6af18bb02c9aa8f46a4ad697282a01e07bb701769",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s43/guards.npz": "a0c32172574c0f07b11e505d724f592696ea7f6a00f30597df31de0bddf5dced",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s43/receipt.json": "95598df479e5435aed3c80e577a260d8d0932e6f86925bcf834a00b76910b52d",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/test.txt": "e5192a8dd2405d74433eceee72cabba04640dd8cf31ef763bc039824a9725232",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/test.txt": "6150c2575bb256859c0ca7166d881000bb7fadbc096a3a09a99f7777b69a7860",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/certificates.npz": "944bbddbd480a365e998bae7e50907941969f82401199cd255f37d831e0e6297",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json": "f9e7899ea167971dabd81f646edc084587a2804c438118c530a2d28bcd10f064",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/dataset-split-audit.json": "a4050d6fc55d15fe8da8b4c01eb16fcffc163a9fcf225f0cd8b3181cf2394381"
+        },
+        "output_sha256": {
+          "scope.npz": "232e725eefd5c4c960f0dadcf6cb53a4e22bf6db46d3956168d50f9c9cbf38d3"
+        },
+        "exempted_queries": 282,
+        "removed": {
+          "full": {
+            "query_keys": 282,
+            "reference_members": 2819
+          },
+          "scoped": {
+            "query_keys": 282,
+            "reference_members": 2819
+          }
+        },
+        "scope": "Explicit removal of reference members only at TRAIN-certified saturated affected queries",
+        "implementation_sha256": "b185c0c2779358fda1b87add4b06da69d60fbb193884e69d7b3953b17c9dde97",
+        "limits": [
+          "Changes TRUE and Prediction preservation at certified TRAIN query keys.",
+          "No blanket old-knowledge preservation or old MRR guarantee.",
+          "Outside certified keys, every source reference is retained exactly.",
+          "Structural preparation only; trained utility requires separate unchanged gates."
+        ]
+      },
+      "audit": {
+        "status": "PASS_ALL_RETAINED_AND_EXEMPTED_REFERENCE_IDENTITIES",
+        "failures": [],
+        "references_independently_reconstructed": 447744,
+        "exempted_queries": 282,
+        "removed": {
+          "full": {
+            "query_keys": 282,
+            "reference_members": 2819
+          },
+          "scoped": {
+            "query_keys": 282,
+            "reference_members": 2819
+          }
+        },
+        "test_read": false,
+        "valid_read": false,
+        "receipt_sha256": "034486355e73e7fa5ec35185734cd1fbc4e2b9c778de2181540404f9b57ca31a",
+        "elapsed_s": 5.1420032429741696,
+        "limits": [
+          "Independent reference identity replay; score certification inherits bound TRAIN diagnostic and native GPU evidence.",
+          "No model update or utility result. Separate global split-integrity evidence read VALID/TEST."
+        ]
+      }
+    }
+  ]
+}

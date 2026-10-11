@@ -1,0 +1,41 @@
+{
+  "utc": "2026-10-10T13:59:44.854145+00:00",
+  "source": "registered native start/terminal receipts/canonical",
+  "peak_registered_native_job_overlap": 7,
+  "peak_overlap_time": "2026-10-10T11:49:23+00:00",
+  "jobs": [
+    {
+      "id": "incde-entity-s3407",
+      "gpu": 0
+    },
+    {
+      "id": "incde-relation-s3407",
+      "gpu": 1
+    },
+    {
+      "id": "incde-fact-s3407",
+      "gpu": 2
+    },
+    {
+      "id": "incde-hybrid-s3407",
+      "gpu": 3
+    },
+    {
+      "id": "fastkge-fbckge-s3407",
+      "gpu": 4
+    },
+    {
+      "id": "stark-fbckge-s3407",
+      "gpu": 5
+    },
+    {
+      "id": "sage-fact-s55",
+      "gpu": 6
+    }
+  ],
+  "limitations": [
+    "Overlapping registered process lifetimes, including initialization/evaluation; not a claim of simultaneous kernels or100percent GPU use.",
+    "Source-integrity failed SAGE still executed native training; retained failure does not erase its actual process lifetime.",
+    "No retrospectively measured per-process GPU memory peak."
+  ]
+}

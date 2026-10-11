@@ -1,0 +1,43 @@
+id: KGE-LIT-004-AUDIT-V2
+status: superseded_idle_coordinator
+registration_status: REGISTERED
+registered_utc: '2026-10-10T13:26:19.207287+00:00'
+native_master_sha256: 314b14fa671d140b579ba5e728afd6efb36349e34404d2f04a8ef33d2442a58b
+implementation_sha256:
+  code/audit_kgeditor_native_v2.py: ee004305ad0f01d985622833ba89a1fecaa339d752c3f1a4451af6d77b792b37
+  code/replay_kgeditor_samples_v2.py: f97c8770091ea49799ffdd2e03b839b5781955222b49fa1ccb0cae7872a635c4
+coordinator_sha256: cc44318a0e7bf44b5b0efc2e72e72ee2fe58851019db1d069b9d6e124ac6e961
+active_processes: []
+audit:
+  status: not_started
+scope: Independent CPU terminal checks and fixed16 evenly spaced batches/160examples
+  per selected KGEditor checkpoint; no training/selection change
+sampling:
+  batches: 16
+  examples_per_batch: 10
+  rank_top3: exact
+  target_logit_atol: 0.0001
+resource_policy: GPU4/5 only after its corresponding native producer terminal; at
+  least23000MB free and utilization<=20; twoCPUthreads
+no_automatic_promotion: true
+jobs:
+- id: kgeditor-e-fb15k237-s0
+  gpu: 4
+  stage: waiting_for_native_terminal
+- id: kgeditor-e-wn18rr-s0
+  gpu: 5
+  stage: sample_replay_failed
+  pid: 675638
+  cpu_audit_exit_code: 0
+  cpu_audit_elapsed_s: 15.009173467988148
+  cpu_audit_report: logs/kgeditor-e-wn18rr-s0-independent-cpu-audit-v2.json
+  cpu_audit_report_sha256: 626abab3415453d32342f0ef2f653882ac38034560a8f163619c63dede881444
+  sample_replay_exit_code: 1
+  sample_replay_elapsed_s: 45.02644541498739
+  sample_replay_report: audit-replays/kgeditor-e-wn18rr-s0-v2/replay-report.json
+  status: FAIL
+supersedes: KGE-LIT-004-AUDIT
+preserves_original_failure: logs/kgeditor-e-wn18rr-s0-independent-cpu-audit.json
+coordinator_pid: 675625
+reason: v2 sample FAIL retained; replay v3 reproduces source-proven native CPU storage
+  alias. CPU auditor v2 unchanged.

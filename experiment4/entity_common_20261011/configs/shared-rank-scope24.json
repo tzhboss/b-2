@@ -1,0 +1,22 @@
+{
+  "id": "KGE-ENTITY-COMMON-SHARED-RANK-SCOPE-024",
+  "scope": "Full TRAIN shared-reference scope compilation and guard-scorer scaling for three common seeds; no graph method utility",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "task_config": "configs/task-projection19.json",
+  "source_template": "newentityonly-distmult-s{seed}",
+  "verified_proposal_template": "proposal-qppred-s{seed}",
+  "k": 10,
+  "score_batch": 256,
+  "rank_batch": 128,
+  "progress_every_queries": 2048,
+  "fixture_seed": 20261024,
+  "fixture_queries": 128,
+  "budget_seconds_per_job": 1200,
+  "available_gpu_indices": [3, 4, 5],
+  "resource_claim_sources": ["experiments/KGE-ENTITY-COMMON-KGEDITOR-014/experiment.yaml", "experiments/KGE-ENTITY-COMMON-KGEDITOR-017/experiment.yaml"],
+  "max_concurrent_audits": 2,
+  "worker": "scripts/run_shared_rank_scope.py",
+  "log_directory": "logs/shared-rank-scope24",
+  "output_directory": "artifacts/shared-rank-scope24",
+  "jobs": [{"id": "shared-rank-scope-s17", "seed": 17}, {"id": "shared-rank-scope-s29", "seed": 29}, {"id": "shared-rank-scope-s43", "seed": 43}]
+}

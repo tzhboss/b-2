@@ -1,0 +1,76 @@
+id: KGE-ENTITY-COMMON-SHARED-GRAPH-027
+status: batch_terminal_with_retained_failures
+config: configs/shared-graph27.json
+protocol: plan/shared-graph-comparison-protocol.md
+scope: 'Full common all3753/three-seed rank optimization: full frozen, scoped frozen,
+  scoped joint; exposed development comparison'
+registered_utc: '2026-10-11T04:22:28.739858+00:00'
+frozen_input_sha256:
+  configs/shared-graph27.json: 63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5
+  plan/shared-graph-comparison-protocol.md: c3c972a1a9d9f58cdefcc3ea220c1dc7f0272990de12ec3e7b639388bb4dc490
+  src/shared_rank_graph.py: bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a
+  src/shared_rank_solver_v2.py: a274789e9552aa0aff020a880dbffcff1b1278987712c87a685dde185d17d06d
+  src/shared_rank_cache_v2.py: 8980fac50a992a74f1dd339c582ad3d1382c0fb140688cf87c1a6c6a4c7abaad
+  src/shared_rank_scope.py: e351d1fe0a1e72feb30fe33a0887bea92e8b761a0656dad9ac5500fb406c57be
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+  scripts/run_shared_graph.py: 1dc294be329a6f45d2406d4abfcb78ccf87e549dd2c7b2b847e8c1a8ee935cbb
+  scripts/audit_shared_graph_updates.py: 3de6d47aaeee4f2e1dbfd62dc2d6123499372c27e634e1ec97bce1c560dd589d
+  scripts/audit_exported_embeddings.py: 56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719
+  scripts/coordinate_gpu_claim_queue_v4.py: 7f6a51cb75ac60158a4c655dcddd853dbaecb2c7a33cf2741bbd65759731efe2
+  results/KGE-ENTITY-COMMON-SHARED-RANK-SOLVER-025R2/summary.json: 4afa661f0bf3ca53778870908eed4fa1f76c7cf34ec4baf4d5cd898c4c400bef
+  results/KGE-ENTITY-COMMON-SHARED-RANK-SCOPE-024/summary.json: d418205315168e3a0d41efc1d8054c5384c5ee2919f4bb28adb779e729ecac9f
+external_source_sha256: {}
+active_processes: []
+coordinator_pid: 750139
+jobs:
+  shared-graph-full-s17:
+    status: failed_retained
+    stage: evaluate
+    exit_code: 1
+  shared-graph-scoped-s17:
+    status: failed_retained
+    stage: evaluate
+    exit_code: 1
+  shared-graph-joint-s17:
+    status: failed_retained
+    stage: evaluate
+    exit_code: 1
+  shared-graph-full-s29:
+    status: failed_retained
+    stage: evaluate
+    exit_code: 1
+  shared-graph-scoped-s29:
+    status: failed_retained
+    stage: evaluate
+    exit_code: 1
+  shared-graph-joint-s29:
+    status: failed_retained
+    stage: evaluate
+    exit_code: 1
+  shared-graph-full-s43:
+    status: failed_retained
+    stage: evaluate
+    exit_code: 1
+  shared-graph-scoped-s43:
+    status: failed_retained
+    stage: evaluate
+    exit_code: 1
+  shared-graph-joint-s43:
+    status: failed_retained
+    stage: evaluate
+    exit_code: 1
+preflight_passed:
+- shared-graph-full-s17
+- shared-graph-full-s29
+- shared-graph-full-s43
+- shared-graph-joint-s17
+- shared-graph-joint-s29
+- shared-graph-joint-s43
+- shared-graph-scoped-s17
+- shared-graph-scoped-s29
+- shared-graph-scoped-s43
+queued_jobs: []
+queued_audits: []
+completed_utc: '2026-10-11T07:48:20.280173+00:00'
+result_directory: results/KGE-ENTITY-COMMON-SHARED-GRAPH-027

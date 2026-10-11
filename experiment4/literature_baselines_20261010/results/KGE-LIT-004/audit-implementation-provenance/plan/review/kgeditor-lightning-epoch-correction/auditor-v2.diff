@@ -1,0 +1,34 @@
+--- audit_kgeditor_native.py
++++ audit_kgeditor_native_v2.py
+@@ -333,12 +333,19 @@
+     hp=ckpt.get("hyper_parameters",{})
+     for k,v in effective.items():a.ck(hp.get(k)==v,"checkpoint hyperparameter "+k)
+     ep=ckpt.get("epoch");step=ckpt.get("global_step")
+-    a.ck(integer(ep) and 0<=ep<20,"selected checkpoint epoch0..19")
++    # PL1.3.1 dump_checkpoint increments epoch and global_step for resume.
++    from pytorch_lightning.trainer.connectors import checkpoint_connector
++    framework=Path(checkpoint_connector.__file__)
++    a.ck(sha(framework)=='795ec2b6484a3a80ff79eafaa7352210102c76ea3eedba30d90112dcf453dac7',"pinned PL1.3.1 checkpoint serialization implementation")
++    a.ck(ckpt.get('pytorch-lightning_version')=='1.3.1',"checkpoint PL1.3.1 version")
++    training_ep=ep-1 if integer(ep) else None
++    a.ck(integer(ep) and 1<=ep<=20,"selected checkpoint resume epoch1..20")
+     a.ck(integer(step) and 0<step<=spec["steps"],"selected checkpoint optimizer step bounds")
+     if integer(ep) and integer(step):
+         per_epoch=spec["steps"]//20
+-        a.ck(step in [(ep+1)*per_epoch-1,(ep+1)*per_epoch],
+-             "selected checkpoint epoch/step link (Lightning save step convention)")
++        a.ck(step==ep*per_epoch,
++             "PL1.3.1 resume epoch/completed optimizer step association")
++        a.ck(('epoch=%d-'%training_ep) in str(checkpoint),"checkpoint filename training epoch equals resume epoch minus1")
+     state=ckpt.get("state_dict",{})
+     a.ck(bool(state) and any(k.startswith("ex_model.") for k in state) and any(k.startswith("ex_learner.") for k in state),
+          "selected checkpoint contains base model and trained editor")
+@@ -354,7 +361,7 @@
+         a.ck(Path(c.get("best_model_path","")).resolve()==checkpoint.resolve(),"checkpoint callback selected path")
+     a.evidence["training_checkpoint"]={k:complete.get(k) for k in
+          ["best_model_path","best_model_score","global_step","current_epoch"]}
+-    a.evidence["training_checkpoint"].update(checkpoint_epoch=ep,checkpoint_global_step=step,
++    a.evidence["training_checkpoint"].update(checkpoint_epoch=ep,checkpoint_training_epoch=training_ep,checkpoint_global_step=step,
+                                             checkpoint_sha256=summary.get("checkpoint_sha256"))
+     del ckpt,state
+     # Read-only logged scalar history independently verifies the monitor and all completed epochs.

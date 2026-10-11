@@ -1,0 +1,9 @@
+{
+  "experiment_id": "KGE-RANK-COMP-001",
+  "models": ["distmult", "complex"],
+  "budget_seconds_per_model": 1200,
+  "ridge": {"distmult": 10.0, "complex": 100.0},
+  "reused_methods": ["Direct", "PublishedRank", "SupportRegularized_TRAIN_adaptation", "PredictionSetQP_RankNormCap", "TrueOnlyQP_RankNormCap", "SupportAllSplit_LiteralTargetEligible", "SupportAllSplit_TargetExcluded"],
+  "new_methods": ["StrictNull", "PublishedRidge"],
+  "scope": "Exposed same400 raw strict Top10 frozen-column supplemental comparison; no new training or TEST scoring"
+}

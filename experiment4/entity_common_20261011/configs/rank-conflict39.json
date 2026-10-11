@@ -1,0 +1,20 @@
+{
+  "id": "KGE-ENTITY-COMMON-RANK-CONFLICT-DIAGNOSTIC-039",
+  "scope": "TRAIN-only endpoint replacement feasibility and immutable-old/new-candidate rank slot conflict diagnostic; no intervention or utility success",
+  "source_config": "configs/rank-capacity37.json",
+  "seeds": [17, 29, 43],
+  "gpu_indices": [1, 3, 5],
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "batch_queries": 128,
+  "fixture_queries_per_policy": 32,
+  "fixture_seed": 913,
+  "budget_seconds_per_seed": 1200,
+  "output_directory": "artifacts/rank-conflict39",
+  "log_directory": "logs/rank-conflict39",
+  "policies": [
+    {"method": "SharedFrozenFull", "endpoint": "shared-graph-full-s{seed}", "scope_directory": "artifacts/shared-rank-scope24", "mode": "full"},
+    {"method": "SharedFrozenScoped", "endpoint": "shared-graph-scoped-s{seed}", "scope_directory": "artifacts/shared-rank-scope24", "mode": "scoped"},
+    {"method": "CapacityFrozenFull", "endpoint": "capacity-full-s{seed}", "scope_directory": "artifacts/rank-capacity-scope35", "mode": "full"},
+    {"method": "CapacityFrozenScoped", "endpoint": "capacity-scoped-s{seed}", "scope_directory": "artifacts/rank-capacity-scope35", "mode": "scoped"}
+  ]
+}

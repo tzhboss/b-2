@@ -1,0 +1,234 @@
+{
+  "id": "KGE-ENTITY-COMMON-LEARNED-PROPOSAL-012",
+  "source_root": "../literature_baselines_20261010",
+  "dataset": "repos/FastKGE/data/FB_CKGE",
+  "source_audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "rank_source": "../rank_comparison_20261010/vendor/kge_rank_locality/core.py",
+  "qp_vendor": "vendor/legacy_qp",
+  "feature_directory": "artifacts/rank-train-guards",
+  "max_true_per_relation": 5000,
+  "feature_score_batch": 64,
+  "expansion_seed_offset": 10000,
+  "validation_seed": 124,
+  "validation_queries_per_split": 1024,
+  "rank_fraction": 0.125,
+  "ridge_lambda": 0.01,
+  "promotion_margin": 1E-06,
+  "guard_margin": 1E-08,
+  "qp_maxiter": 500,
+  "qp_primal_tolerance": 1E-10,
+  "norm_cap_tolerance": 1E-07,
+  "audit_active_tolerance": 1E-05,
+  "audit_kkt_tolerance": 1E-05,
+  "audit_nnls_maxiter": 100000,
+  "sweeps": 1,
+  "preflight_updates": 32,
+  "progress_every_updates": 128,
+  "budget_seconds_per_job": 1800,
+  "cpu_threads_per_job": 2,
+  "scope": "Audited learned shared-new-entity proposals with optional all-relation SVD and nearest rank-frontier QP; known component optimization candidate",
+  "available_gpu_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "gpu_queue_dependencies": [
+    "experiments/KGE-ENTITY-COMMON-RANK-BOUNDED-007/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-008/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-RANK-REAUDIT-010/experiment.yaml"
+  ],
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-LMBASE-004/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-008/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-RANK-REAUDIT-010/experiment.yaml"
+  ],
+  "worker": "scripts/run_rank_task.py",
+  "auditor": "scripts/run_rank_task.py",
+  "log_directory": "logs/learned-proposal",
+  "jobs": [
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposal",
+      "after_dimension": 200,
+      "protection": "none",
+      "id": "proposal-s17",
+      "seed": 17
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposalQPTrue",
+      "after_dimension": 200,
+      "protection": "true",
+      "id": "proposal-qptrue-s17",
+      "seed": 17
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposalQPPred",
+      "after_dimension": 200,
+      "protection": "pred",
+      "id": "proposal-qppred-s17",
+      "seed": 17
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRank",
+      "after_dimension": 200,
+      "protection": "none",
+      "id": "proposal-rank-s17",
+      "seed": 17
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRankQPTrue",
+      "after_dimension": 200,
+      "protection": "true",
+      "id": "proposal-rank-qptrue-s17",
+      "seed": 17
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRankQPPred",
+      "after_dimension": 200,
+      "protection": "pred",
+      "id": "proposal-rank-qppred-s17",
+      "seed": 17
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposal",
+      "after_dimension": 200,
+      "protection": "none",
+      "id": "proposal-s29",
+      "seed": 29
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposalQPTrue",
+      "after_dimension": 200,
+      "protection": "true",
+      "id": "proposal-qptrue-s29",
+      "seed": 29
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposalQPPred",
+      "after_dimension": 200,
+      "protection": "pred",
+      "id": "proposal-qppred-s29",
+      "seed": 29
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRank",
+      "after_dimension": 200,
+      "protection": "none",
+      "id": "proposal-rank-s29",
+      "seed": 29
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRankQPTrue",
+      "after_dimension": 200,
+      "protection": "true",
+      "id": "proposal-rank-qptrue-s29",
+      "seed": 29
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRankQPPred",
+      "after_dimension": 200,
+      "protection": "pred",
+      "id": "proposal-rank-qppred-s29",
+      "seed": 29
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposal",
+      "after_dimension": 200,
+      "protection": "none",
+      "id": "proposal-s43",
+      "seed": 43
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposalQPTrue",
+      "after_dimension": 200,
+      "protection": "true",
+      "id": "proposal-qptrue-s43",
+      "seed": 43
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposalQPPred",
+      "after_dimension": 200,
+      "protection": "pred",
+      "id": "proposal-qppred-s43",
+      "seed": 43
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRank",
+      "after_dimension": 200,
+      "protection": "none",
+      "id": "proposal-rank-s43",
+      "seed": 43
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRankQPTrue",
+      "after_dimension": 200,
+      "protection": "true",
+      "id": "proposal-rank-qptrue-s43",
+      "seed": 43
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRankQPPred",
+      "after_dimension": 200,
+      "protection": "pred",
+      "id": "proposal-rank-qppred-s43",
+      "seed": 43
+    }
+  ],
+  "implementation_module": "learned_rank_projection",
+  "max_concurrent_audits": 6,
+  "proposal_job_template": "newentityonly-distmult-s{seed}",
+  "basis_directory": "artifacts/learned-proposal-basis12",
+  "utility_old_valid_loss_ratio": 0.75,
+  "basis_rcond": 1E-06,
+  "utility_new_valid_ratio": 0.98,
+  "solver": {
+    "ftol": 1E-10,
+    "maxiter": 500,
+    "max_cut_rounds": 16,
+    "cut_rows_per_round": 64,
+    "prune_roundoff_margin": 1E-10,
+    "primal_tolerance": 1E-10,
+    "kkt_tolerance": 1E-06,
+    "norm_tolerance": 1E-08
+  }
+}

@@ -1,0 +1,7 @@
+# Corrected audit of raw shared Rank/QP artifacts
+
+Original005 producer, checkpoints, ranks, audit logs and canonical failures remain unchanged. Re-audit only six raw QP jobs using the same full-step proof, primal1e-10 and KKT1e-6 gates. The sole numerical correction is active-set complementarity `dual*(a[active]@d-rhs[active])`, instead of mismatched fullrhs. No tolerance is relaxed. Independent inference code is copied without scientific changes, only writing to a separate audit directory.
+
+All re-audit outputs go to `artifacts/rank-reaudit10/<original-job>/`; original outputs are never overwritten. A corrected pass requires full20457-step shared-model/guard replay, each accepted full QP system, reconstructed nonnegative dual witness, plus the original64 full-candidate inference and complete-query aggregate checks. No optimizer or scientific prediction is rerun. If the corrected proof still fails, retain its failure. Original unstableRank andRidge are not silently repaired or rescored here.
+
+Wait for raw005 and bounded007 terminal, since active frozen bounded007 cannot be changed to claim new peer010 workers. Then use a maximum six CPU audit workers. Canonical010 records separate re-audit state. Formal table may explicitly link a subsequent passed correction without rewriting005 failure history. This engineering correction is not evidence of new-method benefit or native-paper failure.

@@ -1,0 +1,95 @@
+{
+  "id": "KGE-LIT-001",
+  "status": "PASS_WITH_LIMITATIONS",
+  "utc": "2026-10-10T12:33:22.150118+00:00",
+  "runs": [
+    {
+      "id": "incde-entity-s3407",
+      "dataset": "ENTITY",
+      "seed": 3407,
+      "native_final": {
+        "snapshot": 4,
+        "queries": 124054,
+        "mrr": 0.253,
+        "hits1": 0.15,
+        "hits3": 0.295,
+        "hits10": 0.448
+      },
+      "outer_elapsed_s": 2730.8820556360297,
+      "audit_checks": 1911391,
+      "audit_failures": 0,
+      "independent_rank_replays": 960,
+      "audit_sha256": "d5e283928feb5c4f72c9ad2e61a90f55c6567dc01450fb38fb008c31aae8c91b",
+      "terminal_sha256": "d6e469fe9fae4082444bf5218d10a5fafdf37e96241d4363c3b2c8c18877eab4"
+    },
+    {
+      "id": "incde-relation-s3407",
+      "dataset": "RELATION",
+      "seed": 3407,
+      "native_final": {
+        "snapshot": 4,
+        "queries": 124052,
+        "mrr": 0.198,
+        "hits1": 0.11,
+        "hits3": 0.234,
+        "hits10": 0.367
+      },
+      "outer_elapsed_s": 2219.743390731979,
+      "audit_checks": 2176619,
+      "audit_failures": 0,
+      "independent_rank_replays": 960,
+      "audit_sha256": "2ad8c5cbb688dc5f2c253be5b7099bc072020010254d03b869b73f4dc4c1fa6b",
+      "terminal_sha256": "e15a34204d8164ed46ccf08fb5ea5191b6f94e46b66ca18c12a4c4df2dc0bdf4"
+    },
+    {
+      "id": "incde-fact-s3407",
+      "dataset": "FACT",
+      "seed": 3407,
+      "native_final": {
+        "snapshot": 4,
+        "queries": 124050,
+        "mrr": 0.219,
+        "hits1": 0.129,
+        "hits3": 0.252,
+        "hits10": 0.395
+      },
+      "outer_elapsed_s": 2685.8418041680707,
+      "audit_checks": 1886731,
+      "audit_failures": 0,
+      "independent_rank_replays": 960,
+      "audit_sha256": "622e5c4af2f2179d3aff34e3df1d9f27679fef14636cdac6402fb5717f2737ee",
+      "terminal_sha256": "5b34b2d1814d81d73c458813a67f24bb8f5073736323d8b738a8d85e7781bb76"
+    },
+    {
+      "id": "incde-hybrid-s3407",
+      "dataset": "HYBRID",
+      "seed": 3407,
+      "native_final": {
+        "snapshot": 4,
+        "queries": 124052,
+        "mrr": 0.225,
+        "hits1": 0.132,
+        "hits3": 0.264,
+        "hits10": 0.401
+      },
+      "outer_elapsed_s": 2602.578371876967,
+      "audit_checks": 1817125,
+      "audit_failures": 0,
+      "independent_rank_replays": 960,
+      "audit_sha256": "68afa824529c4889627f0fda18d17a81a0b6c1dd69d66e5cfb5e0ecc673f1ffc",
+      "terminal_sha256": "ab42a8c03ccacda99dd00c6977b355c3b617c3fac4a94ba0aa3315bc6d551592"
+    }
+  ],
+  "checks": 7791866,
+  "failures": 0,
+  "sampled_independent_rank_replays": 3840,
+  "limitations": [
+    "single seed author protocol",
+    "19 metric exports audited; checkpoint ranks sampled64 per post-training file, not every score",
+    "pre-FWT exact checkpoint replay unavailable; counts/ranges/filters checked",
+    "historical query-snapshot candidates and filters do not account for later competitors",
+    "native float32 batch100 metric accumulation reproduced separately from high precision means",
+    "checkpoint epoch and source bytes checked; unrounded validation-best decision cannot be fully certified from rounded logs"
+  ],
+  "claim": "four complete released author-native protocols at one seed, not multi-seed paper mean or corrected current-universe rankings"
+}

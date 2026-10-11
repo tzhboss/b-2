@@ -1,0 +1,139 @@
+{
+  "scope": "Independent complete fixed-VALID development utility screen; no heldout/SOTA or novelty claim",
+  "thresholds": {
+    "new_valid_ratio": 0.98,
+    "old_valid_loss_ratio": 0.75,
+    "new_answer_mrr_ratio": 0.98,
+    "new_answer_hits10_ratio": 0.95,
+    "weighted_nonworse_than_euclidean": true
+  },
+  "rows": [
+    {
+      "method": "LearnedProposalQPPredEuclideanR2",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "decision": "NO_GO_FOR_THIS_FIXED_COMBINATION",
+      "new_gate": true,
+      "old_gate": true,
+      "new_answer_gate": false,
+      "source_new_answer_mrr": [
+        0.02864503130856831,
+        0.02708050885951132,
+        0.026290694740692497
+      ],
+      "after_new_answer_mrr": [
+        0.025931750064935984,
+        0.024904703795087284,
+        0.023771111201327928
+      ],
+      "source_new_answer_hits10": [
+        0.0794979079497908,
+        0.07740585774058577,
+        0.04811715481171548
+      ],
+      "after_new_answer_hits10": [
+        0.058577405857740586,
+        0.056485355648535567,
+        0.05230125523012552
+      ],
+      "source_new_valid_mrr": [
+        0.1314481953144781,
+        0.12678228644887451,
+        0.13172653626125835
+      ],
+      "after_new_valid_mrr": [
+        0.13060222769136115,
+        0.12597840066273086,
+        0.1317710891092692
+      ],
+      "source_old_valid_loss": [
+        0.01529051987767584,
+        0.028901734104046242,
+        0.03305785123966942
+      ],
+      "after_old_valid_loss": [
+        0.012232415902140673,
+        0.02023121387283237,
+        0.024793388429752067
+      ],
+      "paired_new_mrr_deltas": [
+        -0.00084596762311695,
+        -0.0008038857861436544,
+        4.4552848010859236e-05
+      ],
+      "paired_old_loss_deltas": [
+        -0.003058103975535168,
+        -0.008670520231213872,
+        -0.008264462809917356
+      ]
+    },
+    {
+      "method": "LearnedProposalTaskQPPred",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "decision": "NO_GO_FOR_THIS_FIXED_COMBINATION",
+      "new_gate": true,
+      "old_gate": false,
+      "new_answer_gate": false,
+      "source_new_answer_mrr": [
+        0.02864503130856831,
+        0.02708050885951132,
+        0.026290694740692497
+      ],
+      "after_new_answer_mrr": [
+        0.02734329797781012,
+        0.025550820779612713,
+        0.026475635468657614
+      ],
+      "source_new_answer_hits10": [
+        0.0794979079497908,
+        0.07740585774058577,
+        0.04811715481171548
+      ],
+      "after_new_answer_hits10": [
+        0.06276150627615062,
+        0.06485355648535565,
+        0.04811715481171548
+      ],
+      "source_new_valid_mrr": [
+        0.1314481953144781,
+        0.12678228644887451,
+        0.13172653626125835
+      ],
+      "after_new_valid_mrr": [
+        0.13104800582775247,
+        0.12589529772400088,
+        0.1322828032861782
+      ],
+      "source_old_valid_loss": [
+        0.01529051987767584,
+        0.028901734104046242,
+        0.03305785123966942
+      ],
+      "after_old_valid_loss": [
+        0.012232415902140673,
+        0.023121387283236993,
+        0.027548209366391185
+      ],
+      "paired_new_mrr_deltas": [
+        -0.00040018948672562726,
+        -0.0008869887248736386,
+        0.0005562670249198431
+      ],
+      "paired_old_loss_deltas": [
+        -0.003058103975535168,
+        -0.005780346820809249,
+        -0.005509641873278237
+      ],
+      "nonworse_than_euclidean_gate": false
+    }
+  ],
+  "unavailable": [],
+  "source_experiment": "KGE-ENTITY-COMMON-TASK-PROJECTION-019"
+}

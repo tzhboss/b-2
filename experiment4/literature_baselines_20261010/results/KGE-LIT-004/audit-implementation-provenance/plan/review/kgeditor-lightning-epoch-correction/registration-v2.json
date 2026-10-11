@@ -1,0 +1,22 @@
+{
+  "id": "KGE-LIT-004-AUDIT-V2",
+  "registered_utc": "2026-10-10T13:25:03.464781+00:00",
+  "reason": "Mechanical source-proven epoch serialization correction; original FAIL and artifacts retained",
+  "changes": [
+    "resume_epoch1..20; completed training epoch raw-1",
+    "optimizer step exactly raw_epoch*steps_per_epoch; filename verifies completed epoch",
+    "pinned actual PL checkpoint_connector.py and ckpt version",
+    "replay only source-audit dependency pin/path updated; forward/sampling/tolerance unchanged",
+    "selection binding uses completed training epoch from new auditor"
+  ],
+  "original_failure": "logs/kgeditor-e-wn18rr-s0-independent-cpu-audit.json",
+  "framework_sha256": "795ec2b6484a3a80ff79eafaa7352210102c76ea3eedba30d90112dcf453dac7",
+  "code_sha256": {
+    "code/audit_kgeditor_native_v2.py": "ee004305ad0f01d985622833ba89a1fecaa339d752c3f1a4451af6d77b792b37",
+    "code/replay_kgeditor_samples_v2.py": "f97c8770091ea49799ffdd2e03b839b5781955222b49fa1ccb0cae7872a635c4",
+    "code/audit_kgeditor_selection_binding_v2.py": "c4cd9eda73dbde56659ac5e620a02703901f7643c5ad377e4a9f638bf056c4b3"
+  },
+  "native_master_sha256": "314b14fa671d140b579ba5e728afd6efb36349e34404d2f04a8ef33d2442a58b",
+  "native_changes": false,
+  "prediction_changes": false
+}

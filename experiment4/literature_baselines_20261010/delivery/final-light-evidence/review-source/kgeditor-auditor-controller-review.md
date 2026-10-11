@@ -1,0 +1,13 @@
+# KGEditor审计实现主控接管复核
+
+复核时间：2026-10-10T13:19:27.831844+00:00
+
+原独立侧审受额度限制未完成，不能称其代码复核通过。该报告是主控接管复核；审计与训练实现分离，但不是另一位完整独立审稿人签署。
+
+已读完整CPU审计器、独立抽样重推理器，以及冻结native/run_native.py、observations.py、作者BaseKEModule.get_logits_orig_params_dict/_eval与KGEditor构造。CPU审计器绑定master/当前输入/复制源码/真实运行命令，独立重建原始文本到WordPiece输入/target与worker局部stable暴露顺序，逐例复算排名指标与论文rank-change公式。GPU重推理器不调用作者_eval/get_logits/观测器/数据setup；仅使用冻结的EXBert与OneShotLearner架构，独立CE梯度→条件超网络→functional delta→全实体排序。strict加载两个参数组，输入/原参数hash与版本号前后保持一致，是抽样重推理而非重新训练。
+
+原侧审留下的selection fixtures实际复现一个遗漏：CPU审计核对全日志最大monitor与checkpoint声明分数，但没有绑定选中epoch的monitor。原始fixture结果保留，没有覆盖失败/改写其解释。新增只读 `code/audit_kgeditor_selection_binding.py` 与登记 `kgeditor-selection-binding-registration.json` 补查epoch/optimizer-step/monitor-score/epoch tag的对应和20次epoch监控；不改变原冻结审计器或native算法。四个synthetic fixture期望均通过：合法选择接受，错epoch关联、缺末epoch、错step拒绝。实际产物的补查尚待对应CPU终端审计通过后执行，fixture通过不是实验审计通过。
+
+其余审查未发现需在运行中改变冻结代码的真实阻塞，但保留限制：完整环境未逐二进制认证；CPU检查没有model forward；GPU每数据集只固定16批160例，不证明其余score；condition tensors并未在原export中保存，只按原始文本公式重建；日志验证无法替代独立验证集模型前向/优化器训练；rank tie使用原PyTorch后端。论文Succ/RK数值只是不同暴露权重下的描述性比较。ER_roc/RK_roc不是ROC AUC。edit_test选择checkpoint，不能称独立heldout。
+
+作者数据加载/架构/公式不能因最终数值与论文不匹配而改动。完成训练且审计通过只支持这个固定公开实现/协议的可复现数值，不自动支持达到论文数值、方法优势或投稿GO。每路仍须CPU实际终端审计、固定160例实际CUDA重推理和epoch绑定补查全部取得结果后才由主控提升。

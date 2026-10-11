@@ -1,0 +1,20 @@
+{
+  "id": "KGE-ENTITY-COMMON-RANK-CAPACITY-SCOPE-035",
+  "scope": "TRAIN-certified saturated query reference exemptions; structural scope audit only, no model updates or utility",
+  "k": 10,
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "source_directory": "artifacts/shared-rank-scope24",
+  "diagnostic_directory": "artifacts/rank-capacity-diagnostic/strict-train-v2",
+  "split_audit": "artifacts/rank-capacity-diagnostic/dataset-split-audit.json",
+  "output_directory": "artifacts/rank-capacity-scope35",
+  "log_directory": "logs/rank-capacity-scope35",
+  "worker": "scripts/run_rank_scope_policy.py",
+  "available_gpu_indices": [1, 2],
+  "resource_claim_sources": ["experiments/KGE-ENTITY-COMMON-FULL-INDEX-EQUIVALENCE-034/experiment.yaml"],
+  "max_concurrent_audits": 2,
+  "jobs": [
+    {"id": "shared-rank-scope-s17", "seed": 17},
+    {"id": "shared-rank-scope-s29", "seed": 29},
+    {"id": "shared-rank-scope-s43", "seed": 43}
+  ]
+}

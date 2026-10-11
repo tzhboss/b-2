@@ -1,0 +1,11 @@
+# KGEditor 真新增实体共同任务：干净旧图底座
+
+目的为后续作者原生 KGEditor 的 meta/online 适配准备 EXBert，不能将底座完成写成方法比较完成。三seed17/29/43，共享固定普通BERT预训练权重86b5e0934494bd15c9632b12f734a8a67f723594，不读取已由整个FB15k237训练的KGE权重。
+
+从旧FB_CKGE TRAIN原事实固定seed20261011划出3087原事实作meta TRAIN、512作meta VALID；两者均双向，不参与底座拟合。底座拟合剩余108043原事实/216086方向查询，全部旧信息以后通过底座/meta阶段可用。meta支持、验证都仅从旧TRAIN产生；既有旧VALID仅选底座，新TRAIN/VALID/TEST事实不进入本阶段。各方法旧底座架构/阶段信息访问差异需同表公开，不假称EXBert与200维TransE是同一模型。
+
+EXBert保留作者64维扩展和第10、11层结构，BERT768。输入对及两PAD占位替换完全依原solve_kgc/encoder公式：inverse查询用head mask；tail查询保留作者将head文本放在masked tail旁的行为。全部11258实体与237原关系文本均来自既有元数据，明确是语言模型架构额外输入，不声称新实体世界知识从未见过。词表分配完整实体/474关系ID以保持候选ID稳定；底座CE仅覆盖旧7505实体，每一步还恢复新3753实体行及其输出bias到初始化，防止AdamW weight decay改变新表示。不拟合任何新增事实。
+
+固定20epoch、batch64、AdamW2e-5/weight_decay.01、梯度clip1、float32。每epoch以同seed124抽出的旧VALID1024方向查询的旧7505池raw MRR选模，首次最高。预算18000秒/seed，底座训练成本单独报告；不能隐藏在编辑在线成本之外。新旧共同任务最终均评价11258候选，两方向、无过滤、严格大于排名，尚待meta/online注册。
+
+先一批反传、完整VALID预检，然后正式三seed在空闲GPU并行；核查其他队列实时PID占用，不终止别人任务。GPU/CPU独立64VALID完整候选行重放要求logit误差≤1e-4及排名完全一致；核验输入hash、meta划分、选模和新行不变。失败保留，未经审计不提升正式结果。基础训练不是完整KGEditor复现或共同新任务收益结论。

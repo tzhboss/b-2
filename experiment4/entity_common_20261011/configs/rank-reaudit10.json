@@ -1,0 +1,98 @@
+{
+  "id": "KGE-ENTITY-COMMON-RANK-REAUDIT-010",
+  "source_root": "../literature_baselines_20261010",
+  "dataset": "repos/FastKGE/data/FB_CKGE",
+  "source_audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "rank_source": "../rank_comparison_20261010/vendor/kge_rank_locality/core.py",
+  "qp_vendor": "vendor/legacy_qp",
+  "feature_directory": "artifacts/rank-train-guards",
+  "max_true_per_relation": 5000,
+  "feature_score_batch": 64,
+  "expansion_seed_offset": 10000,
+  "validation_seed": 124,
+  "validation_queries_per_split": 1024,
+  "rank_fraction": 0.125,
+  "ridge_lambda": 0.01,
+  "promotion_margin": 1E-06,
+  "guard_margin": 1E-08,
+  "qp_maxiter": 500,
+  "qp_primal_tolerance": 1E-10,
+  "norm_cap_tolerance": 1E-07,
+  "audit_active_tolerance": 1E-05,
+  "audit_kkt_tolerance": 1E-05,
+  "audit_nnls_maxiter": 100000,
+  "sweeps": 1,
+  "preflight_updates": 64,
+  "progress_every_updates": 256,
+  "budget_seconds_per_job": 18000,
+  "cpu_threads_per_job": 2,
+  "scope": "One complete novel TRAIN shared-entity sweep with native Rank kernels; common development task, not native independent-column reproduction or equal SGD optimization budget",
+  "available_gpu_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "gpu_queue_dependencies": [],
+  "auditor": "scripts/audit_rank_entity.py",
+  "jobs": [
+    {
+      "id": "qptrue-novel-s17",
+      "method": "QPTrueRankNovel",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200
+    },
+    {
+      "id": "qppred-novel-s17",
+      "method": "QPPredRankNovel",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200
+    },
+    {
+      "id": "qptrue-novel-s29",
+      "method": "QPTrueRankNovel",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200
+    },
+    {
+      "id": "qppred-novel-s29",
+      "method": "QPPredRankNovel",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200
+    },
+    {
+      "id": "qptrue-novel-s43",
+      "method": "QPTrueRankNovel",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200
+    },
+    {
+      "id": "qppred-novel-s43",
+      "method": "QPPredRankNovel",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200
+    }
+  ],
+  "log_directory": "logs/rank-reaudit10",
+  "worker": "scripts/run_rank_reaudit.py",
+  "max_concurrent_audits": 6,
+  "reaudit_directory": "artifacts/rank-reaudit10",
+  "dependencies": [
+    "experiments/KGE-ENTITY-COMMON-RANK-005/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-RANK-BOUNDED-007/experiment.yaml"
+  ],
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-RANK-BOUNDED-007/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-LMBASE-004/experiment.yaml"
+  ]
+}

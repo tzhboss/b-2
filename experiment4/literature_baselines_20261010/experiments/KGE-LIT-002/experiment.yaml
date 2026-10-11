@@ -1,0 +1,72 @@
+id: KGE-LIT-002
+status: completed_audited
+registration_status: REGISTERED
+registered_utc: '2026-10-10T11:48:07Z'
+active_processes: []
+jobs:
+- id: fastkge-fbckge-s3407
+  method: FastKGE
+  status: terminal_unreviewed
+  gpu: 4
+  pid: 646298
+  started_monotonic: 960162.37955966
+  started_utc: '2026-10-10T11:48:08Z'
+  log: runs/fastkge-fbckge-s3407/run.log
+  exit_code: 0
+  elapsed_s: 577.5917104280088
+  terminal_utc: '2026-10-10T11:57:45Z'
+  source_inputs_unchanged: true
+  log_sha256: c8f10a3d218025aa787ac54c6ed4434cef734a3ab9163cf980954482c84f0d63
+- id: stark-fbckge-s3407
+  method: STARK
+  status: terminal_unreviewed
+  gpu: 5
+  pid: 646304
+  started_monotonic: 960163.818549995
+  started_utc: '2026-10-10T11:48:09Z'
+  log: runs/stark-fbckge-s3407/run.log
+  exit_code: 0
+  elapsed_s: 1462.4149296620162
+  terminal_utc: '2026-10-10T12:12:32Z'
+  source_inputs_unchanged: true
+  log_sha256: ad7a3c2e0b820e2c04487dff2faa07374b98662d2691d6bfefd4bc9bc8ed0124
+expected_jobs: 2
+jobs_manifest_sha256: aecf864e71fb66308ad561c9a886812854708927a827d42ab1d2c7261d72cbf9
+scheduler_sha256: 0becdfa0221d3072e8e6a264d23bc4207374076b33ed2f81810ea24889cb55bb
+jobs_manifest: configs/experiments/KGE-LIT-002-jobs.json
+audit:
+  status: PASS_WITH_LIMITATIONS
+  checks: 865
+  failures: 0
+  independent_sample_query_replays: 240
+  controller_frozen_input_binding: PASS
+  results: results/KGE-LIT-002
+  utc: '2026-10-10T12:15:32Z'
+  prior_checker_failure_retained: logs/FastKGE-independent-audit-attempt1.json
+user_objective: complete released FastKGE and STARK native baselines on five snapshots;
+  no mixed task claims
+scheduler_pid: 646295
+resource_observation:
+  utc: '2026-10-10T12:12:34Z'
+  gpus:
+    0:
+      free_mb: 14709
+      utilization: 12
+    1:
+      free_mb: 7357
+      utilization: 5
+    2:
+      free_mb: 8045
+      utilization: 0
+    3:
+      free_mb: 9547
+      utilization: 65
+    4:
+      free_mb: 24109
+      utilization: 0
+    5:
+      free_mb: 24109
+      utilization: 0
+    6:
+      free_mb: 6783
+      utilization: 0

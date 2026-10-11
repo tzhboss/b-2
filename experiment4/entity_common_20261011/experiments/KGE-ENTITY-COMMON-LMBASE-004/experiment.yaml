@@ -1,0 +1,59 @@
+id: KGE-ENTITY-COMMON-LMBASE-004
+status: lm_base_terminal_with_retained_failures
+registered_utc: '2026-10-10T18:12:24.360366+00:00'
+scope: Old graph foundation only; KGEditor meta/online and Rank/QP comparison remain
+  required
+protocol: plan/lm-base-protocol.md
+config: configs/lm-base-training.json
+frozen_input_sha256:
+  configs/lm-base-training.json: 9dc4515f41176bd44891fb8519078627ecfe9c01594ea06abe252cb720756deb
+  plan/lm-base-protocol.md: f56c4bba879c0adc50dcb39b6ec6e92129f6ccf88ea369d81fb824ef6c933a5b
+  src/lm_common_base.py: 6d6a7e2c5ef70b36d219db44a54b9f27ff217f4f040bd2f7d0d0609da93c198d
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+  scripts/run_lm_common_base.py: 91e8787bf8d780d8e4ea230aa3d91e0fd451e5897d10251d9d1ac5c8d1727d21
+  scripts/coordinate_lm_base.py: 3c05f98a89a98339d31b57ed7d3282c5264290370419ab31465d1240d33793da
+external_source_sha256:
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/__init__.py: 7ce29466cac3f8f456ace171f9de446bd05f09659fbe574bef35c62a75b3cb9e
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/data/__init__.py: e211fdc8766b696c83edbb299456973fd863dd356c9337654ba221cc6b7cc776
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/data/data_module.py
+  : 333b764e7a5a7f93a5c8e6d19cc80f2a1afde0b9974dccacc38cf7060c624be5
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/data/processor.py: 0814ad0d567cdfd2d52c7f26bfa29c9d507dd22ced5e14108f677e23d734d4dc
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/models/__init__.py: c58cf0f08b1d97521ac5b10fe837cf06c1f09c403262399b098459429e6f22e3
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/models/modeling_bert.py
+  : efd8bdc069fc0be65e7a61f7caf782047cbea96b92415eff45b3784874f2c1a6
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/models/models.py: 6bebd4ecfe79177f89f75ca1487c84dfc2ffe12fc171d2f74587dd89656ccc80
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/models/optimization.py
+  : 186ddfc05ffa4852420bdb5d520ac4c42be38210d74053da81bfe3894e9bb30e
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/models/trainer.py: ca0e249b8b58742a024c8aaa5f000f9bb164ab75b30dd8b9e4939536de495e6a
+active_processes: []
+startup_attempts:
+- status: failed_retained_before_data_read
+  reason: Venv Python symlink was resolved to base interpreter, bypassing installed
+    dependencies
+  log: logs/lm-base/coordinator.log
+pre_run_source_corrections:
+- file: scripts/coordinate_lm_base.py
+  previous_sha256: 58f3c5cba53d2f79b1d9c9667c6383dc25cdfa1a932ed3916b2c23399071c152
+  reason: Preserve dedicated Python virtual environment executable path
+dependency_verification:
+  version: 5.4.1
+  path: /data/lc/tzh/experiment4/literature_baselines_20261010/environment/kgeditor38/lib/python3.8/site-packages/yaml/__init__.py
+coordinator_pid: 696847
+jobs:
+  lm-base-s17:
+    status: failed_retained
+    stage: audit
+    exit_code: 1
+  lm-base-s29:
+    status: completed_audited_clean_base_only
+    stage: audit
+    exit_code: 0
+  lm-base-s43:
+    status: completed_audited_clean_base_only
+    stage: audit
+    exit_code: 0
+queued_jobs: []
+preflight_passed: true
+completed_utc: '2026-10-10T22:18:12.121324+00:00'
+result_directory: results/KGE-ENTITY-COMMON-LMBASE-004

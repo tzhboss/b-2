@@ -1,0 +1,1019 @@
+{
+  "scope": "Fixed Euclidean versus TRAIN old-head/new-gold task-score nearest projection under common rank-frontier protection; exposed development adaptation",
+  "rows": [
+    {
+      "id": "taskprojection-euclidean-s17",
+      "method": "LearnedProposalQPPredEuclideanR2",
+      "seed": 17,
+      "kind": "DistMult",
+      "candidates": 11258,
+      "old_before": {
+        "queries": 74428,
+        "raw_mrr": 0.17151552566595352,
+        "hits1": 0.0932847852958564,
+        "hits10": 0.3447627237061321
+      },
+      "old_after": {
+        "queries": 74428,
+        "raw_mrr": 0.1694523803780027,
+        "hits1": 0.09290858279142258,
+        "hits10": 0.34081259740957703
+      },
+      "new_after": {
+        "queries": 12406,
+        "raw_mrr": 0.13859009385001014,
+        "hits1": 0.08310494921812027,
+        "hits10": 0.24472029663066258
+      },
+      "old_top10_loss": 0.011457521434138737,
+      "old_top10_protected": 25660,
+      "same_pool_top10_loss": 0.0005370328932647124,
+      "mean_rank_displacement": 203.22867737948084,
+      "old_parameter_l2": 0.0,
+      "relation_parameter_l2": 0.0,
+      "evaluation_elapsed_s": 8.759597443975508,
+      "training": {
+        "id": "taskprojection-euclidean-s17",
+        "method": "LearnedProposalQPPredEuclideanR2",
+        "kind": "DistMult",
+        "seed": 17,
+        "test_read": false,
+        "preflight": false,
+        "epochs_executed": 1,
+        "elapsed_s": 155.01982736901846,
+        "source_sgd_elapsed_s": 26.396612597978674,
+        "processed_new_entities": 3753,
+        "zero_updates": 0,
+        "certified_projections": 3753,
+        "actual_guard_rejections": 0,
+        "source_checkpoint_selection": "Reuse audited NewEntityOnly common VALID selected checkpoint; exposed development source",
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/base/distmult-s17/best.pt": "2d8e31f1623dfd70836b0f0691ba541d95f7c75e086cb9e6945c3f9ad9b74198",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/best.pt": "271fc956663f366943b7ad7db4f3b7f7a2fa4bf65c0af95ce73fd77fd023dbf0",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/initial.pt": "d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/training-receipt.json": "e8c7261e88fa4acc74f7b43048d4a32d1cc0011dc6f7bf854a86d8e33004cacb",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s17/receipt.json": "51958955049cc98841839669f790f64f4e7d47059b8853e3bfd4ccbc88c89931",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/learned-proposal-basis12/s17/receipt.json": "cc4d210e8924c7dac6cc44bc65fd35f7efdf16132d6358b574c3de9e2ae703e7"
+        },
+        "checkpoint_sha256": "8905bc70f73086b6880d29826aa8905477f4cc13fea3ef890d3818047d19ef82",
+        "implementation_sha256": "9010a0532cc9caa231b9863e3319a2e55da7b2fc4d336a2c6fddb91c387da241",
+        "validation": {
+          "source": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.15207658327823748,
+              "hits1": 0.0791015625,
+              "hits10": 0.314453125
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.1314481953144781,
+              "hits1": 0.0751953125,
+              "hits10": 0.248046875
+            }
+          ],
+          "after": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.15315102922738166,
+              "hits1": 0.080078125,
+              "hits10": 0.3154296875
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.13060222769136115,
+              "hits1": 0.076171875,
+              "hits10": 0.240234375
+            }
+          ],
+          "directional": {
+            "query_head_new_gold_old": {
+              "queries": 445,
+              "source": {
+                "queries": 445,
+                "raw_mrr": 0.24852659975502753,
+                "hits1": 0.15280898876404495,
+                "hits10": 0.44719101123595506
+              },
+              "after": {
+                "queries": 445,
+                "raw_mrr": 0.25050048091055654,
+                "hits1": 0.1550561797752809,
+                "hits10": 0.45617977528089887
+              }
+            },
+            "query_head_old_gold_new": {
+              "queries": 478,
+              "source": {
+                "queries": 478,
+                "raw_mrr": 0.02864503130856831,
+                "hits1": 0.0041841004184100415,
+                "hits10": 0.0794979079497908
+              },
+              "after": {
+                "queries": 478,
+                "raw_mrr": 0.025931750064935984,
+                "hits1": 0.0041841004184100415,
+                "hits10": 0.058577405857740586
+              }
+            },
+            "both_new": {
+              "queries": 101,
+              "source": {
+                "queries": 101,
+                "raw_mrr": 0.10214148658953133,
+                "hits1": 0.06930693069306931,
+                "hits10": 0.16831683168316833
+              },
+              "after": {
+                "queries": 101,
+                "raw_mrr": 0.09770881801699753,
+                "hits1": 0.06930693069306931,
+                "hits10": 0.1485148514851485
+              }
+            }
+          },
+          "source_old_top10_loss": 0.01529051987767584,
+          "after_old_top10_loss": 0.012232415902140673
+        },
+        "projection_replay_sha256": "91323db0135e05afb5e59b09d577870341f7f7b51a5f9f15af85f0b29c5b44ec",
+        "steps_sha256": "20a65137ecac694c6f9d4ae7d0a0d144b5b643a13988614ac372c44001710a0c",
+        "entity_radius": 10.913331263564288,
+        "initially_retained_true": 141890,
+        "initially_retained_prediction": 15684,
+        "terminal_guard_recount_exact": true,
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "peak_gpu_memory_bytes": 474954752,
+        "projection_metric": "euclidean",
+        "metric_cohort": "New TRAIN old head / new gold only; fixed source oldE/R",
+        "metric_eigenvalue_bound": [
+          1,
+          201
+        ],
+        "limits": [
+          "Known learned-proposal and task-score Mahalanobis projection, not confirmed algorithmic novelty.",
+          "Strict guard cutoff/count contract on selected old TRAIN initially retained members only; no all-TEST rank guarantee.",
+          "Projection failures yield zero, and useful learning requires the registered utility screen.",
+          "SVD uses all-relation TRUE directions and trained proposals, not native analytic single-edit Rank formula.",
+          "Original source SGD, basis preparation and postprocessing costs must be reported separately."
+        ]
+      }
+    },
+    {
+      "id": "taskprojection-task_query-s17",
+      "method": "LearnedProposalTaskQPPred",
+      "seed": 17,
+      "kind": "DistMult",
+      "candidates": 11258,
+      "old_before": {
+        "queries": 74428,
+        "raw_mrr": 0.17151552566595352,
+        "hits1": 0.0932847852958564,
+        "hits10": 0.3447627237061321
+      },
+      "old_after": {
+        "queries": 74428,
+        "raw_mrr": 0.1689273882521214,
+        "hits1": 0.09274735314666524,
+        "hits10": 0.33989896275595205
+      },
+      "new_after": {
+        "queries": 12406,
+        "raw_mrr": 0.13997732475976524,
+        "hits1": 0.08366919232629373,
+        "hits10": 0.24649363211349348
+      },
+      "old_top10_loss": 0.014107560405300078,
+      "old_top10_protected": 25660,
+      "same_pool_top10_loss": 0.000760796598791676,
+      "mean_rank_displacement": 208.15158273767938,
+      "old_parameter_l2": 0.0,
+      "relation_parameter_l2": 0.0,
+      "evaluation_elapsed_s": 9.007735823979601,
+      "training": {
+        "id": "taskprojection-task_query-s17",
+        "method": "LearnedProposalTaskQPPred",
+        "kind": "DistMult",
+        "seed": 17,
+        "test_read": false,
+        "preflight": false,
+        "epochs_executed": 1,
+        "elapsed_s": 387.46127378498204,
+        "source_sgd_elapsed_s": 26.396612597978674,
+        "processed_new_entities": 3753,
+        "zero_updates": 0,
+        "certified_projections": 3753,
+        "actual_guard_rejections": 0,
+        "source_checkpoint_selection": "Reuse audited NewEntityOnly common VALID selected checkpoint; exposed development source",
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/base/distmult-s17/best.pt": "2d8e31f1623dfd70836b0f0691ba541d95f7c75e086cb9e6945c3f9ad9b74198",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/best.pt": "271fc956663f366943b7ad7db4f3b7f7a2fa4bf65c0af95ce73fd77fd023dbf0",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/initial.pt": "d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/training-receipt.json": "e8c7261e88fa4acc74f7b43048d4a32d1cc0011dc6f7bf854a86d8e33004cacb",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s17/receipt.json": "51958955049cc98841839669f790f64f4e7d47059b8853e3bfd4ccbc88c89931",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/learned-proposal-basis12/s17/receipt.json": "cc4d210e8924c7dac6cc44bc65fd35f7efdf16132d6358b574c3de9e2ae703e7"
+        },
+        "checkpoint_sha256": "96a955b35e275a578260928ae28ce404c3cedb3dbc892603f68bd8185bb83599",
+        "implementation_sha256": "9010a0532cc9caa231b9863e3319a2e55da7b2fc4d336a2c6fddb91c387da241",
+        "validation": {
+          "source": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.15207658327823748,
+              "hits1": 0.0791015625,
+              "hits10": 0.314453125
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.1314481953144781,
+              "hits1": 0.0751953125,
+              "hits10": 0.248046875
+            }
+          ],
+          "after": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.15275282309369337,
+              "hits1": 0.080078125,
+              "hits10": 0.3154296875
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.13104800582775247,
+              "hits1": 0.0751953125,
+              "hits10": 0.240234375
+            }
+          ],
+          "directional": {
+            "query_head_new_gold_old": {
+              "queries": 445,
+              "source": {
+                "queries": 445,
+                "raw_mrr": 0.24852659975502753,
+                "hits1": 0.15280898876404495,
+                "hits10": 0.44719101123595506
+              },
+              "after": {
+                "queries": 445,
+                "raw_mrr": 0.24950574648101445,
+                "hits1": 0.15280898876404495,
+                "hits10": 0.449438202247191
+              }
+            },
+            "query_head_old_gold_new": {
+              "queries": 478,
+              "source": {
+                "queries": 478,
+                "raw_mrr": 0.02864503130856831,
+                "hits1": 0.0041841004184100415,
+                "hits10": 0.0794979079497908
+              },
+              "after": {
+                "queries": 478,
+                "raw_mrr": 0.02734329797781012,
+                "hits1": 0.0041841004184100415,
+                "hits10": 0.06276150627615062
+              }
+            },
+            "both_new": {
+              "queries": 101,
+              "source": {
+                "queries": 101,
+                "raw_mrr": 0.10214148658953133,
+                "hits1": 0.06930693069306931,
+                "hits10": 0.16831683168316833
+              },
+              "after": {
+                "queries": 101,
+                "raw_mrr": 0.09993073614033533,
+                "hits1": 0.06930693069306931,
+                "hits10": 0.15841584158415842
+              }
+            }
+          },
+          "source_old_top10_loss": 0.01529051987767584,
+          "after_old_top10_loss": 0.012232415902140673
+        },
+        "projection_replay_sha256": "2ddd42457db660118703d45c174bf67ed7f0543302e8a44a05e27a4a4c4619a3",
+        "steps_sha256": "c17561309ce7b56541eaf82315e922b9cb1dfa21eccdffb72dbed40670d8bc7e",
+        "entity_radius": 10.913331263564288,
+        "initially_retained_true": 141890,
+        "initially_retained_prediction": 15684,
+        "terminal_guard_recount_exact": true,
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "peak_gpu_memory_bytes": 474954752,
+        "projection_metric": "task_query",
+        "metric_cohort": "New TRAIN old head / new gold only; fixed source oldE/R",
+        "metric_eigenvalue_bound": [
+          1,
+          201
+        ],
+        "limits": [
+          "Known learned-proposal and task-score Mahalanobis projection, not confirmed algorithmic novelty.",
+          "Strict guard cutoff/count contract on selected old TRAIN initially retained members only; no all-TEST rank guarantee.",
+          "Projection failures yield zero, and useful learning requires the registered utility screen.",
+          "SVD uses all-relation TRUE directions and trained proposals, not native analytic single-edit Rank formula.",
+          "Original source SGD, basis preparation and postprocessing costs must be reported separately."
+        ]
+      }
+    },
+    {
+      "id": "taskprojection-euclidean-s29",
+      "method": "LearnedProposalQPPredEuclideanR2",
+      "seed": 29,
+      "kind": "DistMult",
+      "candidates": 11258,
+      "old_before": {
+        "queries": 74428,
+        "raw_mrr": 0.1715277888024236,
+        "hits1": 0.09403719030472403,
+        "hits10": 0.34184715429677004
+      },
+      "old_after": {
+        "queries": 74428,
+        "raw_mrr": 0.1690146181211578,
+        "hits1": 0.09351319395926265,
+        "hits10": 0.33678185629064333
+      },
+      "new_after": {
+        "queries": 12406,
+        "raw_mrr": 0.1416067768003599,
+        "hits1": 0.08479767854264066,
+        "hits10": 0.25318394325326454
+      },
+      "old_top10_loss": 0.014817435050898086,
+      "old_top10_protected": 25443,
+      "same_pool_top10_loss": 0.0005876503028659254,
+      "mean_rank_displacement": 248.9103160101037,
+      "old_parameter_l2": 0.0,
+      "relation_parameter_l2": 0.0,
+      "evaluation_elapsed_s": 8.891298045986332,
+      "training": {
+        "id": "taskprojection-euclidean-s29",
+        "method": "LearnedProposalQPPredEuclideanR2",
+        "kind": "DistMult",
+        "seed": 29,
+        "test_read": false,
+        "preflight": false,
+        "epochs_executed": 1,
+        "elapsed_s": 136.9790293239057,
+        "source_sgd_elapsed_s": 24.228343252907507,
+        "processed_new_entities": 3753,
+        "zero_updates": 0,
+        "certified_projections": 3753,
+        "actual_guard_rejections": 0,
+        "source_checkpoint_selection": "Reuse audited NewEntityOnly common VALID selected checkpoint; exposed development source",
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/base/distmult-s29/best.pt": "223fbf3ed5ff06411e477981c23550ec125e45a5ce7a02df13f9ca64e11ef4cb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/best.pt": "f36408997a08b94170144581f718bf457241e3063292f3015fcf466a69372eb3",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/initial.pt": "73da0eb88e62176738d0da2a5d1cfd3e7d54d85aa0af6cc5766ad818526151d6",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/training-receipt.json": "08a88c8a4c648c724bf27f62c9f1e07699f423b66f1cd0e64ffebc563460c5ea",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s29/receipt.json": "d1c89e9c5934874eff3eb8c46e0bbc8a1692175c644b571b5e2fadc736fa26fb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/learned-proposal-basis12/s29/receipt.json": "5d5c3e9aaa740c80e3a4ab846884009eb5822dd5ddd08ddaed587e4829d0b5b3"
+        },
+        "checkpoint_sha256": "da9b373638f2be972099c4f31f32ed15f286e31ffb18307cb791e2f2b7fe46d8",
+        "implementation_sha256": "9010a0532cc9caa231b9863e3319a2e55da7b2fc4d336a2c6fddb91c387da241",
+        "validation": {
+          "source": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.14783451057095426,
+              "hits1": 0.0712890625,
+              "hits10": 0.328125
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.12678228644887451,
+              "hits1": 0.0703125,
+              "hits10": 0.2373046875
+            }
+          ],
+          "after": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.14875308065404536,
+              "hits1": 0.0712890625,
+              "hits10": 0.3310546875
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.12597840066273086,
+              "hits1": 0.0712890625,
+              "hits10": 0.2236328125
+            }
+          ],
+          "directional": {
+            "query_head_new_gold_old": {
+              "queries": 445,
+              "source": {
+                "queries": 445,
+                "raw_mrr": 0.2362271885460287,
+                "hits1": 0.14157303370786517,
+                "hits10": 0.4247191011235955
+              },
+              "after": {
+                "queries": 445,
+                "raw_mrr": 0.23598854795091326,
+                "hits1": 0.14157303370786517,
+                "hits10": 0.4202247191011236
+              }
+            },
+            "query_head_old_gold_new": {
+              "queries": 478,
+              "source": {
+                "queries": 478,
+                "raw_mrr": 0.02708050885951132,
+                "hits1": 0.0020920502092050207,
+                "hits10": 0.07740585774058577
+              },
+              "after": {
+                "queries": 478,
+                "raw_mrr": 0.024904703795087284,
+                "hits1": 0.0020920502092050207,
+                "hits10": 0.056485355648535567
+              }
+            },
+            "both_new": {
+              "queries": 101,
+              "source": {
+                "queries": 101,
+                "raw_mrr": 0.11643048698830051,
+                "hits1": 0.07920792079207921,
+                "hits10": 0.16831683168316833
+              },
+              "after": {
+                "queries": 101,
+                "raw_mrr": 0.11962901016265598,
+                "hits1": 0.0891089108910891,
+                "hits10": 0.1485148514851485
+              }
+            }
+          },
+          "source_old_top10_loss": 0.028901734104046242,
+          "after_old_top10_loss": 0.02023121387283237
+        },
+        "projection_replay_sha256": "3e647356175f8f87e408be267aeb4a9106d072933b1505af5eb2b3ce90dbf677",
+        "steps_sha256": "d0d37348a9562d7c709bb7f847e03be29baeb339ae5995ca63af6ec3d63f567e",
+        "entity_radius": 10.592087800669631,
+        "initially_retained_true": 141840,
+        "initially_retained_prediction": 15502,
+        "terminal_guard_recount_exact": true,
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "peak_gpu_memory_bytes": 473862144,
+        "projection_metric": "euclidean",
+        "metric_cohort": "New TRAIN old head / new gold only; fixed source oldE/R",
+        "metric_eigenvalue_bound": [
+          1,
+          201
+        ],
+        "limits": [
+          "Known learned-proposal and task-score Mahalanobis projection, not confirmed algorithmic novelty.",
+          "Strict guard cutoff/count contract on selected old TRAIN initially retained members only; no all-TEST rank guarantee.",
+          "Projection failures yield zero, and useful learning requires the registered utility screen.",
+          "SVD uses all-relation TRUE directions and trained proposals, not native analytic single-edit Rank formula.",
+          "Original source SGD, basis preparation and postprocessing costs must be reported separately."
+        ]
+      }
+    },
+    {
+      "id": "taskprojection-task_query-s29",
+      "method": "LearnedProposalTaskQPPred",
+      "seed": 29,
+      "kind": "DistMult",
+      "candidates": 11258,
+      "old_before": {
+        "queries": 74428,
+        "raw_mrr": 0.1715277888024236,
+        "hits1": 0.09403719030472403,
+        "hits10": 0.34184715429677004
+      },
+      "old_after": {
+        "queries": 74428,
+        "raw_mrr": 0.16861332080360697,
+        "hits1": 0.09339227172569463,
+        "hits10": 0.33578760681463965
+      },
+      "new_after": {
+        "queries": 12406,
+        "raw_mrr": 0.14239294867168062,
+        "hits1": 0.08503949701757214,
+        "hits10": 0.25455424794454296
+      },
+      "old_top10_loss": 0.01772589710332901,
+      "old_top10_protected": 25443,
+      "same_pool_top10_loss": 0.0007232619112196004,
+      "mean_rank_displacement": 252.62888966517977,
+      "old_parameter_l2": 0.0,
+      "relation_parameter_l2": 0.0,
+      "evaluation_elapsed_s": 9.163921952014789,
+      "training": {
+        "id": "taskprojection-task_query-s29",
+        "method": "LearnedProposalTaskQPPred",
+        "kind": "DistMult",
+        "seed": 29,
+        "test_read": false,
+        "preflight": false,
+        "epochs_executed": 1,
+        "elapsed_s": 354.3444919079775,
+        "source_sgd_elapsed_s": 24.228343252907507,
+        "processed_new_entities": 3753,
+        "zero_updates": 0,
+        "certified_projections": 3753,
+        "actual_guard_rejections": 0,
+        "source_checkpoint_selection": "Reuse audited NewEntityOnly common VALID selected checkpoint; exposed development source",
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/base/distmult-s29/best.pt": "223fbf3ed5ff06411e477981c23550ec125e45a5ce7a02df13f9ca64e11ef4cb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/best.pt": "f36408997a08b94170144581f718bf457241e3063292f3015fcf466a69372eb3",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/initial.pt": "73da0eb88e62176738d0da2a5d1cfd3e7d54d85aa0af6cc5766ad818526151d6",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/training-receipt.json": "08a88c8a4c648c724bf27f62c9f1e07699f423b66f1cd0e64ffebc563460c5ea",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s29/receipt.json": "d1c89e9c5934874eff3eb8c46e0bbc8a1692175c644b571b5e2fadc736fa26fb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/learned-proposal-basis12/s29/receipt.json": "5d5c3e9aaa740c80e3a4ab846884009eb5822dd5ddd08ddaed587e4829d0b5b3"
+        },
+        "checkpoint_sha256": "ec890c8307cbe26b4acb080b574b239413cb7ffbd5715d5a3055676754605138",
+        "implementation_sha256": "9010a0532cc9caa231b9863e3319a2e55da7b2fc4d336a2c6fddb91c387da241",
+        "validation": {
+          "source": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.14783451057095426,
+              "hits1": 0.0712890625,
+              "hits10": 0.328125
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.12678228644887451,
+              "hits1": 0.0703125,
+              "hits10": 0.2373046875
+            }
+          ],
+          "after": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.1483080097915086,
+              "hits1": 0.0712890625,
+              "hits10": 0.330078125
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.12589529772400088,
+              "hits1": 0.0703125,
+              "hits10": 0.2294921875
+            }
+          ],
+          "directional": {
+            "query_head_new_gold_old": {
+              "queries": 445,
+              "source": {
+                "queries": 445,
+                "raw_mrr": 0.2362271885460287,
+                "hits1": 0.14157303370786517,
+                "hits10": 0.4247191011235955
+              },
+              "after": {
+                "queries": 445,
+                "raw_mrr": 0.23595565421659864,
+                "hits1": 0.14157303370786517,
+                "hits10": 0.41797752808988764
+              }
+            },
+            "query_head_old_gold_new": {
+              "queries": 478,
+              "source": {
+                "queries": 478,
+                "raw_mrr": 0.02708050885951132,
+                "hits1": 0.0020920502092050207,
+                "hits10": 0.07740585774058577
+              },
+              "after": {
+                "queries": 478,
+                "raw_mrr": 0.025550820779612713,
+                "hits1": 0.0020920502092050207,
+                "hits10": 0.06485355648535565
+              }
+            },
+            "both_new": {
+              "queries": 101,
+              "source": {
+                "queries": 101,
+                "raw_mrr": 0.11643048698830051,
+                "hits1": 0.07920792079207921,
+                "hits10": 0.16831683168316833
+              },
+              "after": {
+                "queries": 101,
+                "raw_mrr": 0.11587352881520425,
+                "hits1": 0.07920792079207921,
+                "hits10": 0.1782178217821782
+              }
+            }
+          },
+          "source_old_top10_loss": 0.028901734104046242,
+          "after_old_top10_loss": 0.023121387283236993
+        },
+        "projection_replay_sha256": "b6929d3bce8845afe9d4b2a8c983224f91ff2b1000419dc400673f56f895d9a0",
+        "steps_sha256": "01d6e3d740c06efeda74fdc8adb373406d791b850841016f3abf68be900e7f5c",
+        "entity_radius": 10.592087800669631,
+        "initially_retained_true": 141840,
+        "initially_retained_prediction": 15502,
+        "terminal_guard_recount_exact": true,
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "peak_gpu_memory_bytes": 473862144,
+        "projection_metric": "task_query",
+        "metric_cohort": "New TRAIN old head / new gold only; fixed source oldE/R",
+        "metric_eigenvalue_bound": [
+          1,
+          201
+        ],
+        "limits": [
+          "Known learned-proposal and task-score Mahalanobis projection, not confirmed algorithmic novelty.",
+          "Strict guard cutoff/count contract on selected old TRAIN initially retained members only; no all-TEST rank guarantee.",
+          "Projection failures yield zero, and useful learning requires the registered utility screen.",
+          "SVD uses all-relation TRUE directions and trained proposals, not native analytic single-edit Rank formula.",
+          "Original source SGD, basis preparation and postprocessing costs must be reported separately."
+        ]
+      }
+    },
+    {
+      "id": "taskprojection-euclidean-s43",
+      "method": "LearnedProposalQPPredEuclideanR2",
+      "seed": 43,
+      "kind": "DistMult",
+      "candidates": 11258,
+      "old_before": {
+        "queries": 74428,
+        "raw_mrr": 0.17145413103008614,
+        "hits1": 0.09305637663245016,
+        "hits10": 0.34320417047347773
+      },
+      "old_after": {
+        "queries": 74428,
+        "raw_mrr": 0.1680086222518147,
+        "hits1": 0.09246520126833987,
+        "hits10": 0.33561294136615255
+      },
+      "new_after": {
+        "queries": 12406,
+        "raw_mrr": 0.13922344983253337,
+        "hits1": 0.08326616153474126,
+        "hits10": 0.25326454941157506
+      },
+      "old_top10_loss": 0.02211869715001566,
+      "old_top10_protected": 25544,
+      "same_pool_top10_loss": 0.0004482696790389098,
+      "mean_rank_displacement": 350.3027086580319,
+      "old_parameter_l2": 0.0,
+      "relation_parameter_l2": 0.0,
+      "evaluation_elapsed_s": 9.099838102934882,
+      "training": {
+        "id": "taskprojection-euclidean-s43",
+        "method": "LearnedProposalQPPredEuclideanR2",
+        "kind": "DistMult",
+        "seed": 43,
+        "test_read": false,
+        "preflight": false,
+        "epochs_executed": 1,
+        "elapsed_s": 137.72548801009543,
+        "source_sgd_elapsed_s": 25.5849679709645,
+        "processed_new_entities": 3753,
+        "zero_updates": 0,
+        "certified_projections": 3753,
+        "actual_guard_rejections": 0,
+        "source_checkpoint_selection": "Reuse audited NewEntityOnly common VALID selected checkpoint; exposed development source",
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/base/distmult-s43/best.pt": "9f5b6d5942bf8636dcf7eaa4f7f5c142a6a317a78d894825c91e1df1ab42cd7f",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/best.pt": "e7ccfdc410819fbd893e8e82e3b066f12e20d0c097efff33129c0bf4dfa9183d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/initial.pt": "95e70f431788cad45126d3e4a404a557c9ecd12ed2822aec0ecc534bb6b8e131",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/audit.json": "2dcc19b46dfbfdc14f0a6eb638e90c4f3bf219e60bab6a3505cc1b8c415546bd",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/training-receipt.json": "93b4b857fa5c30c4fb28e18f591ae4a0fc4538ddf1aa818fa66f80a0e21f2004",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s43/receipt.json": "95598df479e5435aed3c80e577a260d8d0932e6f86925bcf834a00b76910b52d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/learned-proposal-basis12/s43/receipt.json": "a54d25024d45f69c196d5d7f02c2ef1c19dfec92dde6d3f57d27161272fbbe3a"
+        },
+        "checkpoint_sha256": "7a5b7a98ecc0a2e520ba4fb703735d958182e77710d46951be313a54273377a6",
+        "implementation_sha256": "9010a0532cc9caa231b9863e3319a2e55da7b2fc4d336a2c6fddb91c387da241",
+        "validation": {
+          "source": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.15349691885662,
+              "hits1": 0.0732421875,
+              "hits10": 0.3427734375
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.13172653626125835,
+              "hits1": 0.080078125,
+              "hits10": 0.2265625
+            }
+          ],
+          "after": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.15590133169107656,
+              "hits1": 0.0751953125,
+              "hits10": 0.345703125
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.1317710891092692,
+              "hits1": 0.080078125,
+              "hits10": 0.2275390625
+            }
+          ],
+          "directional": {
+            "query_head_new_gold_old": {
+              "queries": 445,
+              "source": {
+                "queries": 445,
+                "raw_mrr": 0.2503433326938339,
+                "hits1": 0.16179775280898875,
+                "hits10": 0.42921348314606744
+              },
+              "after": {
+                "queries": 445,
+                "raw_mrr": 0.25330209730683484,
+                "hits1": 0.1662921348314607,
+                "hits10": 0.42921348314606744
+              }
+            },
+            "query_head_old_gold_new": {
+              "queries": 478,
+              "source": {
+                "queries": 478,
+                "raw_mrr": 0.026290694740692497,
+                "hits1": 0.0041841004184100415,
+                "hits10": 0.04811715481171548
+              },
+              "after": {
+                "queries": 478,
+                "raw_mrr": 0.023771111201327928,
+                "hits1": 0.0,
+                "hits10": 0.05230125523012552
+              }
+            },
+            "both_new": {
+              "queries": 101,
+              "source": {
+                "queries": 101,
+                "raw_mrr": 0.10810136630417277,
+                "hits1": 0.07920792079207921,
+                "hits10": 0.1782178217821782
+              },
+              "after": {
+                "queries": 101,
+                "raw_mrr": 0.10744129497143987,
+                "hits1": 0.07920792079207921,
+                "hits10": 0.16831683168316833
+              }
+            }
+          },
+          "source_old_top10_loss": 0.03305785123966942,
+          "after_old_top10_loss": 0.024793388429752067
+        },
+        "projection_replay_sha256": "18be58cd62bf76b67a0947c445fbd68893c59490c334e140a70e29082e3ad4a2",
+        "steps_sha256": "f6d8b0211ef133854b00506e5a07b57b9eb3f4d632f068dca9ca4f037a72c731",
+        "entity_radius": 10.5048150966379,
+        "initially_retained_true": 141578,
+        "initially_retained_prediction": 15505,
+        "terminal_guard_recount_exact": true,
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "peak_gpu_memory_bytes": 473812992,
+        "projection_metric": "euclidean",
+        "metric_cohort": "New TRAIN old head / new gold only; fixed source oldE/R",
+        "metric_eigenvalue_bound": [
+          1,
+          201
+        ],
+        "limits": [
+          "Known learned-proposal and task-score Mahalanobis projection, not confirmed algorithmic novelty.",
+          "Strict guard cutoff/count contract on selected old TRAIN initially retained members only; no all-TEST rank guarantee.",
+          "Projection failures yield zero, and useful learning requires the registered utility screen.",
+          "SVD uses all-relation TRUE directions and trained proposals, not native analytic single-edit Rank formula.",
+          "Original source SGD, basis preparation and postprocessing costs must be reported separately."
+        ]
+      }
+    },
+    {
+      "id": "taskprojection-task_query-s43",
+      "method": "LearnedProposalTaskQPPred",
+      "seed": 43,
+      "kind": "DistMult",
+      "candidates": 11258,
+      "old_before": {
+        "queries": 74428,
+        "raw_mrr": 0.17145413103008614,
+        "hits1": 0.09305637663245016,
+        "hits10": 0.34320417047347773
+      },
+      "old_after": {
+        "queries": 74428,
+        "raw_mrr": 0.16768553963145427,
+        "hits1": 0.09242489385715054,
+        "hits10": 0.33487397216101467
+      },
+      "new_after": {
+        "queries": 12406,
+        "raw_mrr": 0.1399435047209674,
+        "hits1": 0.08350798000967274,
+        "hits10": 0.2556021280025794
+      },
+      "old_top10_loss": 0.024271844660194174,
+      "old_top10_protected": 25544,
+      "same_pool_top10_loss": 0.0007172314864622557,
+      "mean_rank_displacement": 353.64608749395387,
+      "old_parameter_l2": 0.0,
+      "relation_parameter_l2": 0.0,
+      "evaluation_elapsed_s": 8.932270522927865,
+      "training": {
+        "id": "taskprojection-task_query-s43",
+        "method": "LearnedProposalTaskQPPred",
+        "kind": "DistMult",
+        "seed": 43,
+        "test_read": false,
+        "preflight": false,
+        "epochs_executed": 1,
+        "elapsed_s": 354.1485251940321,
+        "source_sgd_elapsed_s": 25.5849679709645,
+        "processed_new_entities": 3753,
+        "zero_updates": 0,
+        "certified_projections": 3753,
+        "actual_guard_rejections": 0,
+        "source_checkpoint_selection": "Reuse audited NewEntityOnly common VALID selected checkpoint; exposed development source",
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/base/distmult-s43/best.pt": "9f5b6d5942bf8636dcf7eaa4f7f5c142a6a317a78d894825c91e1df1ab42cd7f",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/best.pt": "e7ccfdc410819fbd893e8e82e3b066f12e20d0c097efff33129c0bf4dfa9183d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/initial.pt": "95e70f431788cad45126d3e4a404a557c9ecd12ed2822aec0ecc534bb6b8e131",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/audit.json": "2dcc19b46dfbfdc14f0a6eb638e90c4f3bf219e60bab6a3505cc1b8c415546bd",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/training-receipt.json": "93b4b857fa5c30c4fb28e18f591ae4a0fc4538ddf1aa818fa66f80a0e21f2004",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s43/receipt.json": "95598df479e5435aed3c80e577a260d8d0932e6f86925bcf834a00b76910b52d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/learned-proposal-basis12/s43/receipt.json": "a54d25024d45f69c196d5d7f02c2ef1c19dfec92dde6d3f57d27161272fbbe3a"
+        },
+        "checkpoint_sha256": "1ddc71c6e434bb91412b2d65294ccae476732b2270346e8dd00549879b78d688",
+        "implementation_sha256": "9010a0532cc9caa231b9863e3319a2e55da7b2fc4d336a2c6fddb91c387da241",
+        "validation": {
+          "source": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.15349691885662,
+              "hits1": 0.0732421875,
+              "hits10": 0.3427734375
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.13172653626125835,
+              "hits1": 0.080078125,
+              "hits10": 0.2265625
+            }
+          ],
+          "after": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.155590361219181,
+              "hits1": 0.0751953125,
+              "hits10": 0.3447265625
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.1322828032861782,
+              "hits1": 0.080078125,
+              "hits10": 0.2255859375
+            }
+          ],
+          "directional": {
+            "query_head_new_gold_old": {
+              "queries": 445,
+              "source": {
+                "queries": 445,
+                "raw_mrr": 0.2503433326938339,
+                "hits1": 0.16179775280898875,
+                "hits10": 0.42921348314606744
+              },
+              "after": {
+                "queries": 445,
+                "raw_mrr": 0.25132286631803313,
+                "hits1": 0.16179775280898875,
+                "hits10": 0.4247191011235955
+              }
+            },
+            "query_head_old_gold_new": {
+              "queries": 478,
+              "source": {
+                "queries": 478,
+                "raw_mrr": 0.026290694740692497,
+                "hits1": 0.0041841004184100415,
+                "hits10": 0.04811715481171548
+              },
+              "after": {
+                "queries": 478,
+                "raw_mrr": 0.026475635468657614,
+                "hits1": 0.0041841004184100415,
+                "hits10": 0.04811715481171548
+              }
+            },
+            "both_new": {
+              "queries": 101,
+              "source": {
+                "queries": 101,
+                "raw_mrr": 0.10810136630417277,
+                "hits1": 0.07920792079207921,
+                "hits10": 0.1782178217821782
+              },
+              "after": {
+                "queries": 101,
+                "raw_mrr": 0.10855011187627141,
+                "hits1": 0.07920792079207921,
+                "hits10": 0.18811881188118812
+              }
+            }
+          },
+          "source_old_top10_loss": 0.03305785123966942,
+          "after_old_top10_loss": 0.027548209366391185
+        },
+        "projection_replay_sha256": "daa5f90620a95beb6a80169e334af02acb5ec1d8c52ff5001f2b854e2090ae4b",
+        "steps_sha256": "fec32e1045d22fd1110d1ad4f227c2f1cf1c895c9781a5a35a81cdd9d50b062f",
+        "entity_radius": 10.5048150966379,
+        "initially_retained_true": 141578,
+        "initially_retained_prediction": 15505,
+        "terminal_guard_recount_exact": true,
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "peak_gpu_memory_bytes": 473812992,
+        "projection_metric": "task_query",
+        "metric_cohort": "New TRAIN old head / new gold only; fixed source oldE/R",
+        "metric_eigenvalue_bound": [
+          1,
+          201
+        ],
+        "limits": [
+          "Known learned-proposal and task-score Mahalanobis projection, not confirmed algorithmic novelty.",
+          "Strict guard cutoff/count contract on selected old TRAIN initially retained members only; no all-TEST rank guarantee.",
+          "Projection failures yield zero, and useful learning requires the registered utility screen.",
+          "SVD uses all-relation TRUE directions and trained proposals, not native analytic single-edit Rank formula.",
+          "Original source SGD, basis preparation and postprocessing costs must be reported separately."
+        ]
+      }
+    }
+  ]
+}

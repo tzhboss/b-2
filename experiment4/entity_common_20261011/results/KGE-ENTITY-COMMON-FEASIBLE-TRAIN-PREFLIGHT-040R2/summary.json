@@ -1,0 +1,529 @@
+{
+  "rows": [
+    {
+      "job": {
+        "id": "feasible-train-full-s17-r2",
+        "seed": 17,
+        "protection_scope": "full",
+        "initial_endpoint": "shared-graph-full-s17"
+      },
+      "receipt": {
+        "id": "feasible-train-full-s17-r2",
+        "seed": 17,
+        "scope": "TRAIN-only direct feasible loss preflight; no graph utility claim",
+        "updates": 8,
+        "accepted": 3,
+        "initial_endpoint": "shared-graph-full-s17",
+        "endpoint_elapsed_s": 3951.1733288320247,
+        "source_sgd_elapsed_s": 26.396612597978674,
+        "elapsed_s": 56.50584282109048,
+        "peak_gpu_memory_bytes": 6652190720,
+        "gpu_name": "NVIDIA GeForce RTX 3090",
+        "radius": 21.826662527128576,
+        "terminal": {
+          "query_keys": 68270,
+          "references": 235882,
+          "commits": 3,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "valid_queries_read": false,
+        "test_queries_read": false,
+        "input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/initial.pt": "d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/training-receipt.json": "d12e807da08a4920550e3bb2db7dd15bc5f04e5e789626209895c961bf34eb2a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/best.pt": "d324a9caee91df9142d542b29ef643d50960ed36da0be51130968b065e6aa7c4",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/audit.json": "5b3d911b7fb75f95ead56d326a61403f874b448ac110ee0bad9f3f6eccecb28f",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/training-receipt.json": "b2204a0eb40ff72a7149f14d8954ff9f7fb1fc9eae7048aee4cef873f9fc5095",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/scope.npz": "c6f9ff5aca629f7d3b0bd7ddb8b1a9d90745d1b510edc5e786959d0df1f5984d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/receipt.json": "e226e96bb184322d343b8aedb3ca38c93a4ac66dc6169e7cb9b4889b843b3f61",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/audit.json": "1f003257c58577842c603deae5406a6a673d4502b318254af4238b9af2df4173",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/entity_common_20261011/src/feasible_train_optimization_v2.py": "25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/scripts/run_feasible_train_v2.py": "b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a"
+        },
+        "output_sha256": {
+          "initial.pt": "b220e8736e27b34fd90d8101ed25ecf897bd3cfa5a2c628a895f2326717e8386",
+          "best.pt": "ad0b5a247babb355cadbf5094e601b417648c3b1d98d6bd776113b04915f27a2",
+          "steps.json": "5d4f630bbb11c44de765a699dad1b40a543160247a862fe1cf5caf2e5e217ad3",
+          "replay.npz": "6b777e84922f32d2e5bac1b3c05a94601cf691669dd5ab0ca06f541e954518ef"
+        },
+        "implementation_sha256": "fdb4dcf933eed0fb516a7a9262949ed6abb201abcdbf833e6d47fae9cb1d8579",
+        "module_sha256": "b54cad1d96492e043bf2151381249ec26dff480d6cdbd80516c585a19f02061c",
+        "limits": [
+          "Local fixed-hard-negative loss is not full TRAIN/global/VALID utility.",
+          "All original full/scoped references unchanged; immutable-old barriers remain.",
+          "Independent CPU fixture coverage is bounded; complete scope GPU recount only in preflight.",
+          "Original immutable-only tied score working-set rows omitted; actual full rank acceptance unchanged."
+        ],
+        "optimization_module": "src/feasible_train_optimization_v2.py",
+        "optimization_module_sha256": "25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5",
+        "wrapper_sha256": "b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a"
+      },
+      "audit": {
+        "status": "PASS_ALL_PREFLIGHT_PATCHES_TRAIN_MINING_LOSS_AND_FULL_POOL_CPU_FIXTURES",
+        "failures": [],
+        "scalar_loss_checks": 16,
+        "max_loss_error": 4.440892098500626e-16,
+        "score_cells_replayed": 360256,
+        "patches_replayed": 8,
+        "old_rows_and_relations_unchanged": true,
+        "guard_member_identities_unchanged": true,
+        "receipt_sha256": "dbce83bfefecdadaf8a894659a69937bc7658b43b6ae5f69ef1602bef62fd76e",
+        "replay_sha256": "6b777e84922f32d2e5bac1b3c05a94601cf691669dd5ab0ca06f541e954518ef",
+        "elapsed_s": 4.778359937015921,
+        "valid_queries_read": false,
+        "test_queries_read": false,
+        "scientific_utility_asserted": false,
+        "limits": [
+          "Independent32 full query CPU rows per job; complete terminal scope GPU only at preflight."
+        ]
+      }
+    },
+    {
+      "job": {
+        "id": "feasible-train-scoped-s17-r2",
+        "seed": 17,
+        "protection_scope": "scoped",
+        "initial_endpoint": "shared-graph-scoped-s17"
+      },
+      "receipt": {
+        "id": "feasible-train-scoped-s17-r2",
+        "seed": 17,
+        "scope": "TRAIN-only direct feasible loss preflight; no graph utility claim",
+        "updates": 8,
+        "accepted": 3,
+        "initial_endpoint": "shared-graph-scoped-s17",
+        "endpoint_elapsed_s": 3554.026873043971,
+        "source_sgd_elapsed_s": 26.396612597978674,
+        "elapsed_s": 55.71627936698496,
+        "peak_gpu_memory_bytes": 6650811392,
+        "gpu_name": "NVIDIA GeForce RTX 3090",
+        "radius": 21.826662527128576,
+        "terminal": {
+          "query_keys": 68260,
+          "references": 221202,
+          "commits": 3,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "valid_queries_read": false,
+        "test_queries_read": false,
+        "input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/initial.pt": "d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/training-receipt.json": "d12e807da08a4920550e3bb2db7dd15bc5f04e5e789626209895c961bf34eb2a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s17/best.pt": "135c7915d09bc5dda219ad0c8f033b888b7e9ca75cd90f81f9f6d3ab6f3a3445",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s17/audit.json": "bb400e0ec4b02f732b3f6ecf9ff847579a7612b4a58f60da5b1d767edac2d60c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s17/training-receipt.json": "caa032ec476313b9a1580ad0dc76679c30a7810d12336ca51a673feab28e5f0c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/scope.npz": "c6f9ff5aca629f7d3b0bd7ddb8b1a9d90745d1b510edc5e786959d0df1f5984d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/receipt.json": "e226e96bb184322d343b8aedb3ca38c93a4ac66dc6169e7cb9b4889b843b3f61",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/audit.json": "1f003257c58577842c603deae5406a6a673d4502b318254af4238b9af2df4173",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/entity_common_20261011/src/feasible_train_optimization_v2.py": "25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/scripts/run_feasible_train_v2.py": "b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a"
+        },
+        "output_sha256": {
+          "initial.pt": "8d7a9ff24325d6b9459c9f4e2669166bdf18d3331ed6d3ad73f163680622dd81",
+          "best.pt": "fe92e4fdf88d2f2e3a252ccf0ec54d674cb03a72eaabd3cdb15eef996aee404d",
+          "steps.json": "26cb4390a10f6d3e065c400ae45e9bf61838d71515d6f805bb97a6b0de48fcc4",
+          "replay.npz": "2188e928523991ac816eff9296c4b52db30aa1c281c1b0d6b8cac0f6897452f6"
+        },
+        "implementation_sha256": "fdb4dcf933eed0fb516a7a9262949ed6abb201abcdbf833e6d47fae9cb1d8579",
+        "module_sha256": "b54cad1d96492e043bf2151381249ec26dff480d6cdbd80516c585a19f02061c",
+        "limits": [
+          "Local fixed-hard-negative loss is not full TRAIN/global/VALID utility.",
+          "All original full/scoped references unchanged; immutable-old barriers remain.",
+          "Independent CPU fixture coverage is bounded; complete scope GPU recount only in preflight.",
+          "Original immutable-only tied score working-set rows omitted; actual full rank acceptance unchanged."
+        ],
+        "optimization_module": "src/feasible_train_optimization_v2.py",
+        "optimization_module_sha256": "25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5",
+        "wrapper_sha256": "b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a"
+      },
+      "audit": {
+        "status": "PASS_ALL_PREFLIGHT_PATCHES_TRAIN_MINING_LOSS_AND_FULL_POOL_CPU_FIXTURES",
+        "failures": [],
+        "scalar_loss_checks": 16,
+        "max_loss_error": 4.440892098500626e-16,
+        "score_cells_replayed": 360256,
+        "patches_replayed": 8,
+        "old_rows_and_relations_unchanged": true,
+        "guard_member_identities_unchanged": true,
+        "receipt_sha256": "5b89fd2701b21ed1db2e934e7609a10d12621d88b018b3c2f75464ed3dc02f85",
+        "replay_sha256": "2188e928523991ac816eff9296c4b52db30aa1c281c1b0d6b8cac0f6897452f6",
+        "elapsed_s": 4.727130293031223,
+        "valid_queries_read": false,
+        "test_queries_read": false,
+        "scientific_utility_asserted": false,
+        "limits": [
+          "Independent32 full query CPU rows per job; complete terminal scope GPU only at preflight."
+        ]
+      }
+    },
+    {
+      "job": {
+        "id": "feasible-train-full-s29-r2",
+        "seed": 29,
+        "protection_scope": "full",
+        "initial_endpoint": "shared-graph-full-s29"
+      },
+      "receipt": {
+        "id": "feasible-train-full-s29-r2",
+        "seed": 29,
+        "scope": "TRAIN-only direct feasible loss preflight; no graph utility claim",
+        "updates": 8,
+        "accepted": 2,
+        "initial_endpoint": "shared-graph-full-s29",
+        "endpoint_elapsed_s": 3893.753282204969,
+        "source_sgd_elapsed_s": 24.228343252907507,
+        "elapsed_s": 52.391485651023686,
+        "peak_gpu_memory_bytes": 6650639360,
+        "gpu_name": "NVIDIA GeForce RTX 3090",
+        "radius": 21.184175601339263,
+        "terminal": {
+          "query_keys": 68256,
+          "references": 234610,
+          "commits": 2,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "valid_queries_read": false,
+        "test_queries_read": false,
+        "input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/initial.pt": "73da0eb88e62176738d0da2a5d1cfd3e7d54d85aa0af6cc5766ad818526151d6",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/training-receipt.json": "1781fd6b0142ae22a7426ad7bdc42f2d5e11e3fd9b7c2007e9fbade32b5658a5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s29/best.pt": "0b03fcfbf6fc20882bec4d9cc1a8ed97e1a0b012230b7933e7d7bef20a0819fe",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s29/audit.json": "2df8cc72f3f92d2cdec98328e65f6c7a51ecf08e3e6c5e4d830d6a27cfb45e97",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s29/training-receipt.json": "e86d655873295071b5213ccee6e41e5e77d2f1df14e04376173fd9900b118212",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/scope.npz": "4b9e6e976701fd0bec76a697fafb56721cb14a40e0579bb423ab3bcb5ea89d66",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/receipt.json": "6f8bd9439a575a1990f9c6fae624fadcd7745ab15ca7d217559a6ba750c89393",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/audit.json": "e4d0470354fb9272158df7629634c34057e1163138881ac657c36da7de82f848",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/entity_common_20261011/src/feasible_train_optimization_v2.py": "25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/scripts/run_feasible_train_v2.py": "b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a"
+        },
+        "output_sha256": {
+          "initial.pt": "54a8c488cd9363ba09b1c463b9fb4b2b2f3dc48b4cd3c8af785dc0ddc83f3e38",
+          "best.pt": "4e13e02af01bab3d638fc875bb4333679fa70a786dd3506c2960f77c7606e46e",
+          "steps.json": "59b9c65115b94a1c7de629275e092e7392393f33ce0449e499f574fc917bf1cc",
+          "replay.npz": "4b486eae44970904de0e5a62fc566b8977b7fc807e15ea6865e879ed5c9f18af"
+        },
+        "implementation_sha256": "fdb4dcf933eed0fb516a7a9262949ed6abb201abcdbf833e6d47fae9cb1d8579",
+        "module_sha256": "b54cad1d96492e043bf2151381249ec26dff480d6cdbd80516c585a19f02061c",
+        "limits": [
+          "Local fixed-hard-negative loss is not full TRAIN/global/VALID utility.",
+          "All original full/scoped references unchanged; immutable-old barriers remain.",
+          "Independent CPU fixture coverage is bounded; complete scope GPU recount only in preflight.",
+          "Original immutable-only tied score working-set rows omitted; actual full rank acceptance unchanged."
+        ],
+        "optimization_module": "src/feasible_train_optimization_v2.py",
+        "optimization_module_sha256": "25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5",
+        "wrapper_sha256": "b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a"
+      },
+      "audit": {
+        "status": "PASS_ALL_PREFLIGHT_PATCHES_TRAIN_MINING_LOSS_AND_FULL_POOL_CPU_FIXTURES",
+        "failures": [],
+        "scalar_loss_checks": 16,
+        "max_loss_error": 4.440892098500626e-16,
+        "score_cells_replayed": 360256,
+        "patches_replayed": 8,
+        "old_rows_and_relations_unchanged": true,
+        "guard_member_identities_unchanged": true,
+        "receipt_sha256": "3551055cdbf1e4dcc77594635444bd0b31ce9d74f5784e8d08ed9fe70a279f10",
+        "replay_sha256": "4b486eae44970904de0e5a62fc566b8977b7fc807e15ea6865e879ed5c9f18af",
+        "elapsed_s": 5.323700865032151,
+        "valid_queries_read": false,
+        "test_queries_read": false,
+        "scientific_utility_asserted": false,
+        "limits": [
+          "Independent32 full query CPU rows per job; complete terminal scope GPU only at preflight."
+        ]
+      }
+    },
+    {
+      "job": {
+        "id": "feasible-train-scoped-s29-r2",
+        "seed": 29,
+        "protection_scope": "scoped",
+        "initial_endpoint": "shared-graph-scoped-s29"
+      },
+      "receipt": {
+        "id": "feasible-train-scoped-s29-r2",
+        "seed": 29,
+        "scope": "TRAIN-only direct feasible loss preflight; no graph utility claim",
+        "updates": 8,
+        "accepted": 2,
+        "initial_endpoint": "shared-graph-scoped-s29",
+        "endpoint_elapsed_s": 3520.7635352469515,
+        "source_sgd_elapsed_s": 24.228343252907507,
+        "elapsed_s": 49.76977897598408,
+        "peak_gpu_memory_bytes": 6649687040,
+        "gpu_name": "NVIDIA GeForce RTX 3090",
+        "radius": 21.184175601339263,
+        "terminal": {
+          "query_keys": 68246,
+          "references": 220056,
+          "commits": 2,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "valid_queries_read": false,
+        "test_queries_read": false,
+        "input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/initial.pt": "73da0eb88e62176738d0da2a5d1cfd3e7d54d85aa0af6cc5766ad818526151d6",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/training-receipt.json": "1781fd6b0142ae22a7426ad7bdc42f2d5e11e3fd9b7c2007e9fbade32b5658a5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s29/best.pt": "1d44307122e2b26a62816ceba748a3967ff5a81fd9ca9f6e552e2926f1353321",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s29/audit.json": "3d6cc83a81837b19b6d13a89e38a6ac487f567143379f7349979143b849a8d65",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s29/training-receipt.json": "5c8b234bb9cde1d80be481e9ed092aa6f1cf137a1935fba9cae52272b3b69110",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/scope.npz": "4b9e6e976701fd0bec76a697fafb56721cb14a40e0579bb423ab3bcb5ea89d66",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/receipt.json": "6f8bd9439a575a1990f9c6fae624fadcd7745ab15ca7d217559a6ba750c89393",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/audit.json": "e4d0470354fb9272158df7629634c34057e1163138881ac657c36da7de82f848",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/entity_common_20261011/src/feasible_train_optimization_v2.py": "25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/scripts/run_feasible_train_v2.py": "b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a"
+        },
+        "output_sha256": {
+          "initial.pt": "7516b4f69733898c8469a3deefbe0b4e342b118ceb34cbd8f59a7ce64e57fecb",
+          "best.pt": "3e8613876e3429d1ea7175d277c7c3bcd747868d4701b67259c2e980b31be181",
+          "steps.json": "d69061812c78dd271f0fb08aae98608adfb8ace538df969cd080fd6de721de45",
+          "replay.npz": "9931e65212c5cbe61e83cf7e4deb9b290f53673ab679d02b7d50a2b3bbe1fd4b"
+        },
+        "implementation_sha256": "fdb4dcf933eed0fb516a7a9262949ed6abb201abcdbf833e6d47fae9cb1d8579",
+        "module_sha256": "b54cad1d96492e043bf2151381249ec26dff480d6cdbd80516c585a19f02061c",
+        "limits": [
+          "Local fixed-hard-negative loss is not full TRAIN/global/VALID utility.",
+          "All original full/scoped references unchanged; immutable-old barriers remain.",
+          "Independent CPU fixture coverage is bounded; complete scope GPU recount only in preflight.",
+          "Original immutable-only tied score working-set rows omitted; actual full rank acceptance unchanged."
+        ],
+        "optimization_module": "src/feasible_train_optimization_v2.py",
+        "optimization_module_sha256": "25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5",
+        "wrapper_sha256": "b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a"
+      },
+      "audit": {
+        "status": "PASS_ALL_PREFLIGHT_PATCHES_TRAIN_MINING_LOSS_AND_FULL_POOL_CPU_FIXTURES",
+        "failures": [],
+        "scalar_loss_checks": 16,
+        "max_loss_error": 4.440892098500626e-16,
+        "score_cells_replayed": 360256,
+        "patches_replayed": 8,
+        "old_rows_and_relations_unchanged": true,
+        "guard_member_identities_unchanged": true,
+        "receipt_sha256": "5c1c692f4dfd59fe8c506b3f0c8e8df9ca8f820136761a59222058f8270dd2b5",
+        "replay_sha256": "9931e65212c5cbe61e83cf7e4deb9b290f53673ab679d02b7d50a2b3bbe1fd4b",
+        "elapsed_s": 5.181464108987711,
+        "valid_queries_read": false,
+        "test_queries_read": false,
+        "scientific_utility_asserted": false,
+        "limits": [
+          "Independent32 full query CPU rows per job; complete terminal scope GPU only at preflight."
+        ]
+      }
+    },
+    {
+      "job": {
+        "id": "feasible-train-full-s43-r2",
+        "seed": 43,
+        "protection_scope": "full",
+        "initial_endpoint": "shared-graph-full-s43"
+      },
+      "receipt": {
+        "id": "feasible-train-full-s43-r2",
+        "seed": 43,
+        "scope": "TRAIN-only direct feasible loss preflight; no graph utility claim",
+        "updates": 8,
+        "accepted": 7,
+        "initial_endpoint": "shared-graph-full-s43",
+        "endpoint_elapsed_s": 3802.1416148410644,
+        "source_sgd_elapsed_s": 25.5849679709645,
+        "elapsed_s": 60.13062165910378,
+        "peak_gpu_memory_bytes": 6652465152,
+        "gpu_name": "NVIDIA GeForce RTX 3090",
+        "radius": 21.0096301932758,
+        "terminal": {
+          "query_keys": 68275,
+          "references": 234090,
+          "commits": 7,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "valid_queries_read": false,
+        "test_queries_read": false,
+        "input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/initial.pt": "95e70f431788cad45126d3e4a404a557c9ecd12ed2822aec0ecc534bb6b8e131",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/audit.json": "2dcc19b46dfbfdc14f0a6eb638e90c4f3bf219e60bab6a3505cc1b8c415546bd",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/training-receipt.json": "6abf62132ebe50e83b78e8e6af18bb02c9aa8f46a4ad697282a01e07bb701769",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s43/best.pt": "646c44f25fa518bfe30e4023432e793b721fc7174eedd8a2163949e3e314575d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s43/audit.json": "02b4a3d218bd30f4186f9a70c4b713b04f82dc6542d40c3b09cb35414e63ab30",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s43/training-receipt.json": "637a2fe451174481d36546091671b302cbd78c0cdd1128e81386a5b4893c029e",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/scope.npz": "a6dea19a290eb470846731bde5c767842968e336b8dcf238578ffffd0dface8a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/receipt.json": "f470ba845e8aa5a56ccc4b2eb868c6303f3535462233d4821b931747a21e50db",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/audit.json": "baa6a55a78d37e2972233d762c5f3ac2063db3686b1ec794a1b4ded966a063ca",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/entity_common_20261011/src/feasible_train_optimization_v2.py": "25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/scripts/run_feasible_train_v2.py": "b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a"
+        },
+        "output_sha256": {
+          "initial.pt": "317f84fa30e0ee08396d6246004f1344fafb432f0f02e5e8bba80c1a134e3bc0",
+          "best.pt": "219d3d4a3ce6580d5c78b0a70cacff7027504b5f05f88f714a234e797ecf6833",
+          "steps.json": "d28b5344435e5c997958e18df2dff1e98c4941513a9ad9ac75024c809f54fe1d",
+          "replay.npz": "e58008d8358cc1624e6173bab783eec604b0be540ae67cfdfdc475c0bfb16796"
+        },
+        "implementation_sha256": "fdb4dcf933eed0fb516a7a9262949ed6abb201abcdbf833e6d47fae9cb1d8579",
+        "module_sha256": "b54cad1d96492e043bf2151381249ec26dff480d6cdbd80516c585a19f02061c",
+        "limits": [
+          "Local fixed-hard-negative loss is not full TRAIN/global/VALID utility.",
+          "All original full/scoped references unchanged; immutable-old barriers remain.",
+          "Independent CPU fixture coverage is bounded; complete scope GPU recount only in preflight.",
+          "Original immutable-only tied score working-set rows omitted; actual full rank acceptance unchanged."
+        ],
+        "optimization_module": "src/feasible_train_optimization_v2.py",
+        "optimization_module_sha256": "25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5",
+        "wrapper_sha256": "b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a"
+      },
+      "audit": {
+        "status": "PASS_ALL_PREFLIGHT_PATCHES_TRAIN_MINING_LOSS_AND_FULL_POOL_CPU_FIXTURES",
+        "failures": [],
+        "scalar_loss_checks": 16,
+        "max_loss_error": 8.881784197001252e-16,
+        "score_cells_replayed": 360256,
+        "patches_replayed": 8,
+        "old_rows_and_relations_unchanged": true,
+        "guard_member_identities_unchanged": true,
+        "receipt_sha256": "cb137f975b022b1dcc488253024998938d47e8bc3678cc5db2ff30827f465e55",
+        "replay_sha256": "e58008d8358cc1624e6173bab783eec604b0be540ae67cfdfdc475c0bfb16796",
+        "elapsed_s": 4.64058464509435,
+        "valid_queries_read": false,
+        "test_queries_read": false,
+        "scientific_utility_asserted": false,
+        "limits": [
+          "Independent32 full query CPU rows per job; complete terminal scope GPU only at preflight."
+        ]
+      }
+    },
+    {
+      "job": {
+        "id": "feasible-train-scoped-s43-r2",
+        "seed": 43,
+        "protection_scope": "scoped",
+        "initial_endpoint": "shared-graph-scoped-s43"
+      },
+      "receipt": {
+        "id": "feasible-train-scoped-s43-r2",
+        "seed": 43,
+        "scope": "TRAIN-only direct feasible loss preflight; no graph utility claim",
+        "updates": 8,
+        "accepted": 6,
+        "initial_endpoint": "shared-graph-scoped-s43",
+        "endpoint_elapsed_s": 3528.7678807509365,
+        "source_sgd_elapsed_s": 25.5849679709645,
+        "elapsed_s": 59.12566002306994,
+        "peak_gpu_memory_bytes": 6651906560,
+        "gpu_name": "NVIDIA GeForce RTX 3090",
+        "radius": 21.0096301932758,
+        "terminal": {
+          "query_keys": 68267,
+          "references": 219292,
+          "commits": 6,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "valid_queries_read": false,
+        "test_queries_read": false,
+        "input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/initial.pt": "95e70f431788cad45126d3e4a404a557c9ecd12ed2822aec0ecc534bb6b8e131",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/audit.json": "2dcc19b46dfbfdc14f0a6eb638e90c4f3bf219e60bab6a3505cc1b8c415546bd",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/training-receipt.json": "6abf62132ebe50e83b78e8e6af18bb02c9aa8f46a4ad697282a01e07bb701769",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s43/best.pt": "e16904e9cd085bd77da5a187d0ca48b9f3a3970eee8f0b0d3b7e46f8843ab1bd",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s43/audit.json": "a7b4c2c1dac3bd1e214ae179964896b1c82782f9137fa0b345e823961fd068d8",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s43/training-receipt.json": "d08240398e89cd68640c6487f45264186d3272e7a9b28130174a8835ad4ec593",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/scope.npz": "a6dea19a290eb470846731bde5c767842968e336b8dcf238578ffffd0dface8a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/receipt.json": "f470ba845e8aa5a56ccc4b2eb868c6303f3535462233d4821b931747a21e50db",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/audit.json": "baa6a55a78d37e2972233d762c5f3ac2063db3686b1ec794a1b4ded966a063ca",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+          "/data/lc/tzh/experiment4/entity_common_20261011/src/feasible_train_optimization_v2.py": "25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/scripts/run_feasible_train_v2.py": "b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a"
+        },
+        "output_sha256": {
+          "initial.pt": "5663dae022995c84966b43368f17c417df19b5f17d95687db6f3058164a9bece",
+          "best.pt": "f6c53adb664051bac9460ce826fbc9c4c4996d8869a30e989436ac7af218d06b",
+          "steps.json": "0149a089ce83f009b4f0d068c984c372f702a70e03bdb98f17dce6cd92c067ad",
+          "replay.npz": "a00b15da2938eb8d187993042e73eb6e188bc4d5faff3778cc700901dbf7aeea"
+        },
+        "implementation_sha256": "fdb4dcf933eed0fb516a7a9262949ed6abb201abcdbf833e6d47fae9cb1d8579",
+        "module_sha256": "b54cad1d96492e043bf2151381249ec26dff480d6cdbd80516c585a19f02061c",
+        "limits": [
+          "Local fixed-hard-negative loss is not full TRAIN/global/VALID utility.",
+          "All original full/scoped references unchanged; immutable-old barriers remain.",
+          "Independent CPU fixture coverage is bounded; complete scope GPU recount only in preflight.",
+          "Original immutable-only tied score working-set rows omitted; actual full rank acceptance unchanged."
+        ],
+        "optimization_module": "src/feasible_train_optimization_v2.py",
+        "optimization_module_sha256": "25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5",
+        "wrapper_sha256": "b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a"
+      },
+      "audit": {
+        "status": "PASS_ALL_PREFLIGHT_PATCHES_TRAIN_MINING_LOSS_AND_FULL_POOL_CPU_FIXTURES",
+        "failures": [],
+        "scalar_loss_checks": 16,
+        "max_loss_error": 4.440892098500626e-16,
+        "score_cells_replayed": 360256,
+        "patches_replayed": 8,
+        "old_rows_and_relations_unchanged": true,
+        "guard_member_identities_unchanged": true,
+        "receipt_sha256": "4df358c57fd69df5d7fb14b28e41175609dcd2217b944337af4420161fa85d46",
+        "replay_sha256": "a00b15da2938eb8d187993042e73eb6e188bc4d5faff3778cc700901dbf7aeea",
+        "elapsed_s": 4.755615543923341,
+        "valid_queries_read": false,
+        "test_queries_read": false,
+        "scientific_utility_asserted": false,
+        "limits": [
+          "Independent32 full query CPU rows per job; complete terminal scope GPU only at preflight."
+        ]
+      }
+    }
+  ],
+  "completed_audited_jobs": 6,
+  "planned_jobs": 6,
+  "scientific_utility_asserted": false
+}

@@ -1,0 +1,186 @@
+{
+  "id": "KGE-ENTITY-COMMON-PROPOSAL-UTILITY-013",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "source_experiment": "KGE-ENTITY-COMMON-LEARNED-PROPOSAL-012",
+  "source_config_sha256": "b3544766311dc8c0de99291e8786ca3a7a3b6cbb5d9c6bbcb8d4e82bfc09d3b3",
+  "jobs": [
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposal",
+      "after_dimension": 200,
+      "protection": "none",
+      "id": "proposal-s17",
+      "seed": 17
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposalQPTrue",
+      "after_dimension": 200,
+      "protection": "true",
+      "id": "proposal-qptrue-s17",
+      "seed": 17
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposalQPPred",
+      "after_dimension": 200,
+      "protection": "pred",
+      "id": "proposal-qppred-s17",
+      "seed": 17
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRank",
+      "after_dimension": 200,
+      "protection": "none",
+      "id": "proposal-rank-s17",
+      "seed": 17
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRankQPTrue",
+      "after_dimension": 200,
+      "protection": "true",
+      "id": "proposal-rank-qptrue-s17",
+      "seed": 17
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRankQPPred",
+      "after_dimension": 200,
+      "protection": "pred",
+      "id": "proposal-rank-qppred-s17",
+      "seed": 17
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposal",
+      "after_dimension": 200,
+      "protection": "none",
+      "id": "proposal-s29",
+      "seed": 29
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposalQPTrue",
+      "after_dimension": 200,
+      "protection": "true",
+      "id": "proposal-qptrue-s29",
+      "seed": 29
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposalQPPred",
+      "after_dimension": 200,
+      "protection": "pred",
+      "id": "proposal-qppred-s29",
+      "seed": 29
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRank",
+      "after_dimension": 200,
+      "protection": "none",
+      "id": "proposal-rank-s29",
+      "seed": 29
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRankQPTrue",
+      "after_dimension": 200,
+      "protection": "true",
+      "id": "proposal-rank-qptrue-s29",
+      "seed": 29
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRankQPPred",
+      "after_dimension": 200,
+      "protection": "pred",
+      "id": "proposal-rank-qppred-s29",
+      "seed": 29
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposal",
+      "after_dimension": 200,
+      "protection": "none",
+      "id": "proposal-s43",
+      "seed": 43
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposalQPTrue",
+      "after_dimension": 200,
+      "protection": "true",
+      "id": "proposal-qptrue-s43",
+      "seed": 43
+    },
+    {
+      "apply_rank": false,
+      "kind": "DistMult",
+      "method": "LearnedProposalQPPred",
+      "after_dimension": 200,
+      "protection": "pred",
+      "id": "proposal-qppred-s43",
+      "seed": 43
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRank",
+      "after_dimension": 200,
+      "protection": "none",
+      "id": "proposal-rank-s43",
+      "seed": 43
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRankQPTrue",
+      "after_dimension": 200,
+      "protection": "true",
+      "id": "proposal-rank-qptrue-s43",
+      "seed": 43
+    },
+    {
+      "apply_rank": true,
+      "kind": "DistMult",
+      "method": "LearnedProposalRankQPPred",
+      "after_dimension": 200,
+      "protection": "pred",
+      "id": "proposal-rank-qppred-s43",
+      "seed": 43
+    }
+  ],
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "batch_size": 64,
+  "reaudit_directory": "artifacts/proposal-utility13",
+  "worker": "scripts/audit_proposal_utility.py",
+  "log_directory": "logs/proposal-utility13",
+  "dependencies": [
+    "experiments/KGE-ENTITY-COMMON-LEARNED-PROPOSAL-012/experiment.yaml"
+  ],
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-LEARNED-PROPOSAL-012/experiment.yaml"
+  ],
+  "max_concurrent_audits": 2
+}

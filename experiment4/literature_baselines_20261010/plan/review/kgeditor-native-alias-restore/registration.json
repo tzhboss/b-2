@@ -1,0 +1,12 @@
+{
+  "id": "KGE-LIT-004-NATIVE-ALIAS-REPLAY",
+  "registered_utc": "2026-10-10T13:32:25.307022+00:00",
+  "replay_sha256": "e1c3630e2de328d1024c572314bcc6bd40a0dbcf51188243ccc4eb4381e8f222",
+  "reason": "Replay v2 separated native CPU embedding alias and therefore loaded different effective weights. Selected WN checkpoint model/learner embeddings differ in646653 entries, max.0177075; strict serialized-group replay differs from native export.",
+  "source_mechanism": "KGEditor.ex_learner.embedding_init=ex_model.embedding.weight.data; Module.load_state_dict child order ex_model then ex_learner; native load_from_checkpoint CPU then toCUDA",
+  "sampling_unchanged": true,
+  "tolerance_unchanged": true,
+  "changes_to_native_or_predictions": false,
+  "old_failure": "audit-replays/kgeditor-e-wn18rr-s0-v2/replay-report.json",
+  "limitation": "Native restore changes effective base embedding relative to its serialized prefix. Any numeric PASS must state this qualification; no claim of fixed underlying checkpoint preservation."
+}

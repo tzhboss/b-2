@@ -1,0 +1,354 @@
+{
+  "result": {
+    "passed": true,
+    "scope": "Synthetic local cutting-plane implementation only; no graph utility",
+    "jacobian_cases": 64,
+    "max_derivative_error": 1.4505587841995293e-09,
+    "analytic_toy_vector_error": 0.0,
+    "new_gold_rank": 8,
+    "all_reference_ranks_safe": true,
+    "old_head_actual_rescore": true,
+    "solver_did_not_commit_before_acceptance": true,
+    "full_rank_cache_replay": true,
+    "absolute_movement_centers_checked": true,
+    "forced_cut_budget_returns_unchanged": true,
+    "joint": {
+      "accepted": true,
+      "status": "slsqp_0",
+      "cut_rounds": 1,
+      "cuts": 3,
+      "history": [
+        {
+          "round": 0,
+          "violating_queries": 3,
+          "cuts": 0,
+          "bounds_ok": true
+        },
+        {
+          "round": 1,
+          "violating_queries": 0,
+          "cuts": 3,
+          "bounds_ok": true
+        }
+      ],
+      "movements": [
+        1.0000000400000006,
+        6.0
+      ],
+      "elapsed_s": 0.013818964012898505,
+      "witness_queries": 3,
+      "certificate": "Actual all-reference shared ranks and absolute movement balls; no global optimum guarantee"
+    },
+    "frozen_control": {
+      "accepted": false,
+      "status": "slsqp_8",
+      "cut_rounds": 0,
+      "cuts": 3,
+      "history": [
+        {
+          "round": 0,
+          "violating_queries": 3,
+          "cuts": 0,
+          "bounds_ok": true,
+          "optimizer_status": 8,
+          "min_pair_residual": -1.00000001
+        }
+      ],
+      "movements": [
+        0.0
+      ],
+      "elapsed_s": 0.0068078190088272095,
+      "witness_queries": 3,
+      "fallback": "Unchanged shared rows; no learning success claimed"
+    },
+    "test_read": false,
+    "graph_facts_read": false,
+    "cases": [
+      {
+        "case": 0,
+        "error": 5.111875367447283e-10
+      },
+      {
+        "case": 1,
+        "error": 1.2660876791414921e-09
+      },
+      {
+        "case": 2,
+        "error": 2.3479396205061676e-10
+      },
+      {
+        "case": 3,
+        "error": 8.903917603220179e-10
+      },
+      {
+        "case": 4,
+        "error": 2.439799473563653e-10
+      },
+      {
+        "case": 5,
+        "error": 1.6408741032591934e-10
+      },
+      {
+        "case": 6,
+        "error": 2.898148387942001e-10
+      },
+      {
+        "case": 7,
+        "error": 1.8169576954107924e-10
+      },
+      {
+        "case": 8,
+        "error": 6.038347599712779e-10
+      },
+      {
+        "case": 9,
+        "error": 3.592837138910454e-10
+      },
+      {
+        "case": 10,
+        "error": 6.798508422889427e-10
+      },
+      {
+        "case": 11,
+        "error": 5.853246776155174e-10
+      },
+      {
+        "case": 12,
+        "error": 6.234222027501346e-10
+      },
+      {
+        "case": 13,
+        "error": 4.3733638932508256e-10
+      },
+      {
+        "case": 14,
+        "error": 3.51622730931922e-10
+      },
+      {
+        "case": 15,
+        "error": 4.466427228067005e-10
+      },
+      {
+        "case": 16,
+        "error": 3.8003422631049943e-10
+      },
+      {
+        "case": 17,
+        "error": 3.9484415736978917e-10
+      },
+      {
+        "case": 18,
+        "error": 6.448503953038198e-10
+      },
+      {
+        "case": 19,
+        "error": 3.6355363164375376e-10
+      },
+      {
+        "case": 20,
+        "error": 3.692783856479309e-10
+      },
+      {
+        "case": 21,
+        "error": 2.7848034989119697e-10
+      },
+      {
+        "case": 22,
+        "error": 2.0910134734819508e-10
+      },
+      {
+        "case": 23,
+        "error": 4.320348523378925e-10
+      },
+      {
+        "case": 24,
+        "error": 2.0826051994049521e-10
+      },
+      {
+        "case": 25,
+        "error": 1.357303602844695e-09
+      },
+      {
+        "case": 26,
+        "error": 2.4788793240304585e-10
+      },
+      {
+        "case": 27,
+        "error": 3.7193270685520474e-10
+      },
+      {
+        "case": 28,
+        "error": 1.334707899758314e-10
+      },
+      {
+        "case": 29,
+        "error": 2.383939712302663e-10
+      },
+      {
+        "case": 30,
+        "error": 3.658549019291968e-10
+      },
+      {
+        "case": 31,
+        "error": 3.8238345823060627e-10
+      },
+      {
+        "case": 32,
+        "error": 7.395790646569367e-10
+      },
+      {
+        "case": 33,
+        "error": 1.600473087393084e-10
+      },
+      {
+        "case": 34,
+        "error": 2.5830471095389385e-10
+      },
+      {
+        "case": 35,
+        "error": 2.8698199372456656e-10
+      },
+      {
+        "case": 36,
+        "error": 2.525767373029453e-10
+      },
+      {
+        "case": 37,
+        "error": 3.0969626862997757e-10
+      },
+      {
+        "case": 38,
+        "error": 7.99952104557633e-10
+      },
+      {
+        "case": 39,
+        "error": 8.460947498178939e-10
+      },
+      {
+        "case": 40,
+        "error": 2.951212607626985e-10
+      },
+      {
+        "case": 41,
+        "error": 2.858859815546566e-10
+      },
+      {
+        "case": 42,
+        "error": 2.397546605692469e-10
+      },
+      {
+        "case": 43,
+        "error": 2.5382673740637074e-10
+      },
+      {
+        "case": 44,
+        "error": 2.6147795040287747e-10
+      },
+      {
+        "case": 45,
+        "error": 2.0185624005630842e-10
+      },
+      {
+        "case": 46,
+        "error": 1.4505587841995293e-09
+      },
+      {
+        "case": 47,
+        "error": 3.215088195673843e-10
+      },
+      {
+        "case": 48,
+        "error": 5.307017048039597e-10
+      },
+      {
+        "case": 49,
+        "error": 3.4794567227436346e-10
+      },
+      {
+        "case": 50,
+        "error": 1.7752466163756253e-10
+      },
+      {
+        "case": 51,
+        "error": 1.2134391269569278e-09
+      },
+      {
+        "case": 52,
+        "error": 6.078177960944231e-10
+      },
+      {
+        "case": 53,
+        "error": 5.332518870915237e-10
+      },
+      {
+        "case": 54,
+        "error": 2.197788617763763e-10
+      },
+      {
+        "case": 55,
+        "error": 1.8488677255845687e-10
+      },
+      {
+        "case": 56,
+        "error": 2.789533048996873e-10
+      },
+      {
+        "case": 57,
+        "error": 4.70717909095697e-10
+      },
+      {
+        "case": 58,
+        "error": 6.119211803934377e-10
+      },
+      {
+        "case": 59,
+        "error": 1.734368204608927e-10
+      },
+      {
+        "case": 60,
+        "error": 5.392264412762415e-10
+      },
+      {
+        "case": 61,
+        "error": 2.468638626851316e-10
+      },
+      {
+        "case": 62,
+        "error": 2.4754465144383175e-10
+      },
+      {
+        "case": 63,
+        "error": 4.5777515111922185e-10
+      }
+    ]
+  },
+  "audit": {
+    "status": "PASS_INDEPENDENT_SCALAR_SHARED_RANKS_AND_ANALYTIC_TOY",
+    "failures": [],
+    "all_reference_ranks": [
+      10,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1,
+      10,
+      10,
+      10
+    ],
+    "analytic_toy_vector_error": 0.0,
+    "new_gold_rank": 8,
+    "unmodified_rows_exact": true,
+    "saved_model_sha256": "f78b8eae29469209df232a40fc3aafe87b7e36301da3ef3bac8b844290da32eb",
+    "receipt_sha256": "93f57bdb75fe809552e945c87a16395a10fbf0e6066e533488ff0fb34cf7f4ba",
+    "auditor_sha256": "91eaf2164742fa6775023acc8c4dd07aa38ee975bb88d59dd50161502cccf615",
+    "limits": [
+      "Synthetic feasibility only; no real graph optimizer utility or global optimum claim.",
+      "Independent derivatives exercised by control producer, saved-model scores by separate scalar audit."
+    ]
+  }
+}

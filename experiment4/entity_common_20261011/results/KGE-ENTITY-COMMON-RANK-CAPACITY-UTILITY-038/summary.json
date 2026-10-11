@@ -1,0 +1,732 @@
+{
+  "scope": "Fixed exposed development utility with additional explicit TRAIN costs; no heldout/SOTA or novelty claim",
+  "original_gates_unchanged": true,
+  "additional_gates": [
+    "Each seed exempted original-top10 TRAIN loss and MRR nonworse than source SGD",
+    "No excess endpoint boundary ties at exempt keys"
+  ],
+  "rows": [
+    {
+      "method": "CapacityFrozenFull",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "decision": "NO_GO_FOR_THIS_FIXED_COMBINATION",
+      "new_gate": true,
+      "old_gate": true,
+      "new_answer_gate": false,
+      "exempt_train_gate": true,
+      "tie_gate": true,
+      "values": {
+        "new_mrr": [
+          0.13063080727956342,
+          0.1261505658684386,
+          0.13178222603664208
+        ],
+        "source_new_mrr": [
+          0.1314481953144781,
+          0.12678228644887451,
+          0.13172653626125835
+        ],
+        "old_loss": [
+          0.012232415902140673,
+          0.02023121387283237,
+          0.024793388429752067
+        ],
+        "source_old_loss": [
+          0.01529051987767584,
+          0.028901734104046242,
+          0.03305785123966942
+        ],
+        "source_answer_raw_mrr": [
+          0.02864503130856831,
+          0.02708050885951132,
+          0.026290694740692497
+        ],
+        "after_answer_raw_mrr": [
+          0.025986526108277366,
+          0.024904816630868333,
+          0.023794125241733032
+        ],
+        "source_answer_hits10": [
+          0.0794979079497908,
+          0.07740585774058577,
+          0.04811715481171548
+        ],
+        "after_answer_hits10": [
+          0.058577405857740586,
+          0.056485355648535567,
+          0.05230125523012552
+        ]
+      },
+      "contract_costs": [
+        {
+          "status": "PASS_EXPLICIT_EXEMPTED_TRAIN_COST_REPLAY",
+          "failures": [],
+          "test_read": false,
+          "valid_read_by_separate_common_audit": true,
+          "exempted_queries": 321,
+          "controls": {
+            "initial_old_pool": {
+              "original_top10_train_truths": {
+                "facts": 3210,
+                "top10_lost": 0,
+                "top10_loss": 0.0,
+                "raw_mrr": 0.2928968253968254,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 25019,
+                "top10_lost": 21809,
+                "top10_loss": 0.8716975098924817,
+                "raw_mrr": 0.05255835947193317,
+                "excess_boundary_tie_queries": 0
+              }
+            },
+            "source": {
+              "original_top10_train_truths": {
+                "facts": 3210,
+                "top10_lost": 113,
+                "top10_loss": 0.03520249221183801,
+                "raw_mrr": 0.290368777553357,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 25019,
+                "top10_lost": 21922,
+                "top10_loss": 0.876214077301251,
+                "raw_mrr": 0.051085368079499115,
+                "excess_boundary_tie_queries": 0
+              }
+            },
+            "after": {
+              "original_top10_train_truths": {
+                "facts": 3210,
+                "top10_lost": 73,
+                "top10_loss": 0.022741433021806853,
+                "raw_mrr": 0.29158308634944147,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 25019,
+                "top10_lost": 21882,
+                "top10_loss": 0.8746152923777929,
+                "raw_mrr": 0.05148269572938364,
+                "excess_boundary_tie_queries": 0
+              }
+            }
+          },
+          "nonworse_than_source_exempt_train_gate": true,
+          "no_excess_boundary_ties_gate": true,
+          "evidence_sha256": {
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/scope.npz": "e57774b09ec556364e6484a856e54a64dc5c29ce46a6097c057b0dc2829f974a",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/receipt.json": "78130b1ef9eaed4866828a7b342ebc48cf7f8c094bd742771bf9db9090dad954",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/audit.json": "60128ab5d18003182a5ee13bb74ae80c9d04b64f49b0318fb608e9c66cb6b877",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/certificates.npz": "944bbddbd480a365e998bae7e50907941969f82401199cd255f37d831e0e6297",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/best.pt": "271fc956663f366943b7ad7db4f3b7f7a2fa4bf65c0af95ce73fd77fd023dbf0",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/capacity-full-s17/best.pt": "1ed5dde1c4845354bcd521e9d9ebcd0d5dab8e2acf1764ba5ff947db4866127e",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821"
+          },
+          "elapsed_s": 4.086669784039259,
+          "limits": [
+            "Endpoint cost of fixed exemptions; not causal attribution of whole optimization trajectory.",
+            "Removal changes the old TRAIN truth guarantee even when nonworse than source SGD.",
+            "All TRAIN truth metrics disclose ranks outside top10; extra cost gate uses original top10 TRAIN truths.",
+            "Exact endpoint tie check does not certify arbitrary floating-point kernels."
+          ]
+        },
+        {
+          "status": "PASS_EXPLICIT_EXEMPTED_TRAIN_COST_REPLAY",
+          "failures": [],
+          "test_read": false,
+          "valid_read_by_separate_common_audit": true,
+          "exempted_queries": 324,
+          "controls": {
+            "initial_old_pool": {
+              "original_top10_train_truths": {
+                "facts": 3240,
+                "top10_lost": 0,
+                "top10_loss": 0.0,
+                "raw_mrr": 0.2928968253968254,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 24282,
+                "top10_lost": 21042,
+                "top10_loss": 0.8665678280207562,
+                "raw_mrr": 0.05483493052688327,
+                "excess_boundary_tie_queries": 0
+              }
+            },
+            "source": {
+              "original_top10_train_truths": {
+                "facts": 3240,
+                "top10_lost": 32,
+                "top10_loss": 0.009876543209876543,
+                "raw_mrr": 0.2918000064064879,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 24282,
+                "top10_lost": 21074,
+                "top10_loss": 0.8678856766328968,
+                "raw_mrr": 0.05405588886264767,
+                "excess_boundary_tie_queries": 0
+              }
+            },
+            "after": {
+              "original_top10_train_truths": {
+                "facts": 3240,
+                "top10_lost": 22,
+                "top10_loss": 0.006790123456790123,
+                "raw_mrr": 0.2924223752927457,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 24282,
+                "top10_lost": 21064,
+                "top10_loss": 0.8674738489416028,
+                "raw_mrr": 0.05424673192199909,
+                "excess_boundary_tie_queries": 0
+              }
+            }
+          },
+          "nonworse_than_source_exempt_train_gate": true,
+          "no_excess_boundary_ties_gate": true,
+          "evidence_sha256": {
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s29/scope.npz": "f6b5066650593bddc524fa67239b8ef1218e2618593a6fe18e544912d3c72e83",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s29/receipt.json": "cfedd5c9bf258f888e1c780a665d06ee9cef41e97d394ca32a29ceb91c79a18e",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s29/audit.json": "c846430667aaf005f2041e54b762cb16eba7ce736f6415e7e0dcb5ca8bb465bf",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/certificates.npz": "944bbddbd480a365e998bae7e50907941969f82401199cd255f37d831e0e6297",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/best.pt": "f36408997a08b94170144581f718bf457241e3063292f3015fcf466a69372eb3",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/capacity-full-s29/best.pt": "b7803dee4cf80f1a9749875fde82f40f93e05393325d6dad1390eee04260acc1",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821"
+          },
+          "elapsed_s": 4.2074813939398155,
+          "limits": [
+            "Endpoint cost of fixed exemptions; not causal attribution of whole optimization trajectory.",
+            "Removal changes the old TRAIN truth guarantee even when nonworse than source SGD.",
+            "All TRAIN truth metrics disclose ranks outside top10; extra cost gate uses original top10 TRAIN truths.",
+            "Exact endpoint tie check does not certify arbitrary floating-point kernels."
+          ]
+        },
+        {
+          "status": "PASS_EXPLICIT_EXEMPTED_TRAIN_COST_REPLAY",
+          "failures": [],
+          "test_read": false,
+          "valid_read_by_separate_common_audit": true,
+          "exempted_queries": 282,
+          "controls": {
+            "initial_old_pool": {
+              "original_top10_train_truths": {
+                "facts": 2820,
+                "top10_lost": 0,
+                "top10_loss": 0.0,
+                "raw_mrr": 0.2928968253968254,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 21117,
+                "top10_lost": 18297,
+                "top10_loss": 0.8664583037363262,
+                "raw_mrr": 0.05506722830069479,
+                "excess_boundary_tie_queries": 0
+              }
+            },
+            "source": {
+              "original_top10_train_truths": {
+                "facts": 2820,
+                "top10_lost": 21,
+                "top10_loss": 0.007446808510638298,
+                "raw_mrr": 0.29264582639582637,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 21117,
+                "top10_lost": 18318,
+                "top10_loss": 0.8674527631765876,
+                "raw_mrr": 0.05451501849987252,
+                "excess_boundary_tie_queries": 0
+              }
+            },
+            "after": {
+              "original_top10_train_truths": {
+                "facts": 2820,
+                "top10_lost": 14,
+                "top10_loss": 0.004964539007092199,
+                "raw_mrr": 0.2927822719046123,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 21117,
+                "top10_lost": 18311,
+                "top10_loss": 0.8671212766965004,
+                "raw_mrr": 0.05460717149606416,
+                "excess_boundary_tie_queries": 0
+              }
+            }
+          },
+          "nonworse_than_source_exempt_train_gate": true,
+          "no_excess_boundary_ties_gate": true,
+          "evidence_sha256": {
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s43/scope.npz": "232e725eefd5c4c960f0dadcf6cb53a4e22bf6db46d3956168d50f9c9cbf38d3",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s43/receipt.json": "034486355e73e7fa5ec35185734cd1fbc4e2b9c778de2181540404f9b57ca31a",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s43/audit.json": "f5ebc6dca5a04b450c44bbbddd171c231ad196ce4503acdb4fd6d88a9e66b4c5",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/certificates.npz": "944bbddbd480a365e998bae7e50907941969f82401199cd255f37d831e0e6297",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/best.pt": "e7ccfdc410819fbd893e8e82e3b066f12e20d0c097efff33129c0bf4dfa9183d",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/capacity-full-s43/best.pt": "3fa4cf7d0be0e1d3202c461e30b58e15d8ac8f26f9d31ebedad2a23100c3de9a",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821"
+          },
+          "elapsed_s": 3.134308760985732,
+          "limits": [
+            "Endpoint cost of fixed exemptions; not causal attribution of whole optimization trajectory.",
+            "Removal changes the old TRAIN truth guarantee even when nonworse than source SGD.",
+            "All TRAIN truth metrics disclose ranks outside top10; extra cost gate uses original top10 TRAIN truths.",
+            "Exact endpoint tie check does not certify arbitrary floating-point kernels."
+          ]
+        }
+      ],
+      "original_control": {
+        "method": "SharedFrozenFull",
+        "seeds": [
+          17,
+          29,
+          43
+        ],
+        "decision": "NO_GO_FOR_THIS_FIXED_COMBINATION",
+        "new_gate": true,
+        "old_gate": true,
+        "new_answer_gate": false,
+        "source_new_answer_mrr": [
+          0.02864503130856831,
+          0.02708050885951132,
+          0.026290694740692497
+        ],
+        "after_new_answer_mrr": [
+          0.025961009508421368,
+          0.024904703795087284,
+          0.023771111201327928
+        ],
+        "source_new_answer_hits10": [
+          0.0794979079497908,
+          0.07740585774058577,
+          0.04811715481171548
+        ],
+        "after_new_answer_hits10": [
+          0.058577405857740586,
+          0.056485355648535567,
+          0.05230125523012552
+        ],
+        "source_new_valid_mrr": [
+          0.1314481953144781,
+          0.12678228644887451,
+          0.13172653626125835
+        ],
+        "after_new_valid_mrr": [
+          0.13061588590814438,
+          0.12597840066273086,
+          0.1317710891092692
+        ],
+        "source_old_valid_loss": [
+          0.01529051987767584,
+          0.028901734104046242,
+          0.03305785123966942
+        ],
+        "after_old_valid_loss": [
+          0.012232415902140673,
+          0.02023121387283237,
+          0.024793388429752067
+        ],
+        "paired_new_mrr_deltas": [
+          -0.00083230940633372,
+          -0.0008038857861436544,
+          4.4552848010859236e-05
+        ],
+        "paired_old_loss_deltas": [
+          -0.003058103975535168,
+          -0.008670520231213872,
+          -0.008264462809917356
+        ]
+      }
+    },
+    {
+      "method": "CapacityFrozenScoped",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "decision": "NO_GO_FOR_THIS_FIXED_COMBINATION",
+      "new_gate": true,
+      "old_gate": false,
+      "new_answer_gate": false,
+      "exempt_train_gate": true,
+      "tie_gate": true,
+      "values": {
+        "new_mrr": [
+          0.1313571611943318,
+          0.12628838743076398,
+          0.13251169424214118
+        ],
+        "source_new_mrr": [
+          0.1314481953144781,
+          0.12678228644887451,
+          0.13172653626125835
+        ],
+        "old_loss": [
+          0.01529051987767584,
+          0.02023121387283237,
+          0.024793388429752067
+        ],
+        "source_old_loss": [
+          0.01529051987767584,
+          0.028901734104046242,
+          0.03305785123966942
+        ],
+        "source_answer_raw_mrr": [
+          0.02864503130856831,
+          0.02708050885951132,
+          0.026290694740692497
+        ],
+        "after_answer_raw_mrr": [
+          0.02728414065284294,
+          0.02512608638975448,
+          0.02412629115293242
+        ],
+        "source_answer_hits10": [
+          0.0794979079497908,
+          0.07740585774058577,
+          0.04811715481171548
+        ],
+        "after_answer_hits10": [
+          0.06485355648535565,
+          0.06276150627615062,
+          0.0502092050209205
+        ]
+      },
+      "contract_costs": [
+        {
+          "status": "PASS_EXPLICIT_EXEMPTED_TRAIN_COST_REPLAY",
+          "failures": [],
+          "test_read": false,
+          "valid_read_by_separate_common_audit": true,
+          "exempted_queries": 321,
+          "controls": {
+            "initial_old_pool": {
+              "original_top10_train_truths": {
+                "facts": 3210,
+                "top10_lost": 0,
+                "top10_loss": 0.0,
+                "raw_mrr": 0.2928968253968254,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 25019,
+                "top10_lost": 21809,
+                "top10_loss": 0.8716975098924817,
+                "raw_mrr": 0.05255835947193317,
+                "excess_boundary_tie_queries": 0
+              }
+            },
+            "source": {
+              "original_top10_train_truths": {
+                "facts": 3210,
+                "top10_lost": 113,
+                "top10_loss": 0.03520249221183801,
+                "raw_mrr": 0.290368777553357,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 25019,
+                "top10_lost": 21922,
+                "top10_loss": 0.876214077301251,
+                "raw_mrr": 0.051085368079499115,
+                "excess_boundary_tie_queries": 0
+              }
+            },
+            "after": {
+              "original_top10_train_truths": {
+                "facts": 3210,
+                "top10_lost": 80,
+                "top10_loss": 0.024922118380062305,
+                "raw_mrr": 0.2914547212911699,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 25019,
+                "top10_lost": 21889,
+                "top10_loss": 0.8748950797393981,
+                "raw_mrr": 0.051392902224180574,
+                "excess_boundary_tie_queries": 0
+              }
+            }
+          },
+          "nonworse_than_source_exempt_train_gate": true,
+          "no_excess_boundary_ties_gate": true,
+          "evidence_sha256": {
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/scope.npz": "e57774b09ec556364e6484a856e54a64dc5c29ce46a6097c057b0dc2829f974a",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/receipt.json": "78130b1ef9eaed4866828a7b342ebc48cf7f8c094bd742771bf9db9090dad954",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/audit.json": "60128ab5d18003182a5ee13bb74ae80c9d04b64f49b0318fb608e9c66cb6b877",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/certificates.npz": "944bbddbd480a365e998bae7e50907941969f82401199cd255f37d831e0e6297",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/best.pt": "271fc956663f366943b7ad7db4f3b7f7a2fa4bf65c0af95ce73fd77fd023dbf0",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/capacity-scoped-s17/best.pt": "afd464672333045edffb572921c8505c9d04bff8983e9f6ff823952b776510f6",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821"
+          },
+          "elapsed_s": 4.326265036943369,
+          "limits": [
+            "Endpoint cost of fixed exemptions; not causal attribution of whole optimization trajectory.",
+            "Removal changes the old TRAIN truth guarantee even when nonworse than source SGD.",
+            "All TRAIN truth metrics disclose ranks outside top10; extra cost gate uses original top10 TRAIN truths.",
+            "Exact endpoint tie check does not certify arbitrary floating-point kernels."
+          ]
+        },
+        {
+          "status": "PASS_EXPLICIT_EXEMPTED_TRAIN_COST_REPLAY",
+          "failures": [],
+          "test_read": false,
+          "valid_read_by_separate_common_audit": true,
+          "exempted_queries": 324,
+          "controls": {
+            "initial_old_pool": {
+              "original_top10_train_truths": {
+                "facts": 3240,
+                "top10_lost": 0,
+                "top10_loss": 0.0,
+                "raw_mrr": 0.2928968253968254,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 24282,
+                "top10_lost": 21042,
+                "top10_loss": 0.8665678280207562,
+                "raw_mrr": 0.05483493052688327,
+                "excess_boundary_tie_queries": 0
+              }
+            },
+            "source": {
+              "original_top10_train_truths": {
+                "facts": 3240,
+                "top10_lost": 32,
+                "top10_loss": 0.009876543209876543,
+                "raw_mrr": 0.2918000064064879,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 24282,
+                "top10_lost": 21074,
+                "top10_loss": 0.8678856766328968,
+                "raw_mrr": 0.05405588886264767,
+                "excess_boundary_tie_queries": 0
+              }
+            },
+            "after": {
+              "original_top10_train_truths": {
+                "facts": 3240,
+                "top10_lost": 23,
+                "top10_loss": 0.0070987654320987656,
+                "raw_mrr": 0.29236812912738835,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 24282,
+                "top10_lost": 21065,
+                "top10_loss": 0.8675150317107322,
+                "raw_mrr": 0.05419911838514963,
+                "excess_boundary_tie_queries": 0
+              }
+            }
+          },
+          "nonworse_than_source_exempt_train_gate": true,
+          "no_excess_boundary_ties_gate": true,
+          "evidence_sha256": {
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s29/scope.npz": "f6b5066650593bddc524fa67239b8ef1218e2618593a6fe18e544912d3c72e83",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s29/receipt.json": "cfedd5c9bf258f888e1c780a665d06ee9cef41e97d394ca32a29ceb91c79a18e",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s29/audit.json": "c846430667aaf005f2041e54b762cb16eba7ce736f6415e7e0dcb5ca8bb465bf",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/certificates.npz": "944bbddbd480a365e998bae7e50907941969f82401199cd255f37d831e0e6297",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/best.pt": "f36408997a08b94170144581f718bf457241e3063292f3015fcf466a69372eb3",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/capacity-scoped-s29/best.pt": "c0329a9bc975bf2d548dc5aac9a2615c1a0d4db4644fffd45248aae81285ceba",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821"
+          },
+          "elapsed_s": 4.3664848000044,
+          "limits": [
+            "Endpoint cost of fixed exemptions; not causal attribution of whole optimization trajectory.",
+            "Removal changes the old TRAIN truth guarantee even when nonworse than source SGD.",
+            "All TRAIN truth metrics disclose ranks outside top10; extra cost gate uses original top10 TRAIN truths.",
+            "Exact endpoint tie check does not certify arbitrary floating-point kernels."
+          ]
+        },
+        {
+          "status": "PASS_EXPLICIT_EXEMPTED_TRAIN_COST_REPLAY",
+          "failures": [],
+          "test_read": false,
+          "valid_read_by_separate_common_audit": true,
+          "exempted_queries": 282,
+          "controls": {
+            "initial_old_pool": {
+              "original_top10_train_truths": {
+                "facts": 2820,
+                "top10_lost": 0,
+                "top10_loss": 0.0,
+                "raw_mrr": 0.2928968253968254,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 21117,
+                "top10_lost": 18297,
+                "top10_loss": 0.8664583037363262,
+                "raw_mrr": 0.05506722830069479,
+                "excess_boundary_tie_queries": 0
+              }
+            },
+            "source": {
+              "original_top10_train_truths": {
+                "facts": 2820,
+                "top10_lost": 21,
+                "top10_loss": 0.007446808510638298,
+                "raw_mrr": 0.29264582639582637,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 21117,
+                "top10_lost": 18318,
+                "top10_loss": 0.8674527631765876,
+                "raw_mrr": 0.05451501849987252,
+                "excess_boundary_tie_queries": 0
+              }
+            },
+            "after": {
+              "original_top10_train_truths": {
+                "facts": 2820,
+                "top10_lost": 15,
+                "top10_loss": 0.005319148936170213,
+                "raw_mrr": 0.29277904817798434,
+                "excess_boundary_tie_queries": 0
+              },
+              "all_train_truths_at_exempt_keys": {
+                "facts": 21117,
+                "top10_lost": 18312,
+                "top10_loss": 0.8671686319079415,
+                "raw_mrr": 0.05458446788852616,
+                "excess_boundary_tie_queries": 0
+              }
+            }
+          },
+          "nonworse_than_source_exempt_train_gate": true,
+          "no_excess_boundary_ties_gate": true,
+          "evidence_sha256": {
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s43/scope.npz": "232e725eefd5c4c960f0dadcf6cb53a4e22bf6db46d3956168d50f9c9cbf38d3",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s43/receipt.json": "034486355e73e7fa5ec35185734cd1fbc4e2b9c778de2181540404f9b57ca31a",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s43/audit.json": "f5ebc6dca5a04b450c44bbbddd171c231ad196ce4503acdb4fd6d88a9e66b4c5",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/certificates.npz": "944bbddbd480a365e998bae7e50907941969f82401199cd255f37d831e0e6297",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/best.pt": "e7ccfdc410819fbd893e8e82e3b066f12e20d0c097efff33129c0bf4dfa9183d",
+            "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/capacity-scoped-s43/best.pt": "5f5a278da1a4cfbce944dc184d52acaa081a393e265eebffda62dd87f9891132",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+            "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821"
+          },
+          "elapsed_s": 3.25712696404662,
+          "limits": [
+            "Endpoint cost of fixed exemptions; not causal attribution of whole optimization trajectory.",
+            "Removal changes the old TRAIN truth guarantee even when nonworse than source SGD.",
+            "All TRAIN truth metrics disclose ranks outside top10; extra cost gate uses original top10 TRAIN truths.",
+            "Exact endpoint tie check does not certify arbitrary floating-point kernels."
+          ]
+        }
+      ],
+      "original_control": {
+        "method": "SharedFrozenScoped",
+        "seeds": [
+          17,
+          29,
+          43
+        ],
+        "decision": "NO_GO_FOR_THIS_FIXED_COMBINATION",
+        "new_gate": true,
+        "old_gate": false,
+        "new_answer_gate": false,
+        "source_new_answer_mrr": [
+          0.02864503130856831,
+          0.02708050885951132,
+          0.026290694740692497
+        ],
+        "after_new_answer_mrr": [
+          0.027245719771590966,
+          0.025126060395008268,
+          0.024103010210054863
+        ],
+        "source_new_answer_hits10": [
+          0.0794979079497908,
+          0.07740585774058577,
+          0.04811715481171548
+        ],
+        "after_new_answer_hits10": [
+          0.06485355648535565,
+          0.06276150627615062,
+          0.0502092050209205
+        ],
+        "source_new_valid_mrr": [
+          0.1314481953144781,
+          0.12678228644887451,
+          0.13172653626125835
+        ],
+        "after_new_valid_mrr": [
+          0.13133707323101207,
+          0.1262783106667466,
+          0.13250033490266971
+        ],
+        "source_old_valid_loss": [
+          0.01529051987767584,
+          0.028901734104046242,
+          0.03305785123966942
+        ],
+        "after_old_valid_loss": [
+          0.01529051987767584,
+          0.02023121387283237,
+          0.024793388429752067
+        ],
+        "paired_new_mrr_deltas": [
+          -0.00011112208346603092,
+          -0.0005039757821279078,
+          0.0007737986414113607
+        ],
+        "paired_old_loss_deltas": [
+          0.0,
+          -0.008670520231213872,
+          -0.008264462809917356
+        ]
+      }
+    }
+  ],
+  "unavailable": [],
+  "original_control_sha256": "d194c7b1cee4c2af03d30b34f124682f404806d9870e22d79e51b9e79270a963"
+}

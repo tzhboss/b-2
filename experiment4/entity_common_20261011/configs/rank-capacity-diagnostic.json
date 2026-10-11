@@ -1,0 +1,13 @@
+{
+  "scope": "Exploratory TRAIN-only strict saturated old top10 diagnosis; no model update or utility reads",
+  "task_config": "configs/task-projection19.json",
+  "scope_directory": "artifacts/shared-rank-scope24",
+  "source_template": "newentityonly-distmult-s{seed}",
+  "seeds": [17, 29, 43],
+  "old_entities": 7505,
+  "dimension": 200,
+  "k": 10,
+  "score_batch": 8,
+  "cpu_threads": 2,
+  "output_directory": "artifacts/rank-capacity-diagnostic/strict-train-v1"
+}

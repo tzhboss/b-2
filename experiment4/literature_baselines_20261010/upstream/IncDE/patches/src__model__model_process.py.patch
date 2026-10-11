@@ -1,0 +1,51 @@
+diff --git a/src/model/model_process.py b/src/model/model_process.py
+index 3f30bd5..c92d171 100644
+--- a/src/model/model_process.py
++++ b/src/model/model_process.py
+@@ -238,6 +238,8 @@ class DevBatchProcessor():
+         num = 0
+         results = {}
+         hr2t = self.kg.snapshots[self.args.snapshot].hr2t_all
++        # Observation only: no scores, filters, ranks or gradients are modified.
++        export_rows = [] if getattr(self.args, 'rank_export_dir', None) and not self.args.valid else None
+         """ Start evaluation """
+         for batch in self.data_loader:
+             # head: (batch_size, 1)
+@@ -281,6 +283,13 @@ class DevBatchProcessor():
+             """ rank all candidate entities """
+             """ Two sorts can be optimized into one """
+             ranks = 1 + torch.argsort(torch.argsort(pred, dim=1, descending=True), dim=1, descending=False)[batch_size_range, tail]
++            if export_rows is not None:
++                export_rows.append(np.column_stack([
++                    head.detach().cpu().numpy(), relation.detach().cpu().numpy(),
++                    tail.detach().cpu().numpy(), ranks.detach().cpu().numpy(),
++                    np.full(len(head), pred.shape[1], dtype=np.int64),
++                    label.bool().sum(dim=1).detach().cpu().numpy()
++                ]).astype(np.int64))
+             ranks = ranks.float() # all right tail ranks, (batch_size, 1)
+             results['count'] = torch.numel(ranks) + results.get('count', 0.0)
+             results['mr'] = torch.sum(ranks).item() + results.get('mr', 0.0)
+@@ -289,6 +298,23 @@ class DevBatchProcessor():
+                 results[f'hits{k + 1}'] = torch.numel(
+                     ranks[ranks <= (k + 1)]
+                 ) + results.get(f'hits{k + 1}', 0.0)
++        if export_rows is not None:
++            from pathlib import Path
++            export_dir = Path(self.args.rank_export_dir)
++            export_dir.mkdir(parents=True, exist_ok=True)
++            phase = 'pre_fwt' if getattr(self.args, 'test_FWT', False) else 'post_train'
++            export_file = export_dir / f"train{self.args.snapshot}_test{self.args.snapshot_test}_{phase}.npz"
++            # Refuse overwrite so an earlier observation remains reviewable.
++            if export_file.exists():
++                raise FileExistsError(str(export_file))
++            rows = np.concatenate(export_rows, axis=0)
++            np.savez_compressed(export_file, head=rows[:, 0], relation=rows[:, 1],
++                                tail=rows[:, 2], rank=rows[:, 3],
++                                candidates=rows[:, 4], filtered_count=rows[:, 5],
++                                trained_snapshot=np.int64(self.args.snapshot),
++                                tested_snapshot=np.int64(self.args.snapshot_test),
++                                seed=np.int64(self.args.random_seed),
++                                metric_contract=np.array('author double-argsort; historical query-snapshot candidate and filter set'))
+         count = float(results['count'])
+         for key, val in results.items():
+             results[key] = round(val / count, 4)

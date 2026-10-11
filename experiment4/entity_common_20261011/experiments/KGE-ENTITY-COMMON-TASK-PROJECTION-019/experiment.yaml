@@ -1,0 +1,96 @@
+id: KGE-ENTITY-COMMON-TASK-PROJECTION-019
+status: batch_terminal_audited_full_comparison_pending
+config: configs/task-projection19.json
+protocol: plan/task-metric-protocol.md
+scope: Fixed Euclidean versus TRAIN old-head/new-gold task-score nearest projection
+  under common rank-frontier protection; exposed development adaptation
+registered_utc: '2026-10-11T02:51:20.888467+00:00'
+frozen_input_sha256:
+  configs/learned-proposal-training.json: b3544766311dc8c0de99291e8786ca3a7a3b6cbb5d9c6bbcb8d4e82bfc09d3b3
+  plan/safe-proposal-protocol.md: 5f4be68ddde812610fcd28706cd5c0a3ae4a9019e133f72738b0071f58dcdc14
+  src/learned_rank_projection.py: 1d557383a3a6485e36078ee8e3975f6f1121f4879cc31c9e4b507e309b4bbd60
+  src/safe_proposal.py: 1d59ab00ed48cf660738265f4dd31a2d3dbdd1c87a6f292f6334f619e334b947
+  src/rank_entity.py: 30fe53d5120ee09cf19fa45a10a470b3f9c4f451a719ef991f4453adc831d2bf
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+  scripts/run_rank_task.py: 53535c43cf57ccd76c8e221a6f3246fec96ed3d6b0cfd76b1e677fd4d3e76ea9
+  scripts/audit_exported_embeddings.py: 56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719
+  scripts/coordinate_gpu_claim_queue_v2.py: cec53ab2e2493b522e2bc8de8b53de5fd620a1ab0c386e4f0d0b15c6adcb9741
+  configs/task-projection19.json: ec7512c8bb38b8ae353e4cb1414c53545b103c876949282ef7d2f1815fdee825
+  src/learned_task_projection.py: 9010a0532cc9caa231b9863e3319a2e55da7b2fc4d336a2c6fddb91c387da241
+  src/task_metric_projection.py: a7cdbcdbe89daed55462f6ac0babeb2cd36713e4b391cb035aef713a3b1de7ff
+  scripts/coordinate_gpu_claim_queue_v3.py: 85eba60c0ca239e183aac424e1a7bba50a3cdf863d626adbe2b82b26561f0d07
+  plan/task-metric-protocol.md: a4cae7ce61e21ed75bc8e352312da1941f5a0fb9995266680d841d44063ad5df
+  results/KGE-ENTITY-COMMON-TASK-METRIC-CONTROLS-018/summary.json: 783ddd88acdf57fd4932f889d6cadd708acce57d5a8716baf79d8b2d50d30025
+external_source_sha256:
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/learned-proposal-basis12/s17/basis.npz: cb1c697198a46372a70246a6b7e455cc76ad2c6d560615490d6523ed233f50e5
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/learned-proposal-basis12/s17/receipt.json: cc4d210e8924c7dac6cc44bc65fd35f7efdf16132d6358b574c3de9e2ae703e7
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s17/guards.npz: 400a0e3d10b2fbaa8348a5f659407c7335f1d51ad9d839e449f53c25086e0190
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s17/receipt.json: 51958955049cc98841839669f790f64f4e7d47059b8853e3bfd4ccbc88c89931
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/best.pt: 271fc956663f366943b7ad7db4f3b7f7a2fa4bf65c0af95ce73fd77fd023dbf0
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/initial.pt: d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/audit.json: 11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/training-receipt.json: e8c7261e88fa4acc74f7b43048d4a32d1cc0011dc6f7bf854a86d8e33004cacb
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/learned-proposal-basis12/s29/basis.npz: c477221510f9e186d1207ccea76af6233f47dbce193e17cd42ad243a5ce3d7f6
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/learned-proposal-basis12/s29/receipt.json: 5d5c3e9aaa740c80e3a4ab846884009eb5822dd5ddd08ddaed587e4829d0b5b3
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s29/guards.npz: 8734f4b4f4a179bc6da48311e6ab9afd36d2d2e704c25bff6f69a6aca61f2219
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s29/receipt.json: d1c89e9c5934874eff3eb8c46e0bbc8a1692175c644b571b5e2fadc736fa26fb
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/best.pt: f36408997a08b94170144581f718bf457241e3063292f3015fcf466a69372eb3
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/initial.pt: 73da0eb88e62176738d0da2a5d1cfd3e7d54d85aa0af6cc5766ad818526151d6
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/audit.json: 11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/training-receipt.json: 08a88c8a4c648c724bf27f62c9f1e07699f423b66f1cd0e64ffebc563460c5ea
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/learned-proposal-basis12/s43/basis.npz: 93a2ea54dd85273448de797deb6f6f442bb8549caedf5b0ff68c9d9d40861d98
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/learned-proposal-basis12/s43/receipt.json: a54d25024d45f69c196d5d7f02c2ef1c19dfec92dde6d3f57d27161272fbbe3a
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s43/guards.npz: a0c32172574c0f07b11e505d724f592696ea7f6a00f30597df31de0bddf5dced
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s43/receipt.json: 95598df479e5435aed3c80e577a260d8d0932e6f86925bcf834a00b76910b52d
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/best.pt: e7ccfdc410819fbd893e8e82e3b066f12e20d0c097efff33129c0bf4dfa9183d
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/initial.pt: 95e70f431788cad45126d3e4a404a557c9ecd12ed2822aec0ecc534bb6b8e131
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/audit.json: 2dcc19b46dfbfdc14f0a6eb638e90c4f3bf219e60bab6a3505cc1b8c415546bd
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/training-receipt.json: 93b4b857fa5c30c4fb28e18f591ae4a0fc4538ddf1aa818fa66f80a0e21f2004
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/safe-proposal-controls11r2/receipt.json: 63ac9c21580d653c319875107e60b59b4e58d358c7141fb78c2da2aad0a1d196
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/safe-proposal-integration11/receipt.json: 93a3a472fd30c595bb76e1de9f68081b2bb9658f512ecde7a455be0e3fae60d2
+active_processes: []
+jobs:
+  taskprojection-euclidean-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  taskprojection-task_query-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  taskprojection-euclidean-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  taskprojection-task_query-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  taskprojection-euclidean-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  taskprojection-task_query-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+prerequisite_control_experiment: KGE-ENTITY-COMMON-TASK-METRIC-CONTROLS-018
+development_gate:
+  new_mrr_ratio: 0.98
+  old_loss_ratio: 0.75
+  new_answer_mrr_ratio: 0.98
+  new_answer_hits10_ratio: 0.95
+  weighted_nonworse_than_euclidean: true
+coordinator_pid: 736050
+preflight_passed:
+- taskprojection-euclidean-s17
+- taskprojection-euclidean-s29
+- taskprojection-euclidean-s43
+- taskprojection-task_query-s17
+- taskprojection-task_query-s29
+- taskprojection-task_query-s43
+queued_jobs: []
+queued_audits: []
+completed_utc: '2026-10-11T03:05:22.799276+00:00'
+result_directory: results/KGE-ENTITY-COMMON-TASK-PROJECTION-019

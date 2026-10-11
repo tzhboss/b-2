@@ -1,0 +1,35 @@
+{
+  "id": "stark-fbckge-s3407",
+  "method": "STARK",
+  "dataset": "FB_CKGE",
+  "seed": 3407,
+  "status": "PASS_WITH_LIMITATIONS",
+  "checks": 504,
+  "posttrain_sample_replay_exact": 120,
+  "posttrain_sample_replay_total": 120,
+  "native_final_metrics": {
+    "mrr": 0.226,
+    "hits1": 0.134,
+    "hits3": 0.261,
+    "hits10": 0.408
+  },
+  "high_precision_final_metrics": {
+    "mrr": 0.22641611947338877,
+    "hits1": 0.13370415155179363,
+    "hits3": 0.26082224909310764,
+    "hits10": 0.4079645304312777
+  },
+  "native_training_seconds": 1315.2660222053528,
+  "full_process_seconds": 1462.4149296620162,
+  "source_commit": "2e546b30688c660903247df89330671f4f73bf68",
+  "frozen_manifest_sha256": "aecf864e71fb66308ad561c9a886812854708927a827d42ab1d2c7261d72cbf9",
+  "audit_sha256": "6dae357912c289f204835ac8bfd41481cbf3930938309520a1e132060a7dceba",
+  "independent_controller_input_binding": "PASS",
+  "limitations": [
+    "single seed, no published five-seedmean",
+    "19 metric exports checked;120 deterministic sampled posttrain queryinferences,notallscore",
+    "4preFWT ranks counted/metricschecked,no initialRNGstate replay",
+    "historical-query candidate/filter prefix omits later competitors",
+    "released feature distance/PageRank mismatch;fullpaper inaccessible"
+  ]
+}

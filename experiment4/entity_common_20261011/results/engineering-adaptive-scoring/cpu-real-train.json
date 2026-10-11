@@ -1,0 +1,94 @@
+{
+  "status": "PASS_REAL_TRAIN_FIXED_TREE_SCORING_BIT_PATTERNS",
+  "device": "cpu",
+  "torch_version": "2.5.1+cu124",
+  "cuda_visible_devices": null,
+  "gpu_name": null,
+  "gpu_peak_allocated_bytes": null,
+  "query_groups": 68270,
+  "reference_members": 235882,
+  "measurements": [
+    {
+      "candidate_ids": [
+        7505
+      ],
+      "queries": 68270,
+      "score_cells": 68270,
+      "bitwise_original_and_numpy": true,
+      "seconds": {
+        "original": [
+          0.20185950002633035,
+          0.19442371896002442,
+          0.19273640192113817,
+          0.2068659319775179,
+          0.20213450002484024
+        ],
+        "adaptive": [
+          0.05656786996405572,
+          0.05553291901014745,
+          0.05731590010691434,
+          0.05741801799740642,
+          0.058621836011298
+        ]
+      },
+      "median_seconds": {
+        "original": 0.20185950002633035,
+        "adaptive": 0.05731590010691434
+      },
+      "median_speed_ratio": 3.5218761225033766
+    },
+    {
+      "candidate_ids": [
+        7505,
+        7506
+      ],
+      "queries": 68270,
+      "score_cells": 136540,
+      "bitwise_original_and_numpy": true,
+      "seconds": {
+        "original": [
+          0.239439751021564,
+          0.2407210449455306,
+          0.23537534498609602,
+          0.23836293804924935,
+          0.23361507593654096
+        ],
+        "adaptive": [
+          0.10206828603986651,
+          0.10340167197864503,
+          0.11156467406544834,
+          0.10554423194844276,
+          0.10526471794582903
+        ]
+      },
+      "median_seconds": {
+        "original": 0.23836293804924935,
+        "adaptive": 0.10526471794582903
+      },
+      "median_speed_ratio": 2.264414351748084
+    }
+  ],
+  "elapsed_s": 4.479984252946451,
+  "input_sha256": {
+    "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/scope.npz": "c6f9ff5aca629f7d3b0bd7ddb8b1a9d90745d1b510edc5e786959d0df1f5984d",
+    "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/receipt.json": "e226e96bb184322d343b8aedb3ca38c93a4ac66dc6169e7cb9b4889b843b3f61",
+    "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/audit.json": "1f003257c58577842c603deae5406a6a673d4502b318254af4238b9af2df4173",
+    "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+    "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/training-receipt.json": "b2204a0eb40ff72a7149f14d8954ff9f7fb1fc9eae7048aee4cef873f9fc5095",
+    "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/audit.json": "5b3d911b7fb75f95ead56d326a61403f874b448ac110ee0bad9f3f6eccecb28f",
+    "/data/lc/tzh/experiment4/entity_common_20261011/configs/scoring-real-cpu-controls.json": "475ca632ded5a53da1a5ad164d6f700f7425cb646b53e336b6fc346cf1160abf"
+  },
+  "code_sha256": {
+    "src/adaptive_rank_scoring.py": "d478a0bc553d8a7ccb0079b68821bfcfe102455b97cf8b5aa496712ab697c2f1",
+    "src/shared_rank_cache_v2.py": "8980fac50a992a74f1dd339c582ad3d1382c0fb140688cf87c1a6c6a4c7abaad",
+    "scripts/check_real_rank_scoring.py": "4c5de7aa10ffdab301077183aca527fd27e69303a77af18f0540ec71e6d0a50a"
+  },
+  "test_scored": false,
+  "valid_scored": false,
+  "model_updates": 0,
+  "limits": [
+    "TRAIN query-key score and narrow-call timing only; not complete trajectory equivalence.",
+    "One device/session and fixed initial rows; concurrency affects timings; no end-to-end speed claim.",
+    "No current registered source/config/scorer, scientific gate or model is modified."
+  ]
+}

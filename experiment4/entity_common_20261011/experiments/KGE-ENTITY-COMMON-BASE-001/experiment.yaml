@@ -1,0 +1,62 @@
+id: KGE-ENTITY-COMMON-BASE-001
+status: completed_audited_common_base_only
+registered_utc: '2026-10-10T17:00:07.634168+00:00'
+protocol: plan/base-training-protocol.md
+config: configs/base-training.json
+frozen_input_sha256:
+  configs/base-training.json: 531d5ec2bcb5b8c5459aef3d1b8936524c08ae0531f771773746c43ddf442736
+  plan/base-training-protocol.md: 5b97a3e207c0525f96467fd09ed7c36e394f8462c22ae0fea1eb96bc1708c955
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+  scripts/train_common_base.py: 89ec6bb2d652b2927571924b56e53e49e709f715300d8d141621c9fe3cff4f6b
+  scripts/audit_common_base.py: 4529522912f6cf95cf9e85bb24d60fc083f45cac2d62dd3021491e0ab98574cf
+  scripts/coordinate_common_base.py: 6a1d65d654bb08fcd74e488f858384a1c8fcdaec6103251a8e946db16debf35b
+active_processes: []
+seeds:
+- 17
+- 29
+- 43
+stage: common old-model training only
+future_after_candidate_count: 11258
+model_comparison_started: false
+coordinator_pid: 685936
+jobs:
+  distmult-s17:
+    status: completed_audited_common_base_only
+    stage: audit
+    exit_code: 0
+  distmult-s29:
+    status: completed_audited_common_base_only
+    stage: audit
+    exit_code: 0
+  distmult-s43:
+    status: completed_audited_common_base_only
+    stage: audit
+    exit_code: 0
+  sage-base-s17:
+    status: completed_audited_common_base_only
+    stage: audit
+    exit_code: 0
+  transe-s17:
+    status: completed_audited_common_base_only
+    stage: audit
+    exit_code: 0
+  transe-s29:
+    status: completed_audited_common_base_only
+    stage: audit
+    exit_code: 0
+  transe-s43:
+    status: completed_audited_common_base_only
+    stage: audit
+    exit_code: 0
+  sage-base-s29:
+    status: completed_audited_common_base_only
+    stage: audit
+    exit_code: 0
+  sage-base-s43:
+    status: completed_audited_common_base_only
+    stage: audit
+    exit_code: 0
+method_comparison_started: false
+queued_jobs: []
+completed_utc: '2026-10-10T17:27:57.307466+00:00'
+result_directory: results/KGE-ENTITY-COMMON-BASE-001

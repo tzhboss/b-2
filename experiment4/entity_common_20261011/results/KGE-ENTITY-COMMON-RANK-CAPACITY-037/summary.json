@@ -1,0 +1,1271 @@
+{
+  "scope": "Fixed full/scoped frozen-old rank projection with TRAIN-certified saturated query exemptions; three-seed exposed development comparison",
+  "rows": [
+    {
+      "id": "capacity-full-s17",
+      "method": "CapacityFrozenFull",
+      "seed": 17,
+      "kind": "DistMult",
+      "candidates": 11258,
+      "old_before": {
+        "queries": 74428,
+        "raw_mrr": 0.17151552566595352,
+        "hits1": 0.0932847852958564,
+        "hits10": 0.3447627237061321
+      },
+      "old_after": {
+        "queries": 74428,
+        "raw_mrr": 0.1694478563918335,
+        "hits1": 0.09290858279142258,
+        "hits10": 0.3407991616058473
+      },
+      "new_after": {
+        "queries": 12406,
+        "raw_mrr": 0.1385968233402069,
+        "hits1": 0.08310494921812027,
+        "hits10": 0.24488150894728358
+      },
+      "old_top10_loss": 0.011496492595479345,
+      "old_top10_protected": 25660,
+      "same_pool_top10_loss": 0.0005370328932647124,
+      "mean_rank_displacement": 203.3904578921911,
+      "old_parameter_l2": 0.0,
+      "relation_parameter_l2": 0.0,
+      "evaluation_elapsed_s": 8.441327166045085,
+      "training": {
+        "id": "capacity-full-s17",
+        "method": "CapacityFrozenFull",
+        "kind": "DistMult",
+        "seed": 17,
+        "test_read": false,
+        "preflight": false,
+        "epochs_executed": 1,
+        "elapsed_s": 3930.96727048303,
+        "source_sgd_elapsed_s": 26.396612597978674,
+        "processed_new_entities": 3753,
+        "accepted_updates": 3753,
+        "zero_fallbacks": 0,
+        "steps_modifying_old_rows": 0,
+        "selected_old_rows": [],
+        "selection": {
+          "selected_old_rows": [],
+          "new_entities_with_old_candidate": 0
+        },
+        "validation": {
+          "source": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.15207658327823748,
+              "hits1": 0.0791015625,
+              "hits10": 0.314453125
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.1314481953144781,
+              "hits1": 0.0751953125,
+              "hits10": 0.248046875
+            }
+          ],
+          "after": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.1531459779679158,
+              "hits1": 0.080078125,
+              "hits10": 0.3154296875
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.13063080727956342,
+              "hits1": 0.076171875,
+              "hits10": 0.240234375
+            }
+          ],
+          "source_old_top10_loss": 0.01529051987767584,
+          "after_old_top10_loss": 0.012232415902140673,
+          "directional": {
+            "query_head_new_gold_old": {
+              "queries": 445,
+              "source": {
+                "queries": 445,
+                "raw_mrr": 0.24852659975502753,
+                "hits1": 0.15280898876404495,
+                "hits10": 0.44719101123595506
+              },
+              "after": {
+                "queries": 445,
+                "raw_mrr": 0.2505101613513801,
+                "hits1": 0.1550561797752809,
+                "hits10": 0.45617977528089887
+              }
+            },
+            "query_head_old_gold_new": {
+              "queries": 478,
+              "source": {
+                "queries": 478,
+                "raw_mrr": 0.02864503130856831,
+                "hits1": 0.0041841004184100415,
+                "hits10": 0.0794979079497908
+              },
+              "after": {
+                "queries": 478,
+                "raw_mrr": 0.025986526108277366,
+                "hits1": 0.0041841004184100415,
+                "hits10": 0.058577405857740586
+              }
+            },
+            "both_new": {
+              "queries": 101,
+              "source": {
+                "queries": 101,
+                "raw_mrr": 0.10214148658953133,
+                "hits1": 0.06930693069306931,
+                "hits10": 0.16831683168316833
+              },
+              "after": {
+                "queries": 101,
+                "raw_mrr": 0.09769668686289323,
+                "hits1": 0.06930693069306931,
+                "hits10": 0.1485148514851485
+              }
+            }
+          }
+        },
+        "guard_scope": "full",
+        "guard_arithmetic": "Explicit float64 binary tree; common evaluation uses unchanged GEMM",
+        "terminal_complete_guard_recount": {
+          "query_keys": 67949,
+          "references": 232675,
+          "commits": 3753,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/initial.pt": "d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/training-receipt.json": "d12e807da08a4920550e3bb2db7dd15bc5f04e5e789626209895c961bf34eb2a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/best.pt": "271fc956663f366943b7ad7db4f3b7f7a2fa4bf65c0af95ce73fd77fd023dbf0",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/training-receipt.json": "e8c7261e88fa4acc74f7b43048d4a32d1cc0011dc6f7bf854a86d8e33004cacb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/scope.npz": "e57774b09ec556364e6484a856e54a64dc5c29ce46a6097c057b0dc2829f974a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/receipt.json": "78130b1ef9eaed4866828a7b342ebc48cf7f8c094bd742771bf9db9090dad954",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/audit.json": "60128ab5d18003182a5ee13bb74ae80c9d04b64f49b0318fb608e9c66cb6b877",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/receipt.json": "e226e96bb184322d343b8aedb3ca38c93a4ac66dc6169e7cb9b4889b843b3f61",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json": "f9e7899ea167971dabd81f646edc084587a2804c438118c530a2d28bcd10f064"
+        },
+        "checkpoint_sha256": "1ed5dde1c4845354bcd521e9d9ebcd0d5dab8e2acf1764ba5ff947db4866127e",
+        "output_sha256": {
+          "initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+          "shared-replay.npz": "d1446033c532008e4bc2dd5449da860c4c8ac70d291ac492b7c1fdc9eaee73a7",
+          "steps.json": "df3e701e6dbf173f9cd868a29562ac46f350587c6c3162b137b13ed9db8c0ad6",
+          "selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094"
+        },
+        "implementation_sha256": "bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a",
+        "peak_gpu_memory_bytes": 6640333312,
+        "limits": [
+          "Known mechanism combination, not confirmed novelty.",
+          "TRAIN compiled initially retained references only; no hard guarantee on all TEST.",
+          "All common evaluation queries retained; affected P exemption explicitly changes contract.",
+          "Working-set failures return unchanged; no global optimum guarantee.",
+          "Preflight performance is not a scientific utility outcome.",
+          "TRAIN-certified capacity exemptions explicitly waive old TRUE/P membership at selected affected keys; no all-old-knowledge guarantee.",
+          "Independent utility includes old TRAIN truth loss and MRR costs at exempted keys; final common evaluation is unchanged.",
+          "Original024 preparation plus035 and amortized three-seed certificate costs included; untimed split-integrity setup excluded."
+        ],
+        "scope_preparation_elapsed_s": 39.64055168492875,
+        "source_inclusive_incremental_elapsed_s": 3997.0044347659373,
+        "scope_preparation_cost_components": [
+          {
+            "source": "Current scope policy preparation",
+            "elapsed_s": 4.2803878209088,
+            "amortization": 1
+          },
+          {
+            "source": "artifacts/shared-rank-scope24/shared-rank-scope-s17/receipt.json",
+            "elapsed_s": 22.441722022020258,
+            "amortization": 1
+          },
+          {
+            "source": "artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json",
+            "elapsed_s": 11.368294727018414,
+            "amortization": 3
+          },
+          {
+            "source": "artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json",
+            "elapsed_s": 1.5501471149812762,
+            "amortization": 3
+          }
+        ],
+        "preparation_cost_limits": [
+          "Shared three-seed diagnostic costs divided equally across seeds; not independently repeated per run.",
+          "Separate global split-integrity setup is untimed and excluded, explicitly disclosed.",
+          "Numerical solver and common scoring routines unchanged."
+        ]
+      }
+    },
+    {
+      "id": "capacity-scoped-s17",
+      "method": "CapacityFrozenScoped",
+      "seed": 17,
+      "kind": "DistMult",
+      "candidates": 11258,
+      "old_before": {
+        "queries": 74428,
+        "raw_mrr": 0.17151552566595352,
+        "hits1": 0.0932847852958564,
+        "hits10": 0.3447627237061321
+      },
+      "old_after": {
+        "queries": 74428,
+        "raw_mrr": 0.16927361439246116,
+        "hits1": 0.0928951469876928,
+        "hits10": 0.33983178373730316
+      },
+      "new_after": {
+        "queries": 12406,
+        "raw_mrr": 0.13898169767083746,
+        "hits1": 0.08302434305980977,
+        "hits10": 0.24681605674673546
+      },
+      "old_top10_loss": 0.014302416212003118,
+      "old_top10_protected": 25660,
+      "same_pool_top10_loss": 0.0026851644663235625,
+      "mean_rank_displacement": 206.5277852421132,
+      "old_parameter_l2": 0.0,
+      "relation_parameter_l2": 0.0,
+      "evaluation_elapsed_s": 8.220577775966376,
+      "training": {
+        "id": "capacity-scoped-s17",
+        "method": "CapacityFrozenScoped",
+        "kind": "DistMult",
+        "seed": 17,
+        "test_read": false,
+        "preflight": false,
+        "epochs_executed": 1,
+        "elapsed_s": 3556.808428841061,
+        "source_sgd_elapsed_s": 26.396612597978674,
+        "processed_new_entities": 3753,
+        "accepted_updates": 3753,
+        "zero_fallbacks": 0,
+        "steps_modifying_old_rows": 0,
+        "selected_old_rows": [],
+        "selection": {
+          "selected_old_rows": [],
+          "new_entities_with_old_candidate": 0
+        },
+        "validation": {
+          "source": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.15207658327823748,
+              "hits1": 0.0791015625,
+              "hits10": 0.314453125
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.1314481953144781,
+              "hits1": 0.0751953125,
+              "hits10": 0.248046875
+            }
+          ],
+          "after": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.15305229594298178,
+              "hits1": 0.080078125,
+              "hits10": 0.314453125
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.1313571611943318,
+              "hits1": 0.0751953125,
+              "hits10": 0.244140625
+            }
+          ],
+          "source_old_top10_loss": 0.01529051987767584,
+          "after_old_top10_loss": 0.01529051987767584,
+          "directional": {
+            "query_head_new_gold_old": {
+              "queries": 445,
+              "source": {
+                "queries": 445,
+                "raw_mrr": 0.24852659975502753,
+                "hits1": 0.15280898876404495,
+                "hits10": 0.44719101123595506
+              },
+              "after": {
+                "queries": 445,
+                "raw_mrr": 0.2505649024603436,
+                "hits1": 0.15280898876404495,
+                "hits10": 0.4584269662921348
+              }
+            },
+            "query_head_old_gold_new": {
+              "queries": 478,
+              "source": {
+                "queries": 478,
+                "raw_mrr": 0.02864503130856831,
+                "hits1": 0.0041841004184100415,
+                "hits10": 0.0794979079497908
+              },
+              "after": {
+                "queries": 478,
+                "raw_mrr": 0.02728414065284294,
+                "hits1": 0.0041841004184100415,
+                "hits10": 0.06485355648535565
+              }
+            },
+            "both_new": {
+              "queries": 101,
+              "source": {
+                "queries": 101,
+                "raw_mrr": 0.10214148658953133,
+                "hits1": 0.06930693069306931,
+                "hits10": 0.16831683168316833
+              },
+              "after": {
+                "queries": 101,
+                "raw_mrr": 0.09867853699093021,
+                "hits1": 0.06930693069306931,
+                "hits10": 0.1485148514851485
+              }
+            }
+          }
+        },
+        "guard_scope": "scoped",
+        "guard_arithmetic": "Explicit float64 binary tree; common evaluation uses unchanged GEMM",
+        "terminal_complete_guard_recount": {
+          "query_keys": 67939,
+          "references": 217995,
+          "commits": 3753,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/initial.pt": "d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/training-receipt.json": "d12e807da08a4920550e3bb2db7dd15bc5f04e5e789626209895c961bf34eb2a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/best.pt": "271fc956663f366943b7ad7db4f3b7f7a2fa4bf65c0af95ce73fd77fd023dbf0",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/training-receipt.json": "e8c7261e88fa4acc74f7b43048d4a32d1cc0011dc6f7bf854a86d8e33004cacb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/scope.npz": "e57774b09ec556364e6484a856e54a64dc5c29ce46a6097c057b0dc2829f974a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/receipt.json": "78130b1ef9eaed4866828a7b342ebc48cf7f8c094bd742771bf9db9090dad954",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/audit.json": "60128ab5d18003182a5ee13bb74ae80c9d04b64f49b0318fb608e9c66cb6b877",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/receipt.json": "e226e96bb184322d343b8aedb3ca38c93a4ac66dc6169e7cb9b4889b843b3f61",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json": "f9e7899ea167971dabd81f646edc084587a2804c438118c530a2d28bcd10f064"
+        },
+        "checkpoint_sha256": "afd464672333045edffb572921c8505c9d04bff8983e9f6ff823952b776510f6",
+        "output_sha256": {
+          "initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+          "shared-replay.npz": "e2259141cdd5fab7f71a5a145af740f065c1804d1006a49af913c8fc5d4b7473",
+          "steps.json": "a8133f1f8bae4709c041af484cea1c343d1e755d17403fcd2ac086cab350da07",
+          "selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094"
+        },
+        "implementation_sha256": "bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a",
+        "peak_gpu_memory_bytes": 6639828992,
+        "limits": [
+          "Known mechanism combination, not confirmed novelty.",
+          "TRAIN compiled initially retained references only; no hard guarantee on all TEST.",
+          "All common evaluation queries retained; affected P exemption explicitly changes contract.",
+          "Working-set failures return unchanged; no global optimum guarantee.",
+          "Preflight performance is not a scientific utility outcome.",
+          "TRAIN-certified capacity exemptions explicitly waive old TRUE/P membership at selected affected keys; no all-old-knowledge guarantee.",
+          "Independent utility includes old TRAIN truth loss and MRR costs at exempted keys; final common evaluation is unchanged.",
+          "Original024 preparation plus035 and amortized three-seed certificate costs included; untimed split-integrity setup excluded."
+        ],
+        "scope_preparation_elapsed_s": 39.64055168492875,
+        "source_inclusive_incremental_elapsed_s": 3622.8455931239682,
+        "scope_preparation_cost_components": [
+          {
+            "source": "Current scope policy preparation",
+            "elapsed_s": 4.2803878209088,
+            "amortization": 1
+          },
+          {
+            "source": "artifacts/shared-rank-scope24/shared-rank-scope-s17/receipt.json",
+            "elapsed_s": 22.441722022020258,
+            "amortization": 1
+          },
+          {
+            "source": "artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json",
+            "elapsed_s": 11.368294727018414,
+            "amortization": 3
+          },
+          {
+            "source": "artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json",
+            "elapsed_s": 1.5501471149812762,
+            "amortization": 3
+          }
+        ],
+        "preparation_cost_limits": [
+          "Shared three-seed diagnostic costs divided equally across seeds; not independently repeated per run.",
+          "Separate global split-integrity setup is untimed and excluded, explicitly disclosed.",
+          "Numerical solver and common scoring routines unchanged."
+        ]
+      }
+    },
+    {
+      "id": "capacity-full-s29",
+      "method": "CapacityFrozenFull",
+      "seed": 29,
+      "kind": "DistMult",
+      "candidates": 11258,
+      "old_before": {
+        "queries": 74428,
+        "raw_mrr": 0.1715277888024236,
+        "hits1": 0.09403719030472403,
+        "hits10": 0.34184715429677004
+      },
+      "old_after": {
+        "queries": 74428,
+        "raw_mrr": 0.16900568441733047,
+        "hits1": 0.09349975815553287,
+        "hits10": 0.33678185629064333
+      },
+      "new_after": {
+        "queries": 12406,
+        "raw_mrr": 0.14162800927507968,
+        "hits1": 0.08479767854264066,
+        "hits10": 0.25326454941157506
+      },
+      "old_top10_loss": 0.014817435050898086,
+      "old_top10_protected": 25443,
+      "same_pool_top10_loss": 0.0005876503028659254,
+      "mean_rank_displacement": 248.9481646692105,
+      "old_parameter_l2": 0.0,
+      "relation_parameter_l2": 0.0,
+      "evaluation_elapsed_s": 8.453390931012109,
+      "training": {
+        "id": "capacity-full-s29",
+        "method": "CapacityFrozenFull",
+        "kind": "DistMult",
+        "seed": 29,
+        "test_read": false,
+        "preflight": false,
+        "epochs_executed": 1,
+        "elapsed_s": 3860.8876540169585,
+        "source_sgd_elapsed_s": 24.228343252907507,
+        "processed_new_entities": 3753,
+        "accepted_updates": 3753,
+        "zero_fallbacks": 0,
+        "steps_modifying_old_rows": 0,
+        "selected_old_rows": [],
+        "selection": {
+          "selected_old_rows": [],
+          "new_entities_with_old_candidate": 0
+        },
+        "validation": {
+          "source": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.14783451057095426,
+              "hits1": 0.0712890625,
+              "hits10": 0.328125
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.12678228644887451,
+              "hits1": 0.0703125,
+              "hits10": 0.2373046875
+            }
+          ],
+          "after": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.14875288166737374,
+              "hits1": 0.0712890625,
+              "hits10": 0.3310546875
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.1261505658684386,
+              "hits1": 0.0712890625,
+              "hits10": 0.2236328125
+            }
+          ],
+          "source_old_top10_loss": 0.028901734104046242,
+          "after_old_top10_loss": 0.02023121387283237,
+          "directional": {
+            "query_head_new_gold_old": {
+              "queries": 445,
+              "source": {
+                "queries": 445,
+                "raw_mrr": 0.2362271885460287,
+                "hits1": 0.14157303370786517,
+                "hits10": 0.4247191011235955
+              },
+              "after": {
+                "queries": 445,
+                "raw_mrr": 0.23638580777450713,
+                "hits1": 0.14157303370786517,
+                "hits10": 0.4202247191011236
+              }
+            },
+            "query_head_old_gold_new": {
+              "queries": 478,
+              "source": {
+                "queries": 478,
+                "raw_mrr": 0.02708050885951132,
+                "hits1": 0.0020920502092050207,
+                "hits10": 0.07740585774058577
+              },
+              "after": {
+                "queries": 478,
+                "raw_mrr": 0.024904816630868333,
+                "hits1": 0.0020920502092050207,
+                "hits10": 0.056485355648535567
+              }
+            },
+            "both_new": {
+              "queries": 101,
+              "source": {
+                "queries": 101,
+                "raw_mrr": 0.11643048698830051,
+                "hits1": 0.07920792079207921,
+                "hits10": 0.16831683168316833
+              },
+              "after": {
+                "queries": 101,
+                "raw_mrr": 0.11962368950564721,
+                "hits1": 0.0891089108910891,
+                "hits10": 0.1485148514851485
+              }
+            }
+          }
+        },
+        "guard_scope": "full",
+        "guard_arithmetic": "Explicit float64 binary tree; common evaluation uses unchanged GEMM",
+        "terminal_complete_guard_recount": {
+          "query_keys": 67932,
+          "references": 231373,
+          "commits": 3753,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/initial.pt": "73da0eb88e62176738d0da2a5d1cfd3e7d54d85aa0af6cc5766ad818526151d6",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/training-receipt.json": "1781fd6b0142ae22a7426ad7bdc42f2d5e11e3fd9b7c2007e9fbade32b5658a5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/best.pt": "f36408997a08b94170144581f718bf457241e3063292f3015fcf466a69372eb3",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/training-receipt.json": "08a88c8a4c648c724bf27f62c9f1e07699f423b66f1cd0e64ffebc563460c5ea",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s29/scope.npz": "f6b5066650593bddc524fa67239b8ef1218e2618593a6fe18e544912d3c72e83",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s29/receipt.json": "cfedd5c9bf258f888e1c780a665d06ee9cef41e97d394ca32a29ceb91c79a18e",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s29/audit.json": "c846430667aaf005f2041e54b762cb16eba7ce736f6415e7e0dcb5ca8bb465bf",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/receipt.json": "6f8bd9439a575a1990f9c6fae624fadcd7745ab15ca7d217559a6ba750c89393",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json": "f9e7899ea167971dabd81f646edc084587a2804c438118c530a2d28bcd10f064"
+        },
+        "checkpoint_sha256": "b7803dee4cf80f1a9749875fde82f40f93e05393325d6dad1390eee04260acc1",
+        "output_sha256": {
+          "initial.pt": "3d36467b203f3bc5f2a05de6597ad01e07c4fcec8d7f83bf50c51e6eda9f75cb",
+          "shared-replay.npz": "00cab605a07d1954da5b948fac8d8b9029728ec453ea7919cde1638858070b96",
+          "steps.json": "a761a7a585432015e55327d9b58f42cb175d666a590279aedbc9c9e910fde891",
+          "selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094"
+        },
+        "implementation_sha256": "bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a",
+        "peak_gpu_memory_bytes": 6638781952,
+        "limits": [
+          "Known mechanism combination, not confirmed novelty.",
+          "TRAIN compiled initially retained references only; no hard guarantee on all TEST.",
+          "All common evaluation queries retained; affected P exemption explicitly changes contract.",
+          "Working-set failures return unchanged; no global optimum guarantee.",
+          "Preflight performance is not a scientific utility outcome.",
+          "TRAIN-certified capacity exemptions explicitly waive old TRUE/P membership at selected affected keys; no all-old-knowledge guarantee.",
+          "Independent utility includes old TRAIN truth loss and MRR costs at exempted keys; final common evaluation is unchanged.",
+          "Original024 preparation plus035 and amortized three-seed certificate costs included; untimed split-integrity setup excluded."
+        ],
+        "scope_preparation_elapsed_s": 38.65526813912827,
+        "source_inclusive_incremental_elapsed_s": 3923.771265408994,
+        "scope_preparation_cost_components": [
+          {
+            "source": "Current scope policy preparation",
+            "elapsed_s": 4.536626531044021,
+            "amortization": 1
+          },
+          {
+            "source": "artifacts/shared-rank-scope24/shared-rank-scope-s29/receipt.json",
+            "elapsed_s": 21.200199766084552,
+            "amortization": 1
+          },
+          {
+            "source": "artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json",
+            "elapsed_s": 11.368294727018414,
+            "amortization": 3
+          },
+          {
+            "source": "artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json",
+            "elapsed_s": 1.5501471149812762,
+            "amortization": 3
+          }
+        ],
+        "preparation_cost_limits": [
+          "Shared three-seed diagnostic costs divided equally across seeds; not independently repeated per run.",
+          "Separate global split-integrity setup is untimed and excluded, explicitly disclosed.",
+          "Numerical solver and common scoring routines unchanged."
+        ]
+      }
+    },
+    {
+      "id": "capacity-scoped-s29",
+      "method": "CapacityFrozenScoped",
+      "seed": 29,
+      "kind": "DistMult",
+      "candidates": 11258,
+      "old_before": {
+        "queries": 74428,
+        "raw_mrr": 0.1715277888024236,
+        "hits1": 0.09403719030472403,
+        "hits10": 0.34184715429677004
+      },
+      "old_after": {
+        "queries": 74428,
+        "raw_mrr": 0.1688519219617727,
+        "hits1": 0.09344601494061375,
+        "hits10": 0.3359622722631268
+      },
+      "new_after": {
+        "queries": 12406,
+        "raw_mrr": 0.1419632957766107,
+        "hits1": 0.08479767854264066,
+        "hits10": 0.25310333709495403
+      },
+      "old_top10_loss": 0.017214951067091144,
+      "old_top10_protected": 25443,
+      "same_pool_top10_loss": 0.0023506012114637015,
+      "mean_rank_displacement": 251.47182511957865,
+      "old_parameter_l2": 0.0,
+      "relation_parameter_l2": 0.0,
+      "evaluation_elapsed_s": 8.324813827057369,
+      "training": {
+        "id": "capacity-scoped-s29",
+        "method": "CapacityFrozenScoped",
+        "kind": "DistMult",
+        "seed": 29,
+        "test_read": false,
+        "preflight": false,
+        "epochs_executed": 1,
+        "elapsed_s": 3601.306133872946,
+        "source_sgd_elapsed_s": 24.228343252907507,
+        "processed_new_entities": 3753,
+        "accepted_updates": 3753,
+        "zero_fallbacks": 0,
+        "steps_modifying_old_rows": 0,
+        "selected_old_rows": [],
+        "selection": {
+          "selected_old_rows": [],
+          "new_entities_with_old_candidate": 0
+        },
+        "validation": {
+          "source": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.14783451057095426,
+              "hits1": 0.0712890625,
+              "hits10": 0.328125
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.12678228644887451,
+              "hits1": 0.0703125,
+              "hits10": 0.2373046875
+            }
+          ],
+          "after": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.1486031176548573,
+              "hits1": 0.0712890625,
+              "hits10": 0.3310546875
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.12628838743076398,
+              "hits1": 0.0712890625,
+              "hits10": 0.2275390625
+            }
+          ],
+          "source_old_top10_loss": 0.028901734104046242,
+          "after_old_top10_loss": 0.02023121387283237,
+          "directional": {
+            "query_head_new_gold_old": {
+              "queries": 445,
+              "source": {
+                "queries": 445,
+                "raw_mrr": 0.2362271885460287,
+                "hits1": 0.14157303370786517,
+                "hits10": 0.4247191011235955
+              },
+              "after": {
+                "queries": 445,
+                "raw_mrr": 0.2363611479645483,
+                "hits1": 0.14157303370786517,
+                "hits10": 0.42247191011235957
+              }
+            },
+            "query_head_old_gold_new": {
+              "queries": 478,
+              "source": {
+                "queries": 478,
+                "raw_mrr": 0.02708050885951132,
+                "hits1": 0.0020920502092050207,
+                "hits10": 0.07740585774058577
+              },
+              "after": {
+                "queries": 478,
+                "raw_mrr": 0.02512608638975448,
+                "hits1": 0.0020920502092050207,
+                "hits10": 0.06276150627615062
+              }
+            },
+            "both_new": {
+              "queries": 101,
+              "source": {
+                "queries": 101,
+                "raw_mrr": 0.11643048698830051,
+                "hits1": 0.07920792079207921,
+                "hits10": 0.16831683168316833
+              },
+              "after": {
+                "queries": 101,
+                "raw_mrr": 0.12008246129282844,
+                "hits1": 0.0891089108910891,
+                "hits10": 0.1485148514851485
+              }
+            }
+          }
+        },
+        "guard_scope": "scoped",
+        "guard_arithmetic": "Explicit float64 binary tree; common evaluation uses unchanged GEMM",
+        "terminal_complete_guard_recount": {
+          "query_keys": 67922,
+          "references": 216819,
+          "commits": 3753,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/initial.pt": "73da0eb88e62176738d0da2a5d1cfd3e7d54d85aa0af6cc5766ad818526151d6",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s29/training-receipt.json": "1781fd6b0142ae22a7426ad7bdc42f2d5e11e3fd9b7c2007e9fbade32b5658a5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/best.pt": "f36408997a08b94170144581f718bf457241e3063292f3015fcf466a69372eb3",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s29/training-receipt.json": "08a88c8a4c648c724bf27f62c9f1e07699f423b66f1cd0e64ffebc563460c5ea",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s29/scope.npz": "f6b5066650593bddc524fa67239b8ef1218e2618593a6fe18e544912d3c72e83",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s29/receipt.json": "cfedd5c9bf258f888e1c780a665d06ee9cef41e97d394ca32a29ceb91c79a18e",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s29/audit.json": "c846430667aaf005f2041e54b762cb16eba7ce736f6415e7e0dcb5ca8bb465bf",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s29/receipt.json": "6f8bd9439a575a1990f9c6fae624fadcd7745ab15ca7d217559a6ba750c89393",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json": "f9e7899ea167971dabd81f646edc084587a2804c438118c530a2d28bcd10f064"
+        },
+        "checkpoint_sha256": "c0329a9bc975bf2d548dc5aac9a2615c1a0d4db4644fffd45248aae81285ceba",
+        "output_sha256": {
+          "initial.pt": "3d36467b203f3bc5f2a05de6597ad01e07c4fcec8d7f83bf50c51e6eda9f75cb",
+          "shared-replay.npz": "b43753cdb17bf685084d563571ad214df1f792aee53a979c06049047c9f7df0c",
+          "steps.json": "29c3886466577c53bb966160cea2a2949e345d69af7829bcab6c26fbb717606d",
+          "selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094"
+        },
+        "implementation_sha256": "bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a",
+        "peak_gpu_memory_bytes": 6637713408,
+        "limits": [
+          "Known mechanism combination, not confirmed novelty.",
+          "TRAIN compiled initially retained references only; no hard guarantee on all TEST.",
+          "All common evaluation queries retained; affected P exemption explicitly changes contract.",
+          "Working-set failures return unchanged; no global optimum guarantee.",
+          "Preflight performance is not a scientific utility outcome.",
+          "TRAIN-certified capacity exemptions explicitly waive old TRUE/P membership at selected affected keys; no all-old-knowledge guarantee.",
+          "Independent utility includes old TRAIN truth loss and MRR costs at exempted keys; final common evaluation is unchanged.",
+          "Original024 preparation plus035 and amortized three-seed certificate costs included; untimed split-integrity setup excluded."
+        ],
+        "scope_preparation_elapsed_s": 38.65526813912827,
+        "source_inclusive_incremental_elapsed_s": 3664.1897452649814,
+        "scope_preparation_cost_components": [
+          {
+            "source": "Current scope policy preparation",
+            "elapsed_s": 4.536626531044021,
+            "amortization": 1
+          },
+          {
+            "source": "artifacts/shared-rank-scope24/shared-rank-scope-s29/receipt.json",
+            "elapsed_s": 21.200199766084552,
+            "amortization": 1
+          },
+          {
+            "source": "artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json",
+            "elapsed_s": 11.368294727018414,
+            "amortization": 3
+          },
+          {
+            "source": "artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json",
+            "elapsed_s": 1.5501471149812762,
+            "amortization": 3
+          }
+        ],
+        "preparation_cost_limits": [
+          "Shared three-seed diagnostic costs divided equally across seeds; not independently repeated per run.",
+          "Separate global split-integrity setup is untimed and excluded, explicitly disclosed.",
+          "Numerical solver and common scoring routines unchanged."
+        ]
+      }
+    },
+    {
+      "id": "capacity-full-s43",
+      "method": "CapacityFrozenFull",
+      "seed": 43,
+      "kind": "DistMult",
+      "candidates": 11258,
+      "old_before": {
+        "queries": 74428,
+        "raw_mrr": 0.17145413103008614,
+        "hits1": 0.09305637663245016,
+        "hits10": 0.34320417047347773
+      },
+      "old_after": {
+        "queries": 74428,
+        "raw_mrr": 0.16800801137305646,
+        "hits1": 0.09246520126833987,
+        "hits10": 0.33561294136615255
+      },
+      "new_after": {
+        "queries": 12406,
+        "raw_mrr": 0.13922265789281915,
+        "hits1": 0.08326616153474126,
+        "hits10": 0.2533451555698855
+      },
+      "old_top10_loss": 0.02211869715001566,
+      "old_top10_protected": 25544,
+      "same_pool_top10_loss": 0.0004482696790389098,
+      "mean_rank_displacement": 350.32756489493204,
+      "old_parameter_l2": 0.0,
+      "relation_parameter_l2": 0.0,
+      "evaluation_elapsed_s": 8.85196957795415,
+      "training": {
+        "id": "capacity-full-s43",
+        "method": "CapacityFrozenFull",
+        "kind": "DistMult",
+        "seed": 43,
+        "test_read": false,
+        "preflight": false,
+        "epochs_executed": 1,
+        "elapsed_s": 3511.2501567041036,
+        "source_sgd_elapsed_s": 25.5849679709645,
+        "processed_new_entities": 3753,
+        "accepted_updates": 3753,
+        "zero_fallbacks": 0,
+        "steps_modifying_old_rows": 0,
+        "selected_old_rows": [],
+        "selection": {
+          "selected_old_rows": [],
+          "new_entities_with_old_candidate": 0
+        },
+        "validation": {
+          "source": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.15349691885662,
+              "hits1": 0.0732421875,
+              "hits10": 0.3427734375
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.13172653626125835,
+              "hits1": 0.080078125,
+              "hits10": 0.2265625
+            }
+          ],
+          "after": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.1559013162275672,
+              "hits1": 0.0751953125,
+              "hits10": 0.345703125
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.13178222603664208,
+              "hits1": 0.080078125,
+              "hits10": 0.2275390625
+            }
+          ],
+          "source_old_top10_loss": 0.03305785123966942,
+          "after_old_top10_loss": 0.024793388429752067,
+          "directional": {
+            "query_head_new_gold_old": {
+              "queries": 445,
+              "source": {
+                "queries": 445,
+                "raw_mrr": 0.2503433326938339,
+                "hits1": 0.16179775280898875,
+                "hits10": 0.42921348314606744
+              },
+              "after": {
+                "queries": 445,
+                "raw_mrr": 0.25330206884968054,
+                "hits1": 0.1662921348314607,
+                "hits10": 0.42921348314606744
+              }
+            },
+            "query_head_old_gold_new": {
+              "queries": 478,
+              "source": {
+                "queries": 478,
+                "raw_mrr": 0.026290694740692497,
+                "hits1": 0.0041841004184100415,
+                "hits10": 0.04811715481171548
+              },
+              "after": {
+                "queries": 478,
+                "raw_mrr": 0.023794125241733032,
+                "hits1": 0.0,
+                "hits10": 0.05230125523012552
+              }
+            },
+            "both_new": {
+              "queries": 101,
+              "source": {
+                "queries": 101,
+                "raw_mrr": 0.10810136630417277,
+                "hits1": 0.07920792079207921,
+                "hits10": 0.1782178217821782
+              },
+              "after": {
+                "queries": 101,
+                "raw_mrr": 0.10744541542440846,
+                "hits1": 0.07920792079207921,
+                "hits10": 0.16831683168316833
+              }
+            }
+          }
+        },
+        "guard_scope": "full",
+        "guard_arithmetic": "Explicit float64 binary tree; common evaluation uses unchanged GEMM",
+        "terminal_complete_guard_recount": {
+          "query_keys": 67993,
+          "references": 231271,
+          "commits": 3753,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/initial.pt": "95e70f431788cad45126d3e4a404a557c9ecd12ed2822aec0ecc534bb6b8e131",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/audit.json": "2dcc19b46dfbfdc14f0a6eb638e90c4f3bf219e60bab6a3505cc1b8c415546bd",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/training-receipt.json": "6abf62132ebe50e83b78e8e6af18bb02c9aa8f46a4ad697282a01e07bb701769",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/best.pt": "e7ccfdc410819fbd893e8e82e3b066f12e20d0c097efff33129c0bf4dfa9183d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/training-receipt.json": "93b4b857fa5c30c4fb28e18f591ae4a0fc4538ddf1aa818fa66f80a0e21f2004",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s43/scope.npz": "232e725eefd5c4c960f0dadcf6cb53a4e22bf6db46d3956168d50f9c9cbf38d3",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s43/receipt.json": "034486355e73e7fa5ec35185734cd1fbc4e2b9c778de2181540404f9b57ca31a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s43/audit.json": "f5ebc6dca5a04b450c44bbbddd171c231ad196ce4503acdb4fd6d88a9e66b4c5",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/receipt.json": "f470ba845e8aa5a56ccc4b2eb868c6303f3535462233d4821b931747a21e50db",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json": "f9e7899ea167971dabd81f646edc084587a2804c438118c530a2d28bcd10f064"
+        },
+        "checkpoint_sha256": "3fa4cf7d0be0e1d3202c461e30b58e15d8ac8f26f9d31ebedad2a23100c3de9a",
+        "output_sha256": {
+          "initial.pt": "cfd08088c56429f7b1895510be60b2d36b899d61433bb9d7f34f7f537cc50b7c",
+          "shared-replay.npz": "f9dc88b7f3d62ffe72aa4250b820b8ec641e4ca420396cedeb31794f9c7fc2ef",
+          "steps.json": "7c9bbed2a7ff51724e017d8fb91739479db3239001d24f731ee5ad69087ce4d1",
+          "selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094"
+        },
+        "implementation_sha256": "bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a",
+        "peak_gpu_memory_bytes": 6644275712,
+        "limits": [
+          "Known mechanism combination, not confirmed novelty.",
+          "TRAIN compiled initially retained references only; no hard guarantee on all TEST.",
+          "All common evaluation queries retained; affected P exemption explicitly changes contract.",
+          "Working-set failures return unchanged; no global optimum guarantee.",
+          "Preflight performance is not a scientific utility outcome.",
+          "TRAIN-certified capacity exemptions explicitly waive old TRUE/P membership at selected affected keys; no all-old-knowledge guarantee.",
+          "Independent utility includes old TRAIN truth loss and MRR costs at exempted keys; final common evaluation is unchanged.",
+          "Original024 preparation plus035 and amortized three-seed certificate costs included; untimed split-integrity setup excluded."
+        ],
+        "scope_preparation_elapsed_s": 37.857490110948376,
+        "source_inclusive_incremental_elapsed_s": 3574.6926147860163,
+        "scope_preparation_cost_components": [
+          {
+            "source": "Current scope policy preparation",
+            "elapsed_s": 4.423884206917137,
+            "amortization": 1
+          },
+          {
+            "source": "artifacts/shared-rank-scope24/shared-rank-scope-s43/receipt.json",
+            "elapsed_s": 20.515164062031545,
+            "amortization": 1
+          },
+          {
+            "source": "artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json",
+            "elapsed_s": 11.368294727018414,
+            "amortization": 3
+          },
+          {
+            "source": "artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json",
+            "elapsed_s": 1.5501471149812762,
+            "amortization": 3
+          }
+        ],
+        "preparation_cost_limits": [
+          "Shared three-seed diagnostic costs divided equally across seeds; not independently repeated per run.",
+          "Separate global split-integrity setup is untimed and excluded, explicitly disclosed.",
+          "Numerical solver and common scoring routines unchanged."
+        ]
+      }
+    },
+    {
+      "id": "capacity-scoped-s43",
+      "method": "CapacityFrozenScoped",
+      "seed": 43,
+      "kind": "DistMult",
+      "candidates": 11258,
+      "old_before": {
+        "queries": 74428,
+        "raw_mrr": 0.17145413103008614,
+        "hits1": 0.09305637663245016,
+        "hits10": 0.34320417047347773
+      },
+      "old_after": {
+        "queries": 74428,
+        "raw_mrr": 0.16790260618753028,
+        "hits1": 0.09245176546461009,
+        "hits10": 0.33508894502069114
+      },
+      "new_after": {
+        "queries": 12406,
+        "raw_mrr": 0.13989679979270236,
+        "hits1": 0.08391101080122522,
+        "hits10": 0.25455424794454296
+      },
+      "old_top10_loss": 0.02364547447541497,
+      "old_top10_protected": 25544,
+      "same_pool_top10_loss": 0.0014344629729245114,
+      "mean_rank_displacement": 352.3652791960015,
+      "old_parameter_l2": 0.0,
+      "relation_parameter_l2": 0.0,
+      "evaluation_elapsed_s": 8.53645054192748,
+      "training": {
+        "id": "capacity-scoped-s43",
+        "method": "CapacityFrozenScoped",
+        "kind": "DistMult",
+        "seed": 43,
+        "test_read": false,
+        "preflight": false,
+        "epochs_executed": 1,
+        "elapsed_s": 3519.1805771458894,
+        "source_sgd_elapsed_s": 25.5849679709645,
+        "processed_new_entities": 3753,
+        "accepted_updates": 3753,
+        "zero_fallbacks": 0,
+        "steps_modifying_old_rows": 0,
+        "selected_old_rows": [],
+        "selection": {
+          "selected_old_rows": [],
+          "new_entities_with_old_candidate": 0
+        },
+        "validation": {
+          "source": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.15349691885662,
+              "hits1": 0.0732421875,
+              "hits10": 0.3427734375
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.13172653626125835,
+              "hits1": 0.080078125,
+              "hits10": 0.2265625
+            }
+          ],
+          "after": [
+            {
+              "queries": 1024,
+              "raw_mrr": 0.155857988335812,
+              "hits1": 0.0751953125,
+              "hits10": 0.345703125
+            },
+            {
+              "queries": 1024,
+              "raw_mrr": 0.13251169424214118,
+              "hits1": 0.0810546875,
+              "hits10": 0.2275390625
+            }
+          ],
+          "source_old_top10_loss": 0.03305785123966942,
+          "after_old_top10_loss": 0.024793388429752067,
+          "directional": {
+            "query_head_new_gold_old": {
+              "queries": 445,
+              "source": {
+                "queries": 445,
+                "raw_mrr": 0.2503433326938339,
+                "hits1": 0.16179775280898875,
+                "hits10": 0.42921348314606744
+              },
+              "after": {
+                "queries": 445,
+                "raw_mrr": 0.25490490811548383,
+                "hits1": 0.16853932584269662,
+                "hits10": 0.4314606741573034
+              }
+            },
+            "query_head_old_gold_new": {
+              "queries": 478,
+              "source": {
+                "queries": 478,
+                "raw_mrr": 0.026290694740692497,
+                "hits1": 0.0041841004184100415,
+                "hits10": 0.04811715481171548
+              },
+              "after": {
+                "queries": 478,
+                "raw_mrr": 0.02412629115293242,
+                "hits1": 0.0,
+                "hits10": 0.0502092050209205
+              }
+            },
+            "both_new": {
+              "queries": 101,
+              "source": {
+                "queries": 101,
+                "raw_mrr": 0.10810136630417277,
+                "hits1": 0.07920792079207921,
+                "hits10": 0.1782178217821782
+              },
+              "after": {
+                "queries": 101,
+                "raw_mrr": 0.10620716456891648,
+                "hits1": 0.07920792079207921,
+                "hits10": 0.16831683168316833
+              }
+            }
+          }
+        },
+        "guard_scope": "scoped",
+        "guard_arithmetic": "Explicit float64 binary tree; common evaluation uses unchanged GEMM",
+        "terminal_complete_guard_recount": {
+          "query_keys": 67985,
+          "references": 216473,
+          "commits": 3753,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/initial.pt": "95e70f431788cad45126d3e4a404a557c9ecd12ed2822aec0ecc534bb6b8e131",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/audit.json": "2dcc19b46dfbfdc14f0a6eb638e90c4f3bf219e60bab6a3505cc1b8c415546bd",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s43/training-receipt.json": "6abf62132ebe50e83b78e8e6af18bb02c9aa8f46a4ad697282a01e07bb701769",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/best.pt": "e7ccfdc410819fbd893e8e82e3b066f12e20d0c097efff33129c0bf4dfa9183d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s43/training-receipt.json": "93b4b857fa5c30c4fb28e18f591ae4a0fc4538ddf1aa818fa66f80a0e21f2004",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s43/scope.npz": "232e725eefd5c4c960f0dadcf6cb53a4e22bf6db46d3956168d50f9c9cbf38d3",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s43/receipt.json": "034486355e73e7fa5ec35185734cd1fbc4e2b9c778de2181540404f9b57ca31a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s43/audit.json": "f5ebc6dca5a04b450c44bbbddd171c231ad196ce4503acdb4fd6d88a9e66b4c5",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s43/receipt.json": "f470ba845e8aa5a56ccc4b2eb868c6303f3535462233d4821b931747a21e50db",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json": "f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json": "f9e7899ea167971dabd81f646edc084587a2804c438118c530a2d28bcd10f064"
+        },
+        "checkpoint_sha256": "5f5a278da1a4cfbce944dc184d52acaa081a393e265eebffda62dd87f9891132",
+        "output_sha256": {
+          "initial.pt": "cfd08088c56429f7b1895510be60b2d36b899d61433bb9d7f34f7f537cc50b7c",
+          "shared-replay.npz": "f3178d8ec3ee807b10c6f38d0e8f2820e9ad838278c74d0d50d631a4dd4410b5",
+          "steps.json": "6e1ec9f9c84021bb47ff24b6f83249a052a3ee38d1584974b9d4e51d8b0763c2",
+          "selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094"
+        },
+        "implementation_sha256": "bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a",
+        "peak_gpu_memory_bytes": 6644000768,
+        "limits": [
+          "Known mechanism combination, not confirmed novelty.",
+          "TRAIN compiled initially retained references only; no hard guarantee on all TEST.",
+          "All common evaluation queries retained; affected P exemption explicitly changes contract.",
+          "Working-set failures return unchanged; no global optimum guarantee.",
+          "Preflight performance is not a scientific utility outcome.",
+          "TRAIN-certified capacity exemptions explicitly waive old TRUE/P membership at selected affected keys; no all-old-knowledge guarantee.",
+          "Independent utility includes old TRAIN truth loss and MRR costs at exempted keys; final common evaluation is unchanged.",
+          "Original024 preparation plus035 and amortized three-seed certificate costs included; untimed split-integrity setup excluded."
+        ],
+        "scope_preparation_elapsed_s": 37.857490110948376,
+        "source_inclusive_incremental_elapsed_s": 3582.623035227802,
+        "scope_preparation_cost_components": [
+          {
+            "source": "Current scope policy preparation",
+            "elapsed_s": 4.423884206917137,
+            "amortization": 1
+          },
+          {
+            "source": "artifacts/shared-rank-scope24/shared-rank-scope-s43/receipt.json",
+            "elapsed_s": 20.515164062031545,
+            "amortization": 1
+          },
+          {
+            "source": "artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json",
+            "elapsed_s": 11.368294727018414,
+            "amortization": 3
+          },
+          {
+            "source": "artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json",
+            "elapsed_s": 1.5501471149812762,
+            "amortization": 3
+          }
+        ],
+        "preparation_cost_limits": [
+          "Shared three-seed diagnostic costs divided equally across seeds; not independently repeated per run.",
+          "Separate global split-integrity setup is untimed and excluded, explicitly disclosed.",
+          "Numerical solver and common scoring routines unchanged."
+        ]
+      }
+    }
+  ]
+}

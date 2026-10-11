@@ -1,0 +1,12 @@
+diff --git a/src/parse_args.py b/src/parse_args.py
+index 2f15831..12abb38 100644
+--- a/src/parse_args.py
++++ b/src/parse_args.py
+@@ -63,4 +63,6 @@ parser.add_argument("-record", dest="record", default=False, help="Record the lo
+ parser.add_argument("-predict_result", dest="predict_result", default=False, help="The result of predict") # explore
+ 
+ 
++# Optional observation output; defaults preserve author's behavior.
++parser.add_argument("-rank_export_dir", default=None, help="Save unrounded test-query integer ranks for independent metric audit")
+ args = parser.parse_args()
+\ No newline at end of file

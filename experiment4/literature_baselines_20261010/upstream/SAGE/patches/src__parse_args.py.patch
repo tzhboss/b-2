@@ -1,0 +1,13 @@
+diff --git a/src/parse_args.py b/src/parse_args.py
+index b02ff6d..b622758 100644
+--- a/src/parse_args.py
++++ b/src/parse_args.py
+@@ -62,4 +62,7 @@ parser.add_argument('-valid_metrics', dest='valid_metrics', default='mrr')
+ parser.add_argument('-valid', dest='valid', default=True, help='indicator of test or valid')
+ parser.add_argument('-note', dest='note', default='', help='The note of log file name')
+ parser.add_argument('-seed', dest='seed', default=55, help='random seed, 11 22 33 44 55 for our experiments')
++# Optional observation export; no method/training default changes.
++parser.add_argument('-rank_export_dir', default=None)
++parser.add_argument('-result_export_dir', default='res_diff_datasets/')
+ args = parser.parse_args()
+\ No newline at end of file

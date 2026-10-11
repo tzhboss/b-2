@@ -1,0 +1,327 @@
+{
+  "status": "PASS_PARTIAL_SEED17_AUDITS_AND_LIVE_REMAINING_HANDLES",
+  "observed_utc": "2026-10-11T10:09:18.329329+00:00",
+  "coordinator": {
+    "pid": 790633,
+    "state": "S",
+    "parent": 790632,
+    "start_ticks": 103834623,
+    "command": "../literature_baselines_20261010/environment/downloads/bin/python -u scripts/resume_capacity_resources_v2.py --root . --stage resume "
+  },
+  "utility_coordinator": {
+    "pid": 783381,
+    "state": "S",
+    "parent": 1,
+    "start_ticks": 103493681,
+    "command": "/data/lc/tzh/experiment4/literature_baselines_20261010/environment/downloads/bin/python -u /data/lc/tzh/experiment4/entity_common_20261011/scripts/coordinate_cpu_audits_v2.py --root /data/lc/tzh/experiment4/entity_common_20261011 --config configs/rank-capacity-utility38.json "
+  },
+  "jobs": [
+    {
+      "id": "capacity-full-s17",
+      "seed": 17,
+      "method": "CapacityFrozenFull",
+      "state": {
+        "status": "completed_audited",
+        "stage": "audit",
+        "exit_code": 0
+      },
+      "observed_updates": 3753,
+      "solver_audit": {
+        "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+        "failures": [],
+        "preflight": false,
+        "patches_replayed": 3753,
+        "modified_row_steps_replayed": 3753,
+        "terminal_query_groups_replayed": 67949,
+        "reference_members_retained": 232675,
+        "terminal_cpu_counts_exact": true,
+        "absolute_budgets_checked": true,
+        "train_only_parameter_selection_rebuilt": true,
+        "weights_and_radii_independently_checked": true,
+        "unselected_old_rows_unchanged": true,
+        "test_read": false,
+        "valid_read": false,
+        "elapsed_s": 1075.740581304999,
+        "receipt_sha256": "82d6d23d5db9935afb91fef58eaa6b234c63e2c5934900d3afa86eb75f6f640d",
+        "limits": [
+          "Complete patch identity/bounds replay and entire terminal scope; utility remains separate.",
+          "All-step GPU guards logged and terminal entire CPU scope replayed; intermediate CPU full scopes not repeated."
+        ]
+      },
+      "common_test_metrics": {
+        "id": "capacity-full-s17",
+        "method": "CapacityFrozenFull",
+        "seed": 17,
+        "kind": "DistMult",
+        "candidates": 11258,
+        "old_before": {
+          "queries": 74428,
+          "raw_mrr": 0.17151552566595352,
+          "hits1": 0.0932847852958564,
+          "hits10": 0.3447627237061321
+        },
+        "old_after": {
+          "queries": 74428,
+          "raw_mrr": 0.1694478563918335,
+          "hits1": 0.09290858279142258,
+          "hits10": 0.3407991616058473
+        },
+        "new_after": {
+          "queries": 12406,
+          "raw_mrr": 0.1385968233402069,
+          "hits1": 0.08310494921812027,
+          "hits10": 0.24488150894728358
+        },
+        "old_top10_loss": 0.011496492595479345,
+        "old_top10_protected": 25660,
+        "same_pool_top10_loss": 0.0005370328932647124,
+        "mean_rank_displacement": 203.3904578921911,
+        "old_parameter_l2": 0.0,
+        "relation_parameter_l2": 0.0,
+        "evaluation_elapsed_s": 8.441327166045085
+      },
+      "utility_decision": "PENDING_COMPLETE_THREE_SEEDS_AND_038"
+    },
+    {
+      "id": "capacity-scoped-s17",
+      "seed": 17,
+      "method": "CapacityFrozenScoped",
+      "state": {
+        "status": "completed_audited",
+        "stage": "audit",
+        "exit_code": 0
+      },
+      "observed_updates": 3753,
+      "solver_audit": {
+        "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+        "failures": [],
+        "preflight": false,
+        "patches_replayed": 3753,
+        "modified_row_steps_replayed": 3753,
+        "terminal_query_groups_replayed": 67939,
+        "reference_members_retained": 217995,
+        "terminal_cpu_counts_exact": true,
+        "absolute_budgets_checked": true,
+        "train_only_parameter_selection_rebuilt": true,
+        "weights_and_radii_independently_checked": true,
+        "unselected_old_rows_unchanged": true,
+        "test_read": false,
+        "valid_read": false,
+        "elapsed_s": 1043.4177679020213,
+        "receipt_sha256": "5e0e41cee31d1e035c4db4f146e3b6cebbb4c5921b467ab0ec8496dc3f32afe5",
+        "limits": [
+          "Complete patch identity/bounds replay and entire terminal scope; utility remains separate.",
+          "All-step GPU guards logged and terminal entire CPU scope replayed; intermediate CPU full scopes not repeated."
+        ]
+      },
+      "common_test_metrics": {
+        "id": "capacity-scoped-s17",
+        "method": "CapacityFrozenScoped",
+        "seed": 17,
+        "kind": "DistMult",
+        "candidates": 11258,
+        "old_before": {
+          "queries": 74428,
+          "raw_mrr": 0.17151552566595352,
+          "hits1": 0.0932847852958564,
+          "hits10": 0.3447627237061321
+        },
+        "old_after": {
+          "queries": 74428,
+          "raw_mrr": 0.16927361439246116,
+          "hits1": 0.0928951469876928,
+          "hits10": 0.33983178373730316
+        },
+        "new_after": {
+          "queries": 12406,
+          "raw_mrr": 0.13898169767083746,
+          "hits1": 0.08302434305980977,
+          "hits10": 0.24681605674673546
+        },
+        "old_top10_loss": 0.014302416212003118,
+        "old_top10_protected": 25660,
+        "same_pool_top10_loss": 0.0026851644663235625,
+        "mean_rank_displacement": 206.5277852421132,
+        "old_parameter_l2": 0.0,
+        "relation_parameter_l2": 0.0,
+        "evaluation_elapsed_s": 8.220577775966376
+      },
+      "utility_decision": "PENDING_COMPLETE_THREE_SEEDS_AND_038"
+    },
+    {
+      "id": "capacity-full-s29",
+      "seed": 29,
+      "method": "CapacityFrozenFull",
+      "state": {
+        "status": "running",
+        "stage": "train",
+        "pid": 791072,
+        "gpu": 3
+      },
+      "observed_updates": 1920,
+      "accepted_updates": 1920,
+      "observed_fallbacks": 0,
+      "observed_violations": 0,
+      "observed_elapsed_s": 2090.0,
+      "wrapper": {
+        "pid": 791072,
+        "state": "S",
+        "parent": 790633,
+        "start_ticks": 103849058,
+        "command": "/data/lc/tzh/experiment4/literature_baselines_20261010/environment/downloads/bin/python -u /data/lc/tzh/experiment4/entity_common_20261011/scripts/run_graph_with_preparation_costs.py --root /data/lc/tzh/experiment4/entity_common_20261011 --config configs/rank-capacity37.json --job capacity-full-s29 --stage train "
+      },
+      "children": [
+        {
+          "pid": 791076,
+          "state": "R",
+          "parent": 791072,
+          "start_ticks": 103849066,
+          "command": "/data/lc/tzh/experiment4/literature_baselines_20261010/environment/downloads/bin/python /data/lc/tzh/experiment4/entity_common_20261011/scripts/run_shared_graph.py --root /data/lc/tzh/experiment4/entity_common_20261011 --config configs/rank-capacity37.json --job capacity-full-s29 --stage train "
+        }
+      ]
+    },
+    {
+      "id": "capacity-scoped-s29",
+      "seed": 29,
+      "method": "CapacityFrozenScoped",
+      "state": {
+        "status": "running",
+        "stage": "train",
+        "pid": 791073,
+        "gpu": 5
+      },
+      "observed_updates": 2176,
+      "accepted_updates": 2176,
+      "observed_fallbacks": 0,
+      "observed_violations": 0,
+      "observed_elapsed_s": 2115.42,
+      "wrapper": {
+        "pid": 791073,
+        "state": "S",
+        "parent": 790633,
+        "start_ticks": 103849058,
+        "command": "/data/lc/tzh/experiment4/literature_baselines_20261010/environment/downloads/bin/python -u /data/lc/tzh/experiment4/entity_common_20261011/scripts/run_graph_with_preparation_costs.py --root /data/lc/tzh/experiment4/entity_common_20261011 --config configs/rank-capacity37.json --job capacity-scoped-s29 --stage train "
+      },
+      "children": [
+        {
+          "pid": 791077,
+          "state": "R",
+          "parent": 791073,
+          "start_ticks": 103849066,
+          "command": "/data/lc/tzh/experiment4/literature_baselines_20261010/environment/downloads/bin/python /data/lc/tzh/experiment4/entity_common_20261011/scripts/run_shared_graph.py --root /data/lc/tzh/experiment4/entity_common_20261011 --config configs/rank-capacity37.json --job capacity-scoped-s29 --stage train "
+        }
+      ]
+    },
+    {
+      "id": "capacity-full-s43",
+      "seed": 43,
+      "method": "CapacityFrozenFull",
+      "state": {
+        "status": "running",
+        "stage": "train",
+        "pid": 791074,
+        "gpu": 6
+      },
+      "observed_updates": 2176,
+      "accepted_updates": 2176,
+      "observed_fallbacks": 0,
+      "observed_violations": 0,
+      "observed_elapsed_s": 2060.84,
+      "wrapper": {
+        "pid": 791074,
+        "state": "S",
+        "parent": 790633,
+        "start_ticks": 103849059,
+        "command": "/data/lc/tzh/experiment4/literature_baselines_20261010/environment/downloads/bin/python -u /data/lc/tzh/experiment4/entity_common_20261011/scripts/run_graph_with_preparation_costs.py --root /data/lc/tzh/experiment4/entity_common_20261011 --config configs/rank-capacity37.json --job capacity-full-s43 --stage train "
+      },
+      "children": [
+        {
+          "pid": 791075,
+          "state": "R",
+          "parent": 791074,
+          "start_ticks": 103849066,
+          "command": "/data/lc/tzh/experiment4/literature_baselines_20261010/environment/downloads/bin/python /data/lc/tzh/experiment4/entity_common_20261011/scripts/run_shared_graph.py --root /data/lc/tzh/experiment4/entity_common_20261011 --config configs/rank-capacity37.json --job capacity-full-s43 --stage train "
+        }
+      ]
+    },
+    {
+      "id": "capacity-scoped-s43",
+      "seed": 43,
+      "method": "CapacityFrozenScoped",
+      "state": {
+        "status": "running",
+        "stage": "train",
+        "pid": 792011,
+        "gpu": 2
+      },
+      "observed_updates": 1792,
+      "accepted_updates": 1792,
+      "observed_fallbacks": 0,
+      "observed_violations": 0,
+      "observed_elapsed_s": 1710.55,
+      "wrapper": {
+        "pid": 792011,
+        "state": "S",
+        "parent": 790633,
+        "start_ticks": 103880587,
+        "command": "/data/lc/tzh/experiment4/literature_baselines_20261010/environment/downloads/bin/python -u /data/lc/tzh/experiment4/entity_common_20261011/scripts/run_graph_with_preparation_costs.py --root /data/lc/tzh/experiment4/entity_common_20261011 --config configs/rank-capacity37.json --job capacity-scoped-s43 --stage train "
+      },
+      "children": [
+        {
+          "pid": 792012,
+          "state": "R",
+          "parent": 792011,
+          "start_ticks": 103880595,
+          "command": "/data/lc/tzh/experiment4/literature_baselines_20261010/environment/downloads/bin/python /data/lc/tzh/experiment4/entity_common_20261011/scripts/run_shared_graph.py --root /data/lc/tzh/experiment4/entity_common_20261011 --config configs/rank-capacity37.json --job capacity-scoped-s43 --stage train "
+        }
+      ]
+    }
+  ],
+  "observed_updates": 15570,
+  "planned_updates": 22518,
+  "observed_update_fraction": 0.6914468425259792,
+  "audited_jobs": 2,
+  "total_jobs": 6,
+  "historical_table_rows_unchanged": 39,
+  "table_before_sha256": "fd58d30ee43a036512b64d421f13464324d89ea5aa91a853547e30d9e4f93646",
+  "table_after_sha256": "139b5ca48ea7d40a23b829f4c1369872f29705558c7f438886de756997585f99",
+  "frozen_input_sha256": {
+    "configs/rank-capacity37.json": "48b3f619ada69db422656c370fbebe38a92d6411900eda48e812cade9a333299",
+    "plan/rank-capacity-comparison-protocol.md": "6bc901ce512a0e468687cfacdc0cf0e8fbef5cdfa7a6876d2dc15c0bb8607a1e",
+    "src/shared_rank_graph.py": "bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a",
+    "src/shared_rank_solver_v2.py": "a274789e9552aa0aff020a880dbffcff1b1278987712c87a685dde185d17d06d",
+    "src/shared_rank_cache_v2.py": "8980fac50a992a74f1dd339c582ad3d1382c0fb140688cf87c1a6c6a4c7abaad",
+    "src/shared_rank_scope.py": "e351d1fe0a1e72feb30fe33a0887bea92e8b761a0656dad9ac5500fb406c57be",
+    "src/common_incremental.py": "dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d",
+    "src/common_training.py": "fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1",
+    "scripts/run_shared_graph.py": "1dc294be329a6f45d2406d4abfcb78ccf87e549dd2c7b2b847e8c1a8ee935cbb",
+    "scripts/run_graph_with_preparation_costs.py": "c983ffa232168d20a1273b14ab666721b46229667277e085b2043efc2307a50f",
+    "scripts/audit_shared_graph_updates.py": "3de6d47aaeee4f2e1dbfd62dc2d6123499372c27e634e1ec97bce1c560dd589d",
+    "scripts/audit_exported_embeddings.py": "56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719",
+    "results/KGE-ENTITY-COMMON-RANK-CAPACITY-SCOPE-035/summary.json": "6ea8d7f047c32178f0bbde6666d1889ef190fbb62d483e3a3951b1062d916ef6",
+    "results/KGE-ENTITY-COMMON-RANK-CAPACITY-PREFLIGHT-036/summary.json": "f60f330dba91ee8ee7239b9d2daf067e21d281544772280bffb79e06849bb893",
+    "results/KGE-ENTITY-COMMON-SHARED-GRAPH-UTILITY-032/summary.json": "d194c7b1cee4c2af03d30b34f124682f404806d9870e22d79e51b9e79270a963",
+    "scripts/coordinate_gpu_claim_queue_v4.py": "7f6a51cb75ac60158a4c655dcddd853dbaecb2c7a33cf2741bbd65759731efe2",
+    "configs/rank-capacity-utility38.json": "0198e967d4f8eaeb6832d5c85d4ebd301fa9fa3182ee20717beb024f6c522c2a",
+    "scripts/audit_rank_capacity_utility.py": "89d96bb8738de849add123bffc607f214dae22e8ff70d46ec57466ed2ff8cc2f",
+    "scripts/audit_shared_graph_utility.py": "a91d0e22bbffaf89bcd1080a22293c36131dc51634932a19e9510cf2f4ea5353",
+    "scripts/coordinate_cpu_audits_v2.py": "15a15423f6f56419f27aefe209a5668f9ae6f90ead6295a3a26f0b4f2017ba09"
+  },
+  "audited_evidence_sha256": {
+    "artifacts/incremental/capacity-full-s17/audit.json": "0cd1de321270fe4dcbdf62c9ae099ad9067d2953a50f198b090df402637b441a",
+    "artifacts/incremental/capacity-full-s17/solver-audit.json": "c2efe868550e16b4eb44a9417c5036743a03a6aebd4510fb952e6e728e593850",
+    "artifacts/incremental/capacity-full-s17/evaluation.json": "81c43dedba75dd9f0e065bcaf72a4e96e745390911433dd07d5917af73b6b59f",
+    "artifacts/incremental/capacity-full-s17/training-receipt.json": "82d6d23d5db9935afb91fef58eaa6b234c63e2c5934900d3afa86eb75f6f640d",
+    "artifacts/incremental/capacity-scoped-s17/audit.json": "172af492184b641b6d5f33843b6d79825e2db798f4aa6bf9b23b61557f46f75e",
+    "artifacts/incremental/capacity-scoped-s17/solver-audit.json": "31105f2e9892f96aea531b1441c11553a13827b364117f73984bd7ad95afe8b3",
+    "artifacts/incremental/capacity-scoped-s17/evaluation.json": "3607ca56ae385373239afc30b438b82ea3a5fb33390b10d746528bec19c5ca5c",
+    "artifacts/incremental/capacity-scoped-s17/training-receipt.json": "5e0e41cee31d1e035c4db4f146e3b6cebbb4c5921b467ab0ec8496dc3f32afe5"
+  },
+  "scientific_utility_asserted": false,
+  "gates_changed": false,
+  "limits": [
+    "Progress counts exclude terminal evaluation and CPU/038 utility audits.",
+    "Only seed17 is audited; no three-seed utility decision.",
+    "Exempted TRAIN cost comparison waits for registered038."
+  ]
+}

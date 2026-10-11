@@ -1,0 +1,129 @@
+{
+  "id": "KGE-LIT-004-E-FB15k237",
+  "parent": "KGE-LIT-004",
+  "parent_complete": true,
+  "utc": "2026-10-10T14:24:34.078752+00:00",
+  "status": "PASS_NATIVE_NUMERICS_WITH_RESTORE_LIMITATIONS",
+  "paper_metric_reproduction": "DESCRIPTIVE_ONLY_NOT_CERTIFIED",
+  "native_metrics": {
+    "row_count": 15430,
+    "edit": {
+      "count": 3086,
+      "mean_rank_before": 5618.275437459494,
+      "mean_rank_after": 9.107258587167856,
+      "mrr_after": 0.8706219911389623,
+      "unique_source_rows": 3086,
+      "hits1_after": 0.7793259883344135,
+      "hits3_after": 0.9581983149708361,
+      "hits5_after": 0.9656513285806869,
+      "article_ER_roc": 0.9983789939299796
+    },
+    "locality": {
+      "count": 12344,
+      "mean_rank_before": 2.830362929358393,
+      "mean_rank_after": 14.099238496435515,
+      "mrr_after": 0.6924264563105472,
+      "unique_source_rows": 3088,
+      "hits1_after": 0.5259235255994815,
+      "hits3_after": 0.848347375243033,
+      "hits5_after": 0.9285482825664291,
+      "article_RK_at3": 0.975591578162847,
+      "article_RK_roc": 0.7992541987232893,
+      "baseline_hits3_count": 10734
+    },
+    "aggregation_scope": "Repeated native batch exposures, not unique full L-Test; rank-rate changes are not ROC AUC",
+    "evaluation_label": "native exposed evaluation (checkpoint-selection edit_test)",
+    "checkpoint": "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/logger/version_0/checkpoints/model-epoch=12-Eval/hits3=0.9708-valid_flipped=0.000000.ckpt",
+    "checkpoint_sha256": "6c53dc4d5db393a5eb54c3c319a975fe5fa93f2e00f70615423982f6c2bd924c",
+    "source_preflight": "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/source-preflight.json",
+    "config": {
+      "lr": 0.0005,
+      "gpus": 1,
+      "max_seq_length": 64,
+      "accelerator": "ddp",
+      "num_workers": 4,
+      "edit_num": 2,
+      "stable_batch_size": 8,
+      "max_epochs": 20,
+      "divergences": "kl",
+      "task_name": "edit",
+      "seed": 0,
+      "save_top_k": 10,
+      "data_type": "FB15k237",
+      "ex_size": 64,
+      "kb_layer": "10,11",
+      "ex_model_checkpoint": "/data/lc/tzh/experiment4/literature_baselines_20261010/models/KGEditor-HF/E-FB15k237",
+      "model_name_or_path": "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/base_tokenizer",
+      "data_dir": "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/data_view",
+      "dirpath": "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/logger"
+    },
+    "export": "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/native-exposed-examples.jsonl",
+    "note": "No test_step exists in author; manual loop invokes exact _eval. No validation_epoch_end invoked."
+  },
+  "article_comparison": {
+    "primary": "https://arxiv.org/html/2301.10405v8 Table2 / Eqs3,4",
+    "metric_order": [
+      "Succ@1",
+      "Succ@3",
+      "ER_roc",
+      "RK@3",
+      "RK_roc"
+    ],
+    "article": [
+      0.866,
+      0.986,
+      0.999,
+      0.874,
+      0.635
+    ],
+    "exposed_run": [
+      0.7793259883344135,
+      0.9581983149708361,
+      0.9983789939299796,
+      0.975591578162847,
+      0.7992541987232893
+    ],
+    "difference": [
+      -0.08667401166558653,
+      -0.027801685029163914,
+      -0.0006210060700203579,
+      0.10159157816284703,
+      0.16425419872328928
+    ],
+    "claim": "descriptive comparison only; different locality exposure weighting, reused validation and rank tie backend"
+  },
+  "training_epochs": 20,
+  "global_step": 30860,
+  "cpu_checks": 330947,
+  "cpu_failures": 0,
+  "independent_examples": 160,
+  "before_after_records": 320,
+  "rank_top3_exact": true,
+  "max_target_logit_error": 0,
+  "native_restore_semantics": {
+    "cpu_storage_shared": true,
+    "strict_root_load": true,
+    "child_order": [
+      "ex_model",
+      "ex_learner"
+    ],
+    "base_embedding_checkpoint_sha256": "861927393dcc97e3a07805dae8ad122ed90c241605f943c11c20b397907fe724",
+    "learner_embedding_checkpoint_sha256": "4ca524f8672f0810ea6966d3f7c2713fae73c16d606b4719c1ec64d7af30b70d",
+    "effective_base_embedding_sha256": "4ca524f8672f0810ea6966d3f7c2713fae73c16d606b4719c1ec64d7af30b70d",
+    "checkpoint_embedding_groups_equal": false,
+    "max_checkpoint_embedding_difference": 0.28380003571510315,
+    "effective_model_keys_overwritten_by_native_alias": [
+      "bert.embeddings.word_embeddings.weight",
+      "cls.predictions.decoder.weight"
+    ],
+    "basis": "Frozen KGEditor constructor shares embedding_init=.weight.data, registers ex_model before ex_learner; Lightning root load_state_dict loads child modules in registration order on CPU."
+  },
+  "outer_elapsed_s": 7664.131600128021,
+  "limitations": [
+    "Single seed0; exposed edit_test selects checkpoint; not independent heldout.",
+    "Repeated locality probes with workers4, not full unique L-Test or author workers32.",
+    "Native CPU alias restoration overwrites base embedding with editor embedding; certify this effective model only.",
+    "Fixed160sampled examples, not independent all-score reconstruction.",
+    "No complete independent optimizer/validation-forward or independent completed code review claimed."
+  ]
+}

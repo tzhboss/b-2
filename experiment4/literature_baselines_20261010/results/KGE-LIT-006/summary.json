@@ -1,0 +1,34 @@
+{
+  "id": "KGE-LIT-006",
+  "status": "PASS_WITH_LIMITATIONS",
+  "utc": "2026-10-10T13:15:21.686510+00:00",
+  "method": "LKGE_clean_split",
+  "dataset": "FACT",
+  "seed": 55,
+  "native_final": {
+    "whole_mrr": 0.225,
+    "whole_hits1": 0.135,
+    "whole_hits3": 0.258,
+    "whole_hits10": 0.406
+  },
+  "raw_final": {
+    "whole_mrr": 0.225461535414927,
+    "whole_hits1": 0.1348004836759371,
+    "whole_hits3": 0.25824264409512293,
+    "whole_hits10": 0.4061346231358323
+  },
+  "native_training_seconds": 1215.3518588542938,
+  "outer_elapsed_s": 1331.9650155099807,
+  "audit_checks": 698,
+  "audit_failures": 0,
+  "independent_rank_replays": 120,
+  "audit_sha256": "a7afcaacbe289fb120cb07d6773ed5690d53d7283f5c72dd0755d612ab958479",
+  "terminal_sha256": "13819d1d91ccc7669982a09dbf1c93f30cb62ffd906a4cb9a32a806ba8f4dbc6",
+  "limitations": [
+    "Clean-validation adaptation, not exact test-selected upstream protocol; single seed55, not five-run paper mean.",
+    "Historical query-snapshot candidate/filter and double-argsort semantics retained.",
+    "15 posttrain files sampled8/file by default; no complete score certification or pre-FWT inference replay.",
+    "Best sidecar and logs/epoch bytes verified; no independent validation ranking or complete training/optimizer reconstruction.",
+    "Independent checker completed by controller after sidecar agent hit usage limit; no separate completed code review claimed."
+  ]
+}

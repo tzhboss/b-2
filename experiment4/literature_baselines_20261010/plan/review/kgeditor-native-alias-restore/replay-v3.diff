@@ -1,0 +1,78 @@
+--- replay_kgeditor_samples_v2.py
++++ replay_kgeditor_samples_v3_native_alias.py
+@@ -306,28 +306,56 @@
+     model_weights={name[len("ex_model."):]:value for name,value in state.items() if name.startswith("ex_model.")}
+     learner_weights={name[len("ex_learner."):]:value for name,value in state.items() if name.startswith("ex_learner.")}
+     require(bool(model_weights) and bool(learner_weights),"checkpoint prefix groups missing")
+-    model.load_state_dict(model_weights,strict=True)
+     selected={name for name,param in model.named_parameters()
+               if ("dense_in_ex" in name.lower() or "dense_out_ex" in name.lower()) and "bias" not in name.lower()}
+     require(len(selected)==(4 if job["dataset"]=="E-FB15k237" else 2),"expected editable matrix count")
+-    # Clone initial storage: strict loading two independent trained prefix groups must not overwrite base embeddings.
+-    # This does not change any loaded checkpoint value or architecture.
+-    embedding=model.bert.embeddings.word_embeddings.weight.detach().clone()
++    # Preserve native constructor's CPU shared storage before Lightning root load_state_dict.
++    # Native ex_learner is registered after ex_model; its embedding load overwrites base embedding.
++    embedding=model.bert.embeddings.word_embeddings.weight.data
+     learner=model_classes.OneShotLearner(model,vocab_dim=config.vocab_size,embedding_dim=config.hidden_size,
+        hidden_dim=128,condition_dim=1024,include_set=selected,max_scale=hp["max_scale"],embedding_init=embedding)
+-    learner.load_state_dict(learner_weights,strict=True)
+-    for module,weights in [(model,model_weights),(learner,learner_weights)]:
++    base_key='bert.embeddings.word_embeddings.weight'
++    decoder_key='cls.predictions.decoder.weight'
++    learner_key='condition.embedding.weight'
++    require(model.bert.embeddings.word_embeddings.weight.data_ptr()==learner.condition.embedding.weight.data_ptr(),
++            'native CPU embedding storage alias must exist before root restore')
++    require(model.bert.embeddings.word_embeddings.weight is model.cls.predictions.decoder.weight,
++            'native tied model embedding/decoder parameter identity')
++    require(torch.equal(model_weights[base_key],model_weights[decoder_key]),'serialized tied base weights differ')
++    holder=torch.nn.Module()
++    holder.register_parameter('alpha_kl',torch.nn.Parameter(torch.zeros_like(state['alpha_kl'])))
++    holder.register_parameter('alpha_lp',torch.nn.Parameter(torch.zeros_like(state['alpha_lp'])))
++    holder.register_buffer('margin_kl',torch.zeros_like(state['margin_kl']))
++    holder.register_buffer('margin_lp',torch.zeros_like(state['margin_lp']))
++    holder.add_module('ex_model',model);holder.add_module('ex_learner',learner)
++    # Same registered child order as KGEditor.__init__: one strict root-prefix load.
++    holder.load_state_dict(state,strict=True)
++    require(list(holder._modules)==['ex_model','ex_learner'],'native restoration child order')
++    require(model.bert.embeddings.word_embeddings.weight.data_ptr()==learner.condition.embedding.weight.data_ptr(),
++            'native CPU embedding storage alias must persist through restore')
++    effective_model=dict(model_weights)
++    effective_model[base_key]=learner_weights[learner_key]
++    effective_model[decoder_key]=learner_weights[learner_key]
++    alias_evidence=dict(cpu_storage_shared=True,strict_root_load=True,child_order=list(holder._modules),
++      base_embedding_checkpoint_sha256=tensor_hash(model_weights[base_key]),
++      learner_embedding_checkpoint_sha256=tensor_hash(learner_weights[learner_key]),
++      effective_base_embedding_sha256=tensor_hash(model.bert.embeddings.word_embeddings.weight),
++      checkpoint_embedding_groups_equal=torch.equal(model_weights[base_key],learner_weights[learner_key]),
++      max_checkpoint_embedding_difference=float((model_weights[base_key]-learner_weights[learner_key]).abs().max()),
++      effective_model_keys_overwritten_by_native_alias=[base_key,decoder_key],
++      basis='Frozen KGEditor constructor shares embedding_init=.weight.data, registers ex_model before ex_learner; Lightning root load_state_dict loads child modules in registration order on CPU.')
++    for module,weights in [(model,effective_model),(learner,learner_weights)]:
+         actual=module.state_dict()
+         require(set(actual)==set(weights),"strict prefix key set mismatch")
+         for name,value in weights.items():
+             require(torch.equal(actual[name],value),"strict-loaded parameter mismatch: "+name)
+     metadata=dict(model_prefix_keys=len(model_weights),learner_prefix_keys=len(learner_weights),
+       unused_checkpoint_keys=sorted(name for name in state if not name.startswith(("ex_model.","ex_learner."))),
+-      extension_matrices=sorted(selected),strict_load=True,
++      extension_matrices=sorted(selected),strict_load=True,native_alias_restore=alias_evidence,
+       max_scale=hp["max_scale"],ex_size=config.ex_size,kb_layer=config.kb_layer,
+       author_module_paths=[arch.__file__,model_classes.__file__],checkpoint_epoch=ckpt["epoch"],
+       checkpoint_global_step=ckpt["global_step"])
+-    del ckpt,state,model_weights,learner_weights,embedding
++    del ckpt,state,model_weights,learner_weights,embedding,effective_model,holder
+     model.to(device).eval();learner.to(device).eval()
+     require(all(param.dtype==torch.float32 for param in model.parameters()),"replay expects native float32 weights")
+     require(all(param.dtype==torch.float32 for param in learner.parameters()),"replay expects float32 learner weights")
+@@ -420,7 +448,9 @@
+           limits=["160 fixed evenly spaced examples only; no full-score claim for unselected batches.",
+            "edit_test used for model selection: native exposed evaluation, not pristine heldout.",
+            "Condition tokens reconstructed from frozen textual examples/formula; original condition tensors were not exported.",
+-           "No optimizer, backward accumulation, training, selection changes or metric/protocol replacement."])
++           "No optimizer, backward accumulation, training, selection changes or metric/protocol replacement.",
++           "Replays native CPU shared-embedding restoration: effective base embedding can differ from serialized ex_model prefix. Not certification of artifact-free checkpoint restoration.",
++           "Earlier clone-separated replay FAIL retained; same samples and exact ranking/logit tolerance unchanged."])
+         (work/"replayed-observations.jsonl").write_text("".join(json.dumps(x)+"\n" for x in records))
+         (work/"reconstructed-edit-conditions.jsonl").write_text("".join(json.dumps(x)+"\n" for x in conditions))
+     except Exception as err:

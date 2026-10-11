@@ -1,0 +1,1 @@
+Primary: one row per model/method; N400; success, no_damage, safe_success, mean TRAIN/VALID loss, norm; source034/036/037 or new supplemental outputs. All-split conventions annotated with extra optimization labels. Secondary shared contract: consume041 summary unchanged. Compatibility matrix has no numeric placeholders or fictional data.

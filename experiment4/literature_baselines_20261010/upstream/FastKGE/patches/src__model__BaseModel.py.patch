@@ -1,0 +1,10 @@
+diff --git a/src/model/BaseModel.py b/src/model/BaseModel.py
+index cf6e31f..461a8d2 100644
+--- a/src/model/BaseModel.py
++++ b/src/model/BaseModel.py
+@@ -1,5 +1,4 @@
+ from src.utils import *
+-from torch_scatter import scatter_add, scatter_mean, scatter_max
+ 
+ class BaseModel(nn.Module):
+     def __init__(self, args, kg) -> None:

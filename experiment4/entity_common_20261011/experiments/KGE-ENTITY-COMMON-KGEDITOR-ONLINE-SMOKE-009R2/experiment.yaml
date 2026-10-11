@@ -1,0 +1,15 @@
+id: KGE-ENTITY-COMMON-KGEDITOR-ONLINE-SMOKE-009R2
+status: completed_native_cpu_cumulative_smoke_only
+config: configs/lm-editor-common-r2.json
+old_failure: KGE-ENTITY-COMMON-KGEDITOR-ONLINE-SMOKE-009
+repair: Only duplicate dictionary merging and tokenizer verbosity; unchanged scientific
+  formulas
+scope: Two CPU cumulative steps from smoke base/meta only
+frozen_input_sha256:
+  src/lm_editor_common_v2.py: 2fb247e0bbd29247288349324a630f64327a44f6ad3016fb9142d55d7f82fd05
+  scripts/run_lm_editor_common_v2.py: 77da2f90fc8ebf11493f3d0b66209ab8112338b7e04336c2ecd9f34c00ca2cfb
+  configs/lm-editor-common-r2.json: 1f4324073c574d7e846da8f9c43ac87163b6e71ffd5aa6b9d92ec7e7b4e6f497
+  src/lm_editor_bridge_v2.py: f09a3607f9feebe11b68ccfbaf9124dd5cce4a377b9ec7a87315ee2e813a28c5
+  src/lm_common_base.py: 6d6a7e2c5ef70b36d219db44a54b9f27ff217f4f040bd2f7d0d0609da93c198d
+registered_utc: '2026-10-10T19:07:22.055830+00:00'
+active_processes: []

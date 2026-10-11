@@ -1,0 +1,43 @@
+﻿panel,model,method,N,success,safe_success,damage,external_damage,norm,paper_safe,scope
+historical_reconstructed_TEST1000,distmult,Direct,1000,1.0,0.238,14.027,,,0.23,Different author cohort; historical exposed TEST; partial reproduction
+historical_reconstructed_TEST1000,distmult,ValidationBestRank,1000,0.903,0.334,1.281,,,0.328,Different author cohort; historical exposed TEST; partial reproduction
+historical_reconstructed_TEST1000,distmult,StrictNull,1000,0.017,0.017,0.0,,,0.014,Different author cohort; historical exposed TEST; partial reproduction
+historical_reconstructed_TEST1000,distmult,ValidationBestRidge,1000,0.015,0.015,0.001,,,,Different author cohort; historical exposed TEST; partial reproduction
+historical_reconstructed_TEST1000,complex,Direct,1000,1.0,0.219,13.631,,,0.232,Different author cohort; historical exposed TEST; partial reproduction
+historical_reconstructed_TEST1000,complex,ValidationBestRank,1000,0.903,0.322,1.335,,,0.347,Different author cohort; historical exposed TEST; partial reproduction
+historical_reconstructed_TEST1000,complex,StrictNull,1000,0.017,0.017,0.0,,,0.013,Different author cohort; historical exposed TEST; partial reproduction
+historical_reconstructed_TEST1000,complex,ValidationBestRidge,1000,0.015,0.015,0.0,,,,Different author cohort; historical exposed TEST; partial reproduction
+034_same_VALID400,distmult,Direct,400,1.0,0.325,13.9175,0.9675,0.9772171976612001,,TRAIN-input deployment; single candidate column; exposed VALID
+034_same_VALID400,distmult,PublishedRank,400,0.96,0.4825,1.16,0.075,3.077314955143011,,TRAIN-input deployment; single candidate column; exposed VALID
+034_same_VALID400,distmult,SupportRegularized_TRAIN_adaptation,400,0.9325,0.54,2.095,0.145,2.858980225673663,,TRAIN-input deployment; single candidate column; exposed VALID
+034_same_VALID400,distmult,PredictionSetQP_RankNormCap,400,0.96,0.5775,0.9175,0.045,2.357943529758102,,TRAIN-input deployment; single candidate column; exposed VALID
+034_same_VALID400,complex,Direct,400,1.0,0.3025,14.3,1.185,0.8508657286725255,,TRAIN-input deployment; single candidate column; exposed VALID
+034_same_VALID400,complex,PublishedRank,400,0.96,0.49,1.2025,0.0925,2.996715103914413,,TRAIN-input deployment; single candidate column; exposed VALID
+034_same_VALID400,complex,SupportRegularized_TRAIN_adaptation,400,0.935,0.535,2.0225,0.235,2.7596016490599715,,TRAIN-input deployment; single candidate column; exposed VALID
+034_same_VALID400,complex,PredictionSetQP_RankNormCap,400,0.96,0.5975,0.89,0.07,1.9985199689541406,,TRAIN-input deployment; single candidate column; exposed VALID
+036_same_VALID400_ablation,distmult,PublishedRank,400,0.96,0.4825,1.16,0.075,3.077314955143011,,Same exposed034; reused rows are not additional independent cases
+036_same_VALID400_ablation,distmult,TrueOnlyQP_RankNormCap,400,0.96,0.58,0.845,0.1475,2.2780512133083577,,Same exposed034; reused rows are not additional independent cases
+036_same_VALID400_ablation,distmult,PredictionSetQP_RankNormCap,400,0.96,0.5775,0.9175,0.045,2.357943529758102,,Same exposed034; reused rows are not additional independent cases
+036_same_VALID400_ablation,complex,PublishedRank,400,0.96,0.49,1.2025,0.0925,2.996715103914413,,Same exposed034; reused rows are not additional independent cases
+036_same_VALID400_ablation,complex,TrueOnlyQP_RankNormCap,400,0.96,0.5975,0.89,0.175,1.9130687621053823,,Same exposed034; reused rows are not additional independent cases
+036_same_VALID400_ablation,complex,PredictionSetQP_RankNormCap,400,0.96,0.5975,0.89,0.07,1.9985199689541406,,Same exposed034; reused rows are not additional independent cases
+037_same_VALID400_retrospective,distmult,SupportAllSplit_LiteralTargetEligible,400,0.0,0.0,2.4975,0.1325,3.5431463142947233,,TRAIN+VALID+TEST support labels; author target policy unknown; reconstruction
+037_same_VALID400_retrospective,distmult,SupportAllSplit_TargetExcluded,400,0.9125,0.54,2.7975,0.16,4.404814663448335,,TRAIN+VALID+TEST support labels; author target policy unknown; reconstruction
+037_same_VALID400_retrospective,complex,SupportAllSplit_LiteralTargetEligible,400,0.0,0.0,1.9475,0.185,3.073363324909679,,TRAIN+VALID+TEST support labels; author target policy unknown; reconstruction
+037_same_VALID400_retrospective,complex,SupportAllSplit_TargetExcluded,400,0.9125,0.5325,2.5375,0.2475,3.633608195884434,,TRAIN+VALID+TEST support labels; author target policy unknown; reconstruction
+remote24_shared3target64d_B5.2,DistMult,Direct,81,0.9876543209876543,,0.43209876543209874,,1.7391218337526282,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,DistMult,Soft3_LocalGuard,81,0.9876543209876543,,0.32098765432098764,,1.8762136391374373,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,DistMult,Soft3_AllGuard,81,0.8765432098765432,,0.654320987654321,,2.2338095630033004,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,DistMult,Rank125_ReleasedKernel,81,0.8395061728395061,,0.8271604938271605,,2.281354486143844,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,DistMult,Rank1of64_ReleasedKernel,81,0.9012345679012346,,1.308641975308642,,2.087825398556572,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,DistMult,AdaptiveSoft_LocalGuard,81,0.9876543209876543,,0.3950617283950617,,1.9331167094462425,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,DistMult,AdaptiveSoft_AllGuard,81,0.9876543209876543,,0.7654320987654321,,3.0140031897537916,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,DistMult,AdaptiveRank_ReleasedKernel,81,0.9012345679012346,,0.8765432098765432,,2.7016500333895337,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,ComplEx,Direct,81,0.9629629629629629,,0.14814814814814814,,1.9194238553482608,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,ComplEx,Soft3_LocalGuard,81,0.9629629629629629,,0.12345679012345678,,2.042304657796578,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,ComplEx,Soft3_AllGuard,81,0.8765432098765432,,0.41975308641975306,,2.2947076666749364,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,ComplEx,Rank125_ReleasedKernel,81,0.8395061728395061,,0.4444444444444444,,2.301406410569443,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,ComplEx,Rank1of64_ReleasedKernel,81,0.9012345679012346,,0.5925925925925926,,2.331262983423986,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,ComplEx,AdaptiveSoft_LocalGuard,81,0.9629629629629629,,0.16049382716049382,,2.0895775920306914,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,ComplEx,AdaptiveSoft_AllGuard,81,0.9629629629629629,,0.5555555555555556,,2.907255927797643,,"Shared full entity table; three targets; L2,1; different trained weights"
+remote24_shared3target64d_B5.2,ComplEx,AdaptiveRank_ReleasedKernel,81,0.9012345679012346,,0.5185185185185185,,2.817144604550079,,"Shared full entity table; three targets; L2,1; different trained weights"

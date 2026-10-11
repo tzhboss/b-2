@@ -1,0 +1,41 @@
+diff --git a/src/model/model_process.py b/src/model/model_process.py
+index a747995..e491712 100644
+--- a/src/model/model_process.py
++++ b/src/model/model_process.py
+@@ -75,6 +75,7 @@ class DevBatchProcessor():
+                 for lora_model in model.lora_ent_embeddings_list:
+                     lora_model.train(False)
+         num = 0
++        observations = []
+         results = {}
+         hr2t = self.kg.snapshots[self.args.snapshot].hr2t_all
+         """ Start evaluation """
+@@ -124,6 +125,8 @@ class DevBatchProcessor():
+                         af.write("\n")
+             """ rank all candidate entities """
+             ranks = 1 + torch.argsort(torch.argsort(pred, dim=1, descending=True), dim=1, descending=False)[batch_size_range, tail]
++            if stage == 'Test' and getattr(self.args, 'observation_path', None):
++                observations.append(torch.stack([head, relation, tail, ranks.to(torch.int64)], dim=1).detach().cpu().numpy())
+             ranks = ranks.float()
+             results['count'] = torch.numel(ranks) + results.get('count', 0.0)
+             results['mr'] = torch.sum(ranks).item() + results.get('mr', 0.0)
+@@ -132,6 +135,19 @@ class DevBatchProcessor():
+                 results[f'hits{k + 1}'] = torch.numel(
+                     ranks[ranks <= (k + 1)]
+                 ) + results.get(f'hits{k + 1}', 0.0)
++        if observations:
++            from pathlib import Path
++            output = Path(self.args.observation_path)
++            output.mkdir(parents=True, exist_ok=True)
++            phase = 'before' if getattr(self.args, 'test_FWT', False) else 'after'
++            filename = f'train{self.args.snapshot}_test{self.args.snapshot_test}_{phase}.npz'
++            table = np.concatenate(observations, axis=0)
++            target = output / filename
++            if target.exists():
++                raise FileExistsError(target)
++            np.savez_compressed(target, head=table[:, 0], relation=table[:, 1], tail=table[:, 2], rank=table[:, 3],
++                                training_snapshot=self.args.snapshot, test_snapshot=self.args.snapshot_test,
++                                phase=phase, candidate_count=self.kg.snapshots[self.args.snapshot_test].num_ent)
+         count = float(results['count'])
+         for key, val in results.items():
+             results[key] = round(val / count, 4)

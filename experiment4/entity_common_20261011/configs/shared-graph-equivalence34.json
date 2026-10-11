@@ -1,0 +1,123 @@
+{
+  "id": "KGE-ENTITY-COMMON-FULL-INDEX-EQUIVALENCE-034",
+  "scope": "All nine unchanged3753-step cached solver trajectories, inherited source audits; no new method or utility search",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "worker": "scripts/review_shared_graph_solver.py",
+  "source_job_dependency": "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-EVAL-030/experiment.yaml",
+  "source_config": "configs/shared-graph-eval30.json",
+  "source_config_sha256": "23270b5a0e619179c284a68ee46b19f01de44bcfd670dc1c81b6f6e7aee7764b",
+  "solver_module": "shared_rank_solver_v3",
+  "runtime_job_prefix": "cached-index-",
+  "expected_steps": 3753,
+  "available_gpu_indices": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "max_concurrent_audits": 1,
+  "output_directory": "artifacts/shared-graph-equivalence34",
+  "log_directory": "logs/shared-graph-equivalence34",
+  "global_dependencies": [
+    {
+      "terminal_statuses": [
+        "batch_terminal_with_retained_failures",
+        "batch_terminal_audited_full_comparison_pending"
+      ],
+      "canonical": "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-027/experiment.yaml"
+    },
+    {
+      "terminal_statuses": [
+        "completed_audited_artifact_checks_only"
+      ],
+      "canonical": "experiments/KGE-ENTITY-COMMON-REAL-INDEX-EQUIVALENCE-033/experiment.yaml"
+    }
+  ],
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-027/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-EVAL-030/experiment.yaml"
+  ],
+  "jobs": [
+    {
+      "id": "shared-graph-full-s17",
+      "method": "SharedFrozenFull",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-scoped-s17",
+      "method": "SharedFrozenScoped",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-joint-s17",
+      "method": "SharedJointScoped",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": true
+    },
+    {
+      "id": "shared-graph-full-s29",
+      "method": "SharedFrozenFull",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-scoped-s29",
+      "method": "SharedFrozenScoped",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-joint-s29",
+      "method": "SharedJointScoped",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": true
+    },
+    {
+      "id": "shared-graph-full-s43",
+      "method": "SharedFrozenFull",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-scoped-s43",
+      "method": "SharedFrozenScoped",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-joint-s43",
+      "method": "SharedJointScoped",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": true
+    }
+  ]
+}

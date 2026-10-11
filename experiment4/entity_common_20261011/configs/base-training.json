@@ -1,0 +1,90 @@
+{
+  "batch_size": 1024,
+  "epochs": 200,
+  "validation_every": 5,
+  "validation_queries": 1024,
+  "id": "KGE-ENTITY-COMMON-BASE-001",
+  "budget_seconds_per_job": 2400,
+  "distmult_l2": 0.0005,
+  "available_gpu_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "source_audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+  "negatives": 10,
+  "source_root": "../literature_baselines_20261010",
+  "transe_margin": 8.0,
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "jobs": [
+    {
+      "seed": 17,
+      "learning_rate": 0.0001,
+      "dim": 200,
+      "kind": "TransE",
+      "id": "transe-s17"
+    },
+    {
+      "seed": 29,
+      "learning_rate": 0.0001,
+      "dim": 200,
+      "kind": "TransE",
+      "id": "transe-s29"
+    },
+    {
+      "seed": 43,
+      "learning_rate": 0.0001,
+      "dim": 200,
+      "kind": "TransE",
+      "id": "transe-s43"
+    },
+    {
+      "seed": 17,
+      "learning_rate": 0.007,
+      "dim": 200,
+      "kind": "DistMult",
+      "id": "distmult-s17"
+    },
+    {
+      "seed": 29,
+      "learning_rate": 0.007,
+      "dim": 200,
+      "kind": "DistMult",
+      "id": "distmult-s29"
+    },
+    {
+      "seed": 43,
+      "learning_rate": 0.007,
+      "dim": 200,
+      "kind": "DistMult",
+      "id": "distmult-s43"
+    },
+    {
+      "seed": 17,
+      "learning_rate": 0.0001,
+      "dim": 180,
+      "kind": "TransE",
+      "id": "sage-base-s17"
+    },
+    {
+      "seed": 29,
+      "learning_rate": 0.0001,
+      "dim": 180,
+      "kind": "TransE",
+      "id": "sage-base-s29"
+    },
+    {
+      "seed": 43,
+      "learning_rate": 0.0001,
+      "dim": 180,
+      "kind": "TransE",
+      "id": "sage-base-s43"
+    }
+  ],
+  "dataset": "repos/FastKGE/data/FB_CKGE",
+  "validation_query_selection_seed": 124
+}

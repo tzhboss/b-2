@@ -1,0 +1,6200 @@
+{
+  "kind": "DistMult",
+  "seed": 402,
+  "epoch": 25,
+  "checkpoint_sha256": "2f563ef1b9bc829d867e77f5e15103c4303b42c5565beefae2b0794b75ac216d",
+  "n_requests": 27,
+  "n_full": 27,
+  "phase22_fixed_eval_keys": true,
+  "TEST_used": false,
+  "label_scope": "VALID new edit targets, TRAIN guard/heldout; no TEST",
+  "model_shared_head_tail": true,
+  "method_limitation": "Local multi-target adaptation; Rank-Truncated numerical kernel from released KGE Rank Locality source, NOT full author model/cohort/protocol",
+  "source_baseline": "phase19/22-inspired old-capacity editing with real shared scoring",
+  "budget_actual": "L2,1 row norm, cap B; abstentions count as edit failure",
+  "elapsed_seconds": 17.425539541989565,
+  "rows": [
+    {
+      "query": [
+        4133,
+        108
+      ],
+      "targets": [
+        1253,
+        1373,
+        1485
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.02033946874167677,
+          "cost_l21": 1.284654302291808,
+          "fro": 0.8072873134717018,
+          "elapsed_sec": 0.03264969296287745
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.003119828000296512,
+          "cost_l21": 1.5219236514034569,
+          "fro": 0.9563893209703797,
+          "elapsed_sec": 0.02764260896947235
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0012419137838362163,
+          "cost_l21": 1.7494359710361296,
+          "fro": 1.099359931017234,
+          "elapsed_sec": 0.0267305220477283
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0008680857688297879,
+          "cost_l21": 1.9204668090484571,
+          "fro": 1.2068371141734093,
+          "elapsed_sec": 0.030045720050111413
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0006995661026129883,
+          "cost_l21": 2.0372989230220315,
+          "fro": 1.2802553740497715,
+          "elapsed_sec": 0.0287903769640252
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0004995355499450853,
+          "cost_l21": 2.202449860313539,
+          "fro": 1.3840375793057267,
+          "elapsed_sec": 0.02725711406674236
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00026711500112220227,
+          "cost_l21": 2.452960268190152,
+          "fro": 1.5414603768712885,
+          "elapsed_sec": 0.02690636191982776
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0019281736388360082,
+          "cost_l21": 1.7214068880809756,
+          "fro": 1.081746225106177,
+          "elapsed_sec": 0.028558020014315844
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0025809813238016214,
+          "cost_l21": 1.743451434241176,
+          "fro": 1.0955991989487297,
+          "elapsed_sec": 0.02963314892258495
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0018702764900981907,
+          "cost_l21": 1.869337666742583,
+          "fro": 1.174707141262732,
+          "elapsed_sec": 0.029927970026619732
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.005087795465618351,
+          "cost_l21": 2.24183640186502,
+          "fro": 1.4087884054690862,
+          "elapsed_sec": 0.027464275946840644
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0008389081017401672,
+          "cost_l21": 2.3922672531472684,
+          "fro": 1.5033203877916914,
+          "elapsed_sec": 0.02730485494248569
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.00026711500112220227,
+              "cost_l21": 2.452960268190152,
+              "fro": 1.5414603768712885,
+              "elapsed_sec": 0.02690636191982776
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0008389081017401672,
+              "cost_l21": 2.3922672531472684,
+              "fro": 1.5033203877916914,
+              "elapsed_sec": 0.02730485494248569
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.00026711500112220227,
+              "cost_l21": 2.452960268190152,
+              "fro": 1.5414603768712885,
+              "elapsed_sec": 0.02690636191982776
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0008389081017401672,
+              "cost_l21": 2.3922672531472684,
+              "fro": 1.5033203877916914,
+              "elapsed_sec": 0.02730485494248569
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        3743,
+        111
+      ],
+      "targets": [
+        2603,
+        2852,
+        5518
+      ],
+      "n_original_valid_hits": 1,
+      "n_guard": 24,
+      "n_heldother": 13,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.007675410634060013,
+          "cost_l21": 1.1746492315015906,
+          "fro": 0.7686079454202798,
+          "elapsed_sec": 0.01955064502544701
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0007324396137683684,
+          "cost_l21": 1.4654607403740236,
+          "fro": 0.9588945691583975,
+          "elapsed_sec": 0.021020362968556583
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00010847627476730335,
+          "cost_l21": 1.7689982329943192,
+          "fro": 1.1575081827412985,
+          "elapsed_sec": 0.019908151007257402
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 6.586702808739715e-05,
+          "cost_l21": 1.9426323405724657,
+          "fro": 1.2711221460432807,
+          "elapsed_sec": 0.020126153947785497
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 5.605730111628784e-05,
+          "cost_l21": 2.0497423073044696,
+          "fro": 1.3412073844754215,
+          "elapsed_sec": 0.019745519035495818
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 4.434666789136623e-05,
+          "cost_l21": 2.2002921371492477,
+          "fro": 1.4397166179531011,
+          "elapsed_sec": 0.02016209007706493
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 2.9430990652642934e-05,
+          "cost_l21": 2.4401528669589463,
+          "fro": 1.5966646308423362,
+          "elapsed_sec": 0.019825213006697595
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0005529651382993626,
+          "cost_l21": 1.886702705886985,
+          "fro": 1.2345257218079697,
+          "elapsed_sec": 0.02064675895962864
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0005561157631897017,
+          "cost_l21": 2.1218572720474422,
+          "fro": 1.3883943517833526,
+          "elapsed_sec": 0.019728556973859668
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0006155139737496146,
+          "cost_l21": 2.1304454246082987,
+          "fro": 1.3940138355558125,
+          "elapsed_sec": 0.020521071972325444
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00026284556317121436,
+          "cost_l21": 2.4000681730425923,
+          "fro": 1.5704360228395329,
+          "elapsed_sec": 0.019875981961376965
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00032827747143655963,
+          "cost_l21": 3.145843272511943,
+          "fro": 2.0584188619514197,
+          "elapsed_sec": 0.020324956974945962
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 2.9430990652642934e-05,
+              "cost_l21": 2.4401528669589463,
+              "fro": 1.5966646308423362,
+              "elapsed_sec": 0.019825213006697595
+            }
+          },
+          "R": {
+            "selected_parameter": 0.125,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.00026284556317121436,
+              "cost_l21": 2.4000681730425923,
+              "fro": 1.5704360228395329,
+              "elapsed_sec": 0.019875981961376965
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 2.9430990652642934e-05,
+              "cost_l21": 2.4401528669589463,
+              "fro": 1.5966646308423362,
+              "elapsed_sec": 0.019825213006697595
+            }
+          },
+          "R": {
+            "selected_parameter": 0.125,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.00026284556317121436,
+              "cost_l21": 2.4000681730425923,
+              "fro": 1.5704360228395329,
+              "elapsed_sec": 0.019875981961376965
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        12453,
+        216
+      ],
+      "targets": [
+        7023,
+        8040,
+        10091
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.005925363273367781,
+          "cost_l21": 1.3892501844214173,
+          "fro": 0.7592050085077395,
+          "elapsed_sec": 0.024336635950021446
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.000661359348281834,
+          "cost_l21": 1.8201618362791823,
+          "fro": 0.9946919553394269,
+          "elapsed_sec": 0.025883088004775345
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0001928661682915462,
+          "cost_l21": 2.4589949219844227,
+          "fro": 1.3438049399598777,
+          "elapsed_sec": 0.024375726003199816
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00016589895493771497,
+          "cost_l21": 2.9416088869081114,
+          "fro": 1.6075464484761706,
+          "elapsed_sec": 0.02520840405486524
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0001606072831564032,
+          "cost_l21": 3.2590599855882347,
+          "fro": 1.7810288541485575,
+          "elapsed_sec": 0.025158847915008664
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00014457695083657532,
+          "cost_l21": 3.695422540898761,
+          "fro": 2.019494640392062,
+          "elapsed_sec": 0.024508472997695208
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.00010522891931219251,
+          "cost_l21": 4.344916567890237,
+          "fro": 2.37443367428044,
+          "elapsed_sec": 0.024338999995961785
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 3,
+          "same_damage": 1,
+          "guard_drift": 0.00461142277115148,
+          "cost_l21": 2.2669056784476735,
+          "fro": 1.238830963775524,
+          "elapsed_sec": 0.02564664196688682
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0032211735118359355,
+          "cost_l21": 3.5760419870966196,
+          "fro": 1.954254905043198,
+          "elapsed_sec": 0.025923161068931222
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0022963692868928254,
+          "cost_l21": 3.6126184937499577,
+          "fro": 1.9742434336439671,
+          "elapsed_sec": 0.024832132970914245
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0027359179771942427,
+          "cost_l21": 4.091166935212523,
+          "fro": 2.235763192752916,
+          "elapsed_sec": 0.02564706699922681
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0008308705230489918,
+          "cost_l21": 5.162371954506137,
+          "fro": 2.821161146919855,
+          "elapsed_sec": 0.025906258961185813
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 3.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.0001606072831564032,
+              "cost_l21": 3.2590599855882347,
+              "fro": 1.7810288541485575,
+              "elapsed_sec": 0.025158847915008664
+            }
+          },
+          "R": {
+            "selected_parameter": 0.015625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 3,
+              "same_damage": 1,
+              "guard_drift": 0.00461142277115148,
+              "cost_l21": 2.2669056784476735,
+              "fro": 1.238830963775524,
+              "elapsed_sec": 0.02564664196688682
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 2,
+              "same_damage": 0,
+              "guard_drift": 0.00010522891931219251,
+              "cost_l21": 4.344916567890237,
+              "fro": 2.37443367428044,
+              "elapsed_sec": 0.024338999995961785
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 2,
+              "same_damage": 0,
+              "guard_drift": 0.0008308705230489918,
+              "cost_l21": 5.162371954506137,
+              "fro": 2.821161146919855,
+              "elapsed_sec": 0.025906258961185813
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        1199,
+        125
+      ],
+      "targets": [
+        2050,
+        2839,
+        10375
+      ],
+      "n_original_valid_hits": 2,
+      "n_guard": 30,
+      "n_heldother": 19,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0010601285396826818,
+          "cost_l21": 0.4620256718101339,
+          "fro": 0.4620256718101339,
+          "elapsed_sec": 0.021803823998197913
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 6.428359934354449e-06,
+          "cost_l21": 0.5346389121801028,
+          "fro": 0.5346389121801028,
+          "elapsed_sec": 0.021805061027407646
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 3.096659408338238e-05,
+          "cost_l21": 0.5978037382246348,
+          "fro": 0.5978037382246348,
+          "elapsed_sec": 0.021674333955161273
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 2.579635133607856e-05,
+          "cost_l21": 0.6421913456036097,
+          "fro": 0.6421913456036096,
+          "elapsed_sec": 0.021964927087537944
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 1.99221416897005e-05,
+          "cost_l21": 0.6721148222257072,
+          "fro": 0.6721148222257072,
+          "elapsed_sec": 0.021667890017852187
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 1.2386813640300003e-05,
+          "cost_l21": 0.7151803390821775,
+          "fro": 0.7151803390821775,
+          "elapsed_sec": 0.02193240902852267
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 4.908602547061565e-06,
+          "cost_l21": 0.7815752383525381,
+          "fro": 0.7815752383525381,
+          "elapsed_sec": 0.021528117009438574
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0006141714093396399,
+          "cost_l21": 0.5728249411567301,
+          "fro": 0.5728249411567301,
+          "elapsed_sec": 0.02242766204290092
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 6.245474139559586e-05,
+          "cost_l21": 0.6677935447623876,
+          "fro": 0.6677935447623876,
+          "elapsed_sec": 0.021764460019767284
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 4.356562234523482e-07,
+          "cost_l21": 0.6745652335499257,
+          "fro": 0.6745652335499257,
+          "elapsed_sec": 0.022259072051383555
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 7.748783121371723e-05,
+          "cost_l21": 0.719566907054635,
+          "fro": 0.7195669070546351,
+          "elapsed_sec": 0.021755298017524183
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 3.3952350229212374e-05,
+          "cost_l21": 0.8634686747709904,
+          "fro": 0.8634686747709904,
+          "elapsed_sec": 0.021928553003817797
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 2,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 4.908602547061565e-06,
+              "cost_l21": 0.7815752383525381,
+              "fro": 0.7815752383525381,
+              "elapsed_sec": 0.021528117009438574
+            }
+          },
+          "R": {
+            "selected_parameter": 0.0625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 2,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 4.356562234523482e-07,
+              "cost_l21": 0.6745652335499257,
+              "fro": 0.6745652335499257,
+              "elapsed_sec": 0.022259072051383555
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 2,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 4.908602547061565e-06,
+              "cost_l21": 0.7815752383525381,
+              "fro": 0.7815752383525381,
+              "elapsed_sec": 0.021528117009438574
+            }
+          },
+          "R": {
+            "selected_parameter": 0.0625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 2,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 4.356562234523482e-07,
+              "cost_l21": 0.6745652335499257,
+              "fro": 0.6745652335499257,
+              "elapsed_sec": 0.022259072051383555
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        13529,
+        50
+      ],
+      "targets": [
+        784,
+        809,
+        14348
+      ],
+      "n_original_valid_hits": 1,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 3,
+          "same_damage": 0,
+          "guard_drift": 0.008047705435823083,
+          "cost_l21": 0.7833886521757842,
+          "fro": 0.5328777266778207,
+          "elapsed_sec": 0.024357749964110553
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0014628319559215391,
+          "cost_l21": 1.0433725227868522,
+          "fro": 0.7097243194378086,
+          "elapsed_sec": 0.024519638973288238
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0005218586542227651,
+          "cost_l21": 1.3367982777292973,
+          "fro": 0.9093187976169075,
+          "elapsed_sec": 0.024004203965887427
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.000339343033381321,
+          "cost_l21": 1.5200968668936028,
+          "fro": 1.0340024207787215,
+          "elapsed_sec": 0.025362891028635204
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0002771656520177886,
+          "cost_l21": 1.633857431821977,
+          "fro": 1.1113847916571473,
+          "elapsed_sec": 0.024565962026827037
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00021404924147872502,
+          "cost_l21": 1.7923835131304586,
+          "fro": 1.2192176248136992,
+          "elapsed_sec": 0.024532785057090223
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00014336368499316533,
+          "cost_l21": 2.042964591655405,
+          "fro": 1.389668237165545,
+          "elapsed_sec": 0.023912739008665085
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 6,
+          "same_damage": 0,
+          "guard_drift": 0.007281391089170853,
+          "cost_l21": 1.3988375856641553,
+          "fro": 0.9515192625906768,
+          "elapsed_sec": 0.02651273994706571
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0006664934370949168,
+          "cost_l21": 1.7644915733292468,
+          "fro": 1.200244930439554,
+          "elapsed_sec": 0.025671550072729588
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0012090711833833941,
+          "cost_l21": 1.8255893358740516,
+          "fro": 1.241804936088795,
+          "elapsed_sec": 0.025530081009492278
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.000823722481519236,
+          "cost_l21": 2.2101205433871773,
+          "fro": 1.503371292873719,
+          "elapsed_sec": 0.024814128992147744
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00011995423071676165,
+          "cost_l21": 2.8084951449203692,
+          "fro": 1.9103985027792374,
+          "elapsed_sec": 0.024813706055283546
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.00014336368499316533,
+              "cost_l21": 2.042964591655405,
+              "fro": 1.389668237165545,
+              "elapsed_sec": 0.023912739008665085
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.00011995423071676165,
+              "cost_l21": 2.8084951449203692,
+              "fro": 1.9103985027792374,
+              "elapsed_sec": 0.024813706055283546
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.00014336368499316533,
+              "cost_l21": 2.042964591655405,
+              "fro": 1.389668237165545,
+              "elapsed_sec": 0.023912739008665085
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.00011995423071676165,
+              "cost_l21": 2.8084951449203692,
+              "fro": 1.9103985027792374,
+              "elapsed_sec": 0.024813706055283546
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        14131,
+        75
+      ],
+      "targets": [
+        348,
+        3031,
+        5913
+      ],
+      "n_original_valid_hits": 1,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.011716810920202391,
+          "cost_l21": 0.8797715007414045,
+          "fro": 0.5706775845597263,
+          "elapsed_sec": 0.02362363098654896
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0019617392707816776,
+          "cost_l21": 1.1862704322568802,
+          "fro": 0.7694929244064774,
+          "elapsed_sec": 0.0242695800261572
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0005163363928189842,
+          "cost_l21": 1.4757928226933066,
+          "fro": 0.9572961645784762,
+          "elapsed_sec": 0.02394802705384791
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00024504843812391826,
+          "cost_l21": 1.6423621660062064,
+          "fro": 1.0653439820212989,
+          "elapsed_sec": 0.024870931985788047
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00017073384609705622,
+          "cost_l21": 1.7412946805501333,
+          "fro": 1.129518109492772,
+          "elapsed_sec": 0.02393989695701748
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00011870775991668726,
+          "cost_l21": 1.871901758832849,
+          "fro": 1.214238439598909,
+          "elapsed_sec": 0.024578263983130455
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 7.738319594116898e-05,
+          "cost_l21": 2.067330001572115,
+          "fro": 1.341006034852006,
+          "elapsed_sec": 0.02378323406446725
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.002347373311006532,
+          "cost_l21": 1.6071424808262609,
+          "fro": 1.0424981807530067,
+          "elapsed_sec": 0.02442043402697891
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0024558280695100875,
+          "cost_l21": 1.6133700856834865,
+          "fro": 1.0465378143334523,
+          "elapsed_sec": 0.0238589410437271
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0002865764946181019,
+          "cost_l21": 1.782255436390858,
+          "fro": 1.1560879463029283,
+          "elapsed_sec": 0.024100137990899384
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0003675459379651208,
+          "cost_l21": 1.8675329248741885,
+          "fro": 1.2114045269195717,
+          "elapsed_sec": 0.023678771103732288
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00030031060615721484,
+          "cost_l21": 2.1313055452838747,
+          "fro": 1.3825047748379624,
+          "elapsed_sec": 0.024161516106687486
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 7.738319594116898e-05,
+              "cost_l21": 2.067330001572115,
+              "fro": 1.341006034852006,
+              "elapsed_sec": 0.02378323406446725
+            }
+          },
+          "R": {
+            "selected_parameter": 0.0625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0002865764946181019,
+              "cost_l21": 1.782255436390858,
+              "fro": 1.1560879463029283,
+              "elapsed_sec": 0.024100137990899384
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 7.738319594116898e-05,
+              "cost_l21": 2.067330001572115,
+              "fro": 1.341006034852006,
+              "elapsed_sec": 0.02378323406446725
+            }
+          },
+          "R": {
+            "selected_parameter": 0.0625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0002865764946181019,
+              "cost_l21": 1.782255436390858,
+              "fro": 1.1560879463029283,
+              "elapsed_sec": 0.024100137990899384
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        10846,
+        75
+      ],
+      "targets": [
+        2014,
+        3502,
+        5913
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.02552558547725816,
+          "cost_l21": 1.2865768382556724,
+          "fro": 0.8622288716741697,
+          "elapsed_sec": 0.02560095291119069
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.005426307266430115,
+          "cost_l21": 1.6909992069111597,
+          "fro": 1.1332617647257697,
+          "elapsed_sec": 0.025916462996974587
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.002964802825382713,
+          "cost_l21": 2.043272188183293,
+          "fro": 1.3693455539966655,
+          "elapsed_sec": 0.025334169040434062
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0020450467637487873,
+          "cost_l21": 2.23870247712526,
+          "fro": 1.50031762850863,
+          "elapsed_sec": 0.02558554895222187
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 3,
+          "same_damage": 0,
+          "guard_drift": 0.0015574838573885986,
+          "cost_l21": 2.353938375952161,
+          "fro": 1.5775455997167762,
+          "elapsed_sec": 0.02553209406323731
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0010233209725177047,
+          "cost_l21": 2.506704228309767,
+          "fro": 1.679925126995711,
+          "elapsed_sec": 0.025354183977469802
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0004936342794829674,
+          "cost_l21": 2.7335037644882547,
+          "fro": 1.8319200194582015,
+          "elapsed_sec": 0.025073362048715353
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 3,
+          "same_damage": 0,
+          "guard_drift": 0.003920422927761565,
+          "cost_l21": 1.9458285303705092,
+          "fro": 1.3040414597292511,
+          "elapsed_sec": 0.025326367933303118
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.009448148319207927,
+          "cost_l21": 2.231032117607963,
+          "fro": 1.4951771617791796,
+          "elapsed_sec": 0.024777775979600847
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.003609558334847611,
+          "cost_l21": 2.4223888554071697,
+          "fro": 1.6234192528956002,
+          "elapsed_sec": 0.02510143001563847
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0025252728096686492,
+          "cost_l21": 2.560068729635165,
+          "fro": 1.7156885671549753,
+          "elapsed_sec": 0.024879600969143212
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0003351698128661421,
+          "cost_l21": 2.9384659644371554,
+          "fro": 1.969280121974424,
+          "elapsed_sec": 0.025441689998842776
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 2,
+              "same_damage": 0,
+              "guard_drift": 0.0004936342794829674,
+              "cost_l21": 2.7335037644882547,
+              "fro": 1.8319200194582015,
+              "elapsed_sec": 0.025073362048715353
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 2,
+              "same_damage": 0,
+              "guard_drift": 0.0003351698128661421,
+              "cost_l21": 2.9384659644371554,
+              "fro": 1.969280121974424,
+              "elapsed_sec": 0.025441689998842776
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 2,
+              "same_damage": 0,
+              "guard_drift": 0.0004936342794829674,
+              "cost_l21": 2.7335037644882547,
+              "fro": 1.8319200194582015,
+              "elapsed_sec": 0.025073362048715353
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 2,
+              "same_damage": 0,
+              "guard_drift": 0.0003351698128661421,
+              "cost_l21": 2.9384659644371554,
+              "fro": 1.969280121974424,
+              "elapsed_sec": 0.025441689998842776
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        3561,
+        108
+      ],
+      "targets": [
+        1476,
+        1485,
+        3440
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.01178159651014611,
+          "cost_l21": 2.198620168958998,
+          "fro": 1.0695507217818676,
+          "elapsed_sec": 0.025368349044583738
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0005176187135254644,
+          "cost_l21": 2.597096952659272,
+          "fro": 1.2633955421092178,
+          "elapsed_sec": 0.02691995701752603
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0002490902787417827,
+          "cost_l21": 2.9401910982747634,
+          "fro": 1.4302986735654935,
+          "elapsed_sec": 0.025873534963466227
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00018482866041456738,
+          "cost_l21": 3.216665608371273,
+          "fro": 1.5647937155026461,
+          "elapsed_sec": 0.02589179400820285
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00014037053735907422,
+          "cost_l21": 3.4230345172875185,
+          "fro": 1.6651848692821616,
+          "elapsed_sec": 0.026051536900922656
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 9.010034321797387e-05,
+          "cost_l21": 3.726504891668003,
+          "fro": 1.8128124415843574,
+          "elapsed_sec": 0.026516414945945144
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 4.220231361780039e-05,
+          "cost_l21": 4.181181311816141,
+          "fro": 2.033996391505498,
+          "elapsed_sec": 0.026037359959445894
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0034564927220217174,
+          "cost_l21": 2.969569127879013,
+          "fro": 1.44459004285764,
+          "elapsed_sec": 0.025888154981657863
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00343184584784531,
+          "cost_l21": 2.9702886247514533,
+          "fro": 1.444940052563774,
+          "elapsed_sec": 0.02548369101714343
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0017291190603636508,
+          "cost_l21": 3.146191206068683,
+          "fro": 1.5305104186812721,
+          "elapsed_sec": 0.026064449921250343
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0005406905201680081,
+          "cost_l21": 3.402886482322417,
+          "fro": 1.655383564971552,
+          "elapsed_sec": 0.025376918027177453
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00031063828637815244,
+          "cost_l21": 4.54621563296628,
+          "fro": 2.211572640087873,
+          "elapsed_sec": 0.02562795695848763
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 3.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.00014037053735907422,
+              "cost_l21": 3.4230345172875185,
+              "fro": 1.6651848692821616,
+              "elapsed_sec": 0.026051536900922656
+            }
+          },
+          "R": {
+            "selected_parameter": 0.125,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.0005406905201680081,
+              "cost_l21": 3.402886482322417,
+              "fro": 1.655383564971552,
+              "elapsed_sec": 0.025376918027177453
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 4.220231361780039e-05,
+              "cost_l21": 4.181181311816141,
+              "fro": 2.033996391505498,
+              "elapsed_sec": 0.026037359959445894
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.00031063828637815244,
+              "cost_l21": 4.54621563296628,
+              "fro": 2.211572640087873,
+              "elapsed_sec": 0.02562795695848763
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        12531,
+        75
+      ],
+      "targets": [
+        2414,
+        6981,
+        14476
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 1,
+          "guard_drift": 0.005209522631465895,
+          "cost_l21": 0.8507475443551813,
+          "fro": 0.4180856363661302,
+          "elapsed_sec": 0.02392306993715465
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.000917418933635248,
+          "cost_l21": 1.1516910942257055,
+          "fro": 0.5659793051668611,
+          "elapsed_sec": 0.024688613950274885
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.00028763145403749906,
+          "cost_l21": 1.4305176769759433,
+          "fro": 0.7030039607869756,
+          "elapsed_sec": 0.025993171031586826
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00014133936870619596,
+          "cost_l21": 1.5887083066828316,
+          "fro": 0.7807440971258838,
+          "elapsed_sec": 0.024936010013334453
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 8.994558675386157e-05,
+          "cost_l21": 1.6818944343252364,
+          "fro": 0.8265388593140012,
+          "elapsed_sec": 0.025477746035903692
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 4.9324669135235065e-05,
+          "cost_l21": 1.8032919799161555,
+          "fro": 0.8861976505011504,
+          "elapsed_sec": 0.024876373005099595
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 2.2652323277675994e-05,
+          "cost_l21": 1.978171473268913,
+          "fro": 0.9721392494524477,
+          "elapsed_sec": 0.02550936897750944
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 1,
+          "guard_drift": 0.0011882012024578767,
+          "cost_l21": 1.4661491358903829,
+          "fro": 0.720514444682863,
+          "elapsed_sec": 0.02484003605786711
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0005537459731626263,
+          "cost_l21": 1.614474084945414,
+          "fro": 0.793406257449303,
+          "elapsed_sec": 0.025421213009394705
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.000596467860718742,
+          "cost_l21": 1.6649882820580495,
+          "fro": 0.8182306138467904,
+          "elapsed_sec": 0.025789408944547176
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00016175926454590356,
+          "cost_l21": 1.85333225672059,
+          "fro": 0.9107891066981546,
+          "elapsed_sec": 0.02661361498758197
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00013760337169274045,
+          "cost_l21": 2.0729962677941534,
+          "fro": 1.0187393070434705,
+          "elapsed_sec": 0.024707073927856982
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 2.2652323277675994e-05,
+              "cost_l21": 1.978171473268913,
+              "fro": 0.9721392494524477,
+              "elapsed_sec": 0.02550936897750944
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.00013760337169274045,
+              "cost_l21": 2.0729962677941534,
+              "fro": 1.0187393070434705,
+              "elapsed_sec": 0.024707073927856982
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 2.2652323277675994e-05,
+              "cost_l21": 1.978171473268913,
+              "fro": 0.9721392494524477,
+              "elapsed_sec": 0.02550936897750944
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.00013760337169274045,
+              "cost_l21": 2.0729962677941534,
+              "fro": 1.0187393070434705,
+              "elapsed_sec": 0.024707073927856982
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        3395,
+        80
+      ],
+      "targets": [
+        1264,
+        6766,
+        10227
+      ],
+      "n_original_valid_hits": 1,
+      "n_guard": 10,
+      "n_heldother": 0,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.06926616563063512,
+          "fro": 0.05306863349676765,
+          "elapsed_sec": 0.01564377301838249
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.08028090352099698,
+          "fro": 0.061507632289968375,
+          "elapsed_sec": 0.015974563895724714
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.10409175000105417,
+          "fro": 0.07975043631403127,
+          "elapsed_sec": 0.01614342804532498
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.12076880601773429,
+          "fro": 0.0925276496258481,
+          "elapsed_sec": 0.01588065701071173
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.12990223206774246,
+          "fro": 0.09952527155575816,
+          "elapsed_sec": 0.01621330704074353
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.14012216299707045,
+          "fro": 0.1073553248568595,
+          "elapsed_sec": 0.015743667958304286
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.15155255473420123,
+          "fro": 0.11611277900925146,
+          "elapsed_sec": 0.015919742989353836
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.13351695446030118,
+          "fro": 0.10229470994023851,
+          "elapsed_sec": 0.015754542080685496
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.15689453842347093,
+          "fro": 0.12020556763080294,
+          "elapsed_sec": 0.016122639062814415
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.1597538353889153,
+          "fro": 0.12239623289047304,
+          "elapsed_sec": 0.015822520945221186
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.17534220535317185,
+          "fro": 0.13433934371396683,
+          "elapsed_sec": 0.01606877101585269
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.17628102820433617,
+          "fro": 0.13505862773024263,
+          "elapsed_sec": 0.01594775402918458
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 0.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 1,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0,
+              "cost_l21": 0.06926616563063512,
+              "fro": 0.05306863349676765,
+              "elapsed_sec": 0.01564377301838249
+            }
+          },
+          "R": {
+            "selected_parameter": 0.015625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 1,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0,
+              "cost_l21": 0.13351695446030118,
+              "fro": 0.10229470994023851,
+              "elapsed_sec": 0.015754542080685496
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 0.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 1,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0,
+              "cost_l21": 0.06926616563063512,
+              "fro": 0.05306863349676765,
+              "elapsed_sec": 0.01564377301838249
+            }
+          },
+          "R": {
+            "selected_parameter": 0.015625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 1,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0,
+              "cost_l21": 0.13351695446030118,
+              "fro": 0.10229470994023851,
+              "elapsed_sec": 0.015754542080685496
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        14081,
+        75
+      ],
+      "targets": [
+        1063,
+        5295,
+        5913
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 2,
+          "guard_drift": 0.01988178401424179,
+          "cost_l21": 2.615218966921095,
+          "fro": 1.0036141338510614,
+          "elapsed_sec": 0.024692119099199772
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 2,
+          "guard_drift": 0.0039547190907005154,
+          "cost_l21": 3.343459115229329,
+          "fro": 1.2830829335670542,
+          "elapsed_sec": 0.024947080994024873
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 2,
+          "guard_drift": 0.0019365761608881107,
+          "cost_l21": 3.950752569662927,
+          "fro": 1.516137336266782,
+          "elapsed_sec": 0.025159602984786034
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 2,
+          "guard_drift": 0.0012739037522193153,
+          "cost_l21": 4.3198947410083335,
+          "fro": 1.6577990117321002,
+          "elapsed_sec": 0.025960741913877428
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 2,
+          "guard_drift": 0.0009737716356610489,
+          "cost_l21": 4.562061606347176,
+          "fro": 1.750732755284214,
+          "elapsed_sec": 0.025938344071619213
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 2,
+          "guard_drift": 0.0006768473715622028,
+          "cost_l21": 4.905707808385597,
+          "fro": 1.8826101199608836,
+          "elapsed_sec": 0.025983752100728452
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 1,
+          "guard_drift": 0.0004031925533134109,
+          "cost_l21": 5.4418402108512645,
+          "fro": 2.0883558198567287,
+          "elapsed_sec": 0.025994530995376408
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 2,
+          "guard_drift": 0.007677979209624677,
+          "cost_l21": 3.5994817826867775,
+          "fro": 1.3813339675709302,
+          "elapsed_sec": 0.02577285293955356
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 2,
+          "guard_drift": 0.0028779851744891666,
+          "cost_l21": 4.502562762526953,
+          "fro": 1.7278995312364112,
+          "elapsed_sec": 0.02564827597234398
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 2,
+          "guard_drift": 0.0014462364771019184,
+          "cost_l21": 4.571578755963598,
+          "fro": 1.7543850482622898,
+          "elapsed_sec": 0.02599433099385351
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 2,
+          "guard_drift": 0.0009218934847803675,
+          "cost_l21": 4.73633675351891,
+          "fro": 1.817612432700458,
+          "elapsed_sec": 0.025692214025184512
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 1,
+          "guard_drift": 0.0006011110315108751,
+          "cost_l21": 6.052466601148328,
+          "fro": 2.322689267096169,
+          "elapsed_sec": 0.027853804058395326
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 0.3,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 2,
+              "guard_drift": 0.0039547190907005154,
+              "cost_l21": 3.343459115229329,
+              "fro": 1.2830829335670542,
+              "elapsed_sec": 0.024947080994024873
+            }
+          },
+          "R": {
+            "selected_parameter": null,
+            "accepted": 0,
+            "selected": null
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 5.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 2,
+              "guard_drift": 0.0006768473715622028,
+              "cost_l21": 4.905707808385597,
+              "fro": 1.8826101199608836,
+              "elapsed_sec": 0.025983752100728452
+            }
+          },
+          "R": {
+            "selected_parameter": 0.125,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 2,
+              "guard_drift": 0.0009218934847803675,
+              "cost_l21": 4.73633675351891,
+              "fro": 1.817612432700458,
+              "elapsed_sec": 0.025692214025184512
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        879,
+        2
+      ],
+      "targets": [
+        1114,
+        7363,
+        11751
+      ],
+      "n_original_valid_hits": 2,
+      "n_guard": 18,
+      "n_heldother": 7,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 9.970030723096033e-05,
+          "cost_l21": 0.054728072141412586,
+          "fro": 0.05472807214141258,
+          "elapsed_sec": 0.017891710973344743
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 3.048046955118768e-05,
+          "cost_l21": 0.062323224757914346,
+          "fro": 0.062323224757914346,
+          "elapsed_sec": 0.01893790892791003
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 1.4063028981073835e-05,
+          "cost_l21": 0.07353751155404127,
+          "fro": 0.07353751155404128,
+          "elapsed_sec": 0.019153390894643962
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 9.352678700464286e-06,
+          "cost_l21": 0.08170700393848937,
+          "fro": 0.08170700393848937,
+          "elapsed_sec": 0.018704827991314232
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 7.991017654816445e-06,
+          "cost_l21": 0.08685329709209597,
+          "fro": 0.08685329709209597,
+          "elapsed_sec": 0.018601536052301526
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 7.493515476554224e-06,
+          "cost_l21": 0.09341089522839385,
+          "fro": 0.09341089522839385,
+          "elapsed_sec": 0.018569206935353577
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 8.209288312982655e-06,
+          "cost_l21": 0.10168655235521835,
+          "fro": 0.10168655235521835,
+          "elapsed_sec": 0.01842794695403427
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 4.876940531311957e-06,
+          "cost_l21": 0.08324922257810363,
+          "fro": 0.08324922257810363,
+          "elapsed_sec": 0.019080611993558705
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 3.473319327467697e-05,
+          "cost_l21": 0.08416853615242423,
+          "fro": 0.08416853615242423,
+          "elapsed_sec": 0.018702680943533778
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 3.563060900624538e-06,
+          "cost_l21": 0.10279197959620952,
+          "fro": 0.10279197959620952,
+          "elapsed_sec": 0.01875329890754074
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 9.827259913978924e-06,
+          "cost_l21": 0.10601478587695197,
+          "fro": 0.10601478587695197,
+          "elapsed_sec": 0.018629026017151773
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 2,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 1.2126602547520824e-05,
+          "cost_l21": 0.11859029970598411,
+          "fro": 0.11859029970598411,
+          "elapsed_sec": 0.018884677905589342
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 5.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 2,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 7.493515476554224e-06,
+              "cost_l21": 0.09341089522839385,
+              "fro": 0.09341089522839385,
+              "elapsed_sec": 0.018569206935353577
+            }
+          },
+          "R": {
+            "selected_parameter": 0.0625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 2,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 3.563060900624538e-06,
+              "cost_l21": 0.10279197959620952,
+              "fro": 0.10279197959620952,
+              "elapsed_sec": 0.01875329890754074
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 5.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 2,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 7.493515476554224e-06,
+              "cost_l21": 0.09341089522839385,
+              "fro": 0.09341089522839385,
+              "elapsed_sec": 0.018569206935353577
+            }
+          },
+          "R": {
+            "selected_parameter": 0.0625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 2,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 3.563060900624538e-06,
+              "cost_l21": 0.10279197959620952,
+              "fro": 0.10279197959620952,
+              "elapsed_sec": 0.01875329890754074
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        3448,
+        75
+      ],
+      "targets": [
+        1063,
+        13506,
+        14476
+      ],
+      "n_original_valid_hits": 1,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.004543719978726742,
+          "cost_l21": 0.3934431147280414,
+          "fro": 0.34309947455521517,
+          "elapsed_sec": 0.025926272966898978
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0006936576242092719,
+          "cost_l21": 0.5205034353074568,
+          "fro": 0.4539015895134302,
+          "elapsed_sec": 0.025773354922421277
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0003367461578876447,
+          "cost_l21": 0.6574409618775191,
+          "fro": 0.5733170568435809,
+          "elapsed_sec": 0.025699911057017744
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0002852969587739076,
+          "cost_l21": 0.7379355800747239,
+          "fro": 0.6435118580083535,
+          "elapsed_sec": 0.02557067002635449
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00025866877329664074,
+          "cost_l21": 0.7825100873109722,
+          "fro": 0.6823827632010538,
+          "elapsed_sec": 0.02568710397463292
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0002168134885921257,
+          "cost_l21": 0.8363872705169163,
+          "fro": 0.7293660056483183,
+          "elapsed_sec": 0.02536144107580185
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00014960814793019803,
+          "cost_l21": 0.9091298379085468,
+          "fro": 0.7928006820109162,
+          "elapsed_sec": 0.025626498041674495
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 3,
+          "same_damage": 0,
+          "guard_drift": 0.0013367976307023255,
+          "cost_l21": 0.5699288189733914,
+          "fro": 0.497002669518843,
+          "elapsed_sec": 0.02612819999922067
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0002989073372651367,
+          "cost_l21": 0.7368108086622648,
+          "fro": 0.6425310085128014,
+          "elapsed_sec": 0.02605356799904257
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0003207382336066165,
+          "cost_l21": 0.8468075530754272,
+          "fro": 0.7384529443612076,
+          "elapsed_sec": 0.026080276002176106
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0005191598391842956,
+          "cost_l21": 0.8863908018894598,
+          "fro": 0.7729712555500323,
+          "elapsed_sec": 0.025811458937823772
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0002516904619964092,
+          "cost_l21": 0.9745559083297771,
+          "fro": 0.8498550554220587,
+          "elapsed_sec": 0.025772410910576582
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 2,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.00014960814793019803,
+              "cost_l21": 0.9091298379085468,
+              "fro": 0.7928006820109162,
+              "elapsed_sec": 0.025626498041674495
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 2,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.0002516904619964092,
+              "cost_l21": 0.9745559083297771,
+              "fro": 0.8498550554220587,
+              "elapsed_sec": 0.025772410910576582
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 2,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.00014960814793019803,
+              "cost_l21": 0.9091298379085468,
+              "fro": 0.7928006820109162,
+              "elapsed_sec": 0.025626498041674495
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 2,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.0002516904619964092,
+              "cost_l21": 0.9745559083297771,
+              "fro": 0.8498550554220587,
+              "elapsed_sec": 0.025772410910576582
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        1810,
+        166
+      ],
+      "targets": [
+        1071,
+        1485,
+        2311
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.040769239837860086,
+          "cost_l21": 2.9504343089021017,
+          "fro": 1.695663881283967,
+          "elapsed_sec": 0.0279242709511891
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.004531918781777713,
+          "cost_l21": 3.334009684120733,
+          "fro": 1.9161110566526018,
+          "elapsed_sec": 0.028632630011998117
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0015825847630785957,
+          "cost_l21": 3.6139757627934217,
+          "fro": 2.077012238609992,
+          "elapsed_sec": 0.027365954010747373
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0011247522720889103,
+          "cost_l21": 3.801084008364152,
+          "fro": 2.1845464727894885,
+          "elapsed_sec": 0.02719406399410218
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0009557298030061947,
+          "cost_l21": 3.9446187702072164,
+          "fro": 2.2670382980206516,
+          "elapsed_sec": 0.02798863302450627
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0007698666224537141,
+          "cost_l21": 4.183334444763188,
+          "fro": 2.4042321836867666,
+          "elapsed_sec": 0.027489169966429472
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0005322693173569118,
+          "cost_l21": 4.6303116032737766,
+          "fro": 2.6611174229745984,
+          "elapsed_sec": 0.028105583041906357
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0006953833961729596,
+          "cost_l21": 3.671007345427611,
+          "fro": 2.109789241803546,
+          "elapsed_sec": 0.028255817014724016
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0008926231566008045,
+          "cost_l21": 3.6992407265080813,
+          "fro": 2.126015437519964,
+          "elapsed_sec": 0.02791888697538525
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0014826010501287534,
+          "cost_l21": 3.715005062267545,
+          "fro": 2.135075464607876,
+          "elapsed_sec": 0.027419629972428083
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0016467294049927795,
+          "cost_l21": 3.8403241046977543,
+          "fro": 2.2070984116176913,
+          "elapsed_sec": 0.02852031693328172
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0015530456087194079,
+          "cost_l21": 4.055711832964885,
+          "fro": 2.3308853368823605,
+          "elapsed_sec": 0.027520745992660522
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 0.3,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.004531918781777713,
+              "cost_l21": 3.334009684120733,
+              "fro": 1.9161110566526018,
+              "elapsed_sec": 0.028632630011998117
+            }
+          },
+          "R": {
+            "selected_parameter": null,
+            "accepted": 0,
+            "selected": null
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.0005322693173569118,
+              "cost_l21": 4.6303116032737766,
+              "fro": 2.6611174229745984,
+              "elapsed_sec": 0.028105583041906357
+            }
+          },
+          "R": {
+            "selected_parameter": 0.015625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0006953833961729596,
+              "cost_l21": 3.671007345427611,
+              "fro": 2.109789241803546,
+              "elapsed_sec": 0.028255817014724016
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        13387,
+        129
+      ],
+      "targets": [
+        3912,
+        4384,
+        5344
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.018501728947348688,
+          "cost_l21": 1.848041690649978,
+          "fro": 1.096927462225257,
+          "elapsed_sec": 0.02442356594838202
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0018077981045576295,
+          "cost_l21": 2.1720958395934127,
+          "fro": 1.28927371557145,
+          "elapsed_sec": 0.024736138060688972
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0004983936443243903,
+          "cost_l21": 2.4496629503333507,
+          "fro": 1.454027026019804,
+          "elapsed_sec": 0.025213205022737384
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0002608380527873616,
+          "cost_l21": 2.619495036985114,
+          "fro": 1.5548329119248008,
+          "elapsed_sec": 0.0244271419942379
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00018831461947307012,
+          "cost_l21": 2.7200302551786635,
+          "fro": 1.614506804735371,
+          "elapsed_sec": 0.024859514902345836
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00013135654824439133,
+          "cost_l21": 2.8438672741221445,
+          "fro": 1.6880117627709428,
+          "elapsed_sec": 0.02585192199330777
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 8.41537899069381e-05,
+          "cost_l21": 3.000519850234166,
+          "fro": 1.780994791040815,
+          "elapsed_sec": 0.025559353991411626
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.002028006719097705,
+          "cost_l21": 2.342715907883362,
+          "fro": 1.3905473174933676,
+          "elapsed_sec": 0.02470760210417211
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.000985359371819496,
+          "cost_l21": 2.551832147184091,
+          "fro": 1.5146707865940894,
+          "elapsed_sec": 0.0251936319982633
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0004435080689717216,
+          "cost_l21": 2.592665069498778,
+          "fro": 1.538907660727669,
+          "elapsed_sec": 0.025211720960214734
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0005651704057989215,
+          "cost_l21": 2.8388132643451427,
+          "fro": 1.68501189423616,
+          "elapsed_sec": 0.025110472925007343
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00018060457126936385,
+          "cost_l21": 3.1772232505712426,
+          "fro": 1.885879228160927,
+          "elapsed_sec": 0.024330693064257503
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 8.41537899069381e-05,
+              "cost_l21": 3.000519850234166,
+              "fro": 1.780994791040815,
+              "elapsed_sec": 0.025559353991411626
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.00018060457126936385,
+              "cost_l21": 3.1772232505712426,
+              "fro": 1.885879228160927,
+              "elapsed_sec": 0.024330693064257503
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 8.41537899069381e-05,
+              "cost_l21": 3.000519850234166,
+              "fro": 1.780994791040815,
+              "elapsed_sec": 0.025559353991411626
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.00018060457126936385,
+              "cost_l21": 3.1772232505712426,
+              "fro": 1.885879228160927,
+              "elapsed_sec": 0.024330693064257503
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        647,
+        88
+      ],
+      "targets": [
+        100,
+        12670,
+        12987
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 3,
+          "guard_drift": 0.008153380993231282,
+          "cost_l21": 2.8725664097464056,
+          "fro": 2.0809732106785592,
+          "elapsed_sec": 0.024325717007741332
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 3,
+          "guard_drift": 0.0005044636647048563,
+          "cost_l21": 4.002682010866785,
+          "fro": 2.899662826668681,
+          "elapsed_sec": 0.024558483040891588
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 2,
+          "guard_drift": 0.00014370455254517986,
+          "cost_l21": 4.881470244844998,
+          "fro": 3.5362833645136615,
+          "elapsed_sec": 0.025116994976997375
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 2,
+          "guard_drift": 9.143872544688869e-05,
+          "cost_l21": 5.38575025528465,
+          "fro": 3.9015989195675354,
+          "elapsed_sec": 0.025359431048855186
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 2,
+          "guard_drift": 6.648097884328629e-05,
+          "cost_l21": 5.691125339965869,
+          "fro": 4.122821784345939,
+          "elapsed_sec": 0.02609282301273197
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 2,
+          "guard_drift": 4.1057218270438944e-05,
+          "cost_l21": 6.097194928729531,
+          "fro": 4.416990766139136,
+          "elapsed_sec": 0.024663410033099353
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 1,
+          "guard_drift": 1.9820164582039698e-05,
+          "cost_l21": 6.705817837588015,
+          "fro": 4.8578954444235185,
+          "elapsed_sec": 0.025153110036626458
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 6,
+          "same_damage": 2,
+          "guard_drift": 0.0019826816586920367,
+          "cost_l21": 5.2672587415496865,
+          "fro": 3.8157601153057468,
+          "elapsed_sec": 0.026411022990942
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 4,
+          "same_damage": 2,
+          "guard_drift": 0.0007109471826789208,
+          "cost_l21": 5.2979812888509095,
+          "fro": 3.8380164494607136,
+          "elapsed_sec": 0.024562287027947605
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 1,
+          "guard_drift": 0.0005084727854578647,
+          "cost_l21": 5.985390046107524,
+          "fro": 4.335995957883338,
+          "elapsed_sec": 0.024932791013270617
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 1,
+          "guard_drift": 0.00012998017054141725,
+          "cost_l21": 6.749892524456785,
+          "fro": 4.8898244687036065,
+          "elapsed_sec": 0.029765518032945693
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 1,
+          "guard_drift": 0.00014085892670194565,
+          "cost_l21": 7.464918213116953,
+          "fro": 5.407810510035948,
+          "elapsed_sec": 0.025969764101319015
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 0.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 2,
+              "same_damage": 3,
+              "guard_drift": 0.008153380993231282,
+              "cost_l21": 2.8725664097464056,
+              "fro": 2.0809732106785592,
+              "elapsed_sec": 0.024325717007741332
+            }
+          },
+          "R": {
+            "selected_parameter": null,
+            "accepted": 0,
+            "selected": null
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 1.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 2,
+              "guard_drift": 0.00014370455254517986,
+              "cost_l21": 4.881470244844998,
+              "fro": 3.5362833645136615,
+              "elapsed_sec": 0.025116994976997375
+            }
+          },
+          "R": {
+            "selected_parameter": null,
+            "accepted": 0,
+            "selected": null
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        13616,
+        59
+      ],
+      "targets": [
+        496,
+        900,
+        1570
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.016339372364783594,
+          "cost_l21": 2.1136834548956833,
+          "fro": 1.212689564168991,
+          "elapsed_sec": 0.025419216020964086
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0006558162785137551,
+          "cost_l21": 2.4752021958350627,
+          "fro": 1.4201047300365477,
+          "elapsed_sec": 0.026715170009993017
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 3.1455676329127634e-05,
+          "cost_l21": 2.7834375960088877,
+          "fro": 1.596949494673596,
+          "elapsed_sec": 0.02724244201090187
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 5.3126479387855e-05,
+          "cost_l21": 2.9692320520267477,
+          "fro": 1.7035458714259668,
+          "elapsed_sec": 0.027082588989287615
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 7.118350550793197e-05,
+          "cost_l21": 3.082760309816619,
+          "fro": 1.768680758649115,
+          "elapsed_sec": 0.027755029033869505
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 7.414701358747471e-05,
+          "cost_l21": 3.2315666906562424,
+          "fro": 1.8540558628105244,
+          "elapsed_sec": 0.02704267599619925
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 5.150107764366278e-05,
+          "cost_l21": 3.4398010682776845,
+          "fro": 1.9735267590120613,
+          "elapsed_sec": 0.028309141052886844
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.006645983660079882,
+          "cost_l21": 2.704762261430627,
+          "fro": 1.5518108732875149,
+          "elapsed_sec": 0.027057336061261594
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0014577888170127728,
+          "cost_l21": 2.979841992971653,
+          "fro": 1.7096331427392444,
+          "elapsed_sec": 0.028130362974479795
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0001257664573780078,
+          "cost_l21": 3.035760199991703,
+          "fro": 1.74171525321004,
+          "elapsed_sec": 0.027093408978544176
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0010558141882185893,
+          "cost_l21": 3.230853368628645,
+          "fro": 1.8536466065537494,
+          "elapsed_sec": 0.027941945008933544
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 1,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0013090805062637208,
+          "cost_l21": 3.46923795309774,
+          "fro": 1.9904156658823133,
+          "elapsed_sec": 0.02746357291471213
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 1.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 3.1455676329127634e-05,
+              "cost_l21": 2.7834375960088877,
+              "fro": 1.596949494673596,
+              "elapsed_sec": 0.02724244201090187
+            }
+          },
+          "R": {
+            "selected_parameter": 0.0625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.0001257664573780078,
+              "cost_l21": 3.035760199991703,
+              "fro": 1.74171525321004,
+              "elapsed_sec": 0.027093408978544176
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 1.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 3.1455676329127634e-05,
+              "cost_l21": 2.7834375960088877,
+              "fro": 1.596949494673596,
+              "elapsed_sec": 0.02724244201090187
+            }
+          },
+          "R": {
+            "selected_parameter": 0.0625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 1,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.0001257664573780078,
+              "cost_l21": 3.035760199991703,
+              "fro": 1.74171525321004,
+              "elapsed_sec": 0.027093408978544176
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        12905,
+        75
+      ],
+      "targets": [
+        819,
+        1063,
+        8662
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 1,
+          "guard_drift": 0.0048814136295080085,
+          "cost_l21": 1.853398801477565,
+          "fro": 0.6278500252311287,
+          "elapsed_sec": 0.026069934014230967
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 1,
+          "guard_drift": 0.0007908204057499382,
+          "cost_l21": 2.4865808762456783,
+          "fro": 0.8423442729354701,
+          "elapsed_sec": 0.02614294004160911
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 3,
+          "same_damage": 1,
+          "guard_drift": 0.0002242188379101679,
+          "cost_l21": 3.2562753717664905,
+          "fro": 1.1030829267253315,
+          "elapsed_sec": 0.026538675068877637
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 3,
+          "same_damage": 1,
+          "guard_drift": 0.00013484900345738285,
+          "cost_l21": 3.787655573874196,
+          "fro": 1.2830911759130785,
+          "elapsed_sec": 0.026146264979615808
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 3,
+          "same_damage": 1,
+          "guard_drift": 0.00011096024319116058,
+          "cost_l21": 4.119003147988335,
+          "fro": 1.3953371656061682,
+          "elapsed_sec": 0.0261446830118075
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 3,
+          "same_damage": 0,
+          "guard_drift": 9.20818310416845e-05,
+          "cost_l21": 4.553730348445487,
+          "fro": 1.5426036273941468,
+          "elapsed_sec": 0.02533426391892135
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 3,
+          "same_damage": 0,
+          "guard_drift": 7.06074687252636e-05,
+          "cost_l21": 5.175555021098075,
+          "fro": 1.7532504866146348,
+          "elapsed_sec": 0.02629375399556011
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 5,
+          "same_damage": 1,
+          "guard_drift": 0.002059896533058714,
+          "cost_l21": 2.981615546057009,
+          "fro": 1.010040253791585,
+          "elapsed_sec": 0.02494985598605126
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 1,
+          "guard_drift": 0.0009827517384799439,
+          "cost_l21": 4.058853520240417,
+          "fro": 1.3749611163343838,
+          "elapsed_sec": 0.025371515890583396
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0010351706469134015,
+          "cost_l21": 4.678003513646374,
+          "fro": 1.5847019118242032,
+          "elapsed_sec": 0.02482002694159746
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 3,
+          "same_damage": 0,
+          "guard_drift": 0.0008630565876428285,
+          "cost_l21": 5.039827295973028,
+          "fro": 1.7072719009069133,
+          "elapsed_sec": 0.02552882698364556
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 4,
+          "same_damage": 0,
+          "guard_drift": 0.00029399850585959945,
+          "cost_l21": 5.742952033939469,
+          "fro": 1.9454596477215347,
+          "elapsed_sec": 0.02477715304121375
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 1.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 3,
+              "same_damage": 1,
+              "guard_drift": 0.0002242188379101679,
+              "cost_l21": 3.2562753717664905,
+              "fro": 1.1030829267253315,
+              "elapsed_sec": 0.026538675068877637
+            }
+          },
+          "R": {
+            "selected_parameter": 0.015625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 5,
+              "same_damage": 1,
+              "guard_drift": 0.002059896533058714,
+              "cost_l21": 2.981615546057009,
+              "fro": 1.010040253791585,
+              "elapsed_sec": 0.02494985598605126
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 3,
+              "same_damage": 0,
+              "guard_drift": 7.06074687252636e-05,
+              "cost_l21": 5.175555021098075,
+              "fro": 1.7532504866146348,
+              "elapsed_sec": 0.02629375399556011
+            }
+          },
+          "R": {
+            "selected_parameter": 0.125,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 3,
+              "same_damage": 0,
+              "guard_drift": 0.0008630565876428285,
+              "cost_l21": 5.039827295973028,
+              "fro": 1.7072719009069133,
+              "elapsed_sec": 0.02552882698364556
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        4205,
+        108
+      ],
+      "targets": [
+        630,
+        793,
+        2566
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.13019154535313393,
+          "cost_l21": 2.555360215389334,
+          "fro": 1.6846073927550294,
+          "elapsed_sec": 0.02539514994714409
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.017978538986253043,
+          "cost_l21": 2.959961629831714,
+          "fro": 1.951338685581754,
+          "elapsed_sec": 0.0249583040131256
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.013172283236656791,
+          "cost_l21": 3.287939153008338,
+          "fro": 2.1675560927689608,
+          "elapsed_sec": 0.02579393598716706
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.010385421507913759,
+          "cost_l21": 3.5378877020137662,
+          "fro": 2.3323333210153447,
+          "elapsed_sec": 0.02537504304200411
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00823564590250813,
+          "cost_l21": 3.727141557013774,
+          "fro": 2.4570979007095723,
+          "elapsed_sec": 0.025730540975928307
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.005472885775399182,
+          "cost_l21": 4.029850263207464,
+          "fro": 2.656656977051968,
+          "elapsed_sec": 0.02513235399965197
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.002545644009969565,
+          "cost_l21": 4.573659396603563,
+          "fro": 3.0151602052268642,
+          "elapsed_sec": 0.025148896034806967
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.026188899283175117,
+          "cost_l21": 3.2934734885905605,
+          "fro": 2.1712045735505168,
+          "elapsed_sec": 0.02544925094116479
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.03208550990497557,
+          "cost_l21": 3.3298042343944365,
+          "fro": 2.195155421104973,
+          "elapsed_sec": 0.0248149010585621
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.03735688203501336,
+          "cost_l21": 3.3706909798528013,
+          "fro": 2.2221097867752393,
+          "elapsed_sec": 0.025316138984635472
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.02771941498471578,
+          "cost_l21": 3.8279759429727442,
+          "fro": 2.523572423951891,
+          "elapsed_sec": 0.024649853934533894
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.010370898105743983,
+          "cost_l21": 4.112642898296837,
+          "fro": 2.711237573672855,
+          "elapsed_sec": 0.02529296895954758
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 1.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.013172283236656791,
+              "cost_l21": 3.287939153008338,
+              "fro": 2.1675560927689608,
+              "elapsed_sec": 0.02579393598716706
+            }
+          },
+          "R": {
+            "selected_parameter": 0.015625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 2,
+              "same_damage": 0,
+              "guard_drift": 0.026188899283175117,
+              "cost_l21": 3.2934734885905605,
+              "fro": 2.1712045735505168,
+              "elapsed_sec": 0.02544925094116479
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.002545644009969565,
+              "cost_l21": 4.573659396603563,
+              "fro": 3.0151602052268642,
+              "elapsed_sec": 0.025148896034806967
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.010370898105743983,
+              "cost_l21": 4.112642898296837,
+              "fro": 2.711237573672855,
+              "elapsed_sec": 0.02529296895954758
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        31,
+        75
+      ],
+      "targets": [
+        1499,
+        12872,
+        12955
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.015586131773201797,
+          "cost_l21": 0.7405705595364753,
+          "fro": 0.5593019095814468,
+          "elapsed_sec": 0.023574440041556954
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0021790400873963,
+          "cost_l21": 1.03299352770622,
+          "fro": 0.7801488260524188,
+          "elapsed_sec": 0.02449337299913168
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0011446636126121851,
+          "cost_l21": 1.3429521831472575,
+          "fro": 1.0142392387039514,
+          "elapsed_sec": 0.0235917828977108
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0008648272035539582,
+          "cost_l21": 1.5195231382048573,
+          "fro": 1.1475911132399137,
+          "elapsed_sec": 0.023619413026608527
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0006931225745619659,
+          "cost_l21": 1.6201919703806027,
+          "fro": 1.2236193449137052,
+          "elapsed_sec": 0.023903634981252253
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00047663956030563045,
+          "cost_l21": 1.7484862118070414,
+          "fro": 1.3205111444783841,
+          "elapsed_sec": 0.024119415087625384
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0002393973305823214,
+          "cost_l21": 1.932408612645347,
+          "fro": 1.4594150594112896,
+          "elapsed_sec": 0.02382469899021089
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.023708963654782474,
+          "cost_l21": 1.4100267628436285,
+          "fro": 1.064896046519852,
+          "elapsed_sec": 0.02418000402394682
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0017427074086190369,
+          "cost_l21": 1.6287998133328074,
+          "fro": 1.2301202555137143,
+          "elapsed_sec": 0.02403745602350682
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.003211435235656325,
+          "cost_l21": 1.7643180156333633,
+          "fro": 1.3324678149106017,
+          "elapsed_sec": 0.024506270070560277
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0013265242468481835,
+          "cost_l21": 1.8264300236517788,
+          "fro": 1.3793767343177972,
+          "elapsed_sec": 0.0239998729666695
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00022751673162602916,
+          "cost_l21": 2.178510134567521,
+          "fro": 1.6452785796248455,
+          "elapsed_sec": 0.024140944005921483
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0002393973305823214,
+              "cost_l21": 1.932408612645347,
+              "fro": 1.4594150594112896,
+              "elapsed_sec": 0.02382469899021089
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.00022751673162602916,
+              "cost_l21": 2.178510134567521,
+              "fro": 1.6452785796248455,
+              "elapsed_sec": 0.024140944005921483
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0002393973305823214,
+              "cost_l21": 1.932408612645347,
+              "fro": 1.4594150594112896,
+              "elapsed_sec": 0.02382469899021089
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.00022751673162602916,
+              "cost_l21": 2.178510134567521,
+              "fro": 1.6452785796248455,
+              "elapsed_sec": 0.024140944005921483
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        8753,
+        59
+      ],
+      "targets": [
+        10272,
+        11112,
+        11855
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.03654777624666026,
+          "cost_l21": 2.070319821360134,
+          "fro": 1.2097360172678935,
+          "elapsed_sec": 0.02410774095915258
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.010312704565195082,
+          "cost_l21": 2.4878175078745706,
+          "fro": 1.4536896244795194,
+          "elapsed_sec": 0.026140872039832175
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.006123142317723604,
+          "cost_l21": 2.860961780801811,
+          "fro": 1.6717265006858073,
+          "elapsed_sec": 0.02612628892529756
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.004362159777337719,
+          "cost_l21": 3.095452710003344,
+          "fro": 1.8087450037455646,
+          "elapsed_sec": 0.02631946699693799
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.003427047799197085,
+          "cost_l21": 3.2469446237034587,
+          "fro": 1.897265251891317,
+          "elapsed_sec": 0.02582167601212859
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0024020759891350274,
+          "cost_l21": 3.461318938590753,
+          "fro": 2.0225291493919038,
+          "elapsed_sec": 0.026185109047219157
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0013406839973961891,
+          "cost_l21": 3.8105784471297373,
+          "fro": 2.226609602321788,
+          "elapsed_sec": 0.026111749932169914
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0036009231362649366,
+          "cost_l21": 2.8898065494634255,
+          "fro": 1.6885811698048956,
+          "elapsed_sec": 0.026688399957492948
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.00662315901846041,
+          "cost_l21": 2.988806216525344,
+          "fro": 1.7464289775236337,
+          "elapsed_sec": 0.02608787000644952
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.006544821518482416,
+          "cost_l21": 3.062913556702319,
+          "fro": 1.7897316197681121,
+          "elapsed_sec": 0.02639623894356191
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.01295001011633986,
+          "cost_l21": 3.32436485753827,
+          "fro": 1.9425036949419865,
+          "elapsed_sec": 0.025841791066341102
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0006180785907955611,
+          "cost_l21": 3.7711202366706473,
+          "fro": 2.203553252343001,
+          "elapsed_sec": 0.026410843012854457
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 5.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.0024020759891350274,
+              "cost_l21": 3.461318938590753,
+              "fro": 2.0225291493919038,
+              "elapsed_sec": 0.026185109047219157
+            }
+          },
+          "R": {
+            "selected_parameter": 0.015625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0036009231362649366,
+              "cost_l21": 2.8898065494634255,
+              "fro": 1.6885811698048956,
+              "elapsed_sec": 0.026688399957492948
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 2,
+              "same_damage": 0,
+              "guard_drift": 0.0013406839973961891,
+              "cost_l21": 3.8105784471297373,
+              "fro": 2.226609602321788,
+              "elapsed_sec": 0.026111749932169914
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 1,
+              "same_damage": 0,
+              "guard_drift": 0.0006180785907955611,
+              "cost_l21": 3.7711202366706473,
+              "fro": 2.203553252343001,
+              "elapsed_sec": 0.026410843012854457
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        5672,
+        13
+      ],
+      "targets": [
+        434,
+        1811,
+        2463
+      ],
+      "n_original_valid_hits": 1,
+      "n_guard": 10,
+      "n_heldother": 0,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0,
+          "cost_l21": 0.4229632901963057,
+          "fro": 0.30930252163396216,
+          "elapsed_sec": 0.01664876996073872
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0,
+          "cost_l21": 0.48108382003273953,
+          "fro": 0.35180461780587224,
+          "elapsed_sec": 0.017949834000319242
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.7047057880121148,
+          "fro": 0.5153337944317402,
+          "elapsed_sec": 0.01744370092637837
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 0.938763511669792,
+          "fro": 0.6864943793175464,
+          "elapsed_sec": 0.017894045915454626
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 1.0963531048386337,
+          "fro": 0.8017357245599914,
+          "elapsed_sec": 0.017148158978670835
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 1.2979254085784193,
+          "fro": 0.949140530800614,
+          "elapsed_sec": 0.017784828902222216
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 1.550176840247631,
+          "fro": 1.1336057213017867,
+          "elapsed_sec": 0.01716530800331384
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 1.8023983511018886,
+          "fro": 1.3180490314560611,
+          "elapsed_sec": 0.017675749957561493
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 1.994512171610023,
+          "fro": 1.4585370844412782,
+          "elapsed_sec": 0.01714449597056955
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 2.2662846518915627,
+          "fro": 1.6572775316861976,
+          "elapsed_sec": 0.017772824969142675
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 2.57165088010257,
+          "fro": 1.880584250251963,
+          "elapsed_sec": 0.017198828980326653
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 2,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 2.741760171147202,
+          "fro": 2.0049809387897564,
+          "elapsed_sec": 0.017722491058520973
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 0.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 2,
+              "cross_damage": 0,
+              "same_damage": 1,
+              "guard_drift": 0.0,
+              "cost_l21": 0.4229632901963057,
+              "fro": 0.30930252163396216,
+              "elapsed_sec": 0.01664876996073872
+            }
+          },
+          "R": {
+            "selected_parameter": 0.015625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 2,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0,
+              "cost_l21": 1.8023983511018886,
+              "fro": 1.3180490314560611,
+              "elapsed_sec": 0.017675749957561493
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 0.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 2,
+              "cross_damage": 0,
+              "same_damage": 1,
+              "guard_drift": 0.0,
+              "cost_l21": 0.4229632901963057,
+              "fro": 0.30930252163396216,
+              "elapsed_sec": 0.01664876996073872
+            }
+          },
+          "R": {
+            "selected_parameter": 0.015625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 2,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 0.0,
+              "cost_l21": 1.8023983511018886,
+              "fro": 1.3180490314560611,
+              "elapsed_sec": 0.017675749957561493
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        6963,
+        216
+      ],
+      "targets": [
+        5925,
+        5940,
+        12487
+      ],
+      "n_original_valid_hits": 1,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.006373825698427657,
+          "cost_l21": 0.7134644330548366,
+          "fro": 0.43034677704830554,
+          "elapsed_sec": 0.025304826092906296
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0017360757365663681,
+          "cost_l21": 0.9147856278820866,
+          "fro": 0.5517794979121388,
+          "elapsed_sec": 0.026217298000119627
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0009280218643520624,
+          "cost_l21": 1.2720818791201172,
+          "fro": 0.7672931003398998,
+          "elapsed_sec": 0.027081542997621
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0005919284584474459,
+          "cost_l21": 1.5922627756704508,
+          "fro": 0.9604194995254954,
+          "elapsed_sec": 0.02648839505854994
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.00042854576438655385,
+          "cost_l21": 1.8151263431024833,
+          "fro": 1.094846127570865,
+          "elapsed_sec": 0.025922402972355485
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.00027225346313496237,
+          "cost_l21": 2.1258894223460953,
+          "fro": 1.2822918969492758,
+          "elapsed_sec": 0.02602675894740969
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.00014243941845658588,
+          "cost_l21": 2.5829596859484196,
+          "fro": 1.5579870903083557,
+          "elapsed_sec": 0.02539630699902773
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 1,
+          "guard_drift": 0.0011152723721044263,
+          "cost_l21": 1.1438855485729549,
+          "fro": 0.6899677634002935,
+          "elapsed_sec": 0.026276935008354485
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 4,
+          "same_damage": 1,
+          "guard_drift": 0.003871693887322955,
+          "cost_l21": 1.8178955579437976,
+          "fro": 1.0965164598631296,
+          "elapsed_sec": 0.025888345087878406
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 1,
+          "guard_drift": 0.0016024323265532738,
+          "cost_l21": 2.145654831672267,
+          "fro": 1.2942139771630554,
+          "elapsed_sec": 0.02622470597270876
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 1,
+          "guard_drift": 0.0020486815969610124,
+          "cost_l21": 2.820396420766096,
+          "fro": 1.7012039471657552,
+          "elapsed_sec": 0.026763168978504837
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 1,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 1,
+          "guard_drift": 0.0008059878581102099,
+          "cost_l21": 3.158890912404042,
+          "fro": 1.9053767226764844,
+          "elapsed_sec": 0.02607363590504974
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 1,
+              "guard_drift": 0.00014243941845658588,
+              "cost_l21": 2.5829596859484196,
+              "fro": 1.5579870903083557,
+              "elapsed_sec": 0.02539630699902773
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 2,
+              "same_damage": 1,
+              "guard_drift": 0.0008059878581102099,
+              "cost_l21": 3.158890912404042,
+              "fro": 1.9053767226764844,
+              "elapsed_sec": 0.02607363590504974
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 1,
+              "guard_drift": 0.00014243941845658588,
+              "cost_l21": 2.5829596859484196,
+              "fro": 1.5579870903083557,
+              "elapsed_sec": 0.02539630699902773
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 1,
+              "old_damage": 0,
+              "cross_damage": 2,
+              "same_damage": 1,
+              "guard_drift": 0.0008059878581102099,
+              "cost_l21": 3.158890912404042,
+              "fro": 1.9053767226764844,
+              "elapsed_sec": 0.02607363590504974
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        1016,
+        75
+      ],
+      "targets": [
+        1063,
+        2029,
+        5691
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 1,
+          "guard_drift": 0.012159411662304637,
+          "cost_l21": 1.545663341129594,
+          "fro": 0.6649576598335748,
+          "elapsed_sec": 0.02598036895506084
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 1,
+          "guard_drift": 0.0020355973266684884,
+          "cost_l21": 2.054948730879787,
+          "fro": 0.8840566136253013,
+          "elapsed_sec": 0.02560674410779029
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0006799001371810033,
+          "cost_l21": 2.618099191884383,
+          "fro": 1.1263287842327414,
+          "elapsed_sec": 0.024933730950579047
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.00038322989970681243,
+          "cost_l21": 2.970427560708921,
+          "fro": 1.2779034780178238,
+          "elapsed_sec": 0.025099274003878236
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0002855217966096633,
+          "cost_l21": 3.1747633954721315,
+          "fro": 1.3658105111269776,
+          "elapsed_sec": 0.025347711984068155
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.00019961875410121803,
+          "cost_l21": 3.4276892919732567,
+          "fro": 1.4746214066003638,
+          "elapsed_sec": 0.02481081907171756
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.00011675225241906942,
+          "cost_l21": 3.7675395065511275,
+          "fro": 1.6208278911343668,
+          "elapsed_sec": 0.025230395956896245
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 4,
+          "same_damage": 1,
+          "guard_drift": 0.011499649774585083,
+          "cost_l21": 2.312585170198865,
+          "fro": 0.9948940251228581,
+          "elapsed_sec": 0.024894584086723626
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 5,
+          "same_damage": 0,
+          "guard_drift": 0.0015818553604278283,
+          "cost_l21": 3.1509570002676943,
+          "fro": 1.3555687952093012,
+          "elapsed_sec": 0.025324333924800158
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 3,
+          "same_damage": 0,
+          "guard_drift": 0.00141585911880533,
+          "cost_l21": 3.3138072856594314,
+          "fro": 1.4256283882628444,
+          "elapsed_sec": 0.0247458090307191
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 0,
+          "guard_drift": 0.0008606972277179882,
+          "cost_l21": 3.580987152618236,
+          "fro": 1.5405714643907504,
+          "elapsed_sec": 0.02528223698027432
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.0002656095964847966,
+          "cost_l21": 4.111714136307854,
+          "fro": 1.7688947762620586,
+          "elapsed_sec": 0.024979880079627037
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 5.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 2,
+              "same_damage": 0,
+              "guard_drift": 0.00019961875410121803,
+              "cost_l21": 3.4276892919732567,
+              "fro": 1.4746214066003638,
+              "elapsed_sec": 0.02481081907171756
+            }
+          },
+          "R": {
+            "selected_parameter": 0.0625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 3,
+              "same_damage": 0,
+              "guard_drift": 0.00141585911880533,
+              "cost_l21": 3.3138072856594314,
+              "fro": 1.4256283882628444,
+              "elapsed_sec": 0.0247458090307191
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 2,
+              "same_damage": 0,
+              "guard_drift": 0.00011675225241906942,
+              "cost_l21": 3.7675395065511275,
+              "fro": 1.6208278911343668,
+              "elapsed_sec": 0.025230395956896245
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 2,
+              "same_damage": 0,
+              "guard_drift": 0.0002656095964847966,
+              "cost_l21": 4.111714136307854,
+              "fro": 1.7688947762620586,
+              "elapsed_sec": 0.024979880079627037
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        2788,
+        205
+      ],
+      "targets": [
+        3229,
+        3516,
+        4258
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0,
+          "cost_l21": 2.402186557673397,
+          "fro": 1.364331649132879,
+          "elapsed_sec": 0.025774236069992185
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0,
+          "cost_l21": 2.870291806744868,
+          "fro": 1.6301939338057199,
+          "elapsed_sec": 0.025605505099520087
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0,
+          "cost_l21": 3.219446191921061,
+          "fro": 1.8284975903671759,
+          "elapsed_sec": 0.02580404793843627
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0,
+          "cost_l21": 3.40456830003141,
+          "fro": 1.933638446410334,
+          "elapsed_sec": 0.026671249070204794
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0,
+          "cost_l21": 3.5155266154095104,
+          "fro": 1.9966576740058086,
+          "elapsed_sec": 0.027571803075261414
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0,
+          "cost_l21": 3.6664516192867733,
+          "fro": 2.0823761452783667,
+          "elapsed_sec": 0.026729889097623527
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 3.8934709599581794,
+          "fro": 2.2113127053693793,
+          "elapsed_sec": 0.028219557949341834
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0,
+          "cost_l21": 3.3384027018994678,
+          "fro": 1.896059425194493,
+          "elapsed_sec": 0.027848455007188022
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0,
+          "cost_l21": 3.367397108443451,
+          "fro": 1.9125269166011953,
+          "elapsed_sec": 0.030063576065003872
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0,
+          "cost_l21": 3.4738264486312342,
+          "fro": 1.972973894272721,
+          "elapsed_sec": 0.027201818069443107
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 3.5806538884389973,
+          "fro": 2.0336469742464636,
+          "elapsed_sec": 0.027589378994889557
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 0.0,
+          "cost_l21": 3.779808563355569,
+          "fro": 2.1467576838179188,
+          "elapsed_sec": 0.026912039960734546
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 0.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 1,
+              "guard_drift": 0.0,
+              "cost_l21": 2.402186557673397,
+              "fro": 1.364331649132879,
+              "elapsed_sec": 0.025774236069992185
+            }
+          },
+          "R": {
+            "selected_parameter": 0.015625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 1,
+              "guard_drift": 0.0,
+              "cost_l21": 3.3384027018994678,
+              "fro": 1.896059425194493,
+              "elapsed_sec": 0.027848455007188022
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 0.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 1,
+              "guard_drift": 0.0,
+              "cost_l21": 2.402186557673397,
+              "fro": 1.364331649132879,
+              "elapsed_sec": 0.025774236069992185
+            }
+          },
+          "R": {
+            "selected_parameter": 0.015625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 1,
+              "guard_drift": 0.0,
+              "cost_l21": 3.3384027018994678,
+              "fro": 1.896059425194493,
+              "elapsed_sec": 0.027848455007188022
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        10775,
+        13
+      ],
+      "targets": [
+        1368,
+        1811,
+        5595
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 10,
+      "n_heldother": 0,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 5,
+          "guard_drift": 7.070750002894489e-06,
+          "cost_l21": 0.5785807767200759,
+          "fro": 0.3513123121385569,
+          "elapsed_sec": 0.019289452000521123
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 5,
+          "guard_drift": 6.182252756328619e-06,
+          "cost_l21": 0.6304700276186566,
+          "fro": 0.3828192917026872,
+          "elapsed_sec": 0.01913109398446977
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 5,
+          "guard_drift": 4.752161522564184e-06,
+          "cost_l21": 0.8956395153372021,
+          "fro": 0.5438293175924162,
+          "elapsed_sec": 0.018307122983969748
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 5,
+          "guard_drift": 3.5058349275422435e-06,
+          "cost_l21": 1.2560946910887176,
+          "fro": 0.7626964945032056,
+          "elapsed_sec": 0.017509809928014874
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 2,
+          "guard_drift": 2.7224027321110436e-06,
+          "cost_l21": 1.5417105923116599,
+          "fro": 0.9361215142748446,
+          "elapsed_sec": 0.01770174002740532
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 2,
+          "guard_drift": 1.8061394977226923e-06,
+          "cost_l21": 1.9544719494936968,
+          "fro": 1.1867488295740303,
+          "elapsed_sec": 0.01707689103204757
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 8.787670163896364e-07,
+          "cost_l21": 2.5261143638061765,
+          "fro": 1.533848191269114,
+          "elapsed_sec": 0.016676913015544415
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 3.508056978123306e-07,
+          "cost_l21": 3.376995898071695,
+          "fro": 2.0505006124805534,
+          "elapsed_sec": 0.01628846290986985
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 1.4170208325239844e-08,
+          "cost_l21": 3.7482270342662867,
+          "fro": 2.2759109165243103,
+          "elapsed_sec": 0.01662672497332096
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 1.7534193919550586e-08,
+          "cost_l21": 3.7489888793210935,
+          "fro": 2.2763735062930417,
+          "elapsed_sec": 0.016360030975192785
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 7.589515480424145e-09,
+          "cost_l21": 3.8188136080836577,
+          "fro": 2.3187708480178815,
+          "elapsed_sec": 0.016294688917696476
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 0,
+          "guard_drift": 1.1040483917645752e-33,
+          "cost_l21": 3.8572490194049758,
+          "fro": 2.3421087011968873,
+          "elapsed_sec": 0.016074936953373253
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 8.787670163896364e-07,
+              "cost_l21": 2.5261143638061765,
+              "fro": 1.533848191269114,
+              "elapsed_sec": 0.016676913015544415
+            }
+          },
+          "R": {
+            "selected_parameter": 0.015625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 3.508056978123306e-07,
+              "cost_l21": 3.376995898071695,
+              "fro": 2.0505006124805534,
+              "elapsed_sec": 0.01628846290986985
+            }
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 10.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 8.787670163896364e-07,
+              "cost_l21": 2.5261143638061765,
+              "fro": 1.533848191269114,
+              "elapsed_sec": 0.016676913015544415
+            }
+          },
+          "R": {
+            "selected_parameter": 0.25,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 0,
+              "guard_drift": 1.1040483917645752e-33,
+              "cost_l21": 3.8572490194049758,
+              "fro": 2.3421087011968873,
+              "elapsed_sec": 0.016074936953373253
+            }
+          }
+        }
+      }
+    },
+    {
+      "query": [
+        1241,
+        199
+      ],
+      "targets": [
+        6328,
+        9812,
+        9956
+      ],
+      "n_original_valid_hits": 0,
+      "n_guard": 34,
+      "n_heldother": 24,
+      "n_heldsame": 10,
+      "variants": {
+        "S0": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.042399207115441304,
+          "cost_l21": 3.241784934153825,
+          "fro": 1.8726592826395672,
+          "elapsed_sec": 0.024594819988124073
+        },
+        "S0.3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0066696589125927845,
+          "cost_l21": 3.6557193110394754,
+          "fro": 2.111773865816218,
+          "elapsed_sec": 0.024853141978383064
+        },
+        "S1": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0033565400387746856,
+          "cost_l21": 4.081271235964228,
+          "fro": 2.3575994769046003,
+          "elapsed_sec": 0.025174184003844857
+        },
+        "S2": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.0026430140524484765,
+          "cost_l21": 4.390202428532978,
+          "fro": 2.5360576032799047,
+          "elapsed_sec": 0.02460997400339693
+        },
+        "S3": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.002326133765747283,
+          "cost_l21": 4.596550265009091,
+          "fro": 2.6552571181392848,
+          "elapsed_sec": 0.02539532899390906
+        },
+        "S5": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 0,
+          "same_damage": 1,
+          "guard_drift": 0.001920991057484916,
+          "cost_l21": 4.890383994495239,
+          "fro": 2.8249939983615584,
+          "elapsed_sec": 0.024675118969753385
+        },
+        "S10": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 1,
+          "same_damage": 1,
+          "guard_drift": 0.0013101376314799372,
+          "cost_l21": 5.363381359448479,
+          "fro": 3.098227085730121,
+          "elapsed_sec": 0.02543740998953581
+        },
+        "R0.015625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 1,
+          "guard_drift": 0.004409786818943288,
+          "cost_l21": 3.8703254789895682,
+          "fro": 2.2357439133938337,
+          "elapsed_sec": 0.02571558696217835
+        },
+        "R0.03125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 5,
+          "same_damage": 1,
+          "guard_drift": 0.011139471679010636,
+          "cost_l21": 4.089738022773043,
+          "fro": 2.3624904265615663,
+          "elapsed_sec": 0.025178223964758217
+        },
+        "R0.0625": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 1,
+          "guard_drift": 0.006586119450862319,
+          "cost_l21": 4.504908607711017,
+          "fro": 2.6023191214178873,
+          "elapsed_sec": 0.025290705962106586
+        },
+        "R0.125": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 2,
+          "same_damage": 0,
+          "guard_drift": 0.004889455722686992,
+          "cost_l21": 4.740125053720773,
+          "fro": 2.738194964509444,
+          "elapsed_sec": 0.025668745045550168
+        },
+        "R0.25": {
+          "all3": 1,
+          "newhits": 3,
+          "original_new_hits": 0,
+          "old_damage": 0,
+          "cross_damage": 3,
+          "same_damage": 1,
+          "guard_drift": 0.005661719990357632,
+          "cost_l21": 5.408358741104935,
+          "fro": 3.124208855951954,
+          "elapsed_sec": 0.025022235000506043
+        }
+      },
+      "adaptive": {
+        "3.5": {
+          "S": {
+            "selected_parameter": 0.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 1,
+              "guard_drift": 0.042399207115441304,
+              "cost_l21": 3.241784934153825,
+              "fro": 1.8726592826395672,
+              "elapsed_sec": 0.024594819988124073
+            }
+          },
+          "R": {
+            "selected_parameter": null,
+            "accepted": 0,
+            "selected": null
+          }
+        },
+        "5.2": {
+          "S": {
+            "selected_parameter": 5.0,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 0,
+              "same_damage": 1,
+              "guard_drift": 0.001920991057484916,
+              "cost_l21": 4.890383994495239,
+              "fro": 2.8249939983615584,
+              "elapsed_sec": 0.024675118969753385
+            }
+          },
+          "R": {
+            "selected_parameter": 0.015625,
+            "accepted": 1,
+            "selected": {
+              "all3": 1,
+              "newhits": 3,
+              "original_new_hits": 0,
+              "old_damage": 0,
+              "cross_damage": 2,
+              "same_damage": 1,
+              "guard_drift": 0.004409786818943288,
+              "cost_l21": 3.8703254789895682,
+              "fro": 2.2357439133938337,
+              "elapsed_sec": 0.02571558696217835
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+id: KGE-ENTITY-COMMON-INCREMENT-001
+status: first_batch_terminal_audited_remaining_methods_pending
+active_processes: []
+config: configs/incremental-training.json
+protocol: plan/incremental-training-protocol.md
+failures_retained:
+- stage: unregistered engineering preflight
+  job: stark-s17
+  error: Missing train_hr2t in TRAIN-only bridge
+  source_sha256: 30752cd148121e19ca09ced2e4ed444ec8003b8c8441590f5653325e84933201
+  artifact: artifacts/preflight/stark-s17
+  resolved: true
+  resolution: TRAIN-only original-direction train_hr2t and cumulative train_all supplied;
+    all 11 adapter preflights passed in new directory
+model_comparison_started: true
+registered_utc: '2026-10-10T17:41:12.742459+00:00'
+frozen_input_sha256:
+  configs/incremental-training.json: 2fe993c2c32138b2a3666fc93273de616dc584c657649bb5a7a339444c47fb17
+  plan/incremental-training-protocol.md: 9b63641d2beab014f721c31903d87ef91e15ef3c51176c65233a395bcd1ead80
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  scripts/run_common_incremental.py: cc3212ff5b6a222a10d9514ad53872ecc0e2122dc919cfe06145197004de104b
+  scripts/audit_common_incremental.py: caae51b66c920005a77661ff1429a733287ea64adcf693efc22698af9363e2af
+  scripts/coordinate_common_incremental.py: bc3eca226105bdcd68fb18b5ff9593122959239a112701dc087f17ad4be464b8
+external_source_sha256:
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/config.py: 5c08e7e88f5fcbf853195f35bbb046457e40cb6d984fe5a2107246fe480c9893
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/parse_args.py: 1e811fc020739afea19d3d49f49ec198256ec4ad829bf5fb2f1398e4d558cbb8
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/test.py: 7c23329e97289389d6ac21c588c0d74f66cdb21c0ba48acc9bb2aa7cfad4c11c
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/train.py: 6d02bb4b024c319ced75d670c24d4a59ce89674426e99d4a889daa7d8f417e55
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/utils.py: 1df1dc8490f7c825b3100e1319096c1f3cc6bc7f3edf3065a0780f04a4b292c1
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/data_load/KnowledgeGraph.py: 51606a2152e268df3d9ba001a80fde05e6c9b11856c7a27a4e8d39b5f490167f
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/data_load/data_loader.py: 56d0446335f6a85462b8f808a6c84953bdd990ca9837537b4bef0130853bbdb8
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/BaseModel.py: 4f5f8d012ce21bdfed3c830a4c1cab865580de0adbe7df4bbdd77c0f5f98219c
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/CWR.py: 9907c0c785244b5a3aed04c623683ec2cafdb74a35247a9dc0aab7a85ea852a0
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/EMR.py: 6ec986a5847156eb45f50797659de1d029330f9d189bb42b72f125e931803913
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/EWC.py: 976df56a421ffca079f31561028058e55924839495ab9c5c37cf2670f9277803
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/GEM.py: a9940c1e1e99a0efcb7f5bd103a7b65062dbfcae45205b3a3e56fe0fdb4b21f4
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/LAN.py: 7c9fdd0b7faee7f4fa119b85239c783b571c5469d8dff81dcb0add6ec58c6fe6
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/LKGE.py: 1fd5dbc8e6d9a1003e13b8c7f6a6bf756d3de1da63782de002995d6b3b06b21a
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/MEAN.py: 72b87ac3f56d4d93a431495024a1f1add663d095e128aa2029a655b8150a6077
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/PNN.py: a53a87f23ea20708f2e8b7c22ed2898a0156f140f0c39d8d93d055b8c01f2624
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/SI.py: 485e19765221c1f1667ec4dec8e238c6ab7aecbae821133d5d3346d9aa22b8e7
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/Snapshot_only.py: 155a716e60b93dd445574be84c37ecce1ccf7828900c3825f2c91ddde4f922dd
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/finetune.py: 4fb9e5274122c567a6fce59ad69bf5e129a7e1976346b86e6fcd96f7a469619a
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/model_process.py: c0aba87166fd8057e19d53732860f0ce405dc1a07c60dc29fa3dc2c8eb4fb0f2
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/lkge-clean-fact-s55/worktree/src/model/retraining.py: 1ed5534fb2914bce8c8d3755c39ca3618afee4366b19662cb27e2af3be5d2bdb
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/src/parse_args.py: 8f932f3dfaa4e7b2a0cc264a1d909e5541b18cb9956ef8453ce173de51178972
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/src/test.py: 58d8ee132368ddceafe46348eaa58ee353f165317cfc9397f1a4a6e76a078e8c
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/src/train.py: 2316533d6652b303c32d50e61d208c10e8dee8c7c422ebc02cf9faf9a9dc6815
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/src/utils.py: f88d5033f34f53b5d65044854caeeff6f8906bd48a01e69ca5dcc857ae7207ad
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/src/data_load/KnowledgeGraph.py: db7570b1d81cb12fe3cafc99e5a4b554e904d2fee7d883810e32a6044d60735b
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/src/data_load/data_loader.py: 334e3bd24e4e07312a3ed7bc8f3784aa12618e8c993fea67cb893ebfdabc492e
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/src/model/BaseModel.py: 5ef1aaf5f075e70c5c4818108679d239ed4b97e0217c080ec853d7dd2c24037d
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/src/model/LoraKGE_Layers.py: 96ca5867df0f6f21798e0853f9c9e06561e7986ad053d756e22b3989d29d63da
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/src/model/model_process.py: c0400a21de33a2e968a79e9292532084c6526bdd984affc52db380ebc11ff9eb
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/STARK/src/parse_args.py: 186026f41bb7e8d54a28f62825e7ea85365593d9e27c9db8d5250bd17a1bcc3f
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/STARK/src/test.py: 58d8ee132368ddceafe46348eaa58ee353f165317cfc9397f1a4a6e76a078e8c
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/STARK/src/train.py: 2316533d6652b303c32d50e61d208c10e8dee8c7c422ebc02cf9faf9a9dc6815
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/STARK/src/utils.py: f88d5033f34f53b5d65044854caeeff6f8906bd48a01e69ca5dcc857ae7207ad
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/STARK/src/data_load/KnowledgeGraph.py: 4a06065df51e98432780af6d99a99025700927ef0b4ef758a376465dbb74ac91
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/STARK/src/data_load/data_loader.py: fde3361d4ccbedfc9ee9029f8c7ce2ef322adc94ab1987e096153b232dacef2d
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/STARK/src/model/BaseModel.py: 6e6fd55ac032762fdc83272115b1f5d526e67d57f8706f691ead5332351debfb
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/STARK/src/model/LoraKGE_Layers.py: 12c29885f7e3666acfcb03fbad37a0b69871fbe06dd5217b7f776784e0773c45
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/STARK/src/model/model_process.py: 674395d401e95f0270e10c34908979d799fd01662174507a87dc3c9ddb759880
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/reproduction/vendor/wcwidth/__init__.py: 79c671dd456892d66e02f6ad1ba35eb41c9516010d90a97d86d9a4d196ac4e60
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/reproduction/vendor/wcwidth/table_vs16.py: 84f6eea05c66c6b19fb8169ea2178c4c01a6801d9ae04b9d87162c62890b7faa
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/reproduction/vendor/wcwidth/table_wide.py: bd41e310eb91c35586c94708c362fd1b2999b18bc2d88ddd73ce7c9a56324d83
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/reproduction/vendor/wcwidth/table_zero.py: e197a284b6431fca1b82bc00e9cb7ebeeda5c5ce2dfc3b1fca207da7d3afc5ba
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/reproduction/vendor/wcwidth/unicode_versions.py: ee74a181e458aef645906a5111dafe3e451e5e7b8cf96c5e3a61988fa40d69a1
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/reproduction/vendor/wcwidth/wcwidth.py: 4cbcf21f56a17440c33ce20c72a54ee14d20c8ac12c9977302c4a010fb951466
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/reproduction/vendor/prettytable/__init__.py: 7f88e5a21194eedcd14eeb6402279e0ebc67c6dd36df6da4afb6b25d91fb8b1b
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/reproduction/vendor/prettytable/colortable.py: 0c537ec2d9f2d9cfa3741b4b4e0c139669cf58bac4029e3542aaeb150d157bc1
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/reproduction/vendor/prettytable/prettytable.py: a60593d11578f817cbd324b2b6d991e77d5f55fa9086aab81f88225a2ee3fc60
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/reproduction/vendor/loralib/__init__.py: df9ca7e519d0bbe03679eac45ed00d9b99d0434d106dcdd2b600765b99192027
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/reproduction/vendor/loralib/layers.py: ec40a85e96679a0f5a928fd79e6397b6e40a917ddc3c7dcac9ffd9d960c75d4c
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/reproduction/vendor/loralib/test.py: 2a5e0730b0e3a33a8249914fa6d3d381eb5e6dbe5c81508d7491e5d2c2974753
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/reproduction/vendor/loralib/utils.py: 9cd157527f79d48cf6f5feb7eb87509696e5f3cbb38862a633239e464eacaa71
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/__init__.py
+  : 890e2ce1f8986c7a9b2b35396342371279233c89ae5a1f6f4875b31e5488eb68
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/_scatter_cpu.so
+  : 85dc57f5a012e4e51710952796fc1b8260a7d2def911157435b1510a9297f980
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/_scatter_cuda.so
+  : ad2019e0a85cc36e619b6a906f9c35cbe4bc75bfd6a788fdf81afe67fe48ba49
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/_segment_coo_cpu.so
+  : 775dd08a88a6eaaec6b332ffbbaec262c1786f2337d24af35542591b22ee8eaf
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/_segment_coo_cuda.so
+  : 57fee3726513f8537c39b5b6e69d01090a7db4f80d20fc3c110f522073fe7f59
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/_segment_csr_cpu.so
+  : 47421281bdc2bd6a688905d6c9caac37ffc1aa767d9d17566ac884bf132bd3b5
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/_segment_csr_cuda.so
+  : 8c028064c66b6a7754a7ac2ea04fac71d5f9669ff57d69d9cc8ec6310d25ec10
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/_version_cpu.so
+  : 941fdd7f7672789437154f24e996cd53c0e366f51067b85643496bc2481023a9
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/_version_cuda.so
+  : 0fbc4905a717c1ff99c86c57a00de0d91aaca5980eaac3082184f2e945dee60e
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/placeholder.py
+  : d5a686e84c06e5671bdbe97f935740fa236f34af6db26ab09c0fb56a3791fbba
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/scatter.py
+  : 68b23f27c45bfb37a3fe066c75bd1c3dd711cbf5d8385aa9708f912c6916c3bc
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/segment_coo.py
+  : 1d9df0ba45f007c75484ef391dea9ba717de4b0bbba167c5da9b77a9aeedb11d
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/segment_csr.py
+  : 93cc49ace45374b594edfed1e63ecc2aaa327598b655b9ef65ab38e5f0c7f349
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/testing.py
+  : 3c9f4d6fa065c6d43ac66062d6aff627b4e186375ad81833667cc78d4eb56cb8
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/utils.py
+  : 0e3e310ffb443ff047116f8c330afb76dce2bbf3c00c3a029b44d9097ea195f9
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/composite/__init__.py
+  : 01a6687d4be1e11fe0ed35f5fbb4aebff9a5df8182edb16d2848e1c0499b031b
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/composite/logsumexp.py
+  : 2ddaaecc81b681b1d3bcf35734e2472459d6f71bf9b53abb56109a2e35bf216f
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/composite/softmax.py
+  : f982ca863de0830db8dc08b2c627572b64e592a1c1a77b8639304f9e912d4598
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64/torch_scatter/composite/std.py
+  : 7d9c66bc262816f5168cbf73519c467bba0107baf7a63a86393d1412de7b5f5e
+preflight_jobs_passed: 11
+feature_reconstruction_audit: artifacts/preflight-v2/feature-reconstruction-audit.json
+job_count: 33
+remaining_methods:
+- IncDE
+- SAGE
+- KGEditor
+- Rank
+- QP TRUE
+- QP TRUE+Prediction
+coordinator_pid: 688110
+jobs:
+  lkge-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  lkge-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  lkge-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  fastkge-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  fastkge-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  fastkge-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  stark-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  stark-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  stark-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  randomexpansion-transe-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  randomexpansion-transe-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  randomexpansion-transe-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  newentityonly-transe-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  newentityonly-transe-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  newentityonly-transe-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  fullfinetune-transe-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  fullfinetune-transe-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  fullfinetune-transe-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  replay-transe-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  replay-transe-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  replay-transe-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  randomexpansion-distmult-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  randomexpansion-distmult-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  randomexpansion-distmult-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  newentityonly-distmult-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  newentityonly-distmult-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  newentityonly-distmult-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  fullfinetune-distmult-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  fullfinetune-distmult-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  fullfinetune-distmult-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  replay-distmult-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  replay-distmult-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  replay-distmult-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+queued_jobs: []
+completed_utc: '2026-10-10T17:55:22.392545+00:00'
+result_directory: results/KGE-ENTITY-COMMON-INCREMENT-001

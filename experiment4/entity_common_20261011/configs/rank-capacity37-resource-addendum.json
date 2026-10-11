@@ -1,0 +1,17 @@
+{
+  "scope": "Operational queue handoff only after GPUs3/5/6 were released; no registered method/config/scorer/gate mutation",
+  "source_config": "configs/rank-capacity37.json",
+  "source_coordinator": "scripts/coordinate_gpu_claim_queue_v4.py",
+  "experiment": "KGE-ENTITY-COMMON-RANK-CAPACITY-037",
+  "expected_legacy_coordinator_pid": 783380,
+  "expected_active_jobs": ["capacity-full-s17", "capacity-scoped-s17"],
+  "expected_pending_jobs": ["capacity-full-s29", "capacity-scoped-s29", "capacity-full-s43", "capacity-scoped-s43"],
+  "additional_gpu_indices": [3, 5, 6],
+  "operation_directory": "operations/rank-capacity37-resource-handoff",
+  "limits": [
+    "GPU allocation/concurrency changed prospectively for queued jobs; all are the same RTX3090 class.",
+    "Running seed17 training wrappers and producers are neither signalled nor restarted.",
+    "Only the verified owned legacy scheduler is stopped; its wrappers' exact zombie exit statuses are captured before reaping.",
+    "Runtime/cost measurements are under concurrent resource conditions, not an equal-cost dominance claim."
+  ]
+}

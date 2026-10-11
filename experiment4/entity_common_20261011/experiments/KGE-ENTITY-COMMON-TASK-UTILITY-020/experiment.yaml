@@ -1,0 +1,45 @@
+id: KGE-ENTITY-COMMON-TASK-UTILITY-020
+status: batch_terminal_reaudit_original_records_unchanged
+config: configs/task-utility20.json
+protocol: plan/task-metric-protocol.md
+registered_utc: '2026-10-11T02:52:29.656490+00:00'
+scope: Independent fixed full VALID and new-answer directional utility gate; no source
+  outputs changed
+frozen_input_sha256:
+  configs/task-utility20.json: df816112356c9c20ff9b151b2fc50d3d0ad048d7d9f3d3b4f4cddf2fd852d739
+  configs/task-projection19.json: ec7512c8bb38b8ae353e4cb1414c53545b103c876949282ef7d2f1815fdee825
+  scripts/audit_proposal_utility_v2.py: e906bef88ba6cc2a30326772799df3ba93ae67734c866fad70e87e0cca4fec36
+  scripts/coordinate_cpu_audits_v2.py: 15a15423f6f56419f27aefe209a5668f9ae6f90ead6295a3a26f0b4f2017ba09
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+  plan/task-metric-protocol.md: a4cae7ce61e21ed75bc8e352312da1941f5a0fb9995266680d841d44063ad5df
+active_processes: []
+coordinator_pid: 736862
+jobs:
+  taskprojection-euclidean-s17:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  taskprojection-task_query-s17:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  taskprojection-euclidean-s29:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  taskprojection-task_query-s29:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  taskprojection-euclidean-s43:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  taskprojection-task_query-s43:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+queued_jobs: []
+aggregation_exit_code: 0
+result_directory: results/KGE-ENTITY-COMMON-TASK-UTILITY-020

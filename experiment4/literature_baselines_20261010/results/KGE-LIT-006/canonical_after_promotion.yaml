@@ -1,0 +1,71 @@
+id: KGE-LIT-006
+status: completed_audited
+registration_status: REGISTERED
+registered_utc: '2026-10-10T12:44:30.935133+00:00'
+active_processes: []
+jobs:
+- id: lkge-clean-fact-s55
+  method: LKGE_clean_split
+  status: completed_audited
+  gpu: 6
+  pid: 664167
+  started_monotonic: 963546.149368372
+  started_utc: '2026-10-10T12:44:32Z'
+  log: runs/lkge-clean-fact-s55/run.log
+  exit_code: 0
+  elapsed_s: 1331.9650155099807
+  terminal_utc: '2026-10-10T13:06:44Z'
+  source_inputs_unchanged: true
+  log_sha256: 4d86291bf60775cdf4b09e9a94a84447341a7d7c2477435d4fffa915c812c096
+  audit_status: PASS_WITH_LIMITATIONS
+expected_jobs: 1
+jobs_manifest: configs/experiments/KGE-LIT-006-jobs.json
+jobs_manifest_sha256: 6e0db48e2b684f575694f893b488bf4493f728ae021b7a0fbd1435f77f9d79f9
+scheduler_sha256: 0becdfa0221d3072e8e6a264d23bc4207374076b33ed2f81810ea24889cb55bb
+protocol: configs/protocols/KGE-LIT-006-clean-lkge.json
+protocol_sha256: c4084e4f00292869be8b3dbe087b920b1f7fe9dde63d04ef095caa753eeacbf8
+audit:
+  status: PASS_WITH_LIMITATIONS
+  checks: 698
+  failures: 0
+  independent_rank_replays: 120
+  evidence_directory: results/KGE-LIT-006
+  summary_sha256: dce3950014620064d51445037f31dda7510202ba1b0d572f8cf34747d64b8ddc
+  auditor_sha256: 7b9123abae1b97db129fa3936cfb4e15cfb2d1a59663c5f054ac5c890faac977
+  limitations:
+  - Clean-validation adaptation, not exact test-selected upstream protocol; single
+    seed55, not five-run paper mean.
+  - Historical query-snapshot candidate/filter and double-argsort semantics retained.
+  - 15 posttrain files sampled8/file by default; no complete score certification or
+    pre-FWT inference replay.
+  - Best sidecar and logs/epoch bytes verified; no independent validation ranking
+    or complete training/optimizer reconstruction.
+  - Independent checker completed by controller after sidecar agent hit usage limit;
+    no separate completed code review claimed.
+user_objective: remote selected strong/classic literature baseline at complete author
+  training budget; explicit clean-valid adaptation
+scheduler_pid: 664164
+resource_observation:
+  utc: '2026-10-10T13:06:47Z'
+  gpus:
+    0:
+      free_mb: 24109
+      utilization: 0
+    1:
+      free_mb: 24109
+      utilization: 0
+    2:
+      free_mb: 24109
+      utilization: 0
+    3:
+      free_mb: 24109
+      utilization: 0
+    4:
+      free_mb: 18913
+      utilization: 67
+    5:
+      free_mb: 17893
+      utilization: 0
+    6:
+      free_mb: 24109
+      utilization: 0

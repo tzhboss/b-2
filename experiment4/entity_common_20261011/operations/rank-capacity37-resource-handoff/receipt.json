@@ -1,0 +1,79 @@
+{
+  "scope": "Operational queue handoff only after GPUs3/5/6 were released; no registered method/config/scorer/gate mutation",
+  "addendum": "configs/rank-capacity37-resource-addendum.json",
+  "addendum_sha256": "ea4fe1575b40f142a172f2eeafdf31c642a0d791e51f813d30b86b2b793b34cf",
+  "runtime_queue_sha256": "69722f1754a736c74e6e46cf10629e91d0b180f6957856ffb8d72ea50767250a",
+  "rendered_queue_sha256": "0efe1b06914a4bc3822cb5dfea231a888e1fac973d799faf4d93278f571d0987",
+  "legacy_coordinator": {
+    "pid": 783380,
+    "state": "S",
+    "parent": 1,
+    "start_ticks": 103493681,
+    "exit_status": 0
+  },
+  "adopted_workers": {
+    "capacity-full-s17": {
+      "pid": 783945,
+      "state": "S",
+      "parent": 783380,
+      "start_ticks": 103508158,
+      "exit_status": 0
+    },
+    "capacity-scoped-s17": {
+      "pid": 783946,
+      "state": "S",
+      "parent": 783380,
+      "start_ticks": 103508158,
+      "exit_status": 0
+    }
+  },
+  "additional_gpu_indices": [
+    3,
+    5,
+    6
+  ],
+  "verified_idle_gpu_snapshot": {
+    "0": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 19126,
+      "utilization": 0
+    },
+    "1": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 0,
+      "utilization": 14
+    },
+    "2": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 0,
+      "utilization": 4
+    },
+    "3": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 0,
+      "utilization": 0
+    },
+    "4": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 0,
+      "utilization": 3
+    },
+    "5": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 0,
+      "utilization": 0
+    },
+    "6": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 0,
+      "utilization": 0
+    }
+  },
+  "controls_sha256": "7af4af5396b4084a0e8ea980e65053b8724911747b43d06d661ed6fbf434b4b6",
+  "limits": [
+    "GPU allocation/concurrency changed prospectively for queued jobs; all are the same RTX3090 class.",
+    "Running seed17 training wrappers and producers are neither signalled nor restarted.",
+    "Only the verified owned legacy scheduler is stopped; its wrappers' exact zombie exit statuses are captured before reaping.",
+    "Runtime/cost measurements are under concurrent resource conditions, not an equal-cost dominance claim."
+  ]
+}

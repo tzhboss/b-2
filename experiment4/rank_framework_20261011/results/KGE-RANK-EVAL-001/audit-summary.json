@@ -1,0 +1,384 @@
+{
+  "audits": [
+    {
+      "id": "kgeditor-e-fb15k237-s0",
+      "audit": {
+        "status": "PASS_FULL_NATIVE_REPLAY_WITH_RESTORE_LIMITATION",
+        "observations": 15430,
+        "full_native_before_after_checks": 30860,
+        "strict_rank_cpu_gpu_crosschecks": 30860,
+        "failures": [],
+        "terminal_sha256": "c10bcab9cddcb21dfdac9210790150f528b3cae075e1688febe5360008088549",
+        "source_sha256": "755cd9a739d8bca5b369d8fd93a509e270bee3bc8fd8be8e8faae7a6a83e6608",
+        "limitations": [
+          "Native CPU shared-embedding restoration retained; serialized base embeddings can be overwritten by learner storage.",
+          "edit_test used in checkpoint selection. Full repeated native batches, not independent full unique L-Test or global safety.",
+          "Joint SafeSucc refers to two edits and eight probes; Rank single-request relation TRAIN scope differs.",
+          "Audit independently derives aggregates from saved ranks; full strict scores CPU/GPU crosschecked during replay, original native sort/logits verified on every batch."
+        ]
+      },
+      "terminal_sha256": "c10bcab9cddcb21dfdac9210790150f528b3cae075e1688febe5360008088549",
+      "terminal_summary_sha256": "33d3d9c2b6a79fe7eb316e44ba70047831bbeb8e01013197182191b7757fe3b8"
+    },
+    {
+      "id": "kgeditor-e-wn18rr-s0",
+      "audit": {
+        "status": "PASS_FULL_NATIVE_REPLAY_WITH_RESTORE_LIMITATION",
+        "observations": 4150,
+        "full_native_before_after_checks": 8300,
+        "strict_rank_cpu_gpu_crosschecks": 8300,
+        "failures": [],
+        "terminal_sha256": "1218cdca04f835198419a70e986afacb8d817e014c55f2836b6ade87319d46e7",
+        "source_sha256": "755cd9a739d8bca5b369d8fd93a509e270bee3bc8fd8be8e8faae7a6a83e6608",
+        "limitations": [
+          "Native CPU shared-embedding restoration retained; serialized base embeddings can be overwritten by learner storage.",
+          "edit_test used in checkpoint selection. Full repeated native batches, not independent full unique L-Test or global safety.",
+          "Joint SafeSucc refers to two edits and eight probes; Rank single-request relation TRAIN scope differs.",
+          "Audit independently derives aggregates from saved ranks; full strict scores CPU/GPU crosschecked during replay, original native sort/logits verified on every batch."
+        ]
+      },
+      "terminal_sha256": "1218cdca04f835198419a70e986afacb8d817e014c55f2836b6ade87319d46e7",
+      "terminal_summary_sha256": "d71d18543c3cbecc39e59ca791aa8e115c16da81453dd5f70208703d2116ba93"
+    },
+    {
+      "id": "incde-entity-s3407",
+      "audit": {
+        "status": "PASS_RAW_STRICT_RANK_REEVALUATION",
+        "id": "incde-entity-s3407",
+        "full_query_derivation_checks": 229176,
+        "sampled_full_candidate_rank_checks": 960,
+        "max_target_score_error": 8.881784197001252e-16,
+        "failures": [],
+        "source_sha256": "d1e53108020775320907575a572b57d5664f52e2594baa2bf3d77155dca1fd26",
+        "bound_input_sha256": {
+          "results/KGE-LIT-001/incde-entity-s3407/audit.json": "d5e283928feb5c4f72c9ad2e61a90f55c6567dc01450fb38fb008c31aae8c91b",
+          "runs/incde-entity-s3407/checkpoint/ENTITY/0model_best.tar": "21df592eee31b51d4c0ebd4ec9754d3f0fbf71b159a66f3585d07bb51763f01b",
+          "runs/incde-entity-s3407/checkpoint/ENTITY/1model_best.tar": "95c988645d4fafd0a8c9968745f061fd4574c87556186241465d2f3582d0f9ec",
+          "runs/incde-entity-s3407/checkpoint/ENTITY/2model_best.tar": "2b012752d6af20337b53a2312de78d03e2064d98eb63eae26b95e21805eef905",
+          "runs/incde-entity-s3407/checkpoint/ENTITY/3model_best.tar": "0793bbb11ea37bb95d0b9c453a54c9256fb65569b8a0f6d1cbb27bd42d5d0ac9",
+          "runs/incde-entity-s3407/checkpoint/ENTITY/4model_best.tar": "888d9c86ea5b4dd101b653eb107740e71e7a3966fb303d90b5789e3dc544c235",
+          "runs/incde-entity-s3407/ranks/train0_test0_post_train.npz": "83b086b2c3aff88218afc7c5143badc1d4963d0ba8eec6317ad40a512d594eab",
+          "runs/incde-entity-s3407/ranks/train4_test0_post_train.npz": "6739a0c6c4af2d4b41a549afcedeb9d3c9ffb5da9aa5d55ffafd84a85e4a98ce",
+          "runs/incde-entity-s3407/ranks/train1_test1_post_train.npz": "0e4191fb739f2a04e627285c7c1aea5e59132c17c0ce359c3401b62c1a5a0834",
+          "runs/incde-entity-s3407/ranks/train4_test1_post_train.npz": "ea5fb55ed32444a030e852ac460ea90d0820cd54db2f80ca2ebd41266caf474a",
+          "runs/incde-entity-s3407/ranks/train2_test2_post_train.npz": "1cb76b38d1049bed53004c799ccb0c67702b8f1f5f2520a7f91de59f42ddddfa",
+          "runs/incde-entity-s3407/ranks/train4_test2_post_train.npz": "6f62960a272d8b6cbb47da8d3275433fa5df034fe169ba543f09540f0b873b15",
+          "runs/incde-entity-s3407/ranks/train3_test3_post_train.npz": "2e0964c1e488bb6674d0211eda5af72085043e1452e2b504d03a4a581696d053",
+          "runs/incde-entity-s3407/ranks/train4_test3_post_train.npz": "628d53c8f723750338b07476f67f44a6aaeff57b4e3bfce0c87c9e3fd4d8a1cc",
+          "runs/incde-entity-s3407/ranks/train4_test4_post_train.npz": "da10253fa38dc3e8157e747db5ac19a060506113df07743aa9736b7b97c16535"
+        },
+        "terminal_sha256": "df8d66e61ec338c9e8dc262053c8d4747fbd26398a61277c9fd60b11bb778c42",
+        "elapsed_s": 13.472999086021446,
+        "limits": [
+          "All rank aggregates checked; independent checkpoint score inference is sampled64/cohort, not independent full score replay.",
+          "Native checkpoints/data/query sets and training/model differences retained; this is a common metric framework, not a controlled SOTA ranking."
+        ]
+      },
+      "terminal_sha256": "df8d66e61ec338c9e8dc262053c8d4747fbd26398a61277c9fd60b11bb778c42",
+      "terminal_summary_sha256": "00e4fd96e159ffa5c77b9dde42ab8952503b2b17d1062ed95734bb684f6e9856"
+    },
+    {
+      "id": "incde-relation-s3407",
+      "audit": {
+        "status": "PASS_RAW_STRICT_RANK_REEVALUATION",
+        "id": "incde-relation-s3407",
+        "full_query_derivation_checks": 239466,
+        "sampled_full_candidate_rank_checks": 960,
+        "max_target_score_error": 8.326672684688674e-16,
+        "failures": [],
+        "source_sha256": "d1e53108020775320907575a572b57d5664f52e2594baa2bf3d77155dca1fd26",
+        "bound_input_sha256": {
+          "results/KGE-LIT-001/incde-relation-s3407/audit.json": "2ad8c5cbb688dc5f2c253be5b7099bc072020010254d03b869b73f4dc4c1fa6b",
+          "runs/incde-relation-s3407/checkpoint/RELATION/0model_best.tar": "6a0b090d9841cfe8d4e2b4fac986d11363adae4d945197cbae42d0bd50a2d4fa",
+          "runs/incde-relation-s3407/checkpoint/RELATION/1model_best.tar": "f1697c0dbd4e04d1c1436ada7ae50211c042b569bac1f388f06d968bbe4335f2",
+          "runs/incde-relation-s3407/checkpoint/RELATION/2model_best.tar": "0426956fcd265265adf8f65d92aef81d870c84fd0e6578ce8bb836328bd59d8b",
+          "runs/incde-relation-s3407/checkpoint/RELATION/3model_best.tar": "4f4ba2b18c88aa239e88c99576eafaed6a23d168edfad447b767959f52064720",
+          "runs/incde-relation-s3407/checkpoint/RELATION/4model_best.tar": "35fc9d4e937397fc5583d8e6a71ec9991a676914939e345b6d11d0c1da61eda0",
+          "runs/incde-relation-s3407/ranks/train0_test0_post_train.npz": "03688079f4d2832cfae2187c56800f6f9cde4cd6290b2a677c19448e75fe3043",
+          "runs/incde-relation-s3407/ranks/train4_test0_post_train.npz": "e7341b434c6460e6e1cb955f1e0e4f5bf873988acf5acf2f4c393e8949c67741",
+          "runs/incde-relation-s3407/ranks/train1_test1_post_train.npz": "ed8056e72385ced10bb201c3299bc6269556968f2ec4ffc81ee25c62e08c2952",
+          "runs/incde-relation-s3407/ranks/train4_test1_post_train.npz": "683459babb03477d8b13a668251672bb27798b54acd9a386113af93cd0d2fcf0",
+          "runs/incde-relation-s3407/ranks/train2_test2_post_train.npz": "f6ad89c7a7a07976a3ea78b3261cac1bb66394671e094544337d8c8ab34b1fd9",
+          "runs/incde-relation-s3407/ranks/train4_test2_post_train.npz": "478000cf5a63483ea1ab7044e9386a265bc20712ac2ee676b9701d96f4342939",
+          "runs/incde-relation-s3407/ranks/train3_test3_post_train.npz": "39bb1e1d82352f15f577eaf528ecbb7aedf9d8ee8f3b6b5cdb2ae2dea13d5909",
+          "runs/incde-relation-s3407/ranks/train4_test3_post_train.npz": "bd685c939c9fcc81d6da839a9b3a283a40c348a9edf40ed8cdee767ac2d67a2c",
+          "runs/incde-relation-s3407/ranks/train4_test4_post_train.npz": "62539a55f20de6d605c0336081bb103e3f473b98227d3dcb210a8be3b012d432"
+        },
+        "terminal_sha256": "d9f9a1d4b1f30af931c7be863233ef2f9b2fc9436d25e3cf312511b4e474c00f",
+        "elapsed_s": 16.36167504300829,
+        "limits": [
+          "All rank aggregates checked; independent checkpoint score inference is sampled64/cohort, not independent full score replay.",
+          "Native checkpoints/data/query sets and training/model differences retained; this is a common metric framework, not a controlled SOTA ranking."
+        ]
+      },
+      "terminal_sha256": "d9f9a1d4b1f30af931c7be863233ef2f9b2fc9436d25e3cf312511b4e474c00f",
+      "terminal_summary_sha256": "619f57ea5dd24c9f4350d938a35949ea3f0cb1751e0685cc6d8d1faae55e917f"
+    },
+    {
+      "id": "incde-fact-s3407",
+      "audit": {
+        "status": "PASS_RAW_STRICT_RANK_REEVALUATION",
+        "id": "incde-fact-s3407",
+        "full_query_derivation_checks": 223290,
+        "sampled_full_candidate_rank_checks": 960,
+        "max_target_score_error": 8.326672684688674e-16,
+        "failures": [],
+        "source_sha256": "d1e53108020775320907575a572b57d5664f52e2594baa2bf3d77155dca1fd26",
+        "bound_input_sha256": {
+          "results/KGE-LIT-001/incde-fact-s3407/audit.json": "622e5c4af2f2179d3aff34e3df1d9f27679fef14636cdac6402fb5717f2737ee",
+          "runs/incde-fact-s3407/checkpoint/FACT/0model_best.tar": "afff6632665e60720fc51b5219f9e4052c158f5f0ace63333144f83ac6b8ffc7",
+          "runs/incde-fact-s3407/checkpoint/FACT/1model_best.tar": "7e3d8e6490b1ff883ded8626307819b36d615b8a51cb44fda4c473ad65326e32",
+          "runs/incde-fact-s3407/checkpoint/FACT/2model_best.tar": "fca037c5b5c6b85f6145569379be2a2214a6432b8785d97aeededec0003c0801",
+          "runs/incde-fact-s3407/checkpoint/FACT/3model_best.tar": "5d8a2105de4a0a156a27e228c5a25304d98a7fd4d0b9f4ac4cb0a0dfb563c83c",
+          "runs/incde-fact-s3407/checkpoint/FACT/4model_best.tar": "6e5c1d6369f7f25eafa5087ea330e0312b2043df58f9196cdbc0ff2ca4093915",
+          "runs/incde-fact-s3407/ranks/train0_test0_post_train.npz": "d289f3a86857cecf1377755eb4a76c6e287e6e997c8417812f6cab72e1148a5d",
+          "runs/incde-fact-s3407/ranks/train4_test0_post_train.npz": "32c2f434f5714f30377f9e73d83599bddd2b57452d17af7aa1f5c48dd827144a",
+          "runs/incde-fact-s3407/ranks/train1_test1_post_train.npz": "f28f05e5a12b43c3c9a58158bba143e938dbe182cb7cef97b1a63f9402ad5130",
+          "runs/incde-fact-s3407/ranks/train4_test1_post_train.npz": "f7e1c5a67ca1c3743b31a2f52135e6cc02f60e35a82373cfccab1a734675fda0",
+          "runs/incde-fact-s3407/ranks/train2_test2_post_train.npz": "c005661c782647a584701f21e44aea42f5c9d74aa35331c4e75285383ebca40e",
+          "runs/incde-fact-s3407/ranks/train4_test2_post_train.npz": "5b55778ec5e578c5673328d58e6f8a5599b2b701d75359735a5bb1bd5d61dce7",
+          "runs/incde-fact-s3407/ranks/train3_test3_post_train.npz": "3232cfd17d4ab6f99d5bb1c6e65a25885fbb919845d0b0800e797192b7ec6220",
+          "runs/incde-fact-s3407/ranks/train4_test3_post_train.npz": "5880015b3f2dbc64a71c8b1f20da9c1c64195666bf808446d694a2254cde3983",
+          "runs/incde-fact-s3407/ranks/train4_test4_post_train.npz": "bd3c0326bacf99a836ad1d2e4dc65613b136e914fb1c4736a7833a40ab2c85f2"
+        },
+        "terminal_sha256": "2b41eae0f247a83bcd51b67942793097d5f3c016b9348272a6c96605e00704e9",
+        "elapsed_s": 15.813406330998987,
+        "limits": [
+          "All rank aggregates checked; independent checkpoint score inference is sampled64/cohort, not independent full score replay.",
+          "Native checkpoints/data/query sets and training/model differences retained; this is a common metric framework, not a controlled SOTA ranking."
+        ]
+      },
+      "terminal_sha256": "2b41eae0f247a83bcd51b67942793097d5f3c016b9348272a6c96605e00704e9",
+      "terminal_summary_sha256": "98f76965407f3a5ecdd84c25aa4b90a5385d4e5e6075b474ee91d9ce1af94652"
+    },
+    {
+      "id": "incde-hybrid-s3407",
+      "audit": {
+        "status": "PASS_RAW_STRICT_RANK_REEVALUATION",
+        "id": "incde-hybrid-s3407",
+        "full_query_derivation_checks": 231972,
+        "sampled_full_candidate_rank_checks": 960,
+        "max_target_score_error": 8.881784197001252e-16,
+        "failures": [],
+        "source_sha256": "d1e53108020775320907575a572b57d5664f52e2594baa2bf3d77155dca1fd26",
+        "bound_input_sha256": {
+          "results/KGE-LIT-001/incde-hybrid-s3407/audit.json": "68afa824529c4889627f0fda18d17a81a0b6c1dd69d66e5cfb5e0ecc673f1ffc",
+          "runs/incde-hybrid-s3407/checkpoint/HYBRID/0model_best.tar": "cceea2c46365a8842b23cbab51256fe17a9f3cede8bfe0094accd9171409d4f0",
+          "runs/incde-hybrid-s3407/checkpoint/HYBRID/1model_best.tar": "49edf6c631b73f150dc7d270075e44dbb99d0c4661d090e134223bb28a142955",
+          "runs/incde-hybrid-s3407/checkpoint/HYBRID/2model_best.tar": "37655c3486d672fead888116b874dce6a0e27c318d48ab533c33b213c618f961",
+          "runs/incde-hybrid-s3407/checkpoint/HYBRID/3model_best.tar": "49065f63b5ce67fea5a5ef69b83bfb40e15b80379a9b78ef73d06c119e4f7ae4",
+          "runs/incde-hybrid-s3407/checkpoint/HYBRID/4model_best.tar": "25da26ba96f89e4d82eb53f6edb3972fc7afc9cd5976aa481f802aab986f2034",
+          "runs/incde-hybrid-s3407/ranks/train0_test0_post_train.npz": "3fc1eb0a9e9e50d11b053d95a422cec70d544f4d78c58d46dc54a3400a3ed1ea",
+          "runs/incde-hybrid-s3407/ranks/train4_test0_post_train.npz": "335e0e31782de27e1d136177e3c8abea85c1de226a12da474d042d70258eec99",
+          "runs/incde-hybrid-s3407/ranks/train1_test1_post_train.npz": "ed18b86de6ce1455dd51bb2eb547fc164e5f8ce737dfa011d7d4f0dfd032fc2b",
+          "runs/incde-hybrid-s3407/ranks/train4_test1_post_train.npz": "419b8525df46c5cbaba3e7f74af878e1753c99e0d69f80128d4af23bac882839",
+          "runs/incde-hybrid-s3407/ranks/train2_test2_post_train.npz": "08b641428324ca6d43df7663a3dae93559f2794b614d9dd2888cec11f348043d",
+          "runs/incde-hybrid-s3407/ranks/train4_test2_post_train.npz": "18eaeb29b1df503b821b8872ba05ea6a88b1e96ffebbc04565481cce830b8c40",
+          "runs/incde-hybrid-s3407/ranks/train3_test3_post_train.npz": "91e11d0d9ca34f6e490efcc8fcbd72f2a2e0e13c75be573ee225c74e3cab63b7",
+          "runs/incde-hybrid-s3407/ranks/train4_test3_post_train.npz": "ea9db028eff8fea535600f0737b0c28d6421b3d6ca9a2bc167741ffe87fb4f99",
+          "runs/incde-hybrid-s3407/ranks/train4_test4_post_train.npz": "194f0fd948b7c2adf222b0c298098b98cd643dcbf77f289823e43f64974f42bb"
+        },
+        "terminal_sha256": "f0d5b29ed3fc30f9b9f93a312279bc08b71ca0024762b534a6b203ac6cec202e",
+        "elapsed_s": 14.3087671790272,
+        "limits": [
+          "All rank aggregates checked; independent checkpoint score inference is sampled64/cohort, not independent full score replay.",
+          "Native checkpoints/data/query sets and training/model differences retained; this is a common metric framework, not a controlled SOTA ranking."
+        ]
+      },
+      "terminal_sha256": "f0d5b29ed3fc30f9b9f93a312279bc08b71ca0024762b534a6b203ac6cec202e",
+      "terminal_summary_sha256": "7eb55c836415541308c94bf6f961d69d258122c3a3eeb4c12492ffc3e43bae93"
+    },
+    {
+      "id": "fastkge-fbckge-s3407",
+      "audit": {
+        "status": "PASS_RAW_STRICT_RANK_REEVALUATION",
+        "id": "fastkge-fbckge-s3407",
+        "full_query_derivation_checks": 235696,
+        "sampled_full_candidate_rank_checks": 960,
+        "max_target_score_error": 5.551115123125783e-16,
+        "failures": [],
+        "source_sha256": "d1e53108020775320907575a572b57d5664f52e2594baa2bf3d77155dca1fd26",
+        "bound_input_sha256": {
+          "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json": "d7f2adbe055ee4fccdf3a21338268bc9c70c821ccb7e89b3c2de2d18cc8ce654",
+          "runs/fastkge-fbckge-s3407/native/seed3407/checkpoints/FB_CKGE/0model_best.tar": "0c2f61832069f37aa41130f4d905d98f0357b99baa112804e1f6d4d00c1cb1cc",
+          "runs/fastkge-fbckge-s3407/native/seed3407/checkpoints/FB_CKGE/1model_best.tar": "c6233cd5b718c7216ac4326fc6eefea01d44f887f1ad188dc81c4b61d8b53fac",
+          "repos/FastKGE/data/FB_CKGE/1/train_distance_nodes.txt": "937ff5ff84957427532c1a2a25da5797bef50f9e9421c5293a0f9fdd62986d52",
+          "runs/fastkge-fbckge-s3407/native/seed3407/checkpoints/FB_CKGE/2model_best.tar": "3ab3f60b1b761796335010305f91907bf796216588c5bddac6387ce4a46f9ba3",
+          "repos/FastKGE/data/FB_CKGE/2/train_distance_nodes.txt": "80d033a0cd5d4d03c4a9a6c7ef9f83b8e44555d04fdc600075444e2e09ba8c49",
+          "runs/fastkge-fbckge-s3407/native/seed3407/checkpoints/FB_CKGE/3model_best.tar": "d62e7e36d33eace9d945b2473dc0a7de93a70b7c1479416e80b277e2b6c97119",
+          "repos/FastKGE/data/FB_CKGE/3/train_distance_nodes.txt": "1256b0b951408f0d4668d1284f3f76cb56046134933af9b9e7bae349616e012b",
+          "runs/fastkge-fbckge-s3407/native/seed3407/checkpoints/FB_CKGE/4model_best.tar": "5d2205ef7e724d7d7763265e8594d67d54f5ce5fb672243f8895ff0fd6c40afc",
+          "repos/FastKGE/data/FB_CKGE/4/train_distance_nodes.txt": "7973c8da4836cb42361aae75c1174263225dcc0d8c291e78dec39bf31138a21b",
+          "runs/fastkge-fbckge-s3407/native/seed3407/observations/train0_test0_after.npz": "dc805af89ee9c6f3201ccc738f444142537d9a23bfcd1a427c715034db821670",
+          "runs/fastkge-fbckge-s3407/native/seed3407/observations/train4_test0_after.npz": "c242d46ea120e1c8afd4e3b9b4ea668bc4499f19bab6e10e05afa3341f0c3f5a",
+          "runs/fastkge-fbckge-s3407/native/seed3407/observations/train1_test1_after.npz": "6789ac04693d2771f2e7b3ec5a26e0b15b3f430a9a37c2cebfff422d632db463",
+          "runs/fastkge-fbckge-s3407/native/seed3407/observations/train4_test1_after.npz": "56cf371428fbaf3527d0acde769bc39e3502deda8bbc53ec88d43fccf60eee7a",
+          "runs/fastkge-fbckge-s3407/native/seed3407/observations/train2_test2_after.npz": "9a641fc9125d3aa201570bd37d19db6880a1e6357d48cc4d3fc64a2db08b6195",
+          "runs/fastkge-fbckge-s3407/native/seed3407/observations/train4_test2_after.npz": "95f49a42afa67a0a291ea3140c1a98aace7512d95ff9cc06e5f5294009538897",
+          "runs/fastkge-fbckge-s3407/native/seed3407/observations/train3_test3_after.npz": "ed2f377bb8dbe02f4f1abd66d01f22fb312e444c2d37a7616dd1ca563dc0d3e6",
+          "runs/fastkge-fbckge-s3407/native/seed3407/observations/train4_test3_after.npz": "2997a566b76403c41abc9c1d7e5b7ec33400d55b7f15f0677e2cedce99ed812e",
+          "runs/fastkge-fbckge-s3407/native/seed3407/observations/train4_test4_after.npz": "1933b161aa39f0fffd2a8f93995197586423e5098cad7641d088fa73fafb8ec8"
+        },
+        "terminal_sha256": "8e637a325ee168acf4e88411da07b53d50edd87647d52751195c16aaa436b0a1",
+        "elapsed_s": 15.943712763953954,
+        "limits": [
+          "All rank aggregates checked; independent checkpoint score inference is sampled64/cohort, not independent full score replay.",
+          "Native checkpoints/data/query sets and training/model differences retained; this is a common metric framework, not a controlled SOTA ranking."
+        ]
+      },
+      "terminal_sha256": "8e637a325ee168acf4e88411da07b53d50edd87647d52751195c16aaa436b0a1",
+      "terminal_summary_sha256": "8f680f608174df346fb1edaeb1517e3cbb4ce7202ce0b975269efaaa9a6c906d"
+    },
+    {
+      "id": "stark-fbckge-s3407",
+      "audit": {
+        "status": "PASS_RAW_STRICT_RANK_REEVALUATION",
+        "id": "stark-fbckge-s3407",
+        "full_query_derivation_checks": 235696,
+        "sampled_full_candidate_rank_checks": 960,
+        "max_target_score_error": 5.551115123125783e-16,
+        "failures": [],
+        "source_sha256": "d1e53108020775320907575a572b57d5664f52e2594baa2bf3d77155dca1fd26",
+        "bound_input_sha256": {
+          "results/KGE-LIT-002/stark-fbckge-s3407/independent-audit.json": "6dae357912c289f204835ac8bfd41481cbf3930938309520a1e132060a7dceba",
+          "runs/stark-fbckge-s3407/native/seed3407/checkpoints/FB_CKGE/0model_best.tar": "30a47c93c3fe0eafe46d3a7b74c195ebd842d500e61d13f1cb8cfc7640dd27e7",
+          "runs/stark-fbckge-s3407/native/seed3407/checkpoints/FB_CKGE/1model_best.tar": "89a2a25ad5f65b85d6eade8a588430b15830f64d2acfa749ff0400207fdb40f3",
+          "repos/STARK/data/FB_CKGE/1/train_distance_nodes2.txt": "a4e5b0faf18458dee93f573dc1677b36149d21567510d9dfc132354c78a2dd1f",
+          "runs/stark-fbckge-s3407/native/seed3407/checkpoints/FB_CKGE/2model_best.tar": "5fbed2d185541304fd12e9de6f4fbc63cf8fd59f6f04b176d68ce80c0b85ffe0",
+          "repos/STARK/data/FB_CKGE/2/train_distance_nodes2.txt": "6874859ceea8328e3b2764142fcd2e5bddc9e6ffaa51f09ada1954c62596b01b",
+          "runs/stark-fbckge-s3407/native/seed3407/checkpoints/FB_CKGE/3model_best.tar": "3c0cfcb3128ef1044970a18dcbee5fb9a3396dce58f095fe6762e4017da44a57",
+          "repos/STARK/data/FB_CKGE/3/train_distance_nodes2.txt": "cbcd3d638b978e1a75e5dca7136d741e67cfb82b1bc7b3772410b73aaa7926d2",
+          "runs/stark-fbckge-s3407/native/seed3407/checkpoints/FB_CKGE/4model_best.tar": "3221ae32e63cf168b67a164b2bd05e057497240dcd97619b13de4ad7a782aa07",
+          "repos/STARK/data/FB_CKGE/4/train_distance_nodes2.txt": "e5962d72d66e55aa73b67828b5d96e43b4cd86ed99a62466a1f95431f98a6741",
+          "runs/stark-fbckge-s3407/native/seed3407/observations/train0_test0_after.npz": "bfdc7546e97cddccbdac4811cc36e688c30d17ed70ece8de944d303dabbd5b05",
+          "runs/stark-fbckge-s3407/native/seed3407/observations/train4_test0_after.npz": "29ad9affe2a205dd893f8c13834bb786de77ac09a46ecc93207226c1be50b5b4",
+          "runs/stark-fbckge-s3407/native/seed3407/observations/train1_test1_after.npz": "087e428814c04edc3527a199b4665d6814a846d11c63cd557879441574366532",
+          "runs/stark-fbckge-s3407/native/seed3407/observations/train4_test1_after.npz": "e7c0cb30ae0fe92b46bfda7d6305fa303b331e03666c00a750ed418f6f1bc445",
+          "runs/stark-fbckge-s3407/native/seed3407/observations/train2_test2_after.npz": "23453c07c0ce1ddde9d78c86cede79c8f719887fced1e4be586a1229457b7171",
+          "runs/stark-fbckge-s3407/native/seed3407/observations/train4_test2_after.npz": "4917ee05029c785f6d71b84332dceae1a6c3247953d1c29641657ca72a7a4a4e",
+          "runs/stark-fbckge-s3407/native/seed3407/observations/train3_test3_after.npz": "a1c8ab3a902c5113dddcb253eb93828fa6948dfd348240b0b0758807165a4918",
+          "runs/stark-fbckge-s3407/native/seed3407/observations/train4_test3_after.npz": "801363c1b6262da6a51e5d652aaa56a55340ce490f15b49517755f77b87209f9",
+          "runs/stark-fbckge-s3407/native/seed3407/observations/train4_test4_after.npz": "af544053a5aba5e83ad8ef4d7f6ac5fe340af5d2aca44db8a32895d234dc6bc6"
+        },
+        "terminal_sha256": "4de36eb83718fad4cc22a78e1972749d2d1426237c5b4f9a9a2c205d42b637e2",
+        "elapsed_s": 14.956573443952948,
+        "limits": [
+          "All rank aggregates checked; independent checkpoint score inference is sampled64/cohort, not independent full score replay.",
+          "Native checkpoints/data/query sets and training/model differences retained; this is a common metric framework, not a controlled SOTA ranking."
+        ]
+      },
+      "terminal_sha256": "4de36eb83718fad4cc22a78e1972749d2d1426237c5b4f9a9a2c205d42b637e2",
+      "terminal_summary_sha256": "21e1db7fe64e0b2e11bee0ba38164dca851857a82e6fd698e4055ae031becdab"
+    },
+    {
+      "id": "lkge-clean-fact-s55",
+      "audit": {
+        "status": "PASS_RAW_STRICT_RANK_REEVALUATION",
+        "id": "lkge-clean-fact-s55",
+        "full_query_derivation_checks": 223290,
+        "sampled_full_candidate_rank_checks": 960,
+        "max_target_score_error": 7.771561172376096e-16,
+        "failures": [],
+        "source_sha256": "d1e53108020775320907575a572b57d5664f52e2594baa2bf3d77155dca1fd26",
+        "bound_input_sha256": {
+          "results/KGE-LIT-006/independent-audit.json": "a7afcaacbe289fb120cb07d6773ed5690d53d7283f5c72dd0755d612ab958479",
+          "runs/lkge-clean-fact-s55/checkpoint/FACT-TransE-LKGE-Margin-WO_transfer/0model_best.tar": "d902b538ef0856cb8e5c286d6871718c559de5637e2b39e03081d2be00638d80",
+          "runs/lkge-clean-fact-s55/checkpoint/FACT-TransE-LKGE-Margin-WO_transfer/1model_best.tar": "07e5672558384bb2cbe8e3fcbf459f08a4bff57e5665020d22e1b7ced3001d87",
+          "runs/lkge-clean-fact-s55/checkpoint/FACT-TransE-LKGE-Margin-WO_transfer/2model_best.tar": "0a8bfe9a996fbb22e63b06e32d9fde35ed854dbe938c6c0441174b73abf46b68",
+          "runs/lkge-clean-fact-s55/checkpoint/FACT-TransE-LKGE-Margin-WO_transfer/3model_best.tar": "f4125ff7d66f76e801043c24d8e85d4e4d786768113eec2ea509ced333951467",
+          "runs/lkge-clean-fact-s55/checkpoint/FACT-TransE-LKGE-Margin-WO_transfer/4model_best.tar": "c91150115da71231ed488059692f428e4be2cea4b9e408213631bdd950725389",
+          "runs/lkge-clean-fact-s55/ranks/train0_test0_post_train.npz": "af91fe163f701a394144aaefef674164f2063339a1d921701dd1f5f55e2d43a5",
+          "runs/lkge-clean-fact-s55/ranks/train4_test0_post_train.npz": "91172d9f7425cf21c11f8a7156e84e8d93ccff8aafdf18101c93230f13552f4f",
+          "runs/lkge-clean-fact-s55/ranks/train1_test1_post_train.npz": "c576a928e99ce59d89ad872dbe76941f9dcd3f00f97a125edfce72e269345f29",
+          "runs/lkge-clean-fact-s55/ranks/train4_test1_post_train.npz": "4248b738a14e2a1c207612c3512303d64230a45d5fe3c29418f5248ddc710242",
+          "runs/lkge-clean-fact-s55/ranks/train2_test2_post_train.npz": "22b0167edffd1fc53c89e18637de0f8598e908f41bba177b81346f9a93baba1e",
+          "runs/lkge-clean-fact-s55/ranks/train4_test2_post_train.npz": "5a99e7f9ac1a5210743d6f62c764a8678cf2e021b7b0e0ecad8cae3017122657",
+          "runs/lkge-clean-fact-s55/ranks/train3_test3_post_train.npz": "afbae9af1062d7f58fddbfb1fc197337e94df828d1b0b66061556c22e5ce20ef",
+          "runs/lkge-clean-fact-s55/ranks/train4_test3_post_train.npz": "7ffc8351131e9c15cc8002120625c884b2a773dc87a872b1e8d6bc1613153d76",
+          "runs/lkge-clean-fact-s55/ranks/train4_test4_post_train.npz": "aa9d3013ab476f374022be458248ee57f7e1ecc0efcf8c732a12a52968c13fa3"
+        },
+        "terminal_sha256": "efe61f3d23a657f4c2faa0c700abd2982561b8fe799f71f8952fb7f781bc73da",
+        "elapsed_s": 15.977549431961961,
+        "limits": [
+          "All rank aggregates checked; independent checkpoint score inference is sampled64/cohort, not independent full score replay.",
+          "Native checkpoints/data/query sets and training/model differences retained; this is a common metric framework, not a controlled SOTA ranking."
+        ]
+      },
+      "terminal_sha256": "efe61f3d23a657f4c2faa0c700abd2982561b8fe799f71f8952fb7f781bc73da",
+      "terminal_summary_sha256": "eec15584b29c708f089cc2c849c174fb71334870e1d07dfe09a4a52b2f322a60"
+    },
+    {
+      "id": "sage-fact-s55",
+      "audit": {
+        "status": "PASS_NUMERICS_UPSTREAM_INTEGRITY_FAIL_RETAINED",
+        "id": "sage-fact-s55",
+        "full_query_derivation_checks": 223290,
+        "sampled_full_candidate_rank_checks": 960,
+        "max_target_score_error": 8.881784197001252e-16,
+        "failures": [],
+        "source_sha256": "d1e53108020775320907575a572b57d5664f52e2594baa2bf3d77155dca1fd26",
+        "bound_input_sha256": {
+          "results/KGE-LIT-003/scientific-audit.json": "c8d804782a2a5d5956daf3f2629f77c42ebe6c45dc40765a2edcb72515ee3bf8",
+          "runs/sage-fact-s55/checkpoint/FACT-TransE-LKGE-Margin-WO_transfer/0model_best.tar": "0f98adbb7bab1fd32b404c616967135c52c1ee6f81f7db130c7aec4bc15401f8",
+          "runs/sage-fact-s55/checkpoint/FACT-TransE-LKGE-Margin-WO_transfer/1model_best.tar": "5880caa76c231642a7f13044f50a420f19207896680389bc1dd25c9f5d97605c",
+          "runs/sage-fact-s55/checkpoint/FACT-TransE-LKGE-Margin-WO_transfer/2model_best.tar": "a62745595fdae5e7d77fba6e0abcc2bca73807e18fb72434bad432a815351076",
+          "runs/sage-fact-s55/checkpoint/FACT-TransE-LKGE-Margin-WO_transfer/3model_best.tar": "6bad58a1d836bd042558e2d949cd272bf39974cee54860a0b4abcfb56c77cc89",
+          "runs/sage-fact-s55/checkpoint/FACT-TransE-LKGE-Margin-WO_transfer/4model_best.tar": "fb69dbefd4e4257342d4e19d32c16222de15e88bb85816f4d9e5409d2accb0c0",
+          "runs/sage-fact-s55/ranks/train0_test0_post_train.npz": "24fd92dda94f5dcf65e8c289edc2aa5c4ecd6a8640f0bf6e2717cc1ed1a6f34b",
+          "runs/sage-fact-s55/ranks/train4_test0_post_train.npz": "21f1ba7e99bc8f9a371c6f1bce617c948358addfde942e2687fabe03839d3dc0",
+          "runs/sage-fact-s55/ranks/train1_test1_post_train.npz": "f95287408bd7d387c704fe4a45873039b535389be382643735a4ebd2a6b0287e",
+          "runs/sage-fact-s55/ranks/train4_test1_post_train.npz": "ea02bbf4d275af9e1f5704c37c72e08ce33132abdb674e14a756b038ab79fb8d",
+          "runs/sage-fact-s55/ranks/train2_test2_post_train.npz": "dd2f83926eb4c35d141de6c24adc226a786cfa961da8380424cda5fadc948aa3",
+          "runs/sage-fact-s55/ranks/train4_test2_post_train.npz": "e478b0c648ca64df84af34389fc2de4090eacf4e771bc56a33500069fab713bf",
+          "runs/sage-fact-s55/ranks/train3_test3_post_train.npz": "45d8c959d8905f16e8b6b31cb486a9d8b210b699599c84fc5cb2681deaf1d932",
+          "runs/sage-fact-s55/ranks/train4_test3_post_train.npz": "b7e952c55e5237636636e48a45a345e48493bdb236f8d637b33a4db065ce1bd7",
+          "runs/sage-fact-s55/ranks/train4_test4_post_train.npz": "035b31a0e9868cf5d016b8256a7c75d0c930c7b58fba2cf6b027fa6dcb70dbbe"
+        },
+        "terminal_sha256": "9df275c0049019418a5ca45c24c38ae0a72b1393dbb7cbdbd091ccaf3d89a491",
+        "elapsed_s": 21.23838594206609,
+        "limits": [
+          "All rank aggregates checked; independent checkpoint score inference is sampled64/cohort, not independent full score replay.",
+          "Native checkpoints/data/query sets and training/model differences retained; this is a common metric framework, not a controlled SOTA ranking."
+        ]
+      },
+      "terminal_sha256": "9df275c0049019418a5ca45c24c38ae0a72b1393dbb7cbdbd091ccaf3d89a491",
+      "terminal_summary_sha256": "908b5acabd58686b23d95f64037aae5ca53a77a3943d1d22623cef978454e433"
+    },
+    {
+      "id": "rank-distmult",
+      "audit": {
+        "status": "PASS_COMMON_METRICS_INHERITED_VECTOR_AUDITS",
+        "full_observation_derivation_checks": 8677408,
+        "sampled_full_candidate_scalar_rank_checks": 568,
+        "failures": [],
+        "terminal_sha256": "bac6f60060ddfa6bf7dc15070265d6c5f0a5a488aeac36492656a3703e252a43",
+        "source_sha256": "cc6be925918b99e412fdce2050ec5b9060b48221124f0d0c51c7686eeb16d574",
+        "limitations": [
+          "Exposed VALID, native same400 cases; inherited QP certificates.",
+          "TRAIN protection scope and frozen query differ from snapshot learning and KGEditor batches."
+        ]
+      },
+      "terminal_sha256": "bac6f60060ddfa6bf7dc15070265d6c5f0a5a488aeac36492656a3703e252a43",
+      "terminal_summary_sha256": "56d96600ab9ac3a0fea93a74f068f6f9c673ecd2b48fbf526bd8b7c2b9f3f64c"
+    },
+    {
+      "id": "rank-complex",
+      "audit": {
+        "status": "PASS_COMMON_METRICS_INHERITED_VECTOR_AUDITS",
+        "full_observation_derivation_checks": 8706952,
+        "sampled_full_candidate_scalar_rank_checks": 552,
+        "failures": [],
+        "terminal_sha256": "507b9c174e2685324fc2247e1c3fd19b03e6f9eb3ba6488cc70e85d656728f92",
+        "source_sha256": "cc6be925918b99e412fdce2050ec5b9060b48221124f0d0c51c7686eeb16d574",
+        "limitations": [
+          "Exposed VALID, native same400 cases; inherited QP certificates.",
+          "TRAIN protection scope and frozen query differ from snapshot learning and KGEditor batches."
+        ]
+      },
+      "terminal_sha256": "507b9c174e2685324fc2247e1c3fd19b03e6f9eb3ba6488cc70e85d656728f92",
+      "terminal_summary_sha256": "fb29ac2f74c80f3cce8a00ca83ae114edc0fa277d317e5b0c636a8f10dd07300"
+    }
+  ],
+  "failed_retained": [],
+  "ridge": "Excluded due to prior vector-audit failure; original preserved"
+}

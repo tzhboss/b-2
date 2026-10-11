@@ -1,0 +1,143 @@
+{
+  "id": "KGE-ENTITY-COMMON-SHARED-GRAPH-027",
+  "scope": "Full common all3753/three-seed rank optimization: full frozen, scoped frozen, scoped joint; exposed development comparison",
+  "source_root": "../literature_baselines_20261010",
+  "dataset": "repos/FastKGE/data/FB_CKGE",
+  "source_audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "source_template": "newentityonly-distmult-s{seed}",
+  "verified_proposal_template": "proposal-qppred-s{seed}",
+  "scope_directory": "artifacts/shared-rank-scope24",
+  "k": 10,
+  "score_batch": 256,
+  "preflight_updates": 8,
+  "preflight_joint_updates": 4,
+  "full_recount_every_updates": 128,
+  "progress_every_updates": 128,
+  "budget_seconds_per_job": 7200,
+  "parameter_budget": {
+    "max_old_rows": 64,
+    "old_penalty": 4.0,
+    "old_radius_fraction": 0.1
+  },
+  "solver": {
+    "guard_margin": 1E-08,
+    "ftol": 1E-10,
+    "maxiter": 200,
+    "max_cut_rounds": 8,
+    "cut_rows_per_round": 64,
+    "primal_tolerance": 1E-10,
+    "movement_tolerance": 1E-08
+  },
+  "validation_seed": 124,
+  "validation_queries_per_split": 1024,
+  "available_gpu_indices": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-014/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-017/experiment.yaml"
+  ],
+  "max_concurrent_audits": 2,
+  "worker": "scripts/run_shared_graph.py",
+  "log_directory": "logs/shared-graph27",
+  "output_directory": "artifacts/shared-graph27-checks",
+  "jobs": [
+    {
+      "id": "shared-graph-full-s17",
+      "method": "SharedFrozenFull",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-scoped-s17",
+      "method": "SharedFrozenScoped",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-joint-s17",
+      "method": "SharedJointScoped",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": true
+    },
+    {
+      "id": "shared-graph-full-s29",
+      "method": "SharedFrozenFull",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-scoped-s29",
+      "method": "SharedFrozenScoped",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-joint-s29",
+      "method": "SharedJointScoped",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": true
+    },
+    {
+      "id": "shared-graph-full-s43",
+      "method": "SharedFrozenFull",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-scoped-s43",
+      "method": "SharedFrozenScoped",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-joint-s43",
+      "method": "SharedJointScoped",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": true
+    }
+  ],
+  "auditor": "scripts/run_shared_graph.py",
+  "preflight_per_job": true,
+  "gpu_queue_dependencies": [
+    "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-PREFLIGHT-026/experiment.yaml"
+  ],
+  "required_dependency_statuses": {
+    "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-PREFLIGHT-026/experiment.yaml": "completed_audited_artifact_checks_only"
+  },
+  "utility_new_mrr_ratio": 0.98,
+  "utility_old_loss_ratio": 0.75,
+  "utility_direction_mrr_ratio": 0.98,
+  "utility_direction_hits10_ratio": 0.95
+}

@@ -1,0 +1,58 @@
+{
+  "id": "KGE-LIT-005",
+  "scope": "Pons-motivated competitor-set diagnostic, independently implemented; not claimed as author-code replication",
+  "status": "registered_waiting_for_inputs",
+  "datasets": [
+    "ENTITY",
+    "RELATION",
+    "FACT",
+    "HYBRID"
+  ],
+  "training": "none, consume KGE-LIT-001 final selected checkpoints only after terminal exit0 and audit",
+  "query_cohort": "all author test queries across five task snapshots; head and inverse-tail queries",
+  "scores": "same float64 normalized TransE sigmoid scores as native model",
+  "arms": [
+    {
+      "name": "native_replay",
+      "candidates": "historical query snapshot",
+      "filter": "historical cumulative truths",
+      "rank": "double argsort"
+    },
+    {
+      "name": "candidate_expansion_only",
+      "candidates": "final snapshot",
+      "filter": "same historical cumulative truths",
+      "rank": "double argsort"
+    },
+    {
+      "name": "strict_rank_old_candidates",
+      "candidates": "historical query snapshot",
+      "filter": "same historical cumulative truths",
+      "rank": "1 + number of strictly greater scores"
+    },
+    {
+      "name": "strict_rank_final_candidates",
+      "candidates": "final snapshot",
+      "filter": "same historical cumulative truths",
+      "rank": "1 + number of strictly greater scores"
+    },
+    {
+      "name": "current_filter_final_candidates",
+      "candidates": "final snapshot",
+      "filter": "final cumulative train+valid+test truths",
+      "rank": "1 + number of strictly greater scores"
+    }
+  ],
+  "primary_readouts": [
+    "MRR and Hits1/3/10 per snapshot and query-count-weighted overall",
+    "fraction of historical queries with worse rank under final candidates",
+    "tie fraction and count of filtered later positive competitors"
+  ],
+  "choices": "no training/config selection using these metrics; all five arms fixed",
+  "limits": [
+    "training selection remains native",
+    "transductive filtered evaluation uses validation/test truths only as declared metric filters",
+    "candidate-only arm may count later true positives as competitors; full-filter arm separated",
+    "does not compare to shallow editing SafeSucc"
+  ]
+}

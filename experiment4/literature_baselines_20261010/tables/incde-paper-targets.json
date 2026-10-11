@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "method": "IncDE",
+  "kind": "published_reference_only",
+  "paper": {
+    "title": "Towards Continual Knowledge Graph Embedding via Incremental Distillation",
+    "authors": [
+      "Jiajun Liu",
+      "Wenjun Ke",
+      "Peng Wang",
+      "Ziyu Shang",
+      "Jinhua Gao",
+      "Guozheng Li",
+      "Ke Ji",
+      "Yanhe Liu"
+    ],
+    "venue": "AAAI 2024",
+    "doi": "10.1609/aaai.v38i8.28722",
+    "landing_url": "https://ojs.aaai.org/index.php/AAAI/article/view/28722",
+    "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/28722/29396",
+    "local_pdf": "../papers/incde-reference/paper.pdf",
+    "pdf_sha256": "85c6c9d0935a445fd19aba844281d787b35ffb93aa57e8330caf7425a8ab0389"
+  },
+  "source_location": {
+    "table": 2,
+    "row": "IncDE (full method)",
+    "pdf_page_one_based": 6,
+    "pdf_page_zero_based": 5,
+    "printed_page": 8764,
+    "cross_check_table": 4,
+    "cross_check_pdf_page_one_based": 7,
+    "cross_check_printed_page": 8765,
+    "verification": "primary publisher PDF visual table check plus local extracted Table 2 / Table 4 text"
+  },
+  "metric_scale": "fraction from 0 to 1; values transcribed to 3 decimals",
+  "reported_metrics": [
+    "mrr",
+    "hits1",
+    "hits10"
+  ],
+  "not_reported_metrics": [
+    "hits3"
+  ],
+  "datasets": {
+    "ENTITY": {
+      "mrr": 0.253,
+      "hits1": 0.151,
+      "hits3": null,
+      "hits10": 0.448
+    },
+    "RELATION": {
+      "mrr": 0.199,
+      "hits1": 0.111,
+      "hits3": null,
+      "hits10": 0.37
+    },
+    "FACT": {
+      "mrr": 0.216,
+      "hits1": 0.128,
+      "hits3": null,
+      "hits10": 0.391
+    },
+    "HYBRID": {
+      "mrr": 0.224,
+      "hits1": 0.131,
+      "hits3": null,
+      "hits10": 0.401
+    }
+  },
+  "paper_protocol": {
+    "settings_pdf_page_one_based": 5,
+    "settings_printed_page": 8763,
+    "time_steps": 5,
+    "train_valid_test_ratio": [
+      3,
+      1,
+      1
+    ],
+    "base_model": "TransE",
+    "embedding_dim": 200,
+    "optimizer": "Adam",
+    "tuned_batch_sizes": [
+      512,
+      1024,
+      2048
+    ],
+    "tuned_learning_rates": [
+      1e-05,
+      0.0001,
+      0.001
+    ],
+    "tuned_max_triples_per_layer": [
+      512,
+      1024,
+      2048
+    ],
+    "reported_running_times": 5,
+    "main_results_model": "model generated at last time",
+    "paper_aggregation_prose": "mean of metrics tested on all test sets through current time; weighting unspecified in prose"
+  },
+  "registered_reproduction": {
+    "experiment": "KGE-LIT-001",
+    "seed": 3407,
+    "running_times_per_dataset": 1,
+    "max_epochs_per_snapshot": 200,
+    "patience": 5,
+    "early_stop_condition": "patience reached and zero-based epoch > 30",
+    "native_code_aggregation": "per-test-task round4 metrics weighted by test-triple count, then round3; final report row snapshot4",
+    "comparison_limits": [
+      "One seed is not the published five-running-time average.",
+      "Released code uses test-count weighting; paper prose states a mean without specifying that weighting. Preserve both labels.",
+      "Table 2 omits Hits@3; null means not reported, not zero.",
+      "These are paper reference values, not measured current-run results."
+    ]
+  },
+  "extracted_at_utc": "2026-10-10T11:55:53.020641+00:00"
+}

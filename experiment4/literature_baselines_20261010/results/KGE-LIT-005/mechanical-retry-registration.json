@@ -1,0 +1,55 @@
+{
+  "utc": "2026-10-10T12:25:58.664090+00:00",
+  "scope": "mechanical implementation retry; scientific five-arm protocol unchanged",
+  "prior_canonical": {
+    "id": "KGE-LIT-005",
+    "status": "waiting_for_native_inputs",
+    "registration_status": "REGISTERED",
+    "registered_utc": "2026-10-10T12:12:01Z",
+    "protocol": "configs/protocols/KGE-LIT-005-candidate-diagnostic.json",
+    "protocol_sha256": "e36e51c12d983f5875d326e94f3755d2dccf8b3d39af719a76daacabdd79111a",
+    "implementation_sha256": "5cf6ab951bffeaba9fe7dd827018ce30d4d39950d9b1f2330e0207fd6ebc15c4",
+    "required_auditor_sha256": "ccb48f4e3da560b26dcdf2d03f6809d46e34f605b539a348a15dc9b778411512",
+    "active_processes": [],
+    "jobs": [
+      {
+        "id": "incde-entity-s3407",
+        "gpu": 0,
+        "stage": "waiting_for_native_terminal"
+      },
+      {
+        "id": "incde-relation-s3407",
+        "gpu": 1,
+        "stage": "diagnostic_failed",
+        "pid": 654551,
+        "status": "FAIL",
+        "exit_code": 1
+      },
+      {
+        "id": "incde-fact-s3407",
+        "gpu": 2,
+        "stage": "waiting_for_native_terminal"
+      },
+      {
+        "id": "incde-hybrid-s3407",
+        "gpu": 3,
+        "stage": "waiting_for_native_terminal"
+      }
+    ],
+    "audit": {
+      "status": "not_started"
+    },
+    "scope": "fixed evaluation-only Pons-motivated diagnostic, not paper fullreplication",
+    "coordinator_sha256": "d2b2b17e90c068826352bd859f154063a4a37ccfe78a227e125c4cfd5eabb746",
+    "prior_coordinator_failure": "logs/KGE-LIT-005-coordinator.log: startup str/Path hash helper error, before any audits/diagnostics",
+    "coordinator_pid": 653730
+  },
+  "old_selector_sha256": "5cf6ab951bffeaba9fe7dd827018ce30d4d39950d9b1f2330e0207fd6ebc15c4",
+  "new_selector_sha256": "313903da5d506a4086bcc0846cb712c764089929f6899f1734aa5b710655af78",
+  "old_coordinator_sha256": "d2b2b17e90c068826352bd859f154063a4a37ccfe78a227e125c4cfd5eabb746",
+  "new_coordinator_sha256": "e42b5b1eca16fed11b5ea4c571171a2d978071a47b069ae3d8af0432b8d916b9",
+  "cause": "prefix selector accidentally consumed train4_test4_pre_fwt.npz; assert five failed before output creation/inference",
+  "changed_selection": "exact train4_test0..4_post_train filenames",
+  "retained_failure_log": "logs/incde-relation-s3407-candidate-diagnostic.log",
+  "native_outputs_modified": false
+}

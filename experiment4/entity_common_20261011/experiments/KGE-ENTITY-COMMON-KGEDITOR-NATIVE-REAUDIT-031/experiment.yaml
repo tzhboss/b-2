@@ -1,0 +1,35 @@
+id: KGE-ENTITY-COMMON-KGEDITOR-NATIVE-REAUDIT-031
+status: completed_audited_artifact_checks_only
+config: configs/lm-native-reaudit31.json
+protocol: plan/lm-native-precision-reaudit-protocol.md
+scope: 'Unchanged KGEditor artifacts: strict native GPU delta replay, original CPU
+  inference and full coverage checks; original CPU failures retained'
+registered_utc: '2026-10-11T05:58:35.204884+00:00'
+frozen_input_sha256:
+  configs/lm-native-reaudit31.json: 59e93e7d536d54fc817bbd58fe543690514a8983ba6f2ce43ea4eb53b14f7b6e
+  plan/lm-native-precision-reaudit-protocol.md: 2f7e5d200d9834c8cc7b3572de7f64376df5b3f5d4261efbfb2c6d8ae6cb62da
+  scripts/coordinate_artifact_checks.py: 770ecab1869cc2daee5076f772bed8064fc075db1a449071b4df52f0a739521e
+  scripts/review_lm_native_precision.py: b7b3860d129faa6af75090f4f97937b31a13b228ab32b765f40c980932c3a473
+  src/lm_editor_common_v2.py: 2fb247e0bbd29247288349324a630f64327a44f6ad3016fb9142d55d7f82fd05
+  src/lm_editor_bridge_v2.py: f09a3607f9feebe11b68ccfbaf9124dd5cce4a377b9ec7a87315ee2e813a28c5
+  src/lm_common_base.py: 6d6a7e2c5ef70b36d219db44a54b9f27ff217f4f040bd2f7d0d0609da93c198d
+  configs/lm-editor-common-r3.json: 5147bf882bc23118bfc2313f4cd426b9244b555111f688856a21aeeec2fcf72d
+  configs/lm-editor-common-r4.json: d79e4f8d926be4b4f25f5be394ceff4901ee42714bc8933183dc2ffc25305df5
+active_processes: []
+coordinator_pid: 762406
+jobs:
+  kgeditor-common-r4-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  kgeditor-common-r3-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  kgeditor-common-r3-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+queued_jobs: []
+queued_audits: []
+result_directory: results/KGE-ENTITY-COMMON-KGEDITOR-NATIVE-REAUDIT-031

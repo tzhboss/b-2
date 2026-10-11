@@ -1,0 +1,65 @@
+{
+  "id": "KGE-ENTITY-COMMON-RANK-CAPACITY-PREFLIGHT-036",
+  "scope": "Two frozen-old real graph preflights with TRAIN-certified capacity exemptions; no VALID/TEST utility",
+  "source_root": "../literature_baselines_20261010",
+  "dataset": "repos/FastKGE/data/FB_CKGE",
+  "source_audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "source_template": "newentityonly-distmult-s{seed}",
+  "verified_proposal_template": "proposal-qppred-s{seed}",
+  "scope_directory": "artifacts/rank-capacity-scope35",
+  "k": 10,
+  "score_batch": 256,
+  "preflight_updates": 8,
+  "preflight_joint_updates": 4,
+  "full_recount_every_updates": 128,
+  "progress_every_updates": 1,
+  "budget_seconds_per_job": 1200,
+  "parameter_budget": {
+    "max_old_rows": 64,
+    "old_penalty": 4.0,
+    "old_radius_fraction": 0.1
+  },
+  "solver": {
+    "guard_margin": 1E-08,
+    "ftol": 1E-10,
+    "maxiter": 200,
+    "max_cut_rounds": 8,
+    "cut_rows_per_round": 64,
+    "primal_tolerance": 1E-10,
+    "movement_tolerance": 1E-08
+  },
+  "validation_seed": 124,
+  "validation_queries_per_split": 1024,
+  "available_gpu_indices": [
+    1,
+    2
+  ],
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-FULL-INDEX-EQUIVALENCE-034/experiment.yaml"
+  ],
+  "max_concurrent_audits": 2,
+  "worker": "scripts/run_shared_graph_checks.py",
+  "log_directory": "logs/rank-capacity-preflight36",
+  "output_directory": "artifacts/rank-capacity-preflight36-checks",
+  "jobs": [
+    {
+      "id": "capacity-preflight-full-s17",
+      "method": "CapacityFrozenFull",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "capacity-preflight-scoped-s17",
+      "method": "CapacityFrozenScoped",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    }
+  ]
+}

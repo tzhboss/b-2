@@ -1,0 +1,24 @@
+{
+  "status": "PASS_CLEAN_BASE_CPU_GPU_FIXTURE",
+  "failures": [],
+  "queries": 64,
+  "candidate_score_checks": 480320,
+  "max_abs_logit_error": 7.362509144570595e-06,
+  "rank_mismatches": 0,
+  "cpu_precision": "float64",
+  "cpu_batch_size": 8,
+  "gpu_precision": "float32",
+  "gpu_max_abs_logit_error": 0.0,
+  "gpu_rank_mismatches": 0,
+  "original_source_audit_status": "FAIL_RETAINED",
+  "original_source_audit_sha256": "4023a3160feee6b6ea0d35dd4b35740d7cf41299e02e71cfbb263269bfd020bd",
+  "original_source_audit_unchanged": true,
+  "source_checkpoint_sha256": "2e0380e437aa460cb1b4f55b9aca091a8ca1531038664280e342eedeb3a5a34f",
+  "source_fixture_sha256": "d7361736de9174b0de7d0d390f7cb073896d135822a1b1e360685797c02710f2",
+  "elapsed_s": 37.312545897089876,
+  "limits": [
+    "Explicitly registered float64 CPU replay; original float32 CPU audit FAIL retained.",
+    "Native GPU float32 scores and all fixture strict ranks must reproduce exactly.",
+    "Foundation-only replay, not independent optimizer retraining or full KGEditor completion."
+  ]
+}

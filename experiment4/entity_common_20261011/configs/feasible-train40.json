@@ -1,0 +1,38 @@
+{
+  "id": "KGE-ENTITY-COMMON-FEASIBLE-TRAIN-PREFLIGHT-040",
+  "source_root": "../literature_baselines_20261010",
+  "dataset": "repos/FastKGE/data/FB_CKGE",
+  "source_audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "source_template": "newentityonly-distmult-s{seed}",
+  "verified_proposal_template": "proposal-qppred-s{seed}",
+  "scope_directory": "artifacts/shared-rank-scope24",
+  "k": 10,
+  "score_batch": 256,
+  "updates": 8,
+  "negatives": 10,
+  "distmult_l2": 0.0005,
+  "fixture_queries": 32,
+  "fixture_seed": 409,
+  "budget_seconds_per_job": 1200,
+  "gpu_indices": [0,1,2,3,4,5],
+  "output_directory": "artifacts/feasible-train40",
+  "log_directory": "logs/feasible-train40",
+  "solver": {
+    "guard_margin": 1e-8,
+    "ftol": 1e-10,
+    "maxiter": 200,
+    "max_cut_rounds": 8,
+    "cut_rows_per_round": 64,
+    "primal_tolerance": 1e-10,
+    "movement_tolerance": 1e-8
+  },
+  "jobs": [
+    {"id":"feasible-train-full-s17","seed":17,"protection_scope":"full","initial_endpoint":"shared-graph-full-s17"},
+    {"id":"feasible-train-scoped-s17","seed":17,"protection_scope":"scoped","initial_endpoint":"shared-graph-scoped-s17"},
+    {"id":"feasible-train-full-s29","seed":29,"protection_scope":"full","initial_endpoint":"shared-graph-full-s29"},
+    {"id":"feasible-train-scoped-s29","seed":29,"protection_scope":"scoped","initial_endpoint":"shared-graph-scoped-s29"},
+    {"id":"feasible-train-full-s43","seed":43,"protection_scope":"full","initial_endpoint":"shared-graph-full-s43"},
+    {"id":"feasible-train-scoped-s43","seed":43,"protection_scope":"scoped","initial_endpoint":"shared-graph-scoped-s43"}
+  ]
+}

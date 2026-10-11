@@ -1,0 +1,102 @@
+id: KGE-LIT-001
+status: producer_terminal_pending_audit
+registration_status: REGISTERED
+user_objective: Reproduce threatening or defensible KGE-editing literature baselines
+  on remote available resources; not all papers required
+remote_primary_root: /data/lc/tzh/experiment4
+literature_source: ../../kge_editing_literature_20261010/paper_matrix.csv
+protocol: configs/protocols/literature-baselines.yaml
+created_utc: '2026-10-10T11:32:36Z'
+active_processes: []
+jobs:
+- id: incde-entity-s3407
+  method: IncDE
+  status: terminal_unreviewed
+  gpu: 0
+  pid: 645655
+  started_monotonic: 959888.418458193
+  started_utc: '2026-10-10T11:43:34Z'
+  log: runs/incde-entity-s3407/run.log
+  exit_code: 0
+  elapsed_s: 2730.8820556360297
+  terminal_utc: '2026-10-10T12:29:05Z'
+  source_inputs_unchanged: true
+  log_sha256: 78d3d0e34770f60d4349cf8cf640808bccf9795984e5f527731035ae7adb1a26
+- id: incde-relation-s3407
+  method: IncDE
+  status: terminal_unreviewed
+  gpu: 1
+  pid: 645681
+  started_monotonic: 959895.223143938
+  started_utc: '2026-10-10T11:43:41Z'
+  log: runs/incde-relation-s3407/run.log
+  exit_code: 0
+  elapsed_s: 2219.743390731979
+  terminal_utc: '2026-10-10T12:20:40Z'
+  source_inputs_unchanged: true
+  log_sha256: 8fe851f38aea70e8a389f8d11eb9823309fbb157a49b2c3b2f96ab4b0607f3d3
+- id: incde-fact-s3407
+  method: IncDE
+  status: terminal_unreviewed
+  gpu: 2
+  pid: 645690
+  started_monotonic: 959902.70034934
+  started_utc: '2026-10-10T11:43:48Z'
+  log: runs/incde-fact-s3407/run.log
+  exit_code: 0
+  elapsed_s: 2685.8418041680707
+  terminal_utc: '2026-10-10T12:28:34Z'
+  source_inputs_unchanged: true
+  log_sha256: 7232a7c996eeb4b062c285918c0fc9afce37638b9a94c6609f60ad2d2ef8517f
+- id: incde-hybrid-s3407
+  method: IncDE
+  status: terminal_unreviewed
+  gpu: 3
+  pid: 645729
+  started_monotonic: 959909.772072776
+  started_utc: '2026-10-10T11:43:55Z'
+  log: runs/incde-hybrid-s3407/run.log
+  exit_code: 0
+  elapsed_s: 2602.578371876967
+  terminal_utc: '2026-10-10T12:27:18Z'
+  source_inputs_unchanged: true
+  log_sha256: 29d03e23e778536eaed1a26427dc4d8a61d1e9143c66ee4ea09f70990bb3f38a
+source_preparation_agents:
+  FastKGE_STARK: 01a12594-c7fe-7463-a884-bbe8ffaca4b9
+  LKGE_IncDE_SAGE: 01a12594-c9b2-7f01-a490-7ea50a441fec
+  primary_threat_verification: 01a12594-cba3-7db2-8855-9950156ddf11
+audit:
+  status: not_started
+old_experiments_unchanged: true
+schema_version: 1
+registered_utc: '2026-10-10T11:43:27Z'
+jobs_manifest_sha256: 7d211e0780af166f027623f57668b0ab5e61f160dce6cc875baca228b88a3951
+scheduler_sha256: 0becdfa0221d3072e8e6a264d23bc4207374076b33ed2f81810ea24889cb55bb
+jobs_manifest: configs/experiments/KGE-LIT-001-jobs.json
+protocol_sha256: c4fe8740f6bf7783fc7893a2004164ec42bfd46d5b06495665a2064809b8a2fb
+expected_jobs: 4
+scheduler_pid: 645652
+resource_observation:
+  utc: '2026-10-10T12:29:05Z'
+  gpus:
+    0:
+      free_mb: 24109
+      utilization: 0
+    1:
+      free_mb: 24109
+      utilization: 0
+    2:
+      free_mb: 22261
+      utilization: 15
+    3:
+      free_mb: 24109
+      utilization: 0
+    4:
+      free_mb: 18915
+      utilization: 55
+    5:
+      free_mb: 17893
+      utilization: 42
+    6:
+      free_mb: 24109
+      utilization: 0

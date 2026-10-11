@@ -1,0 +1,250 @@
+{
+  "scope": "Bitwise V2/V3 replay of three audited eight-step real TRAIN fixtures; no complete method or utility claim",
+  "jobs_passed": 3,
+  "jobs_total": 3,
+  "rows": [
+    {
+      "result": {
+        "status": "PASS_REAL_TRAIN_FIXTURE_SOLVER_BITWISE_EQUIVALENCE",
+        "source_job": "shared-preflight-full-s17",
+        "steps": 8,
+        "patch_tensor_fields_checked": 72,
+        "source_cpu_terminal_rank_audit": "PASS_PREFLIGHT_PATCH_REPLAY_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+        "terminal_guard_recount": {
+          "query_keys": 68270,
+          "references": 235882,
+          "commits": 8,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "paired_solver_wall_seconds": {
+          "shared_rank_solver_v2": [
+            0.8220172149594873,
+            0.8066556870471686,
+            0.729298606980592,
+            0.7877271749312058,
+            0.7881780440220609,
+            1.0644008960807696,
+            0.7830617490690202,
+            1.0572489119367674
+          ],
+          "shared_rank_solver_v3": [
+            0.5700569949112833,
+            0.24614279298111796,
+            0.23911005805712193,
+            0.23788481100928038,
+            0.23864310991484672,
+            0.5290430058958009,
+            0.23566647502593696,
+            0.5006872739177197
+          ]
+        },
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/scope.npz": "c6f9ff5aca629f7d3b0bd7ddb8b1a9d90745d1b510edc5e786959d0df1f5984d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/receipt.json": "e226e96bb184322d343b8aedb3ca38c93a4ac66dc6169e7cb9b4889b843b3f61",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/audit.json": "1f003257c58577842c603deae5406a6a673d4502b318254af4238b9af2df4173",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-full-s17/initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-full-s17/best.pt": "e650fbd1e82a7ea4e658770b6d0f6619d94c028bdbc2e3556f161576d8f0fd8d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-full-s17/training-receipt.json": "453c952bb63ba66316c52e4d2b89197e87cf773a51a296a4f891358c809b18db",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-full-s17/audit.json": "25ec439dca15542c7fde981cd89ee4e451f1af270233b6b40d5fee559bc3a462",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-full-s17/steps.json": "0702830d4a491344b494bbeac7f402f7b6aa2c6941714f7115906da7a903e958",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-full-s17/shared-replay.npz": "732c5bba75b1cc0bfbe7fa37a44ac090be8e4965e8a1c99b48316f823ce0c8ad",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/best.pt": "271fc956663f366943b7ad7db4f3b7f7a2fa4bf65c0af95ce73fd77fd023dbf0"
+        },
+        "output_sha256": {
+          "terminal.npz": "830b246904f753384248c46e2d01d3efe2b4a839e9383cff38b0fb55ed9e9002",
+          "steps.json": "ef10387c640ce5bab44a151ecc6b304f6993dc63730ede187b32d409c5f710a1"
+        },
+        "test_read": false,
+        "valid_read": false,
+        "utility_measured": false,
+        "full3753_equivalence": false,
+        "elapsed_s": 39.68699308403302,
+        "limits": [
+          "Audited eight-step real TRAIN fixture only; no complete3753 utility or end-to-end speedup.",
+          "Exact source terminal weights reuse the existing independent CPU terminal rank audit; no new full CPU scoring.",
+          "Paired solver timings alternate call order, one device and seed; descriptive only."
+        ]
+      },
+      "audit": {
+        "status": "PASS_REAL_FIXTURE_TRAJECTORY_IDENTITIES_AND_INHERITED_CPU_SCOPE",
+        "failures": [],
+        "steps_replayed": 8,
+        "source_cpu_scope_queries": 68270,
+        "source_cpu_scope_reference_members": 235882,
+        "source_cpu_audit_sha256": "25ec439dca15542c7fde981cd89ee4e451f1af270233b6b40d5fee559bc3a462",
+        "receipt_sha256": "172a89fec1d5b2254fb024880802c839fc736a42bf76e58f5f6f7672f551cdf3",
+        "test_read": false,
+        "valid_read": false,
+        "utility_measured": false,
+        "limits": [
+          "Audited eight-step real TRAIN fixture only; no complete3753 utility or end-to-end speedup.",
+          "Exact source terminal weights reuse the existing independent CPU terminal rank audit; no new full CPU scoring.",
+          "Paired solver timings alternate call order, one device and seed; descriptive only."
+        ]
+      }
+    },
+    {
+      "result": {
+        "status": "PASS_REAL_TRAIN_FIXTURE_SOLVER_BITWISE_EQUIVALENCE",
+        "source_job": "shared-preflight-scoped-s17",
+        "steps": 8,
+        "patch_tensor_fields_checked": 72,
+        "source_cpu_terminal_rank_audit": "PASS_PREFLIGHT_PATCH_REPLAY_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+        "terminal_guard_recount": {
+          "query_keys": 68260,
+          "references": 221202,
+          "commits": 8,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "paired_solver_wall_seconds": {
+          "shared_rank_solver_v2": [
+            0.7968051510397345,
+            0.7743312310194597,
+            0.7107879520626739,
+            0.773855570005253,
+            0.7690887639764696,
+            0.7721018010051921,
+            0.7115555870113894,
+            1.0086949008982629
+          ],
+          "shared_rank_solver_v3": [
+            0.5351018810179085,
+            0.23971839190926403,
+            0.24401441297959536,
+            0.2397329539526254,
+            0.24620557692833245,
+            0.24580626096576452,
+            0.24208368896506727,
+            0.506379115046002
+          ]
+        },
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/scope.npz": "c6f9ff5aca629f7d3b0bd7ddb8b1a9d90745d1b510edc5e786959d0df1f5984d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/receipt.json": "e226e96bb184322d343b8aedb3ca38c93a4ac66dc6169e7cb9b4889b843b3f61",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/audit.json": "1f003257c58577842c603deae5406a6a673d4502b318254af4238b9af2df4173",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-scoped-s17/initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-scoped-s17/best.pt": "f93340dbec71ea46ce58da64c2de849cd6310650e665a0b795515ed2bf8ca71f",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-scoped-s17/training-receipt.json": "a97945e1cef25293a2802d1f220d0c2bb8f1dd6fcf586a9306ab37e86a1d61e3",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-scoped-s17/audit.json": "57ce9f0b337c720472fd8d93ada6be221db8008be9ab90864a87f616ffde53c2",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-scoped-s17/steps.json": "7d5e388d4e152b2d96e995061be65daf23ca99661e44759eaef4fa29fc37d0b9",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-scoped-s17/shared-replay.npz": "bab5ea583978443453f99cecf73aafda1338d86179f6f227b2790a3c92c35e01",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/best.pt": "271fc956663f366943b7ad7db4f3b7f7a2fa4bf65c0af95ce73fd77fd023dbf0"
+        },
+        "output_sha256": {
+          "terminal.npz": "a5d1a6ced08d5e3eaa3c86b667d1ec41fe7c5390c3637d0d6e9915b8161a6d3f",
+          "steps.json": "7ee14eebff99457b922956f4f5592ab5d5b08508606d8e3cbc19d7d4cdd54e3d"
+        },
+        "test_read": false,
+        "valid_read": false,
+        "utility_measured": false,
+        "full3753_equivalence": false,
+        "elapsed_s": 39.2610540559981,
+        "limits": [
+          "Audited eight-step real TRAIN fixture only; no complete3753 utility or end-to-end speedup.",
+          "Exact source terminal weights reuse the existing independent CPU terminal rank audit; no new full CPU scoring.",
+          "Paired solver timings alternate call order, one device and seed; descriptive only."
+        ]
+      },
+      "audit": {
+        "status": "PASS_REAL_FIXTURE_TRAJECTORY_IDENTITIES_AND_INHERITED_CPU_SCOPE",
+        "failures": [],
+        "steps_replayed": 8,
+        "source_cpu_scope_queries": 68260,
+        "source_cpu_scope_reference_members": 221202,
+        "source_cpu_audit_sha256": "57ce9f0b337c720472fd8d93ada6be221db8008be9ab90864a87f616ffde53c2",
+        "receipt_sha256": "e0bb24c07481eec34918506b27e858c18cf69b73f84abccf463440bd1610b380",
+        "test_read": false,
+        "valid_read": false,
+        "utility_measured": false,
+        "limits": [
+          "Audited eight-step real TRAIN fixture only; no complete3753 utility or end-to-end speedup.",
+          "Exact source terminal weights reuse the existing independent CPU terminal rank audit; no new full CPU scoring.",
+          "Paired solver timings alternate call order, one device and seed; descriptive only."
+        ]
+      }
+    },
+    {
+      "result": {
+        "status": "PASS_REAL_TRAIN_FIXTURE_SOLVER_BITWISE_EQUIVALENCE",
+        "source_job": "shared-preflight-joint-s17",
+        "steps": 8,
+        "patch_tensor_fields_checked": 72,
+        "source_cpu_terminal_rank_audit": "PASS_PREFLIGHT_PATCH_REPLAY_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+        "terminal_guard_recount": {
+          "query_keys": 68260,
+          "references": 221202,
+          "commits": 8,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "paired_solver_wall_seconds": {
+          "shared_rank_solver_v2": [
+            1.5019843470072374,
+            1.3004811720456928,
+            1.3590782029787078,
+            3.685441519948654,
+            0.7762319120811298,
+            0.7217592069646344,
+            0.7796240269672126,
+            0.7761178370565176
+          ],
+          "shared_rank_solver_v3": [
+            1.2709483649814501,
+            0.7074990270193666,
+            0.8009632469620556,
+            3.237800615024753,
+            0.25163520593196154,
+            0.24470307398587465,
+            0.25474636198487133,
+            0.2456316240131855
+          ]
+        },
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/scope.npz": "c6f9ff5aca629f7d3b0bd7ddb8b1a9d90745d1b510edc5e786959d0df1f5984d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/receipt.json": "e226e96bb184322d343b8aedb3ca38c93a4ac66dc6169e7cb9b4889b843b3f61",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-rank-scope24/shared-rank-scope-s17/audit.json": "1f003257c58577842c603deae5406a6a673d4502b318254af4238b9af2df4173",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-joint-s17/initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-joint-s17/best.pt": "d6979e0cc670bddcc7aa5ba11cd06f00f597ad284dfa3b41c01ac5555ffec69d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-joint-s17/training-receipt.json": "2a9c051a9b79a71f3404cb685b2ca5dd8573ec1b0131815b1dfe2168ddb1cc01",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-joint-s17/audit.json": "66f159ffa2f5239af50631f0ca7234c83662f76df8cac99bad87faf6b06767ea",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-joint-s17/steps.json": "47c17afa920d4c5b33682151f084b4d9c6d42364ac9fdcffaa83e53df1aa8494",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/shared-preflight/shared-preflight-joint-s17/shared-replay.npz": "dff03da74d09722fd5e2a813cc5d30dc358f95f5d6688738b9eb86813346e3c6",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/best.pt": "271fc956663f366943b7ad7db4f3b7f7a2fa4bf65c0af95ce73fd77fd023dbf0"
+        },
+        "output_sha256": {
+          "terminal.npz": "a20ca70afdb8ac5a6cbdcf3173b73671583749baddeb1f8aeec6aa0f9b3e6c05",
+          "steps.json": "30210f75e79cb0e2d2657e25a212ce93191173669f0ddbe5ca52e6d5c2470e2e"
+        },
+        "test_read": false,
+        "valid_read": false,
+        "utility_measured": false,
+        "full3753_equivalence": false,
+        "elapsed_s": 48.32178327697329,
+        "limits": [
+          "Audited eight-step real TRAIN fixture only; no complete3753 utility or end-to-end speedup.",
+          "Exact source terminal weights reuse the existing independent CPU terminal rank audit; no new full CPU scoring.",
+          "Paired solver timings alternate call order, one device and seed; descriptive only."
+        ]
+      },
+      "audit": {
+        "status": "PASS_REAL_FIXTURE_TRAJECTORY_IDENTITIES_AND_INHERITED_CPU_SCOPE",
+        "failures": [],
+        "steps_replayed": 8,
+        "source_cpu_scope_queries": 68260,
+        "source_cpu_scope_reference_members": 221202,
+        "source_cpu_audit_sha256": "66f159ffa2f5239af50631f0ca7234c83662f76df8cac99bad87faf6b06767ea",
+        "receipt_sha256": "9d29936dc6e77f09045d5e819f48652a9835697a03911c68f658f981c9867121",
+        "test_read": false,
+        "valid_read": false,
+        "utility_measured": false,
+        "limits": [
+          "Audited eight-step real TRAIN fixture only; no complete3753 utility or end-to-end speedup.",
+          "Exact source terminal weights reuse the existing independent CPU terminal rank audit; no new full CPU scoring.",
+          "Paired solver timings alternate call order, one device and seed; descriptive only."
+        ]
+      }
+    }
+  ]
+}

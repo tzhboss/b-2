@@ -1,0 +1,47 @@
+id: KGE-ENTITY-COMMON-RANK-CONFLICT-DIAGNOSTIC-039
+status: completed_audited_train_diagnostic_only
+config: configs/rank-conflict39.json
+protocol: plan/rank-conflict-diagnostic39-protocol.md
+scope: TRAIN-only endpoint replacement feasibility and immutable-old/new-candidate
+  rank slot conflict diagnostic; no intervention or utility success
+registered_utc: '2026-10-11T11:05:38.160610+00:00'
+frozen_input_sha256:
+  configs/rank-conflict39.json: 1a9ef6881ddda43233cca69b50e3dd7d8dbf1ece5bd36a4bb58c67188e7502a3
+  scripts/diagnose_rank_conflicts39.py: 53f5afb20cf92806030875bd6f011974a4a20c20759dfcb6974fe57aa26bb934
+  scripts/register_rank_conflicts39.py: b5a75a23e425beddd7124ee3c7033866336def27b2565f4f17a97fc08826388d
+  plan/rank-conflict-diagnostic39-protocol.md: befcc1bb92a0bad87ed9630c91ad9d08814f6bfe1b766ee59ed3c35b568d2eb8
+  plan/review/capacity-complete-disposition.md: 717164313cacf8fb07b51ed18c417f22506d48ba27618e2f8b4a29eff244d8d5
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+  src/shared_rank_graph.py: bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a
+  src/shared_rank_scope.py: e351d1fe0a1e72feb30fe33a0887bea92e8b761a0656dad9ac5500fb406c57be
+  src/shared_rank_cache_v2.py: 8980fac50a992a74f1dd339c582ad3d1382c0fb140688cf87c1a6c6a4c7abaad
+  src/shared_rank_solver_v2.py: a274789e9552aa0aff020a880dbffcff1b1278987712c87a685dde185d17d06d
+  configs/rank-capacity37.json: 48b3f619ada69db422656c370fbebe38a92d6411900eda48e812cade9a333299
+  results/KGE-ENTITY-COMMON-RANK-CAPACITY-037/summary.json: 8e06c6ecadb4ae4198c4802666601a9838c176c5f01eb45a51a58b08b14f86e0
+  results/KGE-ENTITY-COMMON-RANK-CAPACITY-UTILITY-038/summary.json: 8b4c7d1e003677fff98dc71dfbf878bf4d7ddda9ce9073bb2b5d976d2010a987
+  results/KGE-ENTITY-COMMON-RANK-CAPACITY-UTILITY-038/cost-disclosure.json: 6557cc7f114d35f3b8e1642d78e5538830b24dc0cbc967d09fb2e8119a3c3a33
+external_source_sha256: {}
+controls:
+  status: PASS_IMMUTABLE_AND_NEW_SLOT_SELF_REPLACEMENT_AND_TIE_CONTROLS
+  hand_controls: 5
+  independently_enumerated_candidate_replacements: 512
+active_processes: []
+jobs:
+  '17':
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  '29':
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  '43':
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+scientific_utility_asserted: false
+weights_updated: false
+coordinator_pid: 798773
+result_directory: results/KGE-ENTITY-COMMON-RANK-CONFLICT-DIAGNOSTIC-039
+completed_utc: '2026-10-11T11:07:40.063977+00:00'

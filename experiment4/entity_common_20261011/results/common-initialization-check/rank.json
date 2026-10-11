@@ -1,0 +1,36 @@
+{
+  "status": "PASS_SAME_FLOAT32_INITIAL_VALUES",
+  "checks": 6,
+  "seeds": [
+    {
+      "seed": 17,
+      "entity_values_equal_at_float32": true,
+      "relation_values_equal_at_float32": true,
+      "input_sha256": {
+        "artifacts/incremental/direct-novel-s17/initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+        "artifacts/incremental/randomexpansion-distmult-s17/initial.pt": "d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7"
+      }
+    },
+    {
+      "seed": 29,
+      "entity_values_equal_at_float32": true,
+      "relation_values_equal_at_float32": true,
+      "input_sha256": {
+        "artifacts/incremental/direct-novel-s29/initial.pt": "3d36467b203f3bc5f2a05de6597ad01e07c4fcec8d7f83bf50c51e6eda9f75cb",
+        "artifacts/incremental/randomexpansion-distmult-s29/initial.pt": "73da0eb88e62176738d0da2a5d1cfd3e7d54d85aa0af6cc5766ad818526151d6"
+      }
+    },
+    {
+      "seed": 43,
+      "entity_values_equal_at_float32": true,
+      "relation_values_equal_at_float32": true,
+      "input_sha256": {
+        "artifacts/incremental/direct-novel-s43/initial.pt": "cfd08088c56429f7b1895510be60b2d36b899d61433bb9d7f34f7f537cc50b7c",
+        "artifacts/incremental/randomexpansion-distmult-s43/initial.pt": "95e70f431788cad45126d3e4a404a557c9ecd12ed2822aec0ecc534bb6b8e131"
+      }
+    }
+  ],
+  "limits": [
+    "Rank uses float64 arithmetic; equality of initial values does not assert equality of every floating-point rank across precision."
+  ]
+}

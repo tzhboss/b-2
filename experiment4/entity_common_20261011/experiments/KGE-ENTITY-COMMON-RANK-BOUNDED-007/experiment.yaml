@@ -1,0 +1,165 @@
+id: KGE-ENTITY-COMMON-RANK-BOUNDED-007
+status: batch_terminal_audited_full_comparison_pending
+registered_utc: '2026-10-10T18:36:55.501188+00:00'
+protocol: plan/rank-bounded-protocol.md
+config: configs/rank-bounded-training.json
+scope: Bounded shared-novel-entity adaptation with native Rank proposals and guarded
+  QP; radius from old checkpoint plus initial expansion only; raw005 failures retained
+frozen_input_sha256: &id001
+  configs/rank-bounded-training.json: e49121c8097385db5dcc25ed0a0de9b813a7281a208162ca6acfb3ba94021ccf
+  plan/rank-bounded-protocol.md: 198594f65333d0e208cc301a5e550dd761982edbeb0fa9b1b84b0826a82c80b3
+  src/rank_entity_bounded.py: 9a9bf83b6e1cebb199c1d88307ac83f6d4ac56ba018022ffb45f421e65793e6c
+  scripts/run_rank_task.py: 53535c43cf57ccd76c8e221a6f3246fec96ed3d6b0cfd76b1e677fd4d3e76ea9
+  scripts/coordinate_gpu_claim_queue.py: d8d3af1b42f634429dfc7c0635b6fa531df34ee10885acc62e05a287506845ce
+  scripts/audit_exported_embeddings.py: 56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+  vendor/legacy_qp/rank_constraints.py: f1e4db2c3eea544457b53d45b354839851d2ff08d6a819e4d85b2c2ed29b3e19
+  vendor/legacy_qp/rank_constraints_v2.py: d2d07e7ba70d2bc9813cf73970f65e374491915c194f9a67e09dbcd1faa4ffec
+  scripts/coordinate_gpu_claim_queue_v2.py: cec53ab2e2493b522e2bc8de8b53de5fd620a1ab0c386e4f0d0b15c6adcb9741
+  scripts/check_bounded_rank_controls.py: 37bf5aacf4f696aecb0a3a9bf20c6f0b7de0fa9e5c27adf5623c1d590a63b550
+external_source_sha256:
+  /data/lc/tzh/experiment4/rank_comparison_20261010/vendor/kge_rank_locality/core.py: d3acc87aa404bef1a6ab2cddb60c6df75531718bba1c15b0ce21548051990c55
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s17/receipt.json: 51958955049cc98841839669f790f64f4e7d47059b8853e3bfd4ccbc88c89931
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s29/receipt.json: d1c89e9c5934874eff3eb8c46e0bbc8a1692175c644b571b5e2fadc736fa26fb
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-train-guards/s43/receipt.json: 95598df479e5435aed3c80e577a260d8d0932e6f86925bcf834a00b76910b52d
+job_count: 21
+active_processes: []
+queued_jobs: []
+reason: Raw shared Rank005 seed17 terminal tracking failure with max new norm1.0295e28;
+  old failure retained
+pre_registration_test_read: false
+coordinator_pid: 705243
+jobs:
+  direct-bounded-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  rank-bounded-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  qptrue-bounded-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  qppred-bounded-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  support-bounded-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  null-bounded-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  ridge-bounded-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  direct-bounded-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  rank-bounded-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  qptrue-bounded-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  qppred-bounded-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  support-bounded-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  null-bounded-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  ridge-bounded-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  direct-bounded-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  rank-bounded-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  qptrue-bounded-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  qppred-bounded-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  support-bounded-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  null-bounded-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  ridge-bounded-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+preflight_passed:
+- DirectNovelBounded
+- QPPredRankNovelBounded
+- QPTrueRankNovelBounded
+- RankTruncatedNovelBounded
+- RidgeNovelBounded
+- StrictNullNovelBounded
+- SupportTrainNovelBounded
+prior_waiting_coordinator_pid: 701501
+auditor_correction_reason: Independent NNLS complementarity used unfiltered rhs instead
+  of active rhs; correction before any bounded job runs
+pre_run_revisions:
+- previous_frozen_sha256: *id001
+  reason: Independent NNLS complementarity used unfiltered rhs instead of active rhs;
+    correction before any bounded job runs
+  retained_source_snapshot: artifacts/source-revisions/rank-bounded-before-first-job
+- previous_frozen_sha256:
+    configs/rank-bounded-training.json: 640ebc1a092b9bb45e81e132f3875d23a71cc5a37980e387a475eca298acde3a
+    plan/rank-bounded-protocol.md: 198594f65333d0e208cc301a5e550dd761982edbeb0fa9b1b84b0826a82c80b3
+    src/rank_entity_bounded.py: 9a9bf83b6e1cebb199c1d88307ac83f6d4ac56ba018022ffb45f421e65793e6c
+    scripts/run_rank_task.py: 53535c43cf57ccd76c8e221a6f3246fec96ed3d6b0cfd76b1e677fd4d3e76ea9
+    scripts/coordinate_gpu_claim_queue.py: d8d3af1b42f634429dfc7c0635b6fa531df34ee10885acc62e05a287506845ce
+    scripts/audit_exported_embeddings.py: 56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719
+    src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+    src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+    vendor/legacy_qp/rank_constraints.py: f1e4db2c3eea544457b53d45b354839851d2ff08d6a819e4d85b2c2ed29b3e19
+    vendor/legacy_qp/rank_constraints_v2.py: d2d07e7ba70d2bc9813cf73970f65e374491915c194f9a67e09dbcd1faa4ffec
+    scripts/coordinate_gpu_claim_queue_v2.py: ca9d507cdca749cccc9380cb6acb3741c2d5fdc712677346eef44277ccc3abbc
+    scripts/check_bounded_rank_controls.py: 37bf5aacf4f696aecb0a3a9bf20c6f0b7de0fa9e5c27adf5623c1d590a63b550
+  reason: Use idle GPUs while peer CPU audits continue; inspect live peer GPU claims
+    and cap total independent audit workers
+  retained_source_snapshot: artifacts/source-revisions/rank-bounded-before-resource-revision
+  scientific_parameters_changed: false
+controls:
+  status: PASS_BOUNDED_SCALE_AND_ACTIVE_DUAL_CONTROLS
+  projection_cases: 256
+  max_radius: 3.0000000000000013
+  inactive_dual_rows_checked: 2
+  stationarity: 2.220446049250313e-16
+  complementarity: 1.3322676295501875e-15
+  test_read: false
+controls_receipt: artifacts/bounded-controls/receipt.json
+coordinator: scripts/coordinate_gpu_claim_queue_v2.py
+queued_audits: []
+resource_revision_reason: Use idle GPUs while peer CPU audits continue; inspect live
+  peer GPU claims and cap total independent audit workers
+completed_utc: '2026-10-10T19:57:55.663252+00:00'
+result_directory: results/KGE-ENTITY-COMMON-RANK-BOUNDED-007

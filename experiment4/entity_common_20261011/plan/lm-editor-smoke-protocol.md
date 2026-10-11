@@ -1,0 +1,9 @@
+# KGEditor原生meta数据流与恢复预检
+
+006仅CPU可行性检查，不是完成共同任务的KGEditor成绩。主要旧图底座004继续三GPU20epoch；本smoke复用已完成的一批旧TRAIN底座preflight，不取代正式底座。6174/1024方向proxy从004事前划出的旧TRAIN元训练/验证事实产生，各与base训练行互斥；输入内容与原旧TRAIN绑定复算，输入/切分/缓存hash核验。corruption seed20261012从旧7505候选均匀取与gold不同的wrong；条件文本和普通BERT tokenization保留作者ENTITY_wrong >> ENTITY_gold || pairtext格式。不读新增TRAIN事实、TEST或已有完整图KGE底座。
+
+Bridge保留作者EXBert、OneShotLearner四扩展权重、BaseKEModule原forward/training_step/KL loss、RMSprop centered/alpha反梯度及clamp和1000/200000 scheduler。通过独立数据批提供作者2edit+8stable；stable来自未参与meta的旧TRAIN底座行。native max_scale=1、lr=.0005、lr_alpha=.1、p2、KL margin.1、LP1e-6，不沿用旧CPU构造smoke的.001作为方法配置。
+
+CPU构造时科学模型与condition embedding共享storage；GPU迁移后在原生模块遍历下会分离。本CPU恢复明确clone condition embedding，再独立载入learner，复现GPU分离的参数状态，避免先前CPUload后learner覆盖科学embedding的问题。需核验基底科学模型参数逐值/哈希不变、one native训练step和元验证loss/梯度finite、meta checkpoint恢复后候选分数与rank一致。本CPU结果只证明CPU数据流/恢复，不能冒称GPU/CPU独立恢复认证；GPU正式preflight另做。
+
+正式训练候选代码已实现20epoch meta及旧proxy等权edit/stable MRR首次最高选模，但006只做一批。整个共同方法仍需004正式底座审计、GPU meta训练/恢复、全新增TRAIN的原超网络顺序在线适配、全11258候选旧/新TEST及独立审计。原语言模型额外文本与先验、原独立编辑到全量序列更新的任务适配以及base/meta/online成本都必须在最终同表公开，不能隐藏在编辑耗时里。

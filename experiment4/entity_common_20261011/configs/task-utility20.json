@@ -1,0 +1,89 @@
+{
+  "id": "KGE-ENTITY-COMMON-TASK-UTILITY-020",
+  "source_experiment": "KGE-ENTITY-COMMON-TASK-PROJECTION-019",
+  "source_config_sha256": "ec7512c8bb38b8ae353e4cb1414c53545b103c876949282ef7d2f1815fdee825",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "jobs": [
+    {
+      "id": "taskprojection-euclidean-s17",
+      "method": "LearnedProposalQPPredEuclideanR2",
+      "kind": "DistMult",
+      "after_dimension": 200,
+      "seed": 17,
+      "protection": "pred",
+      "apply_rank": false,
+      "projection_metric": "euclidean"
+    },
+    {
+      "id": "taskprojection-task_query-s17",
+      "method": "LearnedProposalTaskQPPred",
+      "kind": "DistMult",
+      "after_dimension": 200,
+      "seed": 17,
+      "protection": "pred",
+      "apply_rank": false,
+      "projection_metric": "task_query"
+    },
+    {
+      "id": "taskprojection-euclidean-s29",
+      "method": "LearnedProposalQPPredEuclideanR2",
+      "kind": "DistMult",
+      "after_dimension": 200,
+      "seed": 29,
+      "protection": "pred",
+      "apply_rank": false,
+      "projection_metric": "euclidean"
+    },
+    {
+      "id": "taskprojection-task_query-s29",
+      "method": "LearnedProposalTaskQPPred",
+      "kind": "DistMult",
+      "after_dimension": 200,
+      "seed": 29,
+      "protection": "pred",
+      "apply_rank": false,
+      "projection_metric": "task_query"
+    },
+    {
+      "id": "taskprojection-euclidean-s43",
+      "method": "LearnedProposalQPPredEuclideanR2",
+      "kind": "DistMult",
+      "after_dimension": 200,
+      "seed": 43,
+      "protection": "pred",
+      "apply_rank": false,
+      "projection_metric": "euclidean"
+    },
+    {
+      "id": "taskprojection-task_query-s43",
+      "method": "LearnedProposalTaskQPPred",
+      "kind": "DistMult",
+      "after_dimension": 200,
+      "seed": 43,
+      "protection": "pred",
+      "apply_rank": false,
+      "projection_metric": "task_query"
+    }
+  ],
+  "worker": "scripts/audit_proposal_utility_v2.py",
+  "aggregate_worker": "scripts/audit_proposal_utility_v2.py",
+  "reaudit_directory": "artifacts/task-utility20",
+  "log_directory": "logs/task-utility20",
+  "batch_size": 64,
+  "max_concurrent_audits": 2,
+  "dependencies": [
+    "experiments/KGE-ENTITY-COMMON-TASK-PROJECTION-019/experiment.yaml"
+  ],
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-014/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-017/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-TASK-PROJECTION-019/experiment.yaml"
+  ],
+  "weighted_method": "LearnedProposalTaskQPPred",
+  "comparator_method": "LearnedProposalQPPredEuclideanR2"
+}

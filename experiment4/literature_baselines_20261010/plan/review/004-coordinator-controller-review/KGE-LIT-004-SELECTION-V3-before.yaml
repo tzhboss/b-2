@@ -1,0 +1,27 @@
+id: KGE-LIT-004-SELECTION-V3
+status: terminal_pending_controller_review
+registration_status: REGISTERED
+registered_utc: '2026-10-10T13:34:02.500453+00:00'
+coordinator_sha256: 36f1119320a4e13c9e2b80aee6f35d11b2161ec3ab7ecd5db889572f105ab929
+auditor_sha256: c4cd9eda73dbde56659ac5e620a02703901f7643c5ad377e4a9f638bf056c4b3
+active_processes: []
+no_automatic_promotion: true
+scope: Read-only epoch/step/score binding under PL1.3.1 serialization convention;
+  no native changes
+supersedes: KGE-LIT-004-SELECTION-V2
+jobs:
+- id: kgeditor-e-fb15k237-s0
+  stage: terminal
+  pid: 682094
+  exit_code: 0
+  status: PASS_SELECTION_BINDING
+  report: logs/kgeditor-e-fb15k237-s0-selection-binding-v3.json
+  report_sha256: c8a5ee1de571a4b79f5f41c4468758ca728fb4722223219929e6209170b90313
+- id: kgeditor-e-wn18rr-s0
+  stage: terminal
+  pid: 676473
+  exit_code: 0
+  status: PASS_SELECTION_BINDING
+  report: logs/kgeditor-e-wn18rr-s0-selection-binding-v3.json
+  report_sha256: fe6d1db05fb1311b17c26c3bea15181d47188e09769a159864fae35e1dc2e6fd
+coordinator_pid: 676472

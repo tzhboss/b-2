@@ -1,0 +1,80 @@
+id: KGE-RANK-EVAL-001
+status: completed_audited_qualified
+registered_utc: '2026-10-10T16:24:45.222772+00:00'
+protocol: plan/experiment-protocol.md
+config: config.json
+frozen_input_sha256:
+  .gitignore: f662a0a43ff33994ffb00d5f191ea26a0fd2aff5e1ea24bc4b6e78272174bf0c
+  config.json: 451b26422cfff7229e459fc5d7cc02218b74a4fc2c66e9ffa79acc866c681852
+  figures/data-manifest.md: 7eaae09da7d4479de9084e0b43ffed90edecea4243be7ddee02f4d8bd6e57355
+  plan/experiment-protocol.md: 25fd1e1d57962cb23f4837a923b00cacadbf519dfa591fab32866b54472189a1
+  scripts/audit_checkpoint_ranks.py: d1e53108020775320907575a572b57d5664f52e2594baa2bf3d77155dca1fd26
+  scripts/audit_lm_metrics.py: 755cd9a739d8bca5b369d8fd93a509e270bee3bc8fd8be8e8faae7a6a83e6608
+  scripts/audit_rank_metrics.py: cc6be925918b99e412fdce2050ec5b9060b48221124f0d0c51c7686eeb16d574
+  scripts/coordinate_evaluation.py: 73524b7da48f34f092082e1963836b3043c39064ebc45341a2c71a1b488646b4
+  scripts/evaluate_checkpoints.py: 0a378684ac4c23517427df77277c4ce9be897bc98b7386bc7c0529b5437e13af
+  scripts/evaluate_lm_editor.py: 09d4b2854c42deadcc79e7bb696479430c07df9ee24a16d119e1002451e51aac
+  scripts/evaluate_rank_vectors.py: 131a6c1ffea6a4d24ae6d9d8d8ddfe0c681a17bfab85555b6ea0d77793977474
+  src/checkpoint_scoring.py: 9a66e2d1990c0172acb0b066223455619ec90c0e98a036ccf0636d8fe4af9507
+  src/rank_metrics.py: e0b6bec82fa44a3381b69bf80c90db63ca7e8bbd87bf64d76b8750b03d6a310e
+  tables/table-schema.md: bcc301d937b894c50fa732037b9a935d4f6185b86f564126d486d58036ff1a88
+  plan/review/method-experiment-traceability.md: a4f088486468c2d6521eb1bdfc559c0c792f205743e4db0416e49caf61188c60
+  src/__pycache__/checkpoint_scoring.cpython-312.pyc: 2c243f5c90c7b50065888532f03565fce04b1663ecdb5f21e0a3a6b9e2256ea6
+  src/__pycache__/rank_metrics.cpython-312.pyc: 4a2c0b02aacd64ec99af4935c502dedac801287364e04ee98dae9cca3d35d160
+active_processes: []
+scope: Posthoc full common Rank evaluation; no training; finish audits and stop this
+  round.
+coordinator_pid: 683894
+jobs:
+  incde-entity-s3407:
+    status: completed_audited_qualified
+    stage: audit
+    exit_code: 0
+  incde-hybrid-s3407:
+    status: completed_audited_qualified
+    stage: audit
+    exit_code: 0
+  fastkge-fbckge-s3407:
+    status: completed_audited_qualified
+    stage: audit
+    exit_code: 0
+  incde-fact-s3407:
+    status: completed_audited_qualified
+    stage: audit
+    exit_code: 0
+  incde-relation-s3407:
+    status: completed_audited_qualified
+    stage: audit
+    exit_code: 0
+  kgeditor-e-wn18rr-s0:
+    status: completed_audited_qualified
+    stage: audit
+    exit_code: 0
+  stark-fbckge-s3407:
+    status: completed_audited_qualified
+    stage: audit
+    exit_code: 0
+  lkge-clean-fact-s55:
+    status: completed_audited_qualified
+    stage: audit
+    exit_code: 0
+  sage-fact-s55:
+    status: completed_audited_exploratory
+    stage: audit
+    exit_code: 0
+  rank-distmult:
+    status: completed_audited_qualified
+    stage: audit
+    exit_code: 0
+  rank-complex:
+    status: completed_audited_qualified
+    stage: audit
+    exit_code: 0
+  kgeditor-e-fb15k237-s0:
+    status: completed_audited_qualified
+    stage: audit
+    exit_code: 0
+completed_utc: '2026-10-10T16:30:37.980552+00:00'
+result_directory: results/KGE-RANK-EVAL-001
+failed_retained: []
+next_round: not_started_user_requested_stop

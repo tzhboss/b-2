@@ -1,0 +1,15 @@
+# Rank／QP真实新增实体适配
+
+本轮使用同FB_CKGE 0→1、3753新实体、11258最终候选、原完整旧/新TEST方向查询和17/29/43。继承DistMult200仅旧TRAIN底座及完全相同float32扩展随机值，Rank原生数值核为float64，故运算统一float64并公开精度差异。不得复用400已知实体编辑成绩。
+
+逐新增TRAIN事实适配：种子seed+71固定方向行随机顺序，只更新tail为新实体的方向；每原事实至少一个方向，两个端点均新则两个方向均访问。一轮完整访问，旧实体/关系冻结，新实体向量在所有查询中共享，因此新head真实改变，并非冻结head的列重放。自环同样保留，作者线性promotion只作为更新建议，接受QP前须用更新后的真实共享head重新检查排名。Direct、Rank(.125)、StrictNull、Ridge(.01)均调用已绑定作者core中的公式。Support TRAIN保留旧支持least-squares目标；真正新tail的旧TRAIN支持为空，因此数学退化为Direct，不冒称此任务存在旧支持。
+
+所有子臂使用同初态、顺序、全量新TRAIN、一完整sweep；没有逐目标选赢家、测试选参、后期重排或网格。VALID仍为共同seed124选的旧/新各1024方向查询，用等权MRR，当前一sweep仅一个合法终点。任务允许不同原完整系统机制，不能把此一sweep解析编辑称与200epoch SGD严格等训练成本。18,000秒/任务为求解可执行预算，超过即保留失败，不用预算截止的局部覆盖冒充完整新任务。旧底座/guard特征/实际在线/审计成本分别保留。
+
+旧TRUE保护从旧TRAIN、旧7505池Top10成功事实按作者source order取每关系前5000；SVD严格调用作者ProtectionSubspace。预测保护从旧TRAIN唯一(h,r)的旧7505 Top10 cutoff产生，不读取VALID/TEST标签。本QP适配为全关系旧查询边界，公开其比原同关系合同更宽。旧guard head和gold均旧且冻结，所以任一new tail更新的guard候选列为精确线性，即使全局模型共享。
+
+追踪每个固定TRUE/预测cutoff之前有多少完整11258候选严格超过它；每步只一个new候选列改变，以前后crossing精确更新。当前成功且位于第10名、编辑候选原来未超过gold/cutoff者形成upper约束；Prediction依旧排除正在学习的同(h,r)。目标promotion和所有边界构成最小范数QP。继承v2 SLSQP、primal1e-10/KKT1e-6、margin1e-8、norm cap为配对Rank(.125)更新范数。仅以Cauchy界剪除在cap内冗余行，检查原完整行。精确相反q与promotion冲突直接记录。
+
+仅QP证书、原完整primal、cap、真实共享模型目标Top10和当前成功TRAIN TRUE不掉榜全部通过才使用QP；Prediction臂另检查未排除的当前成功预测边界。否则使用本步配对Rank，明确无硬保证。初始化已掉榜、fallback、未保护TEST、早期新事实后来被覆盖均不声称安全。整个终点以真实head/tail完整检索评价，保留训练step目标成功与最终TEST学习的区别。
+
+先意义明确的解析solver/零行/冲突/共享head与排名crossing控制，再各法64真TRAIN新tail更新preflight；preflight不读TEST。每任务需完整TRAIN覆盖、终点全部guard完整候选重数一致、旧参数不变及finite。审计重放每一步old/new向量连续性、实际更新head query和全部guard crossing；每accepted QP重建原完整system，检查primal/cap/真实目标/边界，并NNLS独立构造非负dual witness检验stationarity/complementarity。NNLS验算tol1e-5为独立证据阈值，不改变生产solver1e-6证书。最后叠加既有独立完整query ID/全聚合/64候选行推理审计；失败不进入主表。

@@ -1,0 +1,68 @@
+{
+  "status": "PASS_DATA_FEASIBILITY_ONLY",
+  "snapshots": [
+    {
+      "snapshot": 0,
+      "entities": 7505,
+      "relations": 474,
+      "counts": {
+        "train": 111642,
+        "valid": 37214,
+        "test": 37214
+      },
+      "within_snapshot_overlap": {
+        "train_valid": 0,
+        "train_test": 0,
+        "valid_test": 0
+      }
+    },
+    {
+      "snapshot": 1,
+      "entities": 11258,
+      "relations": 474,
+      "counts": {
+        "train": 18607,
+        "valid": 6202,
+        "test": 6203
+      },
+      "within_snapshot_overlap": {
+        "train_valid": 0,
+        "train_test": 0,
+        "valid_test": 0
+      }
+    }
+  ],
+  "new_entities": 3753,
+  "new_entities_with_increment_train_support": 3753,
+  "new_entities_without_train_support": 0,
+  "increment_counts": {
+    "train": 18607,
+    "valid": 6202,
+    "test": 6203
+  },
+  "new_eval_coverage": {
+    "valid": {
+      "novel_fact_count": 6202,
+      "queries_head_tail": 12404,
+      "facts_touching_no_train_support": 0
+    },
+    "test": {
+      "novel_fact_count": 6203,
+      "queries_head_tail": 12406,
+      "facts_touching_no_train_support": 0
+    }
+  },
+  "new_vs_old_fact_overlaps": {
+    "train": 0,
+    "valid": 0,
+    "test": 0
+  },
+  "before_old_candidates": 7505,
+  "after_all_method_candidates": 11258,
+  "script_sha256": "05ae8604c4f5dcc7a9d03a9ffe66e36ac1332bc33df55f15b190b425bba9011d",
+  "model_training_started": false,
+  "limitations": [
+    "Existing development source data previously exposed; no heldout or training claim.",
+    "Unsupported new entities must remain candidates; report coverage strata, do not remove by outcome."
+  ]
+}

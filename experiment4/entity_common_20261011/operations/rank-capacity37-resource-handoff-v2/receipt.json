@@ -1,0 +1,83 @@
+{
+  "scope": "Operational queue handoff V2; preserves failedV1 and all registered scientific inputs/gates",
+  "addendum": "configs/rank-capacity37-resource-addendum-v2.json",
+  "addendum_sha256": "1963f36e87540594252e68e8df7952efe55071b25daa116ce1102c767cc162dd",
+  "runtime_queue_sha256": "66b39aa855be35b925c1c967885a830c749d51d7727a11e6e168b0a089318e8c",
+  "rendered_queue_sha256": "589962cf0ac6b06b84e2cf51f0c7d24a444403cf990be06f733bf08ec36c3240",
+  "legacy_coordinator": {
+    "pid": 783380,
+    "state": "S",
+    "parent": 1,
+    "start_ticks": 103493681,
+    "exit_status": 0
+  },
+  "adopted_workers": {
+    "capacity-full-s17": {
+      "pid": 783945,
+      "state": "S",
+      "parent": 783380,
+      "start_ticks": 103508158,
+      "exit_status": 0
+    },
+    "capacity-scoped-s17": {
+      "pid": 783946,
+      "state": "S",
+      "parent": 783380,
+      "start_ticks": 103508158,
+      "exit_status": 0
+    }
+  },
+  "additional_gpu_indices": [
+    3,
+    5,
+    6
+  ],
+  "verified_idle_gpu_snapshot": {
+    "0": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 19126,
+      "utilization": 0
+    },
+    "1": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 0,
+      "utilization": 9
+    },
+    "2": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 0,
+      "utilization": 99
+    },
+    "3": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 0,
+      "utilization": 0
+    },
+    "4": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 0,
+      "utilization": 14
+    },
+    "5": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 0,
+      "utilization": 0
+    },
+    "6": {
+      "name": "NVIDIA GeForce RTX 3090",
+      "memory_mib": 0,
+      "utilization": 0
+    }
+  },
+  "controls_sha256": "c73cdbb973a11b68c9185fba4766808bd790d298816af29a16fe7f117191c1be",
+  "limits": [
+    "GPU allocation/concurrency changed prospectively for queued jobs; all are the same RTX3090 class.",
+    "Running seed17 training wrappers and producers are neither signalled nor restarted.",
+    "Only the verified owned legacy scheduler is stopped; exact zombie worker exit statuses are captured before reaping.",
+    "Concurrent cost observations do not establish equal-cost dominance; V1 startup failure and automatic rollback are retained."
+  ],
+  "legacy_scheduler_released_after_captured_worker_exits": {
+    "783946": 0,
+    "783945": 0
+  }
+}

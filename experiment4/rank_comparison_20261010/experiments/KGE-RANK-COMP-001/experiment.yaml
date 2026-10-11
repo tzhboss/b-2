@@ -1,0 +1,24 @@
+experiment_id: KGE-RANK-COMP-001
+status: failed_retained
+protocol: plan/experiment-protocol.md
+configuration: config.json
+bound_input_manifest_sha256: 6f49696752796cce27357d386e4fc97cd14ede18d69ad584aa7dd58a01c43782
+jobs:
+  distmult:
+    stage: audit
+    exit_code: 1
+    status: failed_retained
+  complex:
+    stage: audit
+    exit_code: 1
+    status: failed_retained
+active_processes: []
+resources:
+  cpu_count: 32
+  memory:
+  - 'MemTotal:       209715200 kB'
+  - 'MemFree:        13516032 kB'
+  - 'MemAvailable:   187061016 kB'
+  blas_threads_per_job: 2
+scope: Supplementary exposed400 comparison; no new training or TEST scores
+coordinator_pid: 683099

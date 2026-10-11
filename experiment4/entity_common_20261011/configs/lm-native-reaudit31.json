@@ -1,0 +1,40 @@
+{
+  "id": "KGE-ENTITY-COMMON-KGEDITOR-NATIVE-REAUDIT-031",
+  "scope": "Unchanged KGEditor artifacts: strict native GPU delta replay, original CPU inference and full coverage checks; original CPU failures retained",
+  "python": "../literature_baselines_20261010/environment/kgeditor38/bin/python",
+  "worker": "scripts/review_lm_native_precision.py",
+  "available_gpu_indices": [
+    1,
+    2
+  ],
+  "log_directory": "logs/lm-native-reaudit31",
+  "output_directory": "artifacts/lm-native-reaudit31",
+  "max_concurrent_audits": 2,
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-EVAL-030/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-027/experiment.yaml"
+  ],
+  "jobs": [
+    {
+      "id": "kgeditor-common-r4-s17",
+      "method": "KGEditor",
+      "kind": "EXBert",
+      "seed": 17,
+      "source_config": "configs/lm-editor-common-r4.json"
+    },
+    {
+      "id": "kgeditor-common-r3-s29",
+      "method": "KGEditor",
+      "kind": "EXBert",
+      "seed": 29,
+      "source_config": "configs/lm-editor-common-r3.json"
+    },
+    {
+      "id": "kgeditor-common-r3-s43",
+      "method": "KGEditor",
+      "kind": "EXBert",
+      "seed": 43,
+      "source_config": "configs/lm-editor-common-r3.json"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+id: KGE-ENTITY-COMMON-SHARED-GRAPH-PREFLIGHT-026
+status: completed_audited_artifact_checks_only
+config: configs/shared-graph-preflight26.json
+protocol: plan/shared-graph-preflight-protocol.md
+scope: Full protected TRAIN scope, bounded real shared-row preflight across full/scoped
+  frozen and scoped joint arms; no VALID/TEST utility
+registered_utc: '2026-10-11T04:10:30.344938+00:00'
+frozen_input_sha256:
+  configs/shared-graph-preflight26.json: b27b9d3d1245d831d7f20d446004e1c3c08db3a0c0459a72d5c838e136bb00d4
+  plan/shared-graph-preflight-protocol.md: 6a65f4b55873843ad5edf3f5009afce4594290aa68834f2ddcee07cfbbe0a2db
+  src/shared_rank_graph.py: bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a
+  src/shared_rank_solver_v2.py: a274789e9552aa0aff020a880dbffcff1b1278987712c87a685dde185d17d06d
+  src/shared_rank_cache_v2.py: 8980fac50a992a74f1dd339c582ad3d1382c0fb140688cf87c1a6c6a4c7abaad
+  src/shared_rank_scope.py: e351d1fe0a1e72feb30fe33a0887bea92e8b761a0656dad9ac5500fb406c57be
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+  scripts/run_shared_graph_checks.py: ad80276bec935f08f1619a24350bc14b15dd6676a596411582916a2e6b347671
+  scripts/coordinate_artifact_checks.py: 770ecab1869cc2daee5076f772bed8064fc075db1a449071b4df52f0a739521e
+  results/KGE-ENTITY-COMMON-SHARED-RANK-SOLVER-025R2/summary.json: 4afa661f0bf3ca53778870908eed4fa1f76c7cf34ec4baf4d5cd898c4c400bef
+  results/KGE-ENTITY-COMMON-SHARED-RANK-SCOPE-024/summary.json: d418205315168e3a0d41efc1d8054c5384c5ee2919f4bb28adb779e729ecac9f
+active_processes: []
+coordinator_pid: 748232
+jobs:
+  shared-preflight-full-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-preflight-scoped-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-preflight-joint-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+queued_jobs: []
+queued_audits: []
+result_directory: results/KGE-ENTITY-COMMON-SHARED-GRAPH-PREFLIGHT-026

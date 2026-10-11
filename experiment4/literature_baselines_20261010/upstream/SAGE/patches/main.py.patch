@@ -1,0 +1,16 @@
+diff --git a/main.py b/main.py
+index 8c268df..7107b5d 100644
+--- a/main.py
++++ b/main.py
+@@ -495,9 +495,9 @@ class experiment():
+ 
+         all_test_results.append(
+             {'FWT': sum(FWT)/len(FWT), 'BWT': sum(BWT)/len(BWT)})
+-        test_data_path = 'res_diff_datasets/' + self.args.dataset + \
++        test_data_path = self.args.result_export_dir + self.args.dataset + \
+             '-num' + str(self.args.num_samples_for_retrain)
+-        test_again_data_path = 'res_diff_datasets/' + "AGAIN" + '-' + \
++        test_again_data_path = self.args.result_export_dir + "AGAIN" + '-' + \
+             self.args.dataset + '-num' + str(self.args.num_samples_for_retrain)
+         if self.args.use_difficult_samples:
+             test_data_path += '-difficult-'

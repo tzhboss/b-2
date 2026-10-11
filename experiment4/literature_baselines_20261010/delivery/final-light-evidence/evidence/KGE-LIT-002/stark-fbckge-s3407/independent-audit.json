@@ -1,0 +1,4384 @@
+{
+  "method": "STARK",
+  "root": "/data/lc/tzh/experiment4/literature_baselines_20261010",
+  "run": "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/stark-fbckge-s3407/native/seed3407",
+  "checks": 504,
+  "failures": [],
+  "missing": [],
+  "audit_scope": "Native FB_CKGE only; not a frozen-clean edit split or five-seed paper reproduction.",
+  "read_only": true,
+  "script_sha256": "03ddc4d3da7aeee2163eb0b009ae168adc050b27e2039e4c51cdcfe3c8a6b504",
+  "torch": "2.5.1+cu124",
+  "numpy": "2.4.0",
+  "source": {
+    "commit": "2e546b30688c660903247df89330671f4f73bf68",
+    "diff_sha256": "c7e000a8774f42038e51a82109b304351fd70fbacbfd2ae6826a835899a7e86d",
+    "files": {
+      "main.py": {
+        "original_sha256": "4f919d0ffcb59a593526ebd3b0ebdc9dc7273dfd4b12e639eed79104e90ea8b0",
+        "current_sha256": "ad71fa0ab5f1cc6a514908d69487b9b9725a87791865f5158091f695ad493302"
+      },
+      "src/parse_args.py": {
+        "original_sha256": "b2ca0a65e92e143f1070d1b51603182c5786c37d14de9c8308c6ad62293560db",
+        "current_sha256": "186026f41bb7e8d54a28f62825e7ea85365593d9e27c9db8d5250bd17a1bcc3f"
+      },
+      "src/data_load/KnowledgeGraph.py": {
+        "original_sha256": "4a06065df51e98432780af6d99a99025700927ef0b4ef758a376465dbb74ac91",
+        "current_sha256": "4a06065df51e98432780af6d99a99025700927ef0b4ef758a376465dbb74ac91"
+      },
+      "src/data_load/data_loader.py": {
+        "original_sha256": "fde3361d4ccbedfc9ee9029f8c7ce2ef322adc94ab1987e096153b232dacef2d",
+        "current_sha256": "fde3361d4ccbedfc9ee9029f8c7ce2ef322adc94ab1987e096153b232dacef2d"
+      },
+      "src/model/BaseModel.py": {
+        "original_sha256": "644d3deb9be6bfbe5128d3b3241ba09250da035cfb319c14a35c8f2697726d37",
+        "current_sha256": "6e6fd55ac032762fdc83272115b1f5d526e67d57f8706f691ead5332351debfb"
+      },
+      "src/model/LoraKGE_Layers.py": {
+        "original_sha256": "12c29885f7e3666acfcb03fbad37a0b69871fbe06dd5217b7f776784e0773c45",
+        "current_sha256": "12c29885f7e3666acfcb03fbad37a0b69871fbe06dd5217b7f776784e0773c45"
+      },
+      "src/model/model_process.py": {
+        "original_sha256": "36adcc9db4ac35760dbb58f117c5a65cb6f18215230ea518940be6a7bb952715",
+        "current_sha256": "674395d401e95f0270e10c34908979d799fd01662174507a87dc3c9ddb759880"
+      },
+      "src/train.py": {
+        "original_sha256": "2316533d6652b303c32d50e61d208c10e8dee8c7c422ebc02cf9faf9a9dc6815",
+        "current_sha256": "2316533d6652b303c32d50e61d208c10e8dee8c7c422ebc02cf9faf9a9dc6815"
+      },
+      "src/test.py": {
+        "original_sha256": "58d8ee132368ddceafe46348eaa58ee353f165317cfc9397f1a4a6e76a078e8c",
+        "current_sha256": "58d8ee132368ddceafe46348eaa58ee353f165317cfc9397f1a4a6e76a078e8c"
+      },
+      "src/utils.py": {
+        "original_sha256": "f88d5033f34f53b5d65044854caeeff6f8906bd48a01e69ca5dcc857ae7207ad",
+        "current_sha256": "f88d5033f34f53b5d65044854caeeff6f8906bd48a01e69ca5dcc857ae7207ad"
+      },
+      "main.sh": {
+        "original_sha256": "998130a0b59ec869f92d30d886157d14de3c0860578c656ee662ba52f1d7fb32",
+        "current_sha256": "998130a0b59ec869f92d30d886157d14de3c0860578c656ee662ba52f1d7fb32"
+      }
+    }
+  },
+  "launch_sha256": "94cc33866b7c83e7c7c35b375356eda98ae4e0ab12d3e6a91ae8366160af887e",
+  "data": {
+    "sha256": {
+      "0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+      "0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+      "0/test.txt": "e5192a8dd2405d74433eceee72cabba04640dd8cf31ef763bc039824a9725232",
+      "0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+      "0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+      "0/train_id.txt": "2464637cff0bde0cdf0ada017ae2de786975aac0467d0b3e7d0c57f5a45905ff",
+      "1/train.txt": "6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938",
+      "1/valid.txt": "d5c718196c813c295cdd83ebab1a43f5888926109ba4d9a68d1e49320331e672",
+      "1/test.txt": "6150c2575bb256859c0ca7166d881000bb7fadbc096a3a09a99f7777b69a7860",
+      "1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+      "1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+      "1/train_id.txt": "8032db8a64209c4945339549600fe40d4baff80b7bfb19ac5851653c49a52ae9",
+      "2/train.txt": "6ce7eaa4cc7bbd000c41607574d79e2129356e6d4ad012167358386becdd6ac9",
+      "2/valid.txt": "f98b39591f641aa84ba0cfd874321522f52e2aab52fb8758b8184519ec033db1",
+      "2/test.txt": "dce56d2849c0475fbc4cee4939a4c62185792decd03f6edc0cbc5aab5bf2dac5",
+      "2/entity2id.txt": "7ebcd8b2ee18e69965eee1fc8ce6d750ae3ddbfbb3f19d47c3eabf8b856b889f",
+      "2/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+      "2/train_id.txt": "4d9a28c4de62cdc220e1f7249af179fd99bb945d05e6552b9c49574a0db989dc",
+      "3/train.txt": "1c657672bd9faa3ade0e770ddd9b0c596c7cf285f1097560c452ce5c192cd5f4",
+      "3/valid.txt": "655afa4bda14ccacd9b6bc7e1e702b3250b6d9d5c1409ced60564d5a6d045705",
+      "3/test.txt": "7bf786af5a7b26b73f6cd572634f0e047b5a7957d07a0f0184c58354aa1910b7",
+      "3/entity2id.txt": "11090342d689fbaeed68ccc28e612b348532639f185e0bd26cc326502166511e",
+      "3/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+      "3/train_id.txt": "7c7b03e7ec238d99257080fefd85022f9a8bc645048e2bc051f4f2cd88825b75",
+      "4/train.txt": "7da691d7a32aa51b3f2423671f2bd3fb60d656bdb934e272d68c6bf7593bf456",
+      "4/valid.txt": "55ca723624f5f72bd29a57124f62b871ff2aa4faa3bbec5c5f6bd567d0b97f28",
+      "4/test.txt": "962a6d366fc3f5c302962d94590e00dcb30c2d9042bfd99ca158d0c7f04db7f3",
+      "4/entity2id.txt": "a4262f16148a82aacc3e04737413fc923082bcdb1a8fe15a57cc5138bfb7ee33",
+      "4/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+      "4/train_id.txt": "f4323e73f38ce1143f423473af2da39f5afb74299712a2146d1c00742fa07ca5"
+    },
+    "ids_sha256": "12f97d1ebee6858c4d5e81ef37c55f22ddaa54e0a3b0c7316966d7a83961e44f",
+    "snapshots": [
+      {
+        "num_ent": 7505,
+        "num_rel": 474,
+        "filter_sha256": "55056d7af1d5917d5f5f01952a52765d118d11cfa79e75885639d6b6fcce7983",
+        "test_triples": 37214,
+        "queries": 74428
+      },
+      {
+        "num_ent": 11258,
+        "num_rel": 474,
+        "filter_sha256": "c077aa5cd0a66e582460ab56b306bc9fd5565a2eca4a12f5b9803b07565685cc",
+        "test_triples": 6203,
+        "queries": 12406
+      },
+      {
+        "num_ent": 13134,
+        "num_rel": 474,
+        "filter_sha256": "a47ffd5b90c6128de206a4091a4dfbb39b0bfe6bb5c3d5e2e2ab6a165af4ae38",
+        "test_triples": 6203,
+        "queries": 12406
+      },
+      {
+        "num_ent": 14072,
+        "num_rel": 474,
+        "filter_sha256": "fd5dbb6f754971b6b5c416883dbbe931a29f8b2d7ca7e996994a9767f9106745",
+        "test_triples": 6203,
+        "queries": 12406
+      },
+      {
+        "num_ent": 14541,
+        "num_rel": 474,
+        "filter_sha256": "2d18b7dd9b0e9a9e73768382cab2bcfff6e83908604b91aeb36538654a26dacf",
+        "test_triples": 6202,
+        "queries": 12404
+      }
+    ]
+  },
+  "observation_equivalence": {
+    "fixture_rows": 7,
+    "batches": [
+      4,
+      3
+    ],
+    "tie_stress": true,
+    "disk_writes": 0,
+    "metrics": {
+      "count": 1.0,
+      "mr": 5.4286,
+      "mrr": 0.3125,
+      "hits1": 0.1429,
+      "hits2": 0.1429,
+      "hits3": 0.2857,
+      "hits4": 0.5714,
+      "hits5": 0.5714,
+      "hits6": 0.5714,
+      "hits7": 0.7143,
+      "hits8": 0.7143,
+      "hits9": 0.8571,
+      "hits10": 1.0
+    },
+    "ranks": [
+      1,
+      4,
+      10,
+      4,
+      3,
+      7,
+      9
+    ]
+  },
+  "task_matrix": {
+    "train0_test0_after.npz": {
+      "sha256": "bfdc7546e97cddccbdac4811cc36e688c30d17ed70ece8de944d303dabbd5b05",
+      "queries": 74428,
+      "raw": {
+        "mrr": 0.24670886724272933,
+        "mr": 165.9814451550492,
+        "hits1": 0.14266136400279464,
+        "hits2": 0.23188853657225775,
+        "hits3": 0.2880501961627345,
+        "hits4": 0.32902939753856075,
+        "hits5": 0.35999892513570164,
+        "hits6": 0.3842505508679529,
+        "hits7": 0.4046057935185683,
+        "hits8": 0.4224082334605256,
+        "hits9": 0.43698608050733595,
+        "hits10": 0.4509593163863062
+      },
+      "native_rounded4": {
+        "mrr": 0.2467,
+        "mr": 165.9814,
+        "hits1": 0.1427,
+        "hits2": 0.2319,
+        "hits3": 0.2881,
+        "hits4": 0.329,
+        "hits5": 0.36,
+        "hits6": 0.3843,
+        "hits7": 0.4046,
+        "hits8": 0.4224,
+        "hits9": 0.437,
+        "hits10": 0.451
+      },
+      "filter_sha256": "55056d7af1d5917d5f5f01952a52765d118d11cfa79e75885639d6b6fcce7983"
+    },
+    "train1_test0_after.npz": {
+      "sha256": "f074ecc503485085af497ca143c2505f1a424d211999c268815c95fbecd36299",
+      "queries": 74428,
+      "raw": {
+        "mrr": 0.24670886724272933,
+        "mr": 165.9814451550492,
+        "hits1": 0.14266136400279464,
+        "hits2": 0.23188853657225775,
+        "hits3": 0.2880501961627345,
+        "hits4": 0.32902939753856075,
+        "hits5": 0.35999892513570164,
+        "hits6": 0.3842505508679529,
+        "hits7": 0.4046057935185683,
+        "hits8": 0.4224082334605256,
+        "hits9": 0.43698608050733595,
+        "hits10": 0.4509593163863062
+      },
+      "native_rounded4": {
+        "mrr": 0.2467,
+        "mr": 165.9814,
+        "hits1": 0.1427,
+        "hits2": 0.2319,
+        "hits3": 0.2881,
+        "hits4": 0.329,
+        "hits5": 0.36,
+        "hits6": 0.3843,
+        "hits7": 0.4046,
+        "hits8": 0.4224,
+        "hits9": 0.437,
+        "hits10": 0.451
+      },
+      "filter_sha256": "55056d7af1d5917d5f5f01952a52765d118d11cfa79e75885639d6b6fcce7983"
+    },
+    "train1_test1_after.npz": {
+      "sha256": "087e428814c04edc3527a199b4665d6814a846d11c63cd557879441574366532",
+      "queries": 12406,
+      "raw": {
+        "mrr": 0.18438795098285196,
+        "mr": 295.3428179912945,
+        "hits1": 0.10841528292761567,
+        "hits2": 0.16564565532806708,
+        "hits3": 0.2047396421086571,
+        "hits4": 0.23448331452522972,
+        "hits5": 0.25810091891020476,
+        "hits6": 0.27712397227148156,
+        "hits7": 0.2940512655166855,
+        "hits8": 0.30686764468805416,
+        "hits9": 0.3212155408673223,
+        "hits10": 0.33411252619700144
+      },
+      "native_rounded4": {
+        "mrr": 0.1844,
+        "mr": 295.3428,
+        "hits1": 0.1084,
+        "hits2": 0.1656,
+        "hits3": 0.2047,
+        "hits4": 0.2345,
+        "hits5": 0.2581,
+        "hits6": 0.2771,
+        "hits7": 0.2941,
+        "hits8": 0.3069,
+        "hits9": 0.3212,
+        "hits10": 0.3341
+      },
+      "filter_sha256": "c077aa5cd0a66e582460ab56b306bc9fd5565a2eca4a12f5b9803b07565685cc"
+    },
+    "train1_test1_before.npz": {
+      "sha256": "b2e0eb94626a6a4c734f0da59d16b27dd68d55949ec910476dffc2a0409fa5fa",
+      "queries": 12406,
+      "raw": {
+        "mrr": 0.047662910024733086,
+        "mr": 3074.5509430920524,
+        "hits1": 0.015315170078994035,
+        "hits2": 0.047880058036433984,
+        "hits3": 0.060051587941318714,
+        "hits4": 0.06787038529743672,
+        "hits5": 0.0743994841205868,
+        "hits6": 0.0808479767854264,
+        "hits7": 0.08649040786716106,
+        "hits8": 0.0906819280993068,
+        "hits9": 0.09447041753990004,
+        "hits10": 0.09898436240528777
+      },
+      "native_rounded4": {
+        "mrr": 0.0477,
+        "mr": 3074.5509,
+        "hits1": 0.0153,
+        "hits2": 0.0479,
+        "hits3": 0.0601,
+        "hits4": 0.0679,
+        "hits5": 0.0744,
+        "hits6": 0.0808,
+        "hits7": 0.0865,
+        "hits8": 0.0907,
+        "hits9": 0.0945,
+        "hits10": 0.099
+      },
+      "filter_sha256": "c077aa5cd0a66e582460ab56b306bc9fd5565a2eca4a12f5b9803b07565685cc"
+    },
+    "train2_test0_after.npz": {
+      "sha256": "4e0fd738fdcdaa1972a7d6f6438ce78589aae1edf2320c017528ba1ba265ef87",
+      "queries": 74428,
+      "raw": {
+        "mrr": 0.24670886724272933,
+        "mr": 165.9814451550492,
+        "hits1": 0.14266136400279464,
+        "hits2": 0.23188853657225775,
+        "hits3": 0.2880501961627345,
+        "hits4": 0.32902939753856075,
+        "hits5": 0.35999892513570164,
+        "hits6": 0.3842505508679529,
+        "hits7": 0.4046057935185683,
+        "hits8": 0.4224082334605256,
+        "hits9": 0.43698608050733595,
+        "hits10": 0.4509593163863062
+      },
+      "native_rounded4": {
+        "mrr": 0.2467,
+        "mr": 165.9814,
+        "hits1": 0.1427,
+        "hits2": 0.2319,
+        "hits3": 0.2881,
+        "hits4": 0.329,
+        "hits5": 0.36,
+        "hits6": 0.3843,
+        "hits7": 0.4046,
+        "hits8": 0.4224,
+        "hits9": 0.437,
+        "hits10": 0.451
+      },
+      "filter_sha256": "55056d7af1d5917d5f5f01952a52765d118d11cfa79e75885639d6b6fcce7983"
+    },
+    "train2_test1_after.npz": {
+      "sha256": "7584d124a687211f1e264381a6c38942820003e9bde08c44e284e2e8ec75f19f",
+      "queries": 12406,
+      "raw": {
+        "mrr": 0.18438795098285196,
+        "mr": 295.3428179912945,
+        "hits1": 0.10841528292761567,
+        "hits2": 0.16564565532806708,
+        "hits3": 0.2047396421086571,
+        "hits4": 0.23448331452522972,
+        "hits5": 0.25810091891020476,
+        "hits6": 0.27712397227148156,
+        "hits7": 0.2940512655166855,
+        "hits8": 0.30686764468805416,
+        "hits9": 0.3212155408673223,
+        "hits10": 0.33411252619700144
+      },
+      "native_rounded4": {
+        "mrr": 0.1844,
+        "mr": 295.3428,
+        "hits1": 0.1084,
+        "hits2": 0.1656,
+        "hits3": 0.2047,
+        "hits4": 0.2345,
+        "hits5": 0.2581,
+        "hits6": 0.2771,
+        "hits7": 0.2941,
+        "hits8": 0.3069,
+        "hits9": 0.3212,
+        "hits10": 0.3341
+      },
+      "filter_sha256": "c077aa5cd0a66e582460ab56b306bc9fd5565a2eca4a12f5b9803b07565685cc"
+    },
+    "train2_test2_after.npz": {
+      "sha256": "23453c07c0ce1ddde9d78c86cede79c8f719887fced1e4be586a1229457b7171",
+      "queries": 12406,
+      "raw": {
+        "mrr": 0.18846786192734255,
+        "mr": 371.81347734966954,
+        "hits1": 0.11615347412542318,
+        "hits2": 0.17177172335966467,
+        "hits3": 0.2092535869740448,
+        "hits4": 0.2381911978075125,
+        "hits5": 0.2592294051265517,
+        "hits6": 0.27688215379655007,
+        "hits7": 0.2935676285668225,
+        "hits8": 0.30630340157988073,
+        "hits9": 0.31887796227631793,
+        "hits10": 0.3313719168144446
+      },
+      "native_rounded4": {
+        "mrr": 0.1885,
+        "mr": 371.8135,
+        "hits1": 0.1162,
+        "hits2": 0.1718,
+        "hits3": 0.2093,
+        "hits4": 0.2382,
+        "hits5": 0.2592,
+        "hits6": 0.2769,
+        "hits7": 0.2936,
+        "hits8": 0.3063,
+        "hits9": 0.3189,
+        "hits10": 0.3314
+      },
+      "filter_sha256": "a47ffd5b90c6128de206a4091a4dfbb39b0bfe6bb5c3d5e2e2ab6a165af4ae38"
+    },
+    "train2_test2_before.npz": {
+      "sha256": "fef97a7dd15633707fb5b7a860e72fe393139eed993ffcdaac3ae18bb51556d9",
+      "queries": 12406,
+      "raw": {
+        "mrr": 0.16052337944555528,
+        "mr": 1035.3200064484927,
+        "hits1": 0.09326132516524263,
+        "hits2": 0.14694502660003225,
+        "hits3": 0.17983233919071417,
+        "hits4": 0.20731903917459293,
+        "hits5": 0.22601966790262776,
+        "hits6": 0.24230211188134773,
+        "hits7": 0.25673061421892635,
+        "hits8": 0.2702724488150895,
+        "hits9": 0.2828470095115267,
+        "hits10": 0.29155247460906014
+      },
+      "native_rounded4": {
+        "mrr": 0.1605,
+        "mr": 1035.32,
+        "hits1": 0.0933,
+        "hits2": 0.1469,
+        "hits3": 0.1798,
+        "hits4": 0.2073,
+        "hits5": 0.226,
+        "hits6": 0.2423,
+        "hits7": 0.2567,
+        "hits8": 0.2703,
+        "hits9": 0.2828,
+        "hits10": 0.2916
+      },
+      "filter_sha256": "a47ffd5b90c6128de206a4091a4dfbb39b0bfe6bb5c3d5e2e2ab6a165af4ae38"
+    },
+    "train3_test0_after.npz": {
+      "sha256": "3a49e33f819da5472a297bb8f43959fb9a233e83584a2c89d689d2625e0d1411",
+      "queries": 74428,
+      "raw": {
+        "mrr": 0.24670886724272933,
+        "mr": 165.9814451550492,
+        "hits1": 0.14266136400279464,
+        "hits2": 0.23188853657225775,
+        "hits3": 0.2880501961627345,
+        "hits4": 0.32902939753856075,
+        "hits5": 0.35999892513570164,
+        "hits6": 0.3842505508679529,
+        "hits7": 0.4046057935185683,
+        "hits8": 0.4224082334605256,
+        "hits9": 0.43698608050733595,
+        "hits10": 0.4509593163863062
+      },
+      "native_rounded4": {
+        "mrr": 0.2467,
+        "mr": 165.9814,
+        "hits1": 0.1427,
+        "hits2": 0.2319,
+        "hits3": 0.2881,
+        "hits4": 0.329,
+        "hits5": 0.36,
+        "hits6": 0.3843,
+        "hits7": 0.4046,
+        "hits8": 0.4224,
+        "hits9": 0.437,
+        "hits10": 0.451
+      },
+      "filter_sha256": "55056d7af1d5917d5f5f01952a52765d118d11cfa79e75885639d6b6fcce7983"
+    },
+    "train3_test1_after.npz": {
+      "sha256": "b5829f46a61f07dc39993f02c794a8c194a1fffc84da353c96bd0e3ecd96618a",
+      "queries": 12406,
+      "raw": {
+        "mrr": 0.18438795098285196,
+        "mr": 295.3428179912945,
+        "hits1": 0.10841528292761567,
+        "hits2": 0.16564565532806708,
+        "hits3": 0.2047396421086571,
+        "hits4": 0.23448331452522972,
+        "hits5": 0.25810091891020476,
+        "hits6": 0.27712397227148156,
+        "hits7": 0.2940512655166855,
+        "hits8": 0.30686764468805416,
+        "hits9": 0.3212155408673223,
+        "hits10": 0.33411252619700144
+      },
+      "native_rounded4": {
+        "mrr": 0.1844,
+        "mr": 295.3428,
+        "hits1": 0.1084,
+        "hits2": 0.1656,
+        "hits3": 0.2047,
+        "hits4": 0.2345,
+        "hits5": 0.2581,
+        "hits6": 0.2771,
+        "hits7": 0.2941,
+        "hits8": 0.3069,
+        "hits9": 0.3212,
+        "hits10": 0.3341
+      },
+      "filter_sha256": "c077aa5cd0a66e582460ab56b306bc9fd5565a2eca4a12f5b9803b07565685cc"
+    },
+    "train3_test2_after.npz": {
+      "sha256": "964524ec495139032299a153db73dc2fcd5f74fcc467b4e44bed41a662120ad1",
+      "queries": 12406,
+      "raw": {
+        "mrr": 0.18846786192734255,
+        "mr": 371.81347734966954,
+        "hits1": 0.11615347412542318,
+        "hits2": 0.17177172335966467,
+        "hits3": 0.2092535869740448,
+        "hits4": 0.2381911978075125,
+        "hits5": 0.2592294051265517,
+        "hits6": 0.27688215379655007,
+        "hits7": 0.2935676285668225,
+        "hits8": 0.30630340157988073,
+        "hits9": 0.31887796227631793,
+        "hits10": 0.3313719168144446
+      },
+      "native_rounded4": {
+        "mrr": 0.1885,
+        "mr": 371.8135,
+        "hits1": 0.1162,
+        "hits2": 0.1718,
+        "hits3": 0.2093,
+        "hits4": 0.2382,
+        "hits5": 0.2592,
+        "hits6": 0.2769,
+        "hits7": 0.2936,
+        "hits8": 0.3063,
+        "hits9": 0.3189,
+        "hits10": 0.3314
+      },
+      "filter_sha256": "a47ffd5b90c6128de206a4091a4dfbb39b0bfe6bb5c3d5e2e2ab6a165af4ae38"
+    },
+    "train3_test3_after.npz": {
+      "sha256": "a1c8ab3a902c5113dddcb253eb93828fa6948dfd348240b0b0758807165a4918",
+      "queries": 12406,
+      "raw": {
+        "mrr": 0.19992570163930778,
+        "mr": 381.5335321618572,
+        "hits1": 0.12566500080606158,
+        "hits2": 0.1855553764307593,
+        "hits3": 0.22658391101080122,
+        "hits4": 0.2556827341608899,
+        "hits5": 0.2779300338545865,
+        "hits6": 0.29453490246654845,
+        "hits7": 0.3080767370627116,
+        "hits8": 0.3211349347090118,
+        "hits9": 0.333225858455586,
+        "hits10": 0.3424149605029824
+      },
+      "native_rounded4": {
+        "mrr": 0.1999,
+        "mr": 381.5335,
+        "hits1": 0.1257,
+        "hits2": 0.1856,
+        "hits3": 0.2266,
+        "hits4": 0.2557,
+        "hits5": 0.2779,
+        "hits6": 0.2945,
+        "hits7": 0.3081,
+        "hits8": 0.3211,
+        "hits9": 0.3332,
+        "hits10": 0.3424
+      },
+      "filter_sha256": "fd5dbb6f754971b6b5c416883dbbe931a29f8b2d7ca7e996994a9767f9106745"
+    },
+    "train3_test3_before.npz": {
+      "sha256": "fa8042bedd220a2a897258ada5a1755d337092177bb20f0aa1d4d14e7d0ee951",
+      "queries": 12406,
+      "raw": {
+        "mrr": 0.19225675823393845,
+        "mr": 574.9501047880058,
+        "hits1": 0.1189746896662905,
+        "hits2": 0.17854264065774625,
+        "hits3": 0.21981299371271965,
+        "hits4": 0.2490730291794293,
+        "hits5": 0.270030630340158,
+        "hits6": 0.285668225052394,
+        "hits7": 0.2987264226986942,
+        "hits8": 0.3104949218120264,
+        "hits9": 0.32266645171691116,
+        "hits10": 0.33121070449782364
+      },
+      "native_rounded4": {
+        "mrr": 0.1923,
+        "mr": 574.9501,
+        "hits1": 0.119,
+        "hits2": 0.1785,
+        "hits3": 0.2198,
+        "hits4": 0.2491,
+        "hits5": 0.27,
+        "hits6": 0.2857,
+        "hits7": 0.2987,
+        "hits8": 0.3105,
+        "hits9": 0.3227,
+        "hits10": 0.3312
+      },
+      "filter_sha256": "fd5dbb6f754971b6b5c416883dbbe931a29f8b2d7ca7e996994a9767f9106745"
+    },
+    "train4_test0_after.npz": {
+      "sha256": "29ad9affe2a205dd893f8c13834bb786de77ac09a46ecc93207226c1be50b5b4",
+      "queries": 74428,
+      "raw": {
+        "mrr": 0.24670886724272933,
+        "mr": 165.9814451550492,
+        "hits1": 0.14266136400279464,
+        "hits2": 0.23188853657225775,
+        "hits3": 0.2880501961627345,
+        "hits4": 0.32902939753856075,
+        "hits5": 0.35999892513570164,
+        "hits6": 0.3842505508679529,
+        "hits7": 0.4046057935185683,
+        "hits8": 0.4224082334605256,
+        "hits9": 0.43698608050733595,
+        "hits10": 0.4509593163863062
+      },
+      "native_rounded4": {
+        "mrr": 0.2467,
+        "mr": 165.9814,
+        "hits1": 0.1427,
+        "hits2": 0.2319,
+        "hits3": 0.2881,
+        "hits4": 0.329,
+        "hits5": 0.36,
+        "hits6": 0.3843,
+        "hits7": 0.4046,
+        "hits8": 0.4224,
+        "hits9": 0.437,
+        "hits10": 0.451
+      },
+      "filter_sha256": "55056d7af1d5917d5f5f01952a52765d118d11cfa79e75885639d6b6fcce7983"
+    },
+    "train4_test1_after.npz": {
+      "sha256": "e7c0cb30ae0fe92b46bfda7d6305fa303b331e03666c00a750ed418f6f1bc445",
+      "queries": 12406,
+      "raw": {
+        "mrr": 0.18438795098285196,
+        "mr": 295.3428179912945,
+        "hits1": 0.10841528292761567,
+        "hits2": 0.16564565532806708,
+        "hits3": 0.2047396421086571,
+        "hits4": 0.23448331452522972,
+        "hits5": 0.25810091891020476,
+        "hits6": 0.27712397227148156,
+        "hits7": 0.2940512655166855,
+        "hits8": 0.30686764468805416,
+        "hits9": 0.3212155408673223,
+        "hits10": 0.33411252619700144
+      },
+      "native_rounded4": {
+        "mrr": 0.1844,
+        "mr": 295.3428,
+        "hits1": 0.1084,
+        "hits2": 0.1656,
+        "hits3": 0.2047,
+        "hits4": 0.2345,
+        "hits5": 0.2581,
+        "hits6": 0.2771,
+        "hits7": 0.2941,
+        "hits8": 0.3069,
+        "hits9": 0.3212,
+        "hits10": 0.3341
+      },
+      "filter_sha256": "c077aa5cd0a66e582460ab56b306bc9fd5565a2eca4a12f5b9803b07565685cc"
+    },
+    "train4_test2_after.npz": {
+      "sha256": "4917ee05029c785f6d71b84332dceae1a6c3247953d1c29641657ca72a7a4a4e",
+      "queries": 12406,
+      "raw": {
+        "mrr": 0.18846786192734255,
+        "mr": 371.81347734966954,
+        "hits1": 0.11615347412542318,
+        "hits2": 0.17177172335966467,
+        "hits3": 0.2092535869740448,
+        "hits4": 0.2381911978075125,
+        "hits5": 0.2592294051265517,
+        "hits6": 0.27688215379655007,
+        "hits7": 0.2935676285668225,
+        "hits8": 0.30630340157988073,
+        "hits9": 0.31887796227631793,
+        "hits10": 0.3313719168144446
+      },
+      "native_rounded4": {
+        "mrr": 0.1885,
+        "mr": 371.8135,
+        "hits1": 0.1162,
+        "hits2": 0.1718,
+        "hits3": 0.2093,
+        "hits4": 0.2382,
+        "hits5": 0.2592,
+        "hits6": 0.2769,
+        "hits7": 0.2936,
+        "hits8": 0.3063,
+        "hits9": 0.3189,
+        "hits10": 0.3314
+      },
+      "filter_sha256": "a47ffd5b90c6128de206a4091a4dfbb39b0bfe6bb5c3d5e2e2ab6a165af4ae38"
+    },
+    "train4_test3_after.npz": {
+      "sha256": "801363c1b6262da6a51e5d652aaa56a55340ce490f15b49517755f77b87209f9",
+      "queries": 12406,
+      "raw": {
+        "mrr": 0.19992570163930778,
+        "mr": 381.5335321618572,
+        "hits1": 0.12566500080606158,
+        "hits2": 0.1855553764307593,
+        "hits3": 0.22658391101080122,
+        "hits4": 0.2556827341608899,
+        "hits5": 0.2779300338545865,
+        "hits6": 0.29453490246654845,
+        "hits7": 0.3080767370627116,
+        "hits8": 0.3211349347090118,
+        "hits9": 0.333225858455586,
+        "hits10": 0.3424149605029824
+      },
+      "native_rounded4": {
+        "mrr": 0.1999,
+        "mr": 381.5335,
+        "hits1": 0.1257,
+        "hits2": 0.1856,
+        "hits3": 0.2266,
+        "hits4": 0.2557,
+        "hits5": 0.2779,
+        "hits6": 0.2945,
+        "hits7": 0.3081,
+        "hits8": 0.3211,
+        "hits9": 0.3332,
+        "hits10": 0.3424
+      },
+      "filter_sha256": "fd5dbb6f754971b6b5c416883dbbe931a29f8b2d7ca7e996994a9767f9106745"
+    },
+    "train4_test4_after.npz": {
+      "sha256": "af544053a5aba5e83ad8ef4d7f6ac5fe340af5d2aca44db8a32895d234dc6bc6",
+      "queries": 12404,
+      "raw": {
+        "mrr": 0.21113709932528982,
+        "mr": 358.80288616575297,
+        "hits1": 0.13084488874556593,
+        "hits2": 0.19703321509190583,
+        "hits3": 0.23935827152531441,
+        "hits4": 0.27007416962270236,
+        "hits5": 0.29466301193163497,
+        "hits6": 0.31352789422766847,
+        "hits7": 0.3298129635601419,
+        "hits8": 0.34343760077394386,
+        "hits9": 0.3554498548855208,
+        "hits10": 0.36601096420509516
+      },
+      "native_rounded4": {
+        "mrr": 0.2111,
+        "mr": 358.8029,
+        "hits1": 0.1308,
+        "hits2": 0.197,
+        "hits3": 0.2394,
+        "hits4": 0.2701,
+        "hits5": 0.2947,
+        "hits6": 0.3135,
+        "hits7": 0.3298,
+        "hits8": 0.3434,
+        "hits9": 0.3554,
+        "hits10": 0.366
+      },
+      "filter_sha256": "2d18b7dd9b0e9a9e73768382cab2bcfff6e83908604b91aeb36538654a26dacf"
+    },
+    "train4_test4_before.npz": {
+      "sha256": "1d2beebed0d3433c2b707b43994997b9f47e7434821436fff3415e17dc8addaf",
+      "queries": 12404,
+      "raw": {
+        "mrr": 0.2110398509989355,
+        "mr": 373.25798129635604,
+        "hits1": 0.13068365043534344,
+        "hits2": 0.19703321509190583,
+        "hits3": 0.2391970332150919,
+        "hits4": 0.2702354079329249,
+        "hits5": 0.2945823927765237,
+        "hits6": 0.31352789422766847,
+        "hits7": 0.32989358271525315,
+        "hits8": 0.3432763624637214,
+        "hits9": 0.35553047404063204,
+        "hits10": 0.36609158336020636
+      },
+      "native_rounded4": {
+        "mrr": 0.211,
+        "mr": 373.258,
+        "hits1": 0.1307,
+        "hits2": 0.197,
+        "hits3": 0.2392,
+        "hits4": 0.2702,
+        "hits5": 0.2946,
+        "hits6": 0.3135,
+        "hits7": 0.3299,
+        "hits8": 0.3433,
+        "hits9": 0.3555,
+        "hits10": 0.3661
+      },
+      "filter_sha256": "2d18b7dd9b0e9a9e73768382cab2bcfff6e83908604b91aeb36538654a26dacf"
+    }
+  },
+  "rank_files_found": 19,
+  "rank_files_expected": 19,
+  "log_sha256": "3fcd096d5041431b1702a9ea9d8c4061b6970429e913072ce1a41eee3987f12d",
+  "overall_native_rounded3": {
+    "0": {
+      "mrr": 0.247,
+      "hits1": 0.143,
+      "hits3": 0.288,
+      "hits10": 0.451
+    },
+    "1": {
+      "mrr": 0.238,
+      "hits1": 0.138,
+      "hits3": 0.276,
+      "hits10": 0.434
+    },
+    "2": {
+      "mrr": 0.232,
+      "hits1": 0.135,
+      "hits3": 0.268,
+      "hits10": 0.421
+    },
+    "3": {
+      "mrr": 0.228,
+      "hits1": 0.134,
+      "hits3": 0.263,
+      "hits10": 0.413
+    },
+    "4": {
+      "mrr": 0.226,
+      "hits1": 0.134,
+      "hits3": 0.261,
+      "hits10": 0.408
+    }
+  },
+  "overall_raw": {
+    "0": {
+      "mrr": 0.24670886724272933,
+      "hits1": 0.14266136400279464,
+      "hits3": 0.2880501961627345,
+      "hits10": 0.4509593163863062
+    },
+    "1": {
+      "mrr": 0.23780505897499962,
+      "hits1": 0.13776861597991572,
+      "hits3": 0.2761475919570675,
+      "hits10": 0.4342653799203077
+    },
+    "2": {
+      "mrr": 0.23163741219372966,
+      "hits1": 0.1350665054413543,
+      "hits3": 0.2677851672712616,
+      "hits10": 0.42140266021765416
+    },
+    "3": {
+      "mrr": 0.2281136363205398,
+      "hits1": 0.13402181896350968,
+      "hits3": 0.2632069218780789,
+      "hits10": 0.41262562026404886
+    },
+    "4": {
+      "mrr": 0.22641611947338877,
+      "hits1": 0.13370415155179363,
+      "hits3": 0.26082224909310764,
+      "hits10": 0.4079645304312777
+    }
+  },
+  "transfer": {
+    "FWT": 0.152875,
+    "BWT": 0.0
+  },
+  "native_training_seconds": 1315.2660222053528,
+  "process_exit": {
+    "returncode": 0,
+    "elapsed_seconds": 1451.8999461230123
+  },
+  "checkpoints": [
+    {
+      "snapshot": 0,
+      "selection": {
+        "snapshot": 0,
+        "epoch": 1,
+        "checkpoint": "../checkpoints/FB_CKGE/0model_best.tar",
+        "lora_only": false,
+        "best_validation_metric": "mrr",
+        "best_validation_value": 0.2461
+      },
+      "sha256": "30a47c93c3fe0eafe46d3a7b74c195ebd842d500e61d13f1cb8cfc7640dd27e7",
+      "metadata_sha256": "ca75c1c09da9d49d9373c02d7e9ba0d43951da48769bb3974dedd236a7a41c8d",
+      "tensors": {
+        "ent_embeddings.weight": {
+          "shape": [
+            7505,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "rel_embeddings.weight": {
+          "shape": [
+            474,
+            200
+          ],
+          "dtype": "torch.float64"
+        }
+      }
+    },
+    {
+      "snapshot": 1,
+      "selection": {
+        "snapshot": 1,
+        "epoch": 52,
+        "checkpoint": "../checkpoints/FB_CKGE/1model_best.tar",
+        "lora_only": true,
+        "best_validation_metric": "mrr",
+        "best_validation_value": 0.1788
+      },
+      "sha256": "89a2a25ad5f65b85d6eade8a588430b15830f64d2acfa749ff0400207fdb40f3",
+      "metadata_sha256": "2b3148d0986544304a119375f815901588f05f4e379dbfeb48bd46d861f50fe9",
+      "tensors": {
+        "lora_rel_embeddings.weight": {
+          "shape": [
+            0,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_rel_embeddings.lora_A": {
+          "shape": [
+            200,
+            0
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_rel_embeddings.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.0.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.0.lora_A": {
+          "shape": [
+            1499,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.0.lora_B": {
+          "shape": [
+            200,
+            1499
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.1.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.1.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.1.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.2.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.2.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.2.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.3.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.3.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.3.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.4.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.4.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.4.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.5.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.5.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.5.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.6.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.6.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.6.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.7.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.7.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.7.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.8.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.8.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.8.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.9.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.9.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.9.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.10.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.10.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.10.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.11.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.11.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.11.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.12.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.12.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.12.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.13.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.13.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.13.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.14.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.14.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.14.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.15.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.15.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.15.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.16.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.16.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.16.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.17.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.17.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.17.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.18.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.18.lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.18.lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.19.weight": {
+          "shape": [
+            188,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.19.lora_A": {
+          "shape": [
+            126,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.19.lora_B": {
+          "shape": [
+            200,
+            126
+          ],
+          "dtype": "torch.float64"
+        }
+      }
+    },
+    {
+      "snapshot": 2,
+      "selection": {
+        "snapshot": 2,
+        "epoch": 12,
+        "checkpoint": "../checkpoints/FB_CKGE/2model_best.tar",
+        "lora_only": true,
+        "best_validation_metric": "mrr",
+        "best_validation_value": 0.1884
+      },
+      "sha256": "5fbed2d185541304fd12e9de6f4fbc63cf8fd59f6f04b176d68ce80c0b85ffe0",
+      "metadata_sha256": "d981960772b76350153e17a91cc747bde1c5c53d67d1dc9073b2ae02ff61b8d6",
+      "tensors": {
+        "old_data_lora_rel_embeddings_lora_A": {
+          "shape": [
+            200,
+            0
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_rel_embeddings_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_0_lora_A": {
+          "shape": [
+            1499,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_0_lora_B": {
+          "shape": [
+            200,
+            1499
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_1_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_1_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_2_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_2_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_3_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_3_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_4_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_4_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_5_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_5_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_6_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_6_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_7_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_7_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_8_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_8_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_9_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_9_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_10_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_10_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_11_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_11_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_12_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_12_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_13_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_13_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_14_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_14_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_15_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_15_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_16_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_16_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_17_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_17_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_18_lora_A": {
+          "shape": [
+            131,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_18_lora_B": {
+          "shape": [
+            200,
+            131
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_19_lora_A": {
+          "shape": [
+            126,
+            188
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_19_lora_B": {
+          "shape": [
+            200,
+            126
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_rel_embeddings.weight": {
+          "shape": [
+            0,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_rel_embeddings.lora_A": {
+          "shape": [
+            200,
+            0
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_rel_embeddings.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.0.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.0.lora_A": {
+          "shape": [
+            1126,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.0.lora_B": {
+          "shape": [
+            200,
+            1126
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.1.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.1.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.1.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.2.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.2.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.2.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.3.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.3.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.3.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.4.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.4.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.4.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.5.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.5.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.5.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.6.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.6.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.6.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.7.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.7.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.7.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.8.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.8.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.8.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.9.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.9.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.9.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.10.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.10.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.10.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.11.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.11.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.11.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.12.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.12.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.12.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.13.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.13.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.13.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.14.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.14.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.14.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.15.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.15.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.15.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.16.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.16.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.16.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.17.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.17.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.17.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.18.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.18.lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.18.lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.19.weight": {
+          "shape": [
+            94,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.19.lora_A": {
+          "shape": [
+            145,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.19.lora_B": {
+          "shape": [
+            200,
+            145
+          ],
+          "dtype": "torch.float64"
+        }
+      }
+    },
+    {
+      "snapshot": 3,
+      "selection": {
+        "snapshot": 3,
+        "epoch": 11,
+        "checkpoint": "../checkpoints/FB_CKGE/3model_best.tar",
+        "lora_only": true,
+        "best_validation_metric": "mrr",
+        "best_validation_value": 0.1974
+      },
+      "sha256": "3c0cfcb3128ef1044970a18dcbee5fb9a3396dce58f095fe6762e4017da44a57",
+      "metadata_sha256": "c50189a14fcc495265cbe44c1ee8730746a335d3705793f0273e8c3caecbe1e0",
+      "tensors": {
+        "old_data_lora_rel_embeddings_lora_A": {
+          "shape": [
+            200,
+            0
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_rel_embeddings_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_0_lora_A": {
+          "shape": [
+            1126,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_0_lora_B": {
+          "shape": [
+            200,
+            1126
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_1_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_1_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_2_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_2_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_3_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_3_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_4_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_4_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_5_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_5_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_6_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_6_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_7_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_7_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_8_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_8_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_9_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_9_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_10_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_10_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_11_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_11_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_12_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_12_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_13_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_13_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_14_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_14_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_15_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_15_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_16_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_16_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_17_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_17_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_18_lora_A": {
+          "shape": [
+            151,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_18_lora_B": {
+          "shape": [
+            200,
+            151
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_19_lora_A": {
+          "shape": [
+            145,
+            94
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_19_lora_B": {
+          "shape": [
+            200,
+            145
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_rel_embeddings.weight": {
+          "shape": [
+            0,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_rel_embeddings.lora_A": {
+          "shape": [
+            200,
+            0
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_rel_embeddings.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.0.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.0.lora_A": {
+          "shape": [
+            208,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.0.lora_B": {
+          "shape": [
+            200,
+            208
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.1.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.1.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.1.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.2.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.2.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.2.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.3.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.3.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.3.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.4.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.4.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.4.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.5.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.5.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.5.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.6.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.6.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.6.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.7.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.7.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.7.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.8.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.8.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.8.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.9.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.9.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.9.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.10.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.10.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.10.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.11.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.11.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.11.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.12.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.12.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.12.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.13.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.13.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.13.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.14.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.14.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.14.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.15.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.15.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.15.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.16.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.16.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.16.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.17.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.17.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.17.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.18.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.18.lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.18.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.19.weight": {
+          "shape": [
+            47,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.19.lora_A": {
+          "shape": [
+            191,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.19.lora_B": {
+          "shape": [
+            200,
+            191
+          ],
+          "dtype": "torch.float64"
+        }
+      }
+    },
+    {
+      "snapshot": 4,
+      "selection": {
+        "snapshot": 4,
+        "epoch": 2,
+        "checkpoint": "../checkpoints/FB_CKGE/4model_best.tar",
+        "lora_only": true,
+        "best_validation_metric": "mrr",
+        "best_validation_value": 0.2081
+      },
+      "sha256": "3221ae32e63cf168b67a164b2bd05e057497240dcd97619b13de4ad7a782aa07",
+      "metadata_sha256": "93b40ebaf7dcea220424b77f49a78415e2ab5990d91f3e5fae793aecf04a9176",
+      "tensors": {
+        "old_data_lora_rel_embeddings_lora_A": {
+          "shape": [
+            200,
+            0
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_rel_embeddings_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_0_lora_A": {
+          "shape": [
+            208,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_0_lora_B": {
+          "shape": [
+            200,
+            208
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_1_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_1_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_2_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_2_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_3_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_3_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_4_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_4_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_5_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_5_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_6_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_6_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_7_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_7_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_8_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_8_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_9_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_9_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_10_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_10_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_11_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_11_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_12_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_12_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_13_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_13_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_14_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_14_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_15_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_15_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_16_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_16_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_17_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_17_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_18_lora_A": {
+          "shape": [
+            200,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_18_lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_19_lora_A": {
+          "shape": [
+            191,
+            47
+          ],
+          "dtype": "torch.float64"
+        },
+        "old_data_lora_ent_embeddings_list_19_lora_B": {
+          "shape": [
+            200,
+            191
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_rel_embeddings.weight": {
+          "shape": [
+            0,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_rel_embeddings.lora_A": {
+          "shape": [
+            200,
+            0
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_rel_embeddings.lora_B": {
+          "shape": [
+            200,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.0.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.0.lora_A": {
+          "shape": [
+            2691,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.0.lora_B": {
+          "shape": [
+            200,
+            2691
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.1.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.1.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.1.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.2.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.2.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.2.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.3.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.3.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.3.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.4.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.4.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.4.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.5.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.5.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.5.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.6.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.6.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.6.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.7.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.7.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.7.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.8.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.8.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.8.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.9.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.9.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.9.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.10.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.10.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.10.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.11.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.11.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.11.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.12.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.12.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.12.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.13.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.13.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.13.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.14.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.14.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.14.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.15.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.15.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.15.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.16.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.16.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.16.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.17.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.17.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.17.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.18.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.18.lora_A": {
+          "shape": [
+            70,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.18.lora_B": {
+          "shape": [
+            200,
+            70
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.19.weight": {
+          "shape": [
+            24,
+            200
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.19.lora_A": {
+          "shape": [
+            50,
+            24
+          ],
+          "dtype": "torch.float64"
+        },
+        "lora_ent_embeddings_list.19.lora_B": {
+          "shape": [
+            200,
+            50
+          ],
+          "dtype": "torch.float64"
+        }
+      }
+    }
+  ],
+  "repository_embedding_outputs": {
+    "files": [
+      {
+        "path": "embeddings/FB_CKGE/0/entity_embeddings.npy",
+        "sha256": "2f7adc49ec367a9ee39e859fc211d1b5a3bd7ad5bae67fae48fc1e66fc10e1a0",
+        "shape": [
+          11258,
+          200
+        ],
+        "dtype": "float64",
+        "mtime_ns": 1791633310313063871
+      },
+      {
+        "path": "embeddings/FB_CKGE/0/relation_embeddings.npy",
+        "sha256": "6c044b75ea61f52d16c0b2507740454ca5476693e15a8315b5d3605ecdeb4d25",
+        "shape": [
+          474,
+          200
+        ],
+        "dtype": "float64",
+        "mtime_ns": 1791633310334064266
+      },
+      {
+        "path": "embeddings/FB_CKGE/1/entity_embeddings.npy",
+        "sha256": "e35432483156b13dfd92cd44e7b24df99cdea6713616be4a599d05be60036a28",
+        "shape": [
+          13134,
+          200
+        ],
+        "dtype": "float64",
+        "mtime_ns": 1791633788913111228
+      },
+      {
+        "path": "embeddings/FB_CKGE/1/relation_embeddings.npy",
+        "sha256": "6c044b75ea61f52d16c0b2507740454ca5476693e15a8315b5d3605ecdeb4d25",
+        "shape": [
+          474,
+          200
+        ],
+        "dtype": "float64",
+        "mtime_ns": 1791633788933111602
+      },
+      {
+        "path": "embeddings/FB_CKGE/2/entity_embeddings.npy",
+        "sha256": "4c883ed7c9e8e777e442f85ad2cf7c55459a202916debee29c487398733b6a7c",
+        "shape": [
+          14072,
+          200
+        ],
+        "dtype": "float64",
+        "mtime_ns": 1791633997750058867
+      },
+      {
+        "path": "embeddings/FB_CKGE/2/relation_embeddings.npy",
+        "sha256": "6c044b75ea61f52d16c0b2507740454ca5476693e15a8315b5d3605ecdeb4d25",
+        "shape": [
+          474,
+          200
+        ],
+        "dtype": "float64",
+        "mtime_ns": 1791633997770059245
+      },
+      {
+        "path": "embeddings/FB_CKGE/3/entity_embeddings.npy",
+        "sha256": "02fa674df2539fcec05acd12487e86438982e7c343d12f68a8a9e323909720f2",
+        "shape": [
+          14541,
+          200
+        ],
+        "dtype": "float64",
+        "mtime_ns": 1791634207835036834
+      },
+      {
+        "path": "embeddings/FB_CKGE/3/relation_embeddings.npy",
+        "sha256": "6c044b75ea61f52d16c0b2507740454ca5476693e15a8315b5d3605ecdeb4d25",
+        "shape": [
+          474,
+          200
+        ],
+        "dtype": "float64",
+        "mtime_ns": 1791634207846037043
+      },
+      {
+        "path": "embeddings/FB_CKGE/4/entity_embeddings.npy",
+        "sha256": "7cf39db1cf0d0a92f54ef5743a94bafa1f84fda55c7305f27e17d80a1f1d711f",
+        "shape": [
+          14541,
+          200
+        ],
+        "dtype": "float64",
+        "mtime_ns": 1791634340278539906
+      },
+      {
+        "path": "embeddings/FB_CKGE/4/relation_embeddings.npy",
+        "sha256": "6c044b75ea61f52d16c0b2507740454ca5476693e15a8315b5d3605ecdeb4d25",
+        "shape": [
+          474,
+          200
+        ],
+        "dtype": "float64",
+        "mtime_ns": 1791634340297540265
+      }
+    ],
+    "lineage": "Native STARK run() exports after switch_snapshot(), in repository-relative embeddings/FB_CKGE, not run directory. Snapshot0-3 include next random expansion; final snapshot4 is assembled. Paths may be overwritten by future runs; inventory is read-time evidence only."
+  },
+  "features": {
+    "1": {
+      "sha256": "a4e5b0faf18458dee93f573dc1677b36149d21567510d9dfc132354c78a2dd1f",
+      "order_sha256": "347bea6f61f50ea32791a46b876d0691087efeb91dbe3ebac9131a458109d621",
+      "path": "data/FB_CKGE/1/train_distance_nodes2.txt",
+      "group_length": 188,
+      "adaptive_ranks": [
+        1499,
+        131,
+        131,
+        131,
+        131,
+        131,
+        131,
+        131,
+        131,
+        131,
+        131,
+        131,
+        131,
+        131,
+        131,
+        131,
+        131,
+        131,
+        131,
+        126
+      ]
+    },
+    "2": {
+      "sha256": "6874859ceea8328e3b2764142fcd2e5bddc9e6ffaa51f09ada1954c62596b01b",
+      "order_sha256": "5b2cc42a9f091d2d3b9cb667bf3e6d8739197f92c4c5329e7aa812d22d72eac1",
+      "path": "data/FB_CKGE/2/train_distance_nodes2.txt",
+      "group_length": 94,
+      "adaptive_ranks": [
+        1126,
+        151,
+        151,
+        151,
+        151,
+        151,
+        151,
+        151,
+        151,
+        151,
+        151,
+        151,
+        151,
+        151,
+        151,
+        151,
+        151,
+        151,
+        151,
+        145
+      ]
+    },
+    "3": {
+      "sha256": "cbcd3d638b978e1a75e5dca7136d741e67cfb82b1bc7b3772410b73aaa7926d2",
+      "order_sha256": "a7da9d0203e3f2498efc72525dadb92a7876e13f1799d09cdaaa45d52130f444",
+      "path": "data/FB_CKGE/3/train_distance_nodes2.txt",
+      "group_length": 47,
+      "adaptive_ranks": [
+        208,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        191
+      ]
+    },
+    "4": {
+      "sha256": "e5962d72d66e55aa73b67828b5d96e43b4cd86ed99a62466a1f95431f98a6741",
+      "order_sha256": "59207d944eee11d91cdfbafc97c13bbda7a3186e82718538c38cde49d7d74640",
+      "path": "data/FB_CKGE/4/train_distance_nodes2.txt",
+      "group_length": 24,
+      "adaptive_ranks": [
+        2691,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        50
+      ]
+    }
+  },
+  "replay": {
+    "device": "cpu",
+    "samples_per_file": 8,
+    "files": {
+      "train0_test0_after.npz": {
+        "indices": [
+          0,
+          10632,
+          21264,
+          31897,
+          42529,
+          53162,
+          63794,
+          74427
+        ],
+        "expected": [
+          1,
+          1,
+          2,
+          2730,
+          786,
+          96,
+          102,
+          87
+        ],
+        "cpu_rank": [
+          1,
+          1,
+          2,
+          2730,
+          786,
+          96,
+          102,
+          87
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train1_test0_after.npz": {
+        "indices": [
+          0,
+          10632,
+          21264,
+          31897,
+          42529,
+          53162,
+          63794,
+          74427
+        ],
+        "expected": [
+          1,
+          1,
+          2,
+          2730,
+          786,
+          96,
+          102,
+          87
+        ],
+        "cpu_rank": [
+          1,
+          1,
+          2,
+          2730,
+          786,
+          96,
+          102,
+          87
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train1_test1_after.npz": {
+        "indices": [
+          0,
+          1772,
+          3544,
+          5316,
+          7088,
+          8860,
+          10632,
+          12405
+        ],
+        "expected": [
+          1,
+          1,
+          1704,
+          7,
+          484,
+          71,
+          269,
+          141
+        ],
+        "cpu_rank": [
+          1,
+          1,
+          1704,
+          7,
+          484,
+          71,
+          269,
+          141
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train2_test0_after.npz": {
+        "indices": [
+          0,
+          10632,
+          21264,
+          31897,
+          42529,
+          53162,
+          63794,
+          74427
+        ],
+        "expected": [
+          1,
+          1,
+          2,
+          2730,
+          786,
+          96,
+          102,
+          87
+        ],
+        "cpu_rank": [
+          1,
+          1,
+          2,
+          2730,
+          786,
+          96,
+          102,
+          87
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train2_test1_after.npz": {
+        "indices": [
+          0,
+          1772,
+          3544,
+          5316,
+          7088,
+          8860,
+          10632,
+          12405
+        ],
+        "expected": [
+          1,
+          1,
+          1704,
+          7,
+          484,
+          71,
+          269,
+          141
+        ],
+        "cpu_rank": [
+          1,
+          1,
+          1704,
+          7,
+          484,
+          71,
+          269,
+          141
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train2_test2_after.npz": {
+        "indices": [
+          0,
+          1772,
+          3544,
+          5316,
+          7088,
+          8860,
+          10632,
+          12405
+        ],
+        "expected": [
+          1,
+          1,
+          29,
+          773,
+          874,
+          580,
+          4,
+          38
+        ],
+        "cpu_rank": [
+          1,
+          1,
+          29,
+          773,
+          874,
+          580,
+          4,
+          38
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train3_test0_after.npz": {
+        "indices": [
+          0,
+          10632,
+          21264,
+          31897,
+          42529,
+          53162,
+          63794,
+          74427
+        ],
+        "expected": [
+          1,
+          1,
+          2,
+          2730,
+          786,
+          96,
+          102,
+          87
+        ],
+        "cpu_rank": [
+          1,
+          1,
+          2,
+          2730,
+          786,
+          96,
+          102,
+          87
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train3_test1_after.npz": {
+        "indices": [
+          0,
+          1772,
+          3544,
+          5316,
+          7088,
+          8860,
+          10632,
+          12405
+        ],
+        "expected": [
+          1,
+          1,
+          1704,
+          7,
+          484,
+          71,
+          269,
+          141
+        ],
+        "cpu_rank": [
+          1,
+          1,
+          1704,
+          7,
+          484,
+          71,
+          269,
+          141
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train3_test2_after.npz": {
+        "indices": [
+          0,
+          1772,
+          3544,
+          5316,
+          7088,
+          8860,
+          10632,
+          12405
+        ],
+        "expected": [
+          1,
+          1,
+          29,
+          773,
+          874,
+          580,
+          4,
+          38
+        ],
+        "cpu_rank": [
+          1,
+          1,
+          29,
+          773,
+          874,
+          580,
+          4,
+          38
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train3_test3_after.npz": {
+        "indices": [
+          0,
+          1772,
+          3544,
+          5316,
+          7088,
+          8860,
+          10632,
+          12405
+        ],
+        "expected": [
+          1,
+          551,
+          165,
+          5,
+          80,
+          2,
+          3,
+          17
+        ],
+        "cpu_rank": [
+          1,
+          551,
+          165,
+          5,
+          80,
+          2,
+          3,
+          17
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train4_test0_after.npz": {
+        "indices": [
+          0,
+          10632,
+          21264,
+          31897,
+          42529,
+          53162,
+          63794,
+          74427
+        ],
+        "expected": [
+          1,
+          1,
+          2,
+          2730,
+          786,
+          96,
+          102,
+          87
+        ],
+        "cpu_rank": [
+          1,
+          1,
+          2,
+          2730,
+          786,
+          96,
+          102,
+          87
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train4_test1_after.npz": {
+        "indices": [
+          0,
+          1772,
+          3544,
+          5316,
+          7088,
+          8860,
+          10632,
+          12405
+        ],
+        "expected": [
+          1,
+          1,
+          1704,
+          7,
+          484,
+          71,
+          269,
+          141
+        ],
+        "cpu_rank": [
+          1,
+          1,
+          1704,
+          7,
+          484,
+          71,
+          269,
+          141
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train4_test2_after.npz": {
+        "indices": [
+          0,
+          1772,
+          3544,
+          5316,
+          7088,
+          8860,
+          10632,
+          12405
+        ],
+        "expected": [
+          1,
+          1,
+          29,
+          773,
+          874,
+          580,
+          4,
+          38
+        ],
+        "cpu_rank": [
+          1,
+          1,
+          29,
+          773,
+          874,
+          580,
+          4,
+          38
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train4_test3_after.npz": {
+        "indices": [
+          0,
+          1772,
+          3544,
+          5316,
+          7088,
+          8860,
+          10632,
+          12405
+        ],
+        "expected": [
+          1,
+          551,
+          165,
+          5,
+          80,
+          2,
+          3,
+          17
+        ],
+        "cpu_rank": [
+          1,
+          551,
+          165,
+          5,
+          80,
+          2,
+          3,
+          17
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      },
+      "train4_test4_after.npz": {
+        "indices": [
+          0,
+          1771,
+          3543,
+          5315,
+          7087,
+          8859,
+          10631,
+          12403
+        ],
+        "expected": [
+          1,
+          397,
+          3318,
+          5333,
+          14,
+          576,
+          6,
+          37
+        ],
+        "cpu_rank": [
+          1,
+          397,
+          3318,
+          5333,
+          14,
+          576,
+          6,
+          37
+        ],
+        "exact_matches": 8,
+        "tie_compatible": 8,
+        "samples": 8,
+        "native_vs_independent_score_max_abs": 0.0
+      }
+    },
+    "FWT": "Not replayed: initial increment RNG states were not saved.",
+    "tie_policy": "CPU double-argsort exact match; GPU/CPU score-tie intervals checked separately.",
+    "state_scope": "All checkpoint-covered parameters and saved old_data LoRA buffers restored; old entity/relation prediction buffers rebuilt through previous best states. Unused expanded random base embedding caches and optimizer/RNG training state are not claimed recoverable.",
+    "files_replayed": 15,
+    "exact_matches": 120,
+    "samples": 120
+  },
+  "elapsed_cpu_seconds": 13.995431350078434,
+  "status": "PASS_SAMPLED_CHECKPOINT_REPLAY"
+}

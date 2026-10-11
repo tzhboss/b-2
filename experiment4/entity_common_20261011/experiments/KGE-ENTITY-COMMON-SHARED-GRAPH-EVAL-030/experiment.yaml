@@ -1,0 +1,63 @@
+id: KGE-ENTITY-COMMON-SHARED-GRAPH-EVAL-030
+status: completed_audited_artifact_checks_only
+config: configs/shared-graph-eval30.json
+protocol: plan/shared-graph-evaluation-repair-protocol.md
+scope: Evaluation configuration repair and full audits of unchanged027 terminal weights;
+  no retraining or gate changes
+registered_utc: '2026-10-11T05:58:35.195118+00:00'
+frozen_input_sha256:
+  configs/shared-graph-eval30.json: 23270b5a0e619179c284a68ee46b19f01de44bcfd670dc1c81b6f6e7aee7764b
+  plan/shared-graph-evaluation-repair-protocol.md: 513d171c5d81199aecaf4ad45711eecc007ea3a3099c3081efb23eaa61a119e4
+  scripts/coordinate_artifact_checks_v2.py: 230c273b73f9d19bfb300b3becf8c63557c596cf02214dab7383724ba81d6408
+  scripts/review_shared_graph_evaluation.py: 506183237bc84729a90f271a935291058320d7ca765294653cd135ea2f4abcaa
+  scripts/audit_shared_graph_updates.py: 3de6d47aaeee4f2e1dbfd62dc2d6123499372c27e634e1ec97bce1c560dd589d
+  scripts/audit_exported_embeddings.py: 56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719
+  configs/shared-graph27.json: 63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5
+  src/shared_rank_graph.py: bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a
+  src/shared_rank_solver_v2.py: a274789e9552aa0aff020a880dbffcff1b1278987712c87a685dde185d17d06d
+  src/shared_rank_cache_v2.py: 8980fac50a992a74f1dd339c582ad3d1382c0fb140688cf87c1a6c6a4c7abaad
+  src/shared_rank_scope.py: e351d1fe0a1e72feb30fe33a0887bea92e8b761a0656dad9ac5500fb406c57be
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+active_processes: []
+coordinator_pid: 762415
+jobs:
+  shared-graph-full-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-graph-scoped-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-graph-joint-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-graph-full-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-graph-scoped-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-graph-scoped-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-graph-joint-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-graph-full-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-graph-joint-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+queued_jobs: []
+queued_audits: []
+result_directory: results/KGE-ENTITY-COMMON-SHARED-GRAPH-EVAL-030

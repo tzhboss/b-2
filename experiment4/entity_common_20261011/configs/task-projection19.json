@@ -1,0 +1,133 @@
+{
+  "id": "KGE-ENTITY-COMMON-TASK-PROJECTION-019",
+  "source_root": "../literature_baselines_20261010",
+  "dataset": "repos/FastKGE/data/FB_CKGE",
+  "source_audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "rank_source": "../rank_comparison_20261010/vendor/kge_rank_locality/core.py",
+  "qp_vendor": "vendor/legacy_qp",
+  "feature_directory": "artifacts/rank-train-guards",
+  "max_true_per_relation": 5000,
+  "feature_score_batch": 64,
+  "expansion_seed_offset": 10000,
+  "validation_seed": 124,
+  "validation_queries_per_split": 1024,
+  "rank_fraction": 0.125,
+  "ridge_lambda": 0.01,
+  "promotion_margin": 1E-06,
+  "guard_margin": 1E-08,
+  "qp_maxiter": 500,
+  "qp_primal_tolerance": 1E-10,
+  "norm_cap_tolerance": 1E-07,
+  "audit_active_tolerance": 1E-05,
+  "audit_kkt_tolerance": 1E-05,
+  "audit_nnls_maxiter": 100000,
+  "sweeps": 1,
+  "preflight_updates": 32,
+  "progress_every_updates": 128,
+  "budget_seconds_per_job": 3600,
+  "cpu_threads_per_job": 2,
+  "scope": "Fixed Euclidean versus TRAIN old-head/new-gold task-score nearest projection under common rank-frontier protection; exposed development adaptation",
+  "available_gpu_indices": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "gpu_queue_dependencies": [
+    "experiments/KGE-ENTITY-COMMON-LEARNED-PROPOSAL-012/experiment.yaml"
+  ],
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-LMBASE-004/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-008/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-RANK-REAUDIT-010/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-014/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-017/experiment.yaml"
+  ],
+  "worker": "scripts/run_rank_task.py",
+  "auditor": "scripts/run_rank_task.py",
+  "log_directory": "logs/task-projection19",
+  "jobs": [
+    {
+      "id": "taskprojection-euclidean-s17",
+      "method": "LearnedProposalQPPredEuclideanR2",
+      "kind": "DistMult",
+      "after_dimension": 200,
+      "seed": 17,
+      "protection": "pred",
+      "apply_rank": false,
+      "projection_metric": "euclidean"
+    },
+    {
+      "id": "taskprojection-task_query-s17",
+      "method": "LearnedProposalTaskQPPred",
+      "kind": "DistMult",
+      "after_dimension": 200,
+      "seed": 17,
+      "protection": "pred",
+      "apply_rank": false,
+      "projection_metric": "task_query"
+    },
+    {
+      "id": "taskprojection-euclidean-s29",
+      "method": "LearnedProposalQPPredEuclideanR2",
+      "kind": "DistMult",
+      "after_dimension": 200,
+      "seed": 29,
+      "protection": "pred",
+      "apply_rank": false,
+      "projection_metric": "euclidean"
+    },
+    {
+      "id": "taskprojection-task_query-s29",
+      "method": "LearnedProposalTaskQPPred",
+      "kind": "DistMult",
+      "after_dimension": 200,
+      "seed": 29,
+      "protection": "pred",
+      "apply_rank": false,
+      "projection_metric": "task_query"
+    },
+    {
+      "id": "taskprojection-euclidean-s43",
+      "method": "LearnedProposalQPPredEuclideanR2",
+      "kind": "DistMult",
+      "after_dimension": 200,
+      "seed": 43,
+      "protection": "pred",
+      "apply_rank": false,
+      "projection_metric": "euclidean"
+    },
+    {
+      "id": "taskprojection-task_query-s43",
+      "method": "LearnedProposalTaskQPPred",
+      "kind": "DistMult",
+      "after_dimension": 200,
+      "seed": 43,
+      "protection": "pred",
+      "apply_rank": false,
+      "projection_metric": "task_query"
+    }
+  ],
+  "implementation_module": "learned_task_projection",
+  "max_concurrent_audits": 6,
+  "proposal_job_template": "newentityonly-distmult-s{seed}",
+  "basis_directory": "artifacts/learned-proposal-basis12",
+  "utility_old_valid_loss_ratio": 0.75,
+  "basis_rcond": 1E-06,
+  "utility_new_valid_ratio": 0.98,
+  "solver": {
+    "ftol": 1E-10,
+    "maxiter": 500,
+    "max_cut_rounds": 16,
+    "cut_rows_per_round": 64,
+    "prune_roundoff_margin": 1E-10,
+    "primal_tolerance": 1E-10,
+    "kkt_tolerance": 1E-06,
+    "norm_tolerance": 1E-08
+  },
+  "preflight_per_job": true,
+  "utility_new_answer_mrr_ratio": 0.98,
+  "utility_new_answer_hits10_ratio": 0.95,
+  "utility_require_nonworse_than_euclidean": true
+}

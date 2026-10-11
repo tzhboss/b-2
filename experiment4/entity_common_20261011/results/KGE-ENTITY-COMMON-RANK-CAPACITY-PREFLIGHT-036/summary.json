@@ -1,0 +1,179 @@
+{
+  "scope": "Two frozen-old real graph preflights with TRAIN-certified capacity exemptions; no VALID/TEST utility",
+  "jobs_passed": 2,
+  "jobs_total": 2,
+  "rows": [
+    {
+      "result": {
+        "id": "capacity-preflight-full-s17",
+        "method": "CapacityFrozenFull",
+        "kind": "DistMult",
+        "seed": 17,
+        "test_read": false,
+        "preflight": true,
+        "epochs_executed": 1,
+        "elapsed_s": 139.64774402300827,
+        "source_sgd_elapsed_s": 26.396612597978674,
+        "processed_new_entities": 8,
+        "accepted_updates": 8,
+        "zero_fallbacks": 0,
+        "steps_modifying_old_rows": 0,
+        "selected_old_rows": [],
+        "selection": {
+          "selected_old_rows": [],
+          "new_entities_with_old_candidate": 0
+        },
+        "validation": null,
+        "guard_scope": "full",
+        "guard_arithmetic": "Explicit float64 binary tree; common evaluation uses unchanged GEMM",
+        "terminal_complete_guard_recount": {
+          "query_keys": 67949,
+          "references": 232675,
+          "commits": 8,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/initial.pt": "d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/training-receipt.json": "d12e807da08a4920550e3bb2db7dd15bc5f04e5e789626209895c961bf34eb2a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/best.pt": "271fc956663f366943b7ad7db4f3b7f7a2fa4bf65c0af95ce73fd77fd023dbf0",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/training-receipt.json": "e8c7261e88fa4acc74f7b43048d4a32d1cc0011dc6f7bf854a86d8e33004cacb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/scope.npz": "e57774b09ec556364e6484a856e54a64dc5c29ce46a6097c057b0dc2829f974a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/receipt.json": "78130b1ef9eaed4866828a7b342ebc48cf7f8c094bd742771bf9db9090dad954",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/audit.json": "60128ab5d18003182a5ee13bb74ae80c9d04b64f49b0318fb608e9c66cb6b877",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd"
+        },
+        "checkpoint_sha256": "0e7a72a50a05c0ce1d81282f5ae0dfe935ed092b041ce73a8268cd97d16bda93",
+        "output_sha256": {
+          "initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+          "shared-replay.npz": "540d3e668fdea67409db50c6c2c8ab3808bdd88e24080bba0dbf8ded9273a6d0",
+          "steps.json": "28a63628127ec6f473205f5628f30ece352851a0969dc7980769c35b65b96709",
+          "selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094"
+        },
+        "implementation_sha256": "bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a",
+        "peak_gpu_memory_bytes": 6640333312,
+        "limits": [
+          "Known mechanism combination, not confirmed novelty.",
+          "TRAIN compiled initially retained references only; no hard guarantee on all TEST.",
+          "All common evaluation queries retained; affected P exemption explicitly changes contract.",
+          "Working-set failures return unchanged; no global optimum guarantee.",
+          "Preflight performance is not a scientific utility outcome."
+        ]
+      },
+      "audit": {
+        "status": "PASS_PREFLIGHT_PATCH_REPLAY_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+        "failures": [],
+        "preflight": true,
+        "patches_replayed": 8,
+        "modified_row_steps_replayed": 8,
+        "terminal_query_groups_replayed": 67949,
+        "reference_members_retained": 232675,
+        "terminal_cpu_counts_exact": true,
+        "absolute_budgets_checked": true,
+        "unselected_old_rows_unchanged": true,
+        "test_read": false,
+        "valid_read": false,
+        "elapsed_s": 914.041518056998,
+        "receipt_sha256": "8ce2ebf0a49fbf342662340d39d15b6e86bcce5715ccc68f4b717da2673133a9",
+        "limits": [
+          "Preflight only; not all3753 graph updates or scientific utility.",
+          "All-step GPU guards logged and terminal entire CPU scope replayed; intermediate CPU full scopes not repeated."
+        ]
+      }
+    },
+    {
+      "result": {
+        "id": "capacity-preflight-scoped-s17",
+        "method": "CapacityFrozenScoped",
+        "kind": "DistMult",
+        "seed": 17,
+        "test_read": false,
+        "preflight": true,
+        "epochs_executed": 1,
+        "elapsed_s": 138.81913234700914,
+        "source_sgd_elapsed_s": 26.396612597978674,
+        "processed_new_entities": 8,
+        "accepted_updates": 8,
+        "zero_fallbacks": 0,
+        "steps_modifying_old_rows": 0,
+        "selected_old_rows": [],
+        "selection": {
+          "selected_old_rows": [],
+          "new_entities_with_old_candidate": 0
+        },
+        "validation": null,
+        "guard_scope": "scoped",
+        "guard_arithmetic": "Explicit float64 binary tree; common evaluation uses unchanged GEMM",
+        "terminal_complete_guard_recount": {
+          "query_keys": 67939,
+          "references": 217995,
+          "commits": 8,
+          "exact_score_cache_replay": true,
+          "all_reference_members_retained": true
+        },
+        "parameters": 2346400,
+        "trainable_parameters": 0,
+        "modifiable_parameters": 750600,
+        "bound_input_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/initial.pt": "d7bb60971e575bbf9c2b34c6eebfa4d9f94e7d05968d7b6bfe1eafde632c04d7",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/audit.json": "11742bbfe89eec1f4c02ceafd21e4d7c41638a10f41a571d7721a30763b2a590",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/audit.json": "66da09bfadc1f6ec46a0ca0d25b28375f6b3f0ecb94b33cab3d78b1ded673370",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/proposal-qppred-s17/training-receipt.json": "d12e807da08a4920550e3bb2db7dd15bc5f04e5e789626209895c961bf34eb2a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/best.pt": "271fc956663f366943b7ad7db4f3b7f7a2fa4bf65c0af95ce73fd77fd023dbf0",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/newentityonly-distmult-s17/training-receipt.json": "e8c7261e88fa4acc74f7b43048d4a32d1cc0011dc6f7bf854a86d8e33004cacb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/scope.npz": "e57774b09ec556364e6484a856e54a64dc5c29ce46a6097c057b0dc2829f974a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/receipt.json": "78130b1ef9eaed4866828a7b342ebc48cf7f8c094bd742771bf9db9090dad954",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/rank-capacity-scope35/shared-rank-scope-s17/audit.json": "60128ab5d18003182a5ee13bb74ae80c9d04b64f49b0318fb608e9c66cb6b877",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd"
+        },
+        "checkpoint_sha256": "daaa78d3fef3f4c5ddc0cde2d478500846949040ed2eea804980c9a1df98e501",
+        "output_sha256": {
+          "initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+          "shared-replay.npz": "103c62be6ed672bb7d483fee832fef30b0c437c77970d65462079288ee7efd8d",
+          "steps.json": "9df4260b29955ad7fe2b9d114748f886f97918f96a5eb2a14ebc28f56de45093",
+          "selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094"
+        },
+        "implementation_sha256": "bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a",
+        "peak_gpu_memory_bytes": 6639828992,
+        "limits": [
+          "Known mechanism combination, not confirmed novelty.",
+          "TRAIN compiled initially retained references only; no hard guarantee on all TEST.",
+          "All common evaluation queries retained; affected P exemption explicitly changes contract.",
+          "Working-set failures return unchanged; no global optimum guarantee.",
+          "Preflight performance is not a scientific utility outcome."
+        ]
+      },
+      "audit": {
+        "status": "PASS_PREFLIGHT_PATCH_REPLAY_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+        "failures": [],
+        "preflight": true,
+        "patches_replayed": 8,
+        "modified_row_steps_replayed": 8,
+        "terminal_query_groups_replayed": 67939,
+        "reference_members_retained": 217995,
+        "terminal_cpu_counts_exact": true,
+        "absolute_budgets_checked": true,
+        "unselected_old_rows_unchanged": true,
+        "test_read": false,
+        "valid_read": false,
+        "elapsed_s": 872.4799790879479,
+        "receipt_sha256": "4979cd3207eabcd5adad3a2313975c67a3dc2c19797bc543baa03ebc647debab",
+        "limits": [
+          "Preflight only; not all3753 graph updates or scientific utility.",
+          "All-step GPU guards logged and terminal entire CPU scope replayed; intermediate CPU full scopes not repeated."
+        ]
+      }
+    }
+  ]
+}

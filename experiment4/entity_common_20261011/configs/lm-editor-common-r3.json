@@ -1,0 +1,86 @@
+{
+  "id": "KGE-ENTITY-COMMON-KGEDITOR-014",
+  "source_root": "../literature_baselines_20261010",
+  "dataset": "repos/FastKGE/data/FB_CKGE",
+  "source_audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+  "python": "../literature_baselines_20261010/environment/kgeditor38/bin/python",
+  "native_source": "runs/kgeditor-e-fb15k237-s0/worktree/deltaKG",
+  "text_metadata_directory": "data/KGEditor-HF/E-FB15k237",
+  "pretraining_assets": "artifacts/pretraining/bert-base-uncased-86b5e093",
+  "base_data_cache": "artifacts/lm-data-cache",
+  "meta_data_cache": "artifacts/lm-editor-old-proxies",
+  "base_directory": "artifacts/lm-base",
+  "smoke_base_path": "artifacts/lm-base-preflight/lm-base-s17/best.pt",
+  "proxy_corruption_seed": 20261012,
+  "max_sequence_length": 64,
+  "edit_num": 2,
+  "stable_batch_size": 8,
+  "meta_epochs": 20,
+  "meta_budget_seconds": 18000,
+  "meta_progress_every_steps": 100,
+  "audit_logit_tolerance": 0.0001,
+  "native_options": {
+    "max_scale": 1,
+    "lr": 0.0005,
+    "lr_alpha": 0.1,
+    "p": 2,
+    "divergences": "kl",
+    "margin_kl_max": 0.1,
+    "margin_lp_max": 1E-06,
+    "warmup_updates": 1000,
+    "total_num_updates": 200000
+  },
+  "jobs": [
+    {
+      "id": "kgeditor-common-r3-s29",
+      "method": "KGEditor",
+      "kind": "EXBert",
+      "seed": 29
+    },
+    {
+      "id": "kgeditor-common-r3-s43",
+      "method": "KGEditor",
+      "kind": "EXBert",
+      "seed": 43
+    }
+  ],
+  "validation_seed": 124,
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-LMBASE-004/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-RANK-005/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-RANK-BOUNDED-007/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-RANK-REAUDIT-010/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-008/experiment.yaml"
+  ],
+  "online_budget_seconds": 18000,
+  "online_preflight_steps": 32,
+  "max_concurrent_audits": 6,
+  "scope": "Common novel-entity task using native KGEditor meta optimizer and cumulative native online proposals; architecture and phase costs qualified",
+  "worker": "scripts/run_lm_editor_common_v2.py",
+  "online_progress_every_steps": 100,
+  "smoke_meta_directory": "artifacts/lm-editor-smoke/kgeditor-common-smoke-r2-s17",
+  "evaluation_batch_size": 16,
+  "cpu_smoke_steps": 2,
+  "online_corruption_seed": 20261013,
+  "audit_delta_tolerance": 1E-05,
+  "available_gpu_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "log_directory": "logs/lm-editor-common-r3",
+  "auditor": "scripts/run_lm_editor_common_v2.py",
+  "encoding_chunk_rows": 2048,
+  "cpu_audit_batch_size": 4,
+  "online_data_cache": "artifacts/lm-editor-novel-train-r2",
+  "validation_queries_per_split": 1024,
+  "gpu_queue_dependencies": [
+    "experiments/KGE-ENTITY-COMMON-LMBASE-004/experiment.yaml"
+  ],
+  "audit_online_step_witnesses": 2,
+  "preflight_per_job": true
+}

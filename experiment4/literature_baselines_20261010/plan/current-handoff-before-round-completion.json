@@ -1,0 +1,45 @@
+{
+  "utc": "2026-10-10T13:42:54.379259+00:00",
+  "objective": "Finish current selected literature baseline round and audits; do not start a next round.",
+  "completed": [
+    "KGE-LIT-001",
+    "KGE-LIT-002",
+    "KGE-LIT-005",
+    "KGE-LIT-006"
+  ],
+  "qualified_retained_fail": [
+    "KGE-LIT-003"
+  ],
+  "partial_completed": "results/KGE-LIT-004/kgeditor-e-wn18rr-s0",
+  "pending": "kgeditor-e-fb15k237-s0 full20epochs and terminal audits; parent004 not complete",
+  "native_canonical": "experiments/KGE-LIT-004/experiment.yaml",
+  "native_active": [
+    {
+      "id": "kgeditor-e-fb15k237-s0",
+      "pid": 651983,
+      "gpu": 4,
+      "stage": "native_training_evaluation"
+    }
+  ],
+  "current_audit_canonical": "experiments/KGE-LIT-004-AUDIT-V3/experiment.yaml",
+  "current_selection_canonical": "experiments/KGE-LIT-004-SELECTION-V3/experiment.yaml",
+  "do_not_restart": [
+    "native training",
+    "WN CPU numeric audit v2",
+    "WN replay v3",
+    "completed001002003005006"
+  ],
+  "next_steps": [
+    "Read live native004/auditV3/selectionV3; never infer active from old PID.",
+    "Once FB terminal, audit coordinator CPUv2, fixed160aliasaware GPUv3 and selectionbinding must finish. Inspect failures without silently changing protocol/tolerance/samples.",
+    "Verify current source/copy/master/artifact hashes and full20epoch receipts; archive FB light artifacts using WN schema.",
+    "When native scheduler/audit coordinators fully terminal and locks free, promote parent004 with qualified native-alias-restore semantics, retained failures and paper-match disposition for both datasets.",
+    "Update final cross-protocol report, result status table and local light evidence with SHA transfer checks.",
+    "Current selected-baseline objective may complete only after all training/audit/reports. Then stop; no next round."
+  ],
+  "limitations": [
+    "KGEditor native exposed eval and repeated locality probes; numerical audit PASS does not imply paper metrics matched.",
+    "Native CPU restore overwrites model embedding with learner embedding; strict separated-prefix replay failed and retained. Native-alias-aware fixed160 replay exact.",
+    "SAGE original provenance metadata FAIL remains even though numerical checks pass."
+  ]
+}

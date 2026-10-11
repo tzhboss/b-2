@@ -1,0 +1,43 @@
+{
+  "check_scope": "Synthetic shared old/new vector model; no real graph or utility evidence",
+  "passed": true,
+  "cases": [
+    {
+      "protection": "none",
+      "steps_checked": 2,
+      "actual_final_old_ranks": [
+        12,
+        12
+      ],
+      "new_head_scores_changed": true,
+      "old_parameters_unchanged": true
+    },
+    {
+      "protection": "true",
+      "steps_checked": 2,
+      "actual_final_old_ranks": [
+        10,
+        12
+      ],
+      "new_head_scores_changed": true,
+      "old_parameters_unchanged": true
+    },
+    {
+      "protection": "pred",
+      "steps_checked": 2,
+      "actual_final_old_ranks": [
+        10,
+        10
+      ],
+      "new_head_scores_changed": true,
+      "old_parameters_unchanged": true
+    }
+  ],
+  "conflict_optimum_is_zero": true,
+  "graph_facts_read": false,
+  "test_read": false,
+  "limitations": [
+    "Demonstrates registered scope and utility conflict only; cannot establish graph performance."
+  ],
+  "evidence_sha256": "93a3a472fd30c595bb76e1de9f68081b2bb9658f512ecde7a455be0e3fae60d2"
+}

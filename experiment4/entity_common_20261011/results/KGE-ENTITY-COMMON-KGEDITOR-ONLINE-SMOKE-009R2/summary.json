@@ -1,0 +1,25 @@
+{
+  "check_scope": "Two consecutive CPU native proposal replays from one-batch smoke base and one-step smoke meta; NOT full KGEditor task",
+  "passed": true,
+  "processed_directed_queries": 4,
+  "native_steps_replayed": 2,
+  "immutable_state_tensors_checked": 209,
+  "max_delta_error": 0.0,
+  "alias_receipt": {
+    "cpu_constructor_shared_storage": true,
+    "operational_storage_disjoint": true,
+    "restored_model_embedding_equals_clean_base": true,
+    "cpu_restore_rule": "Clone conditioner embedding to reproduce native GPU disjoint storage before loading learner"
+  },
+  "test_read": false,
+  "elapsed_s": 29.64060118503403,
+  "evidence_sha256": {
+    "audit.json": "2d73974d4188366d55f6282052533fa7a5b2a7e01e3c41c562b8954ec0f95624",
+    "training-receipt.json": "364c2cd3427e466e5574952f09642f140d0981de18c74b11c0ef92cfc6b1dfdb"
+  },
+  "limits": [
+    "CPU-to-CPU construction/edit/replay only.",
+    "Only four TRAIN directions; full37214 TRAIN coverage and GPU/CPU final inference remain unverified.",
+    "No completed base, meta or final common TEST result."
+  ]
+}

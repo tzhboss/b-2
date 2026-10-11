@@ -1,0 +1,363 @@
+{
+  "source_root": "../literature_baselines_20261010",
+  "dataset": "repos/FastKGE/data/FB_CKGE",
+  "source_audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "id": "KGE-ENTITY-COMMON-INCREMENT-001",
+  "epochs": 200,
+  "batch_size": 1024,
+  "negatives": 10,
+  "margin": 8.0,
+  "distmult_l2": 0.0005,
+  "validation_every": 5,
+  "validation_queries_per_split": 1024,
+  "validation_seed": 124,
+  "expansion_seed_offset": 10000,
+  "budget_seconds_per_job": 2400,
+  "cpu_threads_per_job": 2,
+  "available_gpu_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "native_sources": {
+    "LKGE": "runs/lkge-clean-fact-s55/worktree",
+    "FastKGE": "repos/FastKGE",
+    "STARK": "repos/STARK"
+  },
+  "dependency_paths": [
+    "repos/FastKGE/reproduction/vendor",
+    "repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64"
+  ],
+  "jobs": [
+    {
+      "id": "lkge-s17",
+      "method": "LKGE",
+      "seed": 17,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001,
+      "native_options": {
+        "reconstruct_weight": 0.1,
+        "regular_weight": 0.01,
+        "using_embedding_transfer": "False"
+      }
+    },
+    {
+      "id": "lkge-s29",
+      "method": "LKGE",
+      "seed": 29,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001,
+      "native_options": {
+        "reconstruct_weight": 0.1,
+        "regular_weight": 0.01,
+        "using_embedding_transfer": "False"
+      }
+    },
+    {
+      "id": "lkge-s43",
+      "method": "LKGE",
+      "seed": 43,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001,
+      "native_options": {
+        "reconstruct_weight": 0.1,
+        "regular_weight": 0.01,
+        "using_embedding_transfer": "False"
+      }
+    },
+    {
+      "id": "fastkge-s17",
+      "method": "FastKGE",
+      "seed": 17,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.1,
+      "native_options": {
+        "ent_r": 150,
+        "rel_r": 20,
+        "num_ent_layers": 2,
+        "using_various_ranks": true
+      }
+    },
+    {
+      "id": "fastkge-s29",
+      "method": "FastKGE",
+      "seed": 29,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.1,
+      "native_options": {
+        "ent_r": 150,
+        "rel_r": 20,
+        "num_ent_layers": 2,
+        "using_various_ranks": true
+      }
+    },
+    {
+      "id": "fastkge-s43",
+      "method": "FastKGE",
+      "seed": 43,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.1,
+      "native_options": {
+        "ent_r": 150,
+        "rel_r": 20,
+        "num_ent_layers": 2,
+        "using_various_ranks": true
+      }
+    },
+    {
+      "id": "stark-s17",
+      "method": "STARK",
+      "seed": 17,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.1,
+      "native_options": {
+        "ent_r": 200,
+        "rel_r": 200,
+        "num_ent_layers": 20,
+        "using_various_ranks": true,
+        "lambda_dyn": 1.0,
+        "fusion_weight": 0.2,
+        "hub_scale": 0.05
+      }
+    },
+    {
+      "id": "stark-s29",
+      "method": "STARK",
+      "seed": 29,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.1,
+      "native_options": {
+        "ent_r": 200,
+        "rel_r": 200,
+        "num_ent_layers": 20,
+        "using_various_ranks": true,
+        "lambda_dyn": 1.0,
+        "fusion_weight": 0.2,
+        "hub_scale": 0.05
+      }
+    },
+    {
+      "id": "stark-s43",
+      "method": "STARK",
+      "seed": 43,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.1,
+      "native_options": {
+        "ent_r": 200,
+        "rel_r": 200,
+        "num_ent_layers": 20,
+        "using_various_ranks": true,
+        "lambda_dyn": 1.0,
+        "fusion_weight": 0.2,
+        "hub_scale": 0.05
+      }
+    },
+    {
+      "id": "randomexpansion-transe-s17",
+      "method": "RandomExpansion",
+      "seed": 17,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001
+    },
+    {
+      "id": "randomexpansion-transe-s29",
+      "method": "RandomExpansion",
+      "seed": 29,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001
+    },
+    {
+      "id": "randomexpansion-transe-s43",
+      "method": "RandomExpansion",
+      "seed": 43,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001
+    },
+    {
+      "id": "newentityonly-transe-s17",
+      "method": "NewEntityOnly",
+      "seed": 17,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001
+    },
+    {
+      "id": "newentityonly-transe-s29",
+      "method": "NewEntityOnly",
+      "seed": 29,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001
+    },
+    {
+      "id": "newentityonly-transe-s43",
+      "method": "NewEntityOnly",
+      "seed": 43,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001
+    },
+    {
+      "id": "fullfinetune-transe-s17",
+      "method": "FullFinetune",
+      "seed": 17,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001
+    },
+    {
+      "id": "fullfinetune-transe-s29",
+      "method": "FullFinetune",
+      "seed": 29,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001
+    },
+    {
+      "id": "fullfinetune-transe-s43",
+      "method": "FullFinetune",
+      "seed": 43,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001
+    },
+    {
+      "id": "replay-transe-s17",
+      "method": "Replay",
+      "seed": 17,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001
+    },
+    {
+      "id": "replay-transe-s29",
+      "method": "Replay",
+      "seed": 29,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001
+    },
+    {
+      "id": "replay-transe-s43",
+      "method": "Replay",
+      "seed": 43,
+      "kind": "TransE",
+      "base": "transe",
+      "learning_rate": 0.0001
+    },
+    {
+      "id": "randomexpansion-distmult-s17",
+      "method": "RandomExpansion",
+      "seed": 17,
+      "kind": "DistMult",
+      "base": "distmult",
+      "learning_rate": 0.007
+    },
+    {
+      "id": "randomexpansion-distmult-s29",
+      "method": "RandomExpansion",
+      "seed": 29,
+      "kind": "DistMult",
+      "base": "distmult",
+      "learning_rate": 0.007
+    },
+    {
+      "id": "randomexpansion-distmult-s43",
+      "method": "RandomExpansion",
+      "seed": 43,
+      "kind": "DistMult",
+      "base": "distmult",
+      "learning_rate": 0.007
+    },
+    {
+      "id": "newentityonly-distmult-s17",
+      "method": "NewEntityOnly",
+      "seed": 17,
+      "kind": "DistMult",
+      "base": "distmult",
+      "learning_rate": 0.007
+    },
+    {
+      "id": "newentityonly-distmult-s29",
+      "method": "NewEntityOnly",
+      "seed": 29,
+      "kind": "DistMult",
+      "base": "distmult",
+      "learning_rate": 0.007
+    },
+    {
+      "id": "newentityonly-distmult-s43",
+      "method": "NewEntityOnly",
+      "seed": 43,
+      "kind": "DistMult",
+      "base": "distmult",
+      "learning_rate": 0.007
+    },
+    {
+      "id": "fullfinetune-distmult-s17",
+      "method": "FullFinetune",
+      "seed": 17,
+      "kind": "DistMult",
+      "base": "distmult",
+      "learning_rate": 0.007
+    },
+    {
+      "id": "fullfinetune-distmult-s29",
+      "method": "FullFinetune",
+      "seed": 29,
+      "kind": "DistMult",
+      "base": "distmult",
+      "learning_rate": 0.007
+    },
+    {
+      "id": "fullfinetune-distmult-s43",
+      "method": "FullFinetune",
+      "seed": 43,
+      "kind": "DistMult",
+      "base": "distmult",
+      "learning_rate": 0.007
+    },
+    {
+      "id": "replay-distmult-s17",
+      "method": "Replay",
+      "seed": 17,
+      "kind": "DistMult",
+      "base": "distmult",
+      "learning_rate": 0.007
+    },
+    {
+      "id": "replay-distmult-s29",
+      "method": "Replay",
+      "seed": 29,
+      "kind": "DistMult",
+      "base": "distmult",
+      "learning_rate": 0.007
+    },
+    {
+      "id": "replay-distmult-s43",
+      "method": "Replay",
+      "seed": 43,
+      "kind": "DistMult",
+      "base": "distmult",
+      "learning_rate": 0.007
+    }
+  ],
+  "preflight_artifact_directory": "preflight-v2"
+}

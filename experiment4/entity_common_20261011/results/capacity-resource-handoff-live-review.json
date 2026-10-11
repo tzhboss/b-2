@@ -1,0 +1,96 @@
+{
+  "status": "PASS_LIVE_RESOURCE_HANDOFF_STARTUP_AND_UNCHANGED_SCIENTIFIC_PINS",
+  "checked_input_files": 68,
+  "owner": {
+    "pid": 790633,
+    "state": "S",
+    "parent": 790632,
+    "start_ticks": 103834623,
+    "exit_status": 0
+  },
+  "original_producers": [
+    {
+      "pid": 783947,
+      "state": "R",
+      "parent": 783946,
+      "start_ticks": 103508163,
+      "exit_status": 0
+    },
+    {
+      "pid": 783948,
+      "state": "R",
+      "parent": 783945,
+      "start_ticks": 103508163,
+      "exit_status": 0
+    }
+  ],
+  "jobs": [
+    {
+      "job": "capacity-full-s17",
+      "stage": "train",
+      "gpu": 1,
+      "identity": {
+        "pid": 783945,
+        "state": "S",
+        "parent": 783380,
+        "start_ticks": 103508158,
+        "exit_status": 0
+      }
+    },
+    {
+      "job": "capacity-scoped-s17",
+      "stage": "train",
+      "gpu": 2,
+      "identity": {
+        "pid": 783946,
+        "state": "S",
+        "parent": 783380,
+        "start_ticks": 103508158,
+        "exit_status": 0
+      }
+    },
+    {
+      "job": "capacity-full-s29",
+      "stage": "train",
+      "gpu": 3,
+      "identity": {
+        "pid": 791072,
+        "state": "S",
+        "parent": 790633,
+        "start_ticks": 103849058,
+        "exit_status": 0
+      }
+    },
+    {
+      "job": "capacity-scoped-s29",
+      "stage": "train",
+      "gpu": 5,
+      "identity": {
+        "pid": 791073,
+        "state": "S",
+        "parent": 790633,
+        "start_ticks": 103849058,
+        "exit_status": 0
+      }
+    },
+    {
+      "job": "capacity-full-s43",
+      "stage": "train",
+      "gpu": 6,
+      "identity": {
+        "pid": 791074,
+        "state": "S",
+        "parent": 790633,
+        "start_ticks": 103849059,
+        "exit_status": 0
+      }
+    }
+  ],
+  "queued_jobs": [
+    "capacity-scoped-s43"
+  ],
+  "original_scheduler_stopped_for_exit_status_capture": true,
+  "original_config_and_frozen_hashes_unchanged": true,
+  "legacy_exit_capture_and_release_pending": true,
+  "scientific_utility_asserted": false
+}

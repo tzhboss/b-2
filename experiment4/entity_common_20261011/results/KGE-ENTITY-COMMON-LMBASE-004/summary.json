@@ -1,0 +1,135 @@
+{
+  "scope": "Clean old foundation only; KGEditor meta and online training still required",
+  "jobs": [
+    {
+      "id": "lm-base-s29",
+      "training": {
+        "status": "TERMINAL_CLEAN_OLD_GRAPH_BASE_ONLY",
+        "id": "lm-base-s29",
+        "seed": 29,
+        "test_read": false,
+        "new_snapshot_facts_read": false,
+        "meta_train_facts_fitted_in_base": false,
+        "best_epoch": 5,
+        "best_validation_mrr": 0.2010041330667941,
+        "epochs_executed": 20,
+        "new_entity_rows_unchanged": true,
+        "new_entity_initial_sha256": "2b6670afed037e0b70d6b7184ebb4269a82e4b34f008fc5899f4e143517dbf48",
+        "elapsed_s": 14392.864019826055,
+        "parameters": 119029390,
+        "peak_gpu_memory_bytes": 6280819200,
+        "loading_diagnostics": {
+          "missing_keys": [
+            "bert.encoder.layer.10.output.dense_in_ex.bias",
+            "bert.encoder.layer.10.output.dense_out_ex.bias",
+            "bert.encoder.layer.10.output.dense_in_ex.weight",
+            "bert.encoder.layer.10.output.dense_out_ex.weight",
+            "bert.encoder.layer.11.output.dense_out_ex.bias",
+            "bert.encoder.layer.11.output.dense_in_ex.weight",
+            "bert.encoder.layer.11.output.dense_out_ex.weight",
+            "bert.encoder.layer.11.output.dense_in_ex.bias"
+          ],
+          "unexpected_keys": [
+            "cls.seq_relationship.bias",
+            "cls.seq_relationship.weight"
+          ],
+          "mismatched_keys": [],
+          "error_msgs": []
+        },
+        "data_receipt_sha256": "89bd95274686be95a056c28afe45a3da8ac0696cc23a7cce407168058374e931",
+        "input_sha256": {
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-FB15k237/entity2textlong.txt": "1c6028d81296e311076eed7cfbf5dc3c4174b68394639148e32212ad49aa6c7f",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-FB15k237/relation2text.txt": "e9cae6b4eb7d48dec064752075730767e89eaf73567e3caf33471ee1a79476cd"
+        },
+        "checkpoint_sha256": "a749e0cf5ec43cb1c3107f0f8dbc7fc8b5c51757dfcaf613f2a75c444f4ec68b",
+        "implementation_sha256": "6d6a7e2c5ef70b36d219db44a54b9f27ff217f4f040bd2f7d0d0609da93c198d",
+        "limits": [
+          "Native EXBert clean foundation training; no completed KGEditor meta/online comparison yet."
+        ]
+      },
+      "audit": {
+        "status": "PASS_CLEAN_BASE_CPU_GPU_FIXTURE",
+        "failures": [],
+        "queries": 64,
+        "candidate_score_checks": 480320,
+        "max_abs_logit_error": 1.2874603271484375e-05,
+        "rank_mismatches": 0,
+        "limits": [
+          "CPU/GPU native model forward replay; not independent architecture implementation or optimizer retraining.",
+          "Common old foundation only; editor and novel-entity online stages remain required."
+        ]
+      }
+    },
+    {
+      "id": "lm-base-s43",
+      "training": {
+        "status": "TERMINAL_CLEAN_OLD_GRAPH_BASE_ONLY",
+        "id": "lm-base-s43",
+        "seed": 43,
+        "test_read": false,
+        "new_snapshot_facts_read": false,
+        "meta_train_facts_fitted_in_base": false,
+        "best_epoch": 7,
+        "best_validation_mrr": 0.19669163382184546,
+        "epochs_executed": 20,
+        "new_entity_rows_unchanged": true,
+        "new_entity_initial_sha256": "bfa1d4c418d8d3a8567e89af2bdd864eb09cdf0790146b7b905ad58f400310fb",
+        "elapsed_s": 14215.064269377966,
+        "parameters": 119029390,
+        "peak_gpu_memory_bytes": 6280657408,
+        "loading_diagnostics": {
+          "missing_keys": [
+            "bert.encoder.layer.11.output.dense_in_ex.weight",
+            "bert.encoder.layer.10.output.dense_out_ex.bias",
+            "bert.encoder.layer.11.output.dense_in_ex.bias",
+            "bert.encoder.layer.10.output.dense_out_ex.weight",
+            "bert.encoder.layer.11.output.dense_out_ex.bias",
+            "bert.encoder.layer.10.output.dense_in_ex.weight",
+            "bert.encoder.layer.10.output.dense_in_ex.bias",
+            "bert.encoder.layer.11.output.dense_out_ex.weight"
+          ],
+          "unexpected_keys": [
+            "cls.seq_relationship.bias",
+            "cls.seq_relationship.weight"
+          ],
+          "mismatched_keys": [],
+          "error_msgs": []
+        },
+        "data_receipt_sha256": "89bd95274686be95a056c28afe45a3da8ac0696cc23a7cce407168058374e931",
+        "input_sha256": {
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt": "15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt": "0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt": "aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/train.txt": "20a99e88a63841278cc76280afbf87f7e22486f37c3f2b56c0cbcc6248e00821",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/valid.txt": "796cd5b4196191d1e4786c206861c49b800e4ea28aa1fec327e3c3e4fe7edb6c",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-FB15k237/entity2textlong.txt": "1c6028d81296e311076eed7cfbf5dc3c4174b68394639148e32212ad49aa6c7f",
+          "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-FB15k237/relation2text.txt": "e9cae6b4eb7d48dec064752075730767e89eaf73567e3caf33471ee1a79476cd"
+        },
+        "checkpoint_sha256": "2e343011030e0ea5ef2605e885d06a34800d0755db89ed2c35c4a5d5bfcf667c",
+        "implementation_sha256": "6d6a7e2c5ef70b36d219db44a54b9f27ff217f4f040bd2f7d0d0609da93c198d",
+        "limits": [
+          "Native EXBert clean foundation training; no completed KGEditor meta/online comparison yet."
+        ]
+      },
+      "audit": {
+        "status": "PASS_CLEAN_BASE_CPU_GPU_FIXTURE",
+        "failures": [],
+        "queries": 64,
+        "candidate_score_checks": 480320,
+        "max_abs_logit_error": 1.33514404296875e-05,
+        "rank_mismatches": 0,
+        "limits": [
+          "CPU/GPU native model forward replay; not independent architecture implementation or optimizer retraining.",
+          "Common old foundation only; editor and novel-entity online stages remain required."
+        ]
+      }
+    }
+  ]
+}

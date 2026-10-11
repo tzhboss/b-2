@@ -1,0 +1,124 @@
+id: KGE-ENTITY-COMMON-RANK-005
+status: batch_terminal_with_retained_failures
+registered_utc: '2026-10-10T18:27:30.493852+00:00'
+protocol: plan/rank-novel-protocol.md
+config: configs/rank-novel-training.json
+scope: One complete novel TRAIN shared-entity sweep with native Rank kernels; common
+  development task, not native independent-column reproduction or equal SGD optimization
+  budget
+frozen_input_sha256:
+  configs/rank-novel-training.json: fbfc4bac05ea440cbf4801cc30aae90e338b56cfb7a6b6248d356304408da9f5
+  plan/rank-novel-protocol.md: c40533167997ede186c3b79ec0c7ae8e649ed96dc9470ffe71dbec13af1adc95
+  src/rank_entity.py: 30fe53d5120ee09cf19fa45a10a470b3f9c4f451a719ef991f4453adc831d2bf
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+  scripts/run_rank_entity.py: ff714aea8e2f6cc76070e1e516e1541e57bcb09f252567262ce8d3b823feeef2
+  scripts/audit_rank_entity.py: 0f00e91a27fd5ff1d0a341989c9d97c6bf5ee56d625d872207ac4fe53f977008
+  scripts/audit_exported_embeddings.py: 56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719
+  scripts/coordinate_gpu_claim_queue.py: d8d3af1b42f634429dfc7c0635b6fa531df34ee10885acc62e05a287506845ce
+  scripts/check_rank_entity_controls.py: 1754b8f406496cae57809a5368b0010457a011c8986ef2a901ba999256ec6659
+  scripts/prepare_rank_entity_queue.py: a25ba476a78620886bdd38f31c5391c43aa24d1bd72c361b87585782524b0272
+  vendor/legacy_qp/rank_constraints.py: f1e4db2c3eea544457b53d45b354839851d2ff08d6a819e4d85b2c2ed29b3e19
+  vendor/legacy_qp/rank_constraints_v2.py: d2d07e7ba70d2bc9813cf73970f65e374491915c194f9a67e09dbcd1faa4ffec
+external_source_sha256:
+  /data/lc/tzh/experiment4/rank_comparison_20261010/vendor/kge_rank_locality/core.py: d3acc87aa404bef1a6ab2cddb60c6df75531718bba1c15b0ce21548051990c55
+job_count: 21
+active_processes: []
+queued_jobs: []
+feature_preparation_complete: true
+coordinator_pid: 698191
+jobs:
+  direct-novel-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  rank-novel-s17:
+    status: failed_retained
+    stage: train
+    exit_code: 1
+  qptrue-novel-s17:
+    status: failed_retained
+    stage: audit
+    exit_code: 1
+  qppred-novel-s17:
+    status: failed_retained
+    stage: audit
+    exit_code: 1
+  support-novel-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  null-novel-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  ridge-novel-s17:
+    status: failed_retained
+    stage: audit
+    exit_code: 1
+  direct-novel-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  rank-novel-s29:
+    status: failed_retained
+    stage: train
+    exit_code: 1
+  qptrue-novel-s29:
+    status: failed_retained
+    stage: audit
+    exit_code: 1
+  qppred-novel-s29:
+    status: failed_retained
+    stage: audit
+    exit_code: 1
+  support-novel-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  null-novel-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  ridge-novel-s29:
+    status: failed_retained
+    stage: audit
+    exit_code: 1
+  direct-novel-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  rank-novel-s43:
+    status: failed_retained
+    stage: train
+    exit_code: 1
+  qptrue-novel-s43:
+    status: failed_retained
+    stage: audit
+    exit_code: 1
+  qppred-novel-s43:
+    status: failed_retained
+    stage: audit
+    exit_code: 1
+  support-novel-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  null-novel-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  ridge-novel-s43:
+    status: failed_retained
+    stage: audit
+    exit_code: 1
+preflight_passed:
+- DirectNovel
+- QPPredRankNovel
+- QPTrueRankNovel
+- RankTruncatedNovel
+- RidgeNovel
+- StrictNullNovel
+- SupportTrainNovel
+completed_utc: '2026-10-10T19:03:07.984992+00:00'
+result_directory: results/KGE-ENTITY-COMMON-RANK-005

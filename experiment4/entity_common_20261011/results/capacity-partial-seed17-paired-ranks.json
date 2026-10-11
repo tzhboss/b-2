@@ -1,0 +1,110 @@
+{
+  "status": "PASS_PAIRED_AUDITED_SEED17_TEST_RANK_DISCLOSURE_ONLY",
+  "seed": 17,
+  "metrics": {
+    "NewEntityOnly": {
+      "new_mrr": 0.14094141126488086,
+      "old_top10_loss": 0.022447388932190178,
+      "directional_mrr": 0.03547935370255124,
+      "directional_hits10_count": 458,
+      "directional_queries": 5654
+    },
+    "SharedFrozenFull": {
+      "new_mrr": 0.1385909662110308,
+      "old_top10_loss": 0.011457521434138737,
+      "directional_mrr": 0.030944347787066555,
+      "directional_hits10_count": 341,
+      "directional_queries": 5654
+    },
+    "SharedFrozenScoped": {
+      "new_mrr": 0.13896696599948083,
+      "old_top10_loss": 0.014224473889321902,
+      "directional_mrr": 0.031798377287344956,
+      "directional_hits10_count": 362,
+      "directional_queries": 5654
+    },
+    "CapacityFrozenFull": {
+      "new_mrr": 0.1385968233402069,
+      "old_top10_loss": 0.011496492595479345,
+      "directional_mrr": 0.030947937977047646,
+      "directional_hits10_count": 342,
+      "directional_queries": 5654
+    },
+    "CapacityFrozenScoped": {
+      "new_mrr": 0.13898169767083746,
+      "old_top10_loss": 0.014302416212003118,
+      "directional_mrr": 0.03180567305683507,
+      "directional_hits10_count": 363,
+      "directional_queries": 5654
+    }
+  },
+  "pairs": [
+    {
+      "original": "SharedFrozenFull",
+      "candidate": "CapacityFrozenFull",
+      "seed": 17,
+      "new_mrr_delta": 5.857129176084497e-06,
+      "old_top10_loss_delta": 3.897116134060803e-05,
+      "directional_mrr_delta": 3.5901899810911186e-06,
+      "directional_hits10_count_delta": 1,
+      "new_ranks_improved": 238,
+      "new_ranks_worsened": 2112,
+      "old_ranks_improved": 24,
+      "old_ranks_worsened": 9012
+    },
+    {
+      "original": "SharedFrozenScoped",
+      "candidate": "CapacityFrozenScoped",
+      "seed": 17,
+      "new_mrr_delta": 1.4731671356627007e-05,
+      "old_top10_loss_delta": 7.794232268121606e-05,
+      "directional_mrr_delta": 7.295769490114901e-06,
+      "directional_hits10_count_delta": 1,
+      "new_ranks_improved": 256,
+      "new_ranks_worsened": 2305,
+      "old_ranks_improved": 22,
+      "old_ranks_worsened": 10019
+    }
+  ],
+  "source_sha256": {
+    "artifacts/incremental/newentityonly-distmult-s17/ranks.npz": "cba3cc057f3d1a051548c0aaafc1e2510b2a917807bd4ee3af6634f59f6a42a5",
+    "artifacts/incremental/shared-graph-full-s17/ranks.npz": "8081ee2f1e2a70d9a3aa246c7aa11f5b7d757ed3380e33ac2d4bdf696d99ed9b",
+    "artifacts/incremental/shared-graph-scoped-s17/ranks.npz": "13f59fc7f8f3b35a5bfea3eb11d4fb6a2b5201531b32599e165ea64a433ab792",
+    "artifacts/incremental/capacity-full-s17/ranks.npz": "a745e3db54995baa33e7c1ae5694ca1a49a5357d28bf3d009eb52ee51ec7518e",
+    "artifacts/incremental/capacity-scoped-s17/ranks.npz": "ca04ec414945879fc9f56b9dfb7e40c9c89d8162de9d760b818aa7a2e316306f"
+  },
+  "source_before_rank_arithmetic": {
+    "NewEntityOnly": {
+      "rank_differences_from_source": 0,
+      "max_absolute_rank_difference": 0,
+      "original_top10_eligibility_identical": true
+    },
+    "SharedFrozenFull": {
+      "rank_differences_from_source": 3,
+      "max_absolute_rank_difference": 1,
+      "original_top10_eligibility_identical": true
+    },
+    "SharedFrozenScoped": {
+      "rank_differences_from_source": 3,
+      "max_absolute_rank_difference": 1,
+      "original_top10_eligibility_identical": true
+    },
+    "CapacityFrozenFull": {
+      "rank_differences_from_source": 3,
+      "max_absolute_rank_difference": 1,
+      "original_top10_eligibility_identical": true
+    },
+    "CapacityFrozenScoped": {
+      "rank_differences_from_source": 3,
+      "max_absolute_rank_difference": 1,
+      "original_top10_eligibility_identical": true
+    }
+  },
+  "exploratory": true,
+  "registered_gate_decision": false,
+  "limits": [
+    "Single audited seed; no VALID or TRAIN cost computation.",
+    "No change to active jobs, selection, budget, gates or update order.",
+    "Three-seed utility still requires completed038."
+  ]
+}

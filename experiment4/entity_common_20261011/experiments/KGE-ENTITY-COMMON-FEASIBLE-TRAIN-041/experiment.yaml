@@ -1,0 +1,128 @@
+id: KGE-ENTITY-COMMON-FEASIBLE-TRAIN-041
+status: running_full_feasible_train
+config: configs/feasible-train41.json
+protocol: plan/feasible-train41-protocol.md
+registered_utc: '2026-10-11T11:33:03.204365+00:00'
+frozen_input_sha256:
+  results/KGE-ENTITY-COMMON-FEASIBLE-TRAIN-PREFLIGHT-040/summary.json: 5a71efcabf6e08650b7d22b220dba8c19a30152dc19261ca2be399a3338116c6
+  results/KGE-ENTITY-COMMON-FEASIBLE-TRAIN-PREFLIGHT-040R2/summary.json: 36a800fb45b8ccde12633d1357418a37a9235b97adbc433085bf41742e921a22
+  configs/feasible-train41.json: 20bed57a0232bc914dc3b68b540f44324ee7a5e19584b152c883cb9fe75d990b
+  plan/feasible-train41-protocol.md: 356d7ee6c679de43da6e20af5560ec3b9ecd5ba8f641f19f00422981eb5d7500
+  scripts/run_feasible_train41.py: 78da0ed5cfc4a3b5693c5f40fb62a2f90c5f21b1cc62b90902162372ba149841
+  scripts/run_feasible_train40.py: fdb4dcf933eed0fb516a7a9262949ed6abb201abcdbf833e6d47fae9cb1d8579
+  scripts/run_feasible_train_v2.py: b17f3f435ad79f006817289712f582c3adae767f5e54c8d3f9d9996a5ee9d69a
+  scripts/control_feasible_train41.py: cb9401cb9e3a3e9129540fcae38d436ba92e516088f5eac011dd4b56aa5d8981
+  scripts/control_feasible_train40.py: 812df476b6d4b5a6eed7ccaa1a77bf018ba8c098879c0a8144616852c66f8bc9
+  scripts/register_feasible_train41.py: 942c5a690ec6b13783dc0e1147f6d538617af2221de1f49ed0f5bfa87bcc0fe9
+  scripts/report_feasible_train41.py: f6b37eb5bac2fb09dd41a4c3e917c5838d5f992eb5a4efc25c9e8a669d975898
+  scripts/coordinate_feasible_train41.py: bf7139ac560eb3f59674aa4126226ab1a761d45ba5da4cd5f9354b9e2584d58d
+  scripts/audit_exported_embeddings.py: 56de5d7008c171574afdb6c559b3f85f2ebe8314313da5bbdc4e9b8f430ab719
+  scripts/audit_shared_graph_utility.py: a91d0e22bbffaf89bcd1080a22293c36131dc51634932a19e9510cf2f4ea5353
+  src/feasible_train_optimization.py: b54cad1d96492e043bf2151381249ec26dff480d6cdbd80516c585a19f02061c
+  src/feasible_train_optimization_v2.py: 25c453cf25ac33e6924329bcc870a5ef8bda1ec8dc3f976a06e2972db3faf2d5
+  src/shared_rank_cache_v2.py: 8980fac50a992a74f1dd339c582ad3d1382c0fb140688cf87c1a6c6a4c7abaad
+  src/shared_rank_solver_v2.py: a274789e9552aa0aff020a880dbffcff1b1278987712c87a685dde185d17d06d
+  src/shared_rank_graph.py: bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a
+  src/shared_rank_scope.py: e351d1fe0a1e72feb30fe33a0887bea92e8b761a0656dad9ac5500fb406c57be
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+  results/KGE-ENTITY-COMMON-SHARED-GRAPH-UTILITY-032/summary.json: d194c7b1cee4c2af03d30b34f124682f404806d9870e22d79e51b9e79270a963
+external_source_sha256:
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/best.pt: d324a9caee91df9142d542b29ef643d50960ed36da0be51130968b065e6aa7c4
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/audit.json: 5b3d911b7fb75f95ead56d326a61403f874b448ac110ee0bad9f3f6eccecb28f
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/training-receipt.json: b2204a0eb40ff72a7149f14d8954ff9f7fb1fc9eae7048aee4cef873f9fc5095
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s17/best.pt: 135c7915d09bc5dda219ad0c8f033b888b7e9ca75cd90f81f9f6d3ab6f3a3445
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s17/audit.json: bb400e0ec4b02f732b3f6ecf9ff847579a7612b4a58f60da5b1d767edac2d60c
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s17/training-receipt.json: caa032ec476313b9a1580ad0dc76679c30a7810d12336ca51a673feab28e5f0c
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s29/best.pt: 0b03fcfbf6fc20882bec4d9cc1a8ed97e1a0b012230b7933e7d7bef20a0819fe
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s29/audit.json: 2df8cc72f3f92d2cdec98328e65f6c7a51ecf08e3e6c5e4d830d6a27cfb45e97
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s29/training-receipt.json: e86d655873295071b5213ccee6e41e5e77d2f1df14e04376173fd9900b118212
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s29/best.pt: 1d44307122e2b26a62816ceba748a3967ff5a81fd9ca9f6e552e2926f1353321
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s29/audit.json: 3d6cc83a81837b19b6d13a89e38a6ac487f567143379f7349979143b849a8d65
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s29/training-receipt.json: 5c8b234bb9cde1d80be481e9ed092aa6f1cf137a1935fba9cae52272b3b69110
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s43/best.pt: 646c44f25fa518bfe30e4023432e793b721fc7174eedd8a2163949e3e314575d
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s43/audit.json: 02b4a3d218bd30f4186f9a70c4b713b04f82dc6542d40c3b09cb35414e63ab30
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s43/training-receipt.json: 637a2fe451174481d36546091671b302cbd78c0cdd1128e81386a5b4893c029e
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s43/best.pt: e16904e9cd085bd77da5a187d0ca48b9f3a3970eee8f0b0d3b7e46f8843ab1bd
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s43/audit.json: a7b4c2c1dac3bd1e214ae179964896b1c82782f9137fa0b345e823961fd068d8
+  /data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s43/training-receipt.json: d08240398e89cd68640c6487f45264186d3272e7a9b28130174a8835ad4ec593
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/entity2id.txt: 15bdf36b63c1a988c37db223e3a5e310c5d30a2d267e3fee34a33b724f3e30e9
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/0/relation2id.txt: aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/entity2id.txt: 0e20b8b1994ddf3b8e5aebfe0b9e93a1e5fbbf1e7871173d60a8f6ad446d5af4
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/relation2id.txt: aa07a83de92cf540cf76176a18bafa37f493cf00d2a7c49978f941f98c0c3ebd
+  /data/lc/tzh/experiment4/literature_baselines_20261010/repos/FastKGE/data/FB_CKGE/1/train.txt: 6e5853c0d7cdf07d418fb0b3bb625cc3b343c05d946bb58d189c68b99fd55938
+controls:
+  status: PASS_ACTIVE_RANK_CUT_TRAIN_DESCENT_AND_UNCHANGED_BUDGET_FALLBACK
+  prior_controls:
+    status: PASS_SCALAR_ALIAS_GRADIENT_AND_TRAIN_IMPROVEMENT_WITH_FULL_GUARDS
+    scalar_score_checks: 384
+    gradient_components_checked: 192
+    max_gradient_error: 3.705685758248478e-10
+    toy_before_loss: 1.3862943611198906
+    toy_after_loss: 0.7439845321336873
+    graph_utility_asserted: false
+  active_cut_rounds: 1
+  constrained_loss_before: 2.006408868078168
+  constrained_loss_after: 1.350733499856727
+  guard_rank: 2
+  scientific_utility_asserted: false
+train_covered_new_entities: 3753
+active_processes:
+- id: feasible-train-full-s17-41
+  pid: 801736
+  start_ticks: '104568412'
+  stage: run
+  gpu: 0
+- id: feasible-train-scoped-s17-41
+  pid: 801737
+  start_ticks: '104568413'
+  stage: run
+  gpu: 1
+- id: feasible-train-full-s29-41
+  pid: 801738
+  start_ticks: '104568413'
+  stage: run
+  gpu: 2
+- id: feasible-train-scoped-s29-41
+  pid: 801739
+  start_ticks: '104568413'
+  stage: run
+  gpu: 3
+- id: feasible-train-full-s43-41
+  pid: 801740
+  start_ticks: '104568413'
+  stage: run
+  gpu: 4
+- id: feasible-train-scoped-s43-41
+  pid: 801741
+  start_ticks: '104568413'
+  stage: run
+  gpu: 5
+jobs:
+  feasible-train-full-s17-41:
+    status: running
+    stage: run
+    pid: 801736
+  feasible-train-scoped-s17-41:
+    status: running
+    stage: run
+    pid: 801737
+  feasible-train-full-s29-41:
+    status: running
+    stage: run
+    pid: 801738
+  feasible-train-scoped-s29-41:
+    status: running
+    stage: run
+    pid: 801739
+  feasible-train-full-s43-41:
+    status: running
+    stage: run
+    pid: 801740
+  feasible-train-scoped-s43-41:
+    status: running
+    stage: run
+    pid: 801741
+scientific_utility_asserted: false
+registered_gates_changed: false
+coordinator_pid: 801733

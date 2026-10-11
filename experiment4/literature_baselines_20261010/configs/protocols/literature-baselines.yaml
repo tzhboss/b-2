@@ -1,0 +1,22 @@
+id: KGE-LIT-001
+methods:
+- IncDE
+datasets:
+- ENTITY
+- RELATION
+- FACT
+- HYBRID
+scope: four complete native continual KGE protocols, not targeted edit benchmark
+seeds:
+- 3407
+configuration: author defaults, no shortened training
+selection: author validation metrics, separately audit actual split lineage
+evaluation: author historical-query-snapshot entity candidates and cumulative truth
+  filters; bidirectional inverse relations; double argsort ties; per-task rounding4,
+  count-weighted overall rounding3
+audit: exit0, five snapshots/checkpoints,19 integer-rank exports, independent count
+  and metric/source audit
+known_limitations:
+- single author-default seed
+- continual KGE differs from shallow targeted editing
+- no claim of innovative mechanism

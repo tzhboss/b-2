@@ -1,0 +1,110 @@
+{
+  "id": "KGE-ENTITY-COMMON-SHARED-GRAPH-UTILITY-028",
+  "source_experiment": "KGE-ENTITY-COMMON-SHARED-GRAPH-027",
+  "source_config_sha256": "63bd890cd78b81047aff43bf411efa0796d8746ff2b16cd8079683f9a5ffa9a5",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "jobs": [
+    {
+      "id": "shared-graph-full-s17",
+      "method": "SharedFrozenFull",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-scoped-s17",
+      "method": "SharedFrozenScoped",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-joint-s17",
+      "method": "SharedJointScoped",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": true
+    },
+    {
+      "id": "shared-graph-full-s29",
+      "method": "SharedFrozenFull",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-scoped-s29",
+      "method": "SharedFrozenScoped",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-joint-s29",
+      "method": "SharedJointScoped",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": true
+    },
+    {
+      "id": "shared-graph-full-s43",
+      "method": "SharedFrozenFull",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-scoped-s43",
+      "method": "SharedFrozenScoped",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    },
+    {
+      "id": "shared-graph-joint-s43",
+      "method": "SharedJointScoped",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": true
+    }
+  ],
+  "worker": "scripts/audit_shared_graph_utility.py",
+  "aggregate_worker": "scripts/audit_shared_graph_utility.py",
+  "reaudit_directory": "artifacts/shared-graph-utility28",
+  "log_directory": "logs/shared-graph-utility28",
+  "batch_size": 64,
+  "max_concurrent_audits": 2,
+  "dependencies": [
+    "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-027/experiment.yaml"
+  ],
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-014/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-KGEDITOR-017/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-SHARED-GRAPH-027/experiment.yaml"
+  ],
+  "joint_method": "SharedJointScoped",
+  "comparator_method": "SharedFrozenScoped"
+}

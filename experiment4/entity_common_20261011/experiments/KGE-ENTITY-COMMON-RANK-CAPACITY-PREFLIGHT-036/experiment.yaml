@@ -1,0 +1,32 @@
+id: KGE-ENTITY-COMMON-RANK-CAPACITY-PREFLIGHT-036
+status: completed_audited_artifact_checks_only
+config: configs/rank-capacity-preflight36.json
+protocol: plan/rank-capacity-preflight-protocol.md
+scope: Two frozen-old real graph preflights with TRAIN-certified capacity exemptions;
+  no VALID/TEST utility
+registered_utc: '2026-10-11T08:16:14.218752+00:00'
+frozen_input_sha256:
+  configs/rank-capacity-preflight36.json: e8e12ce039a5b8b3020c448f91b0ca4b435bb156d7ecabe9cef26444e8641f43
+  plan/rank-capacity-preflight-protocol.md: 26e33f08879a4f5e25affbd0e6a6c22a5315a399cc3b6dc37701fc28a3c25611
+  scripts/run_shared_graph_checks.py: ad80276bec935f08f1619a24350bc14b15dd6676a596411582916a2e6b347671
+  scripts/coordinate_artifact_checks_v2.py: 230c273b73f9d19bfb300b3becf8c63557c596cf02214dab7383724ba81d6408
+  src/shared_rank_graph.py: bfa67e7b250995264957e8fcc4dc6a13d3f2962d9ed33510b49c2a842ca4585a
+  src/shared_rank_solver_v2.py: a274789e9552aa0aff020a880dbffcff1b1278987712c87a685dde185d17d06d
+  src/shared_rank_cache_v2.py: 8980fac50a992a74f1dd339c582ad3d1382c0fb140688cf87c1a6c6a4c7abaad
+  src/shared_rank_scope.py: e351d1fe0a1e72feb30fe33a0887bea92e8b761a0656dad9ac5500fb406c57be
+  results/KGE-ENTITY-COMMON-RANK-CAPACITY-SCOPE-035/summary.json: 6ea8d7f047c32178f0bbde6666d1889ef190fbb62d483e3a3951b1062d916ef6
+  results/KGE-ENTITY-COMMON-SHARED-GRAPH-UTILITY-032/summary.json: d194c7b1cee4c2af03d30b34f124682f404806d9870e22d79e51b9e79270a963
+active_processes: []
+coordinator_pid: 780488
+jobs:
+  capacity-preflight-full-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  capacity-preflight-scoped-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+queued_jobs: []
+queued_audits: []
+result_directory: results/KGE-ENTITY-COMMON-RANK-CAPACITY-PREFLIGHT-036

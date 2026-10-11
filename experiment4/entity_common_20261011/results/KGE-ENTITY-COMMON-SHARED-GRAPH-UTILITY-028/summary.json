@@ -1,0 +1,85 @@
+{
+  "scope": "Independent complete fixed-VALID development utility screen; no heldout/SOTA or novelty claim",
+  "thresholds": {
+    "new_valid_ratio": 0.98,
+    "old_valid_loss_ratio": 0.75,
+    "new_answer_mrr_ratio": 0.98,
+    "new_answer_hits10_ratio": 0.95,
+    "joint_nonworse_than_scoped_frozen": true
+  },
+  "rows": [
+    {
+      "method": "SharedFrozenFull",
+      "seeds": [],
+      "decision": "INCOMPLETE_UTILITY_EVIDENCE"
+    },
+    {
+      "method": "SharedFrozenScoped",
+      "seeds": [],
+      "decision": "INCOMPLETE_UTILITY_EVIDENCE"
+    },
+    {
+      "method": "SharedJointScoped",
+      "seeds": [],
+      "decision": "INCOMPLETE_UTILITY_EVIDENCE",
+      "nonworse_than_scoped_frozen_gate": null
+    }
+  ],
+  "unavailable": [
+    {
+      "id": "shared-graph-full-s17",
+      "method": "SharedFrozenFull",
+      "seed": 17,
+      "status": "failed_retained"
+    },
+    {
+      "id": "shared-graph-scoped-s17",
+      "method": "SharedFrozenScoped",
+      "seed": 17,
+      "status": "failed_retained"
+    },
+    {
+      "id": "shared-graph-joint-s17",
+      "method": "SharedJointScoped",
+      "seed": 17,
+      "status": "failed_retained"
+    },
+    {
+      "id": "shared-graph-full-s29",
+      "method": "SharedFrozenFull",
+      "seed": 29,
+      "status": "failed_retained"
+    },
+    {
+      "id": "shared-graph-scoped-s29",
+      "method": "SharedFrozenScoped",
+      "seed": 29,
+      "status": "failed_retained"
+    },
+    {
+      "id": "shared-graph-joint-s29",
+      "method": "SharedJointScoped",
+      "seed": 29,
+      "status": "failed_retained"
+    },
+    {
+      "id": "shared-graph-full-s43",
+      "method": "SharedFrozenFull",
+      "seed": 43,
+      "status": "failed_retained"
+    },
+    {
+      "id": "shared-graph-scoped-s43",
+      "method": "SharedFrozenScoped",
+      "seed": 43,
+      "status": "failed_retained"
+    },
+    {
+      "id": "shared-graph-joint-s43",
+      "method": "SharedJointScoped",
+      "seed": 43,
+      "status": "failed_retained"
+    }
+  ],
+  "source_experiment": "KGE-ENTITY-COMMON-SHARED-GRAPH-027"
+}

@@ -1,0 +1,137 @@
+{
+  "snapshot_utc": "2026-10-10T14:25:26.884109+00:00",
+  "source": "fresh terminal canonical and release bytes",
+  "comparable_scientific_protocol": false,
+  "warning": "Separate native continual / revised validation / derived candidate / exposed editor protocols. This is a final snapshot, not a live monitor.",
+  "experiments": [
+    {
+      "id": "KGE-LIT-001",
+      "status": "completed_audited",
+      "audit": {
+        "status": "PASS_WITH_LIMITATIONS",
+        "checks": 7791866,
+        "failures": 0,
+        "independent_rank_replays": 3840,
+        "evidence_directory": "results/KGE-LIT-001",
+        "summary_sha256": "a9e49a73900866646540f6ccd1af63c322fafd9e01d75cbbd1dea73a3b321e82",
+        "auditor_sha256": "ccb48f4e3da560b26dcdf2d03f6809d46e34f605b539a348a15dc9b778411512",
+        "limitations": [
+          "single seed author protocol",
+          "19 metric exports audited; checkpoint ranks sampled64 per post-training file, not every score",
+          "pre-FWT exact checkpoint replay unavailable; counts/ranges/filters checked",
+          "historical query-snapshot candidates and filters do not account for later competitors",
+          "native float32 batch100 metric accumulation reproduced separately from high precision means",
+          "checkpoint epoch and source bytes checked; unrounded validation-best decision cannot be fully certified from rounded logs"
+        ]
+      },
+      "active_processes": [],
+      "canonical_sha256": "b9dca66b3626a3a9e30983c07e1162dcf98087e2b73d97cd5c2d04abd9d92135"
+    },
+    {
+      "id": "KGE-LIT-002",
+      "status": "completed_audited",
+      "audit": {
+        "status": "PASS_WITH_LIMITATIONS",
+        "checks": 865,
+        "failures": 0,
+        "independent_sample_query_replays": 240,
+        "controller_frozen_input_binding": "PASS",
+        "results": "results/KGE-LIT-002",
+        "utc": "2026-10-10T12:15:32Z",
+        "prior_checker_failure_retained": "logs/FastKGE-independent-audit-attempt1.json"
+      },
+      "active_processes": [],
+      "canonical_sha256": "04c24ee6f7f599372473ccc5472fb80ce746f200053687fb67234d1fceb4594b"
+    },
+    {
+      "id": "KGE-LIT-003",
+      "status": "terminal_audited_qualified_evidence",
+      "audit": {
+        "status": "FAIL_RETAINED",
+        "scientific_artifact_status": "PASS_SAMPLED_POST_TRAIN_REPLAY",
+        "scientific_checks": 825,
+        "scientific_failures": 0,
+        "independent_sample_replays": 120,
+        "original_producer_integrity_fail_retained": true,
+        "adjudication": "SUPPORTED_NONCONSUMED_METADATA_DRIFT",
+        "qualification": "All frozen scientific worktree/code/data/config files intact; only unused original repository provenance manifest changed. Numerical results are qualified evidence, not clean reproduction.",
+        "evidence_directory": "results/KGE-LIT-003",
+        "summary_sha256": "44ca92dc2c21ad58b0600bf938084ac0d916154bce1915b66d17e049f41cfbc2"
+      },
+      "active_processes": [],
+      "canonical_sha256": "ebd8a6687017e21c2b0d532f705c0ebb564951b8e5b7a31bf2f47d3d790ea494"
+    },
+    {
+      "id": "KGE-LIT-004",
+      "status": "completed_audited_qualified",
+      "audit": {
+        "status": "PASS_NATIVE_NUMERICS_WITH_RESTORE_LIMITATIONS",
+        "checks": 431751,
+        "failures": 0,
+        "independent_examples": 320,
+        "before_after_records": 640,
+        "evidence_directory": "results/KGE-LIT-004",
+        "summary_sha256": "5ce41dbff7b09521755bf2a423a0ab1f39ba693bac6530ec9be6a02b90c6bbc2",
+        "limitations": [
+          "Single seed0; exposed edit_test selects checkpoint; not independent heldout.",
+          "Repeated locality probes with workers4, not full unique L-Test or author workers32.",
+          "Native CPU alias restoration overwrites base embedding with editor embedding; certify this effective model only.",
+          "Fixed160sampled examples, not independent all-score reconstruction.",
+          "No complete independent optimizer/validation-forward or independent completed code review claimed."
+        ],
+        "retained_failures": [
+          "Original WN CPU auditor wrong epoch convention FAIL",
+          "WN separated-prefix replay v2 FAIL"
+        ]
+      },
+      "active_processes": [],
+      "canonical_sha256": "2e9ab3bd63b57f423135a45acbf862c1a00f4d54348225298d34a497924dbc4b"
+    },
+    {
+      "id": "KGE-LIT-005",
+      "status": "completed_audited_derived",
+      "audit": {
+        "status": "PASS_DERIVED_NUMERICS_WITH_LIMITATIONS",
+        "checks": 10944511,
+        "failures": 0,
+        "queries": 496208,
+        "independent_score_replays": 0,
+        "evidence_directory": "results/KGE-LIT-005",
+        "auditor_sha256": "433fc9a0a625f54b589990e1bbf2c95a0877c955bc95c2e2ff7b2606839ffb77",
+        "summary_sha256": "46233a3ab064dad53b09fb419a8eb2eb310bdd208af91451a7d0343b7d23aede",
+        "limitations": [
+          "CPU provenance, query/filter contracts, numeric derivations and necessary rank identities only.",
+          "No independent embedding-score or CUDA all-query rank recomputation.",
+          "Source native PASS is bound and consumed, not independently repeated by this script.",
+          "Rank identities and tie bounds are necessary checks; they cannot certify score provenance alone.",
+          "Native validation-best precision, historical competitors and single-seed limits remain.",
+          "No canonical changes or formal result promotion."
+        ]
+      },
+      "active_processes": [],
+      "canonical_sha256": "792ce0146366caff7bf1dc23f8f396d64276356d1c7d22c46cd95277afae886d"
+    },
+    {
+      "id": "KGE-LIT-006",
+      "status": "completed_audited",
+      "audit": {
+        "status": "PASS_WITH_LIMITATIONS",
+        "checks": 698,
+        "failures": 0,
+        "independent_rank_replays": 120,
+        "evidence_directory": "results/KGE-LIT-006",
+        "summary_sha256": "dce3950014620064d51445037f31dda7510202ba1b0d572f8cf34747d64b8ddc",
+        "auditor_sha256": "7b9123abae1b97db129fa3936cfb4e15cfb2d1a59663c5f054ac5c890faac977",
+        "limitations": [
+          "Clean-validation adaptation, not exact test-selected upstream protocol; single seed55, not five-run paper mean.",
+          "Historical query-snapshot candidate/filter and double-argsort semantics retained.",
+          "15 posttrain files sampled8/file by default; no complete score certification or pre-FWT inference replay.",
+          "Best sidecar and logs/epoch bytes verified; no independent validation ranking or complete training/optimizer reconstruction.",
+          "Independent checker completed by controller after sidecar agent hit usage limit; no separate completed code review claimed."
+        ]
+      },
+      "active_processes": [],
+      "canonical_sha256": "083f1c55374a3f444336e73b11b324ffece038bca5890b1a441cd830739a7334"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "torch_module_sha256": "3341ffa2c4183bc1bf70022e86cf381dd77dd0a3037debe121701b2b3f2d66d5",
+  "torch_module_path": "/data/lc/tzh/experiment4/literature_baselines_20261010/environment/kgeditor38/lib/python3.8/site-packages/torch/nn/modules/module.py",
+  "load_order_locations": [
+    [
+      1534,
+      "                    input_name = key[len(prefix):]\n                    input_name = input_name.split('.', 1)[0]  # get the name of param/buffer/child\n                    if input_name not in self._modules and input_name not in local_state:\n                        unexpected_keys.append(key)\n\n    def load_state_dict(self, state_dict: Mapping[str, Any],\n                        strict: bool = True):\n        r\"\"\"Copies parameters and buffers from :attr:`state_dict` into\n        this module and its descendants. If :attr:`strict` is ``True``, then\n        the keys of :attr:`state_dict` must exactly match the keys returned\n        by this module's :meth:`~torch.nn.Module.state_dict` function.\n\n        Args:\n            state_dict (dict): a dict containing parameters and\n                persistent buffers.\n            strict (bool, optional): whether to strictly enforce that the keys\n                in :attr:`state_dict` match the keys returned by this module's"
+    ],
+    [
+      1576,
+      "\n        def load(module, prefix=''):\n            local_metadata = {} if metadata is None else metadata.get(prefix[:-1], {})\n            module._load_from_state_dict(\n                state_dict, prefix, local_metadata, True, missing_keys, unexpected_keys, error_msgs)\n            for name, child in module._modules.items():\n                if child is not None:\n                    load(child, prefix + name + '.')\n\n            # Note that the hook can modify missing_keys and unexpected_keys.\n            incompatible_keys = _IncompatibleKeys(missing_keys, unexpected_keys)\n            for hook in module._load_state_dict_post_hooks.values():\n                out = hook(module, incompatible_keys)\n                assert out is None, (\n                    \"Hooks registered with ``register_load_state_dict_post_hook`` are not\"\n                    \"expected to return new values, if incompatible_keys need to be modified,\"\n                    \"it should be done inplace.\""
+    ]
+  ],
+  "framework": "Torch1.12 shared CPU storage & recursive Module.load_state_dict; unchanged shared environment"
+}

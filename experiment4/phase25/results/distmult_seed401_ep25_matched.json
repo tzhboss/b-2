@@ -1,0 +1,1403 @@
+{
+  "kind": "DistMult",
+  "seed": 401,
+  "epoch": 25,
+  "n_eval": 2,
+  "checkpoint_sha256": "efa54662dd51659fbe70e4f8478b586206d3faf53adc0d1149f41fec0171fbfc",
+  "protocol": "phase24 exact fixed queries, TRAIN guard separate TRAIN heldout, VALID edit targets, no TEST; actual shared head/tail score; ranked top10; 4 per-case headrooms relative to actual Direct L21, hard max B5.2",
+  "global_hard_budget": 5.2,
+  "headrooms": [
+    0.0,
+    0.2,
+    0.5,
+    1.0
+  ],
+  "lambdas": [
+    0.3,
+    1.0,
+    3.0
+  ],
+  "selection_label_scope": "TRAIN guard score drift ONLY; TRAIN holdout is evaluation only",
+  "author_full_sota": false,
+  "official_test_read": false,
+  "elapsed_s": 2.3374140550149605,
+  "rows": [
+    {
+      "seed": 401,
+      "query": [
+        3787,
+        75
+      ],
+      "targets": [
+        1499,
+        3031,
+        5753
+      ],
+      "n_guard": 34,
+      "n_cross_holdout": 24,
+      "n_same_holdout": 10,
+      "candidates": {
+        "Direct": {
+          "lambda": 0.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 1,
+            "old_damage": 1,
+            "cross_damage": 1,
+            "same_damage": 2,
+            "guard_drift": 0.009325773275299903,
+            "cost_l21": 2.1326915640480912,
+            "fro": 0.7850329329577322
+          },
+          "direction_counts": []
+        },
+        "legacy_tailonly_lam3": {
+          "lambda": 3.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 1,
+            "old_damage": 1,
+            "cross_damage": 1,
+            "same_damage": 2,
+            "guard_drift": 0.0004936027549397791,
+            "cost_l21": 2.302029237624182,
+            "fro": 0.8590867127278022
+          },
+          "direction_counts": []
+        },
+        "incident_all_lam0.3": {
+          "lambda": 0.3,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 1,
+            "old_damage": 1,
+            "cross_damage": 1,
+            "same_damage": 2,
+            "guard_drift": 0.004667095129876861,
+            "cost_l21": 2.153412653225876,
+            "fro": 0.7944226107467013
+          },
+          "direction_counts": [
+            {
+              "entity": 8429,
+              "incident": 2,
+              "used_directions": 2
+            },
+            {
+              "entity": 1063,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 11898,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 1943,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 14476,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 6981,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 3031,
+              "incident": 4,
+              "used_directions": 4
+            },
+            {
+              "entity": 5753,
+              "incident": 4,
+              "used_directions": 4
+            }
+          ]
+        },
+        "incident_all_lam1": {
+          "lambda": 1.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 1,
+            "old_damage": 1,
+            "cross_damage": 1,
+            "same_damage": 2,
+            "guard_drift": 0.001757606495002453,
+            "cost_l21": 2.214910873057595,
+            "fro": 0.8216492858451341
+          },
+          "direction_counts": [
+            {
+              "entity": 8429,
+              "incident": 2,
+              "used_directions": 2
+            },
+            {
+              "entity": 1063,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 11898,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 1943,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 14476,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 6981,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 3031,
+              "incident": 4,
+              "used_directions": 4
+            },
+            {
+              "entity": 5753,
+              "incident": 4,
+              "used_directions": 4
+            }
+          ]
+        },
+        "incident_all_lam3": {
+          "lambda": 3.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 1,
+            "old_damage": 1,
+            "cross_damage": 1,
+            "same_damage": 2,
+            "guard_drift": 0.0004392105632107681,
+            "cost_l21": 2.3069609141273437,
+            "fro": 0.8599670329307799
+          },
+          "direction_counts": [
+            {
+              "entity": 8429,
+              "incident": 2,
+              "used_directions": 2
+            },
+            {
+              "entity": 1063,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 11898,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 1943,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 14476,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 6981,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 3031,
+              "incident": 4,
+              "used_directions": 4
+            },
+            {
+              "entity": 5753,
+              "incident": 4,
+              "used_directions": 4
+            }
+          ]
+        },
+        "incident_top2_lam0.3": {
+          "lambda": 0.3,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 1,
+            "old_damage": 1,
+            "cross_damage": 1,
+            "same_damage": 2,
+            "guard_drift": 0.006720968378551537,
+            "cost_l21": 2.142412879637709,
+            "fro": 0.7891676506864248
+          },
+          "direction_counts": [
+            {
+              "entity": 8429,
+              "incident": 2,
+              "used_directions": 2
+            },
+            {
+              "entity": 1063,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 11898,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 1943,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 14476,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 6981,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 3031,
+              "incident": 4,
+              "used_directions": 2
+            },
+            {
+              "entity": 5753,
+              "incident": 4,
+              "used_directions": 2
+            }
+          ]
+        },
+        "incident_top2_lam1": {
+          "lambda": 1.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 1,
+            "old_damage": 1,
+            "cross_damage": 1,
+            "same_damage": 2,
+            "guard_drift": 0.0043779105035854264,
+            "cost_l21": 2.1807916496488025,
+            "fro": 0.8049138632904732
+          },
+          "direction_counts": [
+            {
+              "entity": 8429,
+              "incident": 2,
+              "used_directions": 2
+            },
+            {
+              "entity": 1063,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 11898,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 1943,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 14476,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 6981,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 3031,
+              "incident": 4,
+              "used_directions": 2
+            },
+            {
+              "entity": 5753,
+              "incident": 4,
+              "used_directions": 2
+            }
+          ]
+        },
+        "incident_top2_lam3": {
+          "lambda": 3.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 1,
+            "old_damage": 1,
+            "cross_damage": 1,
+            "same_damage": 2,
+            "guard_drift": 0.0028333480340105113,
+            "cost_l21": 2.252210933666042,
+            "fro": 0.8323549666620693
+          },
+          "direction_counts": [
+            {
+              "entity": 8429,
+              "incident": 2,
+              "used_directions": 2
+            },
+            {
+              "entity": 1063,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 11898,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 1943,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 14476,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 6981,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 3031,
+              "incident": 4,
+              "used_directions": 2
+            },
+            {
+              "entity": 5753,
+              "incident": 4,
+              "used_directions": 2
+            }
+          ]
+        },
+        "nonincident_pseudo2_lam0.3": {
+          "lambda": 0.3,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 1,
+            "old_damage": 1,
+            "cross_damage": 1,
+            "same_damage": 2,
+            "guard_drift": 0.008033866326359915,
+            "cost_l21": 2.143370686928053,
+            "fro": 0.7895102458143191
+          },
+          "direction_counts": [
+            {
+              "entity": 8429,
+              "incident": 2,
+              "used_directions": 2
+            },
+            {
+              "entity": 1063,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 11898,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 1943,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 14476,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 6981,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 3031,
+              "incident": 4,
+              "used_directions": 2
+            },
+            {
+              "entity": 5753,
+              "incident": 4,
+              "used_directions": 2
+            }
+          ]
+        },
+        "nonincident_pseudo2_lam1": {
+          "lambda": 1.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 1,
+            "old_damage": 1,
+            "cross_damage": 1,
+            "same_damage": 2,
+            "guard_drift": 0.006459733485651299,
+            "cost_l21": 2.1944234016794706,
+            "fro": 0.811157658911798
+          },
+          "direction_counts": [
+            {
+              "entity": 8429,
+              "incident": 2,
+              "used_directions": 2
+            },
+            {
+              "entity": 1063,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 11898,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 1943,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 14476,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 6981,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 3031,
+              "incident": 4,
+              "used_directions": 2
+            },
+            {
+              "entity": 5753,
+              "incident": 4,
+              "used_directions": 2
+            }
+          ]
+        },
+        "nonincident_pseudo2_lam3": {
+          "lambda": 3.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 1,
+            "old_damage": 1,
+            "cross_damage": 1,
+            "same_damage": 2,
+            "guard_drift": 0.004801549036084367,
+            "cost_l21": 2.318735607795297,
+            "fro": 0.8675748546756697
+          },
+          "direction_counts": [
+            {
+              "entity": 8429,
+              "incident": 2,
+              "used_directions": 2
+            },
+            {
+              "entity": 1063,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 11898,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 1943,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 14476,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 6981,
+              "incident": 0,
+              "used_directions": 0
+            },
+            {
+              "entity": 3031,
+              "incident": 4,
+              "used_directions": 2
+            },
+            {
+              "entity": 5753,
+              "incident": 4,
+              "used_directions": 2
+            }
+          ]
+        }
+      },
+      "matched": {
+        "0.0": {
+          "cap": 2.1326915640480912,
+          "direct_feasible": true,
+          "methods": {
+            "incident_all": {
+              "candidate": "Direct",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.009325773275299903,
+                "cost_l21": 2.1326915640480912,
+                "fro": 0.7850329329577322
+              }
+            },
+            "incident_top2": {
+              "candidate": "Direct",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.009325773275299903,
+                "cost_l21": 2.1326915640480912,
+                "fro": 0.7850329329577322
+              }
+            },
+            "nonincident_pseudo2": {
+              "candidate": "Direct",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.009325773275299903,
+                "cost_l21": 2.1326915640480912,
+                "fro": 0.7850329329577322
+              }
+            },
+            "legacy_tailonly": {
+              "candidate": "Direct",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.009325773275299903,
+                "cost_l21": 2.1326915640480912,
+                "fro": 0.7850329329577322
+              }
+            }
+          }
+        },
+        "0.2": {
+          "cap": 2.3326915640480914,
+          "direct_feasible": true,
+          "methods": {
+            "incident_all": {
+              "candidate": "incident_all_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.0004392105632107681,
+                "cost_l21": 2.3069609141273437,
+                "fro": 0.8599670329307799
+              }
+            },
+            "incident_top2": {
+              "candidate": "incident_top2_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.0028333480340105113,
+                "cost_l21": 2.252210933666042,
+                "fro": 0.8323549666620693
+              }
+            },
+            "nonincident_pseudo2": {
+              "candidate": "nonincident_pseudo2_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.004801549036084367,
+                "cost_l21": 2.318735607795297,
+                "fro": 0.8675748546756697
+              }
+            },
+            "legacy_tailonly": {
+              "candidate": "legacy_tailonly_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.0004936027549397791,
+                "cost_l21": 2.302029237624182,
+                "fro": 0.8590867127278022
+              }
+            }
+          }
+        },
+        "0.5": {
+          "cap": 2.6326915640480912,
+          "direct_feasible": true,
+          "methods": {
+            "incident_all": {
+              "candidate": "incident_all_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.0004392105632107681,
+                "cost_l21": 2.3069609141273437,
+                "fro": 0.8599670329307799
+              }
+            },
+            "incident_top2": {
+              "candidate": "incident_top2_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.0028333480340105113,
+                "cost_l21": 2.252210933666042,
+                "fro": 0.8323549666620693
+              }
+            },
+            "nonincident_pseudo2": {
+              "candidate": "nonincident_pseudo2_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.004801549036084367,
+                "cost_l21": 2.318735607795297,
+                "fro": 0.8675748546756697
+              }
+            },
+            "legacy_tailonly": {
+              "candidate": "legacy_tailonly_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.0004936027549397791,
+                "cost_l21": 2.302029237624182,
+                "fro": 0.8590867127278022
+              }
+            }
+          }
+        },
+        "1.0": {
+          "cap": 3.1326915640480912,
+          "direct_feasible": true,
+          "methods": {
+            "incident_all": {
+              "candidate": "incident_all_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.0004392105632107681,
+                "cost_l21": 2.3069609141273437,
+                "fro": 0.8599670329307799
+              }
+            },
+            "incident_top2": {
+              "candidate": "incident_top2_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.0028333480340105113,
+                "cost_l21": 2.252210933666042,
+                "fro": 0.8323549666620693
+              }
+            },
+            "nonincident_pseudo2": {
+              "candidate": "nonincident_pseudo2_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.004801549036084367,
+                "cost_l21": 2.318735607795297,
+                "fro": 0.8675748546756697
+              }
+            },
+            "legacy_tailonly": {
+              "candidate": "legacy_tailonly_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 1,
+                "old_damage": 1,
+                "cross_damage": 1,
+                "same_damage": 2,
+                "guard_drift": 0.0004936027549397791,
+                "cost_l21": 2.302029237624182,
+                "fro": 0.8590867127278022
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "seed": 401,
+      "query": [
+        11519,
+        39
+      ],
+      "targets": [
+        407,
+        2437,
+        4441
+      ],
+      "n_guard": 34,
+      "n_cross_holdout": 24,
+      "n_same_holdout": 10,
+      "candidates": {
+        "Direct": {
+          "lambda": 0.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 0,
+            "old_damage": 0,
+            "cross_damage": 0,
+            "same_damage": 0,
+            "guard_drift": 0.0501031754278889,
+            "cost_l21": 4.94139464083866,
+            "fro": 2.856993499349899
+          },
+          "direction_counts": []
+        },
+        "legacy_tailonly_lam3": {
+          "lambda": 3.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 0,
+            "old_damage": 0,
+            "cross_damage": 0,
+            "same_damage": 0,
+            "guard_drift": 0.0029422852982638782,
+            "cost_l21": 5.058370467997253,
+            "fro": 2.9254087490284624
+          },
+          "direction_counts": []
+        },
+        "incident_all_lam0.3": {
+          "lambda": 0.3,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 0,
+            "old_damage": 0,
+            "cross_damage": 0,
+            "same_damage": 0,
+            "guard_drift": 0.02573135538387215,
+            "cost_l21": 4.957391444034946,
+            "fro": 2.86636712220373
+          },
+          "direction_counts": [
+            {
+              "entity": 407,
+              "incident": 1,
+              "used_directions": 1
+            },
+            {
+              "entity": 2437,
+              "incident": 4,
+              "used_directions": 4
+            },
+            {
+              "entity": 4441,
+              "incident": 1,
+              "used_directions": 1
+            }
+          ]
+        },
+        "incident_all_lam1": {
+          "lambda": 1.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 0,
+            "old_damage": 0,
+            "cross_damage": 0,
+            "same_damage": 0,
+            "guard_drift": 0.010636829967495485,
+            "cost_l21": 4.999299806761467,
+            "fro": 2.8908807820853784
+          },
+          "direction_counts": [
+            {
+              "entity": 407,
+              "incident": 1,
+              "used_directions": 1
+            },
+            {
+              "entity": 2437,
+              "incident": 4,
+              "used_directions": 4
+            },
+            {
+              "entity": 4441,
+              "incident": 1,
+              "used_directions": 1
+            }
+          ]
+        },
+        "incident_all_lam3": {
+          "lambda": 3.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 0,
+            "old_damage": 0,
+            "cross_damage": 0,
+            "same_damage": 0,
+            "guard_drift": 0.0029422852982638782,
+            "cost_l21": 5.058370467997253,
+            "fro": 2.9254087490284624
+          },
+          "direction_counts": [
+            {
+              "entity": 407,
+              "incident": 1,
+              "used_directions": 1
+            },
+            {
+              "entity": 2437,
+              "incident": 4,
+              "used_directions": 4
+            },
+            {
+              "entity": 4441,
+              "incident": 1,
+              "used_directions": 1
+            }
+          ]
+        },
+        "incident_top2_lam0.3": {
+          "lambda": 0.3,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 0,
+            "old_damage": 0,
+            "cross_damage": 0,
+            "same_damage": 0,
+            "guard_drift": 0.028254281163622972,
+            "cost_l21": 4.95389450626858,
+            "fro": 2.8643061673374652
+          },
+          "direction_counts": [
+            {
+              "entity": 407,
+              "incident": 1,
+              "used_directions": 1
+            },
+            {
+              "entity": 2437,
+              "incident": 4,
+              "used_directions": 2
+            },
+            {
+              "entity": 4441,
+              "incident": 1,
+              "used_directions": 1
+            }
+          ]
+        },
+        "incident_top2_lam1": {
+          "lambda": 1.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 0,
+            "old_damage": 0,
+            "cross_damage": 0,
+            "same_damage": 0,
+            "guard_drift": 0.012283860500493423,
+            "cost_l21": 4.994531229146425,
+            "fro": 2.8880667194238328
+          },
+          "direction_counts": [
+            {
+              "entity": 407,
+              "incident": 1,
+              "used_directions": 1
+            },
+            {
+              "entity": 2437,
+              "incident": 4,
+              "used_directions": 2
+            },
+            {
+              "entity": 4441,
+              "incident": 1,
+              "used_directions": 1
+            }
+          ]
+        },
+        "incident_top2_lam3": {
+          "lambda": 3.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 0,
+            "old_damage": 0,
+            "cross_damage": 1,
+            "same_damage": 0,
+            "guard_drift": 0.004154675391353155,
+            "cost_l21": 5.054816286923852,
+            "fro": 2.923314424466217
+          },
+          "direction_counts": [
+            {
+              "entity": 407,
+              "incident": 1,
+              "used_directions": 1
+            },
+            {
+              "entity": 2437,
+              "incident": 4,
+              "used_directions": 2
+            },
+            {
+              "entity": 4441,
+              "incident": 1,
+              "used_directions": 1
+            }
+          ]
+        },
+        "nonincident_pseudo2_lam0.3": {
+          "lambda": 0.3,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 0,
+            "old_damage": 0,
+            "cross_damage": 0,
+            "same_damage": 0,
+            "guard_drift": 0.04316335542248876,
+            "cost_l21": 4.981192683074106,
+            "fro": 2.880518870136454
+          },
+          "direction_counts": [
+            {
+              "entity": 407,
+              "incident": 1,
+              "used_directions": 1
+            },
+            {
+              "entity": 2437,
+              "incident": 4,
+              "used_directions": 2
+            },
+            {
+              "entity": 4441,
+              "incident": 1,
+              "used_directions": 1
+            }
+          ]
+        },
+        "nonincident_pseudo2_lam1": {
+          "lambda": 1.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 0,
+            "old_damage": 0,
+            "cross_damage": 0,
+            "same_damage": 0,
+            "guard_drift": 0.035796706311504035,
+            "cost_l21": 5.131276859137584,
+            "fro": 2.9703808887138665
+          },
+          "direction_counts": [
+            {
+              "entity": 407,
+              "incident": 1,
+              "used_directions": 1
+            },
+            {
+              "entity": 2437,
+              "incident": 4,
+              "used_directions": 2
+            },
+            {
+              "entity": 4441,
+              "incident": 1,
+              "used_directions": 1
+            }
+          ]
+        },
+        "nonincident_pseudo2_lam3": {
+          "lambda": 3.0,
+          "metrics": {
+            "all3": 1,
+            "newhits": 3,
+            "original_new_hits": 0,
+            "old_damage": 0,
+            "cross_damage": 0,
+            "same_damage": 0,
+            "guard_drift": 0.02961854245415784,
+            "cost_l21": 5.375131483353647,
+            "fro": 3.1193707189861883
+          },
+          "direction_counts": [
+            {
+              "entity": 407,
+              "incident": 1,
+              "used_directions": 1
+            },
+            {
+              "entity": 2437,
+              "incident": 4,
+              "used_directions": 2
+            },
+            {
+              "entity": 4441,
+              "incident": 1,
+              "used_directions": 1
+            }
+          ]
+        }
+      },
+      "matched": {
+        "0.0": {
+          "cap": 4.94139464083866,
+          "direct_feasible": true,
+          "methods": {
+            "incident_all": {
+              "candidate": "Direct",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 0,
+                "same_damage": 0,
+                "guard_drift": 0.0501031754278889,
+                "cost_l21": 4.94139464083866,
+                "fro": 2.856993499349899
+              }
+            },
+            "incident_top2": {
+              "candidate": "Direct",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 0,
+                "same_damage": 0,
+                "guard_drift": 0.0501031754278889,
+                "cost_l21": 4.94139464083866,
+                "fro": 2.856993499349899
+              }
+            },
+            "nonincident_pseudo2": {
+              "candidate": "Direct",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 0,
+                "same_damage": 0,
+                "guard_drift": 0.0501031754278889,
+                "cost_l21": 4.94139464083866,
+                "fro": 2.856993499349899
+              }
+            },
+            "legacy_tailonly": {
+              "candidate": "Direct",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 0,
+                "same_damage": 0,
+                "guard_drift": 0.0501031754278889,
+                "cost_l21": 4.94139464083866,
+                "fro": 2.856993499349899
+              }
+            }
+          }
+        },
+        "0.2": {
+          "cap": 5.14139464083866,
+          "direct_feasible": true,
+          "methods": {
+            "incident_all": {
+              "candidate": "incident_all_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 0,
+                "same_damage": 0,
+                "guard_drift": 0.0029422852982638782,
+                "cost_l21": 5.058370467997253,
+                "fro": 2.9254087490284624
+              }
+            },
+            "incident_top2": {
+              "candidate": "incident_top2_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 1,
+                "same_damage": 0,
+                "guard_drift": 0.004154675391353155,
+                "cost_l21": 5.054816286923852,
+                "fro": 2.923314424466217
+              }
+            },
+            "nonincident_pseudo2": {
+              "candidate": "nonincident_pseudo2_lam1",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 0,
+                "same_damage": 0,
+                "guard_drift": 0.035796706311504035,
+                "cost_l21": 5.131276859137584,
+                "fro": 2.9703808887138665
+              }
+            },
+            "legacy_tailonly": {
+              "candidate": "legacy_tailonly_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 0,
+                "same_damage": 0,
+                "guard_drift": 0.0029422852982638782,
+                "cost_l21": 5.058370467997253,
+                "fro": 2.9254087490284624
+              }
+            }
+          }
+        },
+        "0.5": {
+          "cap": 5.2,
+          "direct_feasible": true,
+          "methods": {
+            "incident_all": {
+              "candidate": "incident_all_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 0,
+                "same_damage": 0,
+                "guard_drift": 0.0029422852982638782,
+                "cost_l21": 5.058370467997253,
+                "fro": 2.9254087490284624
+              }
+            },
+            "incident_top2": {
+              "candidate": "incident_top2_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 1,
+                "same_damage": 0,
+                "guard_drift": 0.004154675391353155,
+                "cost_l21": 5.054816286923852,
+                "fro": 2.923314424466217
+              }
+            },
+            "nonincident_pseudo2": {
+              "candidate": "nonincident_pseudo2_lam1",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 0,
+                "same_damage": 0,
+                "guard_drift": 0.035796706311504035,
+                "cost_l21": 5.131276859137584,
+                "fro": 2.9703808887138665
+              }
+            },
+            "legacy_tailonly": {
+              "candidate": "legacy_tailonly_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 0,
+                "same_damage": 0,
+                "guard_drift": 0.0029422852982638782,
+                "cost_l21": 5.058370467997253,
+                "fro": 2.9254087490284624
+              }
+            }
+          }
+        },
+        "1.0": {
+          "cap": 5.2,
+          "direct_feasible": true,
+          "methods": {
+            "incident_all": {
+              "candidate": "incident_all_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 0,
+                "same_damage": 0,
+                "guard_drift": 0.0029422852982638782,
+                "cost_l21": 5.058370467997253,
+                "fro": 2.9254087490284624
+              }
+            },
+            "incident_top2": {
+              "candidate": "incident_top2_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 1,
+                "same_damage": 0,
+                "guard_drift": 0.004154675391353155,
+                "cost_l21": 5.054816286923852,
+                "fro": 2.923314424466217
+              }
+            },
+            "nonincident_pseudo2": {
+              "candidate": "nonincident_pseudo2_lam1",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 0,
+                "same_damage": 0,
+                "guard_drift": 0.035796706311504035,
+                "cost_l21": 5.131276859137584,
+                "fro": 2.9703808887138665
+              }
+            },
+            "legacy_tailonly": {
+              "candidate": "legacy_tailonly_lam3",
+              "metric": {
+                "all3": 1,
+                "newhits": 3,
+                "original_new_hits": 0,
+                "old_damage": 0,
+                "cross_damage": 0,
+                "same_damage": 0,
+                "guard_drift": 0.0029422852982638782,
+                "cost_l21": 5.058370467997253,
+                "fro": 2.9254087490284624
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+id: KGE-ENTITY-COMMON-SHARED-RANK-CACHE-023R3
+status: completed_audited_synthetic_cache_controls_only
+config: configs/shared-rank-cache23r3.json
+protocol: plan/shared-rank-cache-v2-protocol.md
+scope: Exact shared cache using explicit PyTorch FP64 binary tree, same reference
+  semantics
+registered_utc: '2026-10-11T03:53:06.955244+00:00'
+frozen_input_sha256:
+  configs/shared-rank-cache23r3.json: bd185ece3318231760538802f7918261f58617919d25015181fa57d6a6d8673b
+  plan/shared-rank-cache-protocol.md: f0e9930131afa9e57ef827e456c00ca59a30c94fe7efdb2e89738e1be8733bfd
+  plan/shared-rank-cache-v2-protocol.md: 78d76d6c0f22df158ceef9e5657cc4c82f52d31833afa45d5a24db284f86abd0
+  src/shared_rank_cache_v2.py: 8980fac50a992a74f1dd339c582ad3d1382c0fb140688cf87c1a6c6a4c7abaad
+  scripts/check_shared_rank_cache_v2.py: b8f936b17a991974137c240adc293eea137a19c38fc75bca6fc5b1e235d343f5
+  scripts/audit_shared_rank_cache_v2.py: aef50761457322232605eba116da6073b58b23f04d8e2bc6d3d84476d7a76509
+retained_failed_attempts:
+- KGE-ENTITY-COMMON-SHARED-RANK-CACHE-023
+- KGE-ENTITY-COMMON-SHARED-RANK-CACHE-023R2
+repair: Explicit pure PyTorch pairwise tree scorer; no Triton/C compiler; preserved
+  strict ranks and complete scope
+active_processes: []
+exit_code: 0
+result_directory: results/KGE-ENTITY-COMMON-SHARED-RANK-CACHE-023R3

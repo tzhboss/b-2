@@ -1,0 +1,24 @@
+# 单一主表
+
+每行method、source_commit／source_sha、adaptation、backbone、seed、old_train_sha、increment_sha、old/new_query_sha、candidate_count=11258、before_pool、after_pool、new_entities、parameters_total/trainable/modified、walltime、memory、oldTop10_n/lost/rate、newHits10/MRR、old_rank_delta_P95、safe_success（仅定义了同一更新单元时）、data_coverage、audit_status。原方法和机制适配行必须准确命名。各法均在同一任务和完整候选池；正式数值只来自通过审计的轻量结果，未完成／失败不填0。
+
+三seed均值／样本标准差与逐seed状态保留。不完整seed集合明确标为部分结果。source_sha绑定对应代码、配置、输入和审计证据，不由方法名称推断作者发布包已通过完整认证。
+
+LearnedProposal候选增加source_sgd_elapsed_s、postprocessing_elapsed_s、零更新／求解失败数、TRAIN保护集损伤与VALID效用门槛。主表增量学习秒计源SGD加投影时间，另列实际阶段时间；基座／KGEditor meta／guard及basis准备单独披露。SVD、TRUE-only、TRUE+Prediction三seed配对效应只作开发比较，不作三seed强显著性声明或SOTA宣称。
+
+019任务评分加权对照增加projection_metric、metric_cohort、metric_eigenvalue_bound；原始控制仍逐行保留。020方向效用门槛和独立复算单列，未完成时明确pending。新的注册任务会增加planned_jobs，不能把分母变化误解为已完成实验倒退。KGEditor继续尝试按同方法／种子槽位合并，原失败留在attempt_history；017底座CPU float64复审区别原004 float32失败，后续审计精度不变。
+
+022R2／023R3是合成实现控制，024是TRAIN保护范围编译及资源预检；均不作为
+新的方法成绩行或增加共同方法比较108槽位分母。共享旧行方法须另列guard
+评分精度、初态TRUE／P资格数、TRAIN affected keys、原始和去重参考成员数、
+分组数、cache显存／准备成本、旧行修改预算和最终完整评价成本。所有成员
+结构审计与固定完整分数行审计的覆盖范围必须分别披露。
+
+025／025R2求解器控制及026真实8步集成预检不增加方法成绩分母。
+027注册三种方案各三seed后，v3主表为117槽位；未启动、运行及待审计
+均保留空成绩。Shared方法必须同时有3753步身份/预算重放、独立TRAIN
+旧行选择/权重/半径复算、完整终态CPU参考查询排名和既有共同推断审计。
+每步GPU保护检查与终态完整CPU重放不是每步完整CPU重放，不混称覆盖。
+source_inclusive_incremental_elapsed_s包括源SGD、024范围准备及本次更新；
+scope_preparation_elapsed_s与modifiable_parameters在JSON单列。028为独立
+方向效用门槛复算，不另增加方法槽位，审计通过不等于效用通过。

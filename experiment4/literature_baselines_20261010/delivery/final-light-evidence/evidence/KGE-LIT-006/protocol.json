@@ -1,0 +1,21 @@
+{
+  "id": "KGE-LIT-006",
+  "scope": "classic LKGE FACT fixed clean-validation adaptation",
+  "source_commit": "5a74daefb72cf9718f604b0f29d277dbc638a20d",
+  "dataset": "FACT",
+  "seed": 55,
+  "gpu": 6,
+  "training": "Explicit clean validation adaptation FACT seed55; native dim200 Adam1e-4 batch2048 margin8 negatives10 max200epoch/5snapshots patience3 alpha.01 beta1.0 from FACT config; regular/reconstruct/finetune enabled, transfer False.",
+  "completion_contract": {
+    "snapshots": 5,
+    "best_checkpoints": 5,
+    "test_rank_files": 19,
+    "best_selection_sidecars": 5
+  },
+  "limitations": "Not exact upstream reproduction: valid.txt selects best instead of upstream test.txt. ID encounter order and all-known filters consequently include valid. Native historical test snapshot candidates/filter preserved; one seed is not paper five-run mean.",
+  "preparation_job_sha256": "085dfe87521ea84656c9754398b454e9f26c3f5e001aded469c0b1af4c8bef85",
+  "source_manifest_sha256": "8410c9e3adaf14e975e4eac24f0ef403257973bae3fefc6d0acdf9abb523728b",
+  "no_parameter_grid": true,
+  "no_shortened_training": true,
+  "paper_doi": "10.1609/aaai.v37i4.25539"
+}

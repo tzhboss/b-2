@@ -1,0 +1,134 @@
+{
+  "status": "PASS_FIXED_TREE_SCORING_SHAPE_CONTROLS",
+  "device": "cuda:0",
+  "torch_version": "2.5.1+cu124",
+  "test_read": false,
+  "valid_read": false,
+  "model_updates": 0,
+  "shapes": [
+    {
+      "dimension": 200,
+      "queries": 0,
+      "candidates": 1,
+      "output_cells": 0,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    },
+    {
+      "dimension": 200,
+      "queries": 65,
+      "candidates": 0,
+      "output_cells": 0,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    },
+    {
+      "dimension": 1,
+      "queries": 65,
+      "candidates": 2,
+      "output_cells": 130,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    },
+    {
+      "dimension": 7,
+      "queries": 65,
+      "candidates": 17,
+      "output_cells": 1105,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    },
+    {
+      "dimension": 200,
+      "queries": 1,
+      "candidates": 1,
+      "output_cells": 1,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    },
+    {
+      "dimension": 200,
+      "queries": 64,
+      "candidates": 2,
+      "output_cells": 128,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    },
+    {
+      "dimension": 200,
+      "queries": 65,
+      "candidates": 2,
+      "output_cells": 130,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    },
+    {
+      "dimension": 200,
+      "queries": 1024,
+      "candidates": 1,
+      "output_cells": 1024,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    },
+    {
+      "dimension": 200,
+      "queries": 16896,
+      "candidates": 1,
+      "output_cells": 16896,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    },
+    {
+      "dimension": 200,
+      "queries": 8449,
+      "candidates": 2,
+      "output_cells": 16898,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    },
+    {
+      "dimension": 200,
+      "queries": 129,
+      "candidates": 255,
+      "output_cells": 32895,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    },
+    {
+      "dimension": 200,
+      "queries": 129,
+      "candidates": 256,
+      "output_cells": 33024,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    },
+    {
+      "dimension": 200,
+      "queries": 129,
+      "candidates": 257,
+      "output_cells": 33153,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    },
+    {
+      "dimension": 256,
+      "queries": 65,
+      "candidates": 2,
+      "output_cells": 130,
+      "exact_original_and_numpy": true,
+      "bit_patterns_checked": true
+    }
+  ],
+  "total_cells": 135514,
+  "elapsed_s": 0.3703025409486145,
+  "code_sha256": {
+    "src/adaptive_rank_scoring.py": "d478a0bc553d8a7ccb0079b68821bfcfe102455b97cf8b5aa496712ab697c2f1",
+    "src/shared_rank_cache_v2.py": "8980fac50a992a74f1dd339c582ad3d1382c0fb140688cf87c1a6c6a4c7abaad",
+    "scripts/check_rank_scoring.py": "e0b01e1d992d28339c44f6aa5d02d709b8927256e3b562a1b04684c4ca678c22"
+  },
+  "limits": [
+    "Scoring identity only, no complete graph trajectory, method utility or runtime speedup claim.",
+    "CPU controls cannot certify CUDA launch-shape identity; CUDA qualification remains required before graph use.",
+    "No current registered scorer or source/config is modified."
+  ]
+}

@@ -1,0 +1,21 @@
+experiment_id: KGE-RANK-COMP-001-AUDIT-V2
+status: completed_audited_qualified
+source_experiment: ../KGE-RANK-COMP-001/experiment.yaml
+audit_script_sha256: caf8d5ad96f3ac201182822de86084d7856da8d33528ff8afecff079615374b9
+registration: Retain original1e-5 vector and1e-7 residual gates. Continue full diagnostics
+  recording Ridge failures; do not promote failing Ridge performance. No changes to
+  vectors, producer, old input manifest or sample cohort.
+jobs:
+  distmult:
+    exit_code: 0
+    status: terminal_pending_controller_review
+  complex:
+    exit_code: 0
+    status: terminal_pending_controller_review
+active_processes: []
+audit:
+  status: PASS_EIGHT_METHOD_COMPARISON_WITH_RIDGE_FAILURE_RETAINED
+  promoted_result_directory: results/KGE-RANK-COMP-001-AUDIT-V2
+  initial_failure_retained: true
+  excluded_methods:
+  - PublishedRidge

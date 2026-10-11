@@ -1,0 +1,682 @@
+{
+  "scope": "All nine unchanged3753-step cached solver trajectories, inherited source audits; no new method or utility search",
+  "jobs_passed": 9,
+  "jobs_total": 9,
+  "rows": [
+    {
+      "result": {
+        "status": "PASS_ALL3753_CACHED_SOLVER_SOURCE_TRAJECTORY",
+        "id": "shared-graph-full-s17",
+        "runtime_id": "cached-index-shared-graph-full-s17",
+        "method": "SharedFrozenFull",
+        "seed": 17,
+        "steps_matched": 3753,
+        "terminal_weights_bitwise_equal": true,
+        "fixed_validation_identical": true,
+        "source_original_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68270,
+          "reference_members_retained": 235882,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_postprocessing_elapsed_s": 3951.1733288320247,
+        "cached_postprocessing_elapsed_s": 2479.5083831109805,
+        "source_inclusive_incremental_elapsed_s": 4000.0116634520236,
+        "cached_inclusive_incremental_elapsed_s": 2528.3467177309794,
+        "cached_solver_elapsed_sum_s": 1393.022551181959,
+        "bound_source_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/best.pt": "d324a9caee91df9142d542b29ef643d50960ed36da0be51130968b065e6aa7c4",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/shared-replay.npz": "a17bcad115ed682b3113896a8fe9c035c3f9169bffa8b7dca00247bf371f9b31",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/steps.json": "bac2cdaae678e1b9e408b37b134bd698a4c01e30a64b3a14bb77269f6447cbde",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/training-receipt.json": "b2204a0eb40ff72a7149f14d8954ff9f7fb1fc9eae7048aee4cef873f9fc5095",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s17/audit.json": "5b3d911b7fb75f95ead56d326a61403f874b448ac110ee0bad9f3f6eccecb28f"
+        },
+        "bound_runtime_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s17/best.pt": "d324a9caee91df9142d542b29ef643d50960ed36da0be51130968b065e6aa7c4",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s17/initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s17/shared-replay.npz": "a17bcad115ed682b3113896a8fe9c035c3f9169bffa8b7dca00247bf371f9b31",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s17/steps.json": "35cff46fe2f88b6654bf278bc82bb17245617e4754124a794d2f06a47f842d75",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s17/selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s17/training-receipt.json": "67763d2e043cd71f0d3e5484e67a26d3d7f41163a433a05e065a8a0e48d8f788"
+        },
+        "test_read": false,
+        "valid_read": true,
+        "validation_selection_changed": false,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      },
+      "audit": {
+        "status": "PASS_ALL3753_INDEPENDENT_TRACE_IDENTITY_AND_INHERITED_FULL_CPU_SCOPE",
+        "failures": [],
+        "steps_replayed": 3753,
+        "exact_all_state_hashes": true,
+        "exact_all_replay_arrays": true,
+        "terminal_weights_bitwise_equal": true,
+        "source_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68270,
+          "reference_members_retained": 235882,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_audit_sha256": "5b3d911b7fb75f95ead56d326a61403f874b448ac110ee0bad9f3f6eccecb28f",
+        "receipt_sha256": "afd40e4851115ae2e8561b5448c4806079f443f159cb000c9cfde56804b63dac",
+        "test_read": false,
+        "valid_read": true,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      }
+    },
+    {
+      "result": {
+        "status": "PASS_ALL3753_CACHED_SOLVER_SOURCE_TRAJECTORY",
+        "id": "shared-graph-scoped-s17",
+        "runtime_id": "cached-index-shared-graph-scoped-s17",
+        "method": "SharedFrozenScoped",
+        "seed": 17,
+        "steps_matched": 3753,
+        "terminal_weights_bitwise_equal": true,
+        "fixed_validation_identical": true,
+        "source_original_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68260,
+          "reference_members_retained": 221202,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_postprocessing_elapsed_s": 3554.026873043971,
+        "cached_postprocessing_elapsed_s": 2225.8254465260543,
+        "source_inclusive_incremental_elapsed_s": 3602.86520766397,
+        "cached_inclusive_incremental_elapsed_s": 2274.663781146053,
+        "cached_solver_elapsed_sum_s": 1183.463824720122,
+        "bound_source_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s17/best.pt": "135c7915d09bc5dda219ad0c8f033b888b7e9ca75cd90f81f9f6d3ab6f3a3445",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s17/initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s17/shared-replay.npz": "97190bbdf1202b5993365a6f5e7b4de23ca2b666eeebfabaca83eb0e1cb89828",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s17/steps.json": "56f5369cbaae0a4c56ea1dc9c9cec2dd400c311abe8feb48e63e53a2e965fd9a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s17/selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s17/training-receipt.json": "caa032ec476313b9a1580ad0dc76679c30a7810d12336ca51a673feab28e5f0c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s17/audit.json": "bb400e0ec4b02f732b3f6ecf9ff847579a7612b4a58f60da5b1d767edac2d60c"
+        },
+        "bound_runtime_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s17/best.pt": "135c7915d09bc5dda219ad0c8f033b888b7e9ca75cd90f81f9f6d3ab6f3a3445",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s17/initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s17/shared-replay.npz": "97190bbdf1202b5993365a6f5e7b4de23ca2b666eeebfabaca83eb0e1cb89828",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s17/steps.json": "80ddcad65124810faebce2e11534482add950f7b26713d43d5cfa5a44686d691",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s17/selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s17/training-receipt.json": "12fb0bec99983ba2844ae7ce04f77f37ca944fdf03711f617b9282885cac0f14"
+        },
+        "test_read": false,
+        "valid_read": true,
+        "validation_selection_changed": false,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      },
+      "audit": {
+        "status": "PASS_ALL3753_INDEPENDENT_TRACE_IDENTITY_AND_INHERITED_FULL_CPU_SCOPE",
+        "failures": [],
+        "steps_replayed": 3753,
+        "exact_all_state_hashes": true,
+        "exact_all_replay_arrays": true,
+        "terminal_weights_bitwise_equal": true,
+        "source_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68260,
+          "reference_members_retained": 221202,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_audit_sha256": "bb400e0ec4b02f732b3f6ecf9ff847579a7612b4a58f60da5b1d767edac2d60c",
+        "receipt_sha256": "61603f5b6a79131c2a25d34ffa2be87cb068de159a3a898216093c1acb718211",
+        "test_read": false,
+        "valid_read": true,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      }
+    },
+    {
+      "result": {
+        "status": "PASS_ALL3753_CACHED_SOLVER_SOURCE_TRAJECTORY",
+        "id": "shared-graph-joint-s17",
+        "runtime_id": "cached-index-shared-graph-joint-s17",
+        "method": "SharedJointScoped",
+        "seed": 17,
+        "steps_matched": 3753,
+        "terminal_weights_bitwise_equal": true,
+        "fixed_validation_identical": true,
+        "source_original_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68260,
+          "reference_members_retained": 221202,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_postprocessing_elapsed_s": 3850.2956170759862,
+        "cached_postprocessing_elapsed_s": 2405.371987186023,
+        "source_inclusive_incremental_elapsed_s": 3899.133951695985,
+        "cached_inclusive_incremental_elapsed_s": 2454.210321806022,
+        "cached_solver_elapsed_sum_s": 1318.6559117712313,
+        "bound_source_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s17/best.pt": "d75dd777fec46c3d20848371a5849ba4fa4a0e65c6aa269fa8bb072861c42a07",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s17/initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s17/shared-replay.npz": "b54bd8f54f6fcdfeced3be64b2f331e2a896f6561400bd095db35a93582f33b5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s17/steps.json": "8ab6981f15a42c04f5b2fc323eb760b3bf9c1363bb30a716e450516622255d56",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s17/selection.json": "71edf3e6087f021ae2c53b5b6d0ecd2ac08fcb68010e95c29bf75b039444a931",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s17/training-receipt.json": "712be531465d8e4753e0271cbb77abd7b0c9e8a7d8d178c0e9f49f4237dfbf58",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s17/audit.json": "6764e0d8797eaf8bad4e44131ac64348c10571ef99603b34cade5792a37e18f4"
+        },
+        "bound_runtime_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s17/best.pt": "d75dd777fec46c3d20848371a5849ba4fa4a0e65c6aa269fa8bb072861c42a07",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s17/initial.pt": "35e736dd710fed43bbf7d1f6e2bca67c58cb2d180f3c1b0cd464dd7d4d5fe5c1",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s17/shared-replay.npz": "b54bd8f54f6fcdfeced3be64b2f331e2a896f6561400bd095db35a93582f33b5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s17/steps.json": "7f4899ad3dda41fa8108728f936c27430a202693e5098808c6e5292d3c64ca9e",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s17/selection.json": "71edf3e6087f021ae2c53b5b6d0ecd2ac08fcb68010e95c29bf75b039444a931",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s17/training-receipt.json": "046607010acb7232d5202d41abbca38de5cefcfe45b9c14a329fd18ba05f3581"
+        },
+        "test_read": false,
+        "valid_read": true,
+        "validation_selection_changed": false,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      },
+      "audit": {
+        "status": "PASS_ALL3753_INDEPENDENT_TRACE_IDENTITY_AND_INHERITED_FULL_CPU_SCOPE",
+        "failures": [],
+        "steps_replayed": 3753,
+        "exact_all_state_hashes": true,
+        "exact_all_replay_arrays": true,
+        "terminal_weights_bitwise_equal": true,
+        "source_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68260,
+          "reference_members_retained": 221202,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_audit_sha256": "6764e0d8797eaf8bad4e44131ac64348c10571ef99603b34cade5792a37e18f4",
+        "receipt_sha256": "c3ba16dfa86621dcb2eb64f0b7d37789d67e9d9184053b0bae60d707d1068dba",
+        "test_read": false,
+        "valid_read": true,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      }
+    },
+    {
+      "result": {
+        "status": "PASS_ALL3753_CACHED_SOLVER_SOURCE_TRAJECTORY",
+        "id": "shared-graph-full-s29",
+        "runtime_id": "cached-index-shared-graph-full-s29",
+        "method": "SharedFrozenFull",
+        "seed": 29,
+        "steps_matched": 3753,
+        "terminal_weights_bitwise_equal": true,
+        "fixed_validation_identical": true,
+        "source_original_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68256,
+          "reference_members_retained": 234610,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_postprocessing_elapsed_s": 3893.753282204969,
+        "cached_postprocessing_elapsed_s": 2349.927984926966,
+        "source_inclusive_incremental_elapsed_s": 3939.181825223961,
+        "cached_inclusive_incremental_elapsed_s": 2395.356527945958,
+        "cached_solver_elapsed_sum_s": 1297.8371538901702,
+        "bound_source_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s29/best.pt": "0b03fcfbf6fc20882bec4d9cc1a8ed97e1a0b012230b7933e7d7bef20a0819fe",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s29/initial.pt": "3d36467b203f3bc5f2a05de6597ad01e07c4fcec8d7f83bf50c51e6eda9f75cb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s29/shared-replay.npz": "28857194ea0e03e5ed33df64a0e7ba2ccb87489a628e7c714f7998c1d49dd314",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s29/steps.json": "44e1df38a7b0c274ff55a336561954f40aa9636a252771bbe268bce0040aec34",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s29/selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s29/training-receipt.json": "e86d655873295071b5213ccee6e41e5e77d2f1df14e04376173fd9900b118212",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s29/audit.json": "2df8cc72f3f92d2cdec98328e65f6c7a51ecf08e3e6c5e4d830d6a27cfb45e97"
+        },
+        "bound_runtime_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s29/best.pt": "0b03fcfbf6fc20882bec4d9cc1a8ed97e1a0b012230b7933e7d7bef20a0819fe",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s29/initial.pt": "3d36467b203f3bc5f2a05de6597ad01e07c4fcec8d7f83bf50c51e6eda9f75cb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s29/shared-replay.npz": "28857194ea0e03e5ed33df64a0e7ba2ccb87489a628e7c714f7998c1d49dd314",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s29/steps.json": "576c21a34cfc6d7b9c9a4b385325259914396faad92efbb230dd97d4dc08d622",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s29/selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s29/training-receipt.json": "52b3865f9adb7df6d09799c7bce4da1c36fe8ac54210147f190cbaa25ab23daa"
+        },
+        "test_read": false,
+        "valid_read": true,
+        "validation_selection_changed": false,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      },
+      "audit": {
+        "status": "PASS_ALL3753_INDEPENDENT_TRACE_IDENTITY_AND_INHERITED_FULL_CPU_SCOPE",
+        "failures": [],
+        "steps_replayed": 3753,
+        "exact_all_state_hashes": true,
+        "exact_all_replay_arrays": true,
+        "terminal_weights_bitwise_equal": true,
+        "source_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68256,
+          "reference_members_retained": 234610,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_audit_sha256": "2df8cc72f3f92d2cdec98328e65f6c7a51ecf08e3e6c5e4d830d6a27cfb45e97",
+        "receipt_sha256": "a4d774a311a07ff5b9bbe64bb0b8a458b2baffab1845e5837f2e5bfc96327a1f",
+        "test_read": false,
+        "valid_read": true,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      }
+    },
+    {
+      "result": {
+        "status": "PASS_ALL3753_CACHED_SOLVER_SOURCE_TRAJECTORY",
+        "id": "shared-graph-scoped-s29",
+        "runtime_id": "cached-index-shared-graph-scoped-s29",
+        "method": "SharedFrozenScoped",
+        "seed": 29,
+        "steps_matched": 3753,
+        "terminal_weights_bitwise_equal": true,
+        "fixed_validation_identical": true,
+        "source_original_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68246,
+          "reference_members_retained": 220056,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_postprocessing_elapsed_s": 3520.7635352469515,
+        "cached_postprocessing_elapsed_s": 2287.430343362037,
+        "source_inclusive_incremental_elapsed_s": 3566.1920782659436,
+        "cached_inclusive_incremental_elapsed_s": 2332.858886381029,
+        "cached_solver_elapsed_sum_s": 1189.7686390628805,
+        "bound_source_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s29/best.pt": "1d44307122e2b26a62816ceba748a3967ff5a81fd9ca9f6e552e2926f1353321",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s29/initial.pt": "3d36467b203f3bc5f2a05de6597ad01e07c4fcec8d7f83bf50c51e6eda9f75cb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s29/shared-replay.npz": "a68f0ae7ead5ad5a0f9c37e22cf6736efd517e9dde3c8387776e2c74140bffd2",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s29/steps.json": "32f7b913e7347ae1dc7cd126867836ca76820ee3ca557a8f471af783b96faf90",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s29/selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s29/training-receipt.json": "5c8b234bb9cde1d80be481e9ed092aa6f1cf137a1935fba9cae52272b3b69110",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s29/audit.json": "3d6cc83a81837b19b6d13a89e38a6ac487f567143379f7349979143b849a8d65"
+        },
+        "bound_runtime_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s29/best.pt": "1d44307122e2b26a62816ceba748a3967ff5a81fd9ca9f6e552e2926f1353321",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s29/initial.pt": "3d36467b203f3bc5f2a05de6597ad01e07c4fcec8d7f83bf50c51e6eda9f75cb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s29/shared-replay.npz": "a68f0ae7ead5ad5a0f9c37e22cf6736efd517e9dde3c8387776e2c74140bffd2",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s29/steps.json": "0ccc69ad2d974a8023a3ec46e0b2590bc5cbce65756e05ea0b369e9e35044738",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s29/selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s29/training-receipt.json": "9c447a18101adf85b55daaf2bcc1ccc953827329237b46813fb6a869dcf87423"
+        },
+        "test_read": false,
+        "valid_read": true,
+        "validation_selection_changed": false,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      },
+      "audit": {
+        "status": "PASS_ALL3753_INDEPENDENT_TRACE_IDENTITY_AND_INHERITED_FULL_CPU_SCOPE",
+        "failures": [],
+        "steps_replayed": 3753,
+        "exact_all_state_hashes": true,
+        "exact_all_replay_arrays": true,
+        "terminal_weights_bitwise_equal": true,
+        "source_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68246,
+          "reference_members_retained": 220056,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_audit_sha256": "3d6cc83a81837b19b6d13a89e38a6ac487f567143379f7349979143b849a8d65",
+        "receipt_sha256": "c2f5e92f5c73c8b29f22587664acb4216fcde70c4361fcba742ff014e91c7fb0",
+        "test_read": false,
+        "valid_read": true,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      }
+    },
+    {
+      "result": {
+        "status": "PASS_ALL3753_CACHED_SOLVER_SOURCE_TRAJECTORY",
+        "id": "shared-graph-joint-s29",
+        "runtime_id": "cached-index-shared-graph-joint-s29",
+        "method": "SharedJointScoped",
+        "seed": 29,
+        "steps_matched": 3753,
+        "terminal_weights_bitwise_equal": true,
+        "fixed_validation_identical": true,
+        "source_original_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68246,
+          "reference_members_retained": 220056,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_postprocessing_elapsed_s": 3783.9219363309676,
+        "cached_postprocessing_elapsed_s": 2248.5871994810877,
+        "source_inclusive_incremental_elapsed_s": 3829.3504793499596,
+        "cached_inclusive_incremental_elapsed_s": 2294.01574250008,
+        "cached_solver_elapsed_sum_s": 1167.777595298714,
+        "bound_source_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s29/best.pt": "7e6753bccda62a16547d41d32ae54bcabfeefab5c1b322b94c9c72830ef69c1c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s29/initial.pt": "3d36467b203f3bc5f2a05de6597ad01e07c4fcec8d7f83bf50c51e6eda9f75cb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s29/shared-replay.npz": "449081f6eb248d1ce1cced719e56db2f35e892f6baf14ac248db0f4bc6dac81a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s29/steps.json": "7481e7c22a54afb0b00934e218062134d50d05d9f75036b88a729dab78d1f354",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s29/selection.json": "5ccb680077c2dab79279872d9a447e213eda9b625f696607fe53f70a9ac55bc5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s29/training-receipt.json": "42db1c06817abaa3bde2a9e875f3ddbe261b16bc3b5c8b3dcdf70a2cf435b743",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s29/audit.json": "e4b194a1edbaae68f1614cafca00463af770be2b055fc8ccc9e32d0b69629b47"
+        },
+        "bound_runtime_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s29/best.pt": "7e6753bccda62a16547d41d32ae54bcabfeefab5c1b322b94c9c72830ef69c1c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s29/initial.pt": "3d36467b203f3bc5f2a05de6597ad01e07c4fcec8d7f83bf50c51e6eda9f75cb",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s29/shared-replay.npz": "449081f6eb248d1ce1cced719e56db2f35e892f6baf14ac248db0f4bc6dac81a",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s29/steps.json": "8654fb18f7287eb877ef224ca2ba662cea520fd0cd20835dc7227400b94934f0",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s29/selection.json": "5ccb680077c2dab79279872d9a447e213eda9b625f696607fe53f70a9ac55bc5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s29/training-receipt.json": "4bd53bba0e065db392a10b820cd67528548e74a90b252f31ffbb832790b0445f"
+        },
+        "test_read": false,
+        "valid_read": true,
+        "validation_selection_changed": false,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      },
+      "audit": {
+        "status": "PASS_ALL3753_INDEPENDENT_TRACE_IDENTITY_AND_INHERITED_FULL_CPU_SCOPE",
+        "failures": [],
+        "steps_replayed": 3753,
+        "exact_all_state_hashes": true,
+        "exact_all_replay_arrays": true,
+        "terminal_weights_bitwise_equal": true,
+        "source_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68246,
+          "reference_members_retained": 220056,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_audit_sha256": "e4b194a1edbaae68f1614cafca00463af770be2b055fc8ccc9e32d0b69629b47",
+        "receipt_sha256": "b09c53d4bad92115db72ed80829e5217aed6c1e748374b01e9e913ef15870d2d",
+        "test_read": false,
+        "valid_read": true,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      }
+    },
+    {
+      "result": {
+        "status": "PASS_ALL3753_CACHED_SOLVER_SOURCE_TRAJECTORY",
+        "id": "shared-graph-full-s43",
+        "runtime_id": "cached-index-shared-graph-full-s43",
+        "method": "SharedFrozenFull",
+        "seed": 43,
+        "steps_matched": 3753,
+        "terminal_weights_bitwise_equal": true,
+        "fixed_validation_identical": true,
+        "source_original_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68275,
+          "reference_members_retained": 234090,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_postprocessing_elapsed_s": 3802.1416148410644,
+        "cached_postprocessing_elapsed_s": 2312.6205188649474,
+        "source_inclusive_incremental_elapsed_s": 3848.2417468740605,
+        "cached_inclusive_incremental_elapsed_s": 2358.7206508979434,
+        "cached_solver_elapsed_sum_s": 1200.6187268436188,
+        "bound_source_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s43/best.pt": "646c44f25fa518bfe30e4023432e793b721fc7174eedd8a2163949e3e314575d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s43/initial.pt": "cfd08088c56429f7b1895510be60b2d36b899d61433bb9d7f34f7f537cc50b7c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s43/shared-replay.npz": "1d1eaf0d963cf9536f00cee58ce71b6c0937ee4ed840554e4261ab9b4399a9c9",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s43/steps.json": "0415a937b2e070345acb829f85a2ee9c55faca0fee1103c71fb92c1295a8870c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s43/selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s43/training-receipt.json": "637a2fe451174481d36546091671b302cbd78c0cdd1128e81386a5b4893c029e",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-full-s43/audit.json": "02b4a3d218bd30f4186f9a70c4b713b04f82dc6542d40c3b09cb35414e63ab30"
+        },
+        "bound_runtime_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s43/best.pt": "646c44f25fa518bfe30e4023432e793b721fc7174eedd8a2163949e3e314575d",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s43/initial.pt": "cfd08088c56429f7b1895510be60b2d36b899d61433bb9d7f34f7f537cc50b7c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s43/shared-replay.npz": "1d1eaf0d963cf9536f00cee58ce71b6c0937ee4ed840554e4261ab9b4399a9c9",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s43/steps.json": "90ba699ad49b6ce71311d8f329c46509057063fb65d2912abb969de03e699999",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s43/selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-full-s43/training-receipt.json": "596231d7017946c99f41340a4f07016706379df2599afcd3060a82fa2b7f31aa"
+        },
+        "test_read": false,
+        "valid_read": true,
+        "validation_selection_changed": false,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      },
+      "audit": {
+        "status": "PASS_ALL3753_INDEPENDENT_TRACE_IDENTITY_AND_INHERITED_FULL_CPU_SCOPE",
+        "failures": [],
+        "steps_replayed": 3753,
+        "exact_all_state_hashes": true,
+        "exact_all_replay_arrays": true,
+        "terminal_weights_bitwise_equal": true,
+        "source_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68275,
+          "reference_members_retained": 234090,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_audit_sha256": "02b4a3d218bd30f4186f9a70c4b713b04f82dc6542d40c3b09cb35414e63ab30",
+        "receipt_sha256": "f50d0d5a1690acfcc5f15f45a96d9bc70e0974970203a3dccbd421deb93cf8a7",
+        "test_read": false,
+        "valid_read": true,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      }
+    },
+    {
+      "result": {
+        "status": "PASS_ALL3753_CACHED_SOLVER_SOURCE_TRAJECTORY",
+        "id": "shared-graph-scoped-s43",
+        "runtime_id": "cached-index-shared-graph-scoped-s43",
+        "method": "SharedFrozenScoped",
+        "seed": 43,
+        "steps_matched": 3753,
+        "terminal_weights_bitwise_equal": true,
+        "fixed_validation_identical": true,
+        "source_original_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68267,
+          "reference_members_retained": 219292,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_postprocessing_elapsed_s": 3528.7678807509365,
+        "cached_postprocessing_elapsed_s": 2148.352372750058,
+        "source_inclusive_incremental_elapsed_s": 3574.8680127839325,
+        "cached_inclusive_incremental_elapsed_s": 2194.452504783054,
+        "cached_solver_elapsed_sum_s": 1079.321011336404,
+        "bound_source_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s43/best.pt": "e16904e9cd085bd77da5a187d0ca48b9f3a3970eee8f0b0d3b7e46f8843ab1bd",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s43/initial.pt": "cfd08088c56429f7b1895510be60b2d36b899d61433bb9d7f34f7f537cc50b7c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s43/shared-replay.npz": "23e1a0bf17bcd2d09655246af2f8fc9517cd7b18a20d6a51dab97a0f1f9f06f5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s43/steps.json": "ba5bdcae5682e476652e6c8be39ac13cec2453a1102e0f63a7707d07ada6fc19",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s43/selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s43/training-receipt.json": "d08240398e89cd68640c6487f45264186d3272e7a9b28130174a8835ad4ec593",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-scoped-s43/audit.json": "a7b4c2c1dac3bd1e214ae179964896b1c82782f9137fa0b345e823961fd068d8"
+        },
+        "bound_runtime_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s43/best.pt": "e16904e9cd085bd77da5a187d0ca48b9f3a3970eee8f0b0d3b7e46f8843ab1bd",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s43/initial.pt": "cfd08088c56429f7b1895510be60b2d36b899d61433bb9d7f34f7f537cc50b7c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s43/shared-replay.npz": "23e1a0bf17bcd2d09655246af2f8fc9517cd7b18a20d6a51dab97a0f1f9f06f5",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s43/steps.json": "0bd4e180d9978e67ef30a8f6a0634e8d1dae04158aad990e99bf1e098b02ea8b",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s43/selection.json": "12351033ee4429b0abb3128a342c05514df98f574f57ca3788e0d00086e35094",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-scoped-s43/training-receipt.json": "17aa4bf709205ecb4d7c11f14c56b5cbba2237d895ce7757aa04515c1185ed53"
+        },
+        "test_read": false,
+        "valid_read": true,
+        "validation_selection_changed": false,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      },
+      "audit": {
+        "status": "PASS_ALL3753_INDEPENDENT_TRACE_IDENTITY_AND_INHERITED_FULL_CPU_SCOPE",
+        "failures": [],
+        "steps_replayed": 3753,
+        "exact_all_state_hashes": true,
+        "exact_all_replay_arrays": true,
+        "terminal_weights_bitwise_equal": true,
+        "source_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68267,
+          "reference_members_retained": 219292,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_audit_sha256": "a7b4c2c1dac3bd1e214ae179964896b1c82782f9137fa0b345e823961fd068d8",
+        "receipt_sha256": "6e9ddb90414d8a29d2c908d22bc12bfa60e8755afe684ab2f734da8d0d825675",
+        "test_read": false,
+        "valid_read": true,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      }
+    },
+    {
+      "result": {
+        "status": "PASS_ALL3753_CACHED_SOLVER_SOURCE_TRAJECTORY",
+        "id": "shared-graph-joint-s43",
+        "runtime_id": "cached-index-shared-graph-joint-s43",
+        "method": "SharedJointScoped",
+        "seed": 43,
+        "steps_matched": 3753,
+        "terminal_weights_bitwise_equal": true,
+        "fixed_validation_identical": true,
+        "source_original_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68267,
+          "reference_members_retained": 219292,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_postprocessing_elapsed_s": 3422.9943109049927,
+        "cached_postprocessing_elapsed_s": 2146.166369988001,
+        "source_inclusive_incremental_elapsed_s": 3469.094442937989,
+        "cached_inclusive_incremental_elapsed_s": 2192.266502020997,
+        "cached_solver_elapsed_sum_s": 1076.7381052211858,
+        "bound_source_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s43/best.pt": "8da1b14639a1bd74d21ee346350c87a08684ab33e98e866da5b3ef762f9dbe4c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s43/initial.pt": "cfd08088c56429f7b1895510be60b2d36b899d61433bb9d7f34f7f537cc50b7c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s43/shared-replay.npz": "683e696501d99c6db5de36bfd730c99566e1a77142b91950955e367eb0d7b0b3",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s43/steps.json": "6d8aba2f341a83592c11a8d7844ecedd7dd45f3c7712ae142ea1ff5ea4752b42",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s43/selection.json": "af4832ba32c8a933bb3b501d7cba849c9c6afea1ee10046ee5e6d52aaf435cdf",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s43/training-receipt.json": "6dec6f7e7f20723a4701e9a5e506de4f139cb4db21b49a479a83daa7fe743836",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/shared-graph-joint-s43/audit.json": "17e6e33c512ebd4b7a432a6d51653fa4001c8aebff98d2013d6a1d0669b69978"
+        },
+        "bound_runtime_sha256": {
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s43/best.pt": "8da1b14639a1bd74d21ee346350c87a08684ab33e98e866da5b3ef762f9dbe4c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s43/initial.pt": "cfd08088c56429f7b1895510be60b2d36b899d61433bb9d7f34f7f537cc50b7c",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s43/shared-replay.npz": "683e696501d99c6db5de36bfd730c99566e1a77142b91950955e367eb0d7b0b3",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s43/steps.json": "2737cae220e4143ddb3725be7ed2a0c063b0c76e9480e5d66c68b175f4d8cf0f",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s43/selection.json": "af4832ba32c8a933bb3b501d7cba849c9c6afea1ee10046ee5e6d52aaf435cdf",
+          "/data/lc/tzh/experiment4/entity_common_20261011/artifacts/incremental/cached-index-shared-graph-joint-s43/training-receipt.json": "f8e1172f8cd6498120ea5a33973a4a80db233bb75a4a981fbb16b53fbba847d5"
+        },
+        "test_read": false,
+        "valid_read": true,
+        "validation_selection_changed": false,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      },
+      "audit": {
+        "status": "PASS_ALL3753_INDEPENDENT_TRACE_IDENTITY_AND_INHERITED_FULL_CPU_SCOPE",
+        "failures": [],
+        "steps_replayed": 3753,
+        "exact_all_state_hashes": true,
+        "exact_all_replay_arrays": true,
+        "terminal_weights_bitwise_equal": true,
+        "source_cpu_scope": {
+          "status": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+          "terminal_query_groups_replayed": 68267,
+          "reference_members_retained": 219292,
+          "terminal_cpu_counts_exact": true
+        },
+        "source_audit_sha256": "17e6e33c512ebd4b7a432a6d51653fa4001c8aebff98d2013d6a1d0669b69978",
+        "receipt_sha256": "55302cf7ec91e749411feeeab0b6306ef6e7236eec2cc73fcd94131a58b1bb64",
+        "test_read": false,
+        "valid_read": true,
+        "utility_search": false,
+        "limits": [
+          "Complete same-math postprocessing recomputation, not new source SGD training or a new method slot.",
+          "Exact source weights inherit030 TEST/CPU rank evidence; no new independent full TEST scoring.",
+          "One repetition per seed/device; compare declared whole postprocessing costs, not index-only timing.",
+          "No utility gates, coefficients, protected queries or parameter budgets changed."
+        ]
+      }
+    }
+  ]
+}

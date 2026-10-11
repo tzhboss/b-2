@@ -1,0 +1,92 @@
+{
+  "id": "KGE-LIT-003",
+  "status": "QUALIFIED_SCIENTIFIC_EVIDENCE_WITH_PRODUCER_INTEGRITY_FAIL",
+  "overall_audit": "FAIL_RETAINED",
+  "scientific_artifact_status": "PASS_SAMPLED_POST_TRAIN_REPLAY",
+  "scientific_checks": 825,
+  "scientific_failures": 0,
+  "sampled_rank_replays": 120,
+  "qualification": {
+    "classification": "SUPPORTED_NONCONSUMED_METADATA_DRIFT",
+    "diff": [
+      {
+        "path": "/defaults/-rank_export_dir",
+        "change": "added",
+        "after": null
+      },
+      {
+        "path": "/defaults/-result_export_dir",
+        "change": "added",
+        "after": "res_diff_datasets/"
+      },
+      {
+        "path": "/primary_sources/0/content_type",
+        "change": "removed",
+        "before": "application/pdf"
+      },
+      {
+        "path": "/primary_sources/0/resolved_url",
+        "change": "removed",
+        "before": "https://arxiv.org/pdf/2508.11347v1"
+      },
+      {
+        "path": "/primary_sources/1/content_type",
+        "change": "removed",
+        "before": "application/json"
+      },
+      {
+        "path": "/primary_sources/1/resolved_url",
+        "change": "removed",
+        "before": "https://zenodo.org/api/records/15520115"
+      },
+      {
+        "path": "/source_sha256/main.py",
+        "change": "changed",
+        "before": "9fb70a2f22bb2b45d805e1186cf3ab2f6e392bef5ae821699a1aa0f6d41e7d19",
+        "after": "453fdd3f836507fa7bfe3465aa557b15c94362ca940b81ac6eb4948bcebe81e4"
+      },
+      {
+        "path": "/source_sha256/src/model/model_process.py",
+        "change": "changed",
+        "before": "b1bf11284ac61b0f164f157e38a219d5645dddbeb0619a8bedb58c1cbfb271ad",
+        "after": "eb203fb0d6371bdcba370211b94f1cf10c4bb07f6bd28ef23acdad3290b9a17f"
+      },
+      {
+        "path": "/source_sha256/src/parse_args.py",
+        "change": "changed",
+        "before": "59814678171e59c3d3d943682de9349cc52474650a1fc1cbee3cae13485cb7b0",
+        "after": "aa8915cd608bd2629a4d04210b6f6dd63d403c16f51a5ca9f9f885178dadd9ac"
+      }
+    ],
+    "native_reference_hits": [],
+    "basis": "All master inputs bind:300 SAGE frozen copies and2 external dependency wheels; only original preparation manifest drifted. Its diff updates three observation-file hash descriptions, two export defaults, and removes response metadata. Native startup/model/data code has no read/reference to that manifest.",
+    "boundary": "Static source and runtime-path evidence, not OS file-access tracing. Original failed producer receipt remains failed; controller owns any formal adjudication/promotion."
+  },
+  "native_final": {
+    "native_round3": {
+      "whole_mrr": 0.22,
+      "whole_hits1": 0.134,
+      "whole_hits3": 0.249,
+      "whole_hits10": 0.387
+    },
+    "raw_float64": {
+      "whole_mrr": 0.21958692079127046,
+      "whole_hits1": 0.13439742039500202,
+      "whole_hits3": 0.24897218863361548,
+      "whole_hits10": 0.38692462716646514
+    }
+  },
+  "native_train_loop_seconds": 1510.4192135334015,
+  "outer_elapsed_s": 1779.56712410599,
+  "limitations": [
+    "Producer source integrity failure retained; any metadata-only adjudication/promotion belongs to controller.",
+    "15 post_train files may have sampled checkpoint inference;10 post_expand and4 pre_fwt only query/filter/count/metric audits.",
+    "No independent validation rank recomputation; selection is logged metric/epoch/byte-lineage consistency.",
+    "Fixed dimension schedule180/210/250/270/290 and replay normalization follow released implementation; paper algorithm equivalence is not established.",
+    "Native candidate/filter universe is historical query snapshot; not frozen clean edit protocol.",
+    "One seed55 run is not the five-seed paper mean.",
+    "Native training-loop sum excludes training-data selection, mapping training and full evaluation/launch overhead."
+  ],
+  "utc": "2026-10-10T12:35:44.917486+00:00",
+  "not_clean_replication": true
+}

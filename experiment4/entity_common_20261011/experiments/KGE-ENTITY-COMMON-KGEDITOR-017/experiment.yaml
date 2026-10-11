@@ -1,0 +1,55 @@
+id: KGE-ENTITY-COMMON-KGEDITOR-017
+status: batch_terminal_audited_full_comparison_pending
+config: configs/lm-editor-common-r4.json
+protocol: plan/lm-editor-common-r4-protocol.md
+registered_utc: '2026-10-11T02:43:02.444809+00:00'
+scope: Common novel-entity task using native KGEditor meta optimizer and cumulative
+  native online proposals; architecture and phase costs qualified
+frozen_input_sha256:
+  configs/lm-editor-common-r2.json: 1f4324073c574d7e846da8f9c43ac87163b6e71ffd5aa6b9d92ec7e7b4e6f497
+  plan/lm-editor-common-protocol.md: af4d0ce89a75a5703958c89a51a2f1be731637ebe3229a241a2d62511d623f06
+  src/lm_editor_common_v2.py: 2fb247e0bbd29247288349324a630f64327a44f6ad3016fb9142d55d7f82fd05
+  scripts/run_lm_editor_common_v2.py: 77da2f90fc8ebf11493f3d0b66209ab8112338b7e04336c2ecd9f34c00ca2cfb
+  scripts/coordinate_gpu_claim_queue_v2.py: cec53ab2e2493b522e2bc8de8b53de5fd620a1ab0c386e4f0d0b15c6adcb9741
+  src/lm_editor_bridge_v2.py: f09a3607f9feebe11b68ccfbaf9124dd5cce4a377b9ec7a87315ee2e813a28c5
+  src/lm_common_base.py: 6d6a7e2c5ef70b36d219db44a54b9f27ff217f4f040bd2f7d0d0609da93c198d
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+  configs/lm-editor-common-r3.json: 5147bf882bc23118bfc2313f4cd426b9244b555111f688856a21aeeec2fcf72d
+  plan/lm-editor-common-r3-protocol.md: ab3568d0118943de02b2756660f30dc66df4aa8a3b6d67ec97bf2b166a629f97
+  scripts/coordinate_gpu_claim_queue_v3.py: 85eba60c0ca239e183aac424e1a7bba50a3cdf863d626adbe2b82b26561f0d07
+  artifacts/lm-base/lm-base-s29/audit.json: 76a642170a31bf350fa7cfb6920c853db1dee7d4d3dc00285938741bb428dc6b
+  artifacts/lm-base/lm-base-s43/audit.json: 7e20cef2ef52f8330254c6bb8e1450ef965283a46e74ca514ddfa99514bd5f34
+  configs/lm-editor-common-r4.json: d79e4f8d926be4b4f25f5be394ceff4901ee42714bc8933183dc2ffc25305df5
+  plan/lm-editor-common-r4-protocol.md: 3b2bc086d5721b208edf863281e94ee7ff4debabe9cea858f59985f6419d07da
+  artifacts/lm-base-precision16/lm-base-s17/audit.json: 21d0051bda3b4599b4a72af0565680508e612bad253c946c2e2d029a0f8622dc
+  experiments/KGE-ENTITY-COMMON-LMBASE-REAUDIT-016/experiment.yaml: 2430641b21c80beb11290e838dbf7b2c4961163d8ef037f8934efba46336863a
+external_source_sha256:
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/__init__.py: 7ce29466cac3f8f456ace171f9de446bd05f09659fbe574bef35c62a75b3cb9e
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/data/__init__.py: e211fdc8766b696c83edbb299456973fd863dd356c9337654ba221cc6b7cc776
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/data/data_module.py
+  : 333b764e7a5a7f93a5c8e6d19cc80f2a1afde0b9974dccacc38cf7060c624be5
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/data/processor.py: 0814ad0d567cdfd2d52c7f26bfa29c9d507dd22ced5e14108f677e23d734d4dc
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/models/__init__.py: c58cf0f08b1d97521ac5b10fe837cf06c1f09c403262399b098459429e6f22e3
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/models/modeling_bert.py
+  : efd8bdc069fc0be65e7a61f7caf782047cbea96b92415eff45b3784874f2c1a6
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/models/models.py: 6bebd4ecfe79177f89f75ca1487c84dfc2ffe12fc171d2f74587dd89656ccc80
+  ? /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/models/optimization.py
+  : 186ddfc05ffa4852420bdb5d520ac4c42be38210d74053da81bfe3894e9bb30e
+  /data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-fb15k237-s0/worktree/deltaKG/src/models/trainer.py: ca0e249b8b58742a024c8aaa5f000f9bb164ab75b30dd8b9e4939536de495e6a
+active_processes: []
+retained_previous_experiment: KGE-ENTITY-COMMON-KGEDITOR-008
+foundation_cpu_precision: float64
+subsequent_audit_precision: original float32 CPU/GPU exact ranks unchanged
+coordinator_pid: 734727
+jobs:
+  kgeditor-common-r4-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+preflight_passed:
+- kgeditor-common-r4-s17
+queued_jobs: []
+queued_audits: []
+completed_utc: '2026-10-11T05:37:35.676120+00:00'
+result_directory: results/KGE-ENTITY-COMMON-KGEDITOR-017

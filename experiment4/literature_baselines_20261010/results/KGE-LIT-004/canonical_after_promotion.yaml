@@ -1,0 +1,85 @@
+id: KGE-LIT-004
+status: completed_audited_qualified
+registration_status: REGISTERED
+registered_utc: '2026-10-10T12:13:46Z'
+active_processes: []
+jobs:
+- id: kgeditor-e-fb15k237-s0
+  method: KGEditor
+  status: completed_audited_qualified
+  gpu: 4
+  pid: 651983
+  started_monotonic: 961722.416101055
+  started_utc: '2026-10-10T12:14:08Z'
+  log: runs/kgeditor-e-fb15k237-s0/run.log
+  exit_code: 0
+  elapsed_s: 7664.131600128021
+  terminal_utc: '2026-10-10T14:21:52Z'
+  source_inputs_unchanged: true
+  log_sha256: 41f4346d90f8f81bd6ec66fcf45b763c08bd360113cb09c7e5d618e0c8f1268d
+  audit_status: PASS_NATIVE_NUMERICS_WITH_RESTORE_LIMITATIONS
+- id: kgeditor-e-wn18rr-s0
+  method: KGEditor
+  status: completed_audited_qualified
+  gpu: 5
+  pid: 652002
+  started_monotonic: 961732.393195607
+  started_utc: '2026-10-10T12:14:18Z'
+  log: runs/kgeditor-e-wn18rr-s0/run.log
+  exit_code: 0
+  elapsed_s: 4065.3589331039693
+  terminal_utc: '2026-10-10T13:22:03Z'
+  source_inputs_unchanged: true
+  log_sha256: b372fafbe78b7f47162ec62df95c50fddb6e8d72864f00cba7a87f82df69d41a
+  audit_status: PASS_NATIVE_NUMERICS_WITH_RESTORE_LIMITATIONS
+expected_jobs: 2
+jobs_manifest_sha256: 314b14fa671d140b579ba5e728afd6efb36349e34404d2f04a8ef33d2442a58b
+scheduler_sha256: 0becdfa0221d3072e8e6a264d23bc4207374076b33ed2f81810ea24889cb55bb
+jobs_manifest: configs/experiments/KGE-LIT-004-jobs.json
+audit:
+  status: PASS_NATIVE_NUMERICS_WITH_RESTORE_LIMITATIONS
+  checks: 431751
+  failures: 0
+  independent_examples: 320
+  before_after_records: 640
+  evidence_directory: results/KGE-LIT-004
+  summary_sha256: 5ce41dbff7b09521755bf2a423a0ab1f39ba693bac6530ec9be6a02b90c6bbc2
+  limitations:
+  - Single seed0; exposed edit_test selects checkpoint; not independent heldout.
+  - Repeated locality probes with workers4, not full unique L-Test or author workers32.
+  - Native CPU alias restoration overwrites base embedding with editor embedding;
+    certify this effective model only.
+  - Fixed160sampled examples, not independent all-score reconstruction.
+  - No complete independent optimizer/validation-forward or independent completed
+    code review claimed.
+  retained_failures:
+  - Original WN CPU auditor wrong epoch convention FAIL
+  - WN separated-prefix replay v2 FAIL
+user_objective: two fullnative KGEditor edit training and explicitly exposed evaluation
+runtime_policy: onefreeGPUperjob;23000MBfree gate; ports separate; isolatedPython3.8
+  Torch1.12 repairedGNU_STACKheader retained original
+scheduler_pid: 651824
+resource_observation:
+  utc: '2026-10-10T14:21:54Z'
+  gpus:
+    0:
+      free_mb: 24109
+      utilization: 0
+    1:
+      free_mb: 24109
+      utilization: 0
+    2:
+      free_mb: 24109
+      utilization: 0
+    3:
+      free_mb: 24109
+      utilization: 0
+    4:
+      free_mb: 24109
+      utilization: 0
+    5:
+      free_mb: 24109
+      utilization: 0
+    6:
+      free_mb: 24109
+      utilization: 0

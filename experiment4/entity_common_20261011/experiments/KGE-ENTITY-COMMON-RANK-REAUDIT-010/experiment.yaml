@@ -1,0 +1,45 @@
+id: KGE-ENTITY-COMMON-RANK-REAUDIT-010
+status: batch_terminal_reaudit_original_records_unchanged
+config: configs/rank-reaudit10.json
+protocol: plan/rank-reaudit-protocol.md
+registered_utc: '2026-10-10T19:06:43.821934+00:00'
+scope: Original predictions unchanged; sole dual indexing correction; original failure
+  artifacts retained
+frozen_input_sha256:
+  src/rank_entity_reaudit.py: 3553f0c2485c17f95e603b7185b197c30ad43c3df82b819943eb419c2a439247
+  scripts/run_rank_reaudit.py: 4bd1507ba4dda265ab6b59114f4dedc88f4d279b6618c52a0006e0114ca07ab0
+  scripts/coordinate_cpu_audits.py: 6528c1a42e7c5f7543ba721a8a4aafa309069b05fe47c0f6564f8516e161e250
+  scripts/audit_exported_embeddings_v2.py: 4a4109c6c3a8991d88617795835f769c4347d21cfd45b5c24ba8c1a0f041dfea
+  configs/rank-reaudit10.json: 83deeacf62e452b3588502737dbf6c296b3cf67599d97232c96e66d5a4afc37b
+  plan/rank-reaudit-protocol.md: b110f7647dc10ae5d15ed16182d2e52db59874b28e072999127c97a94772456a
+  src/rank_entity.py: 30fe53d5120ee09cf19fa45a10a470b3f9c4f451a719ef991f4453adc831d2bf
+  src/common_incremental.py: dd68e1e89794c4426d3148d5652ce8886e3e8f60d536996207f770fbc7782d9d
+  src/common_training.py: fdcde5698c2d5e1aeecaa7b7d780b070db91ebfffaed5d7b76db24afc3417dd1
+active_processes: []
+coordinator_pid: 710357
+jobs:
+  qptrue-novel-s17:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  qppred-novel-s17:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  qptrue-novel-s29:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  qppred-novel-s29:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  qptrue-novel-s43:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+  qppred-novel-s43:
+    status: completed_audited
+    exit_code: 0
+    stage: audit
+queued_jobs: []

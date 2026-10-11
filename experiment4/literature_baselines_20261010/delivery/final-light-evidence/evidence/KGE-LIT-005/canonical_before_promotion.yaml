@@ -1,0 +1,48 @@
+id: KGE-LIT-005
+status: producer_terminal_pending_audit
+registration_status: REGISTERED
+registered_utc: '2026-10-10T12:12:01Z'
+protocol: configs/protocols/KGE-LIT-005-candidate-diagnostic.json
+protocol_sha256: e36e51c12d983f5875d326e94f3755d2dccf8b3d39af719a76daacabdd79111a
+implementation_sha256: 313903da5d506a4086bcc0846cb712c764089929f6899f1734aa5b710655af78
+required_auditor_sha256: ccb48f4e3da560b26dcdf2d03f6809d46e34f605b539a348a15dc9b778411512
+active_processes: []
+jobs:
+- id: incde-entity-s3407
+  gpu: 0
+  stage: terminal_unreviewed
+  pid: 658366
+  status: TERMINAL_PENDING_AUDIT
+  exit_code: 0
+- id: incde-relation-s3407
+  gpu: 1
+  stage: terminal_unreviewed
+  pid: 656152
+  status: TERMINAL_PENDING_AUDIT
+  exit_code: 0
+- id: incde-fact-s3407
+  gpu: 2
+  stage: terminal_unreviewed
+  pid: 658009
+  status: TERMINAL_PENDING_AUDIT
+  exit_code: 0
+- id: incde-hybrid-s3407
+  gpu: 3
+  stage: terminal_unreviewed
+  pid: 657128
+  status: TERMINAL_PENDING_AUDIT
+  exit_code: 0
+audit:
+  status: not_started
+scope: fixed evaluation-only Pons-motivated diagnostic, not paper fullreplication
+coordinator_sha256: e42b5b1eca16fed11b5ea4c571171a2d978071a47b069ae3d8af0432b8d916b9
+prior_coordinator_failure: 'logs/KGE-LIT-005-coordinator.log: startup str/Path hash
+  helper error, before any audits/diagnostics'
+coordinator_pid: 656151
+mechanical_retry_registration: logs/KGE-LIT-005-mechanical-retry-registration.json
+prior_diagnostic_failures:
+- id: incde-relation-s3407
+  exit_code: 1
+  log: logs/incde-relation-s3407-candidate-diagnostic.log
+  cause: prefix selector accidentally consumed train4_test4_pre_fwt.npz; assert five
+    failed before output creation/inference

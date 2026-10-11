@@ -1,0 +1,38 @@
+id: KGE-LIT-004-AUDIT
+status: superseded_idle_coordinator
+registration_status: REGISTERED
+registered_utc: '2026-10-10T12:46:50.562231+00:00'
+native_master_sha256: 314b14fa671d140b579ba5e728afd6efb36349e34404d2f04a8ef33d2442a58b
+implementation_sha256:
+  code/audit_kgeditor_native.py: 4153692fac983667dd8a4ae90d034f60a038dc3bdaf93525e7a98d60393914a5
+  code/replay_kgeditor_samples.py: 9677c135ca33d705f1831c8b4bf87c3ebdb23c8b6183ca664a58894c0e534baa
+coordinator_sha256: 90df67607fa6ebd7dd1857e9f083f0fc4f8873686e94d95b8d1f7eb538441134
+active_processes: []
+jobs:
+- id: kgeditor-e-fb15k237-s0
+  gpu: 4
+  stage: waiting_for_native_terminal
+- id: kgeditor-e-wn18rr-s0
+  gpu: 5
+  stage: cpu_audit_failed
+  pid: 674917
+  cpu_audit_exit_code: 1
+  cpu_audit_elapsed_s: 15.009480798966251
+  cpu_audit_report: logs/kgeditor-e-wn18rr-s0-independent-cpu-audit.json
+  status: FAIL
+audit:
+  status: not_started
+scope: Independent CPU terminal checks and fixed16 evenly spaced batches/160examples
+  per selected KGEditor checkpoint; no training/selection change
+sampling:
+  batches: 16
+  examples_per_batch: 10
+  rank_top3: exact
+  target_logit_atol: 0.0001
+resource_policy: GPU4/5 only after its corresponding native producer terminal; at
+  least23000MB free and utilization<=20; twoCPUthreads
+no_automatic_promotion: true
+coordinator_pid: 665800
+superseded_utc: '2026-10-10T13:24:32.142848+00:00'
+reason: Original CPU audit misread PL1.3.1 resume epoch counter. Fail retained; v2
+  reads completed_epoch=raw_epoch-1. No native output changes.

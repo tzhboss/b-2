@@ -1,0 +1,54 @@
+id: KGE-LIT-006
+status: producer_terminal_pending_audit
+registration_status: REGISTERED
+registered_utc: '2026-10-10T12:44:30.935133+00:00'
+active_processes: []
+jobs:
+- id: lkge-clean-fact-s55
+  method: LKGE_clean_split
+  status: terminal_unreviewed
+  gpu: 6
+  pid: 664167
+  started_monotonic: 963546.149368372
+  started_utc: '2026-10-10T12:44:32Z'
+  log: runs/lkge-clean-fact-s55/run.log
+  exit_code: 0
+  elapsed_s: 1331.9650155099807
+  terminal_utc: '2026-10-10T13:06:44Z'
+  source_inputs_unchanged: true
+  log_sha256: 4d86291bf60775cdf4b09e9a94a84447341a7d7c2477435d4fffa915c812c096
+expected_jobs: 1
+jobs_manifest: configs/experiments/KGE-LIT-006-jobs.json
+jobs_manifest_sha256: 6e0db48e2b684f575694f893b488bf4493f728ae021b7a0fbd1435f77f9d79f9
+scheduler_sha256: 0becdfa0221d3072e8e6a264d23bc4207374076b33ed2f81810ea24889cb55bb
+protocol: configs/protocols/KGE-LIT-006-clean-lkge.json
+protocol_sha256: c4084e4f00292869be8b3dbe087b920b1f7fe9dde63d04ef095caa753eeacbf8
+audit:
+  status: not_started
+user_objective: remote selected strong/classic literature baseline at complete author
+  training budget; explicit clean-valid adaptation
+scheduler_pid: 664164
+resource_observation:
+  utc: '2026-10-10T13:06:47Z'
+  gpus:
+    0:
+      free_mb: 24109
+      utilization: 0
+    1:
+      free_mb: 24109
+      utilization: 0
+    2:
+      free_mb: 24109
+      utilization: 0
+    3:
+      free_mb: 24109
+      utilization: 0
+    4:
+      free_mb: 18913
+      utilization: 67
+    5:
+      free_mb: 17893
+      utilization: 0
+    6:
+      free_mb: 24109
+      utilization: 0

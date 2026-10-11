@@ -1,0 +1,221 @@
+{
+  "scope": "MOCKED audit_training branch ONLY; no full audit or native artifact PASS",
+  "source_sha256": "4153692fac983667dd8a4ae90d034f60a038dc3bdaf93525e7a98d60393914a5",
+  "fixture_sha256": "58f9446afeb4f4b4f202692b2037b315baf3887e2b43649360d2f47911c0b48c",
+  "gpu_launches": 0,
+  "score_replays": 0,
+  "cases": [
+    {
+      "run": "valid_early_best_after_full20epochs",
+      "status": "PASS_WITH_LIMITATIONS",
+      "checks": 45,
+      "failure_count": 0,
+      "failures": [],
+      "missing_evidence": [],
+      "evidence": {
+        "training_checkpoint": {
+          "best_model_path": "/data/lc/tzh/experiment4/literature_baselines_20261010/plan/review/kgeditor-auditor-code-review-fixtures/valid_early_best_after_full20epochs-x9bc4rim/runs/synthetic/logger/version_0/checkpoints/model.ckpt",
+          "best_model_score": 0.9,
+          "global_step": 30860,
+          "current_epoch": 20,
+          "checkpoint_epoch": 3,
+          "checkpoint_global_step": 6172,
+          "checkpoint_sha256": "e362893be2ed61c2941f02d205afb12fc371493f1001abce369ed18b350c8008"
+        },
+        "logged_selection": {
+          "monitor_samples": 20,
+          "maximum_logged_hits3": 0.9,
+          "logged_epoch_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        }
+      },
+      "synthetic_selection": {
+        "checkpoint_epoch": 3,
+        "checkpoint_global_step": 6172,
+        "logged_best_epoch": 3,
+        "checkpoint_epoch_logged_score": 0.9,
+        "declared_callback_best_score": 0.9
+      }
+    },
+    {
+      "run": "reject_19epoch_total",
+      "status": "FAIL",
+      "checks": 45,
+      "failure_count": 1,
+      "failures": [
+        "exact 20-epoch optimizer step count"
+      ],
+      "missing_evidence": [],
+      "evidence": {
+        "training_checkpoint": {
+          "best_model_path": "/data/lc/tzh/experiment4/literature_baselines_20261010/plan/review/kgeditor-auditor-code-review-fixtures/reject_19epoch_total-m4m7h6bt/runs/synthetic/logger/version_0/checkpoints/model.ckpt",
+          "best_model_score": 0.9,
+          "global_step": 29317,
+          "current_epoch": 20,
+          "checkpoint_epoch": 3,
+          "checkpoint_global_step": 6172,
+          "checkpoint_sha256": "e362893be2ed61c2941f02d205afb12fc371493f1001abce369ed18b350c8008"
+        },
+        "logged_selection": {
+          "monitor_samples": 20,
+          "maximum_logged_hits3": 0.9,
+          "logged_epoch_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        }
+      },
+      "synthetic_selection": {
+        "checkpoint_epoch": 3,
+        "checkpoint_global_step": 6172,
+        "logged_best_epoch": 3,
+        "checkpoint_epoch_logged_score": 0.9,
+        "declared_callback_best_score": 0.9
+      }
+    },
+    {
+      "run": "reject_missing_epoch19",
+      "status": "FAIL",
+      "checks": 45,
+      "failure_count": 1,
+      "failures": [
+        "logged epochs cover0..19"
+      ],
+      "missing_evidence": [],
+      "evidence": {
+        "training_checkpoint": {
+          "best_model_path": "/data/lc/tzh/experiment4/literature_baselines_20261010/plan/review/kgeditor-auditor-code-review-fixtures/reject_missing_epoch19-n9tkuqqr/runs/synthetic/logger/version_0/checkpoints/model.ckpt",
+          "best_model_score": 0.9,
+          "global_step": 30860,
+          "current_epoch": 20,
+          "checkpoint_epoch": 3,
+          "checkpoint_global_step": 6172,
+          "checkpoint_sha256": "e362893be2ed61c2941f02d205afb12fc371493f1001abce369ed18b350c8008"
+        },
+        "logged_selection": {
+          "monitor_samples": 20,
+          "maximum_logged_hits3": 0.9,
+          "logged_epoch_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ]
+        }
+      },
+      "synthetic_selection": {
+        "checkpoint_epoch": 3,
+        "checkpoint_global_step": 6172,
+        "logged_best_epoch": 3,
+        "checkpoint_epoch_logged_score": 0.9,
+        "declared_callback_best_score": 0.9
+      }
+    },
+    {
+      "run": "known_gap_selected_epoch_different_from_logged_best",
+      "status": "PASS_WITH_LIMITATIONS",
+      "checks": 45,
+      "failure_count": 0,
+      "failures": [],
+      "missing_evidence": [],
+      "evidence": {
+        "training_checkpoint": {
+          "best_model_path": "/data/lc/tzh/experiment4/literature_baselines_20261010/plan/review/kgeditor-auditor-code-review-fixtures/known_gap_selected_epoch_different_from_logged_best-phclbyfg/runs/synthetic/logger/version_0/checkpoints/model.ckpt",
+          "best_model_score": 0.9,
+          "global_step": 30860,
+          "current_epoch": 20,
+          "checkpoint_epoch": 3,
+          "checkpoint_global_step": 6172,
+          "checkpoint_sha256": "e362893be2ed61c2941f02d205afb12fc371493f1001abce369ed18b350c8008"
+        },
+        "logged_selection": {
+          "monitor_samples": 20,
+          "maximum_logged_hits3": 0.9,
+          "logged_epoch_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        }
+      },
+      "synthetic_selection": {
+        "checkpoint_epoch": 3,
+        "checkpoint_global_step": 6172,
+        "logged_best_epoch": 10,
+        "checkpoint_epoch_logged_score": 0.4,
+        "declared_callback_best_score": 0.9
+      }
+    }
+  ],
+  "interpretation": "Positive and negative contracts hold; wrong selected-epoch association is accepted, reproducing the bounded reviewer finding."
+}

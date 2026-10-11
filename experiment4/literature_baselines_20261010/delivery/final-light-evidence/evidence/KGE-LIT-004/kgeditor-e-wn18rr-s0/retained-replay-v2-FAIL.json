@@ -1,0 +1,3170 @@
+{
+  "status": "FAIL",
+  "dataset": "E-WN18RR",
+  "registered_job": "kgeditor-e-wn18rr-s0",
+  "batch_selection": "np.linspace(0,total_eval_batches-1,num=16,dtype=int), fixed before score inspection",
+  "selected_batches": [
+    0,
+    27,
+    55,
+    82,
+    110,
+    138,
+    165,
+    193,
+    220,
+    248,
+    276,
+    303,
+    331,
+    358,
+    386,
+    414
+  ],
+  "expected_examples": 160,
+  "logit_absolute_tolerance": 0.0001,
+  "checkpoint": "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/logger/version_0/checkpoints/model-epoch=18-Eval/hits3=0.4193-valid_flipped=0.000000.ckpt",
+  "bound_input_sha256": {
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/logs/kgeditor-e-wn18rr-s0-independent-cpu-audit-v2.json": "626abab3415453d32342f0ef2f653882ac38034560a8f163619c63dede881444",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/native-exposed-examples.jsonl": "59944e0dcaa7687431d4385fcb4a66128defcf8e956648039fa4f3473edd7d84",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/logger/version_0/checkpoints/model-epoch=18-Eval/hits3=0.4193-valid_flipped=0.000000.ckpt": "0ba0685c8382ff5cd34bef2b3968affc938a65e8720cd5a360ff33b5a4b73f98",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/data_view/examples_dev.txt": "918dfcaddbd6cfa6177474c968eaafa0573f6e3d2ef9dd1b4bb2f8517af988d0",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/data_view/examples_memory.txt": "f77c0c8077802136c1b6af0a90987aaa439fc9de782d223f079698e8abcbfb3b",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/training-complete.json": "3bda18c4c3b4967493d9806d1354ec5b8907f5226b77cb708627c8b7a0ceeb86",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/src/__init__.py": "7ce29466cac3f8f456ace171f9de446bd05f09659fbe574bef35c62a75b3cb9e",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/src/data/__init__.py": "e211fdc8766b696c83edbb299456973fd863dd356c9337654ba221cc6b7cc776",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/src/data/data_module.py": "333b764e7a5a7f93a5c8e6d19cc80f2a1afde0b9974dccacc38cf7060c624be5",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/src/data/processor.py": "0814ad0d567cdfd2d52c7f26bfa29c9d507dd22ced5e14108f677e23d734d4dc",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/src/models/__init__.py": "c58cf0f08b1d97521ac5b10fe837cf06c1f09c403262399b098459429e6f22e3",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/src/models/modeling_bert.py": "efd8bdc069fc0be65e7a61f7caf782047cbea96b92415eff45b3784874f2c1a6",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/src/models/models.py": "6bebd4ecfe79177f89f75ca1487c84dfc2ffe12fc171d2f74587dd89656ccc80",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/src/models/optimization.py": "186ddfc05ffa4852420bdb5d520ac4c42be38210d74053da81bfe3894e9bb30e",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/src/models/trainer.py": "ca0e249b8b58742a024c8aaa5f000f9bb164ab75b30dd8b9e4939536de495e6a",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/models/KGEditor/run.py": "e4b5c0c9d33eb2af6ba9611b3dc72b41097ef9f9f4f7046272afdfcd4078241c",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/native/run_native.py": "91a9ae49efc65a2ddc1048830866eaef82496597018ae3813926ee12e7344059",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/native/observations.py": "057c4fcbf124da256ae529d8e9ce7532463c0d982eec936ce4ee3f0f7c5c739a",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/native/config.json": "410303d4eef5bbf1c5f66d48866873beeb4419e44cbaf5ff67be03c876a36db0",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/repos/PromptKG/deltaKG/native/author-source-sha256.json": "8c3acd0ef35ccce0a9044a7a1689e1c03f5b7ed49b72744076a095ae511faf8e",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-WN18RR/edit_test.jsonl": "05f4eee7e4f047b84eb295be534b5f3a1bf76ebe8cf23a2323a97ea86ac513cf",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-WN18RR/edit_train.jsonl": "ed7baa469c8f74e942477a4d6f3d83edb9060e136a8a5aef79e04e3a8caa78dc",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-WN18RR/entities.txt": "178f3020f4a4dd7a2b51a93d8f4e95b38f7b431b0eadb5d317a2ce2f0b3097f0",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-WN18RR/relation2text.txt": "91b1de5585d686ed31498d50f1c4eed44ba9486dffbbcc0c28927ac884184918",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-WN18RR/relations.txt": "53e8790103375e198e418ba55fc52118789dab8ffe55a848a150dfb630cbd3ad",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-WN18RR/entity2text.txt": "8f5c6f11753dafa879917b9bdf73d398ceb3bd4bed8d5553177e1e0f2c37521f",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-WN18RR/test.tsv": "0383bceaaa1096cf3c03ec021ed0048068e2355dbfc0239b292cefdac821cec5",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-WN18RR/stable.jsonl": "e5f983fa52590be5ab922e50e45ae1c2e41375a1fb6092854d96323c8f4d38da",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-WN18RR/test1.tsv": "d32828bdb5bdb3e140338aa1702eeebbcd19225c8ff388257062bbc073eebc99",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-WN18RR/entity2text_clean.txt": "ef626928382fc2ed9b3a414fec528b349174633b3927735a8c27a65c9a703b5d",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-WN18RR/wordnet-mlj12-definitions.txt": "70d85bc995d4f82c6c1038d6a3869a149e50622fbdf846af3ab45c519521f627",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/data/KGEditor-HF/E-WN18RR/train.tsv": "038612e783c215ee5f3ca9fbfca27b8d0739be1028fe4ee7c174aecf0b83d5df",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/models/KGEditor-HF/E-WN18RR/special_tokens_map.json": "2cc8d150ba5bdac3f3e16cfdef81d1dac8a9075567322236c5970a88214169d0",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/models/KGEditor-HF/E-WN18RR/tokenizer_config.json": "3376579f2afde85b4a14759f9477842ddcd05eab2130558f1b852b286b6b14c8",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/models/KGEditor-HF/E-WN18RR/config.json": "040a68dcccf77cad0e85d8b976d9c749839612a1c52cb9dd9b3296b9fe8243ec",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/models/KGEditor-HF/E-WN18RR/added_tokens.json": "8dc09be82d38dbff76707003995db7891c95c066fa006a9e30207904bf4f644f",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/models/KGEditor-HF/E-WN18RR/vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/models/KGEditor-HF/E-WN18RR/pytorch_model.bin": "6eb0c0b739028527a88ffaeadc523d2431cbb732ba4b17e47b8bf4f6895a5c1c",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/environment/KGEditor38-pip-freeze.txt": "88de2ee0841a513e276aecc96803efe80354b8fb4a6895f17a9bc23ab0cd643b",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/environment/torch112-execstack-repair.json": "c2de761e197771aefb5db38ed11bd1418975e9cd8aee27de1a4d54e6433c7329",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/src/__init__.py": "7ce29466cac3f8f456ace171f9de446bd05f09659fbe574bef35c62a75b3cb9e",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/src/data/__init__.py": "e211fdc8766b696c83edbb299456973fd863dd356c9337654ba221cc6b7cc776",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/src/data/data_module.py": "333b764e7a5a7f93a5c8e6d19cc80f2a1afde0b9974dccacc38cf7060c624be5",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/src/data/processor.py": "0814ad0d567cdfd2d52c7f26bfa29c9d507dd22ced5e14108f677e23d734d4dc",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/src/models/__init__.py": "c58cf0f08b1d97521ac5b10fe837cf06c1f09c403262399b098459429e6f22e3",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/src/models/modeling_bert.py": "efd8bdc069fc0be65e7a61f7caf782047cbea96b92415eff45b3784874f2c1a6",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/src/models/models.py": "6bebd4ecfe79177f89f75ca1487c84dfc2ffe12fc171d2f74587dd89656ccc80",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/src/models/optimization.py": "186ddfc05ffa4852420bdb5d520ac4c42be38210d74053da81bfe3894e9bb30e",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/src/models/trainer.py": "ca0e249b8b58742a024c8aaa5f000f9bb164ab75b30dd8b9e4939536de495e6a",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/models/KGEditor/run.py": "e4b5c0c9d33eb2af6ba9611b3dc72b41097ef9f9f4f7046272afdfcd4078241c",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/native/run_native.py": "91a9ae49efc65a2ddc1048830866eaef82496597018ae3813926ee12e7344059",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/native/observations.py": "057c4fcbf124da256ae529d8e9ce7532463c0d982eec936ce4ee3f0f7c5c739a",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/native/config.json": "410303d4eef5bbf1c5f66d48866873beeb4419e44cbaf5ff67be03c876a36db0",
+    "/data/lc/tzh/experiment4/literature_baselines_20261010/runs/kgeditor-e-wn18rr-s0/worktree/deltaKG/native/author-source-sha256.json": "8c3acd0ef35ccce0a9044a7a1689e1c03f5b7ed49b72744076a095ae511faf8e"
+  },
+  "source_audit": "/data/lc/tzh/experiment4/literature_baselines_20261010/logs/kgeditor-e-wn18rr-s0-independent-cpu-audit-v2.json",
+  "independent": true,
+  "protocol": "native exposed evaluation; numerical sample replay, not heldout or metric reselection",
+  "architecture": {
+    "model_prefix_keys": 209,
+    "learner_prefix_keys": 23,
+    "unused_checkpoint_keys": [
+      "alpha_kl",
+      "alpha_lp",
+      "margin_kl",
+      "margin_lp"
+    ],
+    "extension_matrices": [
+      "bert.encoder.layer.11.output.dense_in_ex.weight",
+      "bert.encoder.layer.11.output.dense_out_ex.weight"
+    ],
+    "strict_load": true,
+    "max_scale": 1,
+    "ex_size": 16,
+    "kb_layer": [
+      11
+    ],
+    "author_module_paths": [
+      "/data/lc/tzh/experiment4/literature_baselines_20261010/audit-replays/kgeditor-e-wn18rr-s0-v2/frozen-source/src/models/modeling_bert.py",
+      "/data/lc/tzh/experiment4/literature_baselines_20261010/audit-replays/kgeditor-e-wn18rr-s0-v2/frozen-source/src/models/models.py"
+    ],
+    "checkpoint_epoch": 19,
+    "checkpoint_global_step": 14155
+  },
+  "parameter_hash_before": {
+    "ex_model": "c0090ae1bbdd362cf0c151baf40f6f8a5217392d94602e802ec60f9d2c02e42c",
+    "ex_learner": "40769c25a7e0a9707ae4285f5ab33cd141dea31bbf0fb87ed90ababf222176f6"
+  },
+  "checked_examples": 160,
+  "before_after_records": 320,
+  "max_absolute_logit_error": 0.2306079864501953,
+  "mismatch_count": 320,
+  "mismatches": [
+    {
+      "batch_idx": 0,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.01715850830078125
+    },
+    {
+      "batch_idx": 0,
+      "position": 1,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.04228973388671875
+    },
+    {
+      "batch_idx": 0,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.045352935791015625
+    },
+    {
+      "batch_idx": 0,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.031742095947265625
+    },
+    {
+      "batch_idx": 0,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.06722354888916016
+    },
+    {
+      "batch_idx": 0,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.031622886657714844
+    },
+    {
+      "batch_idx": 0,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0067901611328125
+    },
+    {
+      "batch_idx": 0,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.016778945922851562
+    },
+    {
+      "batch_idx": 0,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.019620418548583984
+    },
+    {
+      "batch_idx": 0,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.013332366943359375
+    },
+    {
+      "batch_idx": 0,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.024745941162109375
+    },
+    {
+      "batch_idx": 0,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0361480712890625
+    },
+    {
+      "batch_idx": 0,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.044422149658203125
+    },
+    {
+      "batch_idx": 0,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.014856338500976562
+    },
+    {
+      "batch_idx": 0,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.06588363647460938
+    },
+    {
+      "batch_idx": 0,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.038074493408203125
+    },
+    {
+      "batch_idx": 0,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.004281044006347656
+    },
+    {
+      "batch_idx": 0,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.022873878479003906
+    },
+    {
+      "batch_idx": 0,
+      "position": 8,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.2306079864501953
+    },
+    {
+      "batch_idx": 0,
+      "position": 9,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.05855751037597656
+    },
+    {
+      "batch_idx": 27,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.08975410461425781
+    },
+    {
+      "batch_idx": 27,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03061676025390625
+    },
+    {
+      "batch_idx": 27,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02508544921875
+    },
+    {
+      "batch_idx": 27,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0561981201171875
+    },
+    {
+      "batch_idx": 27,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03660297393798828
+    },
+    {
+      "batch_idx": 27,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.026473045349121094
+    },
+    {
+      "batch_idx": 27,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03390216827392578
+    },
+    {
+      "batch_idx": 27,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.1566295623779297
+    },
+    {
+      "batch_idx": 27,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.22707605361938477
+    },
+    {
+      "batch_idx": 27,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.02379786968231201
+    },
+    {
+      "batch_idx": 27,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.09183502197265625
+    },
+    {
+      "batch_idx": 27,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.039856910705566406
+    },
+    {
+      "batch_idx": 27,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03455543518066406
+    },
+    {
+      "batch_idx": 27,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.06772613525390625
+    },
+    {
+      "batch_idx": 27,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.045589447021484375
+    },
+    {
+      "batch_idx": 27,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.010797500610351562
+    },
+    {
+      "batch_idx": 27,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.042510032653808594
+    },
+    {
+      "batch_idx": 27,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.1618022918701172
+    },
+    {
+      "batch_idx": 27,
+      "position": 8,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.1566023826599121
+    },
+    {
+      "batch_idx": 27,
+      "position": 9,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.07321691513061523
+    },
+    {
+      "batch_idx": 55,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.028467178344726562
+    },
+    {
+      "batch_idx": 55,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.01600360870361328
+    },
+    {
+      "batch_idx": 55,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.01422119140625
+    },
+    {
+      "batch_idx": 55,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.008991241455078125
+    },
+    {
+      "batch_idx": 55,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.034954071044921875
+    },
+    {
+      "batch_idx": 55,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02328777313232422
+    },
+    {
+      "batch_idx": 55,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.00142669677734375
+    },
+    {
+      "batch_idx": 55,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.06064319610595703
+    },
+    {
+      "batch_idx": 55,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.05101478099822998
+    },
+    {
+      "batch_idx": 55,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.039736032485961914
+    },
+    {
+      "batch_idx": 55,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.021396636962890625
+    },
+    {
+      "batch_idx": 55,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.034656524658203125
+    },
+    {
+      "batch_idx": 55,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.009580612182617188
+    },
+    {
+      "batch_idx": 55,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.012583732604980469
+    },
+    {
+      "batch_idx": 55,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.04182624816894531
+    },
+    {
+      "batch_idx": 55,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.025908470153808594
+    },
+    {
+      "batch_idx": 55,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0047054290771484375
+    },
+    {
+      "batch_idx": 55,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.06389617919921875
+    },
+    {
+      "batch_idx": 55,
+      "position": 8,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.12073373794555664
+    },
+    {
+      "batch_idx": 55,
+      "position": 9,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.05333137512207031
+    },
+    {
+      "batch_idx": 82,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.04604625701904297
+    },
+    {
+      "batch_idx": 82,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.06382179260253906
+    },
+    {
+      "batch_idx": 82,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.01224517822265625
+    },
+    {
+      "batch_idx": 82,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.07222270965576172
+    },
+    {
+      "batch_idx": 82,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.05669212341308594
+    },
+    {
+      "batch_idx": 82,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.037387847900390625
+    },
+    {
+      "batch_idx": 82,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03534889221191406
+    },
+    {
+      "batch_idx": 82,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.022668838500976562
+    },
+    {
+      "batch_idx": 82,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.03437089920043945
+    },
+    {
+      "batch_idx": 82,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.006831169128417969
+    },
+    {
+      "batch_idx": 82,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.041248321533203125
+    },
+    {
+      "batch_idx": 82,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.07184600830078125
+    },
+    {
+      "batch_idx": 82,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.013821601867675781
+    },
+    {
+      "batch_idx": 82,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.06772232055664062
+    },
+    {
+      "batch_idx": 82,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.06653022766113281
+    },
+    {
+      "batch_idx": 82,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03203010559082031
+    },
+    {
+      "batch_idx": 82,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.016656875610351562
+    },
+    {
+      "batch_idx": 82,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.026544570922851562
+    },
+    {
+      "batch_idx": 82,
+      "position": 8,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.024271011352539062
+    },
+    {
+      "batch_idx": 82,
+      "position": 9,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.01680469512939453
+    },
+    {
+      "batch_idx": 110,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.021112442016601562
+    },
+    {
+      "batch_idx": 110,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.020435333251953125
+    },
+    {
+      "batch_idx": 110,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.06720161437988281
+    },
+    {
+      "batch_idx": 110,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03775978088378906
+    },
+    {
+      "batch_idx": 110,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.09443473815917969
+    },
+    {
+      "batch_idx": 110,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.000446319580078125
+    },
+    {
+      "batch_idx": 110,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.014879226684570312
+    },
+    {
+      "batch_idx": 110,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.032471656799316406
+    },
+    {
+      "batch_idx": 110,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.05867034196853638
+    },
+    {
+      "batch_idx": 110,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.06693655252456665
+    },
+    {
+      "batch_idx": 110,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.08524131774902344
+    },
+    {
+      "batch_idx": 110,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.026887893676757812
+    },
+    {
+      "batch_idx": 110,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.07474231719970703
+    },
+    {
+      "batch_idx": 110,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.020486831665039062
+    },
+    {
+      "batch_idx": 110,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.08657264709472656
+    },
+    {
+      "batch_idx": 110,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.009328842163085938
+    },
+    {
+      "batch_idx": 110,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.008602142333984375
+    },
+    {
+      "batch_idx": 110,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03530120849609375
+    },
+    {
+      "batch_idx": 110,
+      "position": 8,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.09362649917602539
+    },
+    {
+      "batch_idx": 110,
+      "position": 9,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.00014781951904296875
+    },
+    {
+      "batch_idx": 138,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.043250083923339844
+    },
+    {
+      "batch_idx": 138,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.025129318237304688
+    },
+    {
+      "batch_idx": 138,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.10468482971191406
+    },
+    {
+      "batch_idx": 138,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.06306076049804688
+    },
+    {
+      "batch_idx": 138,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.021593093872070312
+    },
+    {
+      "batch_idx": 138,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.013864517211914062
+    },
+    {
+      "batch_idx": 138,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.015105247497558594
+    },
+    {
+      "batch_idx": 138,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.006740570068359375
+    },
+    {
+      "batch_idx": 138,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.03386354446411133
+    },
+    {
+      "batch_idx": 138,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.06837129592895508
+    },
+    {
+      "batch_idx": 138,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.029829025268554688
+    },
+    {
+      "batch_idx": 138,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.010396003723144531
+    },
+    {
+      "batch_idx": 138,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.07267570495605469
+    },
+    {
+      "batch_idx": 138,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.09070205688476562
+    },
+    {
+      "batch_idx": 138,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02077198028564453
+    },
+    {
+      "batch_idx": 138,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.030853271484375
+    },
+    {
+      "batch_idx": 138,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.004704475402832031
+    },
+    {
+      "batch_idx": 138,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.011055946350097656
+    },
+    {
+      "batch_idx": 138,
+      "position": 8,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.015324115753173828
+    },
+    {
+      "batch_idx": 138,
+      "position": 9,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.08080291748046875
+    },
+    {
+      "batch_idx": 165,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.010202407836914062
+    },
+    {
+      "batch_idx": 165,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03920459747314453
+    },
+    {
+      "batch_idx": 165,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.018468856811523438
+    },
+    {
+      "batch_idx": 165,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.026294708251953125
+    },
+    {
+      "batch_idx": 165,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03165149688720703
+    },
+    {
+      "batch_idx": 165,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.006351470947265625
+    },
+    {
+      "batch_idx": 165,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.007092475891113281
+    },
+    {
+      "batch_idx": 165,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.04409217834472656
+    },
+    {
+      "batch_idx": 165,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.026668548583984375
+    },
+    {
+      "batch_idx": 165,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.040839433670043945
+    },
+    {
+      "batch_idx": 165,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.0027828216552734375
+    },
+    {
+      "batch_idx": 165,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.020336151123046875
+    },
+    {
+      "batch_idx": 165,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.015350341796875
+    },
+    {
+      "batch_idx": 165,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.021234512329101562
+    },
+    {
+      "batch_idx": 165,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.01849651336669922
+    },
+    {
+      "batch_idx": 165,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02939128875732422
+    },
+    {
+      "batch_idx": 165,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.017052650451660156
+    },
+    {
+      "batch_idx": 165,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.048614501953125
+    },
+    {
+      "batch_idx": 165,
+      "position": 8,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.19087886810302734
+    },
+    {
+      "batch_idx": 165,
+      "position": 9,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.04465770721435547
+    },
+    {
+      "batch_idx": 193,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.048172950744628906
+    },
+    {
+      "batch_idx": 193,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.060733795166015625
+    },
+    {
+      "batch_idx": 193,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.027845382690429688
+    },
+    {
+      "batch_idx": 193,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.10460567474365234
+    },
+    {
+      "batch_idx": 193,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.014825820922851562
+    },
+    {
+      "batch_idx": 193,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.059337615966796875
+    },
+    {
+      "batch_idx": 193,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02266216278076172
+    },
+    {
+      "batch_idx": 193,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.032245635986328125
+    },
+    {
+      "batch_idx": 193,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.051683902740478516
+    },
+    {
+      "batch_idx": 193,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.03321361541748047
+    },
+    {
+      "batch_idx": 193,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.043476104736328125
+    },
+    {
+      "batch_idx": 193,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.06541061401367188
+    },
+    {
+      "batch_idx": 193,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.05428504943847656
+    },
+    {
+      "batch_idx": 193,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0976266860961914
+    },
+    {
+      "batch_idx": 193,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.018410682678222656
+    },
+    {
+      "batch_idx": 193,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.07016277313232422
+    },
+    {
+      "batch_idx": 193,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.08027172088623047
+    },
+    {
+      "batch_idx": 193,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.018629074096679688
+    },
+    {
+      "batch_idx": 193,
+      "position": 8,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.016607284545898438
+    },
+    {
+      "batch_idx": 193,
+      "position": 9,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.02375006675720215
+    },
+    {
+      "batch_idx": 220,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.018817901611328125
+    },
+    {
+      "batch_idx": 220,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.05568885803222656
+    },
+    {
+      "batch_idx": 220,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.042430877685546875
+    },
+    {
+      "batch_idx": 220,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03335094451904297
+    },
+    {
+      "batch_idx": 220,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0028581619262695312
+    },
+    {
+      "batch_idx": 220,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.010069847106933594
+    },
+    {
+      "batch_idx": 220,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.011476516723632812
+    },
+    {
+      "batch_idx": 220,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.04462623596191406
+    },
+    {
+      "batch_idx": 220,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.06951910257339478
+    },
+    {
+      "batch_idx": 220,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.06585025787353516
+    },
+    {
+      "batch_idx": 220,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03534889221191406
+    },
+    {
+      "batch_idx": 220,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.05584526062011719
+    },
+    {
+      "batch_idx": 220,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.05345439910888672
+    },
+    {
+      "batch_idx": 220,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.01601123809814453
+    },
+    {
+      "batch_idx": 220,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.018693923950195312
+    },
+    {
+      "batch_idx": 220,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.021427154541015625
+    },
+    {
+      "batch_idx": 220,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0158843994140625
+    },
+    {
+      "batch_idx": 220,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.037674903869628906
+    },
+    {
+      "batch_idx": 220,
+      "position": 8,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.007076740264892578
+    },
+    {
+      "batch_idx": 220,
+      "position": 9,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.1014261245727539
+    },
+    {
+      "batch_idx": 248,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.036688804626464844
+    },
+    {
+      "batch_idx": 248,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0053806304931640625
+    },
+    {
+      "batch_idx": 248,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.009342193603515625
+    },
+    {
+      "batch_idx": 248,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02241802215576172
+    },
+    {
+      "batch_idx": 248,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.053193092346191406
+    },
+    {
+      "batch_idx": 248,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.005784034729003906
+    },
+    {
+      "batch_idx": 248,
+      "position": 6,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.057830810546875
+    },
+    {
+      "batch_idx": 248,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.08881282806396484
+    },
+    {
+      "batch_idx": 248,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.04005861282348633
+    },
+    {
+      "batch_idx": 248,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.004524707794189453
+    },
+    {
+      "batch_idx": 248,
+      "position": 0,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.03473091125488281
+    },
+    {
+      "batch_idx": 248,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0104522705078125
+    },
+    {
+      "batch_idx": 248,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.013916969299316406
+    },
+    {
+      "batch_idx": 248,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02155017852783203
+    },
+    {
+      "batch_idx": 248,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.041728973388671875
+    },
+    {
+      "batch_idx": 248,
+      "position": 5,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.011147499084472656
+    },
+    {
+      "batch_idx": 248,
+      "position": 6,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.058188438415527344
+    },
+    {
+      "batch_idx": 248,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.08678627014160156
+    },
+    {
+      "batch_idx": 248,
+      "position": 8,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.014259815216064453
+    },
+    {
+      "batch_idx": 248,
+      "position": 9,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.15849018096923828
+    },
+    {
+      "batch_idx": 276,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.054253578186035156
+    },
+    {
+      "batch_idx": 276,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0924081802368164
+    },
+    {
+      "batch_idx": 276,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.024194717407226562
+    },
+    {
+      "batch_idx": 276,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.035340309143066406
+    },
+    {
+      "batch_idx": 276,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.01974201202392578
+    },
+    {
+      "batch_idx": 276,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02530193328857422
+    },
+    {
+      "batch_idx": 276,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.024145126342773438
+    },
+    {
+      "batch_idx": 276,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.020273208618164062
+    },
+    {
+      "batch_idx": 276,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.05942964553833008
+    },
+    {
+      "batch_idx": 276,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.014981269836425781
+    },
+    {
+      "batch_idx": 276,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03075408935546875
+    },
+    {
+      "batch_idx": 276,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.1258230209350586
+    },
+    {
+      "batch_idx": 276,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.00983428955078125
+    },
+    {
+      "batch_idx": 276,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.030521392822265625
+    },
+    {
+      "batch_idx": 276,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.022197723388671875
+    },
+    {
+      "batch_idx": 276,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.031220436096191406
+    },
+    {
+      "batch_idx": 276,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.021055221557617188
+    },
+    {
+      "batch_idx": 276,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.015044212341308594
+    },
+    {
+      "batch_idx": 276,
+      "position": 8,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.024643898010253906
+    },
+    {
+      "batch_idx": 276,
+      "position": 9,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.05144977569580078
+    },
+    {
+      "batch_idx": 303,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.056075096130371094
+    },
+    {
+      "batch_idx": 303,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03183269500732422
+    },
+    {
+      "batch_idx": 303,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.07677364349365234
+    },
+    {
+      "batch_idx": 303,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.05055713653564453
+    },
+    {
+      "batch_idx": 303,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.040160179138183594
+    },
+    {
+      "batch_idx": 303,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.008062362670898438
+    },
+    {
+      "batch_idx": 303,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.058754920959472656
+    },
+    {
+      "batch_idx": 303,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.033298492431640625
+    },
+    {
+      "batch_idx": 303,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.03698396682739258
+    },
+    {
+      "batch_idx": 303,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.06212425231933594
+    },
+    {
+      "batch_idx": 303,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.04432106018066406
+    },
+    {
+      "batch_idx": 303,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03355979919433594
+    },
+    {
+      "batch_idx": 303,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.12249183654785156
+    },
+    {
+      "batch_idx": 303,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.048595428466796875
+    },
+    {
+      "batch_idx": 303,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.06592750549316406
+    },
+    {
+      "batch_idx": 303,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.028844833374023438
+    },
+    {
+      "batch_idx": 303,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.07598686218261719
+    },
+    {
+      "batch_idx": 303,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.039218902587890625
+    },
+    {
+      "batch_idx": 303,
+      "position": 8,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.07030248641967773
+    },
+    {
+      "batch_idx": 303,
+      "position": 9,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.08436441421508789
+    },
+    {
+      "batch_idx": 331,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.044925689697265625
+    },
+    {
+      "batch_idx": 331,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.05877113342285156
+    },
+    {
+      "batch_idx": 331,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.024756431579589844
+    },
+    {
+      "batch_idx": 331,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.029100418090820312
+    },
+    {
+      "batch_idx": 331,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0003032684326171875
+    },
+    {
+      "batch_idx": 331,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.05373668670654297
+    },
+    {
+      "batch_idx": 331,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02215099334716797
+    },
+    {
+      "batch_idx": 331,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03760528564453125
+    },
+    {
+      "batch_idx": 331,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.030955791473388672
+    },
+    {
+      "batch_idx": 331,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.0002396106719970703
+    },
+    {
+      "batch_idx": 331,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.047545433044433594
+    },
+    {
+      "batch_idx": 331,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.028074264526367188
+    },
+    {
+      "batch_idx": 331,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.022841453552246094
+    },
+    {
+      "batch_idx": 331,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.016973495483398438
+    },
+    {
+      "batch_idx": 331,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0010919570922851562
+    },
+    {
+      "batch_idx": 331,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.034648895263671875
+    },
+    {
+      "batch_idx": 331,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.01627826690673828
+    },
+    {
+      "batch_idx": 331,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.016981124877929688
+    },
+    {
+      "batch_idx": 331,
+      "position": 8,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.0678858757019043
+    },
+    {
+      "batch_idx": 331,
+      "position": 9,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.04642820358276367
+    },
+    {
+      "batch_idx": 358,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.01670551300048828
+    },
+    {
+      "batch_idx": 358,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0660858154296875
+    },
+    {
+      "batch_idx": 358,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02828693389892578
+    },
+    {
+      "batch_idx": 358,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0007562637329101562
+    },
+    {
+      "batch_idx": 358,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.019743919372558594
+    },
+    {
+      "batch_idx": 358,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.04131507873535156
+    },
+    {
+      "batch_idx": 358,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.019008636474609375
+    },
+    {
+      "batch_idx": 358,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.008853912353515625
+    },
+    {
+      "batch_idx": 358,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.039319515228271484
+    },
+    {
+      "batch_idx": 358,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.018514394760131836
+    },
+    {
+      "batch_idx": 358,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03442955017089844
+    },
+    {
+      "batch_idx": 358,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03630256652832031
+    },
+    {
+      "batch_idx": 358,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02387714385986328
+    },
+    {
+      "batch_idx": 358,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.015424728393554688
+    },
+    {
+      "batch_idx": 358,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.01782703399658203
+    },
+    {
+      "batch_idx": 358,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.061432838439941406
+    },
+    {
+      "batch_idx": 358,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.023008346557617188
+    },
+    {
+      "batch_idx": 358,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.032303810119628906
+    },
+    {
+      "batch_idx": 358,
+      "position": 8,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.037021636962890625
+    },
+    {
+      "batch_idx": 358,
+      "position": 9,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.003796100616455078
+    },
+    {
+      "batch_idx": 386,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.0947580337524414
+    },
+    {
+      "batch_idx": 386,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.009934425354003906
+    },
+    {
+      "batch_idx": 386,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0006885528564453125
+    },
+    {
+      "batch_idx": 386,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.029483795166015625
+    },
+    {
+      "batch_idx": 386,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.13616371154785156
+    },
+    {
+      "batch_idx": 386,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.004136085510253906
+    },
+    {
+      "batch_idx": 386,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.05218029022216797
+    },
+    {
+      "batch_idx": 386,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02356433868408203
+    },
+    {
+      "batch_idx": 386,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.016465187072753906
+    },
+    {
+      "batch_idx": 386,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.02082967758178711
+    },
+    {
+      "batch_idx": 386,
+      "position": 0,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.09426021575927734
+    },
+    {
+      "batch_idx": 386,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.012368202209472656
+    },
+    {
+      "batch_idx": 386,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0020599365234375
+    },
+    {
+      "batch_idx": 386,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.043964385986328125
+    },
+    {
+      "batch_idx": 386,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.1295309066772461
+    },
+    {
+      "batch_idx": 386,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.002063751220703125
+    },
+    {
+      "batch_idx": 386,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.05063819885253906
+    },
+    {
+      "batch_idx": 386,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02163410186767578
+    },
+    {
+      "batch_idx": 386,
+      "position": 8,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.0666799545288086
+    },
+    {
+      "batch_idx": 386,
+      "position": 9,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.042011260986328125
+    },
+    {
+      "batch_idx": 414,
+      "position": 0,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03184318542480469
+    },
+    {
+      "batch_idx": 414,
+      "position": 1,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.02304840087890625
+    },
+    {
+      "batch_idx": 414,
+      "position": 2,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": false,
+      "abs_logit_error": 0.05163288116455078
+    },
+    {
+      "batch_idx": 414,
+      "position": 3,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.027383804321289062
+    },
+    {
+      "batch_idx": 414,
+      "position": 4,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.008065223693847656
+    },
+    {
+      "batch_idx": 414,
+      "position": 5,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03372001647949219
+    },
+    {
+      "batch_idx": 414,
+      "position": 6,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03880119323730469
+    },
+    {
+      "batch_idx": 414,
+      "position": 7,
+      "when": "before",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.04829692840576172
+    },
+    {
+      "batch_idx": 414,
+      "position": 8,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.1323835253715515
+    },
+    {
+      "batch_idx": 414,
+      "position": 9,
+      "when": "before",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.012126445770263672
+    },
+    {
+      "batch_idx": 414,
+      "position": 0,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": false,
+      "abs_logit_error": 0.010664939880371094
+    },
+    {
+      "batch_idx": 414,
+      "position": 1,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.021615982055664062
+    },
+    {
+      "batch_idx": 414,
+      "position": 2,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.10188817977905273
+    },
+    {
+      "batch_idx": 414,
+      "position": 3,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.029397964477539062
+    },
+    {
+      "batch_idx": 414,
+      "position": 4,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.01923370361328125
+    },
+    {
+      "batch_idx": 414,
+      "position": 5,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.03960990905761719
+    },
+    {
+      "batch_idx": 414,
+      "position": 6,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0062541961669921875
+    },
+    {
+      "batch_idx": 414,
+      "position": 7,
+      "when": "after",
+      "rank_exact": true,
+      "top3_exact": true,
+      "abs_logit_error": 0.0219879150390625
+    },
+    {
+      "batch_idx": 414,
+      "position": 8,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.07073736190795898
+    },
+    {
+      "batch_idx": 414,
+      "position": 9,
+      "when": "after",
+      "rank_exact": false,
+      "top3_exact": true,
+      "abs_logit_error": 0.041236162185668945
+    }
+  ],
+  "parameter_hash_after": {
+    "ex_model": "c0090ae1bbdd362cf0c151baf40f6f8a5217392d94602e802ec60f9d2c02e42c",
+    "ex_learner": "40769c25a7e0a9707ae4285f5ab33cd141dea31bbf0fb87ed90ababf222176f6"
+  },
+  "parameter_versions_before": {
+    "ex_model": {
+      "bert.embeddings.word_embeddings.weight": 4,
+      "bert.embeddings.position_embeddings.weight": 2,
+      "bert.embeddings.token_type_embeddings.weight": 2,
+      "bert.embeddings.LayerNorm.weight": 2,
+      "bert.embeddings.LayerNorm.bias": 2,
+      "bert.encoder.layer.0.attention.self.query.weight": 2,
+      "bert.encoder.layer.0.attention.self.query.bias": 2,
+      "bert.encoder.layer.0.attention.self.key.weight": 2,
+      "bert.encoder.layer.0.attention.self.key.bias": 2,
+      "bert.encoder.layer.0.attention.self.value.weight": 2,
+      "bert.encoder.layer.0.attention.self.value.bias": 2,
+      "bert.encoder.layer.0.attention.output.dense.weight": 2,
+      "bert.encoder.layer.0.attention.output.dense.bias": 2,
+      "bert.encoder.layer.0.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.0.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.0.intermediate.dense.weight": 2,
+      "bert.encoder.layer.0.intermediate.dense.bias": 2,
+      "bert.encoder.layer.0.output.dense.weight": 2,
+      "bert.encoder.layer.0.output.dense.bias": 2,
+      "bert.encoder.layer.0.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.0.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.1.attention.self.query.weight": 2,
+      "bert.encoder.layer.1.attention.self.query.bias": 2,
+      "bert.encoder.layer.1.attention.self.key.weight": 2,
+      "bert.encoder.layer.1.attention.self.key.bias": 2,
+      "bert.encoder.layer.1.attention.self.value.weight": 2,
+      "bert.encoder.layer.1.attention.self.value.bias": 2,
+      "bert.encoder.layer.1.attention.output.dense.weight": 2,
+      "bert.encoder.layer.1.attention.output.dense.bias": 2,
+      "bert.encoder.layer.1.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.1.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.1.intermediate.dense.weight": 2,
+      "bert.encoder.layer.1.intermediate.dense.bias": 2,
+      "bert.encoder.layer.1.output.dense.weight": 2,
+      "bert.encoder.layer.1.output.dense.bias": 2,
+      "bert.encoder.layer.1.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.1.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.2.attention.self.query.weight": 2,
+      "bert.encoder.layer.2.attention.self.query.bias": 2,
+      "bert.encoder.layer.2.attention.self.key.weight": 2,
+      "bert.encoder.layer.2.attention.self.key.bias": 2,
+      "bert.encoder.layer.2.attention.self.value.weight": 2,
+      "bert.encoder.layer.2.attention.self.value.bias": 2,
+      "bert.encoder.layer.2.attention.output.dense.weight": 2,
+      "bert.encoder.layer.2.attention.output.dense.bias": 2,
+      "bert.encoder.layer.2.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.2.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.2.intermediate.dense.weight": 2,
+      "bert.encoder.layer.2.intermediate.dense.bias": 2,
+      "bert.encoder.layer.2.output.dense.weight": 2,
+      "bert.encoder.layer.2.output.dense.bias": 2,
+      "bert.encoder.layer.2.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.2.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.3.attention.self.query.weight": 2,
+      "bert.encoder.layer.3.attention.self.query.bias": 2,
+      "bert.encoder.layer.3.attention.self.key.weight": 2,
+      "bert.encoder.layer.3.attention.self.key.bias": 2,
+      "bert.encoder.layer.3.attention.self.value.weight": 2,
+      "bert.encoder.layer.3.attention.self.value.bias": 2,
+      "bert.encoder.layer.3.attention.output.dense.weight": 2,
+      "bert.encoder.layer.3.attention.output.dense.bias": 2,
+      "bert.encoder.layer.3.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.3.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.3.intermediate.dense.weight": 2,
+      "bert.encoder.layer.3.intermediate.dense.bias": 2,
+      "bert.encoder.layer.3.output.dense.weight": 2,
+      "bert.encoder.layer.3.output.dense.bias": 2,
+      "bert.encoder.layer.3.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.3.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.4.attention.self.query.weight": 2,
+      "bert.encoder.layer.4.attention.self.query.bias": 2,
+      "bert.encoder.layer.4.attention.self.key.weight": 2,
+      "bert.encoder.layer.4.attention.self.key.bias": 2,
+      "bert.encoder.layer.4.attention.self.value.weight": 2,
+      "bert.encoder.layer.4.attention.self.value.bias": 2,
+      "bert.encoder.layer.4.attention.output.dense.weight": 2,
+      "bert.encoder.layer.4.attention.output.dense.bias": 2,
+      "bert.encoder.layer.4.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.4.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.4.intermediate.dense.weight": 2,
+      "bert.encoder.layer.4.intermediate.dense.bias": 2,
+      "bert.encoder.layer.4.output.dense.weight": 2,
+      "bert.encoder.layer.4.output.dense.bias": 2,
+      "bert.encoder.layer.4.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.4.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.5.attention.self.query.weight": 2,
+      "bert.encoder.layer.5.attention.self.query.bias": 2,
+      "bert.encoder.layer.5.attention.self.key.weight": 2,
+      "bert.encoder.layer.5.attention.self.key.bias": 2,
+      "bert.encoder.layer.5.attention.self.value.weight": 2,
+      "bert.encoder.layer.5.attention.self.value.bias": 2,
+      "bert.encoder.layer.5.attention.output.dense.weight": 2,
+      "bert.encoder.layer.5.attention.output.dense.bias": 2,
+      "bert.encoder.layer.5.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.5.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.5.intermediate.dense.weight": 2,
+      "bert.encoder.layer.5.intermediate.dense.bias": 2,
+      "bert.encoder.layer.5.output.dense.weight": 2,
+      "bert.encoder.layer.5.output.dense.bias": 2,
+      "bert.encoder.layer.5.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.5.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.6.attention.self.query.weight": 2,
+      "bert.encoder.layer.6.attention.self.query.bias": 2,
+      "bert.encoder.layer.6.attention.self.key.weight": 2,
+      "bert.encoder.layer.6.attention.self.key.bias": 2,
+      "bert.encoder.layer.6.attention.self.value.weight": 2,
+      "bert.encoder.layer.6.attention.self.value.bias": 2,
+      "bert.encoder.layer.6.attention.output.dense.weight": 2,
+      "bert.encoder.layer.6.attention.output.dense.bias": 2,
+      "bert.encoder.layer.6.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.6.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.6.intermediate.dense.weight": 2,
+      "bert.encoder.layer.6.intermediate.dense.bias": 2,
+      "bert.encoder.layer.6.output.dense.weight": 2,
+      "bert.encoder.layer.6.output.dense.bias": 2,
+      "bert.encoder.layer.6.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.6.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.7.attention.self.query.weight": 2,
+      "bert.encoder.layer.7.attention.self.query.bias": 2,
+      "bert.encoder.layer.7.attention.self.key.weight": 2,
+      "bert.encoder.layer.7.attention.self.key.bias": 2,
+      "bert.encoder.layer.7.attention.self.value.weight": 2,
+      "bert.encoder.layer.7.attention.self.value.bias": 2,
+      "bert.encoder.layer.7.attention.output.dense.weight": 2,
+      "bert.encoder.layer.7.attention.output.dense.bias": 2,
+      "bert.encoder.layer.7.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.7.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.7.intermediate.dense.weight": 2,
+      "bert.encoder.layer.7.intermediate.dense.bias": 2,
+      "bert.encoder.layer.7.output.dense.weight": 2,
+      "bert.encoder.layer.7.output.dense.bias": 2,
+      "bert.encoder.layer.7.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.7.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.8.attention.self.query.weight": 2,
+      "bert.encoder.layer.8.attention.self.query.bias": 2,
+      "bert.encoder.layer.8.attention.self.key.weight": 2,
+      "bert.encoder.layer.8.attention.self.key.bias": 2,
+      "bert.encoder.layer.8.attention.self.value.weight": 2,
+      "bert.encoder.layer.8.attention.self.value.bias": 2,
+      "bert.encoder.layer.8.attention.output.dense.weight": 2,
+      "bert.encoder.layer.8.attention.output.dense.bias": 2,
+      "bert.encoder.layer.8.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.8.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.8.intermediate.dense.weight": 2,
+      "bert.encoder.layer.8.intermediate.dense.bias": 2,
+      "bert.encoder.layer.8.output.dense.weight": 2,
+      "bert.encoder.layer.8.output.dense.bias": 2,
+      "bert.encoder.layer.8.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.8.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.9.attention.self.query.weight": 2,
+      "bert.encoder.layer.9.attention.self.query.bias": 2,
+      "bert.encoder.layer.9.attention.self.key.weight": 2,
+      "bert.encoder.layer.9.attention.self.key.bias": 2,
+      "bert.encoder.layer.9.attention.self.value.weight": 2,
+      "bert.encoder.layer.9.attention.self.value.bias": 2,
+      "bert.encoder.layer.9.attention.output.dense.weight": 2,
+      "bert.encoder.layer.9.attention.output.dense.bias": 2,
+      "bert.encoder.layer.9.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.9.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.9.intermediate.dense.weight": 2,
+      "bert.encoder.layer.9.intermediate.dense.bias": 2,
+      "bert.encoder.layer.9.output.dense.weight": 2,
+      "bert.encoder.layer.9.output.dense.bias": 2,
+      "bert.encoder.layer.9.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.9.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.10.attention.self.query.weight": 2,
+      "bert.encoder.layer.10.attention.self.query.bias": 2,
+      "bert.encoder.layer.10.attention.self.key.weight": 2,
+      "bert.encoder.layer.10.attention.self.key.bias": 2,
+      "bert.encoder.layer.10.attention.self.value.weight": 2,
+      "bert.encoder.layer.10.attention.self.value.bias": 2,
+      "bert.encoder.layer.10.attention.output.dense.weight": 2,
+      "bert.encoder.layer.10.attention.output.dense.bias": 2,
+      "bert.encoder.layer.10.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.10.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.10.intermediate.dense.weight": 2,
+      "bert.encoder.layer.10.intermediate.dense.bias": 2,
+      "bert.encoder.layer.10.output.dense.weight": 2,
+      "bert.encoder.layer.10.output.dense.bias": 2,
+      "bert.encoder.layer.10.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.10.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.11.attention.self.query.weight": 2,
+      "bert.encoder.layer.11.attention.self.query.bias": 2,
+      "bert.encoder.layer.11.attention.self.key.weight": 2,
+      "bert.encoder.layer.11.attention.self.key.bias": 2,
+      "bert.encoder.layer.11.attention.self.value.weight": 2,
+      "bert.encoder.layer.11.attention.self.value.bias": 2,
+      "bert.encoder.layer.11.attention.output.dense.weight": 2,
+      "bert.encoder.layer.11.attention.output.dense.bias": 2,
+      "bert.encoder.layer.11.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.11.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.11.intermediate.dense.weight": 2,
+      "bert.encoder.layer.11.intermediate.dense.bias": 2,
+      "bert.encoder.layer.11.output.dense.weight": 2,
+      "bert.encoder.layer.11.output.dense.bias": 2,
+      "bert.encoder.layer.11.output.dense_in_ex.weight": 2,
+      "bert.encoder.layer.11.output.dense_in_ex.bias": 2,
+      "bert.encoder.layer.11.output.dense_out_ex.weight": 2,
+      "bert.encoder.layer.11.output.dense_out_ex.bias": 2,
+      "bert.encoder.layer.11.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.11.output.LayerNorm.bias": 2,
+      "cls.predictions.bias": 2,
+      "cls.predictions.transform.dense.weight": 2,
+      "cls.predictions.transform.dense.bias": 2,
+      "cls.predictions.transform.LayerNorm.weight": 2,
+      "cls.predictions.transform.LayerNorm.bias": 2
+    },
+    "ex_learner": {
+      "conditioners.bert_encoder_layer_11_output_dense_in_ex_weight_conditioner.conditioners.0.bias": 2,
+      "conditioners.bert_encoder_layer_11_output_dense_in_ex_weight_conditioner.conditioners.0.weight_g": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_in_ex_weight_conditioner.conditioners.0.weight_v": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_in_ex_weight_conditioner.conditioners.2.bias": 2,
+      "conditioners.bert_encoder_layer_11_output_dense_in_ex_weight_conditioner.conditioners.2.weight_g": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_in_ex_weight_conditioner.conditioners.2.weight_v": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_out_ex_weight_conditioner.conditioners.0.bias": 2,
+      "conditioners.bert_encoder_layer_11_output_dense_out_ex_weight_conditioner.conditioners.0.weight_g": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_out_ex_weight_conditioner.conditioners.0.weight_v": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_out_ex_weight_conditioner.conditioners.2.bias": 2,
+      "conditioners.bert_encoder_layer_11_output_dense_out_ex_weight_conditioner.conditioners.2.weight_g": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_out_ex_weight_conditioner.conditioners.2.weight_v": 1,
+      "condition.embedding.weight": 1,
+      "condition.lstm._module.weight_ih_l0": 2,
+      "condition.lstm._module.weight_hh_l0": 2,
+      "condition.lstm._module.bias_ih_l0": 2,
+      "condition.lstm._module.bias_hh_l0": 2,
+      "condition.lstm._module.weight_ih_l0_reverse": 2,
+      "condition.lstm._module.weight_hh_l0_reverse": 2,
+      "condition.lstm._module.bias_ih_l0_reverse": 2,
+      "condition.lstm._module.bias_hh_l0_reverse": 2,
+      "condition.linear._linear_layers.0.weight": 2,
+      "condition.linear._linear_layers.0.bias": 2
+    }
+  },
+  "parameter_versions_after": {
+    "ex_model": {
+      "bert.embeddings.word_embeddings.weight": 4,
+      "bert.embeddings.position_embeddings.weight": 2,
+      "bert.embeddings.token_type_embeddings.weight": 2,
+      "bert.embeddings.LayerNorm.weight": 2,
+      "bert.embeddings.LayerNorm.bias": 2,
+      "bert.encoder.layer.0.attention.self.query.weight": 2,
+      "bert.encoder.layer.0.attention.self.query.bias": 2,
+      "bert.encoder.layer.0.attention.self.key.weight": 2,
+      "bert.encoder.layer.0.attention.self.key.bias": 2,
+      "bert.encoder.layer.0.attention.self.value.weight": 2,
+      "bert.encoder.layer.0.attention.self.value.bias": 2,
+      "bert.encoder.layer.0.attention.output.dense.weight": 2,
+      "bert.encoder.layer.0.attention.output.dense.bias": 2,
+      "bert.encoder.layer.0.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.0.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.0.intermediate.dense.weight": 2,
+      "bert.encoder.layer.0.intermediate.dense.bias": 2,
+      "bert.encoder.layer.0.output.dense.weight": 2,
+      "bert.encoder.layer.0.output.dense.bias": 2,
+      "bert.encoder.layer.0.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.0.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.1.attention.self.query.weight": 2,
+      "bert.encoder.layer.1.attention.self.query.bias": 2,
+      "bert.encoder.layer.1.attention.self.key.weight": 2,
+      "bert.encoder.layer.1.attention.self.key.bias": 2,
+      "bert.encoder.layer.1.attention.self.value.weight": 2,
+      "bert.encoder.layer.1.attention.self.value.bias": 2,
+      "bert.encoder.layer.1.attention.output.dense.weight": 2,
+      "bert.encoder.layer.1.attention.output.dense.bias": 2,
+      "bert.encoder.layer.1.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.1.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.1.intermediate.dense.weight": 2,
+      "bert.encoder.layer.1.intermediate.dense.bias": 2,
+      "bert.encoder.layer.1.output.dense.weight": 2,
+      "bert.encoder.layer.1.output.dense.bias": 2,
+      "bert.encoder.layer.1.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.1.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.2.attention.self.query.weight": 2,
+      "bert.encoder.layer.2.attention.self.query.bias": 2,
+      "bert.encoder.layer.2.attention.self.key.weight": 2,
+      "bert.encoder.layer.2.attention.self.key.bias": 2,
+      "bert.encoder.layer.2.attention.self.value.weight": 2,
+      "bert.encoder.layer.2.attention.self.value.bias": 2,
+      "bert.encoder.layer.2.attention.output.dense.weight": 2,
+      "bert.encoder.layer.2.attention.output.dense.bias": 2,
+      "bert.encoder.layer.2.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.2.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.2.intermediate.dense.weight": 2,
+      "bert.encoder.layer.2.intermediate.dense.bias": 2,
+      "bert.encoder.layer.2.output.dense.weight": 2,
+      "bert.encoder.layer.2.output.dense.bias": 2,
+      "bert.encoder.layer.2.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.2.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.3.attention.self.query.weight": 2,
+      "bert.encoder.layer.3.attention.self.query.bias": 2,
+      "bert.encoder.layer.3.attention.self.key.weight": 2,
+      "bert.encoder.layer.3.attention.self.key.bias": 2,
+      "bert.encoder.layer.3.attention.self.value.weight": 2,
+      "bert.encoder.layer.3.attention.self.value.bias": 2,
+      "bert.encoder.layer.3.attention.output.dense.weight": 2,
+      "bert.encoder.layer.3.attention.output.dense.bias": 2,
+      "bert.encoder.layer.3.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.3.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.3.intermediate.dense.weight": 2,
+      "bert.encoder.layer.3.intermediate.dense.bias": 2,
+      "bert.encoder.layer.3.output.dense.weight": 2,
+      "bert.encoder.layer.3.output.dense.bias": 2,
+      "bert.encoder.layer.3.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.3.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.4.attention.self.query.weight": 2,
+      "bert.encoder.layer.4.attention.self.query.bias": 2,
+      "bert.encoder.layer.4.attention.self.key.weight": 2,
+      "bert.encoder.layer.4.attention.self.key.bias": 2,
+      "bert.encoder.layer.4.attention.self.value.weight": 2,
+      "bert.encoder.layer.4.attention.self.value.bias": 2,
+      "bert.encoder.layer.4.attention.output.dense.weight": 2,
+      "bert.encoder.layer.4.attention.output.dense.bias": 2,
+      "bert.encoder.layer.4.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.4.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.4.intermediate.dense.weight": 2,
+      "bert.encoder.layer.4.intermediate.dense.bias": 2,
+      "bert.encoder.layer.4.output.dense.weight": 2,
+      "bert.encoder.layer.4.output.dense.bias": 2,
+      "bert.encoder.layer.4.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.4.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.5.attention.self.query.weight": 2,
+      "bert.encoder.layer.5.attention.self.query.bias": 2,
+      "bert.encoder.layer.5.attention.self.key.weight": 2,
+      "bert.encoder.layer.5.attention.self.key.bias": 2,
+      "bert.encoder.layer.5.attention.self.value.weight": 2,
+      "bert.encoder.layer.5.attention.self.value.bias": 2,
+      "bert.encoder.layer.5.attention.output.dense.weight": 2,
+      "bert.encoder.layer.5.attention.output.dense.bias": 2,
+      "bert.encoder.layer.5.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.5.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.5.intermediate.dense.weight": 2,
+      "bert.encoder.layer.5.intermediate.dense.bias": 2,
+      "bert.encoder.layer.5.output.dense.weight": 2,
+      "bert.encoder.layer.5.output.dense.bias": 2,
+      "bert.encoder.layer.5.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.5.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.6.attention.self.query.weight": 2,
+      "bert.encoder.layer.6.attention.self.query.bias": 2,
+      "bert.encoder.layer.6.attention.self.key.weight": 2,
+      "bert.encoder.layer.6.attention.self.key.bias": 2,
+      "bert.encoder.layer.6.attention.self.value.weight": 2,
+      "bert.encoder.layer.6.attention.self.value.bias": 2,
+      "bert.encoder.layer.6.attention.output.dense.weight": 2,
+      "bert.encoder.layer.6.attention.output.dense.bias": 2,
+      "bert.encoder.layer.6.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.6.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.6.intermediate.dense.weight": 2,
+      "bert.encoder.layer.6.intermediate.dense.bias": 2,
+      "bert.encoder.layer.6.output.dense.weight": 2,
+      "bert.encoder.layer.6.output.dense.bias": 2,
+      "bert.encoder.layer.6.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.6.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.7.attention.self.query.weight": 2,
+      "bert.encoder.layer.7.attention.self.query.bias": 2,
+      "bert.encoder.layer.7.attention.self.key.weight": 2,
+      "bert.encoder.layer.7.attention.self.key.bias": 2,
+      "bert.encoder.layer.7.attention.self.value.weight": 2,
+      "bert.encoder.layer.7.attention.self.value.bias": 2,
+      "bert.encoder.layer.7.attention.output.dense.weight": 2,
+      "bert.encoder.layer.7.attention.output.dense.bias": 2,
+      "bert.encoder.layer.7.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.7.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.7.intermediate.dense.weight": 2,
+      "bert.encoder.layer.7.intermediate.dense.bias": 2,
+      "bert.encoder.layer.7.output.dense.weight": 2,
+      "bert.encoder.layer.7.output.dense.bias": 2,
+      "bert.encoder.layer.7.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.7.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.8.attention.self.query.weight": 2,
+      "bert.encoder.layer.8.attention.self.query.bias": 2,
+      "bert.encoder.layer.8.attention.self.key.weight": 2,
+      "bert.encoder.layer.8.attention.self.key.bias": 2,
+      "bert.encoder.layer.8.attention.self.value.weight": 2,
+      "bert.encoder.layer.8.attention.self.value.bias": 2,
+      "bert.encoder.layer.8.attention.output.dense.weight": 2,
+      "bert.encoder.layer.8.attention.output.dense.bias": 2,
+      "bert.encoder.layer.8.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.8.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.8.intermediate.dense.weight": 2,
+      "bert.encoder.layer.8.intermediate.dense.bias": 2,
+      "bert.encoder.layer.8.output.dense.weight": 2,
+      "bert.encoder.layer.8.output.dense.bias": 2,
+      "bert.encoder.layer.8.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.8.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.9.attention.self.query.weight": 2,
+      "bert.encoder.layer.9.attention.self.query.bias": 2,
+      "bert.encoder.layer.9.attention.self.key.weight": 2,
+      "bert.encoder.layer.9.attention.self.key.bias": 2,
+      "bert.encoder.layer.9.attention.self.value.weight": 2,
+      "bert.encoder.layer.9.attention.self.value.bias": 2,
+      "bert.encoder.layer.9.attention.output.dense.weight": 2,
+      "bert.encoder.layer.9.attention.output.dense.bias": 2,
+      "bert.encoder.layer.9.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.9.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.9.intermediate.dense.weight": 2,
+      "bert.encoder.layer.9.intermediate.dense.bias": 2,
+      "bert.encoder.layer.9.output.dense.weight": 2,
+      "bert.encoder.layer.9.output.dense.bias": 2,
+      "bert.encoder.layer.9.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.9.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.10.attention.self.query.weight": 2,
+      "bert.encoder.layer.10.attention.self.query.bias": 2,
+      "bert.encoder.layer.10.attention.self.key.weight": 2,
+      "bert.encoder.layer.10.attention.self.key.bias": 2,
+      "bert.encoder.layer.10.attention.self.value.weight": 2,
+      "bert.encoder.layer.10.attention.self.value.bias": 2,
+      "bert.encoder.layer.10.attention.output.dense.weight": 2,
+      "bert.encoder.layer.10.attention.output.dense.bias": 2,
+      "bert.encoder.layer.10.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.10.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.10.intermediate.dense.weight": 2,
+      "bert.encoder.layer.10.intermediate.dense.bias": 2,
+      "bert.encoder.layer.10.output.dense.weight": 2,
+      "bert.encoder.layer.10.output.dense.bias": 2,
+      "bert.encoder.layer.10.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.10.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.11.attention.self.query.weight": 2,
+      "bert.encoder.layer.11.attention.self.query.bias": 2,
+      "bert.encoder.layer.11.attention.self.key.weight": 2,
+      "bert.encoder.layer.11.attention.self.key.bias": 2,
+      "bert.encoder.layer.11.attention.self.value.weight": 2,
+      "bert.encoder.layer.11.attention.self.value.bias": 2,
+      "bert.encoder.layer.11.attention.output.dense.weight": 2,
+      "bert.encoder.layer.11.attention.output.dense.bias": 2,
+      "bert.encoder.layer.11.attention.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.11.attention.output.LayerNorm.bias": 2,
+      "bert.encoder.layer.11.intermediate.dense.weight": 2,
+      "bert.encoder.layer.11.intermediate.dense.bias": 2,
+      "bert.encoder.layer.11.output.dense.weight": 2,
+      "bert.encoder.layer.11.output.dense.bias": 2,
+      "bert.encoder.layer.11.output.dense_in_ex.weight": 2,
+      "bert.encoder.layer.11.output.dense_in_ex.bias": 2,
+      "bert.encoder.layer.11.output.dense_out_ex.weight": 2,
+      "bert.encoder.layer.11.output.dense_out_ex.bias": 2,
+      "bert.encoder.layer.11.output.LayerNorm.weight": 2,
+      "bert.encoder.layer.11.output.LayerNorm.bias": 2,
+      "cls.predictions.bias": 2,
+      "cls.predictions.transform.dense.weight": 2,
+      "cls.predictions.transform.dense.bias": 2,
+      "cls.predictions.transform.LayerNorm.weight": 2,
+      "cls.predictions.transform.LayerNorm.bias": 2
+    },
+    "ex_learner": {
+      "conditioners.bert_encoder_layer_11_output_dense_in_ex_weight_conditioner.conditioners.0.bias": 2,
+      "conditioners.bert_encoder_layer_11_output_dense_in_ex_weight_conditioner.conditioners.0.weight_g": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_in_ex_weight_conditioner.conditioners.0.weight_v": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_in_ex_weight_conditioner.conditioners.2.bias": 2,
+      "conditioners.bert_encoder_layer_11_output_dense_in_ex_weight_conditioner.conditioners.2.weight_g": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_in_ex_weight_conditioner.conditioners.2.weight_v": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_out_ex_weight_conditioner.conditioners.0.bias": 2,
+      "conditioners.bert_encoder_layer_11_output_dense_out_ex_weight_conditioner.conditioners.0.weight_g": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_out_ex_weight_conditioner.conditioners.0.weight_v": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_out_ex_weight_conditioner.conditioners.2.bias": 2,
+      "conditioners.bert_encoder_layer_11_output_dense_out_ex_weight_conditioner.conditioners.2.weight_g": 1,
+      "conditioners.bert_encoder_layer_11_output_dense_out_ex_weight_conditioner.conditioners.2.weight_v": 1,
+      "condition.embedding.weight": 1,
+      "condition.lstm._module.weight_ih_l0": 2,
+      "condition.lstm._module.weight_hh_l0": 2,
+      "condition.lstm._module.bias_ih_l0": 2,
+      "condition.lstm._module.bias_hh_l0": 2,
+      "condition.lstm._module.weight_ih_l0_reverse": 2,
+      "condition.lstm._module.weight_hh_l0_reverse": 2,
+      "condition.lstm._module.bias_ih_l0_reverse": 2,
+      "condition.lstm._module.bias_hh_l0_reverse": 2,
+      "condition.linear._linear_layers.0.weight": 2,
+      "condition.linear._linear_layers.0.bias": 2
+    }
+  },
+  "parameters_unchanged": true,
+  "inputs_unchanged": true,
+  "runtime": {
+    "torch_version": "1.12.0+cu113",
+    "device": "cuda:0",
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true
+  },
+  "limits": [
+    "160 fixed evenly spaced examples only; no full-score claim for unselected batches.",
+    "edit_test used for model selection: native exposed evaluation, not pristine heldout.",
+    "Condition tokens reconstructed from frozen textual examples/formula; original condition tensors were not exported.",
+    "No optimizer, backward accumulation, training, selection changes or metric/protocol replacement."
+  ]
+}

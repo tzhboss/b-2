@@ -1,0 +1,28 @@
+{
+  "source_root": "../literature_baselines_20261010",
+  "dataset": "repos/FastKGE/data/FB_CKGE",
+  "source_audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "dependency_paths": [
+    "repos/FastKGE/reproduction/vendor",
+    "repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64"
+  ],
+  "epochs": 200,
+  "batch_size": 1024,
+  "negatives": 10,
+  "margin": 8.0,
+  "validation_every": 5,
+  "validation_queries_per_split": 1024,
+  "validation_seed": 124,
+  "expansion_seed_offset": 10000,
+  "budget_seconds_per_job": 2400,
+  "cpu_threads_per_job": 2,
+  "id": "KGE-ENTITY-COMMON-NATIVE-002",
+  "feature_directory": "artifacts/native-features/incde/1",
+  "feature_workers": 8,
+  "feature_partitions": 32,
+  "native_sources": {
+    "IncDE": "runs/incde-entity-s3407/worktree",
+    "SAGE": "runs/sage-fact-s55/worktree"
+  }
+}

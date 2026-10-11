@@ -1,0 +1,959 @@
+{
+  "source": "author released Rank-Truncated numerical kernel adapted to local shared multi-target protocol",
+  "not_full_SOTA_reproduction": true,
+  "TEST_used": false,
+  "n_model_seeds": 3,
+  "n_eval_per_seed": 27,
+  "n_models": 6,
+  "old_fact_scope": "originally correct TRAIN factual queries heldout, not official TEST",
+  "model_dependence": "guard and heldout fact subsets selected per model; do not compare raw cross damage across different model families as if fact cohorts identical",
+  "warning": "hard budget comparisons include abstentions with zero damage; always report success together",
+  "rows": [
+    {
+      "kind": "DistMult",
+      "budget": 3.5,
+      "method": "Direct",
+      "attempts": 81,
+      "n_success": 72,
+      "success_rate": 0.8888888888888888,
+      "cross_damage_events": 33,
+      "cross_damage_per_attempt": 0.4074074074074074,
+      "cross_damage_per_success": 0.4583333333333333,
+      "L21_per_attempt": 1.3535974334465521,
+      "L21_per_success": 1.5227971126273712,
+      "mean_same_damage_per_attempt": 0.4567901234567901,
+      "max_accepted_update_cost": 3.450403627316778,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.018782014797951052,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 3.5,
+      "method": "Soft3_LocalGuard",
+      "attempts": 81,
+      "n_success": 70,
+      "success_rate": 0.8641975308641975,
+      "cross_damage_events": 22,
+      "cross_damage_per_attempt": 0.2716049382716049,
+      "cross_damage_per_success": 0.3142857142857143,
+      "L21_per_attempt": 1.3863297433666761,
+      "L21_per_success": 1.6041815601814395,
+      "mean_same_damage_per_attempt": 0.41975308641975306,
+      "max_accepted_update_cost": 3.4126730975399973,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.012521343198634035,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 3.5,
+      "method": "Soft3_AllGuard",
+      "attempts": 81,
+      "n_success": 51,
+      "success_rate": 0.6296296296296297,
+      "cross_damage_events": 33,
+      "cross_damage_per_attempt": 0.4074074074074074,
+      "cross_damage_per_success": 0.6470588235294118,
+      "L21_per_attempt": 1.1874528062058824,
+      "L21_per_success": 1.885954456915225,
+      "mean_same_damage_per_attempt": 0.12345679012345678,
+      "max_accepted_update_cost": 3.4230345172875185,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.018782014797951052,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 3.5,
+      "method": "Rank125_ReleasedKernel",
+      "attempts": 81,
+      "n_success": 45,
+      "success_rate": 0.5555555555555556,
+      "cross_damage_events": 36,
+      "cross_damage_per_attempt": 0.4444444444444444,
+      "cross_damage_per_success": 0.8,
+      "L21_per_attempt": 1.084911545873235,
+      "L21_per_success": 1.952840782571823,
+      "mean_same_damage_per_attempt": 0.06172839506172839,
+      "max_accepted_update_cost": 3.402886482322417,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.020489470688673878,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 3.5,
+      "method": "Rank1of64_ReleasedKernel",
+      "attempts": 81,
+      "n_success": 60,
+      "success_rate": 0.7407407407407407,
+      "cross_damage_events": 85,
+      "cross_damage_per_attempt": 1.0493827160493827,
+      "cross_damage_per_success": 1.4166666666666667,
+      "L21_per_attempt": 1.4162228993838994,
+      "L21_per_success": 1.9119009141682644,
+      "mean_same_damage_per_attempt": 0.18518518518518517,
+      "max_accepted_update_cost": 3.486703062548633,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.048377916903813316,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 3.5,
+      "method": "AdaptiveSoft_LocalGuard",
+      "attempts": 81,
+      "n_success": 72,
+      "success_rate": 0.8888888888888888,
+      "cross_damage_events": 28,
+      "cross_damage_per_attempt": 0.345679012345679,
+      "cross_damage_per_success": 0.3888888888888889,
+      "L21_per_attempt": 1.5205749406038696,
+      "L21_per_success": 1.710646808179353,
+      "mean_same_damage_per_attempt": 0.43209876543209874,
+      "max_accepted_update_cost": 3.4738815305902566,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.01593625498007968,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 3.5,
+      "method": "AdaptiveSoft_AllGuard",
+      "attempts": 81,
+      "n_success": 72,
+      "success_rate": 0.8888888888888888,
+      "cross_damage_events": 50,
+      "cross_damage_per_attempt": 0.6172839506172839,
+      "cross_damage_per_success": 0.6944444444444444,
+      "L21_per_attempt": 2.1682909639246533,
+      "L21_per_success": 2.4393273344152346,
+      "mean_same_damage_per_attempt": 0.20987654320987653,
+      "max_accepted_update_cost": 3.461318938590753,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.028457598178713718,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 3.5,
+      "method": "AdaptiveRank_ReleasedKernel",
+      "attempts": 81,
+      "n_success": 60,
+      "success_rate": 0.7407407407407407,
+      "cross_damage_events": 57,
+      "cross_damage_per_attempt": 0.7037037037037037,
+      "cross_damage_per_success": 0.95,
+      "L21_per_attempt": 1.7281166978521154,
+      "L21_per_success": 2.3329575421003557,
+      "mean_same_damage_per_attempt": 0.08641975308641975,
+      "max_accepted_update_cost": 3.486703062548633,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.032441661923733635,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 5.2,
+      "method": "Direct",
+      "attempts": 81,
+      "n_success": 80,
+      "success_rate": 0.9876543209876543,
+      "cross_damage_events": 35,
+      "cross_damage_per_attempt": 0.43209876543209874,
+      "cross_damage_per_success": 0.4375,
+      "L21_per_attempt": 1.7391218337526282,
+      "L21_per_success": 1.760860856674536,
+      "mean_same_damage_per_attempt": 0.5061728395061729,
+      "max_accepted_update_cost": 4.94139464083866,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.0199203187250996,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 5.2,
+      "method": "Soft3_LocalGuard",
+      "attempts": 81,
+      "n_success": 80,
+      "success_rate": 0.9876543209876543,
+      "cross_damage_events": 26,
+      "cross_damage_per_attempt": 0.32098765432098764,
+      "cross_damage_per_success": 0.325,
+      "L21_per_attempt": 1.8762136391374373,
+      "L21_per_success": 1.8996663096266553,
+      "mean_same_damage_per_attempt": 0.48148148148148145,
+      "max_accepted_update_cost": 5.058370467997253,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.014797951052931132,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 5.2,
+      "method": "Soft3_AllGuard",
+      "attempts": 81,
+      "n_success": 71,
+      "success_rate": 0.8765432098765432,
+      "cross_damage_events": 53,
+      "cross_damage_per_attempt": 0.654320987654321,
+      "cross_damage_per_success": 0.7464788732394366,
+      "L21_per_attempt": 2.2338095630033004,
+      "L21_per_success": 2.548430628215033,
+      "mean_same_damage_per_attempt": 0.18518518518518517,
+      "max_accepted_update_cost": 5.037729358448413,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.03016505406943654,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 5.2,
+      "method": "Rank125_ReleasedKernel",
+      "attempts": 81,
+      "n_success": 68,
+      "success_rate": 0.8395061728395061,
+      "cross_damage_events": 67,
+      "cross_damage_per_attempt": 0.8271604938271605,
+      "cross_damage_per_success": 0.9852941176470589,
+      "L21_per_attempt": 2.281354486143844,
+      "L21_per_success": 2.717495784965461,
+      "mean_same_damage_per_attempt": 0.08641975308641975,
+      "max_accepted_update_cost": 5.134789610420302,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.03813318155947638,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 5.2,
+      "method": "Rank1of64_ReleasedKernel",
+      "attempts": 81,
+      "n_success": 73,
+      "success_rate": 0.9012345679012346,
+      "cross_damage_events": 106,
+      "cross_damage_per_attempt": 1.308641975308642,
+      "cross_damage_per_success": 1.452054794520548,
+      "L21_per_attempt": 2.087825398556572,
+      "L21_per_success": 2.316628181960032,
+      "mean_same_damage_per_attempt": 0.25925925925925924,
+      "max_accepted_update_cost": 5.170951906486563,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.06033010813887308,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 5.2,
+      "method": "AdaptiveSoft_LocalGuard",
+      "attempts": 81,
+      "n_success": 80,
+      "success_rate": 0.9876543209876543,
+      "cross_damage_events": 32,
+      "cross_damage_per_attempt": 0.3950617283950617,
+      "cross_damage_per_success": 0.4,
+      "L21_per_attempt": 1.9331167094462425,
+      "L21_per_success": 1.9572806683143207,
+      "mean_same_damage_per_attempt": 0.48148148148148145,
+      "max_accepted_update_cost": 5.116225819906234,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.01821286283437678,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 5.2,
+      "method": "AdaptiveSoft_AllGuard",
+      "attempts": 81,
+      "n_success": 80,
+      "success_rate": 0.9876543209876543,
+      "cross_damage_events": 62,
+      "cross_damage_per_attempt": 0.7654320987654321,
+      "cross_damage_per_success": 0.775,
+      "L21_per_attempt": 3.0140031897537916,
+      "L21_per_success": 3.051678229625714,
+      "mean_same_damage_per_attempt": 0.16049382716049382,
+      "max_accepted_update_cost": 5.175555021098075,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.035287421741605006,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "DistMult",
+      "budget": 5.2,
+      "method": "AdaptiveRank_ReleasedKernel",
+      "attempts": 81,
+      "n_success": 73,
+      "success_rate": 0.9012345679012346,
+      "cross_damage_events": 71,
+      "cross_damage_per_attempt": 0.8765432098765432,
+      "cross_damage_per_success": 0.9726027397260274,
+      "L21_per_attempt": 2.7016500333895337,
+      "L21_per_success": 2.997721269925373,
+      "mean_same_damage_per_attempt": 0.12345679012345678,
+      "max_accepted_update_cost": 5.170951906486563,
+      "heldout_fact_exposures": 1757,
+      "lost_per_fact_exposure": 0.040409789413773475,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 3.5,
+      "method": "Direct",
+      "attempts": 81,
+      "n_success": 67,
+      "success_rate": 0.8271604938271605,
+      "cross_damage_events": 11,
+      "cross_damage_per_attempt": 0.13580246913580246,
+      "cross_damage_per_success": 0.16417910447761194,
+      "L21_per_attempt": 1.3886957347994981,
+      "L21_per_success": 1.6788709629665575,
+      "mean_same_damage_per_attempt": 0.41975308641975306,
+      "max_accepted_update_cost": 3.4918429631358943,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.006183249016301293,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 3.5,
+      "method": "Soft3_LocalGuard",
+      "attempts": 81,
+      "n_success": 65,
+      "success_rate": 0.8024691358024691,
+      "cross_damage_events": 6,
+      "cross_damage_per_attempt": 0.07407407407407407,
+      "cross_damage_per_success": 0.09230769230769231,
+      "L21_per_attempt": 1.4009306050727903,
+      "L21_per_success": 1.7457750617060925,
+      "mean_same_damage_per_attempt": 0.38271604938271603,
+      "max_accepted_update_cost": 3.4666804827021993,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.003372681281618887,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 3.5,
+      "method": "Soft3_AllGuard",
+      "attempts": 81,
+      "n_success": 51,
+      "success_rate": 0.6296296296296297,
+      "cross_damage_events": 22,
+      "cross_damage_per_attempt": 0.2716049382716049,
+      "cross_damage_per_success": 0.43137254901960786,
+      "L21_per_attempt": 1.2724744861701094,
+      "L21_per_success": 2.0209888897995856,
+      "mean_same_damage_per_attempt": 0.07407407407407407,
+      "max_accepted_update_cost": 3.4979605143669925,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.012366498032602586,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 3.5,
+      "method": "Rank125_ReleasedKernel",
+      "attempts": 81,
+      "n_success": 48,
+      "success_rate": 0.5925925925925926,
+      "cross_damage_events": 24,
+      "cross_damage_per_attempt": 0.2962962962962963,
+      "cross_damage_per_success": 0.5,
+      "L21_per_attempt": 1.2585899215082292,
+      "L21_per_success": 2.123870492545137,
+      "mean_same_damage_per_attempt": 0.07407407407407407,
+      "max_accepted_update_cost": 3.4968537306500425,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.013490725126475547,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 3.5,
+      "method": "Rank1of64_ReleasedKernel",
+      "attempts": 81,
+      "n_success": 55,
+      "success_rate": 0.6790123456790124,
+      "cross_damage_events": 33,
+      "cross_damage_per_attempt": 0.4074074074074074,
+      "cross_damage_per_success": 0.6,
+      "L21_per_attempt": 1.4011255211824918,
+      "L21_per_success": 2.0634757675596695,
+      "mean_same_damage_per_attempt": 0.07407407407407407,
+      "max_accepted_update_cost": 3.4992774625708636,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.01854974704890388,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 3.5,
+      "method": "AdaptiveSoft_LocalGuard",
+      "attempts": 81,
+      "n_success": 67,
+      "success_rate": 0.8271604938271605,
+      "cross_damage_events": 13,
+      "cross_damage_per_attempt": 0.16049382716049382,
+      "cross_damage_per_success": 0.19402985074626866,
+      "L21_per_attempt": 1.5250163408230515,
+      "L21_per_success": 1.8436764717413012,
+      "mean_same_damage_per_attempt": 0.38271604938271603,
+      "max_accepted_update_cost": 3.4918429631358943,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.007307476110174255,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 3.5,
+      "method": "AdaptiveSoft_AllGuard",
+      "attempts": 81,
+      "n_success": 67,
+      "success_rate": 0.8271604938271605,
+      "cross_damage_events": 32,
+      "cross_damage_per_attempt": 0.3950617283950617,
+      "cross_damage_per_success": 0.47761194029850745,
+      "L21_per_attempt": 2.0140198099404065,
+      "L21_per_success": 2.434859770226462,
+      "mean_same_damage_per_attempt": 0.18518518518518517,
+      "max_accepted_update_cost": 3.4979605143669925,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.017987633501967398,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 3.5,
+      "method": "AdaptiveRank_ReleasedKernel",
+      "attempts": 81,
+      "n_success": 55,
+      "success_rate": 0.6790123456790124,
+      "cross_damage_events": 28,
+      "cross_damage_per_attempt": 0.345679012345679,
+      "cross_damage_per_success": 0.509090909090909,
+      "L21_per_attempt": 1.6493769614201603,
+      "L21_per_success": 2.4290824340915087,
+      "mean_same_damage_per_attempt": 0.06172839506172839,
+      "max_accepted_update_cost": 3.4992774625708636,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.015739179314221474,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 5.2,
+      "method": "Direct",
+      "attempts": 81,
+      "n_success": 78,
+      "success_rate": 0.9629629629629629,
+      "cross_damage_events": 12,
+      "cross_damage_per_attempt": 0.14814814814814814,
+      "cross_damage_per_success": 0.15384615384615385,
+      "L21_per_attempt": 1.9194238553482608,
+      "L21_per_success": 1.9932478497847324,
+      "mean_same_damage_per_attempt": 0.4567901234567901,
+      "max_accepted_update_cost": 4.45571619113728,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.006745362563237774,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 5.2,
+      "method": "Soft3_LocalGuard",
+      "attempts": 81,
+      "n_success": 78,
+      "success_rate": 0.9629629629629629,
+      "cross_damage_events": 10,
+      "cross_damage_per_attempt": 0.12345679012345678,
+      "cross_damage_per_success": 0.1282051282051282,
+      "L21_per_attempt": 2.042304657796578,
+      "L21_per_success": 2.1208548369426006,
+      "mean_same_damage_per_attempt": 0.41975308641975306,
+      "max_accepted_update_cost": 4.577423163514044,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.005621135469364812,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 5.2,
+      "method": "Soft3_AllGuard",
+      "attempts": 81,
+      "n_success": 71,
+      "success_rate": 0.8765432098765432,
+      "cross_damage_events": 34,
+      "cross_damage_per_attempt": 0.41975308641975306,
+      "cross_damage_per_success": 0.4788732394366197,
+      "L21_per_attempt": 2.2947076666749364,
+      "L21_per_success": 2.617905929586899,
+      "mean_same_damage_per_attempt": 0.1111111111111111,
+      "max_accepted_update_cost": 5.109717235366423,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.01911186059584036,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 5.2,
+      "method": "Rank125_ReleasedKernel",
+      "attempts": 81,
+      "n_success": 68,
+      "success_rate": 0.8395061728395061,
+      "cross_damage_events": 36,
+      "cross_damage_per_attempt": 0.4444444444444444,
+      "cross_damage_per_success": 0.5294117647058824,
+      "L21_per_attempt": 2.301406410569443,
+      "L21_per_success": 2.741381165531248,
+      "mean_same_damage_per_attempt": 0.08641975308641975,
+      "max_accepted_update_cost": 5.184600448179947,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.02023608768971332,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 5.2,
+      "method": "Rank1of64_ReleasedKernel",
+      "attempts": 81,
+      "n_success": 73,
+      "success_rate": 0.9012345679012346,
+      "cross_damage_events": 48,
+      "cross_damage_per_attempt": 0.5925925925925926,
+      "cross_damage_per_success": 0.6575342465753424,
+      "L21_per_attempt": 2.331262983423986,
+      "L21_per_success": 2.5867438583197653,
+      "mean_same_damage_per_attempt": 0.08641975308641975,
+      "max_accepted_update_cost": 5.199782717380526,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.026981450252951095,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 5.2,
+      "method": "AdaptiveSoft_LocalGuard",
+      "attempts": 81,
+      "n_success": 78,
+      "success_rate": 0.9629629629629629,
+      "cross_damage_events": 13,
+      "cross_damage_per_attempt": 0.16049382716049382,
+      "cross_damage_per_success": 0.16666666666666666,
+      "L21_per_attempt": 2.0895775920306914,
+      "L21_per_success": 2.1699459609549487,
+      "mean_same_damage_per_attempt": 0.41975308641975306,
+      "max_accepted_update_cost": 4.626042762598686,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.007307476110174255,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 5.2,
+      "method": "AdaptiveSoft_AllGuard",
+      "attempts": 81,
+      "n_success": 78,
+      "success_rate": 0.9629629629629629,
+      "cross_damage_events": 45,
+      "cross_damage_per_attempt": 0.5555555555555556,
+      "cross_damage_per_success": 0.5769230769230769,
+      "L21_per_attempt": 2.907255927797643,
+      "L21_per_success": 3.0190734634821674,
+      "mean_same_damage_per_attempt": 0.13580246913580246,
+      "max_accepted_update_cost": 5.181856054138705,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.025295109612141653,
+      "n_zero_cross_holdout": 5
+    },
+    {
+      "kind": "ComplEx",
+      "budget": 5.2,
+      "method": "AdaptiveRank_ReleasedKernel",
+      "attempts": 81,
+      "n_success": 73,
+      "success_rate": 0.9012345679012346,
+      "cross_damage_events": 42,
+      "cross_damage_per_attempt": 0.5185185185185185,
+      "cross_damage_per_success": 0.5753424657534246,
+      "L21_per_attempt": 2.817144604550079,
+      "L21_per_success": 3.125872780391184,
+      "mean_same_damage_per_attempt": 0.07407407407407407,
+      "max_accepted_update_cost": 5.199782717380526,
+      "heldout_fact_exposures": 1779,
+      "lost_per_fact_exposure": 0.023608768971332208,
+      "n_zero_cross_holdout": 5
+    }
+  ],
+  "paired": {
+    "DistMult_B3.5": {
+      "Soft3_LocalGuard": {
+        "mean_delta_vs_direct": -0.13580246913580246,
+        "improved": 10,
+        "worsened": 3,
+        "ties": 68,
+        "matched_success": 79,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            -0.28205128205128205,
+            -0.02564102564102564
+          ],
+          "query_balanced_effect": -0.14102564102564102
+        }
+      },
+      "Soft3_AllGuard": {
+        "mean_delta_vs_direct": 0.0,
+        "improved": 13,
+        "worsened": 17,
+        "ties": 51,
+        "matched_success": 60,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            -0.2564102564102564,
+            0.22435897435897437
+          ],
+          "query_balanced_effect": -0.00641025641025641
+        }
+      },
+      "Rank125_ReleasedKernel": {
+        "mean_delta_vs_direct": 0.037037037037037035,
+        "improved": 16,
+        "worsened": 18,
+        "ties": 47,
+        "matched_success": 54,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            -0.2564102564102564,
+            0.2948717948717949
+          ],
+          "query_balanced_effect": 0.03205128205128205
+        }
+      },
+      "AdaptiveSoft_LocalGuard": {
+        "mean_delta_vs_direct": -0.06172839506172839,
+        "improved": 9,
+        "worsened": 7,
+        "ties": 65,
+        "matched_success": 81,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            -0.20512820512820512,
+            0.0641025641025641
+          ],
+          "query_balanced_effect": -0.0641025641025641
+        }
+      },
+      "AdaptiveSoft_AllGuard": {
+        "mean_delta_vs_direct": 0.20987654320987653,
+        "improved": 7,
+        "worsened": 22,
+        "ties": 52,
+        "matched_success": 81,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            0.019230769230769232,
+            0.3974358974358974
+          ],
+          "query_balanced_effect": 0.21153846153846154
+        }
+      },
+      "AdaptiveRank_ReleasedKernel": {
+        "mean_delta_vs_direct": 0.2962962962962963,
+        "improved": 11,
+        "worsened": 25,
+        "ties": 45,
+        "matched_success": 69,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            0.038461538461538464,
+            0.5512820512820513
+          ],
+          "query_balanced_effect": 0.30128205128205127
+        }
+      }
+    },
+    "DistMult_B5.2": {
+      "Soft3_LocalGuard": {
+        "mean_delta_vs_direct": -0.1111111111111111,
+        "improved": 10,
+        "worsened": 5,
+        "ties": 66,
+        "matched_success": 81,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            -0.2564102564102564,
+            0.01282051282051282
+          ],
+          "query_balanced_effect": -0.11538461538461539
+        }
+      },
+      "Soft3_AllGuard": {
+        "mean_delta_vs_direct": 0.2222222222222222,
+        "improved": 9,
+        "worsened": 26,
+        "ties": 46,
+        "matched_success": 72,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            0.01282051282051282,
+            0.4166666666666667
+          ],
+          "query_balanced_effect": 0.21794871794871795
+        }
+      },
+      "Rank125_ReleasedKernel": {
+        "mean_delta_vs_direct": 0.3950617283950617,
+        "improved": 9,
+        "worsened": 29,
+        "ties": 43,
+        "matched_success": 69,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            0.1346153846153846,
+            0.6794871794871795
+          ],
+          "query_balanced_effect": 0.40384615384615385
+        }
+      },
+      "AdaptiveSoft_LocalGuard": {
+        "mean_delta_vs_direct": -0.037037037037037035,
+        "improved": 9,
+        "worsened": 9,
+        "ties": 63,
+        "matched_success": 81,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            -0.1794871794871795,
+            0.08974358974358974
+          ],
+          "query_balanced_effect": -0.038461538461538464
+        }
+      },
+      "AdaptiveSoft_AllGuard": {
+        "mean_delta_vs_direct": 0.3333333333333333,
+        "improved": 9,
+        "worsened": 31,
+        "ties": 41,
+        "matched_success": 81,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            0.12179487179487179,
+            0.5386217948717925
+          ],
+          "query_balanced_effect": 0.3333333333333333
+        }
+      },
+      "AdaptiveRank_ReleasedKernel": {
+        "mean_delta_vs_direct": 0.4444444444444444,
+        "improved": 9,
+        "worsened": 31,
+        "ties": 41,
+        "matched_success": 74,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            0.1794871794871795,
+            0.7307692307692307
+          ],
+          "query_balanced_effect": 0.4551282051282051
+        }
+      }
+    },
+    "ComplEx_B3.5": {
+      "Soft3_LocalGuard": {
+        "mean_delta_vs_direct": -0.06172839506172839,
+        "improved": 4,
+        "worsened": 2,
+        "ties": 75,
+        "matched_success": 79,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            -0.19230769230769232,
+            0.02564102564102564
+          ],
+          "query_balanced_effect": -0.0641025641025641
+        }
+      },
+      "Soft3_AllGuard": {
+        "mean_delta_vs_direct": 0.13580246913580246,
+        "improved": 5,
+        "worsened": 14,
+        "ties": 62,
+        "matched_success": 65,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            -0.057692307692307696,
+            0.32051282051282054
+          ],
+          "query_balanced_effect": 0.1346153846153846
+        }
+      },
+      "Rank125_ReleasedKernel": {
+        "mean_delta_vs_direct": 0.16049382716049382,
+        "improved": 5,
+        "worsened": 15,
+        "ties": 61,
+        "matched_success": 62,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            -0.038461538461538464,
+            0.358974358974359
+          ],
+          "query_balanced_effect": 0.16025641025641027
+        }
+      },
+      "AdaptiveSoft_LocalGuard": {
+        "mean_delta_vs_direct": 0.024691358024691357,
+        "improved": 4,
+        "worsened": 4,
+        "ties": 73,
+        "matched_success": 81,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            -0.0641025641025641,
+            0.1282051282051282
+          ],
+          "query_balanced_effect": 0.02564102564102564
+        }
+      },
+      "AdaptiveSoft_AllGuard": {
+        "mean_delta_vs_direct": 0.25925925925925924,
+        "improved": 3,
+        "worsened": 18,
+        "ties": 60,
+        "matched_success": 81,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            0.10256410256410256,
+            0.4230769230769231
+          ],
+          "query_balanced_effect": 0.2564102564102564
+        }
+      },
+      "AdaptiveRank_ReleasedKernel": {
+        "mean_delta_vs_direct": 0.20987654320987653,
+        "improved": 4,
+        "worsened": 19,
+        "ties": 58,
+        "matched_success": 69,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            0.01282051282051282,
+            0.38461538461538464
+          ],
+          "query_balanced_effect": 0.20512820512820512
+        }
+      }
+    },
+    "ComplEx_B5.2": {
+      "Soft3_LocalGuard": {
+        "mean_delta_vs_direct": -0.024691358024691357,
+        "improved": 4,
+        "worsened": 2,
+        "ties": 75,
+        "matched_success": 81,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            -0.08974358974358974,
+            0.038461538461538464
+          ],
+          "query_balanced_effect": -0.02564102564102564
+        }
+      },
+      "Soft3_AllGuard": {
+        "mean_delta_vs_direct": 0.2716049382716049,
+        "improved": 4,
+        "worsened": 21,
+        "ties": 56,
+        "matched_success": 74,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            0.0641025641025641,
+            0.4807692307692308
+          ],
+          "query_balanced_effect": 0.2692307692307692
+        }
+      },
+      "Rank125_ReleasedKernel": {
+        "mean_delta_vs_direct": 0.2962962962962963,
+        "improved": 4,
+        "worsened": 22,
+        "ties": 55,
+        "matched_success": 71,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            0.08333333333333333,
+            0.5064102564102564
+          ],
+          "query_balanced_effect": 0.2948717948717949
+        }
+      },
+      "AdaptiveSoft_LocalGuard": {
+        "mean_delta_vs_direct": 0.012345679012345678,
+        "improved": 6,
+        "worsened": 5,
+        "ties": 70,
+        "matched_success": 81,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            -0.08974358974358974,
+            0.11538461538461539
+          ],
+          "query_balanced_effect": 0.01282051282051282
+        }
+      },
+      "AdaptiveSoft_AllGuard": {
+        "mean_delta_vs_direct": 0.4074074074074074,
+        "improved": 3,
+        "worsened": 27,
+        "ties": 51,
+        "matched_success": 81,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            0.19230769230769232,
+            0.6153846153846154
+          ],
+          "query_balanced_effect": 0.40384615384615385
+        }
+      },
+      "AdaptiveRank_ReleasedKernel": {
+        "mean_delta_vs_direct": 0.37037037037037035,
+        "improved": 4,
+        "worsened": 27,
+        "ties": 50,
+        "matched_success": 76,
+        "exploratory": {
+          "n_unique_queries": 78,
+          "query_cluster_bootstrap_95": [
+            0.15384615384615385,
+            0.5769230769230769
+          ],
+          "query_balanced_effect": 0.36538461538461536
+        }
+      }
+    }
+  }
+}

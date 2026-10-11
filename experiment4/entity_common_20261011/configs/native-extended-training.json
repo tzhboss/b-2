@@ -1,0 +1,125 @@
+{
+  "source_root": "../literature_baselines_20261010",
+  "dataset": "repos/FastKGE/data/FB_CKGE",
+  "source_audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "dependency_paths": [
+    "repos/FastKGE/reproduction/vendor",
+    "repos/SAGE/provenance/wheel_contents/torch_scatter-2.1.2+pt25cu124-cp312-cp312-linux_x86_64"
+  ],
+  "epochs": 200,
+  "batch_size": 1024,
+  "negatives": 10,
+  "margin": 8.0,
+  "validation_every": 5,
+  "validation_queries_per_split": 1024,
+  "validation_seed": 124,
+  "expansion_seed_offset": 10000,
+  "budget_seconds_per_job": 2400,
+  "cpu_threads_per_job": 2,
+  "id": "KGE-ENTITY-COMMON-NATIVE-002",
+  "feature_directory": "artifacts/native-features/incde/1",
+  "feature_workers": 8,
+  "feature_partitions": 32,
+  "native_sources": {
+    "IncDE": "runs/incde-entity-s3407/worktree",
+    "SAGE": "runs/sage-fact-s55/worktree"
+  },
+  "scope": "IncDE and SAGE native task bridges; KGEditor and Rank/QP remain required",
+  "available_gpu_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "gpu_queue_dependencies": [
+    "experiments/KGE-ENTITY-COMMON-INCREMENT-001/experiment.yaml"
+  ],
+  "worker": "scripts/run_native_extended.py",
+  "auditor": "scripts/audit_exported_embeddings.py",
+  "log_directory": "logs/native-extended",
+  "incde_preflight_epochs": 22,
+  "jobs": [
+    {
+      "id": "incde-common-s17",
+      "method": "IncDE",
+      "base": "transe",
+      "kind": "TransE",
+      "seed": 17,
+      "after_dimension": 200,
+      "learning_rate": 0.0001,
+      "native_options": {}
+    },
+    {
+      "id": "incde-common-s29",
+      "method": "IncDE",
+      "base": "transe",
+      "kind": "TransE",
+      "seed": 29,
+      "after_dimension": 200,
+      "learning_rate": 0.0001,
+      "native_options": {}
+    },
+    {
+      "id": "incde-common-s43",
+      "method": "IncDE",
+      "base": "transe",
+      "kind": "TransE",
+      "seed": 43,
+      "after_dimension": 200,
+      "learning_rate": 0.0001,
+      "native_options": {}
+    },
+    {
+      "id": "sage-common-s17",
+      "method": "SAGE",
+      "base": "sage-base",
+      "kind": "TransE",
+      "seed": 17,
+      "after_dimension": 210,
+      "learning_rate": 0.0001,
+      "native_options": {
+        "new_dim_epoch_num": 1,
+        "num_samples_for_retrain": 1000,
+        "use_difficult_samples": false,
+        "reconstruct_weight": 0.1,
+        "regular_weight": 0.01
+      }
+    },
+    {
+      "id": "sage-common-s29",
+      "method": "SAGE",
+      "base": "sage-base",
+      "kind": "TransE",
+      "seed": 29,
+      "after_dimension": 210,
+      "learning_rate": 0.0001,
+      "native_options": {
+        "new_dim_epoch_num": 1,
+        "num_samples_for_retrain": 1000,
+        "use_difficult_samples": false,
+        "reconstruct_weight": 0.1,
+        "regular_weight": 0.01
+      }
+    },
+    {
+      "id": "sage-common-s43",
+      "method": "SAGE",
+      "base": "sage-base",
+      "kind": "TransE",
+      "seed": 43,
+      "after_dimension": 210,
+      "learning_rate": 0.0001,
+      "native_options": {
+        "new_dim_epoch_num": 1,
+        "num_samples_for_retrain": 1000,
+        "use_difficult_samples": false,
+        "reconstruct_weight": 0.1,
+        "regular_weight": 0.01
+      }
+    }
+  ]
+}

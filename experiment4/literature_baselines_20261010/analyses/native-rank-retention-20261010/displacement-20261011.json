@@ -1,0 +1,182 @@
+{
+  "status": "POSTHOC_DERIVED_RANK_DISPLACEMENT",
+  "source_sha256": "5e89e2f2948d68ecc5d56736a4cffc3c8ec4b24c2c36d36ac9bb05eb53dae19d",
+  "source_file": "analyses/native-rank-retention-20261010/derived-transitions.json",
+  "bound_input_count": 63,
+  "quantile": "empirical higher order statistic",
+  "summaries": [
+    {
+      "method": "IncDE",
+      "split": "ENTITY",
+      "all_query_changed_pct": 75.32200681113373,
+      "original_top10_drop_pct": 9.633774585543074,
+      "original_top10_rank_delta": {
+        "n": 47894,
+        "p50": 0,
+        "p95": 10,
+        "max": 1540
+      },
+      "original_top10_final_rank": {
+        "n": 47894,
+        "p50": 2,
+        "p95": 16,
+        "max": 1544
+      },
+      "original_top10_worsened_n": 15207,
+      "worsened_original_top10_rank_loss": {
+        "n": 15207,
+        "p50": 2,
+        "p95": 37,
+        "max": 1540
+      }
+    },
+    {
+      "method": "IncDE",
+      "split": "RELATION",
+      "all_query_changed_pct": 80.31521305907428,
+      "original_top10_drop_pct": 18.327059628710753,
+      "original_top10_rank_delta": {
+        "n": 46756,
+        "p50": 0,
+        "p95": 91,
+        "max": 8576
+      },
+      "original_top10_final_rank": {
+        "n": 46756,
+        "p50": 3,
+        "p95": 94,
+        "max": 8582
+      },
+      "original_top10_worsened_n": 17982,
+      "worsened_original_top10_rank_loss": {
+        "n": 17982,
+        "p50": 5,
+        "p95": 1274,
+        "max": 8576
+      }
+    },
+    {
+      "method": "IncDE",
+      "split": "FACT",
+      "all_query_changed_pct": 81.11346231358323,
+      "original_top10_drop_pct": 10.88890638532399,
+      "original_top10_rank_delta": {
+        "n": 38103,
+        "p50": 0,
+        "p95": 16,
+        "max": 3742
+      },
+      "original_top10_final_rank": {
+        "n": 38103,
+        "p50": 2,
+        "p95": 21,
+        "max": 3748
+      },
+      "original_top10_worsened_n": 12947,
+      "worsened_original_top10_rank_loss": {
+        "n": 12947,
+        "p50": 3,
+        "p95": 58,
+        "max": 3742
+      }
+    },
+    {
+      "method": "IncDE",
+      "split": "HYBRID",
+      "all_query_changed_pct": 75.44014084507043,
+      "original_top10_drop_pct": 8.727353562298545,
+      "original_top10_rank_delta": {
+        "n": 44985,
+        "p50": 0,
+        "p95": 10,
+        "max": 2441
+      },
+      "original_top10_final_rank": {
+        "n": 44985,
+        "p50": 2,
+        "p95": 15,
+        "max": 2446
+      },
+      "original_top10_worsened_n": 13551,
+      "worsened_original_top10_rank_loss": {
+        "n": 13551,
+        "p50": 2,
+        "p95": 32,
+        "max": 2441
+      }
+    },
+    {
+      "method": "FastKGE",
+      "split": "FB_CKGE",
+      "all_query_changed_pct": 0.0,
+      "original_top10_drop_pct": 0.0,
+      "original_top10_rank_delta": {
+        "n": 45368,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "original_top10_final_rank": {
+        "n": 45368,
+        "p50": 2,
+        "p95": 9,
+        "max": 10
+      },
+      "original_top10_worsened_n": 0
+    },
+    {
+      "method": "STARK",
+      "split": "FB_CKGE",
+      "all_query_changed_pct": 0.0,
+      "original_top10_drop_pct": 0.0,
+      "original_top10_rank_delta": {
+        "n": 46068,
+        "p50": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "original_top10_final_rank": {
+        "n": 46068,
+        "p50": 2,
+        "p95": 9,
+        "max": 10
+      },
+      "original_top10_worsened_n": 0
+    },
+    {
+      "method": "LKGE_clean_validation",
+      "split": "FACT",
+      "all_query_changed_pct": 82.96654574768239,
+      "original_top10_drop_pct": 15.57858989305084,
+      "original_top10_rank_delta": {
+        "n": 39458,
+        "p50": 0,
+        "p95": 36,
+        "max": 3948
+      },
+      "original_top10_final_rank": {
+        "n": 39458,
+        "p50": 3,
+        "p95": 41,
+        "max": 3952
+      },
+      "original_top10_worsened_n": 16299,
+      "worsened_original_top10_rank_loss": {
+        "n": 16299,
+        "p50": 3,
+        "p95": 124,
+        "max": 3948
+      }
+    }
+  ],
+  "new_training": false,
+  "new_model_inference": false,
+  "limitations": [
+    "Native filtered double-argsort rankings; not the unfiltered strict-competition single-edit Rank-Level Locality protocol.",
+    "Historical candidate universes remain fixed; says nothing about protection against all new entities at the current snapshot.",
+    "Query observations include head/tail directions and possible duplicates; not independent samples or unique facts.",
+    "Single seed per run, old test/cohort exposure and upstream split limitations retained; no significance or global guarantee.",
+    "SAGE omitted because original integrity FAIL is retained. KGEditor is a different editing task and is not in this analysis.",
+    "Existing score/rank producer audit is consumed; this script independently checks derivations, not all model scores."
+  ]
+}

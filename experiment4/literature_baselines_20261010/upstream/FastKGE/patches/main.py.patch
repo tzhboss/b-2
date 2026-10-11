@@ -1,0 +1,22 @@
+diff --git a/main.py b/main.py
+index 7b46124..41bf427 100644
+--- a/main.py
++++ b/main.py
+@@ -281,6 +281,17 @@ class Instructor():
+                 shutil.copyfile(out_tar, best_path)
+ 
+ 
++        if is_best and getattr(self.args, 'observation_path', None):
++            import json
++            from pathlib import Path
++            output = Path(self.args.observation_path)
++            output.mkdir(parents=True, exist_ok=True)
++            (output / f'selected_checkpoint_snapshot{self.args.snapshot}.json').write_text(
++                json.dumps({'snapshot': self.args.snapshot, 'epoch': self.args.epoch,
++                            'checkpoint': os.path.relpath(best_path, output), 'lora_only': lora,
++                            'best_validation_metric': self.args.valid_metrics,
++                            'best_validation_value': self.best_valid}, indent=2) + '\n')
++
+     def load_checkpoint(self, input_file):
+         if self.args.snapshot == 0:
+             if os.path.isfile(input_file):

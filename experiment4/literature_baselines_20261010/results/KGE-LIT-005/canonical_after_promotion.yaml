@@ -1,0 +1,65 @@
+id: KGE-LIT-005
+status: completed_audited_derived
+registration_status: REGISTERED
+registered_utc: '2026-10-10T12:12:01Z'
+protocol: configs/protocols/KGE-LIT-005-candidate-diagnostic.json
+protocol_sha256: e36e51c12d983f5875d326e94f3755d2dccf8b3d39af719a76daacabdd79111a
+implementation_sha256: 313903da5d506a4086bcc0846cb712c764089929f6899f1734aa5b710655af78
+required_auditor_sha256: ccb48f4e3da560b26dcdf2d03f6809d46e34f605b539a348a15dc9b778411512
+active_processes: []
+jobs:
+- id: incde-entity-s3407
+  gpu: 0
+  stage: completed_audited_derived
+  pid: 658366
+  status: PASS_DERIVED_WITH_LIMITATIONS
+  exit_code: 0
+- id: incde-relation-s3407
+  gpu: 1
+  stage: completed_audited_derived
+  pid: 656152
+  status: PASS_DERIVED_WITH_LIMITATIONS
+  exit_code: 0
+- id: incde-fact-s3407
+  gpu: 2
+  stage: completed_audited_derived
+  pid: 658009
+  status: PASS_DERIVED_WITH_LIMITATIONS
+  exit_code: 0
+- id: incde-hybrid-s3407
+  gpu: 3
+  stage: completed_audited_derived
+  pid: 657128
+  status: PASS_DERIVED_WITH_LIMITATIONS
+  exit_code: 0
+audit:
+  status: PASS_DERIVED_NUMERICS_WITH_LIMITATIONS
+  checks: 10944511
+  failures: 0
+  queries: 496208
+  independent_score_replays: 0
+  evidence_directory: results/KGE-LIT-005
+  auditor_sha256: 433fc9a0a625f54b589990e1bbf2c95a0877c955bc95c2e2ff7b2606839ffb77
+  summary_sha256: 46233a3ab064dad53b09fb419a8eb2eb310bdd208af91451a7d0343b7d23aede
+  limitations:
+  - CPU provenance, query/filter contracts, numeric derivations and necessary rank
+    identities only.
+  - No independent embedding-score or CUDA all-query rank recomputation.
+  - Source native PASS is bound and consumed, not independently repeated by this script.
+  - Rank identities and tie bounds are necessary checks; they cannot certify score
+    provenance alone.
+  - Native validation-best precision, historical competitors and single-seed limits
+    remain.
+  - No canonical changes or formal result promotion.
+scope: fixed evaluation-only Pons-motivated diagnostic, not paper fullreplication
+coordinator_sha256: e42b5b1eca16fed11b5ea4c571171a2d978071a47b069ae3d8af0432b8d916b9
+prior_coordinator_failure: 'logs/KGE-LIT-005-coordinator.log: startup str/Path hash
+  helper error, before any audits/diagnostics'
+coordinator_pid: 656151
+mechanical_retry_registration: logs/KGE-LIT-005-mechanical-retry-registration.json
+prior_diagnostic_failures:
+- id: incde-relation-s3407
+  exit_code: 1
+  log: logs/incde-relation-s3407-candidate-diagnostic.log
+  cause: prefix selector accidentally consumed train4_test4_pre_fwt.npz; assert five
+    failed before output creation/inference

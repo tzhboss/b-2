@@ -1,0 +1,36 @@
+id: KGE-ENTITY-COMMON-RANK-CAPACITY-SCOPE-035
+status: completed_audited_artifact_checks_only
+config: configs/rank-capacity-scope35.json
+protocol: plan/rank-capacity-scope-protocol.md
+scope: TRAIN-certified saturated query reference exemptions; structural scope audit
+  only, no model updates or utility
+registered_utc: '2026-10-11T08:14:45.606848+00:00'
+frozen_input_sha256:
+  configs/rank-capacity-scope35.json: d4690ba8990d70195f46fdd9df49251b06ca1521b2440b9fd4028f51d7259ad8
+  plan/rank-capacity-scope-protocol.md: 7168c30e67497e24755bc8f143621f047d010a931ef523aa61e1fa0cfbc1b33c
+  src/rank_capacity_scope.py: b185c0c2779358fda1b87add4b06da69d60fbb193884e69d7b3953b17c9dde97
+  src/rank_capacity.py: aa9198d86422d4d520307225c911d459addb467526204340e5526bd3259a8b3e
+  scripts/run_rank_scope_policy.py: 22dbe621c9fd1bbf1f43365163d9e8f7646cbc264b9b01213a417bf980e1e70b
+  scripts/diagnose_rank_capacity.py: 6ad593bf2f1e0b7f447a4411cdab01495dc990214e9cf64ee13de95a56537bfe
+  scripts/coordinate_artifact_checks_v2.py: 230c273b73f9d19bfb300b3becf8c63557c596cf02214dab7383724ba81d6408
+  artifacts/rank-capacity-diagnostic/strict-train-v2/summary.json: f1f19b82e12235b4e26bc8a1aff919870a4e9aede10da6f0e722c4cc6256df2d
+  artifacts/rank-capacity-diagnostic/strict-train-v2/native-gpu-audit.json: f9e7899ea167971dabd81f646edc084587a2804c438118c530a2d28bcd10f064
+  artifacts/rank-capacity-diagnostic/dataset-split-audit.json: a4050d6fc55d15fe8da8b4c01eb16fcffc163a9fcf225f0cd8b3181cf2394381
+active_processes: []
+coordinator_pid: 780341
+jobs:
+  shared-rank-scope-s17:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-rank-scope-s29:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+  shared-rank-scope-s43:
+    status: completed_audited
+    stage: audit
+    exit_code: 0
+queued_jobs: []
+queued_audits: []
+result_directory: results/KGE-ENTITY-COMMON-RANK-CAPACITY-SCOPE-035

@@ -1,0 +1,85 @@
+{
+  "id": "KGE-ENTITY-COMMON-RANK-CAPACITY-UTILITY-038",
+  "source_experiment": "KGE-ENTITY-COMMON-RANK-CAPACITY-037",
+  "source_config_sha256": "48b3f619ada69db422656c370fbebe38a92d6411900eda48e812cade9a333299",
+  "python": "../literature_baselines_20261010/environment/downloads/bin/python",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "jobs": [
+    {
+      "id": "capacity-full-s17",
+      "method": "CapacityFrozenFull",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "capacity-scoped-s17",
+      "method": "CapacityFrozenScoped",
+      "kind": "DistMult",
+      "seed": 17,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    },
+    {
+      "id": "capacity-full-s29",
+      "method": "CapacityFrozenFull",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "capacity-scoped-s29",
+      "method": "CapacityFrozenScoped",
+      "kind": "DistMult",
+      "seed": 29,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    },
+    {
+      "id": "capacity-full-s43",
+      "method": "CapacityFrozenFull",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200,
+      "protection_scope": "full",
+      "joint_old": false
+    },
+    {
+      "id": "capacity-scoped-s43",
+      "method": "CapacityFrozenScoped",
+      "kind": "DistMult",
+      "seed": 43,
+      "after_dimension": 200,
+      "protection_scope": "scoped",
+      "joint_old": false
+    }
+  ],
+  "worker": "scripts/audit_rank_capacity_utility.py",
+  "aggregate_worker": "scripts/audit_rank_capacity_utility.py",
+  "reaudit_directory": "artifacts/rank-capacity-utility38",
+  "log_directory": "logs/rank-capacity-utility38",
+  "batch_size": 64,
+  "max_concurrent_audits": 4,
+  "dependencies": [
+    "experiments/KGE-ENTITY-COMMON-RANK-CAPACITY-037/experiment.yaml"
+  ],
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-RANK-CAPACITY-037/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-FULL-INDEX-EQUIVALENCE-034/experiment.yaml"
+  ],
+  "original_utility_result": "results/KGE-ENTITY-COMMON-SHARED-GRAPH-UTILITY-032/summary.json",
+  "method_controls": {
+    "CapacityFrozenFull": "SharedFrozenFull",
+    "CapacityFrozenScoped": "SharedFrozenScoped"
+  }
+}

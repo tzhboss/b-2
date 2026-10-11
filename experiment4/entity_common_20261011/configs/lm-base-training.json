@@ -1,0 +1,40 @@
+{
+  "id": "KGE-ENTITY-COMMON-LMBASE-004",
+  "source_root": "../literature_baselines_20261010",
+  "dataset": "repos/FastKGE/data/FB_CKGE",
+  "source_audit": "results/KGE-LIT-002/fastkge-fbckge-s3407/independent-audit.json",
+  "python": "../literature_baselines_20261010/environment/kgeditor38/bin/python",
+  "native_source": "runs/kgeditor-e-fb15k237-s0/worktree/deltaKG",
+  "text_metadata_directory": "data/KGEditor-HF/E-FB15k237",
+  "pretraining_assets": "artifacts/pretraining/bert-base-uncased-86b5e093",
+  "data_cache": "artifacts/lm-data-cache",
+  "meta_split_seed": 20261011,
+  "meta_train_original_facts": 3087,
+  "meta_valid_original_facts": 512,
+  "validation_seed": 124,
+  "validation_queries": 1024,
+  "max_sequence_length": 64,
+  "encoding_workers": 8,
+  "encoding_chunk_rows": 2048,
+  "ex_size": 64,
+  "kb_layers": [10, 11],
+  "base_learning_rate": 0.00002,
+  "base_weight_decay": 0.01,
+  "base_epochs": 20,
+  "base_batch_size": 64,
+  "base_gradient_clip": 1,
+  "base_budget_seconds": 18000,
+  "progress_every_steps": 100,
+  "audit_logit_tolerance": 0.0001,
+  "available_gpu_indices": [0, 1, 2, 3, 4, 5, 6],
+  "resource_claim_sources": [
+    "experiments/KGE-ENTITY-COMMON-NATIVE-002/experiment.yaml",
+    "experiments/KGE-ENTITY-COMMON-INCREMENT-001/experiment.yaml"
+  ],
+  "log_directory": "logs/lm-base",
+  "jobs": [
+    {"id": "lm-base-s17", "seed": 17},
+    {"id": "lm-base-s29", "seed": 29},
+    {"id": "lm-base-s43", "seed": 43}
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "new_queries": 12406,
+  "candidates": 11258,
+  "old_queries": 74428,
+  "correction_sources": [
+    "KGE-ENTITY-COMMON-RANK-REAUDIT-010",
+    "KGE-ENTITY-COMMON-KGEDITOR-NATIVE-REAUDIT-031"
+  ],
+  "utility_source": "KGE-ENTITY-COMMON-PROPOSAL-UTILITY-013",
+  "additional_utility_sources": [
+    "KGE-ENTITY-COMMON-TASK-UTILITY-020",
+    "KGE-ENTITY-COMMON-SHARED-GRAPH-UTILITY-028",
+    "KGE-ENTITY-COMMON-SHARED-GRAPH-UTILITY-032",
+    "KGE-ENTITY-COMMON-RANK-CAPACITY-UTILITY-038"
+  ],
+  "foundation_precision_source": "KGE-ENTITY-COMMON-LMBASE-REAUDIT-016",
+  "protection_scope_source": "KGE-ENTITY-COMMON-PROTECTION-SCOPE-021",
+  "continuation_sources": [
+    "KGE-ENTITY-COMMON-KGEDITOR-014",
+    "KGE-ENTITY-COMMON-KGEDITOR-017",
+    "KGE-ENTITY-COMMON-SHARED-GRAPH-EVAL-030"
+  ],
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "output_directory": "tables/common-comparison-v4",
+  "sources": [
+    "KGE-ENTITY-COMMON-INCREMENT-001",
+    "KGE-ENTITY-COMMON-NATIVE-002",
+    "KGE-ENTITY-COMMON-RANK-005",
+    "KGE-ENTITY-COMMON-RANK-BOUNDED-007",
+    "KGE-ENTITY-COMMON-KGEDITOR-008",
+    "KGE-ENTITY-COMMON-LEARNED-PROPOSAL-012",
+    "KGE-ENTITY-COMMON-TASK-PROJECTION-019",
+    "KGE-ENTITY-COMMON-SHARED-GRAPH-027",
+    "KGE-ENTITY-COMMON-RANK-CAPACITY-037"
+  ],
+  "solver_audit_status_by_method": {
+    "SharedFrozenFull": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+    "SharedFrozenScoped": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+    "SharedJointScoped": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+    "CapacityFrozenFull": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS",
+    "CapacityFrozenScoped": "PASS_ALL3753_PATCHES_AND_ALL_QUERY_CPU_TERMINAL_RANKS"
+  },
+  "utility_descriptions": {
+    "KGE-ENTITY-COMMON-SHARED-GRAPH-UTILITY-028": {
+      "title": "共享旧实体联合更新的固定验证",
+      "text": "027在3753个新增实体上比较全保护冻结旧参数、限定保护冻结旧参数、限定保护联合旧参数三种方案，各三seed。028独立复算要求总体新MRR保留98%、旧损失最多为源模型75%、每seed旧损失不恶化、新答案方向MRR保留98%及Hits10保留95%；联合方案还须在旧损失及新答案方向不劣于限定保护冻结控制。计算成本包含源SGD、保护范围准备和联合更新。全范围CPU终态审计与3753步身份/预算复算通过才填成绩；已暴露的开发比较，不是最终留出或新颖性证明。"
+    },
+    "KGE-ENTITY-COMMON-SHARED-GRAPH-UTILITY-032": {
+      "title": "共享更新原权重的评价修复及固定效用复算",
+      "text": "027遗漏CPU评价线程配置，原评价失败保留。030仅添加cpu_threads_per_job=2，复用原3753步终态权重重做共同评价和完整审计，无重训。032逐seed独立复算事前固定的旧／新VALID各1024条查询及完整候选池，沿用028全部门槛，三个seed齐全后才给科学结论；不是整个VALID split。030替换原九个方法槽，031替换KGEditor审计资格，均不新增方法计数。"
+    },
+    "KGE-ENTITY-COMMON-RANK-CAPACITY-UTILITY-038": {
+      "title": "TRAIN容量冲突例外策略的固定对照",
+      "text": "037仅在TRAIN认证的受影响饱和查询豁免旧参考保护，其他成员完整保留。两种方案各三seed、3753新实体，旧E/R冻结，评分和评价保持原协议。旧训练事实保护合同已改变，不称全部旧知识安全；038保持原032四项收益门槛，并增加逐seed豁免查询旧TRAIN答案Top10损失及MRR不劣于源SGD、终态无多于10候选的边界并列检查。未通过全三seed独立审计和收益门槛不能称优化有效；已暴露开发比较，不是留出/SOTA/新颖性证明。"
+    }
+  },
+  "shared_guard_scope_source": "KGE-ENTITY-COMMON-SHARED-RANK-SCOPE-024"
+}
