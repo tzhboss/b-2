@@ -1,0 +1,137 @@
+{
+  "prepare_seconds": 10.548876323038712,
+  "training": {
+    "relation_exclude128": {
+      "seconds": 1.6978715909644961,
+      "spec": {
+        "kind": "relation_exclude"
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "relation_soft128": {
+      "seconds": 1.7067247598897666,
+      "spec": {
+        "kind": "relation_soft"
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "relation_exclude_full": {
+      "seconds": 1.8893788419663906,
+      "spec": {
+        "kind": "relation_exclude_full"
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "query_old_only": {
+      "seconds": 1.811949348077178,
+      "spec": {
+        "kind": "absolute",
+        "route": "old_only"
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "query_soft": {
+      "seconds": 1.865667873993516,
+      "spec": {
+        "kind": "query_soft"
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "entity_frequency": {
+      "seconds": 1.6664383711759,
+      "spec": {
+        "kind": "entity_frequency"
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "relation_frequency": {
+      "seconds": 1.745056648971513,
+      "spec": {
+        "kind": "relation_frequency"
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "tangent": {
+      "seconds": 1.6853769649751484,
+      "spec": {
+        "kind": "absolute",
+        "geometry": "tangent"
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "radial": {
+      "seconds": 1.6315544680692255,
+      "spec": {
+        "kind": "absolute",
+        "geometry": "radial"
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "coord_nonconflict": {
+      "seconds": 1.5954628391191363,
+      "spec": {
+        "kind": "absolute",
+        "geometry": "coordinate"
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "semantic_tangent": {
+      "seconds": 1.768136234022677,
+      "spec": {
+        "kind": "relation_soft",
+        "geometry": "tangent"
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "semantic_coordinate": {
+      "seconds": 1.6924302820116282,
+      "spec": {
+        "kind": "relation_soft",
+        "geometry": "coordinate"
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "postadam_02": {
+      "seconds": 1.6276757379528135,
+      "spec": {
+        "kind": "absolute",
+        "postadam": true,
+        "rho": 0.2
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "postadam_03": {
+      "seconds": 1.7415418771561235,
+      "spec": {
+        "kind": "absolute",
+        "postadam": true,
+        "rho": 0.3
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    },
+    "postadam_semantic": {
+      "seconds": 1.6957768041174859,
+      "spec": {
+        "kind": "relation_soft",
+        "postadam": true,
+        "rho": 0.1
+      },
+      "frozen_rows_equal": true,
+      "steps": 370
+    }
+  }
+}

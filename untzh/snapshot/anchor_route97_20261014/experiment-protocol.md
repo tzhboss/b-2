@@ -1,0 +1,11 @@
+# 097：固定累计差查询空间保护动作后的识别分配接口
+
+固定088 seed29 snapshot1→2新实体子任务，DistMult200/Adam.007，前10epoch普通prefix及后220步tape复用；旧E/R冻结。
+
+对照uniform anchor_null094直接只读复用，非独立重复。新增三臂anchor_tree/anchor_pressure128/anchor_random_pool。每epoch自身当前状态刷新top5%池，每步26池内+6全池无重复，共32旧TRAIN答案×1876合法新候选；所有臂使用同fullabsolute/rho.1非零梯度归一化、joint Adam、相对同一步普通影子的累计差query-space正交补投影。
+
+tree复用058历史小树；pressure128用标准化候选最大竞争压力减log容量；random_pool固定epoch种子。首prefix特征与088frame10核对，不读未来当前增量标签，不训练收益网络。随状态不同选择不同，只要求相同配置与计算预算，不宣称相同累计差norm。
+
+只读复用092空间和094普通影子缓存，不再SVD或生成影子，历史费用非零。每轮特征检测费用含在训练中，单独记录。三模型全部保存后同088固定TRAIN/VALID统一评价；无TEST、硬超时、独审、SHA或归档。
+
+核心判据：相比uniform和random，识别驱动分配是否在新MRR及三方向保持、旧VALID/旧TRAIN MRR与Top10掉榜上获得有用取舍。不能把较低TRAIN掉榜或预测AP当成端到端成功。若优势只存在TRAIN或损伤关键新方向，不固化识别为已证方法模块。

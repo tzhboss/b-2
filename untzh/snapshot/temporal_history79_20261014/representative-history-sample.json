@@ -1,0 +1,1671 @@
+{
+  "arm": "TComplEx_finetune",
+  "population": "all 2005-2014 fixed-date directional queries with worsened filtered gold rank",
+  "population_n": 42851,
+  "sample_n": 40,
+  "seed": 20261014,
+  "design": "simple random sample without replacement from cached directional-query population; no source-based exclusion or replacement",
+  "inclusion_probability": 0.0009334671302886747,
+  "source_model_experiment": "/data/lc/untzh/temporal_drift76_20261014",
+  "no_retraining_or_rescoring": true,
+  "labels": "pending; record evidence-supported final truth, explicit contradiction, or unknown independently of rank mechanism",
+  "query_dependence": "directional queries can share original facts, actors, or articles; sample counts are not independent event counts",
+  "extraction_seconds": 0.3560873721726239,
+  "records": [
+    {
+      "sample_id": "S01",
+      "test_directional_index": 56272,
+      "direction": "head",
+      "gold_fact": [
+        "China",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Citizen (Sudan)",
+        "2008-05-16"
+      ],
+      "before_top1_fact": [
+        "Military Personnel - Special (Sudan)",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Citizen (Sudan)",
+        "2008-05-16"
+      ],
+      "after_top1_fact": [
+        "Sudan",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Citizen (Sudan)",
+        "2008-05-16"
+      ],
+      "original_gold_rank": 3.0,
+      "final_gold_rank": 47.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "13141289",
+        "year": 2008,
+        "row": 380317,
+        "story_id": "12626779",
+        "sentence_number": "5",
+        "publisher": "Xinhua News Agency"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S02",
+      "test_directional_index": 45818,
+      "direction": "tail",
+      "gold_fact": [
+        "Mahmoud Abbas",
+        "Consult",
+        "Envoy (United States)",
+        "2013-09-17"
+      ],
+      "before_top1_fact": [
+        "Mahmoud Abbas",
+        "Consult",
+        "Barack Obama",
+        "2013-09-17"
+      ],
+      "after_top1_fact": [
+        "Mahmoud Abbas",
+        "Consult",
+        "Benjamin Netanyahu",
+        "2013-09-17"
+      ],
+      "original_gold_rank": 2.0,
+      "final_gold_rank": 4.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "20488840",
+        "year": 2013,
+        "row": 520215,
+        "story_id": "27890382",
+        "sentence_number": "5",
+        "publisher": "Xinhua News Agency"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S03",
+      "test_directional_index": 62572,
+      "direction": "head",
+      "gold_fact": [
+        "Ananda",
+        "Make statement",
+        "Police (Indonesia)",
+        "2008-04-18"
+      ],
+      "before_top1_fact": [
+        "Lawyer/Attorney (Indonesia)",
+        "Make statement",
+        "Police (Indonesia)",
+        "2008-04-18"
+      ],
+      "after_top1_fact": [
+        "Lawyer/Attorney (Indonesia)",
+        "Make statement",
+        "Police (Indonesia)",
+        "2008-04-18"
+      ],
+      "original_gold_rank": 10.0,
+      "final_gold_rank": 121.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "13023657",
+        "year": 2008,
+        "row": 300021,
+        "story_id": "12471808",
+        "sentence_number": "6",
+        "publisher": "The Jakarta Post"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S04",
+      "test_directional_index": 54040,
+      "direction": "head",
+      "gold_fact": [
+        "Lucy Kibaki",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "before_top1_fact": [
+        "Lucy Kibaki",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "after_top1_fact": [
+        "Raheel Sharif",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 2774.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "8781257",
+        "year": 2005,
+        "row": 387058,
+        "story_id": "5273848",
+        "sentence_number": "5",
+        "publisher": "Agence France-Presse"
+      },
+      "before_original_event_metadata": {
+        "event_id": "8781257",
+        "year": 2005,
+        "row": 387058,
+        "story_id": "5273848",
+        "sentence_number": "5",
+        "publisher": "Agence France-Presse"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S05",
+      "test_directional_index": 91398,
+      "direction": "head",
+      "gold_fact": [
+        "Benazir Bhutto",
+        "Consult",
+        "Georgios Papandreou",
+        "2007-10-21"
+      ],
+      "before_top1_fact": [
+        "Panhellenic Socialist Movement",
+        "Consult",
+        "Georgios Papandreou",
+        "2007-10-21"
+      ],
+      "after_top1_fact": [
+        "Alexis Tsipras",
+        "Consult",
+        "Georgios Papandreou",
+        "2007-10-21"
+      ],
+      "original_gold_rank": 2.0,
+      "final_gold_rank": 246.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "12243233",
+        "year": 2007,
+        "row": 813620,
+        "story_id": "10601815",
+        "sentence_number": "1",
+        "publisher": "Athens News Agency"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S06",
+      "test_directional_index": 67938,
+      "direction": "head",
+      "gold_fact": [
+        "China",
+        "Host a visit",
+        "Envoy (France)",
+        "2009-11-05"
+      ],
+      "before_top1_fact": [
+        "France",
+        "Host a visit",
+        "Envoy (France)",
+        "2009-11-05"
+      ],
+      "after_top1_fact": [
+        "France",
+        "Host a visit",
+        "Envoy (France)",
+        "2009-11-05"
+      ],
+      "original_gold_rank": 4.0,
+      "final_gold_rank": 5.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "15224021",
+        "year": 2009,
+        "row": 751249,
+        "story_id": "10260211",
+        "sentence_number": "1",
+        "publisher": "Associated Press Newswires"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S07",
+      "test_directional_index": 20966,
+      "direction": "tail",
+      "gold_fact": [
+        "Thailand",
+        "Criticize or denounce",
+        "Cambodia",
+        "2009-11-16"
+      ],
+      "before_top1_fact": [
+        "Thailand",
+        "Criticize or denounce",
+        "Cambodia",
+        "2009-11-16"
+      ],
+      "after_top1_fact": [
+        "Thailand",
+        "Criticize or denounce",
+        "China",
+        "2009-11-16"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 2.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "15265376",
+        "year": 2009,
+        "row": 775024,
+        "story_id": "10911387",
+        "sentence_number": "1",
+        "publisher": "Thai News Service"
+      },
+      "before_original_event_metadata": {
+        "event_id": "15265376",
+        "year": 2009,
+        "row": 775024,
+        "story_id": "10911387",
+        "sentence_number": "1",
+        "publisher": "Thai News Service"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S08",
+      "test_directional_index": 72723,
+      "direction": "head",
+      "gold_fact": [
+        "Foreign Affairs (South Korea)",
+        "Expel or withdraw",
+        "Media Personnel (International)",
+        "2008-09-05"
+      ],
+      "before_top1_fact": [
+        "China",
+        "Expel or withdraw",
+        "Media Personnel (International)",
+        "2008-09-05"
+      ],
+      "after_top1_fact": [
+        "China",
+        "Expel or withdraw",
+        "Media Personnel (International)",
+        "2008-09-05"
+      ],
+      "original_gold_rank": 10.0,
+      "final_gold_rank": 97.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "13603816",
+        "year": 2008,
+        "row": 680367,
+        "story_id": "11405090",
+        "sentence_number": "6",
+        "publisher": "Reuters News"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S09",
+      "test_directional_index": 11162,
+      "direction": "tail",
+      "gold_fact": [
+        "Joseph Ole Lenku",
+        "Make statement",
+        "Tanzania",
+        "2014-03-31"
+      ],
+      "before_top1_fact": [
+        "Joseph Ole Lenku",
+        "Make statement",
+        "Burundi",
+        "2014-03-31"
+      ],
+      "after_top1_fact": [
+        "Joseph Ole Lenku",
+        "Make statement",
+        "Burundi",
+        "2014-03-31"
+      ],
+      "original_gold_rank": 105.0,
+      "final_gold_rank": 210.0,
+      "before_recorded": true,
+      "after_recorded": true,
+      "gold_original_event_metadata": {
+        "event_id": "21098749",
+        "year": 2014,
+        "row": 208217,
+        "story_id": "33087140",
+        "sentence_number": "5",
+        "publisher": "BBC Monitoring Africa"
+      },
+      "before_original_event_metadata": {
+        "event_id": "21098751",
+        "year": 2014,
+        "row": 208214,
+        "story_id": "33087140",
+        "sentence_number": "5",
+        "publisher": "BBC Monitoring Africa"
+      },
+      "after_original_event_metadata": {
+        "event_id": "21098751",
+        "year": 2014,
+        "row": 208214,
+        "story_id": "33087140",
+        "sentence_number": "5",
+        "publisher": "BBC Monitoring Africa"
+      }
+    },
+    {
+      "sample_id": "S10",
+      "test_directional_index": 88409,
+      "direction": "head",
+      "gold_fact": [
+        "South Korea",
+        "Host a visit",
+        "Lee Myung Bak",
+        "2010-12-13"
+      ],
+      "before_top1_fact": [
+        "Malaysia",
+        "Host a visit",
+        "Lee Myung Bak",
+        "2010-12-13"
+      ],
+      "after_top1_fact": [
+        "Malaysia",
+        "Host a visit",
+        "Lee Myung Bak",
+        "2010-12-13"
+      ],
+      "original_gold_rank": 2.0,
+      "final_gold_rank": 9.0,
+      "before_recorded": true,
+      "after_recorded": true,
+      "gold_original_event_metadata": {
+        "event_id": "16727757",
+        "year": 2010,
+        "row": 691020,
+        "story_id": "8081386",
+        "sentence_number": "1",
+        "publisher": "Asia Pulse"
+      },
+      "before_original_event_metadata": {
+        "event_id": "16727758",
+        "year": 2010,
+        "row": 691022,
+        "story_id": "8081386",
+        "sentence_number": "2",
+        "publisher": "Asia Pulse"
+      },
+      "after_original_event_metadata": {
+        "event_id": "16727758",
+        "year": 2010,
+        "row": 691022,
+        "story_id": "8081386",
+        "sentence_number": "2",
+        "publisher": "Asia Pulse"
+      }
+    },
+    {
+      "sample_id": "S11",
+      "test_directional_index": 8141,
+      "direction": "tail",
+      "gold_fact": [
+        "Angola",
+        "Engage in diplomatic cooperation",
+        "China",
+        "2006-06-20"
+      ],
+      "before_top1_fact": [
+        "Angola",
+        "Engage in diplomatic cooperation",
+        "China",
+        "2006-06-20"
+      ],
+      "after_top1_fact": [
+        "Angola",
+        "Engage in diplomatic cooperation",
+        "Portugal",
+        "2006-06-20"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 2.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "10318530",
+        "year": 2006,
+        "row": 509307,
+        "story_id": "5595966",
+        "sentence_number": "5",
+        "publisher": "BBC Monitoring Asia Pacific"
+      },
+      "before_original_event_metadata": {
+        "event_id": "10318530",
+        "year": 2006,
+        "row": 509307,
+        "story_id": "5595966",
+        "sentence_number": "5",
+        "publisher": "BBC Monitoring Asia Pacific"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S12",
+      "test_directional_index": 80482,
+      "direction": "head",
+      "gold_fact": [
+        "Other Authorities / Officials (Mexico)",
+        "Accuse",
+        "Men (United States)",
+        "2012-05-03"
+      ],
+      "before_top1_fact": [
+        "Juan De La Cruz",
+        "Accuse",
+        "Men (United States)",
+        "2012-05-03"
+      ],
+      "after_top1_fact": [
+        "Police (Australia)",
+        "Accuse",
+        "Men (United States)",
+        "2012-05-03"
+      ],
+      "original_gold_rank": 15.0,
+      "final_gold_rank": 42.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "18542185",
+        "year": 2012,
+        "row": 222852,
+        "story_id": "16728004",
+        "sentence_number": "3",
+        "publisher": "EFE News Service"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S13",
+      "test_directional_index": 45541,
+      "direction": "tail",
+      "gold_fact": [
+        "Envoy (United States)",
+        "Consult",
+        "China",
+        "2009-12-12"
+      ],
+      "before_top1_fact": [
+        "Envoy (United States)",
+        "Consult",
+        "Sudan",
+        "2009-12-12"
+      ],
+      "after_top1_fact": [
+        "Envoy (United States)",
+        "Consult",
+        "Sudan",
+        "2009-12-12"
+      ],
+      "original_gold_rank": 7.0,
+      "final_gold_rank": 9.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "15361640",
+        "year": 2009,
+        "row": 825189,
+        "story_id": "11283975",
+        "sentence_number": "4",
+        "publisher": "BBC Monitoring Asia Pacific"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S14",
+      "test_directional_index": 19698,
+      "direction": "tail",
+      "gold_fact": [
+        "International Federation of Red Cross and Red Crescent Societies",
+        "Make a visit",
+        "China",
+        "2014-10-25"
+      ],
+      "before_top1_fact": [
+        "International Federation of Red Cross and Red Crescent Societies",
+        "Make a visit",
+        "China",
+        "2014-10-25"
+      ],
+      "after_top1_fact": [
+        "International Federation of Red Cross and Red Crescent Societies",
+        "Make a visit",
+        "Iran",
+        "2014-10-25"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 2.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "22031225",
+        "year": 2014,
+        "row": 714154,
+        "story_id": "35773638",
+        "sentence_number": "1",
+        "publisher": "China Daily"
+      },
+      "before_original_event_metadata": {
+        "event_id": "22031225",
+        "year": 2014,
+        "row": 714154,
+        "story_id": "35773638",
+        "sentence_number": "1",
+        "publisher": "China Daily"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S15",
+      "test_directional_index": 53722,
+      "direction": "head",
+      "gold_fact": [
+        "Media Personnel (Iran)",
+        "Make statement",
+        "Iran",
+        "2014-08-27"
+      ],
+      "before_top1_fact": [
+        "Barack Obama",
+        "Make statement",
+        "Iran",
+        "2014-08-27"
+      ],
+      "after_top1_fact": [
+        "Barack Obama",
+        "Make statement",
+        "Iran",
+        "2014-08-27"
+      ],
+      "original_gold_rank": 15.0,
+      "final_gold_rank": 30.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "21749116",
+        "year": 2014,
+        "row": 558413,
+        "story_id": "35266399",
+        "sentence_number": "3",
+        "publisher": "BBC Monitoring Middle East"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S16",
+      "test_directional_index": 56051,
+      "direction": "head",
+      "gold_fact": [
+        "Chief of Staff (Libyan Armed Forces)",
+        "Consult",
+        "Sedki Sobhi",
+        "2014-09-05"
+      ],
+      "before_top1_fact": [
+        "Chief of Staff (Libyan Armed Forces)",
+        "Consult",
+        "Sedki Sobhi",
+        "2014-09-05"
+      ],
+      "after_top1_fact": [
+        "Abdel Fattah Al-Sisi",
+        "Consult",
+        "Sedki Sobhi",
+        "2014-09-05"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 9.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "21795294",
+        "year": 2014,
+        "row": 583501,
+        "story_id": "35375931",
+        "sentence_number": "1",
+        "publisher": "All Africa"
+      },
+      "before_original_event_metadata": {
+        "event_id": "21795294",
+        "year": 2014,
+        "row": 583501,
+        "story_id": "35375931",
+        "sentence_number": "1",
+        "publisher": "All Africa"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S17",
+      "test_directional_index": 41698,
+      "direction": "tail",
+      "gold_fact": [
+        "Lee Myung Bak",
+        "Express intent to meet or negotiate",
+        "Dmitry Anatolyevich Medvedev",
+        "2010-11-10"
+      ],
+      "before_top1_fact": [
+        "Lee Myung Bak",
+        "Express intent to meet or negotiate",
+        "Dmitry Anatolyevich Medvedev",
+        "2010-11-10"
+      ],
+      "after_top1_fact": [
+        "Lee Myung Bak",
+        "Express intent to meet or negotiate",
+        "Japan",
+        "2010-11-10"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 8.0,
+      "before_recorded": true,
+      "after_recorded": true,
+      "gold_original_event_metadata": {
+        "event_id": "16604445",
+        "year": 2010,
+        "row": 625967,
+        "story_id": "7412892",
+        "sentence_number": "1",
+        "publisher": "Asia Pulse"
+      },
+      "before_original_event_metadata": {
+        "event_id": "16604445",
+        "year": 2010,
+        "row": 625967,
+        "story_id": "7412892",
+        "sentence_number": "1",
+        "publisher": "Asia Pulse"
+      },
+      "after_original_event_metadata": {
+        "event_id": "16604818",
+        "year": 2010,
+        "row": 626327,
+        "story_id": "7655514",
+        "sentence_number": "1",
+        "publisher": "Joins.com"
+      }
+    },
+    {
+      "sample_id": "S18",
+      "test_directional_index": 68074,
+      "direction": "head",
+      "gold_fact": [
+        "UN Security Council",
+        "Threaten with sanctions, boycott, embargo",
+        "Iran",
+        "2006-04-20"
+      ],
+      "before_top1_fact": [
+        "UN Security Council",
+        "Threaten with sanctions, boycott, embargo",
+        "Iran",
+        "2006-04-20"
+      ],
+      "after_top1_fact": [
+        "Barack Obama",
+        "Threaten with sanctions, boycott, embargo",
+        "Iran",
+        "2006-04-20"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 12.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "10060096",
+        "year": 2006,
+        "row": 321196,
+        "story_id": "34088749",
+        "sentence_number": "3",
+        "publisher": "Le Monde"
+      },
+      "before_original_event_metadata": {
+        "event_id": "10060096",
+        "year": 2006,
+        "row": 321196,
+        "story_id": "34088749",
+        "sentence_number": "3",
+        "publisher": "Le Monde"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S19",
+      "test_directional_index": 14542,
+      "direction": "tail",
+      "gold_fact": [
+        "China",
+        "Express intent to meet or negotiate",
+        "Xi Jinping",
+        "2014-11-02"
+      ],
+      "before_top1_fact": [
+        "China",
+        "Express intent to meet or negotiate",
+        "South Korea",
+        "2014-11-02"
+      ],
+      "after_top1_fact": [
+        "China",
+        "Express intent to meet or negotiate",
+        "South Korea",
+        "2014-11-02"
+      ],
+      "original_gold_rank": 10.0,
+      "final_gold_rank": 22.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "22065508",
+        "year": 2014,
+        "row": 733278,
+        "story_id": "35830096",
+        "sentence_number": "3",
+        "publisher": "ANSA - Spanish Service (BASP)"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S20",
+      "test_directional_index": 39081,
+      "direction": "tail",
+      "gold_fact": [
+        "Tony Blair",
+        "Make statement",
+        "Iran",
+        "2007-04-13"
+      ],
+      "before_top1_fact": [
+        "Tony Blair",
+        "Make statement",
+        "China",
+        "2007-04-13"
+      ],
+      "after_top1_fact": [
+        "Tony Blair",
+        "Make statement",
+        "Labor Party (United Kingdom)",
+        "2007-04-13"
+      ],
+      "original_gold_rank": 3.0,
+      "final_gold_rank": 29.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "11456861",
+        "year": 2007,
+        "row": 298408,
+        "story_id": "11723272",
+        "sentence_number": "1",
+        "publisher": "The Scotsman"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S21",
+      "test_directional_index": 51194,
+      "direction": "head",
+      "gold_fact": [
+        "Businessperson (Australia)",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Antony Harold Curties \"Tony\" Windsor",
+        "2005-02-04"
+      ],
+      "before_top1_fact": [
+        "Police (Australia)",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Antony Harold Curties \"Tony\" Windsor",
+        "2005-02-04"
+      ],
+      "after_top1_fact": [
+        "Citizen (Australia)",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Antony Harold Curties \"Tony\" Windsor",
+        "2005-02-04"
+      ],
+      "original_gold_rank": 2.0,
+      "final_gold_rank": 83.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "8360975",
+        "year": 2005,
+        "row": 90090,
+        "story_id": "7086840",
+        "sentence_number": "3",
+        "publisher": "AAP Bulletins"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S22",
+      "test_directional_index": 47653,
+      "direction": "head",
+      "gold_fact": [
+        "Israeli Defense Forces",
+        "Consult",
+        "Israeli Defense Forces",
+        "2005-11-16"
+      ],
+      "before_top1_fact": [
+        "Israeli Defense Forces",
+        "Consult",
+        "Israeli Defense Forces",
+        "2005-11-16"
+      ],
+      "after_top1_fact": [
+        "Tzachi Hanegbi",
+        "Consult",
+        "Israeli Defense Forces",
+        "2005-11-16"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 763.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "9461909",
+        "year": 2005,
+        "row": 892378,
+        "story_id": "3658797",
+        "sentence_number": "1",
+        "publisher": "BBC Monitoring Middle East"
+      },
+      "before_original_event_metadata": {
+        "event_id": "9461909",
+        "year": 2005,
+        "row": 892378,
+        "story_id": "3658797",
+        "sentence_number": "1",
+        "publisher": "BBC Monitoring Middle East"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S23",
+      "test_directional_index": 11716,
+      "direction": "tail",
+      "gold_fact": [
+        "Coalition for Unity and Democracy",
+        "Make statement",
+        "Ethiopia",
+        "2005-09-22"
+      ],
+      "before_top1_fact": [
+        "Coalition for Unity and Democracy",
+        "Make statement",
+        "Ethiopia",
+        "2005-09-22"
+      ],
+      "after_top1_fact": [
+        "Coalition for Unity and Democracy",
+        "Make statement",
+        "Police (Ethiopia)",
+        "2005-09-22"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 4.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "9248635",
+        "year": 2005,
+        "row": 735653,
+        "story_id": "6002492",
+        "sentence_number": "1",
+        "publisher": "BBC Monitoring Newsfile"
+      },
+      "before_original_event_metadata": {
+        "event_id": "9248635",
+        "year": 2005,
+        "row": 735653,
+        "story_id": "6002492",
+        "sentence_number": "1",
+        "publisher": "BBC Monitoring Newsfile"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S24",
+      "test_directional_index": 33823,
+      "direction": "tail",
+      "gold_fact": [
+        "Naledi Pandor",
+        "Consult",
+        "ANC Youth League",
+        "2009-02-17"
+      ],
+      "before_top1_fact": [
+        "Naledi Pandor",
+        "Consult",
+        "Education Ministry (South Africa)",
+        "2009-02-17"
+      ],
+      "after_top1_fact": [
+        "Naledi Pandor",
+        "Consult",
+        "Media (Africa)",
+        "2009-02-17"
+      ],
+      "original_gold_rank": 4.0,
+      "final_gold_rank": 88.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "21774223",
+        "year": 2009,
+        "row": 129580,
+        "story_id": "9824528",
+        "sentence_number": "4",
+        "publisher": "SAPA (South African Press Association)"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S25",
+      "test_directional_index": 16458,
+      "direction": "tail",
+      "gold_fact": [
+        "Barack Obama",
+        "Demand",
+        "Government (Pakistan)",
+        "2011-02-04"
+      ],
+      "before_top1_fact": [
+        "Barack Obama",
+        "Demand",
+        "Ali Abdullah Saleh",
+        "2011-02-04"
+      ],
+      "after_top1_fact": [
+        "Barack Obama",
+        "Demand",
+        "Iran",
+        "2011-02-04"
+      ],
+      "original_gold_rank": 15.0,
+      "final_gold_rank": 164.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "17113012",
+        "year": 2011,
+        "row": 62860,
+        "story_id": "7934887",
+        "sentence_number": "4",
+        "publisher": "BBC Monitoring South Asia"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S26",
+      "test_directional_index": 75150,
+      "direction": "head",
+      "gold_fact": [
+        "VARIG",
+        "Engage in negotiation",
+        "Party Member (Brazil)",
+        "2005-03-11"
+      ],
+      "before_top1_fact": [
+        "VARIG",
+        "Engage in negotiation",
+        "Party Member (Brazil)",
+        "2005-03-11"
+      ],
+      "after_top1_fact": [
+        "Citizen (Brazil)",
+        "Engage in negotiation",
+        "Party Member (Brazil)",
+        "2005-03-11"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 27.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "8505755",
+        "year": 2005,
+        "row": 195002,
+        "story_id": "13865249",
+        "sentence_number": "3",
+        "publisher": "Reuters News"
+      },
+      "before_original_event_metadata": {
+        "event_id": "8505755",
+        "year": 2005,
+        "row": 195002,
+        "story_id": "13865249",
+        "sentence_number": "3",
+        "publisher": "Reuters News"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S27",
+      "test_directional_index": 47506,
+      "direction": "head",
+      "gold_fact": [
+        "Jakaya Mrisho Kikwete",
+        "Make statement",
+        "Tanzania",
+        "2014-09-01"
+      ],
+      "before_top1_fact": [
+        "Jakaya Mrisho Kikwete",
+        "Make statement",
+        "Tanzania",
+        "2014-09-01"
+      ],
+      "after_top1_fact": [
+        "John Pombe Magufuli",
+        "Make statement",
+        "Tanzania",
+        "2014-09-01"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 3.0,
+      "before_recorded": true,
+      "after_recorded": true,
+      "gold_original_event_metadata": {
+        "event_id": "21771644",
+        "year": 2014,
+        "row": 570308,
+        "story_id": "35330934",
+        "sentence_number": "3",
+        "publisher": "All Africa"
+      },
+      "before_original_event_metadata": {
+        "event_id": "21771644",
+        "year": 2014,
+        "row": 570308,
+        "story_id": "35330934",
+        "sentence_number": "3",
+        "publisher": "All Africa"
+      },
+      "after_original_event_metadata": {
+        "event_id": "21771645",
+        "year": 2014,
+        "row": 570309,
+        "story_id": "35330934",
+        "sentence_number": "6",
+        "publisher": "All Africa"
+      }
+    },
+    {
+      "sample_id": "S28",
+      "test_directional_index": 44662,
+      "direction": "tail",
+      "gold_fact": [
+        "Rioter (Nigeria)",
+        "Use unconventional violence",
+        "Citizen (Nigeria)",
+        "2012-06-18"
+      ],
+      "before_top1_fact": [
+        "Rioter (Nigeria)",
+        "Use unconventional violence",
+        "Military Personnel - Special (Cote d'Ivoire)",
+        "2012-06-18"
+      ],
+      "after_top1_fact": [
+        "Rioter (Nigeria)",
+        "Use unconventional violence",
+        "Criminal (Hungary)",
+        "2012-06-18"
+      ],
+      "original_gold_rank": 6.0,
+      "final_gold_rank": 36.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "18723473",
+        "year": 2012,
+        "row": 307322,
+        "story_id": "16905273",
+        "sentence_number": "3",
+        "publisher": "Agence France-Presse"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S29",
+      "test_directional_index": 50359,
+      "direction": "head",
+      "gold_fact": [
+        "Ivan Gasparovic",
+        "Praise or endorse",
+        "Portugal",
+        "2005-10-24"
+      ],
+      "before_top1_fact": [
+        "Foreign Affairs (Portugal)",
+        "Praise or endorse",
+        "Portugal",
+        "2005-10-24"
+      ],
+      "after_top1_fact": [
+        "International Monetary Fund",
+        "Praise or endorse",
+        "Portugal",
+        "2005-10-24"
+      ],
+      "original_gold_rank": 285.0,
+      "final_gold_rank": 385.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "9366545",
+        "year": 2005,
+        "row": 822757,
+        "story_id": "4120316",
+        "sentence_number": "3",
+        "publisher": "SITA Slovenska Tlacova Agentura"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S30",
+      "test_directional_index": 3814,
+      "direction": "tail",
+      "gold_fact": [
+        "Javier Solana",
+        "Consult",
+        "Tzipi Livni",
+        "2007-01-16"
+      ],
+      "before_top1_fact": [
+        "Javier Solana",
+        "Consult",
+        "Tzipi Livni",
+        "2007-01-16"
+      ],
+      "after_top1_fact": [
+        "Javier Solana",
+        "Consult",
+        "Federica Mogherini",
+        "2007-01-16"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 89.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "11197328",
+        "year": 2007,
+        "row": 39382,
+        "story_id": "10993159",
+        "sentence_number": "6",
+        "publisher": "Associated Press Newswires"
+      },
+      "before_original_event_metadata": {
+        "event_id": "11197328",
+        "year": 2007,
+        "row": 39382,
+        "story_id": "10993159",
+        "sentence_number": "6",
+        "publisher": "Associated Press Newswires"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S31",
+      "test_directional_index": 74866,
+      "direction": "head",
+      "gold_fact": [
+        "Member of Legislative (Govt) (Kazakhstan)",
+        "Consult",
+        "Chen Zhili",
+        "2012-01-10"
+      ],
+      "before_top1_fact": [
+        "Member of Legislative (Govt) (Kazakhstan)",
+        "Consult",
+        "Chen Zhili",
+        "2012-01-10"
+      ],
+      "after_top1_fact": [
+        "Ministry (Shura Council)",
+        "Consult",
+        "Chen Zhili",
+        "2012-01-10"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 3.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "18100281",
+        "year": 2012,
+        "row": 13273,
+        "story_id": "16310788",
+        "sentence_number": "4",
+        "publisher": "BBC Monitoring Asia Pacific"
+      },
+      "before_original_event_metadata": {
+        "event_id": "18100281",
+        "year": 2012,
+        "row": 13273,
+        "story_id": "16310788",
+        "sentence_number": "4",
+        "publisher": "BBC Monitoring Asia Pacific"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S32",
+      "test_directional_index": 33288,
+      "direction": "tail",
+      "gold_fact": [
+        "South Korea",
+        "Host a visit",
+        "Barack Obama",
+        "2009-10-13"
+      ],
+      "before_top1_fact": [
+        "South Korea",
+        "Host a visit",
+        "Cabinet / Council of Ministers / Advisors (United States)",
+        "2009-10-13"
+      ],
+      "after_top1_fact": [
+        "South Korea",
+        "Host a visit",
+        "Islam Karimov",
+        "2009-10-13"
+      ],
+      "original_gold_rank": 2.0,
+      "final_gold_rank": 6.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "15134632",
+        "year": 2009,
+        "row": 702826,
+        "story_id": "10206966",
+        "sentence_number": "4",
+        "publisher": "Agence France-Presse"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S33",
+      "test_directional_index": 81942,
+      "direction": "head",
+      "gold_fact": [
+        "Qin Gang",
+        "Make statement",
+        "China",
+        "2014-06-27"
+      ],
+      "before_top1_fact": [
+        "Wang Yi",
+        "Make statement",
+        "China",
+        "2014-06-27"
+      ],
+      "after_top1_fact": [
+        "Xi Jinping",
+        "Make statement",
+        "China",
+        "2014-06-27"
+      ],
+      "original_gold_rank": 3.0,
+      "final_gold_rank": 62.0,
+      "before_recorded": false,
+      "after_recorded": true,
+      "gold_original_event_metadata": {
+        "event_id": "21486955",
+        "year": 2014,
+        "row": 415964,
+        "story_id": "34816614",
+        "sentence_number": "5",
+        "publisher": "BBC Monitoring Newsfile"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": {
+        "event_id": "21486800",
+        "year": 2014,
+        "row": 415823,
+        "story_id": "34816298",
+        "sentence_number": "2",
+        "publisher": "Xinhua News Agency"
+      }
+    },
+    {
+      "sample_id": "S34",
+      "test_directional_index": 49099,
+      "direction": "head",
+      "gold_fact": [
+        "Vietnam",
+        "Host a visit",
+        "Laos",
+        "2005-05-03"
+      ],
+      "before_top1_fact": [
+        "Vietnam",
+        "Host a visit",
+        "Laos",
+        "2005-05-03"
+      ],
+      "after_top1_fact": [
+        "Nguyen Xuan Phuc",
+        "Host a visit",
+        "Laos",
+        "2005-05-03"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 2.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "8727192",
+        "year": 2005,
+        "row": 346872,
+        "story_id": "6708924",
+        "sentence_number": "1",
+        "publisher": "Thai News Service"
+      },
+      "before_original_event_metadata": {
+        "event_id": "8727192",
+        "year": 2005,
+        "row": 346872,
+        "story_id": "6708924",
+        "sentence_number": "1",
+        "publisher": "Thai News Service"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S35",
+      "test_directional_index": 35058,
+      "direction": "tail",
+      "gold_fact": [
+        "Barack Obama",
+        "Consult",
+        "Wen Jiabao",
+        "2010-05-26"
+      ],
+      "before_top1_fact": [
+        "Barack Obama",
+        "Consult",
+        "Benjamin Netanyahu",
+        "2010-05-26"
+      ],
+      "after_top1_fact": [
+        "Barack Obama",
+        "Consult",
+        "Benjamin Netanyahu",
+        "2010-05-26"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 29.0,
+      "before_recorded": true,
+      "after_recorded": true,
+      "gold_original_event_metadata": {
+        "event_id": "15972424",
+        "year": 2010,
+        "row": 303953,
+        "story_id": "8255477",
+        "sentence_number": "1",
+        "publisher": "BBC Monitoring Asia Pacific"
+      },
+      "before_original_event_metadata": {
+        "event_id": "15972706",
+        "year": 2010,
+        "row": 304228,
+        "story_id": "8255740",
+        "sentence_number": "5",
+        "publisher": "Xinhua News Agency"
+      },
+      "after_original_event_metadata": {
+        "event_id": "15972706",
+        "year": 2010,
+        "row": 304228,
+        "story_id": "8255740",
+        "sentence_number": "5",
+        "publisher": "Xinhua News Agency"
+      }
+    },
+    {
+      "sample_id": "S36",
+      "test_directional_index": 60321,
+      "direction": "head",
+      "gold_fact": [
+        "Jens Stoltenberg",
+        "Consult",
+        "Mikhail Yefimovich Fradkov",
+        "2007-06-08"
+      ],
+      "before_top1_fact": [
+        "Jens Stoltenberg",
+        "Consult",
+        "Mikhail Yefimovich Fradkov",
+        "2007-06-08"
+      ],
+      "after_top1_fact": [
+        "Alexander Vasilyevich Bortnikov",
+        "Consult",
+        "Mikhail Yefimovich Fradkov",
+        "2007-06-08"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 3.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "11694284",
+        "year": 2007,
+        "row": 455542,
+        "story_id": "10092395",
+        "sentence_number": "2",
+        "publisher": "ITAR Tass"
+      },
+      "before_original_event_metadata": {
+        "event_id": "11694284",
+        "year": 2007,
+        "row": 455542,
+        "story_id": "10092395",
+        "sentence_number": "2",
+        "publisher": "ITAR Tass"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S37",
+      "test_directional_index": 70374,
+      "direction": "head",
+      "gold_fact": [
+        "Mauritania",
+        "Make an appeal or request",
+        "UN Security Council",
+        "2014-12-19"
+      ],
+      "before_top1_fact": [
+        "Protester (Western Sahara)",
+        "Make an appeal or request",
+        "UN Security Council",
+        "2014-12-19"
+      ],
+      "after_top1_fact": [
+        "Federica Mogherini",
+        "Make an appeal or request",
+        "UN Security Council",
+        "2014-12-19"
+      ],
+      "original_gold_rank": 385.0,
+      "final_gold_rank": 533.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "22287736",
+        "year": 2014,
+        "row": 856606,
+        "story_id": "36208914",
+        "sentence_number": "3",
+        "publisher": "Agence France-Presse"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S38",
+      "test_directional_index": 58732,
+      "direction": "head",
+      "gold_fact": [
+        "Foreign Affairs (Slovakia)",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "before_top1_fact": [
+        "Citizen (Hungary)",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "after_top1_fact": [
+        "Foreign Affairs (Romania)",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "original_gold_rank": 4.0,
+      "final_gold_rank": 162.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "15045053",
+        "year": 2009,
+        "row": 655099,
+        "story_id": "11829159",
+        "sentence_number": "3",
+        "publisher": "SITA Slovenska Tlacova Agentura"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S39",
+      "test_directional_index": 81929,
+      "direction": "head",
+      "gold_fact": [
+        "China",
+        "Consult",
+        "Yemen",
+        "2009-04-19"
+      ],
+      "before_top1_fact": [
+        "China",
+        "Consult",
+        "Yemen",
+        "2009-04-19"
+      ],
+      "after_top1_fact": [
+        "Iraq",
+        "Consult",
+        "Yemen",
+        "2009-04-19"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 2.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "14459508",
+        "year": 2009,
+        "row": 307518,
+        "story_id": "10806432",
+        "sentence_number": "1",
+        "publisher": "Organisation of Asia-Pacific News Agencies"
+      },
+      "before_original_event_metadata": {
+        "event_id": "14459508",
+        "year": 2009,
+        "row": 307518,
+        "story_id": "10806432",
+        "sentence_number": "1",
+        "publisher": "Organisation of Asia-Pacific News Agencies"
+      },
+      "after_original_event_metadata": null
+    },
+    {
+      "sample_id": "S40",
+      "test_directional_index": 47025,
+      "direction": "head",
+      "gold_fact": [
+        "Labor Union (Nigeria)",
+        "Engage in diplomatic cooperation",
+        "Head of Government (Nigeria)",
+        "2011-07-26"
+      ],
+      "before_top1_fact": [
+        "Ministry (Nigeria)",
+        "Engage in diplomatic cooperation",
+        "Head of Government (Nigeria)",
+        "2011-07-26"
+      ],
+      "after_top1_fact": [
+        "Barack Obama",
+        "Engage in diplomatic cooperation",
+        "Head of Government (Nigeria)",
+        "2011-07-26"
+      ],
+      "original_gold_rank": 30.0,
+      "final_gold_rank": 82.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "17507488",
+        "year": 2011,
+        "row": 363447,
+        "story_id": "15699991",
+        "sentence_number": "4",
+        "publisher": "All Africa"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null
+    }
+  ]
+}

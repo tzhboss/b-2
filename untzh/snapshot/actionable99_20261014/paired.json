@@ -1,0 +1,512 @@
+{
+  "source": "saved rank comparison, no neural scoring or retraining",
+  "comparisons": {
+    "uniform_tree_norm": {
+      "old_train": {
+        "all": {
+          "answers": 260498,
+          "eligible": 214095,
+          "a_drops": 2157,
+          "b_drops": 3301,
+          "a_rescues_b": 1192,
+          "a_harms_b": 48,
+          "rr_improved": 14203,
+          "rr_worse": 2605,
+          "mrr_delta_a_minus_b": 0.0012654530639269242
+        },
+        "snapshot0": {
+          "answers": 223284,
+          "eligible": 182427,
+          "a_drops": 1773,
+          "b_drops": 2845,
+          "a_rescues_b": 1106,
+          "a_harms_b": 34,
+          "rr_improved": 12812,
+          "rr_worse": 2087,
+          "mrr_delta_a_minus_b": 0.001238377737813311
+        },
+        "snapshot1": {
+          "answers": 37214,
+          "eligible": 31668,
+          "a_drops": 384,
+          "b_drops": 456,
+          "a_rescues_b": 86,
+          "a_harms_b": 14,
+          "rr_improved": 1391,
+          "rr_worse": 518,
+          "mrr_delta_a_minus_b": 0.0014279050206086033
+        },
+        "cohort": {
+          "answers": 16384,
+          "eligible": 16384,
+          "a_drops": 178,
+          "b_drops": 262,
+          "a_rescues_b": 87,
+          "a_harms_b": 3,
+          "rr_improved": 396,
+          "rr_worse": 41,
+          "mrr_delta_a_minus_b": 0.0015234162208189058
+        },
+        "outside_cohort": {
+          "answers": 244114,
+          "eligible": 197711,
+          "a_drops": 1979,
+          "b_drops": 3039,
+          "a_rescues_b": 1105,
+          "a_harms_b": 45,
+          "rr_improved": 13807,
+          "rr_worse": 2564,
+          "mrr_delta_a_minus_b": 0.001248139561372715
+        },
+        "tree_selected_answer": {
+          "answers": 2119,
+          "eligible": 2119,
+          "a_drops": 172,
+          "b_drops": 253,
+          "a_rescues_b": 84,
+          "a_harms_b": 3,
+          "rr_improved": 251,
+          "rr_worse": 9,
+          "mrr_delta_a_minus_b": 0.005378211354967179
+        },
+        "cohort_not_selected": {
+          "answers": 14265,
+          "eligible": 14265,
+          "a_drops": 6,
+          "b_drops": 9,
+          "a_rescues_b": 3,
+          "a_harms_b": 0,
+          "rr_improved": 145,
+          "rr_worse": 32,
+          "mrr_delta_a_minus_b": 0.0009508041710985979
+        },
+        "tree_selected_query": {
+          "answers": 47171,
+          "eligible": 29106,
+          "a_drops": 1624,
+          "b_drops": 2773,
+          "a_rescues_b": 1174,
+          "a_harms_b": 25,
+          "rr_improved": 12516,
+          "rr_worse": 1001,
+          "mrr_delta_a_minus_b": 0.007129875553132167
+        },
+        "other_queries": {
+          "answers": 213327,
+          "eligible": 184989,
+          "a_drops": 533,
+          "b_drops": 528,
+          "a_rescues_b": 18,
+          "a_harms_b": 23,
+          "rr_improved": 1687,
+          "rr_worse": 1604,
+          "mrr_delta_a_minus_b": -3.129171398820385e-05
+        }
+      },
+      "old_valid": {
+        "all": {
+          "answers": 1024,
+          "eligible": 416,
+          "a_drops": 6,
+          "b_drops": 6,
+          "a_rescues_b": 1,
+          "a_harms_b": 1,
+          "rr_improved": 123,
+          "rr_worse": 266,
+          "mrr_delta_a_minus_b": -0.00024027398153908967
+        }
+      },
+      "new_valid": {
+        "all": {
+          "answers": 1024,
+          "eligible": 1024,
+          "a_drops": 664,
+          "b_drops": 662,
+          "a_rescues_b": 4,
+          "a_harms_b": 6,
+          "rr_improved": 267,
+          "rr_worse": 359,
+          "mrr_delta_a_minus_b": -0.0040787281527803745
+        },
+        "old_to_new": {
+          "answers": 476,
+          "eligible": 476,
+          "a_drops": 397,
+          "b_drops": 397,
+          "a_rescues_b": 1,
+          "a_harms_b": 1,
+          "rr_improved": 163,
+          "rr_worse": 181,
+          "mrr_delta_a_minus_b": 0.00013790842300829013
+        },
+        "new_to_old": {
+          "answers": 506,
+          "eligible": 506,
+          "a_drops": 244,
+          "b_drops": 241,
+          "a_rescues_b": 2,
+          "a_harms_b": 5,
+          "rr_improved": 89,
+          "rr_worse": 166,
+          "mrr_delta_a_minus_b": -0.008471110949514287
+        },
+        "both_new": {
+          "answers": 42,
+          "eligible": 42,
+          "a_drops": 23,
+          "b_drops": 24,
+          "a_rescues_b": 1,
+          "a_harms_b": 0,
+          "rr_improved": 15,
+          "rr_worse": 12,
+          "mrr_delta_a_minus_b": 0.0010504786346471238
+        }
+      }
+    },
+    "random_tree_norm": {
+      "old_train": {
+        "all": {
+          "answers": 260498,
+          "eligible": 214095,
+          "a_drops": 2157,
+          "b_drops": 3227,
+          "a_rescues_b": 1114,
+          "a_harms_b": 44,
+          "rr_improved": 14516,
+          "rr_worse": 2431,
+          "mrr_delta_a_minus_b": 0.0012630304878359522
+        },
+        "snapshot0": {
+          "answers": 223284,
+          "eligible": 182427,
+          "a_drops": 1773,
+          "b_drops": 2765,
+          "a_rescues_b": 1021,
+          "a_harms_b": 29,
+          "rr_improved": 13031,
+          "rr_worse": 1980,
+          "mrr_delta_a_minus_b": 0.001223462171214968
+        },
+        "snapshot1": {
+          "answers": 37214,
+          "eligible": 31668,
+          "a_drops": 384,
+          "b_drops": 462,
+          "a_rescues_b": 93,
+          "a_harms_b": 15,
+          "rr_improved": 1485,
+          "rr_worse": 451,
+          "mrr_delta_a_minus_b": 0.0015004403875618561
+        },
+        "cohort": {
+          "answers": 16384,
+          "eligible": 16384,
+          "a_drops": 178,
+          "b_drops": 252,
+          "a_rescues_b": 77,
+          "a_harms_b": 3,
+          "rr_improved": 400,
+          "rr_worse": 46,
+          "mrr_delta_a_minus_b": 0.0015625948457212515
+        },
+        "outside_cohort": {
+          "answers": 244114,
+          "eligible": 197711,
+          "a_drops": 1979,
+          "b_drops": 2975,
+          "a_rescues_b": 1037,
+          "a_harms_b": 41,
+          "rr_improved": 14116,
+          "rr_worse": 2385,
+          "mrr_delta_a_minus_b": 0.001242924871445279
+        },
+        "tree_selected_answer": {
+          "answers": 2119,
+          "eligible": 2119,
+          "a_drops": 172,
+          "b_drops": 244,
+          "a_rescues_b": 75,
+          "a_harms_b": 3,
+          "rr_improved": 248,
+          "rr_worse": 14,
+          "mrr_delta_a_minus_b": 0.005357893223982433
+        },
+        "cohort_not_selected": {
+          "answers": 14265,
+          "eligible": 14265,
+          "a_drops": 6,
+          "b_drops": 8,
+          "a_rescues_b": 2,
+          "a_harms_b": 0,
+          "rr_improved": 152,
+          "rr_worse": 32,
+          "mrr_delta_a_minus_b": 0.0009988207648565168
+        },
+        "tree_selected_query": {
+          "answers": 47171,
+          "eligible": 29106,
+          "a_drops": 1624,
+          "b_drops": 2690,
+          "a_rescues_b": 1093,
+          "a_harms_b": 27,
+          "rr_improved": 12613,
+          "rr_worse": 937,
+          "mrr_delta_a_minus_b": 0.0070154678079723904
+        },
+        "other_queries": {
+          "answers": 213327,
+          "eligible": 184989,
+          "a_drops": 533,
+          "b_drops": 537,
+          "a_rescues_b": 21,
+          "a_harms_b": 17,
+          "rr_improved": 1903,
+          "rr_worse": 1494,
+          "mrr_delta_a_minus_b": -8.95205927789634e-06
+        }
+      },
+      "old_valid": {
+        "all": {
+          "answers": 1024,
+          "eligible": 416,
+          "a_drops": 6,
+          "b_drops": 5,
+          "a_rescues_b": 0,
+          "a_harms_b": 1,
+          "rr_improved": 131,
+          "rr_worse": 263,
+          "mrr_delta_a_minus_b": -0.0002723312816091135
+        }
+      },
+      "new_valid": {
+        "all": {
+          "answers": 1024,
+          "eligible": 1024,
+          "a_drops": 664,
+          "b_drops": 666,
+          "a_rescues_b": 5,
+          "a_harms_b": 3,
+          "rr_improved": 281,
+          "rr_worse": 365,
+          "mrr_delta_a_minus_b": -0.003717605177593092
+        },
+        "old_to_new": {
+          "answers": 476,
+          "eligible": 476,
+          "a_drops": 397,
+          "b_drops": 398,
+          "a_rescues_b": 1,
+          "a_harms_b": 0,
+          "rr_improved": 166,
+          "rr_worse": 188,
+          "mrr_delta_a_minus_b": 0.0006291149892419098
+        },
+        "new_to_old": {
+          "answers": 506,
+          "eligible": 506,
+          "a_drops": 244,
+          "b_drops": 244,
+          "a_rescues_b": 3,
+          "a_harms_b": 3,
+          "rr_improved": 99,
+          "rr_worse": 167,
+          "mrr_delta_a_minus_b": -0.00820215259090096
+        },
+        "both_new": {
+          "answers": 42,
+          "eligible": 42,
+          "a_drops": 23,
+          "b_drops": 24,
+          "a_rescues_b": 1,
+          "a_harms_b": 0,
+          "rr_improved": 16,
+          "rr_worse": 10,
+          "mrr_delta_a_minus_b": 0.0010476851014621803
+        }
+      }
+    },
+    "anchor_random_pool": {
+      "old_train": {
+        "all": {
+          "answers": 260498,
+          "eligible": 214095,
+          "a_drops": 2157,
+          "b_drops": 3536,
+          "a_rescues_b": 1404,
+          "a_harms_b": 25,
+          "rr_improved": 17866,
+          "rr_worse": 1324,
+          "mrr_delta_a_minus_b": 0.0018956551272878597
+        },
+        "snapshot0": {
+          "answers": 223284,
+          "eligible": 182427,
+          "a_drops": 1773,
+          "b_drops": 3033,
+          "a_rescues_b": 1275,
+          "a_harms_b": 15,
+          "rr_improved": 15949,
+          "rr_worse": 1035,
+          "mrr_delta_a_minus_b": 0.0017802333122078821
+        },
+        "snapshot1": {
+          "answers": 37214,
+          "eligible": 31668,
+          "a_drops": 384,
+          "b_drops": 503,
+          "a_rescues_b": 129,
+          "a_harms_b": 10,
+          "rr_improved": 1917,
+          "rr_worse": 289,
+          "mrr_delta_a_minus_b": 0.002588186017767727
+        },
+        "cohort": {
+          "answers": 16384,
+          "eligible": 16384,
+          "a_drops": 178,
+          "b_drops": 280,
+          "a_rescues_b": 103,
+          "a_harms_b": 1,
+          "rr_improved": 475,
+          "rr_worse": 31,
+          "mrr_delta_a_minus_b": 0.002230056678083627
+        },
+        "outside_cohort": {
+          "answers": 244114,
+          "eligible": 197711,
+          "a_drops": 1979,
+          "b_drops": 3256,
+          "a_rescues_b": 1301,
+          "a_harms_b": 24,
+          "rr_improved": 17391,
+          "rr_worse": 1293,
+          "mrr_delta_a_minus_b": 0.001873211371467883
+        },
+        "tree_selected_answer": {
+          "answers": 2119,
+          "eligible": 2119,
+          "a_drops": 172,
+          "b_drops": 270,
+          "a_rescues_b": 99,
+          "a_harms_b": 1,
+          "rr_improved": 281,
+          "rr_worse": 6,
+          "mrr_delta_a_minus_b": 0.006580604664122137
+        },
+        "cohort_not_selected": {
+          "answers": 14265,
+          "eligible": 14265,
+          "a_drops": 6,
+          "b_drops": 10,
+          "a_rescues_b": 4,
+          "a_harms_b": 0,
+          "rr_improved": 194,
+          "rr_worse": 25,
+          "mrr_delta_a_minus_b": 0.0015838028272307978
+        },
+        "tree_selected_query": {
+          "answers": 47171,
+          "eligible": 29106,
+          "a_drops": 1624,
+          "b_drops": 2979,
+          "a_rescues_b": 1369,
+          "a_harms_b": 14,
+          "rr_improved": 14882,
+          "rr_worse": 497,
+          "mrr_delta_a_minus_b": 0.010136421029811847
+        },
+        "other_queries": {
+          "answers": 213327,
+          "eligible": 184989,
+          "a_drops": 533,
+          "b_drops": 557,
+          "a_rescues_b": 35,
+          "a_harms_b": 11,
+          "rr_improved": 2984,
+          "rr_worse": 827,
+          "mrr_delta_a_minus_b": 7.345180380813642e-05
+        }
+      },
+      "old_valid": {
+        "all": {
+          "answers": 1024,
+          "eligible": 416,
+          "a_drops": 6,
+          "b_drops": 7,
+          "a_rescues_b": 1,
+          "a_harms_b": 0,
+          "rr_improved": 236,
+          "rr_worse": 161,
+          "mrr_delta_a_minus_b": -0.00011956784958516879
+        }
+      },
+      "new_valid": {
+        "all": {
+          "answers": 1024,
+          "eligible": 1024,
+          "a_drops": 664,
+          "b_drops": 662,
+          "a_rescues_b": 5,
+          "a_harms_b": 7,
+          "rr_improved": 254,
+          "rr_worse": 379,
+          "mrr_delta_a_minus_b": -0.0033655749983132737
+        },
+        "old_to_new": {
+          "answers": 476,
+          "eligible": 476,
+          "a_drops": 397,
+          "b_drops": 398,
+          "a_rescues_b": 1,
+          "a_harms_b": 0,
+          "rr_improved": 126,
+          "rr_worse": 219,
+          "mrr_delta_a_minus_b": 0.0006434250920337219
+        },
+        "new_to_old": {
+          "answers": 506,
+          "eligible": 506,
+          "a_drops": 244,
+          "b_drops": 240,
+          "a_rescues_b": 3,
+          "a_harms_b": 7,
+          "rr_improved": 116,
+          "rr_worse": 147,
+          "mrr_delta_a_minus_b": -0.006502030516558415
+        },
+        "both_new": {
+          "answers": 42,
+          "eligible": 42,
+          "a_drops": 23,
+          "b_drops": 24,
+          "a_rescues_b": 1,
+          "a_harms_b": 0,
+          "rr_improved": 12,
+          "rr_worse": 13,
+          "mrr_delta_a_minus_b": -0.011014088111959188
+        }
+      }
+    }
+  },
+  "selections": {
+    "anchor_tree": {
+      "draws": 7040,
+      "unique": 2119,
+      "effective_exposure": 1080.7152202354994,
+      "max_exposure": 17
+    },
+    "anchor_pressure128": {
+      "draws": 7040,
+      "unique": 2096,
+      "effective_exposure": 1082.698357217756,
+      "max_exposure": 16
+    },
+    "anchor_random_pool": {
+      "draws": 7040,
+      "unique": 4727,
+      "effective_exposure": 3653.907401946329,
+      "max_exposure": 6
+    }
+  },
+  "seconds": 0.7807435439899564
+}

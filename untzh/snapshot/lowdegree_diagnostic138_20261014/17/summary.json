@@ -1,0 +1,271 @@
+{
+  "models": {
+    "none": {
+      "eligible": 35499,
+      "prefix_drops": 951,
+      "final_drops": 673,
+      "late_new_drops": 155,
+      "rescued_queries": 433,
+      "groups": {
+        "one": {
+          "entities": 155,
+          "entities_crossing_any_valid": 6,
+          "final_crossing_pairs": 12,
+          "late_new_crossing_pairs": 5,
+          "rescued_crossing_pairs": 71,
+          "queries_affected": 11,
+          "dropped_queries_affected": 5,
+          "drops_resolved_by_candidate_removal": 1,
+          "mean_counterfactual_rr_gain": 1.298035700719426e-05
+        },
+        "two_three": {
+          "entities": 447,
+          "entities_crossing_any_valid": 90,
+          "final_crossing_pairs": 186,
+          "late_new_crossing_pairs": 17,
+          "rescued_crossing_pairs": 1511,
+          "queries_affected": 144,
+          "dropped_queries_affected": 73,
+          "drops_resolved_by_candidate_removal": 19,
+          "mean_counterfactual_rr_gain": 0.0001390230199240489
+        },
+        "four_plus": {
+          "entities": 1274,
+          "entities_crossing_any_valid": 752,
+          "final_crossing_pairs": 5064,
+          "late_new_crossing_pairs": 1462,
+          "rescued_crossing_pairs": 9801,
+          "queries_affected": 2655,
+          "dropped_queries_affected": 667,
+          "drops_resolved_by_candidate_removal": 644,
+          "mean_counterfactual_rr_gain": 0.00466908590017027
+        },
+        "few": {
+          "entities": 602,
+          "entities_crossing_any_valid": 96,
+          "final_crossing_pairs": 198,
+          "late_new_crossing_pairs": 22,
+          "rescued_crossing_pairs": 1582,
+          "queries_affected": 153,
+          "dropped_queries_affected": 76,
+          "drops_resolved_by_candidate_removal": 20,
+          "mean_counterfactual_rr_gain": 0.00015204323069630904
+        },
+        "no_train_conflict": {
+          "entities": 1641,
+          "entities_crossing_any_valid": 628,
+          "final_crossing_pairs": 2967,
+          "late_new_crossing_pairs": 725,
+          "rescued_crossing_pairs": 8578,
+          "queries_affected": 1702,
+          "dropped_queries_affected": 523,
+          "drops_resolved_by_candidate_removal": 375,
+          "mean_counterfactual_rr_gain": 0.0025779890049327362
+        },
+        "unknown": {
+          "entities": 24,
+          "entities_crossing_any_valid": 0,
+          "final_crossing_pairs": 0,
+          "late_new_crossing_pairs": 0,
+          "rescued_crossing_pairs": 7,
+          "queries_affected": 0,
+          "dropped_queries_affected": 0,
+          "drops_resolved_by_candidate_removal": 0,
+          "mean_counterfactual_rr_gain": 0.0
+        },
+        "selected_protection": {
+          "entities": 259,
+          "entities_crossing_any_valid": 220,
+          "final_crossing_pairs": 2295,
+          "late_new_crossing_pairs": 759,
+          "rescued_crossing_pairs": 2812,
+          "queries_affected": 1501,
+          "dropped_queries_affected": 434,
+          "drops_resolved_by_candidate_removal": 256,
+          "mean_counterfactual_rr_gain": 0.0020185677448111136
+        }
+      },
+      "eligible_mrr": 0.500032840060101,
+      "cached_rank_equal": true
+    },
+    "fixed_anchor": {
+      "eligible": 35499,
+      "prefix_drops": 951,
+      "final_drops": 546,
+      "late_new_drops": 124,
+      "rescued_queries": 529,
+      "groups": {
+        "one": {
+          "entities": 155,
+          "entities_crossing_any_valid": 4,
+          "final_crossing_pairs": 8,
+          "late_new_crossing_pairs": 5,
+          "rescued_crossing_pairs": 75,
+          "queries_affected": 8,
+          "dropped_queries_affected": 4,
+          "drops_resolved_by_candidate_removal": 1,
+          "mean_counterfactual_rr_gain": 1.2152157635128988e-05
+        },
+        "two_three": {
+          "entities": 447,
+          "entities_crossing_any_valid": 62,
+          "final_crossing_pairs": 97,
+          "late_new_crossing_pairs": 12,
+          "rescued_crossing_pairs": 1595,
+          "queries_affected": 82,
+          "dropped_queries_affected": 45,
+          "drops_resolved_by_candidate_removal": 15,
+          "mean_counterfactual_rr_gain": 9.724509466010055e-05
+        },
+        "four_plus": {
+          "entities": 1274,
+          "entities_crossing_any_valid": 694,
+          "final_crossing_pairs": 3851,
+          "late_new_crossing_pairs": 1080,
+          "rescued_crossing_pairs": 10632,
+          "queries_affected": 2306,
+          "dropped_queries_affected": 540,
+          "drops_resolved_by_candidate_removal": 526,
+          "mean_counterfactual_rr_gain": 0.003813387762889424
+        },
+        "few": {
+          "entities": 602,
+          "entities_crossing_any_valid": 66,
+          "final_crossing_pairs": 105,
+          "late_new_crossing_pairs": 17,
+          "rescued_crossing_pairs": 1670,
+          "queries_affected": 89,
+          "dropped_queries_affected": 48,
+          "drops_resolved_by_candidate_removal": 16,
+          "mean_counterfactual_rr_gain": 0.00010941402003784872
+        },
+        "no_train_conflict": {
+          "entities": 1641,
+          "entities_crossing_any_valid": 549,
+          "final_crossing_pairs": 2130,
+          "late_new_crossing_pairs": 556,
+          "rescued_crossing_pairs": 9246,
+          "queries_affected": 1385,
+          "dropped_queries_affected": 395,
+          "drops_resolved_by_candidate_removal": 297,
+          "mean_counterfactual_rr_gain": 0.0019891228590677946
+        },
+        "unknown": {
+          "entities": 24,
+          "entities_crossing_any_valid": 0,
+          "final_crossing_pairs": 0,
+          "late_new_crossing_pairs": 0,
+          "rescued_crossing_pairs": 7,
+          "queries_affected": 0,
+          "dropped_queries_affected": 0,
+          "drops_resolved_by_candidate_removal": 0,
+          "mean_counterfactual_rr_gain": 0.0
+        },
+        "selected_protection": {
+          "entities": 259,
+          "entities_crossing_any_valid": 211,
+          "final_crossing_pairs": 1826,
+          "late_new_crossing_pairs": 541,
+          "rescued_crossing_pairs": 3063,
+          "queries_affected": 1307,
+          "dropped_queries_affected": 340,
+          "drops_resolved_by_candidate_removal": 226,
+          "mean_counterfactual_rr_gain": 0.0017548222464501542
+        }
+      },
+      "eligible_mrr": 0.500985502574326,
+      "cached_rank_equal": true
+    },
+    "fixed_replay": {
+      "eligible": 35499,
+      "prefix_drops": 951,
+      "final_drops": 469,
+      "late_new_drops": 80,
+      "rescued_queries": 562,
+      "groups": {
+        "one": {
+          "entities": 155,
+          "entities_crossing_any_valid": 4,
+          "final_crossing_pairs": 9,
+          "late_new_crossing_pairs": 5,
+          "rescued_crossing_pairs": 74,
+          "queries_affected": 9,
+          "dropped_queries_affected": 5,
+          "drops_resolved_by_candidate_removal": 1,
+          "mean_counterfactual_rr_gain": 1.2591988422293502e-05
+        },
+        "two_three": {
+          "entities": 447,
+          "entities_crossing_any_valid": 55,
+          "final_crossing_pairs": 85,
+          "late_new_crossing_pairs": 11,
+          "rescued_crossing_pairs": 1606,
+          "queries_affected": 71,
+          "dropped_queries_affected": 38,
+          "drops_resolved_by_candidate_removal": 13,
+          "mean_counterfactual_rr_gain": 8.893515439659809e-05
+        },
+        "four_plus": {
+          "entities": 1274,
+          "entities_crossing_any_valid": 654,
+          "final_crossing_pairs": 3203,
+          "late_new_crossing_pairs": 759,
+          "rescued_crossing_pairs": 10959,
+          "queries_affected": 2030,
+          "dropped_queries_affected": 464,
+          "drops_resolved_by_candidate_removal": 451,
+          "mean_counterfactual_rr_gain": 0.0032055678981712144
+        },
+        "few": {
+          "entities": 602,
+          "entities_crossing_any_valid": 59,
+          "final_crossing_pairs": 94,
+          "late_new_crossing_pairs": 16,
+          "rescued_crossing_pairs": 1680,
+          "queries_affected": 79,
+          "dropped_queries_affected": 42,
+          "drops_resolved_by_candidate_removal": 14,
+          "mean_counterfactual_rr_gain": 0.00010155293934599802
+        },
+        "no_train_conflict": {
+          "entities": 1641,
+          "entities_crossing_any_valid": 508,
+          "final_crossing_pairs": 1840,
+          "late_new_crossing_pairs": 438,
+          "rescued_crossing_pairs": 9418,
+          "queries_affected": 1223,
+          "dropped_queries_affected": 344,
+          "drops_resolved_by_candidate_removal": 270,
+          "mean_counterfactual_rr_gain": 0.0017715222379538758
+        },
+        "unknown": {
+          "entities": 24,
+          "entities_crossing_any_valid": 0,
+          "final_crossing_pairs": 0,
+          "late_new_crossing_pairs": 0,
+          "rescued_crossing_pairs": 7,
+          "queries_affected": 0,
+          "dropped_queries_affected": 0,
+          "drops_resolved_by_candidate_removal": 0,
+          "mean_counterfactual_rr_gain": 0.0
+        },
+        "selected_protection": {
+          "entities": 259,
+          "entities_crossing_any_valid": 205,
+          "final_crossing_pairs": 1457,
+          "late_new_crossing_pairs": 337,
+          "rescued_crossing_pairs": 3228,
+          "queries_affected": 1100,
+          "dropped_queries_affected": 267,
+          "drops_resolved_by_candidate_removal": 175,
+          "mean_counterfactual_rr_gain": 0.001406594103258843
+        }
+      },
+      "eligible_mrr": 0.5016030446810829,
+      "cached_rank_equal": true
+    }
+  },
+  "seconds": 3.7676430610008538,
+  "diagnostic_candidate_removal_not_deployable": true,
+  "overlapping_groups_not_additive": true
+}

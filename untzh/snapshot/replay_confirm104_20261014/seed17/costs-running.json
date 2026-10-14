@@ -1,0 +1,58 @@
+{
+  "preparation_seconds": 0.3997453241609037,
+  "replay_tape": {
+    "seconds": 0.18145210994407535,
+    "positive_rows": 14080,
+    "facts_per_step": 32,
+    "negatives_per_fact": 10,
+    "bytes": 1189768,
+    "rejections": 996,
+    "rejection_rounds": 4,
+    "seed": 1040017,
+    "historical_pool": 260498,
+    "buffer": "all historical TRAIN; not strict online fixed-size buffer"
+  },
+  "historical_assets_not_free": true,
+  "training": {
+    "replay_start0_w03": {
+      "seconds": 2.3871693208348006,
+      "steps": 440,
+      "frozen_equal": true,
+      "mean_gradient_ratio": 0.7323343085923953,
+      "max_gradient_ratio": 1.8372460533362331,
+      "nonzero_replay_steps": 440,
+      "final_anchor_displacement_norm": null,
+      "max_cross_train_score_difference": null
+    },
+    "replay_late_w03": {
+      "seconds": 1.3149150100070983,
+      "steps": 220,
+      "frozen_equal": true,
+      "mean_gradient_ratio": 0.8310212272657748,
+      "max_gradient_ratio": 1.8205558813337608,
+      "nonzero_replay_steps": 220,
+      "final_anchor_displacement_norm": null,
+      "max_cross_train_score_difference": null
+    },
+    "replay_late_rho01": {
+      "seconds": 1.3205098351463675,
+      "steps": 220,
+      "frozen_equal": true,
+      "mean_gradient_ratio": 0.1,
+      "max_gradient_ratio": 0.10000000000000002,
+      "nonzero_replay_steps": 220,
+      "final_anchor_displacement_norm": null,
+      "max_cross_train_score_difference": null
+    },
+    "anchor_replay_rho01": {
+      "seconds": 2.1358485019300133,
+      "steps": 220,
+      "frozen_equal": true,
+      "mean_gradient_ratio": 0.1,
+      "max_gradient_ratio": 0.10000000000000002,
+      "nonzero_replay_steps": 220,
+      "final_anchor_displacement_norm": 4.5715058366191625,
+      "max_cross_train_score_difference": 3.6363383449852793e-07
+    }
+  }
+}

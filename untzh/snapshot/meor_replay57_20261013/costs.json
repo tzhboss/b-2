@@ -1,0 +1,258 @@
+{
+  "prepare": {
+    "reused": true,
+    "source": "/data/lc/untzh/signals56_prepare_optimization_20261013",
+    "steps": 740,
+    "reuse_check_seconds": 0.22745037800632417,
+    "historical_preparation_seconds": 585.7994446908124,
+    "historical_components": {
+      "scale": 14.711742375977337,
+      "reference_matching": 556.861573207425,
+      "reference_aggregation": 8.561736605595797,
+      "cache_io": 4.497988638933748
+    },
+    "cache_bytes": 36865956,
+    "note": "Historical shared random/structural preparation; not standalone MEOR deployment cost."
+  },
+  "calibration_seconds": 0.9506404991261661,
+  "train": {
+    "replay": {
+      "seconds": 4.972672620089725,
+      "steps": 740,
+      "fixed_lambda": 0.0,
+      "capped_steps": 0,
+      "max_actual_gradient_ratio": 0.0,
+      "max_uncapped_gradient_ratio": 0.0,
+      "peak_gpu_memory_bytes": 152226304,
+      "old_E_R_bitwise_frozen": true,
+      "historical_replay_E_equal": true,
+      "historical_replay_R_equal": true
+    },
+    "meor_stepcap": {
+      "seconds": 7.001021075993776,
+      "steps": 740,
+      "fixed_lambda": 397569.91597265855,
+      "capped_steps": 583,
+      "max_actual_gradient_ratio": 0.10000000000000003,
+      "max_uncapped_gradient_ratio": 1881.1087252077152,
+      "peak_gpu_memory_bytes": 159611904,
+      "old_E_R_bitwise_frozen": true
+    },
+    "absolute_stepcap": {
+      "seconds": 6.1736675158608705,
+      "steps": 740,
+      "fixed_lambda": 0.38353706410995897,
+      "capped_steps": 297,
+      "max_actual_gradient_ratio": 0.10000000000000003,
+      "max_uncapped_gradient_ratio": 0.190773612289511,
+      "peak_gpu_memory_bytes": 159611392,
+      "old_E_R_bitwise_frozen": true
+    },
+    "replay_plus_meor_stepcap": {
+      "seconds": 5.784658271120861,
+      "steps": 740,
+      "fixed_lambda": 424207.6003676201,
+      "capped_steps": 604,
+      "max_actual_gradient_ratio": 0.10000000000000003,
+      "max_uncapped_gradient_ratio": 3041.917642897128,
+      "peak_gpu_memory_bytes": 162221568,
+      "old_E_R_bitwise_frozen": true
+    }
+  },
+  "evaluation_seconds": 88.67449059290811,
+  "total_seconds": 116.09528843988664,
+  "historical_cost_records": {
+    "/data/lc/tzh/experiment4/matched_protection52_20261013/artifacts/tape/receipt.json": {
+      "status": "PASS",
+      "steps": 740,
+      "epochs": 20,
+      "new_rows_seen": 3753,
+      "new_fact_draws": 744280,
+      "eligible_old_facts": 142339,
+      "old_facts_seen": 142339,
+      "old_query_keys_seen": 68176,
+      "new_sampler_rejections": 49090,
+      "old_sampler_rejections": 1345,
+      "seconds": 73.6868588081561,
+      "setup_seconds": 0.4453454311005771,
+      "new_sample_seconds": 59.42257221555337,
+      "replay_sample_seconds": 3.298296307446435,
+      "learning_io_seconds": 5.943378474796191,
+      "protection_io_seconds": 3.713314956985414,
+      "new_only_preparation_seconds": 66.67525667650625,
+      "tape_sha256": {
+        "learning.npz": "5e78e9dc5fdc710a2a17f100df482249a9e85cbdb45a7feefc4644b07b98078e",
+        "protection.npz": "756829479f9a8e51634063600fac89b5615a1b8b6fac765a0409c64993c97957"
+      },
+      "VALID_read": false,
+      "TEST_read": false
+    },
+    "/data/lc/tzh/experiment4/matched_protection52_20261013/artifacts/train/new_only/receipt.json": {
+      "status": "PASS",
+      "arm": "new_only",
+      "epochs": 20,
+      "steps": 740,
+      "seconds": 8.419710393995047,
+      "checkpoints": {
+        "5": "2b4960979b77f9ecf25b6f5b24de95a7418c1573b4162fbb89a0dead7473f628",
+        "10": "3648323526da3087e0c71f05368a05007d1e13996964a096e2f3bc02d9c6ba4a",
+        "20": "1e63e848507d1a58b7688b480c679c8e20b3bf74c87661cfb99a59ae736f6636"
+      },
+      "old_entities_relations_bitwise_frozen": true,
+      "dtype": "torch.float32",
+      "tape_sha256": {
+        "learning.npz": "5e78e9dc5fdc710a2a17f100df482249a9e85cbdb45a7feefc4644b07b98078e"
+      },
+      "peak_gpu_memory_bytes": 73500672,
+      "witness_steps": [
+        0,
+        370,
+        739
+      ],
+      "historical049_equality": {
+        "E_equal": true,
+        "R_equal": true,
+        "max_abs_E_difference": 0.0,
+        "scope": "source reproduction disclosure, not method efficacy"
+      },
+      "VALID_read": false,
+      "TEST_read": false
+    },
+    "/data/lc/tzh/experiment4/matched_protection52_20261013/artifacts/train/absolute_replay/receipt.json": {
+      "status": "PASS",
+      "arm": "absolute_replay",
+      "epochs": 20,
+      "steps": 740,
+      "seconds": 9.902528274105862,
+      "checkpoints": {
+        "5": "dbdc827624e6468fa099a9454fccb57595b1b021e0c3153d83827e51ba49cc62",
+        "10": "8088e6779c5e83ce077085b4198676d862909ae6c86781309a1d50d60cd1af17",
+        "20": "41cfa21072b0a7c4aae6b34a577769c74b7481ecb5f602e8c8196d0ad605309d"
+      },
+      "old_entities_relations_bitwise_frozen": true,
+      "dtype": "torch.float32",
+      "tape_sha256": {
+        "learning.npz": "5e78e9dc5fdc710a2a17f100df482249a9e85cbdb45a7feefc4644b07b98078e",
+        "protection.npz": "756829479f9a8e51634063600fac89b5615a1b8b6fac765a0409c64993c97957"
+      },
+      "peak_gpu_memory_bytes": 76924928,
+      "witness_steps": [
+        0,
+        370,
+        739
+      ],
+      "historical049_equality": null,
+      "VALID_read": false,
+      "TEST_read": false
+    },
+    "/data/lc/tzh/experiment4/replay_strength53_20261013/artifacts/train/replay_010/receipt.json": {
+      "status": "PASS",
+      "arm": "replay_010",
+      "protection_weight": 0.1,
+      "epochs": 20,
+      "steps": 740,
+      "seconds": 9.835166689939797,
+      "checkpoints": {
+        "5": "a14efe651badf03e84dfd8bd6c55583c065674b29835c7c15ffa3563b21ecb8e",
+        "10": "fb76053ed558352752332f126151d3e5b0e3cc156361fc9f057dc0a42ba9f56e",
+        "20": "940f0148335dd3c9770558325a535dc1723efd8846e312a330ba1f24f34f286a"
+      },
+      "old_entities_relations_bitwise_frozen": true,
+      "dtype": "torch.float32",
+      "tape_sha256": {
+        "learning.npz": "5e78e9dc5fdc710a2a17f100df482249a9e85cbdb45a7feefc4644b07b98078e",
+        "protection.npz": "756829479f9a8e51634063600fac89b5615a1b8b6fac765a0409c64993c97957"
+      },
+      "peak_gpu_memory_bytes": 76924928,
+      "witness_steps": [
+        0,
+        370,
+        739
+      ],
+      "historical049_equality": null,
+      "VALID_read": false,
+      "TEST_read": false
+    },
+    "/data/lc/tzh/experiment4/replay_strength53_20261013/artifacts/train/replay_030/receipt.json": {
+      "status": "PASS",
+      "arm": "replay_030",
+      "protection_weight": 0.3,
+      "epochs": 20,
+      "steps": 740,
+      "seconds": 9.84192851302214,
+      "checkpoints": {
+        "5": "99edf9f28a52814686b06b0cea24107302db57e9b0511bee13e961a115a277f5",
+        "10": "774350870f28ba41b88a5b8e6df2716e438dd42a3167b060bf15c999748a9329",
+        "20": "3eb4084162808c695c13f7ebc0601e30bb16d685015fba1210e5b34cda71a139"
+      },
+      "old_entities_relations_bitwise_frozen": true,
+      "dtype": "torch.float32",
+      "tape_sha256": {
+        "learning.npz": "5e78e9dc5fdc710a2a17f100df482249a9e85cbdb45a7feefc4644b07b98078e",
+        "protection.npz": "756829479f9a8e51634063600fac89b5615a1b8b6fac765a0409c64993c97957"
+      },
+      "peak_gpu_memory_bytes": 76924928,
+      "witness_steps": [
+        0,
+        370,
+        739
+      ],
+      "historical049_equality": null,
+      "VALID_read": false,
+      "TEST_read": false
+    },
+    "/data/lc/untzh/signals56_20261013/costs.json": {
+      "prepare": {
+        "seconds": 1349.4656819039956,
+        "components": {
+          "scale": 14.737321243155748,
+          "reference_matching": 1320.2409261793364,
+          "reference_aggregation": 9.100207096897066,
+          "cache_io": 4.433312225621194
+        },
+        "steps": 740,
+        "eligible_old_answers": 187470,
+        "kept_occurrences": 23680,
+        "scale_quantiles": [
+          1.2251472825381828,
+          2.627065895423034,
+          3.2145313676521283,
+          3.878199414416313,
+          7.109513557485579
+        ],
+        "cache_bytes": 36865956
+      },
+      "calibration_seconds": 0.9689419320784509,
+      "train": {
+        "absolute": {
+          "seconds": 7.457767964107916,
+          "steps": 740,
+          "coefficient": 0.38353706410995897,
+          "peak_gpu_memory_bytes": 139794944
+        },
+        "relative": {
+          "seconds": 4.941397840157151,
+          "steps": 740,
+          "coefficient": 397569.91597265855,
+          "peak_gpu_memory_bytes": 139794944
+        },
+        "random": {
+          "seconds": 4.447873868048191,
+          "steps": 740,
+          "coefficient": 632157.6696919475,
+          "peak_gpu_memory_bytes": 139794944
+        },
+        "structural": {
+          "seconds": 4.394148972118273,
+          "steps": 740,
+          "coefficient": 397569.91597265855,
+          "peak_gpu_memory_bytes": 139794944
+        }
+      },
+      "evaluation_seconds": 87.5515454809647,
+      "total_seconds": 1459.7190934589598
+    }
+  },
+  "paired_addon_training_ratio": 1.1632895855139735,
+  "paired_addon_training_ratio_note": "Training only, asynchronous timing, excludes initial calibration and historical preparation; not deployment ratio."
+}

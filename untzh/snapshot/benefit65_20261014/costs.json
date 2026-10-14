@@ -1,0 +1,80 @@
+{
+  "labels": {
+    "seconds": 51.43193126609549,
+    "branches": 160,
+    "steps_per_branch": 37,
+    "fit_actions": 128,
+    "development_actions": 32,
+    "source": "TRAIN only; each branch shares prefix10 and steps370:407",
+    "intervention": "one answer repeated for 37 steps, 128 legal candidates, rho .1; interactions when combining32 actions remain unmodelled"
+  },
+  "fit": {
+    "scales": [
+      7.358666482453867e-05,
+      0.0013123708384520495
+    ],
+    "positive_gain_actions": 143,
+    "positive_cost_actions": 151,
+    "models": {
+      "ridge": {
+        "dev_spearman": 0.04252199413489736,
+        "dev_top8_real_utility": -0.9860222704295427,
+        "dev_mean_real_utility": -0.6972662425122842
+      },
+      "tree": {
+        "dev_spearman": 0.18515124050793455,
+        "dev_top8_real_utility": -0.7403044897864857,
+        "dev_mean_real_utility": -0.6972662425122842
+      }
+    },
+    "seconds": 0.4685811980161816
+  },
+  "training": {
+    "benefit_ridge_static": {
+      "seconds": 1.867940526921302,
+      "spec": {
+        "signal": "absolute",
+        "route": "ridge_static"
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000002
+    },
+    "benefit_ridge_dynamic": {
+      "seconds": 2.473417191999033,
+      "spec": {
+        "signal": "absolute",
+        "route": "ridge_dynamic"
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000003
+    },
+    "benefit_tree_static": {
+      "seconds": 1.932745830854401,
+      "spec": {
+        "signal": "absolute",
+        "route": "tree_static"
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000002
+    },
+    "benefit_tree_dynamic": {
+      "seconds": 2.6200033018831164,
+      "spec": {
+        "signal": "absolute",
+        "route": "tree_dynamic"
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000003
+    }
+  },
+  "evaluation": {
+    "seconds": 2.887994739925489,
+    "valid_seconds": 2.8595371008850634,
+    "full_train_arms": []
+  },
+  "total_seconds": 65.99216151004657
+}

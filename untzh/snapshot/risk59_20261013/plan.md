@@ -1,0 +1,7 @@
+# 059：风险识别与候选定向保护
+
+058发现识别准确度没有转化为更好的VALID学新—保旧取舍。本轮复用058 cohort、学习器和prefix10 Adam状态，不构建新标签或结构参照，不改058结果。seed17，无硬超时、独立审计或归档。
+
+固定相同query选择预算、softplus绝对压分、共同lambda与每步.1梯度限幅。保护候选只改变为全部128抽样候选或其中最高分8候选。对照：uniform/all128复用058；新增uniform/top8、tree_current/all128、tree_current/top8、tree_new_event/all128、tree_new_event/top8。两个树均已在058缓存特征消融阶段训练完，只使用前期TRAIN标签。
+
+每方案前10epoch共用普通学习及Adam状态，后10epoch进行保护。所有新模型完成后一次评价完整旧TRAIN与1024旧/1024新VALID，不读TEST。评价保留三新方向MRR和旧MRR、固定旧Top10掉榜；历史普通与uniform是复用，不是独立重复。Top8不是新的硬安全证明或已有论文作者复现；本轮为看到058结果后设计的开发探索，不调阈值或修改历史门槛。

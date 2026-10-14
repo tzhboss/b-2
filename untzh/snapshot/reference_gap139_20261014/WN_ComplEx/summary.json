@@ -1,0 +1,557 @@
+{
+  "populations": {
+    "old_train": {
+      "n": 66960,
+      "normalized_gold": {
+        "n": 66960,
+        "negative": 0,
+        "negative_fraction": 0.0,
+        "quantiles": {
+          "0.01": 0.6409910175950024,
+          "0.05": 0.7287792980787772,
+          "0.1": 0.792832390016318,
+          "0.25": 0.8895144428608311,
+          "0.5": 0.9774838121474283,
+          "0.75": 1.0579805094175272,
+          "0.9": 1.142967318374395,
+          "0.95": 1.2191276513129445,
+          "0.99": 1.6879448314413614
+        }
+      },
+      "parent_mrr": 0.9998058542413382,
+      "arms": {
+        "none": {
+          "drops": 0,
+          "drop_fraction": 0.0,
+          "eligible_mrr": 0.9998058542413382
+        },
+        "fixed_anchor": {
+          "drops": 0,
+          "drop_fraction": 0.0,
+          "eligible_mrr": 0.9998058542413382
+        },
+        "fixed_replay": {
+          "drops": 0,
+          "drop_fraction": 0.0,
+          "eligible_mrr": 0.9998058542413382
+        }
+      }
+    },
+    "old_valid": {
+      "n": 6107,
+      "normalized_gold": {
+        "n": 6107,
+        "negative": 1796,
+        "negative_fraction": 0.29408875061404943,
+        "quantiles": {
+          "0.01": -0.42899285125049363,
+          "0.05": -0.25547736624316386,
+          "0.1": -0.16912094742860048,
+          "0.25": -0.03178802548733856,
+          "0.5": 0.11672336718202889,
+          "0.75": 0.2794180233475604,
+          "0.9": 0.43212381672889355,
+          "0.95": 0.5272658375902185,
+          "0.99": 0.7215012651476734
+        }
+      },
+      "parent_mrr": 0.8135196794726841,
+      "arms": {
+        "none": {
+          "drops": 975,
+          "drop_fraction": 0.15965285737678075,
+          "eligible_mrr": 0.6832190567975313,
+          "prefix_drops": 1509,
+          "late_new": 0,
+          "rescued": 534
+        },
+        "fixed_anchor": {
+          "drops": 885,
+          "drop_fraction": 0.144915670542001,
+          "eligible_mrr": 0.6984069645508622,
+          "prefix_drops": 1509,
+          "late_new": 0,
+          "rescued": 624
+        },
+        "fixed_replay": {
+          "drops": 858,
+          "drop_fraction": 0.14049451449156705,
+          "eligible_mrr": 0.7029082548492707,
+          "prefix_drops": 1509,
+          "late_new": 0,
+          "rescued": 651
+        }
+      }
+    }
+  },
+  "valid_strata": {
+    "train_query_seen": {
+      "n": 3138,
+      "normalized_gold": {
+        "n": 3138,
+        "negative": 841,
+        "negative_fraction": 0.2680050987890376,
+        "quantiles": {
+          "0.01": -0.40969434014714673,
+          "0.05": -0.25083304249352617,
+          "0.1": -0.16260147381483964,
+          "0.25": -0.014540539517135308,
+          "0.5": 0.13713854866025366,
+          "0.75": 0.29799944216499497,
+          "0.9": 0.4386132909783537,
+          "0.95": 0.5396898275289193,
+          "0.99": 0.7615328624307061
+        }
+      },
+      "parent_mrr": 0.7780903821056784,
+      "arms": {
+        "none": {
+          "drops": 516,
+          "drop_fraction": 0.16443594646271512,
+          "eligible_mrr": 0.6614159046953257,
+          "prefix_drops": 774,
+          "late_new": 0,
+          "rescued": 258
+        },
+        "fixed_anchor": {
+          "drops": 470,
+          "drop_fraction": 0.14977692797960485,
+          "eligible_mrr": 0.6742987067872467,
+          "prefix_drops": 774,
+          "late_new": 0,
+          "rescued": 304
+        },
+        "fixed_replay": {
+          "drops": 454,
+          "drop_fraction": 0.14467813894200127,
+          "eligible_mrr": 0.6781343585868203,
+          "prefix_drops": 774,
+          "late_new": 0,
+          "rescued": 320
+        }
+      }
+    },
+    "train_query_unseen": {
+      "n": 2969,
+      "normalized_gold": {
+        "n": 2969,
+        "negative": 955,
+        "negative_fraction": 0.3216571236106433,
+        "quantiles": {
+          "0.01": -0.4536369023736571,
+          "0.05": -0.26135661871096044,
+          "0.1": -0.1767518839998356,
+          "0.25": -0.04237484568808499,
+          "0.5": 0.0943300604257102,
+          "0.75": 0.2539027748271113,
+          "0.9": 0.4273070619158986,
+          "0.95": 0.5177019105896679,
+          "0.99": 0.6867667654246422
+        }
+      },
+      "parent_mrr": 0.8509656663833154,
+      "arms": {
+        "none": {
+          "drops": 459,
+          "drop_fraction": 0.1545975075783092,
+          "eligible_mrr": 0.7062632775104717,
+          "prefix_drops": 735,
+          "late_new": 0,
+          "rescued": 276
+        },
+        "fixed_anchor": {
+          "drops": 415,
+          "drop_fraction": 0.13977770293027955,
+          "eligible_mrr": 0.7238875010487488,
+          "prefix_drops": 735,
+          "late_new": 0,
+          "rescued": 320
+        },
+        "fixed_replay": {
+          "drops": 404,
+          "drop_fraction": 0.13607275176827213,
+          "eligible_mrr": 0.7290923190027128,
+          "prefix_drops": 735,
+          "late_new": 0,
+          "rescued": 331
+        }
+      }
+    },
+    "eligible_train_query_seen": {
+      "n": 3138,
+      "normalized_gold": {
+        "n": 3138,
+        "negative": 841,
+        "negative_fraction": 0.2680050987890376,
+        "quantiles": {
+          "0.01": -0.40969434014714673,
+          "0.05": -0.25083304249352617,
+          "0.1": -0.16260147381483964,
+          "0.25": -0.014540539517135308,
+          "0.5": 0.13713854866025366,
+          "0.75": 0.29799944216499497,
+          "0.9": 0.4386132909783537,
+          "0.95": 0.5396898275289193,
+          "0.99": 0.7615328624307061
+        }
+      },
+      "parent_mrr": 0.7780903821056784,
+      "arms": {
+        "none": {
+          "drops": 516,
+          "drop_fraction": 0.16443594646271512,
+          "eligible_mrr": 0.6614159046953257,
+          "prefix_drops": 774,
+          "late_new": 0,
+          "rescued": 258
+        },
+        "fixed_anchor": {
+          "drops": 470,
+          "drop_fraction": 0.14977692797960485,
+          "eligible_mrr": 0.6742987067872467,
+          "prefix_drops": 774,
+          "late_new": 0,
+          "rescued": 304
+        },
+        "fixed_replay": {
+          "drops": 454,
+          "drop_fraction": 0.14467813894200127,
+          "eligible_mrr": 0.6781343585868203,
+          "prefix_drops": 774,
+          "late_new": 0,
+          "rescued": 320
+        }
+      }
+    },
+    "cohort_query_seen": {
+      "n": 1074,
+      "normalized_gold": {
+        "n": 1074,
+        "negative": 280,
+        "negative_fraction": 0.260707635009311,
+        "quantiles": {
+          "0.01": -0.35939972900532535,
+          "0.05": -0.23145400700736224,
+          "0.1": -0.15348499722152464,
+          "0.25": -0.007519169074680448,
+          "0.5": 0.12995961051749022,
+          "0.75": 0.28883962134949304,
+          "0.9": 0.4405979570379073,
+          "0.95": 0.5423494903279553,
+          "0.99": 0.7816055748874643
+        }
+      },
+      "parent_mrr": 0.7634798705329432,
+      "arms": {
+        "none": {
+          "drops": 171,
+          "drop_fraction": 0.15921787709497207,
+          "eligible_mrr": 0.6523412485104402,
+          "prefix_drops": 256,
+          "late_new": 0,
+          "rescued": 85
+        },
+        "fixed_anchor": {
+          "drops": 152,
+          "drop_fraction": 0.14152700186219738,
+          "eligible_mrr": 0.6644938256183707,
+          "prefix_drops": 256,
+          "late_new": 0,
+          "rescued": 104
+        },
+        "fixed_replay": {
+          "drops": 147,
+          "drop_fraction": 0.13687150837988826,
+          "eligible_mrr": 0.6692729482201288,
+          "prefix_drops": 256,
+          "late_new": 0,
+          "rescued": 109
+        }
+      }
+    },
+    "cohort_query_unseen": {
+      "n": 5033,
+      "normalized_gold": {
+        "n": 5033,
+        "negative": 1516,
+        "negative_fraction": 0.30121200079475463,
+        "quantiles": {
+          "0.01": -0.4456047773089364,
+          "0.05": -0.2610091475134914,
+          "0.1": -0.17346314990720343,
+          "0.25": -0.035450058525337086,
+          "0.5": 0.11296224444282782,
+          "0.75": 0.27736770156686985,
+          "0.9": 0.4299354844892011,
+          "0.95": 0.5241313397191988,
+          "0.99": 0.710135419157935
+        }
+      },
+      "parent_mrr": 0.8241977551335787,
+      "arms": {
+        "none": {
+          "drops": 804,
+          "drop_fraction": 0.15974567852175642,
+          "eligible_mrr": 0.6898081221860343,
+          "prefix_drops": 1253,
+          "late_new": 0,
+          "rescued": 449
+        },
+        "fixed_anchor": {
+          "drops": 733,
+          "drop_fraction": 0.14563878402543215,
+          "eligible_mrr": 0.7056437440488745,
+          "prefix_drops": 1253,
+          "late_new": 0,
+          "rescued": 520
+        },
+        "fixed_replay": {
+          "drops": 711,
+          "drop_fraction": 0.1412676336181204,
+          "eligible_mrr": 0.710085747263278,
+          "prefix_drops": 1253,
+          "late_new": 0,
+          "rescued": 542
+        }
+      }
+    },
+    "exact_train_fact": {
+      "n": 0,
+      "normalized_gold": {
+        "n": 0,
+        "negative": 0,
+        "negative_fraction": null,
+        "quantiles": {}
+      },
+      "parent_mrr": null,
+      "arms": {
+        "none": {
+          "drops": 0,
+          "drop_fraction": null,
+          "eligible_mrr": null,
+          "prefix_drops": 0,
+          "late_new": 0,
+          "rescued": 0
+        },
+        "fixed_anchor": {
+          "drops": 0,
+          "drop_fraction": null,
+          "eligible_mrr": null,
+          "prefix_drops": 0,
+          "late_new": 0,
+          "rescued": 0
+        },
+        "fixed_replay": {
+          "drops": 0,
+          "drop_fraction": null,
+          "eligible_mrr": null,
+          "prefix_drops": 0,
+          "late_new": 0,
+          "rescued": 0
+        }
+      }
+    },
+    "seen_query_unseen_answer": {
+      "n": 3138,
+      "normalized_gold": {
+        "n": 3138,
+        "negative": 841,
+        "negative_fraction": 0.2680050987890376,
+        "quantiles": {
+          "0.01": -0.40969434014714673,
+          "0.05": -0.25083304249352617,
+          "0.1": -0.16260147381483964,
+          "0.25": -0.014540539517135308,
+          "0.5": 0.13713854866025366,
+          "0.75": 0.29799944216499497,
+          "0.9": 0.4386132909783537,
+          "0.95": 0.5396898275289193,
+          "0.99": 0.7615328624307061
+        }
+      },
+      "parent_mrr": 0.7780903821056784,
+      "arms": {
+        "none": {
+          "drops": 516,
+          "drop_fraction": 0.16443594646271512,
+          "eligible_mrr": 0.6614159046953257,
+          "prefix_drops": 774,
+          "late_new": 0,
+          "rescued": 258
+        },
+        "fixed_anchor": {
+          "drops": 470,
+          "drop_fraction": 0.14977692797960485,
+          "eligible_mrr": 0.6742987067872467,
+          "prefix_drops": 774,
+          "late_new": 0,
+          "rescued": 304
+        },
+        "fixed_replay": {
+          "drops": 454,
+          "drop_fraction": 0.14467813894200127,
+          "eligible_mrr": 0.6781343585868203,
+          "prefix_drops": 774,
+          "late_new": 0,
+          "rescued": 320
+        }
+      }
+    },
+    "negative_gold": {
+      "n": 1796,
+      "normalized_gold": {
+        "n": 1796,
+        "negative": 1796,
+        "negative_fraction": 1.0,
+        "quantiles": {
+          "0.01": -0.5427549234302059,
+          "0.05": -0.39094073645725846,
+          "0.1": -0.32128185640287765,
+          "0.25": -0.2077557437810438,
+          "0.5": -0.1183285586209348,
+          "0.75": -0.05090690698511247,
+          "0.9": -0.021493554698933562,
+          "0.95": -0.009968273812237612,
+          "0.99": -0.0019421332441071767
+        }
+      },
+      "parent_mrr": 0.5900424665040477,
+      "arms": {
+        "none": {
+          "drops": 968,
+          "drop_fraction": 0.5389755011135857,
+          "eligible_mrr": 0.20699445492526955,
+          "prefix_drops": 1481,
+          "late_new": 0,
+          "rescued": 513
+        },
+        "fixed_anchor": {
+          "drops": 881,
+          "drop_fraction": 0.4905345211581292,
+          "eligible_mrr": 0.2445682326798093,
+          "prefix_drops": 1481,
+          "late_new": 0,
+          "rescued": 600
+        },
+        "fixed_replay": {
+          "drops": 854,
+          "drop_fraction": 0.4755011135857461,
+          "eligible_mrr": 0.2558612036960549,
+          "prefix_drops": 1481,
+          "late_new": 0,
+          "rescued": 627
+        }
+      }
+    },
+    "nonnegative_gold": {
+      "n": 4311,
+      "normalized_gold": {
+        "n": 4311,
+        "negative": 0,
+        "negative_fraction": 0.0,
+        "quantiles": {
+          "0.01": 0.004403662077616155,
+          "0.05": 0.021766986186517928,
+          "0.1": 0.04300190211681575,
+          "0.25": 0.1002936301905579,
+          "0.5": 0.20269770373544405,
+          "0.75": 0.34051174417817054,
+          "0.9": 0.483184350568652,
+          "0.95": 0.5785540009566537,
+          "0.99": 0.7659067113946193
+        }
+      },
+      "parent_mrr": 0.9066222251678062,
+      "arms": {
+        "none": {
+          "drops": 7,
+          "drop_fraction": 0.0016237531895151936,
+          "eligible_mrr": 0.8816183574151563,
+          "prefix_drops": 28,
+          "late_new": 0,
+          "rescued": 21
+        },
+        "fixed_anchor": {
+          "drops": 4,
+          "drop_fraction": 0.0009278589654372535,
+          "eligible_mrr": 0.8874801175177865,
+          "prefix_drops": 28,
+          "late_new": 0,
+          "rescued": 24
+        },
+        "fixed_replay": {
+          "drops": 4,
+          "drop_fraction": 0.0009278589654372535,
+          "eligible_mrr": 0.8891519347080449,
+          "prefix_drops": 28,
+          "late_new": 0,
+          "rescued": 24
+        }
+      }
+    }
+  },
+  "relation_rank_adjusted": {
+    "matched_valid": 5191,
+    "unmatched_valid": 916,
+    "valid_weighted_common_cells": {
+      "train_mean_gold": 0.9964943122420221,
+      "valid_mean_gold": 0.1738105748977326,
+      "train_negative": 0.0,
+      "valid_negative": 0.20477749951839722,
+      "train_drops": 0.0,
+      "valid_drops": 0.07050664611828164
+    },
+    "no_causal_or_probability_calibration_claim": true
+  },
+  "train_cohort": {
+    "n": 16384,
+    "normalized_gold": {
+      "n": 16384,
+      "negative": 0,
+      "negative_fraction": 0.0,
+      "quantiles": {
+        "0.01": 0.6413077684560723,
+        "0.05": 0.728975234170613,
+        "0.1": 0.7932457157178441,
+        "0.25": 0.8879844417089455,
+        "0.5": 0.9771485531400939,
+        "0.75": 1.0572556298857125,
+        "0.9": 1.1426004768423557,
+        "0.95": 1.2173424728650508,
+        "0.99": 1.6566060177537036
+      }
+    },
+    "parent_mrr": 0.9998779296875,
+    "arms": {
+      "none": {
+        "drops": 0,
+        "drop_fraction": 0.0,
+        "eligible_mrr": 0.9998779296875,
+        "prefix_drops": 0,
+        "late_new": 0,
+        "rescued": 0
+      },
+      "fixed_anchor": {
+        "drops": 0,
+        "drop_fraction": 0.0,
+        "eligible_mrr": 0.9998779296875,
+        "prefix_drops": 0,
+        "late_new": 0,
+        "rescued": 0
+      },
+      "fixed_replay": {
+        "drops": 0,
+        "drop_fraction": 0.0,
+        "eligible_mrr": 0.9998779296875,
+        "prefix_drops": 0,
+        "late_new": 0,
+        "rescued": 0
+      }
+    }
+  },
+  "cost": {
+    "load_and_membership_seconds": 0.182276152074337,
+    "total_seconds": 0.23869193904101849
+  },
+  "diagnosis_not_action_input": true
+}

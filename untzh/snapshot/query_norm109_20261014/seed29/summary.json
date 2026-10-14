@@ -1,0 +1,171 @@
+{
+  "metrics": {
+    "answer_uniform_normmatched": {
+      "old_train": {
+        "all": {
+          "raw": {
+            "n": 260498,
+            "mrr": 0.3904814943059768,
+            "hits1": 0.2674377538407205,
+            "hits10": 0.6410260347488272
+          },
+          "filtered_train_truths": {
+            "n": 260498,
+            "mrr": 0.5555704539011386,
+            "hits1": 0.43049850670638545,
+            "hits10": 0.8082058211579359
+          }
+        },
+        "drops": {
+          "raw": {
+            "eligible": 167381,
+            "drops": 395
+          },
+          "filtered_train_truths": {
+            "eligible": 214095,
+            "drops": 3559
+          }
+        }
+      },
+      "old_valid": {
+        "all": {
+          "raw": {
+            "n": 86832,
+            "mrr": 0.16000833364764305,
+            "hits1": 0.08834300718629076,
+            "hits10": 0.3169799152386217
+          },
+          "filtered_train_truths": {
+            "n": 86832,
+            "mrr": 0.21475700225525993,
+            "hits1": 0.12922655242306982,
+            "hits10": 0.3980675327068362
+          }
+        },
+        "drops": {
+          "raw": {
+            "eligible": 27993,
+            "drops": 469
+          },
+          "filtered_train_truths": {
+            "eligible": 35200,
+            "drops": 635
+          }
+        }
+      },
+      "new_valid": {
+        "all": {
+          "raw": {
+            "n": 2786,
+            "mrr": 0.17368256712985292,
+            "hits1": 0.10875807609475951,
+            "hits10": 0.3061737257717157
+          },
+          "filtered_train_truths": {
+            "n": 2786,
+            "mrr": 0.20473627830053068,
+            "hits1": 0.13711414213926776,
+            "hits10": 0.3402727925340991
+          }
+        },
+        "head_old_gold_new": {
+          "raw": {
+            "n": 1336,
+            "mrr": 0.04842240282261821,
+            "hits1": 0.014221556886227544,
+            "hits10": 0.11077844311377245
+          },
+          "filtered_train_truths": {
+            "n": 1336,
+            "mrr": 0.07133992159405725,
+            "hits1": 0.02619760479041916,
+            "hits10": 0.15718562874251496
+          }
+        },
+        "head_new_gold_old": {
+          "raw": {
+            "n": 1336,
+            "mrr": 0.28532952335683937,
+            "hits1": 0.18712574850299402,
+            "hits10": 0.49326347305389223
+          },
+          "filtered_train_truths": {
+            "n": 1336,
+            "mrr": 0.3257731484321352,
+            "hits1": 0.23278443113772454,
+            "hits10": 0.5172155688622755
+          }
+        },
+        "both_new": {
+          "raw": {
+            "n": 114,
+            "mrr": 0.3332198127018859,
+            "hits1": 0.2982456140350877,
+            "hits10": 0.40350877192982454
+          },
+          "filtered_train_truths": {
+            "n": 114,
+            "mrr": 0.3495807876340828,
+            "hits1": 0.3157894736842105,
+            "hits10": 0.41228070175438597
+          }
+        }
+      },
+      "directional_ratios": [
+        0.979296268090634,
+        1.01907270064428,
+        1.0060502069535666
+      ]
+    }
+  },
+  "costs": {
+    "preparation_seconds": 1.5611913420725614,
+    "target_source": "query_budget101_20261014",
+    "historical_assets_not_free": true,
+    "training": {
+      "seconds": 2.648203006014228,
+      "online_setup_seconds": 1.9552619699388742,
+      "shadow_compute_included": true,
+      "max_norm_error": 2.456041769960393e-08,
+      "amplified_steps": 22,
+      "max_scale": 1.0211329529358997,
+      "max_cross_train_score_difference": 3.4963685534294964e-07,
+      "final_norm": 13.356473438300165,
+      "frozen_equal": true,
+      "ordinary_endpoint_equal": true
+    },
+    "fast_preparation": {
+      "seconds": 0.3390659559518099,
+      "splits": {
+        "old_train": {
+          "seconds": 0.2503844720777124,
+          "reused": true,
+          "bytes": 27408064
+        },
+        "old_valid": {
+          "seconds": 0.08865094697102904,
+          "reused": true,
+          "bytes": 8947632
+        }
+      },
+      "historical_teacher_not_free": true
+    },
+    "evaluation": {
+      "old_train": {
+        "seconds": 3.62025962700136,
+        "fallback_queries": 0,
+        "n": 260498,
+        "new_candidates": 1876
+      },
+      "old_valid": {
+        "seconds": 1.2156226120423526,
+        "fallback_queries": 0,
+        "n": 86832,
+        "new_candidates": 1876
+      },
+      "new_valid": {
+        "seconds": 0.29390166397206485
+      }
+    }
+  }
+}

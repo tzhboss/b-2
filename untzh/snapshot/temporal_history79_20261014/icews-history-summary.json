@@ -1,0 +1,793 @@
+{
+  "source_experiment": "/data/lc/untzh/temporal_drift76_20261014",
+  "date_semantics": "exact historical date unchanged",
+  "primary_population": "all eligible 2005-2014 directional TEST queries, before at own original year and after at 2015",
+  "n": 81772,
+  "historical_truth_expiration_annotations": 0,
+  "gold_validity_world_correction_evidence": "no record retraction/correction history supplied by ICEWS benchmark",
+  "real_world_error_fraction": null,
+  "reasonable_future_world_change_explanation": "cannot expire a fixed earlier event solely because later events differ",
+  "arms": {
+    "TDistMult_finetune": {
+      "all_historical": {
+        "n": 81772,
+        "before_recorded_true_top1": 42889,
+        "after_recorded_true_top1": 27621,
+        "transitions": {
+          "recorded_true_to_recorded_true": 23964,
+          "recorded_true_to_unrecorded": 18925,
+          "unrecorded_to_recorded_true": 3657,
+          "unrecorded_to_unrecorded": 35226
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.2930587487159419,
+          "recorded_true_to_unrecorded": 0.23143618842635622,
+          "unrecorded_to_recorded_true": 0.04472190970014186,
+          "unrecorded_to_unrecorded": 0.43078315315756005
+        },
+        "prediction_entity_changed_n": 48032,
+        "changed_but_both_recorded_true_n": 1695,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 1,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_rank_worsening": {
+        "n": 42070,
+        "before_recorded_true_top1": 20276,
+        "after_recorded_true_top1": 2226,
+        "transitions": {
+          "recorded_true_to_recorded_true": 2082,
+          "recorded_true_to_unrecorded": 18194,
+          "unrecorded_to_recorded_true": 144,
+          "unrecorded_to_unrecorded": 21650
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.04948894699310673,
+          "recorded_true_to_unrecorded": 0.43246969336819585,
+          "unrecorded_to_recorded_true": 0.003422866650820062,
+          "unrecorded_to_unrecorded": 0.5146184929878773
+        },
+        "prediction_entity_changed_n": 33820,
+        "changed_but_both_recorded_true_n": 370,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_rank_changes": {
+        "n": 57686,
+        "before_recorded_true_top1": 21660,
+        "after_recorded_true_top1": 6537,
+        "transitions": {
+          "recorded_true_to_recorded_true": 2897,
+          "recorded_true_to_unrecorded": 18763,
+          "unrecorded_to_recorded_true": 3640,
+          "unrecorded_to_unrecorded": 32386
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.050220157403876156,
+          "recorded_true_to_unrecorded": 0.3252608951912076,
+          "unrecorded_to_recorded_true": 0.06310023229206393,
+          "unrecorded_to_unrecorded": 0.5614187151128524
+        },
+        "prediction_entity_changed_n": 45551,
+        "changed_but_both_recorded_true_n": 609,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_original_top10_drops": {
+        "n": 13839,
+        "before_recorded_true_top1": 6578,
+        "after_recorded_true_top1": 670,
+        "transitions": {
+          "recorded_true_to_recorded_true": 612,
+          "recorded_true_to_unrecorded": 5966,
+          "unrecorded_to_recorded_true": 58,
+          "unrecorded_to_unrecorded": 7203
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.04422284847171038,
+          "recorded_true_to_unrecorded": 0.4311005130428499,
+          "unrecorded_to_recorded_true": 0.0041910542669268015,
+          "unrecorded_to_unrecorded": 0.5204855842185129
+        },
+        "prediction_entity_changed_n": 11364,
+        "changed_but_both_recorded_true_n": 122,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005": {
+        "n": 8514,
+        "before_recorded_true_top1": 4797,
+        "after_recorded_true_top1": 2580,
+        "transitions": {
+          "recorded_true_to_recorded_true": 2152,
+          "recorded_true_to_unrecorded": 2645,
+          "unrecorded_to_recorded_true": 428,
+          "unrecorded_to_unrecorded": 3289
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.2527601597369039,
+          "recorded_true_to_unrecorded": 0.31066478740897346,
+          "unrecorded_to_recorded_true": 0.05027014329339911,
+          "unrecorded_to_unrecorded": 0.3863049095607235
+        },
+        "prediction_entity_changed_n": 6049,
+        "changed_but_both_recorded_true_n": 301,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005_rank_worsening": {
+        "n": 4696,
+        "before_recorded_true_top1": 2790,
+        "after_recorded_true_top1": 263,
+        "transitions": {
+          "recorded_true_to_recorded_true": 259,
+          "recorded_true_to_unrecorded": 2531,
+          "unrecorded_to_recorded_true": 4,
+          "unrecorded_to_unrecorded": 1902
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.055153321976149916,
+          "recorded_true_to_unrecorded": 0.53896933560477,
+          "unrecorded_to_recorded_true": 0.0008517887563884157,
+          "unrecorded_to_unrecorded": 0.40502555366269166
+        },
+        "prediction_entity_changed_n": 4189,
+        "changed_but_both_recorded_true_n": 72,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005_original_top10_drops": {
+        "n": 1863,
+        "before_recorded_true_top1": 1218,
+        "after_recorded_true_top1": 85,
+        "transitions": {
+          "recorded_true_to_recorded_true": 85,
+          "recorded_true_to_unrecorded": 1133,
+          "unrecorded_to_recorded_true": 0,
+          "unrecorded_to_unrecorded": 645
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.045625335480407946,
+          "recorded_true_to_unrecorded": 0.6081588835212024,
+          "unrecorded_to_recorded_true": 0.0,
+          "unrecorded_to_unrecorded": 0.3462157809983897
+        },
+        "prediction_entity_changed_n": 1686,
+        "changed_but_both_recorded_true_n": 26,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      }
+    },
+    "TDistMult_replay": {
+      "all_historical": {
+        "n": 81772,
+        "before_recorded_true_top1": 42192,
+        "after_recorded_true_top1": 29232,
+        "transitions": {
+          "recorded_true_to_recorded_true": 25399,
+          "recorded_true_to_unrecorded": 16793,
+          "unrecorded_to_recorded_true": 3833,
+          "unrecorded_to_unrecorded": 35747
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.3106075429242283,
+          "recorded_true_to_unrecorded": 0.2053636941740449,
+          "unrecorded_to_recorded_true": 0.04687423567969476,
+          "unrecorded_to_unrecorded": 0.437154527222032
+        },
+        "prediction_entity_changed_n": 45955,
+        "changed_but_both_recorded_true_n": 1910,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_rank_worsening": {
+        "n": 40759,
+        "before_recorded_true_top1": 18638,
+        "after_recorded_true_top1": 2663,
+        "transitions": {
+          "recorded_true_to_recorded_true": 2483,
+          "recorded_true_to_unrecorded": 16155,
+          "unrecorded_to_recorded_true": 180,
+          "unrecorded_to_unrecorded": 21941
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.060919060820922986,
+          "recorded_true_to_unrecorded": 0.39635417944503054,
+          "unrecorded_to_recorded_true": 0.004416202556490591,
+          "unrecorded_to_unrecorded": 0.5383105571775558
+        },
+        "prediction_entity_changed_n": 31769,
+        "changed_but_both_recorded_true_n": 507,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_rank_changes": {
+        "n": 56694,
+        "before_recorded_true_top1": 20050,
+        "after_recorded_true_top1": 7212,
+        "transitions": {
+          "recorded_true_to_recorded_true": 3397,
+          "recorded_true_to_unrecorded": 16653,
+          "unrecorded_to_recorded_true": 3815,
+          "unrecorded_to_unrecorded": 32829
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.059918157124210676,
+          "recorded_true_to_unrecorded": 0.29373478674992065,
+          "unrecorded_to_recorded_true": 0.0672910713655766,
+          "unrecorded_to_unrecorded": 0.5790559847602921
+        },
+        "prediction_entity_changed_n": 43485,
+        "changed_but_both_recorded_true_n": 791,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_original_top10_drops": {
+        "n": 12013,
+        "before_recorded_true_top1": 5078,
+        "after_recorded_true_top1": 740,
+        "transitions": {
+          "recorded_true_to_recorded_true": 679,
+          "recorded_true_to_unrecorded": 4399,
+          "unrecorded_to_recorded_true": 61,
+          "unrecorded_to_unrecorded": 6874
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.056522101057188044,
+          "recorded_true_to_unrecorded": 0.36618663114958794,
+          "unrecorded_to_recorded_true": 0.005077832348289353,
+          "unrecorded_to_unrecorded": 0.5722134354449346
+        },
+        "prediction_entity_changed_n": 9501,
+        "changed_but_both_recorded_true_n": 138,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005": {
+        "n": 8514,
+        "before_recorded_true_top1": 4797,
+        "after_recorded_true_top1": 3039,
+        "transitions": {
+          "recorded_true_to_recorded_true": 2600,
+          "recorded_true_to_unrecorded": 2197,
+          "unrecorded_to_recorded_true": 439,
+          "unrecorded_to_unrecorded": 3278
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.305379375146817,
+          "recorded_true_to_unrecorded": 0.25804557199906036,
+          "unrecorded_to_recorded_true": 0.05156213295748179,
+          "unrecorded_to_unrecorded": 0.3850129198966408
+        },
+        "prediction_entity_changed_n": 5551,
+        "changed_but_both_recorded_true_n": 346,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005_rank_worsening": {
+        "n": 4364,
+        "before_recorded_true_top1": 2483,
+        "after_recorded_true_top1": 381,
+        "transitions": {
+          "recorded_true_to_recorded_true": 377,
+          "recorded_true_to_unrecorded": 2106,
+          "unrecorded_to_recorded_true": 4,
+          "unrecorded_to_unrecorded": 1877
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.08638863428047663,
+          "recorded_true_to_unrecorded": 0.48258478460128323,
+          "unrecorded_to_recorded_true": 0.0009165902841429881,
+          "unrecorded_to_unrecorded": 0.4301099908340972
+        },
+        "prediction_entity_changed_n": 3704,
+        "changed_but_both_recorded_true_n": 99,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005_original_top10_drops": {
+        "n": 1440,
+        "before_recorded_true_top1": 844,
+        "after_recorded_true_top1": 121,
+        "transitions": {
+          "recorded_true_to_recorded_true": 120,
+          "recorded_true_to_unrecorded": 724,
+          "unrecorded_to_recorded_true": 1,
+          "unrecorded_to_unrecorded": 595
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.08333333333333333,
+          "recorded_true_to_unrecorded": 0.5027777777777778,
+          "unrecorded_to_recorded_true": 0.0006944444444444445,
+          "unrecorded_to_unrecorded": 0.4131944444444444
+        },
+        "prediction_entity_changed_n": 1220,
+        "changed_but_both_recorded_true_n": 30,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      }
+    },
+    "TComplEx_finetune": {
+      "all_historical": {
+        "n": 81772,
+        "before_recorded_true_top1": 41734,
+        "after_recorded_true_top1": 26225,
+        "transitions": {
+          "recorded_true_to_recorded_true": 22471,
+          "recorded_true_to_unrecorded": 19263,
+          "unrecorded_to_recorded_true": 3754,
+          "unrecorded_to_unrecorded": 36284
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.2748006652643937,
+          "recorded_true_to_unrecorded": 0.2355696326370885,
+          "unrecorded_to_recorded_true": 0.04590813481387272,
+          "unrecorded_to_unrecorded": 0.4437215672846451
+        },
+        "prediction_entity_changed_n": 49199,
+        "changed_but_both_recorded_true_n": 1567,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_rank_worsening": {
+        "n": 42851,
+        "before_recorded_true_top1": 20294,
+        "after_recorded_true_top1": 1937,
+        "transitions": {
+          "recorded_true_to_recorded_true": 1790,
+          "recorded_true_to_unrecorded": 18504,
+          "unrecorded_to_recorded_true": 147,
+          "unrecorded_to_unrecorded": 22410
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.04177265408041819,
+          "recorded_true_to_unrecorded": 0.4318218944715409,
+          "unrecorded_to_recorded_true": 0.0034304917038108797,
+          "unrecorded_to_unrecorded": 0.52297495974423
+        },
+        "prediction_entity_changed_n": 34764,
+        "changed_but_both_recorded_true_n": 320,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_rank_changes": {
+        "n": 58767,
+        "before_recorded_true_top1": 21716,
+        "after_recorded_true_top1": 6327,
+        "transitions": {
+          "recorded_true_to_recorded_true": 2593,
+          "recorded_true_to_unrecorded": 19123,
+          "unrecorded_to_recorded_true": 3734,
+          "unrecorded_to_unrecorded": 33317
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.04412340258988888,
+          "recorded_true_to_unrecorded": 0.3254037129681624,
+          "unrecorded_to_recorded_true": 0.06353906103765719,
+          "unrecorded_to_unrecorded": 0.5669338234042915
+        },
+        "prediction_entity_changed_n": 46772,
+        "changed_but_both_recorded_true_n": 559,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_original_top10_drops": {
+        "n": 14878,
+        "before_recorded_true_top1": 7191,
+        "after_recorded_true_top1": 622,
+        "transitions": {
+          "recorded_true_to_recorded_true": 566,
+          "recorded_true_to_unrecorded": 6625,
+          "unrecorded_to_recorded_true": 56,
+          "unrecorded_to_unrecorded": 7631
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.03804274768113994,
+          "recorded_true_to_unrecorded": 0.44528834520768923,
+          "unrecorded_to_recorded_true": 0.0037639467670385804,
+          "unrecorded_to_unrecorded": 0.5129049603441322
+        },
+        "prediction_entity_changed_n": 12381,
+        "changed_but_both_recorded_true_n": 120,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005": {
+        "n": 8514,
+        "before_recorded_true_top1": 4641,
+        "after_recorded_true_top1": 2308,
+        "transitions": {
+          "recorded_true_to_recorded_true": 1881,
+          "recorded_true_to_unrecorded": 2760,
+          "unrecorded_to_recorded_true": 427,
+          "unrecorded_to_unrecorded": 3446
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.22093023255813954,
+          "recorded_true_to_unrecorded": 0.32417195207892885,
+          "unrecorded_to_recorded_true": 0.05015268968757341,
+          "unrecorded_to_unrecorded": 0.40474512567535825
+        },
+        "prediction_entity_changed_n": 6256,
+        "changed_but_both_recorded_true_n": 258,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005_rank_worsening": {
+        "n": 4845,
+        "before_recorded_true_top1": 2847,
+        "after_recorded_true_top1": 205,
+        "transitions": {
+          "recorded_true_to_recorded_true": 195,
+          "recorded_true_to_unrecorded": 2652,
+          "unrecorded_to_recorded_true": 10,
+          "unrecorded_to_unrecorded": 1988
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.04024767801857585,
+          "recorded_true_to_unrecorded": 0.5473684210526316,
+          "unrecorded_to_recorded_true": 0.0020639834881320948,
+          "unrecorded_to_unrecorded": 0.4103199174406605
+        },
+        "prediction_entity_changed_n": 4358,
+        "changed_but_both_recorded_true_n": 46,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005_original_top10_drops": {
+        "n": 2027,
+        "before_recorded_true_top1": 1327,
+        "after_recorded_true_top1": 60,
+        "transitions": {
+          "recorded_true_to_recorded_true": 58,
+          "recorded_true_to_unrecorded": 1269,
+          "unrecorded_to_recorded_true": 2,
+          "unrecorded_to_unrecorded": 698
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.028613714849531326,
+          "recorded_true_to_unrecorded": 0.6260483473112974,
+          "unrecorded_to_recorded_true": 0.000986679822397632,
+          "unrecorded_to_unrecorded": 0.3443512580167736
+        },
+        "prediction_entity_changed_n": 1888,
+        "changed_but_both_recorded_true_n": 20,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      }
+    },
+    "TComplEx_replay": {
+      "all_historical": {
+        "n": 81772,
+        "before_recorded_true_top1": 41043,
+        "after_recorded_true_top1": 28070,
+        "transitions": {
+          "recorded_true_to_recorded_true": 24023,
+          "recorded_true_to_unrecorded": 17020,
+          "unrecorded_to_recorded_true": 4047,
+          "unrecorded_to_unrecorded": 36682
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.29378026708408744,
+          "recorded_true_to_unrecorded": 0.2081397055226728,
+          "unrecorded_to_recorded_true": 0.04949126840483295,
+          "unrecorded_to_unrecorded": 0.4485887589884068
+        },
+        "prediction_entity_changed_n": 46821,
+        "changed_but_both_recorded_true_n": 1743,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_rank_worsening": {
+        "n": 41033,
+        "before_recorded_true_top1": 18493,
+        "after_recorded_true_top1": 2333,
+        "transitions": {
+          "recorded_true_to_recorded_true": 2156,
+          "recorded_true_to_unrecorded": 16337,
+          "unrecorded_to_recorded_true": 177,
+          "unrecorded_to_unrecorded": 22363
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.052543075085906464,
+          "recorded_true_to_unrecorded": 0.3981429581068896,
+          "unrecorded_to_recorded_true": 0.00431360124777618,
+          "unrecorded_to_unrecorded": 0.5450003655594278
+        },
+        "prediction_entity_changed_n": 32166,
+        "changed_but_both_recorded_true_n": 429,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_rank_changes": {
+        "n": 57562,
+        "before_recorded_true_top1": 19955,
+        "after_recorded_true_top1": 7080,
+        "transitions": {
+          "recorded_true_to_recorded_true": 3057,
+          "recorded_true_to_unrecorded": 16898,
+          "unrecorded_to_recorded_true": 4023,
+          "unrecorded_to_unrecorded": 33584
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.05310795316354539,
+          "recorded_true_to_unrecorded": 0.29356172474896636,
+          "unrecorded_to_recorded_true": 0.06988985789235955,
+          "unrecorded_to_unrecorded": 0.5834404641951287
+        },
+        "prediction_entity_changed_n": 44428,
+        "changed_but_both_recorded_true_n": 677,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_original_top10_drops": {
+        "n": 12599,
+        "before_recorded_true_top1": 5395,
+        "after_recorded_true_top1": 666,
+        "transitions": {
+          "recorded_true_to_recorded_true": 617,
+          "recorded_true_to_unrecorded": 4778,
+          "unrecorded_to_recorded_true": 49,
+          "unrecorded_to_unrecorded": 7155
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.048972140646083025,
+          "recorded_true_to_unrecorded": 0.3792364473370902,
+          "unrecorded_to_recorded_true": 0.0038891975553615368,
+          "unrecorded_to_unrecorded": 0.5679022144614652
+        },
+        "prediction_entity_changed_n": 10006,
+        "changed_but_both_recorded_true_n": 129,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005": {
+        "n": 8514,
+        "before_recorded_true_top1": 4641,
+        "after_recorded_true_top1": 2760,
+        "transitions": {
+          "recorded_true_to_recorded_true": 2315,
+          "recorded_true_to_unrecorded": 2326,
+          "unrecorded_to_recorded_true": 445,
+          "unrecorded_to_unrecorded": 3428
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.27190509748649283,
+          "recorded_true_to_unrecorded": 0.2731970871505755,
+          "unrecorded_to_recorded_true": 0.05226685459243599,
+          "unrecorded_to_unrecorded": 0.40263096077049565
+        },
+        "prediction_entity_changed_n": 5786,
+        "changed_but_both_recorded_true_n": 327,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005_rank_worsening": {
+        "n": 4445,
+        "before_recorded_true_top1": 2517,
+        "after_recorded_true_top1": 311,
+        "transitions": {
+          "recorded_true_to_recorded_true": 302,
+          "recorded_true_to_unrecorded": 2215,
+          "unrecorded_to_recorded_true": 9,
+          "unrecorded_to_unrecorded": 1919
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.06794150731158605,
+          "recorded_true_to_unrecorded": 0.4983127109111361,
+          "unrecorded_to_recorded_true": 0.0020247469066366703,
+          "unrecorded_to_unrecorded": 0.4317210348706412
+        },
+        "prediction_entity_changed_n": 3829,
+        "changed_but_both_recorded_true_n": 72,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005_original_top10_drops": {
+        "n": 1559,
+        "before_recorded_true_top1": 932,
+        "after_recorded_true_top1": 98,
+        "transitions": {
+          "recorded_true_to_recorded_true": 94,
+          "recorded_true_to_unrecorded": 838,
+          "unrecorded_to_recorded_true": 4,
+          "unrecorded_to_unrecorded": 623
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.06029506093649775,
+          "recorded_true_to_unrecorded": 0.5375240538806928,
+          "unrecorded_to_recorded_true": 0.0025657472738935213,
+          "unrecorded_to_unrecorded": 0.39961513790891595
+        },
+        "prediction_entity_changed_n": 1379,
+        "changed_but_both_recorded_true_n": 26,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      }
+    },
+    "TComplEx_frozen_history": {
+      "all_historical": {
+        "n": 81772,
+        "before_recorded_true_top1": 24221,
+        "after_recorded_true_top1": 23312,
+        "transitions": {
+          "recorded_true_to_recorded_true": 23312,
+          "recorded_true_to_unrecorded": 909,
+          "unrecorded_to_recorded_true": 0,
+          "unrecorded_to_unrecorded": 57551
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.2850853592916891,
+          "recorded_true_to_unrecorded": 0.011116274519395392,
+          "unrecorded_to_recorded_true": 0.0,
+          "unrecorded_to_unrecorded": 0.7037983661889156
+        },
+        "prediction_entity_changed_n": 6783,
+        "changed_but_both_recorded_true_n": 0,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_rank_worsening": {
+        "n": 45280,
+        "before_recorded_true_top1": 2940,
+        "after_recorded_true_top1": 2031,
+        "transitions": {
+          "recorded_true_to_recorded_true": 2031,
+          "recorded_true_to_unrecorded": 909,
+          "unrecorded_to_recorded_true": 0,
+          "unrecorded_to_unrecorded": 42340
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.04485424028268551,
+          "recorded_true_to_unrecorded": 0.020075088339222613,
+          "unrecorded_to_recorded_true": 0.0,
+          "unrecorded_to_unrecorded": 0.9350706713780919
+        },
+        "prediction_entity_changed_n": 6783,
+        "changed_but_both_recorded_true_n": 0,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_rank_changes": {
+        "n": 45280,
+        "before_recorded_true_top1": 2940,
+        "after_recorded_true_top1": 2031,
+        "transitions": {
+          "recorded_true_to_recorded_true": 2031,
+          "recorded_true_to_unrecorded": 909,
+          "unrecorded_to_recorded_true": 0,
+          "unrecorded_to_unrecorded": 42340
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.04485424028268551,
+          "recorded_true_to_unrecorded": 0.020075088339222613,
+          "unrecorded_to_recorded_true": 0.0,
+          "unrecorded_to_unrecorded": 0.9350706713780919
+        },
+        "prediction_entity_changed_n": 6783,
+        "changed_but_both_recorded_true_n": 0,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "all_original_top10_drops": {
+        "n": 972,
+        "before_recorded_true_top1": 85,
+        "after_recorded_true_top1": 68,
+        "transitions": {
+          "recorded_true_to_recorded_true": 68,
+          "recorded_true_to_unrecorded": 17,
+          "unrecorded_to_recorded_true": 0,
+          "unrecorded_to_unrecorded": 887
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.06995884773662552,
+          "recorded_true_to_unrecorded": 0.01748971193415638,
+          "unrecorded_to_recorded_true": 0.0,
+          "unrecorded_to_unrecorded": 0.9125514403292181
+        },
+        "prediction_entity_changed_n": 233,
+        "changed_but_both_recorded_true_n": 0,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005": {
+        "n": 8514,
+        "before_recorded_true_top1": 4641,
+        "after_recorded_true_top1": 4239,
+        "transitions": {
+          "recorded_true_to_recorded_true": 4239,
+          "recorded_true_to_unrecorded": 402,
+          "unrecorded_to_recorded_true": 0,
+          "unrecorded_to_unrecorded": 3873
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.4978858350951374,
+          "recorded_true_to_unrecorded": 0.047216349541930935,
+          "unrecorded_to_recorded_true": 0.0,
+          "unrecorded_to_unrecorded": 0.45489781536293167
+        },
+        "prediction_entity_changed_n": 1112,
+        "changed_but_both_recorded_true_n": 0,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005_rank_worsening": {
+        "n": 3570,
+        "before_recorded_true_top1": 800,
+        "after_recorded_true_top1": 398,
+        "transitions": {
+          "recorded_true_to_recorded_true": 398,
+          "recorded_true_to_unrecorded": 402,
+          "unrecorded_to_recorded_true": 0,
+          "unrecorded_to_unrecorded": 2770
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.11148459383753502,
+          "recorded_true_to_unrecorded": 0.11260504201680673,
+          "unrecorded_to_recorded_true": 0.0,
+          "unrecorded_to_unrecorded": 0.7759103641456583
+        },
+        "prediction_entity_changed_n": 1112,
+        "changed_but_both_recorded_true_n": 0,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      },
+      "anchor2005_original_top10_drops": {
+        "n": 200,
+        "before_recorded_true_top1": 33,
+        "after_recorded_true_top1": 20,
+        "transitions": {
+          "recorded_true_to_recorded_true": 20,
+          "recorded_true_to_unrecorded": 13,
+          "unrecorded_to_recorded_true": 0,
+          "unrecorded_to_unrecorded": 167
+        },
+        "transition_rates": {
+          "recorded_true_to_recorded_true": 0.1,
+          "recorded_true_to_unrecorded": 0.065,
+          "unrecorded_to_recorded_true": 0.0,
+          "unrecorded_to_unrecorded": 0.835
+        },
+        "prediction_entity_changed_n": 69,
+        "changed_but_both_recorded_true_n": 0,
+        "top1_tie_before_n": 0,
+        "top1_tie_after_n": 0,
+        "semantic_real_world_error_status": "unrecorded != proven false; no point estimate of true-world error fraction"
+      }
+    }
+  },
+  "history_extraction_seconds": 8.230874185916036
+}

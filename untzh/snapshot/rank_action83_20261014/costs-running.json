@@ -1,0 +1,38 @@
+{
+  "preparation": {
+    "seconds": 0.5998722070362419,
+    "cohort": "058",
+    "scale": "077",
+    "probe_answers_per_direction": 256
+  },
+  "rank_probe_preparation": {
+    "seconds": 0.4883767110295594,
+    "candidates": 128,
+    "top64_source": "prefix10 TRAIN-only filtered",
+    "uniform64": "TRAIN-only legal, unique"
+  },
+  "calibration_seconds": 2.171209204941988,
+  "training": {
+    "absolute_guard": {
+      "seconds": 3.3263509860262275,
+      "selection_seconds_included": 1.8029263962525874,
+      "proposals": 742,
+      "mean_multiplier": 0.9972972972972973,
+      "histogram": {
+        "1.0": 368,
+        "0.5": 2
+      },
+      "frozen_equal": true
+    },
+    "absolute_meanmatched": {
+      "seconds": 1.419402791885659,
+      "selection_seconds_included": 0.0,
+      "proposals": 0,
+      "mean_multiplier": 0.9972972972972973,
+      "histogram": {
+        "0.9972972972972973": 370
+      },
+      "frozen_equal": true
+    }
+  }
+}

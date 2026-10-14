@@ -1,0 +1,372 @@
+{
+  "parents": {
+    "17": {
+      "fits": {
+        "train_only": {
+          "seconds": 2.796763851074502,
+          "selected": 2048,
+          "available": 214239,
+          "steps": 64,
+          "step_size": 1.9863267130820996,
+          "ridge": 0.01,
+          "mean_radius_before": 0.21175784341642695,
+          "mean_radius_after": 0.021276474445567784,
+          "max_radius_increase": -0.1583452494065575,
+          "before": {
+            "positive_gap_mean": 0.00024412580727321194,
+            "squared_gap_mean": 3.1403356386355395e-05,
+            "satisfied_fraction": 0.9960081185867538,
+            "violated_queries": 12
+          },
+          "after": {
+            "positive_gap_mean": 0.00020194871724518634,
+            "squared_gap_mean": 2.561952562952631e-05,
+            "satisfied_fraction": 0.9963050956156716,
+            "violated_queries": 9
+          },
+          "selected_negative_gold": 9,
+          "norm_match_max_error": 3.469446951953614e-18
+        },
+        "historical_reference": {
+          "seconds": 0.8688045090530068,
+          "selected": 2048,
+          "available": 17732,
+          "steps": 64,
+          "step_size": 1.4792672528518327,
+          "ridge": 0.01,
+          "mean_radius_before": 0.21175784341642695,
+          "mean_radius_after": 0.210627157785351,
+          "max_radius_increase": 5.551115123125783e-17,
+          "before": {
+            "positive_gap_mean": 0.014241623015593978,
+            "squared_gap_mean": 0.00275758925432282,
+            "satisfied_fraction": 0.8731934114305704,
+            "violated_queries": 370
+          },
+          "after": {
+            "positive_gap_mean": 0.003519238702353033,
+            "squared_gap_mean": 0.0005396753033073382,
+            "satisfied_fraction": 0.9571129772454691,
+            "violated_queries": 107
+          },
+          "selected_negative_gold": 256,
+          "norm_match_max_error": 5.551115123125783e-17
+        }
+      },
+      "conditions": {
+        "train_only": {
+          "constrained": {
+            "calibration": {
+              "eligible": 17732,
+              "drops": 249,
+              "eligible_mrr": 0.5007738309259058
+            },
+            "held_group": {
+              "eligible": 17767,
+              "drops": 249,
+              "eligible_mrr": 0.5017690053219456
+            },
+            "cost": {
+              "seconds": 1.0065700609702617,
+              "queries": 35499
+            }
+          },
+          "normmatched_random": {
+            "calibration": {
+              "eligible": 17732,
+              "drops": 262,
+              "eligible_mrr": 0.5006198178804819
+            },
+            "held_group": {
+              "eligible": 17767,
+              "drops": 266,
+              "eligible_mrr": 0.5014987085738931
+            },
+            "cost": {
+              "seconds": 0.9085985901765525,
+              "queries": 35499
+            }
+          },
+          "reverse": {
+            "calibration": {
+              "eligible": 17732,
+              "drops": 273,
+              "eligible_mrr": 0.5005154709771786
+            },
+            "held_group": {
+              "eligible": 17767,
+              "drops": 278,
+              "eligible_mrr": 0.5011977517786296
+            },
+            "cost": {
+              "seconds": 0.9167615619953722,
+              "queries": 35499
+            }
+          }
+        },
+        "historical_reference": {
+          "constrained": {
+            "calibration": {
+              "eligible": 17732,
+              "drops": 105,
+              "eligible_mrr": 0.5029559258047979
+            },
+            "held_group": {
+              "eligible": 17767,
+              "drops": 97,
+              "eligible_mrr": 0.5041120456528563
+            },
+            "cost": {
+              "seconds": 0.8991579660214484,
+              "queries": 35499
+            }
+          },
+          "normmatched_random": {
+            "calibration": {
+              "eligible": 17732,
+              "drops": 352,
+              "eligible_mrr": 0.49918917258597806
+            },
+            "held_group": {
+              "eligible": 17767,
+              "drops": 362,
+              "eligible_mrr": 0.49985713377108815
+            },
+            "cost": {
+              "seconds": 0.9061877189669758,
+              "queries": 35499
+            }
+          },
+          "reverse": {
+            "calibration": {
+              "eligible": 17732,
+              "drops": 587,
+              "eligible_mrr": 0.4952852428493497
+            },
+            "held_group": {
+              "eligible": 17767,
+              "drops": 637,
+              "eligible_mrr": 0.4950372251666841
+            },
+            "cost": {
+              "seconds": 0.9124561659991741,
+              "queries": 35499
+            }
+          }
+        }
+      },
+      "fixed_controls": {
+        "zero": {
+          "calibration": {
+            "eligible": 17732,
+            "drops": 256,
+            "eligible_mrr": 0.5006901891725337
+          },
+          "held_group": {
+            "eligible": 17767,
+            "drops": 259,
+            "eligible_mrr": 0.5015792118611649
+          }
+        },
+        "random_half": {
+          "calibration": {
+            "eligible": 17732,
+            "drops": 352,
+            "eligible_mrr": 0.49918654363592657
+          },
+          "held_group": {
+            "eligible": 17767,
+            "drops": 362,
+            "eligible_mrr": 0.49985004207953504
+          }
+        }
+      }
+    },
+    "WN_ComplEx": {
+      "fits": {
+        "train_only": {
+          "seconds": 1.7755095150787383,
+          "selected": 2048,
+          "available": 66960,
+          "steps": 64,
+          "step_size": 1.606975042235607,
+          "ridge": 0.01,
+          "mean_radius_before": 0.21190153142517099,
+          "mean_radius_after": 0.026190940334474267,
+          "max_radius_increase": -0.14308724886485133,
+          "before": {
+            "positive_gap_mean": 0.0,
+            "squared_gap_mean": 0.0,
+            "satisfied_fraction": 1.0,
+            "violated_queries": 0
+          },
+          "after": {
+            "positive_gap_mean": 0.0,
+            "squared_gap_mean": 0.0,
+            "satisfied_fraction": 1.0,
+            "violated_queries": 0
+          },
+          "selected_negative_gold": 0,
+          "norm_match_max_error": 6.938893903907228e-18
+        },
+        "historical_reference": {
+          "seconds": 1.6269707181490958,
+          "selected": 2048,
+          "available": 3052,
+          "steps": 64,
+          "step_size": 1.432115268101359,
+          "ridge": 0.01,
+          "mean_radius_before": 0.21190153142517099,
+          "mean_radius_after": 0.21190153142517099,
+          "max_radius_increase": 8.326672684688674e-17,
+          "before": {
+            "positive_gap_mean": 0.06334947696002784,
+            "squared_gap_mean": 0.01615777525665238,
+            "satisfied_fraction": 0.5681595530860616,
+            "violated_queries": 1171
+          },
+          "after": {
+            "positive_gap_mean": 0.024823592358412448,
+            "squared_gap_mean": 0.005401114042464042,
+            "satisfied_fraction": 0.7969542129855851,
+            "violated_queries": 497
+          },
+          "selected_negative_gold": 881,
+          "norm_match_max_error": 5.551115123125783e-17
+        }
+      },
+      "conditions": {
+        "train_only": {
+          "constrained": {
+            "calibration": {
+              "eligible": 3052,
+              "drops": 907,
+              "eligible_mrr": 0.6354296569648173
+            },
+            "held_group": {
+              "eligible": 3055,
+              "drops": 944,
+              "eligible_mrr": 0.6276388732039209
+            },
+            "cost": {
+              "seconds": 0.14453061996027827,
+              "queries": 6107
+            }
+          },
+          "normmatched_random": {
+            "calibration": {
+              "eligible": 3052,
+              "drops": 907,
+              "eligible_mrr": 0.6354296569648173
+            },
+            "held_group": {
+              "eligible": 3055,
+              "drops": 944,
+              "eligible_mrr": 0.6276388732039209
+            },
+            "cost": {
+              "seconds": 0.13808390405029058,
+              "queries": 6107
+            }
+          },
+          "reverse": {
+            "calibration": {
+              "eligible": 3052,
+              "drops": 907,
+              "eligible_mrr": 0.6352558657199913
+            },
+            "held_group": {
+              "eligible": 3055,
+              "drops": 945,
+              "eligible_mrr": 0.6269605441962863
+            },
+            "cost": {
+              "seconds": 0.13728047208860517,
+              "queries": 6107
+            }
+          }
+        },
+        "historical_reference": {
+          "constrained": {
+            "calibration": {
+              "eligible": 3052,
+              "drops": 475,
+              "eligible_mrr": 0.7379446101677298
+            },
+            "held_group": {
+              "eligible": 3055,
+              "drops": 510,
+              "eligible_mrr": 0.7308170045321084
+            },
+            "cost": {
+              "seconds": 0.13907935190945864,
+              "queries": 6107
+            }
+          },
+          "normmatched_random": {
+            "calibration": {
+              "eligible": 3052,
+              "drops": 1101,
+              "eligible_mrr": 0.5741589690031546
+            },
+            "held_group": {
+              "eligible": 3055,
+              "drops": 1128,
+              "eligible_mrr": 0.5705993903797814
+            },
+            "cost": {
+              "seconds": 0.1376756690442562,
+              "queries": 6107
+            }
+          },
+          "reverse": {
+            "calibration": {
+              "eligible": 3052,
+              "drops": 1652,
+              "eligible_mrr": 0.4253592417716719
+            },
+            "held_group": {
+              "eligible": 3055,
+              "drops": 1664,
+              "eligible_mrr": 0.42411409887608215
+            },
+            "cost": {
+              "seconds": 0.13918661093339324,
+              "queries": 6107
+            }
+          }
+        }
+      },
+      "fixed_controls": {
+        "zero": {
+          "calibration": {
+            "eligible": 3052,
+            "drops": 881,
+            "eligible_mrr": 0.6434582406100037
+          },
+          "held_group": {
+            "eligible": 3055,
+            "drops": 915,
+            "eligible_mrr": 0.6366783544532582
+          }
+        },
+        "random_half": {
+          "calibration": {
+            "eligible": 3052,
+            "drops": 1101,
+            "eligible_mrr": 0.5741589690031546
+          },
+          "held_group": {
+            "eligible": 3055,
+            "drops": 1128,
+            "eligible_mrr": 0.5705993903797814
+          }
+        }
+      }
+    }
+  },
+  "total_seconds": 17.341381547041237,
+  "new_initializations": 12,
+  "new_incremental_models": 0,
+  "gaussian_probability_not_applicable_after_optimization": true
+}

@@ -1,0 +1,48 @@
+{
+  "reused_cache": "/data/lc/untzh/risk58_20261013/cache",
+  "new_preparation": "load only; prior generation costs retained",
+  "training": {
+    "uniform_top8": {
+      "seconds": 5.1048949339892715,
+      "selection_seconds_included": 0.0007428256794810295,
+      "candidate_count": 8,
+      "selector": "uniform",
+      "steps": 370,
+      "max_gradient_ratio": 0.10000000000000003
+    },
+    "current_all128": {
+      "seconds": 2.732053886866197,
+      "selection_seconds_included": 1.0506815607659519,
+      "candidate_count": 128,
+      "selector": "tree_current",
+      "steps": 370,
+      "max_gradient_ratio": 0.10000000000000003
+    },
+    "current_top8": {
+      "seconds": 2.64665492111817,
+      "selection_seconds_included": 1.0375802800990641,
+      "candidate_count": 8,
+      "selector": "tree_current",
+      "steps": 370,
+      "max_gradient_ratio": 0.10000000000000002
+    },
+    "new_event_all128": {
+      "seconds": 2.525190268876031,
+      "selection_seconds_included": 1.0605014588218182,
+      "candidate_count": 128,
+      "selector": "tree_new_event",
+      "steps": 370,
+      "max_gradient_ratio": 0.10000000000000003
+    },
+    "new_event_top8": {
+      "seconds": 2.630614314926788,
+      "selection_seconds_included": 1.0583607160951942,
+      "candidate_count": 8,
+      "selector": "tree_new_event",
+      "steps": 370,
+      "max_gradient_ratio": 0.10000000000000003
+    }
+  },
+  "evaluation_seconds": 106.20526225795038,
+  "total_seconds": 122.44024182390422
+}

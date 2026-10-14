@@ -1,0 +1,81 @@
+{
+  "records": [
+    {
+      "sample_id": "S33",
+      "entity_id": 503,
+      "fact": [
+        "Chiang Kai-shek",
+        "Make statement",
+        "China",
+        "2014-06-27"
+      ],
+      "after_gap": 1.5368175506591797,
+      "before_gap": -5.006464958190918,
+      "was_new_candidate": false,
+      "train_first_year": 2005,
+      "source_id": "R12_CHIANG_OFFICIAL_LIFETIME",
+      "conditional_personal_occurrence_truth": "contradicted_after_death",
+      "reported_historical_content_truth": "unknown",
+      "unconditional_temporal_negative": false,
+      "gold_supported": true,
+      "whole_error_rank_drift_newly_proven": false
+    },
+    {
+      "sample_id": "S22",
+      "entity_id": 3647,
+      "fact": [
+        "Yitzhak Rabin",
+        "Consult",
+        "Israeli Defense Forces",
+        "2005-11-16"
+      ],
+      "after_gap": 5.8861083984375,
+      "before_gap": -14.122597694396973,
+      "was_new_candidate": false,
+      "train_first_year": 2005,
+      "source_id": "R12_RABIN_IDF_LIFETIME",
+      "conditional_personal_occurrence_truth": "contradicted_after_death",
+      "reported_historical_content_truth": "unknown",
+      "unconditional_temporal_negative": false,
+      "gold_supported": false,
+      "whole_error_rank_drift_newly_proven": false
+    },
+    {
+      "sample_id": "S29",
+      "entity_id": 3647,
+      "fact": [
+        "Yitzhak Rabin",
+        "Praise or endorse",
+        "Portugal",
+        "2005-10-24"
+      ],
+      "after_gap": 2.159463405609131,
+      "before_gap": -1.2481142282485962,
+      "was_new_candidate": false,
+      "train_first_year": 2005,
+      "source_id": "R12_RABIN_IDF_LIFETIME",
+      "conditional_personal_occurrence_truth": "contradicted_after_death",
+      "reported_historical_content_truth": "unknown",
+      "unconditional_temporal_negative": false,
+      "gold_supported": false,
+      "whole_error_rank_drift_newly_proven": false
+    }
+  ],
+  "raw_metadata_scan_seconds": 1.4699687010142952,
+  "unconditional_new_negative_n": 0,
+  "new_whole_error_rank_drift_n": 0,
+  "note": "S33 has3 raw before outrankers, including independently supported Xi already benchmark-filtered; filtered before has2. One conditional Chiang negative cannot force positive total false-rank drift. S22/S29 golds remain unknown.",
+  "training": false,
+  "neural_rescoring": false,
+  "round18_count_clarification": {
+    "raw_before": 3,
+    "filtered_before": 2,
+    "reason": "Prior prose mislabeled2 as raw. Cached counts are unchanged; counting Xi as true can reduce possible-false upper but requires that positive interpretation."
+  },
+  "round19_paired_bound_clarification": {
+    "artifact": "paired-truth-drift-bounds-round19.json",
+    "S33_conditional_lower": 1,
+    "old_bound_status": "valid but loose; did not cancel persistent competitors",
+    "interpretation": "S33 whole error drift now proven under personal-action occurrence semantics and independently supported gold; not an unconditional reported-content/coder label."
+  }
+}

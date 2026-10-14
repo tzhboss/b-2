@@ -1,0 +1,7 @@
+# 109查询分配的逐步累计差norm控制
+
+固定seed29/17，各新增一组answer_uniform_normmatched。使用094/095答案级uniform相同selections/fullabsolute/rho .1/joint Adam/query空间/普通prefix与tape，106在线普通影子。仅把投影后的累计差每步缩放到101/108 query_uniform对应步的已保存TRAIN位移norm；对照需要既有候选轨迹，是机制比较而非可独立部署的新算法。
+
+target来自训练steps，不读VALID标签。各自当前状态下投影方向仍不同、optimizer持久状态不同，因此同位移norm不等于同训练路径/梯度/动量；FP32落地后记录实际norm偏差及跨已见TRAIN正例score残差。若target大于当前投影norm允许扩大，明确报告，不声称保护强度cap仍由最终位移保证。保护梯度归一rho .1仍固定。
+
+两模型全提交后107加速旧TRAIN/旧VALID、新VALID原完整评价；control为102答案uniform、101/108 query_uniform及ordinary，全部开发VALID暴露。若候选优势不能保留，不以query模块定论。无TEST/硬超时/独审/SHA/归档，历史轨迹与空间成本非零。

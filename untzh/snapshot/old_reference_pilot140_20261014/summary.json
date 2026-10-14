@@ -1,0 +1,179 @@
+{
+  "split": {
+    "seed": 1400017,
+    "target_canonical": 3348,
+    "held_canonical": 3348,
+    "held_directions": 6696,
+    "fit_directions": 60264,
+    "original_draws": 3348000,
+    "fit_draws": 3013200,
+    "optimizer_steps": 3300,
+    "entities_preserved": true,
+    "relations_preserved": true,
+    "inverses_paired": true,
+    "seconds": 3.156840045005083,
+    "selection_bias_due_to_coverage": true,
+    "same_steps_not_same_draws": true
+  },
+  "parent_training": {
+    "seconds": 13.019802680937573,
+    "steps": 3300,
+    "epochs": 50
+  },
+  "increment_training": {
+    "seconds": 1.839299273910001,
+    "steps": 220,
+    "frozen_equal": true
+  },
+  "reports": {
+    "fit_probe": {
+      "probe_n": 4096,
+      "eligible": 4096,
+      "eligible_fraction": 1.0,
+      "full_parent_cached_probe_mrr": 0.999755859375,
+      "pilot_parent_probe_mrr": 1.0,
+      "eligible_gold": {
+        "negative": 0,
+        "negative_fraction": 0.0,
+        "quantiles": {
+          "0.05": 0.7318856824297927,
+          "0.5": 0.9819892649329909,
+          "0.95": 1.2078296215837876
+        }
+      },
+      "phases": {
+        "eligible": 4096,
+        "expanded_drops": 0,
+        "prefix_drops": 0,
+        "endpoint_drops": 0,
+        "initial_to_prefix": {
+          "new": 0,
+          "rescued": 0
+        },
+        "prefix_to_endpoint": {
+          "new": 0,
+          "rescued": 0
+        }
+      },
+      "prefix_row_pressure": {
+        "rows": 0,
+        "fraction": 0.0,
+        "strata": {
+          "one": {
+            "rows": 2492,
+            "pressure_rows": 0,
+            "pairs": 0
+          },
+          "two_three": {
+            "rows": 1485,
+            "pressure_rows": 0,
+            "pairs": 0
+          },
+          "four_plus": {
+            "rows": 116,
+            "pressure_rows": 0,
+            "pairs": 0
+          }
+        }
+      },
+      "teacher_cost": {
+        "seconds": 0.23059459985233843,
+        "bytes": 162000,
+        "eligible": 4096
+      },
+      "stage_cost": {
+        "expanded": {
+          "seconds": 0.07093390892259777,
+          "fallback_queries": 0
+        },
+        "prefix10": {
+          "seconds": 0.06935745989903808,
+          "fallback_queries": 0
+        },
+        "epoch20": {
+          "seconds": 0.06892728502862155,
+          "fallback_queries": 0
+        }
+      },
+      "seconds": 0.6649059019982815
+    },
+    "internal_reference": {
+      "probe_n": 6696,
+      "eligible": 1591,
+      "eligible_fraction": 0.23760454002389486,
+      "full_parent_cached_probe_mrr": 0.999626642771804,
+      "pilot_parent_probe_mrr": 0.1906797781108047,
+      "eligible_gold": {
+        "negative": 894,
+        "negative_fraction": 0.5619107479572596,
+        "quantiles": {
+          "0.05": -0.34195846455548495,
+          "0.5": -0.02630829151086467,
+          "0.95": 0.3548477183257497
+        }
+      },
+      "phases": {
+        "eligible": 1591,
+        "expanded_drops": 894,
+        "prefix_drops": 774,
+        "endpoint_drops": 521,
+        "initial_to_prefix": {
+          "new": 7,
+          "rescued": 127
+        },
+        "prefix_to_endpoint": {
+          "new": 0,
+          "rescued": 253
+        }
+      },
+      "prefix_row_pressure": {
+        "rows": 4093,
+        "fraction": 1.0,
+        "strata": {
+          "one": {
+            "rows": 2492,
+            "pressure_rows": 2492,
+            "pairs": 418417
+          },
+          "two_three": {
+            "rows": 1485,
+            "pressure_rows": 1485,
+            "pairs": 253884
+          },
+          "four_plus": {
+            "rows": 116,
+            "pressure_rows": 116,
+            "pairs": 20607
+          }
+        }
+      },
+      "teacher_cost": {
+        "seconds": 0.23401081515476108,
+        "bytes": 238368,
+        "eligible": 1591
+      },
+      "stage_cost": {
+        "expanded": {
+          "seconds": 0.11314386897720397,
+          "fallback_queries": 0
+        },
+        "prefix10": {
+          "seconds": 0.11585231218487024,
+          "fallback_queries": 0
+        },
+        "epoch20": {
+          "seconds": 0.11570473597384989,
+          "fallback_queries": 0
+        }
+      },
+      "seconds": 0.8834283049218357
+    }
+  },
+  "total_seconds": 23.227862013038248,
+  "new_training_configs": 1,
+  "new_parent_trainings": 1,
+  "no_valid": true,
+  "no_test": true,
+  "diagnostic_not_adaptive_method": true,
+  "decision_pending": true
+}

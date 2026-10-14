@@ -1,0 +1,46 @@
+{
+  "reused_cache": "/data/lc/untzh/risk58_20261013/cache",
+  "training": {
+    "uniform_euclidean": {
+      "seconds": 5.741455647163093,
+      "selection_seconds_included": 0.0006520671304315329,
+      "steps": 370,
+      "projected_steps": 142,
+      "metric": "euclidean",
+      "max_gradient_ratio": 0.10000000000000003
+    },
+    "risk_euclidean": {
+      "seconds": 3.683340075891465,
+      "selection_seconds_included": 1.0658998854923993,
+      "steps": 370,
+      "projected_steps": 191,
+      "metric": "euclidean",
+      "max_gradient_ratio": 0.10000000000000003
+    },
+    "uniform_adammetric": {
+      "seconds": 2.4409642631653696,
+      "selection_seconds_included": 0.0007002258207648993,
+      "steps": 370,
+      "projected_steps": 145,
+      "metric": "adammetric",
+      "max_gradient_ratio": 0.10000000000000003
+    },
+    "risk_adammetric": {
+      "seconds": 3.3811277230270207,
+      "selection_seconds_included": 1.0342167157214135,
+      "steps": 370,
+      "projected_steps": 200,
+      "metric": "adammetric",
+      "max_gradient_ratio": 0.10000000000000003
+    }
+  },
+  "evaluation": {
+    "total_seconds": 43.701092544943094,
+    "valid_seconds": 1.5133711961098015,
+    "full_train_arms": [
+      "uniform_euclidean",
+      "uniform_adammetric"
+    ]
+  },
+  "total_seconds": 59.524282429832965
+}
