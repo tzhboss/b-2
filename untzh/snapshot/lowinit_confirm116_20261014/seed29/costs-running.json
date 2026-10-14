@@ -1,0 +1,44 @@
+{
+  "preparation_seconds": 1.9648694349452853,
+  "prefix_seconds": 0.8440793021582067,
+  "calibration_seconds": 0.03768864297308028,
+  "historical_assets_not_free": true,
+  "scale": 0.25,
+  "training": {
+    "none": {
+      "seconds": 0.8000539690256119,
+      "steps": 220,
+      "max_gradient_ratio": 0.0,
+      "frozen_equal": true
+    },
+    "absolute": {
+      "seconds": 0.9497892700601369,
+      "steps": 220,
+      "max_gradient_ratio": 0.10000000366531216,
+      "frozen_equal": true
+    },
+    "anchor_null": {
+      "seconds": 2.241399724036455,
+      "steps": 220,
+      "projection_seconds_included": 0.5657404984813184,
+      "final_anchor_displacement_norm": 13.443096041934972,
+      "max_cross_train_score_difference": 3.321588194979408e-07,
+      "frozen_equal": true,
+      "ordinary_endpoint_equal": true,
+      "shadow_compute_included": true
+    },
+    "query_uniform": {
+      "seconds": 2.2532524990383536,
+      "detection_seconds_included": 0.00021911808289587498,
+      "steps": 220,
+      "frozen_equal": true,
+      "unique_queries": 5401,
+      "effective_query_exposure": 4550.275431509365,
+      "max_query_exposure": 4,
+      "final_anchor_displacement_norm": 13.063535405695355,
+      "max_cross_train_score_difference": 3.2247472592922266e-07,
+      "ordinary_endpoint_equal": true,
+      "shadow_compute_included": true
+    }
+  }
+}

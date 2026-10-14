@@ -1,0 +1,35 @@
+{
+  "sampling_population": "42851 historical directional queries with worsened benchmark-filtered gold rank; TComplEx fine-tune only",
+  "population_n": 42851,
+  "sample_n": 40,
+  "certified_whole_false_rank_drift_n": 1,
+  "certified_query_ids": [
+    "S38"
+  ],
+  "confidence_level": 0.95,
+  "method": "One-sided finite-population hypergeometric tail inversion at at least1 true case; fixed random40 sample. Uses no independent-query/binomial assumption.",
+  "formula": "L=min{K:1-C(N-K,n)/C(N,n)>=0.05}; incomplete sound positive labels satisfy X_certified<=X_true.",
+  "error_query_count_lower": 55,
+  "error_fraction_among_worsened_query_lower": 0.0012835173041469278,
+  "error_fraction_among_worsened_query_upper": 1.0,
+  "population_point_error_fraction": null,
+  "population_point_reasonable_fraction": null,
+  "reasonable_fraction_upper_if_disjoint_from_positive_false_rank_drift": 0.9987164826958531,
+  "boundary_tail_previous": 0.049209936762229144,
+  "boundary_tail_selected": 0.05009858789500739,
+  "all_historical_directional_queries_n": 81772,
+  "error_fraction_among_all_historical_queries_lower": 0.0006726018686102822,
+  "conditions": [
+    "independent gold evidence accepted at query semantic granularity",
+    "temporal witnesses refer to the named organization or dated affiliation",
+    "existing cached scores and candidate spaces define the compared ranks",
+    "S38 false-rank labels are sound at actual occurrence date and named organization semantics; no allowance for later reporting of future actors as earlier events",
+    "Original seeded sample is retained without source-based replacement or enlargement",
+    "Posthoc exploratory diagnostic of this fixed dataset/model; no cross-model/dataset generalization or correction of uncertain identity/source labels by sampling statistics"
+  ],
+  "unknown_treatment": "39 unresolved whole-rank cases may all be true errors or may all be nonerrors; never coded as reasonable.",
+  "distinguish": "Finite40 logical lower2.5% and population95% confidence lower have different meanings. Confidence lower is not a point estimate.",
+  "training": false,
+  "neural_rescoring": false,
+  "computation_seconds": 0.038863596972078085
+}

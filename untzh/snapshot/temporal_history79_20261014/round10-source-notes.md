@@ -12,6 +12,10 @@ S11：实际读[葡萄牙官方6月20日公报PDF](https://files.dre.pt/1s/2006/
 
 S07：实际读[Business Recorder转载dpa正文](https://www.brecorder.com/news/3700920/no-winners-as-thaksin-heads-out-from-cambodia-20091116987187)，署名版权为dpa，非先前搜索推测的AFP；11月16日刊发，主要回述周六离境、前周外交争执。China只是地区协调背景，不能支持Thailand同日批评China，也不能用未提及制造负例。TNA博客另一路获取失败，摘要未用于标签。
 
-S36：实际读挪威政府条约[第一章](https://www.regjeringen.no/no/dokumenter/stprp-nr-3-2007-2008-/id488644/?ch=1)和[背景章](https://www.regjeringen.no/no/dokumenter/stprp-nr-3-2007-2008-/id488644/?ch=2)，明确边界条约2007-07-11签署、此前3月/4月谈判；不能把签约日当6月8日会谈。[VG正文](https://www.vg.no/nyheter/utenriks/i/JKBM8/inviterte-putin-til-norge)只明确6月9日见Putin，6月11日更新时间不是发生日。找到6月13日报纸MNA/Xinhua转载，但网页工具拒绝10.64MB PDF、远程curl自然TLS失败；本机同源下载尚待结果，未据摘要改gold标签。Bortnikov/Gryzlov与Fradkov会谈仍未知。
+S36：实际读挪威政府条约[第一章](https://www.regjeringen.no/no/dokumenter/stprp-nr-3-2007-2008-/id488644/?ch=1)和[背景章](https://www.regjeringen.no/no/dokumenter/stprp-nr-3-2007-2008-/id488644/?ch=2)，明确边界条约2007-07-11签署、此前3月/4月谈判；不能把签约日当6月8日会谈。[VG正文](https://www.vg.no/nyheter/utenriks/i/JKBM8/inviterte-putin-til-norge)只明确6月9日见Putin，6月11日更新时间不是发生日。
+
+同源下载接续成功，实际提取并目视阅读6月13日《New Light of Myanmar》第4页MNA/Xinhua转载正文。Stockholm6月11日稿明确斯托尔滕贝格周五在莫斯科会见弗拉德科夫后宣布边界共识；最近周五为6月8日，与既存NTB时间表相符。支持S36原gold的同日Consult语义，原Top1与gold相同也获支持；没有宣称对应ITAR-TASS内部StoryID。原gold独立同日支持由8增至9。Bortnikov/Gryzlov与Fradkov会谈仍未知，不能因gold正确就判整个下降错误。
+
+网页工具拒绝10.64MB PDF、远程curl自然TLS失败都保留为获取记录；本机下载实际522.091668秒，PyMuPDF提取及相关页渲染0.137108秒，无固定硬超时，原会话37917自然exit0。PDF/相关页文本/目视PNG/费用元数据均已保存。
 
 总体合理/错误比例仍未识别。本轮固定40不换样、未训练、未重算神经评分，不把来源可得性子集的比例当总体估计。

@@ -39,7 +39,7 @@ def reason(path):
         return 'runtime-log-or-profile'
     if name in ROW_NAMES or name.startswith('raw-matched-tuples-') or 'history-examples' in name:
         return 'row-level-runtime-or-raw-data'
-    if name.startswith('representative-search-receipts'):
+    if name.startswith('representative-search-receipts') or re.fullmatch(r'round\d+-web-receipts(?:-tail)?\.json', name):
         return 'raw-source-retrieval-receipt'
     if path.suffix.lower() not in EXTENSIONS and name not in {'LICENSE', 'NOTICE', 'Makefile', 'Dockerfile', '.gitignore'}:
         return 'binary-or-runtime-file'

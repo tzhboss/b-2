@@ -1,0 +1,198 @@
+{
+  "splits": {
+    "old_train": {
+      "metrics": {
+        "raw": {
+          "phases": {
+            "old_candidates": {
+              "drops": 0,
+              "eligible": 63512,
+              "mrr": 0.7556916920789262
+            },
+            "expanded_initial": {
+              "drops": 4,
+              "eligible": 63512,
+              "mrr": 0.7556582418615474
+            },
+            "epoch10": {
+              "drops": 3,
+              "eligible": 63512,
+              "mrr": 0.7556634667209104
+            },
+            "epoch20": {
+              "drops": 0,
+              "eligible": 63512,
+              "mrr": 0.7556723009401491
+            }
+          },
+          "transitions": {
+            "old_candidates_to_expanded_initial": {
+              "new_drops": 4,
+              "rescued": 0,
+              "persistent_drops": 0
+            },
+            "expanded_initial_to_epoch10": {
+              "new_drops": 0,
+              "rescued": 1,
+              "persistent_drops": 3
+            },
+            "epoch10_to_epoch20": {
+              "new_drops": 0,
+              "rescued": 3,
+              "persistent_drops": 0
+            }
+          }
+        },
+        "filtered_train_truths": {
+          "phases": {
+            "old_candidates": {
+              "drops": 0,
+              "eligible": 66919,
+              "mrr": 0.9301718190552516
+            },
+            "expanded_initial": {
+              "drops": 4,
+              "eligible": 66919,
+              "mrr": 0.9301241995896439
+            },
+            "epoch10": {
+              "drops": 3,
+              "eligible": 66919,
+              "mrr": 0.9301391758317687
+            },
+            "epoch20": {
+              "drops": 0,
+              "eligible": 66919,
+              "mrr": 0.9301498324629246
+            }
+          },
+          "transitions": {
+            "old_candidates_to_expanded_initial": {
+              "new_drops": 4,
+              "rescued": 0,
+              "persistent_drops": 0
+            },
+            "expanded_initial_to_epoch10": {
+              "new_drops": 0,
+              "rescued": 1,
+              "persistent_drops": 3
+            },
+            "epoch10_to_epoch20": {
+              "new_drops": 0,
+              "rescued": 3,
+              "persistent_drops": 0
+            }
+          }
+        }
+      },
+      "scoring": {
+        "expanded": {
+          "seconds": 1.31879867403768,
+          "fallback_queries": 0
+        },
+        "epoch10": {
+          "seconds": 1.129887559916824,
+          "fallback_queries": 0
+        }
+      }
+    },
+    "old_valid": {
+      "metrics": {
+        "raw": {
+          "phases": {
+            "old_candidates": {
+              "drops": 0,
+              "eligible": 6531,
+              "mrr": 0.2074773067707882
+            },
+            "expanded_initial": {
+              "drops": 412,
+              "eligible": 6531,
+              "mrr": 0.2004288717351943
+            },
+            "epoch10": {
+              "drops": 355,
+              "eligible": 6531,
+              "mrr": 0.20118432365667385
+            },
+            "epoch20": {
+              "drops": 331,
+              "eligible": 6531,
+              "mrr": 0.20160608994439716
+            }
+          },
+          "transitions": {
+            "old_candidates_to_expanded_initial": {
+              "new_drops": 412,
+              "rescued": 0,
+              "persistent_drops": 0
+            },
+            "expanded_initial_to_epoch10": {
+              "new_drops": 0,
+              "rescued": 57,
+              "persistent_drops": 355
+            },
+            "epoch10_to_epoch20": {
+              "new_drops": 0,
+              "rescued": 24,
+              "persistent_drops": 331
+            }
+          }
+        },
+        "filtered_train_truths": {
+          "phases": {
+            "old_candidates": {
+              "drops": 0,
+              "eligible": 6566,
+              "mrr": 0.25930125062945725
+            },
+            "expanded_initial": {
+              "drops": 446,
+              "eligible": 6566,
+              "mrr": 0.24932793150333846
+            },
+            "epoch10": {
+              "drops": 387,
+              "eligible": 6566,
+              "mrr": 0.2505680081439457
+            },
+            "epoch20": {
+              "drops": 359,
+              "eligible": 6566,
+              "mrr": 0.25126300035468996
+            }
+          },
+          "transitions": {
+            "old_candidates_to_expanded_initial": {
+              "new_drops": 446,
+              "rescued": 0,
+              "persistent_drops": 0
+            },
+            "expanded_initial_to_epoch10": {
+              "new_drops": 0,
+              "rescued": 59,
+              "persistent_drops": 387
+            },
+            "epoch10_to_epoch20": {
+              "new_drops": 0,
+              "rescued": 28,
+              "persistent_drops": 359
+            }
+          }
+        }
+      },
+      "scoring": {
+        "expanded": {
+          "seconds": 0.37454672693274915,
+          "fallback_queries": 0
+        },
+        "epoch10": {
+          "seconds": 0.3757822110783309,
+          "fallback_queries": 0
+        }
+      }
+    }
+  },
+  "no_training": true,
+  "total_seconds": 4.0055057250428945
+}

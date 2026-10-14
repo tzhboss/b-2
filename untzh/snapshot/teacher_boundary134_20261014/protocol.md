@@ -1,0 +1,11 @@
+# 134 纯TRAIN教师候选边界与风险分配
+
+固定FB17 DistMult与WN ComplEx，zero初态/prefix10含Adam/ordinary终态来自121/122；旧参数冻结、学习tape/新TRAIN/合法mask/query空间复用。原旧TRAIN资格cohort按(h,r)去重成同一query池，不读取VALID查询或gold选择保护对象。
+
+每个旧TRAIN query的q来自固定父；一次计算q@旧E，在旧候选中排除全部已知TRAIN truths，保存剩余候选top10，第10分数作为教师边界b。此边界可能来自错误教师预测，不是gold事实/正确答案保证。新候选合法mask仍只排除TRAIN truths。top10边界和初prefix全池压力一次保存，后续状态相关风险不能复用旧状态。
+
+六配置×两父=12后段新训练：absolute_uniform、boundary_softplus_uniform、boundary_hinge_uniform、boundary_hinge_pressure、boundary_hinge_randompool、boundary_softplus_pressure。uniform每步32无重复query，同固定选择tape；absolute为softplus(new score)，边界gap=(newscore-b)/qnorm，softplus或relu平方逐query平均。后10epochjointAdam非零保护梯度norm rho .1，累计相对普通shadow位移投到已见新TRAIN跨旧查询空间正交补；shadow终态匹配既存ordinary且计费。不声称相同rho即同累计强度。
+
+pressure每epoch以当前全合法新候选的平均正gap平方选风险top5% query池，每步26来自池+6全局且互不重复；randompool每epoch固定随机top5%，与pressure使用相同抽样规模和rng。初prefix压力共同缓存，其余epoch检测费单列。query_uniform控制与既存答案均匀anchor的query分布不同，不能将所有差异归边界。
+
+全部12终态提交后统一完整旧TRAIN/VALID、新VALID以及128旧半群组评价，oldVALID不参与训练/缓存边界；三方向raw/filtered、旧MRR/掉榜/费用。zero普通和既存TRAIN答案anchor缓存控制，133extra历史参考候选仅作不同监督条件参照。已有VALID开发暴露，无TEST/硬超时/独审/SHA/归档。基本教师蒸馏/边界/投影不当原创。

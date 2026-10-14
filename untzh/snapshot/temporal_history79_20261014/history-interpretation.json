@@ -1967,11 +1967,11 @@
     "sample_seed": 20261014,
     "sampling_design": "simple random sample without replacement from cached directional-query population; no source-based exclusion or replacement",
     "initial_lookup_n": 40,
-    "detailed_source_review_n": 34,
-    "detailed_source_attempt_blocked_n": 5,
+    "detailed_source_review_n": 39,
+    "detailed_source_attempt_blocked_n": 0,
     "initial_only_unresolved_n": 0,
     "coded_context_identity_review_n": 1,
-    "gold_supported_semantically_n": 8,
+    "gold_supported_semantically_n": 9,
     "gold_literal_physical_event_date_counterindication_n": 1,
     "gold_literal_physical_event_date_counterindication_query_ids": [
       "S32"
@@ -1987,6 +1987,291 @@
     "reasonable_rank_adjustment_confirmed_n": 0,
     "world_reasonable_fraction": null,
     "world_error_fraction": null,
+    "conditional_population_error_confidence_bound": {
+      "sampling_population": "42851 historical directional queries with worsened benchmark-filtered gold rank; TComplEx fine-tune only",
+      "population_n": 42851,
+      "sample_n": 40,
+      "certified_whole_false_rank_drift_n": 1,
+      "certified_query_ids": [
+        "S38"
+      ],
+      "confidence_level": 0.95,
+      "method": "One-sided finite-population hypergeometric tail inversion at at least1 true case; fixed random40 sample. Uses no independent-query/binomial assumption.",
+      "formula": "L=min{K:1-C(N-K,n)/C(N,n)>=0.05}; incomplete sound positive labels satisfy X_certified<=X_true.",
+      "error_query_count_lower": 55,
+      "error_fraction_among_worsened_query_lower": 0.0012835173041469278,
+      "error_fraction_among_worsened_query_upper": 1.0,
+      "population_point_error_fraction": null,
+      "population_point_reasonable_fraction": null,
+      "reasonable_fraction_upper_if_disjoint_from_positive_false_rank_drift": 0.9987164826958531,
+      "boundary_tail_previous": 0.049209936762229144,
+      "boundary_tail_selected": 0.05009858789500739,
+      "all_historical_directional_queries_n": 81772,
+      "error_fraction_among_all_historical_queries_lower": 0.0006726018686102822,
+      "conditions": [
+        "independent gold evidence accepted at query semantic granularity",
+        "temporal witnesses refer to the named organization or dated affiliation",
+        "existing cached scores and candidate spaces define the compared ranks",
+        "S38 false-rank labels are sound at actual occurrence date and named organization semantics; no allowance for later reporting of future actors as earlier events",
+        "Original seeded sample is retained without source-based replacement or enlargement",
+        "Posthoc exploratory diagnostic of this fixed dataset/model; no cross-model/dataset generalization or correction of uncertain identity/source labels by sampling statistics"
+      ],
+      "unknown_treatment": "39 unresolved whole-rank cases may all be true errors or may all be nonerrors; never coded as reasonable.",
+      "distinguish": "Finite40 logical lower2.5% and population95% confidence lower have different meanings. Confidence lower is not a point estimate.",
+      "training": false,
+      "neural_rescoring": false,
+      "computation_seconds": 0.038863596972078085
+    },
+    "targeted_cached_temporal_conflict_diagnostic": {
+      "definition": "Cached final raw Top1 named-organization predictions before conservative preexistence cutoff. Actor predictions and limited actual bilateral target interactions form conditional participant conflicts; other target relations remain weaker name-date flags.",
+      "arms": {
+        "TComplEx_finetune": {
+          "historical_directional_n": 81772,
+          "worsened_filtered_rank_n": 42851,
+          "before_name_date_conflict_n": 0,
+          "after_name_date_conflict_n": 22,
+          "before_participant_conflict_n": 0,
+          "after_participant_conflict_n": 15,
+          "after_participant_actor_n": 10,
+          "after_participant_target_actual_interaction_n": 5,
+          "after_name_date_only_target_other_relation_n": 7,
+          "after_participant_and_worsened_n": 13,
+          "new_participant_conflict_n": 15,
+          "after_participant_recorded_positive_n": 0,
+          "conditional_gold_valid_raw_whole_false_rank_drift_witness_n": 6,
+          "conditional_gold_valid_and_filter_sound_whole_false_rank_drift_witness_n": 6,
+          "independently_supported_fixed_sample_gold_raw_witness_ids": [],
+          "by_entity_after_name_date": {
+            "Liberal National Party": 3,
+            "Aam Aadmi Party": 12,
+            "Tasnim news agency": 5,
+            "Terrorist (Jabhat al-Nusra)": 1,
+            "Combatant (Jabhat al-Nusra)": 1
+          },
+          "by_entity_after_participant": {
+            "Aam Aadmi Party": 7,
+            "Tasnim news agency": 5,
+            "Liberal National Party": 2,
+            "Combatant (Jabhat al-Nusra)": 1
+          }
+        },
+        "TComplEx_frozen_history": {
+          "historical_directional_n": 81772,
+          "worsened_filtered_rank_n": 45280,
+          "before_name_date_conflict_n": 0,
+          "after_name_date_conflict_n": 10,
+          "before_participant_conflict_n": 0,
+          "after_participant_conflict_n": 9,
+          "after_participant_actor_n": 4,
+          "after_participant_target_actual_interaction_n": 5,
+          "after_name_date_only_target_other_relation_n": 1,
+          "after_participant_and_worsened_n": 9,
+          "new_participant_conflict_n": 9,
+          "after_participant_recorded_positive_n": 0,
+          "conditional_gold_valid_raw_whole_false_rank_drift_witness_n": 0,
+          "conditional_gold_valid_and_filter_sound_whole_false_rank_drift_witness_n": 0,
+          "independently_supported_fixed_sample_gold_raw_witness_ids": [],
+          "by_entity_after_name_date": {
+            "Tasnim news agency": 7,
+            "March 23 Movement": 1,
+            "Free Egyptians Party": 2
+          },
+          "by_entity_after_participant": {
+            "Tasnim news agency": 6,
+            "March 23 Movement": 1,
+            "Free Egyptians Party": 2
+          }
+        },
+        "TComplEx_replay": {
+          "historical_directional_n": 81772,
+          "worsened_filtered_rank_n": 41033,
+          "before_name_date_conflict_n": 0,
+          "after_name_date_conflict_n": 25,
+          "before_participant_conflict_n": 0,
+          "after_participant_conflict_n": 16,
+          "after_participant_actor_n": 12,
+          "after_participant_target_actual_interaction_n": 4,
+          "after_name_date_only_target_other_relation_n": 9,
+          "after_participant_and_worsened_n": 12,
+          "new_participant_conflict_n": 16,
+          "after_participant_recorded_positive_n": 0,
+          "conditional_gold_valid_raw_whole_false_rank_drift_witness_n": 3,
+          "conditional_gold_valid_and_filter_sound_whole_false_rank_drift_witness_n": 3,
+          "independently_supported_fixed_sample_gold_raw_witness_ids": [],
+          "by_entity_after_name_date": {
+            "Liberal National Party": 2,
+            "Aam Aadmi Party": 14,
+            "Tasnim news agency": 8,
+            "Terrorist (Jabhat al-Nusra)": 1
+          },
+          "by_entity_after_participant": {
+            "Tasnim news agency": 7,
+            "Aam Aadmi Party": 9
+          }
+        },
+        "TDistMult_finetune": {
+          "historical_directional_n": 81772,
+          "worsened_filtered_rank_n": 42070,
+          "before_name_date_conflict_n": 0,
+          "after_name_date_conflict_n": 29,
+          "before_participant_conflict_n": 0,
+          "after_participant_conflict_n": 12,
+          "after_participant_actor_n": 10,
+          "after_participant_target_actual_interaction_n": 2,
+          "after_name_date_only_target_other_relation_n": 17,
+          "after_participant_and_worsened_n": 9,
+          "new_participant_conflict_n": 12,
+          "after_participant_recorded_positive_n": 0,
+          "conditional_gold_valid_raw_whole_false_rank_drift_witness_n": 4,
+          "conditional_gold_valid_and_filter_sound_whole_false_rank_drift_witness_n": 4,
+          "independently_supported_fixed_sample_gold_raw_witness_ids": [],
+          "by_entity_after_name_date": {
+            "Liberal National Party": 3,
+            "Aam Aadmi Party": 19,
+            "Tasnim news agency": 7
+          },
+          "by_entity_after_participant": {
+            "Aam Aadmi Party": 9,
+            "Tasnim news agency": 3
+          }
+        },
+        "TDistMult_replay": {
+          "historical_directional_n": 81772,
+          "worsened_filtered_rank_n": 40759,
+          "before_name_date_conflict_n": 0,
+          "after_name_date_conflict_n": 26,
+          "before_participant_conflict_n": 0,
+          "after_participant_conflict_n": 14,
+          "after_participant_actor_n": 13,
+          "after_participant_target_actual_interaction_n": 1,
+          "after_name_date_only_target_other_relation_n": 12,
+          "after_participant_and_worsened_n": 9,
+          "new_participant_conflict_n": 14,
+          "after_participant_recorded_positive_n": 0,
+          "conditional_gold_valid_raw_whole_false_rank_drift_witness_n": 6,
+          "conditional_gold_valid_and_filter_sound_whole_false_rank_drift_witness_n": 6,
+          "independently_supported_fixed_sample_gold_raw_witness_ids": [],
+          "by_entity_after_name_date": {
+            "Aam Aadmi Party": 15,
+            "Tasnim news agency": 5,
+            "Liberal National Party": 6
+          },
+          "by_entity_after_participant": {
+            "Tasnim news agency": 2,
+            "Aam Aadmi Party": 11,
+            "Liberal National Party": 1
+          }
+        }
+      },
+      "organization_rules": [
+        {
+          "name": "Aam Aadmi Party",
+          "entity_id": 8641,
+          "cutoff_exclusive": "2012-01-01",
+          "source_ids": [
+            "AAP_FORMATION_OFFICIAL"
+          ]
+        },
+        {
+          "name": "Free Egyptians Party",
+          "entity_id": 8351,
+          "cutoff_exclusive": "2011-01-01",
+          "source_ids": [
+            "FREE_EGYPTIANS_LAUNCH"
+          ]
+        },
+        {
+          "name": "March 23 Movement",
+          "entity_id": 8457,
+          "cutoff_exclusive": "2012-01-01",
+          "source_ids": [
+            "M23_CANADA_HISTORY"
+          ]
+        },
+        {
+          "name": "Terrorist (Jabhat al-Nusra)",
+          "entity_id": 9647,
+          "cutoff_exclusive": "2011-01-01",
+          "source_ids": [
+            "NUSRA_USDOS_HISTORY",
+            "NUSRA_UN_HISTORY"
+          ]
+        },
+        {
+          "name": "Combatant (Jabhat al-Nusra)",
+          "entity_id": 8298,
+          "cutoff_exclusive": "2011-01-01",
+          "source_ids": [
+            "NUSRA_USDOS_HISTORY",
+            "NUSRA_UN_HISTORY"
+          ]
+        },
+        {
+          "name": "Liberal National Party",
+          "entity_id": 6404,
+          "cutoff_exclusive": "2007-01-01",
+          "source_ids": [
+            "LNP_FORMATION_OFFICIAL",
+            "LNP_AEC_REGISTRATION"
+          ]
+        },
+        {
+          "name": "Jaysh al-Islam",
+          "entity_id": 9321,
+          "cutoff_exclusive": "2011-01-01",
+          "source_ids": [
+            "JAYSH_PREDECESSOR_MMP"
+          ]
+        },
+        {
+          "name": "Militant (Ahrar ash-Sham)",
+          "entity_id": 9421,
+          "cutoff_exclusive": "2011-01-01",
+          "source_ids": [
+            "AHRAR_FORMATION_MMP"
+          ]
+        },
+        {
+          "name": "Tasnim news agency",
+          "entity_id": 9641,
+          "cutoff_exclusive": "2012-01-01",
+          "source_ids": [
+            "TASMIN_FORMATION_PRIMARY",
+            "TASMIN_ABOUT_PRIMARY"
+          ]
+        }
+      ],
+      "actual_target_relation_allowlist": [
+        "Consult",
+        "Cooperate economically",
+        "Cooperate militarily",
+        "Discuss by telephone",
+        "Engage in diplomatic cooperation",
+        "Engage in judicial cooperation",
+        "Engage in material cooperation",
+        "Engage in negotiation",
+        "Host a visit",
+        "Make a visit",
+        "Meet at a 'third' location",
+        "Share intelligence or information",
+        "Sign formal agreement"
+      ],
+      "conditions": [
+        "Names denote independently dated organizations or affiliation at event date, not retrospective labels for predecessors or unrelated homonyms.",
+        "Date denotes actual occurrence, not report date of a future or recalled event; relation denotes actual action at query semantic granularity.",
+        "Raw-rank witness additionally assumes independently unverified benchmark gold valid; filtered witness also assumes recorded filtered positives valid.",
+        "Only existing Top1 predictions examined; absence of flag is not evidence of temporal validity or reasonable ranking.",
+        "Organization sources were targeted after exploratory inspection. Coverage counts are finite cached-dataset diagnostics, not representative true-error estimates."
+      ],
+      "world_reasonable_fraction": null,
+      "world_error_fraction": null,
+      "fixed40_replaced_or_enlarged": false,
+      "training": false,
+      "neural_rescoring": false,
+      "seconds": 0.5574948478024453,
+      "cost_scope": "This cached-array read and classification only; excludes prior training/scoring, source research, coding, and mirroring.",
+      "cases_artifact": "cached-temporal-conflict-cases-round15.json"
+    },
     "reality_corrected_rank_drift_bounds_progress": {
       "sample_n": 40,
       "population_worsened_query_n": 42851,
@@ -2012,7 +2297,8 @@
       "not_population_estimate_or_complete_UFR": true,
       "training": false,
       "neural_rescoring": false,
-      "seconds": 0.08269055397249758
+      "seconds": 0.08269055397249758,
+      "source_label_refresh": "S36 independently supported after PDF body read; cached score bounds unchanged, no repeat score-array read or neural scoring."
     },
     "conditional_missing_positive_removes_benchmark_drift_n": 1,
     "conditional_missing_positive_drift_fraction_of_fixed_sample": 0.025,
@@ -2027,11 +2313,16 @@
         0.05,
         1.0
       ],
-      "whole_rank_reasonable_fraction_bounds": [
-        0.0,
+      "whole_rank_unjustified_drift_fraction_bounds": [
+        0.025,
         1.0
       ],
-      "scope": "Finite fixed40 only, conditional on semantic mapping and source soundness; not population confidence intervals, whole-rank proportions, or newly introduced error rates."
+      "whole_rank_reasonable_fraction_bounds": [
+        0.0,
+        0.975
+      ],
+      "whole_rank_bound_conditions": "Accepted gold/source semantic mapping and dated organization identities in cached rank-bound evidence; reasonable whole-rank adjustment excludes a positive reality-corrected false-rank drift. Other cases remain unadjudicated.",
+      "scope": "Finite fixed40 logical bounds only; not population confidence intervals or point estimates. Final-Top1 truth and whole-rank drift have separate bounds."
     },
     "definition": "Final Top1 truth at query semantic granularity and whole-rank justification are separate. Country-level semantic evidence does not assert exact automatic coder output.",
     "costs": {
@@ -2115,6 +2406,203 @@
         "S38": 4
       },
       "round8_new_witness_n": 6
+    },
+    "paired_fixed_truth_drift_progress": {
+      "sample_n": 40,
+      "population_n": 42851,
+      "fixed_truth_across_checkpoints": true,
+      "definition": "D_false=sum_e z_e*(w_after(e)-w_before(e)); z_e is fixed unknown falsity of the same dated query answer. Each weight is strict-above1/tie0.5/below0; absent before candidates contribute0.",
+      "formula": "LB=sum_knownfalse(delta)+sum_unknown(min(delta,0)); UB=sum_knownfalse(delta)+sum_unknown(max(delta,0)); knowntrue contributes0.",
+      "bound_scope": "Exact coordinate-wise logical bounds conditional on accepted labels, fixed dated truth, identity and candidate availability. Cross-query identity consistency can constrain attainable population combinations; no population point estimate.",
+      "organization_scenario": "Prior dated named-organization/affiliation labels, at actual event occurrence date; excludes lifetime labels.",
+      "personal_action_scenario": "Additionally requires dated new personal action by the deceased person; excludes retrospective reporting/posthumous publication as answers. This stricter interpretation is not established as ICEWS coder semantics.",
+      "benchmark_soundness_scenario": "All existing exact-date benchmark positives also assumed worldtrue; independent external-only scenario does not require this.",
+      "world_error_fraction": null,
+      "world_reasonable_fraction": null,
+      "summary": {
+        "organization_occurrence_external_positives_only": {
+          "certified_positive_ids": [
+            "S38"
+          ],
+          "supported_gold_no_positive_drift_ids": []
+        },
+        "personal_action_occurrence_external_positives_only": {
+          "certified_positive_ids": [
+            "S33",
+            "S38"
+          ],
+          "supported_gold_no_positive_drift_ids": []
+        },
+        "organization_occurrence_plus_benchmark_positive_soundness": {
+          "certified_positive_ids": [
+            "S38"
+          ],
+          "supported_gold_no_positive_drift_ids": []
+        },
+        "personal_action_occurrence_plus_benchmark_positive_soundness": {
+          "certified_positive_ids": [
+            "S33",
+            "S38"
+          ],
+          "supported_gold_no_positive_drift_ids": []
+        }
+      },
+      "training": false,
+      "neural_rescoring": false,
+      "seconds": 0.0848363118711859
+    },
+    "paired_fixed_truth_population_bounds": {
+      "population_n": 42851,
+      "sample_n": 40,
+      "confidence_level": 0.95,
+      "point_error_fraction": null,
+      "point_reasonable_fraction": null,
+      "method": "One-sided finite-population hypergeometric tail inversion; at least certified positivecases in fixed random40. Conditional sound labels and common scenario semantics required. Posthoc exploratory, not preregisteredconfirmatory evidence.",
+      "organization_occurrence": {
+        "certified_n": 1,
+        "count_lower": 55,
+        "fraction_lower": 0.0012835173041469278,
+        "fraction_upper": 1.0,
+        "tail_previous": 0.04920993676222907,
+        "tail_selected": 0.05009858789500676,
+        "query_ids": [
+          "S38"
+        ]
+      },
+      "personal_action_occurrence": {
+        "certified_n": 2,
+        "count_lower": 385,
+        "fraction_lower": 0.008984621129028494,
+        "fraction_upper": 1.0,
+        "tail_previous": 0.04996761533388738,
+        "tail_selected": 0.050199517596622,
+        "query_ids": [
+          "S33",
+          "S38"
+        ]
+      },
+      "conditions": "Fixeddatedtruth, acceptedindependentgold, datedorganizationidentity; personal scenario additionallyexcludeshistorical/posthumouspublication answers. No replacementor source-basedsampling. Scenario semanticvalidity cannotbe suppliedbyconfidencebounds.",
+      "computation_seconds": 0.0006996770389378071,
+      "training": false,
+      "neural_rescoring": false
+    },
+    "paired_semantic_scenario_sample_bounds": {
+      "organization_occurrence_external_positives_only": {
+        "certified_error_ids": [
+          "S38"
+        ],
+        "error_fraction_bounds": [
+          0.025,
+          1.0
+        ],
+        "reasonable_fraction_bounds_if_disjoint": [
+          0.0,
+          0.975
+        ],
+        "point_error_fraction": null,
+        "point_reasonable_fraction": null
+      },
+      "personal_action_occurrence_external_positives_only": {
+        "certified_error_ids": [
+          "S33",
+          "S38"
+        ],
+        "error_fraction_bounds": [
+          0.05,
+          1.0
+        ],
+        "reasonable_fraction_bounds_if_disjoint": [
+          0.0,
+          0.95
+        ],
+        "point_error_fraction": null,
+        "point_reasonable_fraction": null
+      },
+      "organization_occurrence_plus_benchmark_positive_soundness": {
+        "certified_error_ids": [
+          "S38"
+        ],
+        "error_fraction_bounds": [
+          0.025,
+          1.0
+        ],
+        "reasonable_fraction_bounds_if_disjoint": [
+          0.0,
+          0.975
+        ],
+        "point_error_fraction": null,
+        "point_reasonable_fraction": null
+      },
+      "personal_action_occurrence_plus_benchmark_positive_soundness": {
+        "certified_error_ids": [
+          "S33",
+          "S38"
+        ],
+        "error_fraction_bounds": [
+          0.05,
+          1.0
+        ],
+        "reasonable_fraction_bounds_if_disjoint": [
+          0.0,
+          0.95
+        ],
+        "point_error_fraction": null,
+        "point_reasonable_fraction": null
+      }
+    },
+    "round20_source_exclusion_progress": {
+      "receipt_file": "round20-web-receipts.json",
+      "notes_file": "round20-source-notes.md",
+      "receipt_n": 13,
+      "new_source_truth_labels_n": 0,
+      "sample_ids_targeted": [
+        "S04",
+        "S05"
+      ],
+      "world_reasonable_fraction": null,
+      "world_error_fraction": null,
+      "sample_replaced_or_expanded": false,
+      "training": false,
+      "neural_rescoring": false,
+      "terminal_fetch_sessions": [
+        32662,
+        53569
+      ],
+      "pending_round20_processes": []
+    },
+    "round21_source_provenance_progress": {
+      "receipt_file": "round21-web-receipts.json",
+      "notes_file": "round21-source-notes.md",
+      "receipt_n": 12,
+      "new_source_truth_labels_n": 0,
+      "sample_replaced_or_expanded": false,
+      "related_source_body_review_n": 40,
+      "coded_identity_pending_ids": [
+        "S03"
+      ],
+      "world_reasonable_fraction": null,
+      "world_error_fraction": null,
+      "training": false,
+      "neural_rescoring": false,
+      "pending_round21_processes": []
+    },
+    "round22_source_provenance_progress": {
+      "receipt_file": "round22-web-receipts.json",
+      "notes_file": "round22-source-notes.md",
+      "receipt_n": 15,
+      "new_actual_body_source_ids": [
+        "R22_LABOUR_AGREEMENT_BODY",
+        "R22_LABOUR_STRIKE_CALLED_OFF_BODY",
+        "R22_GULWE_ALLAFRICA_REPRINT_BODY",
+        "R22_GULWE_MWANANCHI_FORUM_REPRINT"
+      ],
+      "new_truth_labels_n": 0,
+      "sample_replaced_or_expanded": false,
+      "world_reasonable_fraction": null,
+      "world_error_fraction": null,
+      "training": false,
+      "neural_rescoring": false,
+      "pending_round22_processes": []
     }
   },
   "representative_sample_evidence_file": "representative-history-evidence.json",

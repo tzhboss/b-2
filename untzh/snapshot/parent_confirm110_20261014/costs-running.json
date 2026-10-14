@@ -1,0 +1,109 @@
+{
+  "initial_seconds": 0.7348577219527215,
+  "parent": "/data/lc/untzh/blend_confirm80_20261014/seed43/models/none/epoch-20.pt",
+  "historical_assets_not_free": true,
+  "learning_tape": {
+    "seconds": 3.910446227993816,
+    "rejections": 32707,
+    "seed": 114
+  },
+  "teacher_train": {
+    "seconds": 12.725901714060456,
+    "bytes": 31576032,
+    "eligible_filtered": 213107
+  },
+  "cohort": {
+    "seconds": 2.321738032856956,
+    "eligible": 213107,
+    "sampled": 16384
+  },
+  "prefix_seconds": 3.794501524185762,
+  "calibration_seconds": 0.058766831178218126,
+  "space": {
+    "seconds": 1.7401583190076053,
+    "cross_direction_facts": 20642,
+    "unique_constraints": 20408,
+    "entities": 1876,
+    "zero_rank": 24,
+    "full_rank": 0,
+    "mean_rank": 10.878464818763327,
+    "rank_quantiles": [
+      0.0,
+      6.0,
+      10.0,
+      14.0,
+      22.0,
+      66.0
+    ],
+    "basis_bytes": 42652800,
+    "tolerance": 1e-10
+  },
+  "full_replay_cache": {
+    "seconds": 0.983164434088394,
+    "bytes": 49111040,
+    "sampled_once": true
+  },
+  "query_groups": 12793,
+  "preparation_seconds": 27.57556612486951,
+  "training": {
+    "none": {
+      "seconds": 0.9889825670979917,
+      "steps": 220,
+      "max_gradient_ratio": 0.0,
+      "frozen_equal": true
+    },
+    "absolute": {
+      "seconds": 1.2564456260297447,
+      "steps": 220,
+      "max_gradient_ratio": 0.10000000354024907,
+      "frozen_equal": true
+    },
+    "anchor_null": {
+      "seconds": 2.9474460068158805,
+      "steps": 220,
+      "projection_seconds_included": 0.6513838353566825,
+      "final_anchor_displacement_norm": 13.170002138931888,
+      "max_cross_train_score_difference": 3.3361962763212016e-07,
+      "frozen_equal": true,
+      "online_setup_seconds": 0.0066198199056088924,
+      "shadow_compute_included": true,
+      "ordinary_endpoint_equal": true
+    },
+    "query_uniform": {
+      "seconds": 3.1791723298374563,
+      "detection_seconds_included": 0.00028117047622799873,
+      "steps": 220,
+      "frozen_equal": true,
+      "unique_queries": 5390,
+      "effective_query_exposure": 4508.8791848617175,
+      "max_query_exposure": 5,
+      "final_anchor_displacement_norm": 12.424626339504975,
+      "max_cross_train_score_difference": 3.746029143825158e-07,
+      "online_setup_seconds": 0.00565968407317996,
+      "shadow_compute_included": true,
+      "ordinary_endpoint_equal": true
+    },
+    "full_replay_joint": {
+      "seconds": 1.9927909118123353,
+      "steps": 220,
+      "frozen_equal": true,
+      "mean_gradient_ratio": 0.1,
+      "final_anchor_displacement_norm": 15.913755188482057,
+      "max_cross_train_score_difference": 1.9998479741144566,
+      "online_setup_seconds": 0.005589122883975506,
+      "shadow_compute_included": true,
+      "ordinary_endpoint_equal": true
+    },
+    "full_replay_anchor": {
+      "seconds": 2.619728053919971,
+      "steps": 220,
+      "frozen_equal": true,
+      "mean_gradient_ratio": 0.1,
+      "final_anchor_displacement_norm": 15.6331900427195,
+      "max_cross_train_score_difference": 4.3568942497893004e-07,
+      "online_setup_seconds": 0.00659837806597352,
+      "shadow_compute_included": true,
+      "ordinary_endpoint_equal": true
+    }
+  }
+}

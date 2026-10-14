@@ -13,6 +13,14 @@ temporal_path=ROOT/'temporal-competitor-evidence.json'
 temporal=json.loads(temporal_path.read_text(encoding='utf-8')) if temporal_path.exists() else None
 rank_bound_path=ROOT/'false-rank-drift-bounds-round10.json'
 rank_bounds=json.loads(rank_bound_path.read_text(encoding='utf-8')) if rank_bound_path.exists() else None
+population_bound_path=ROOT/'population-error-lower-bound-round12.json'
+population_bound=json.loads(population_bound_path.read_text(encoding='utf-8')) if population_bound_path.exists() else None
+cached_population_path=ROOT/'cached-temporal-conflicts-round15.json'
+cached_population=json.loads(cached_population_path.read_text(encoding='utf-8')) if cached_population_path.exists() else None
+paired_path=ROOT/'paired-truth-drift-bounds-round19.json'
+paired_bounds=json.loads(paired_path.read_text(encoding='utf-8')) if paired_path.exists() else None
+paired_population_path=ROOT/'paired-population-bounds-round19.json'
+paired_population=json.loads(paired_population_path.read_text(encoding='utf-8')) if paired_population_path.exists() else None
 s38_component_n=temporal.get('known_error_rank_components_by_query',{}).get('S38',1) if temporal else 0
 assert len(sample['records'])==sample['sample_n']==40
 assert len({c['test_directional_index'] for c in sample['records']})==40
@@ -34,6 +42,8 @@ blocked_n=stages['detailed_source_attempt_blocked']
 context_n=stages['coded_context_identity_review']
 initial_n=stages['initial_lookup_completed_no_verified_source_yet']
 unknown_n=40-len(supported)-len(contradicted)
+error_drift_lower = rank_bounds['raw_fixed_sample_error_drift_lower_bound'] if rank_bounds else 0.0
+reasonable_upper = 1.0 - error_drift_lower
 gold_supported=[c for c in records if c['gold_truth']=='supported_at_query_semantic_granularity']
 gold_literal_date_counterindicated=[c for c in records if c.get('gold_literal_occurrence_truth')=='contradicted_under_actual_physical_visit_event_date_and_official_itinerary_coverage']
 unchanged_n=sum(c['before_top1_fact']==c['after_top1_fact'] for c in records)
@@ -58,6 +68,8 @@ report={
     'unrecorded_but_semantically_supported_n':sum(not c['after_recorded'] for c in supported),
     'reasonable_rank_adjustment_confirmed_n':0,
     'world_reasonable_fraction':None,'world_error_fraction':None,
+    'conditional_population_error_confidence_bound':population_bound,
+    'targeted_cached_temporal_conflict_diagnostic':cached_population,
     'reality_corrected_rank_drift_bounds_progress':{k:v for k,v in rank_bounds.items() if k!='records'} if rank_bounds else None,
     'conditional_missing_positive_removes_benchmark_drift_n':filter_check['supported_missing_alternative_removes_drift_n'],
     'conditional_missing_positive_drift_fraction_of_fixed_sample':filter_check['fixed_sample_fraction_with_this_verified_conditional_filter_explanation'],
@@ -66,8 +78,10 @@ report={
     'finite_sample_partial_identification':{
         'final_top1_false_fraction_bounds':[len(contradicted)/40,(len(contradicted)+unknown_n)/40],
         'final_top1_supported_semantic_truth_fraction_bounds':[len(supported)/40,(len(supported)+unknown_n)/40],
-        'whole_rank_reasonable_fraction_bounds':[0.0,1.0],
-        'scope':'Finite fixed40 only, conditional on semantic mapping and source soundness; not population confidence intervals, whole-rank proportions, or newly introduced error rates.'},
+        'whole_rank_unjustified_drift_fraction_bounds':[error_drift_lower,1.0],
+        'whole_rank_reasonable_fraction_bounds':[0.0,reasonable_upper],
+        'whole_rank_bound_conditions':'Accepted gold/source semantic mapping and dated organization identities in cached rank-bound evidence; reasonable whole-rank adjustment excludes a positive reality-corrected false-rank drift. Other cases remain unadjudicated.',
+        'scope':'Finite fixed40 logical bounds only; not population confidence intervals or point estimates. Final-Top1 truth and whole-rank drift have separate bounds.'},
     'definition':'Final Top1 truth at query semantic granularity and whole-rank justification are separate. Country-level semantic evidence does not assert exact automatic coder output.',
     'costs':{'sampling_seconds':sample['extraction_seconds'],'selected_story_scan_seconds':context['seconds'],
              'all_story_scan_initial_seconds':None,
@@ -79,6 +93,25 @@ report={
     'records':records,
 }
 (ROOT/'representative-history-adjudication.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+if paired_bounds:
+    report['paired_fixed_truth_drift_progress']={k:v for k,v in paired_bounds.items() if k!='records'}
+    report['paired_fixed_truth_population_bounds']=paired_population
+    report['paired_semantic_scenario_sample_bounds']={
+        key:{'certified_error_ids':value['certified_positive_ids'],
+             'error_fraction_bounds':[len(value['certified_positive_ids'])/40,1.0],
+             'reasonable_fraction_bounds_if_disjoint':[0.0,1-len(value['certified_positive_ids'])/40],
+             'point_error_fraction':None,'point_reasonable_fraction':None}
+        for key,value in paired_bounds['summary'].items()}
+    (ROOT/'representative-history-adjudication.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+if evidence.get('round20_source_exclusion_progress'):
+    report['round20_source_exclusion_progress']=evidence['round20_source_exclusion_progress']
+    (ROOT/'representative-history-adjudication.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+if evidence.get('round21_source_provenance_progress'):
+    report['round21_source_provenance_progress']=evidence['round21_source_provenance_progress']
+    (ROOT/'representative-history-adjudication.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+if evidence.get('round22_source_provenance_progress'):
+    report['round22_source_provenance_progress']=evidence['round22_source_provenance_progress']
+    (ROOT/'representative-history-adjudication.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 lines=['# 随机历史查询核对进度','',
        '从TComplEx普通训练的42,851条历史gold排名下降查询中，无放回随机抽40条，seed20261014。全部保留；没有因为新闻难找换样。'+coverage_text, '',
        '| 当前证据状态 | 数量 / 固定40条 | 含义 |','|---|---:|---|',
@@ -87,7 +120,7 @@ lines=['# 随机历史查询核对进度','',
        f'| 现实真假尚未确定 | {unknown_n}/40 | 包含来源未取得、事件身份或精确日期未定 |', '',
        f'因此当前{len(supported)}/40只能称已取得支持证据的样本覆盖率。真正错误比例和整个排名变化合理比例仍缺完整判定。既有AAP六条时间错误见证是定向发现，不能混入这40条概率样本。', '',
        f'原gold有独立同日语义支持{len(gold_supported)}条；最终第一名未变{unchanged_n}条。原gold正确不自动证明新答案错误，第一名未变也不表示gold排名未受伤。', '',
-       '本批40条中，最终第一名现实错误的逻辑识别范围仍为0%–95%，同日语义真答案范围为5%–100%；整张排序合理比例范围仍为0%–100%。这是未定项造成的有限样本界限，非总体比例、非置信区间、非新增错误率。只在能找到新闻的条目上计算比例会产生来源可得性偏差。', '',
+       f'本批40条中，最终第一名现实错误的逻辑识别范围为{len(contradicted)/40:.1%}–{(len(contradicted)+unknown_n)/40:.1%}，同日语义真答案范围为{len(supported)/40:.1%}–{(len(supported)+unknown_n)/40:.1%}。在既存gold语义与组织身份条件下，整张排序的错误漂移比例下限为{error_drift_lower:.1%}、上限100%；若合理调整与错误漂移互斥，合理比例范围为0%–{reasonable_upper:.1%}。这些是固定样本逻辑界限，非总体比例、非置信区间或点估计。只在能找到新闻的条目上计算比例会产生来源可得性偏差。', '',
        '## 本轮新增历史证据','',
        'S02：2013-09-17阿巴斯与美国特使Martin Indyk会谈，[同日IANS转新华社正文](https://www.business-standard.com/amp/article/news-ians/palestine-seeks-more-us-role-in-peace-talks-113091700936_1.html)支持原gold；与Obama会面写为下周安排，没有排除当天另有与Netanyahu的磋商。', '',
        'S11：[外交部会见报道](https://www.mfa.gov.cn/gjhdq_676201/gj_676203/fz_677316/1206_677390/xgxw_677396/200606/t20060621_8015169.shtml)明确2006-06-20已签合作协议，[引渡条约报道](https://www.mfa.gov.cn/web/wjb_673085/zzjg_673183/tyfls_674667/xwlb_674669/200606/t20060622_7669516.shtml)明确同日实际签署，支持安哥拉与中国合作。最终葡萄牙未知。', '',
@@ -139,7 +172,43 @@ if (ROOT/'round9-source-notes.md').exists():
 if (ROOT/'round10-source-notes.md').exists():
     lines += ['', '## 第十轮错误排名漂移下限', '',
               (ROOT/'round10-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()]
+if (ROOT/'round11-source-notes.md').exists():
+    lines += ['', '## 第十一轮原目标日期的实际正文', '',
+              (ROOT/'round11-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()]
+if (ROOT/'round12-source-notes.md').exists():
+    lines += ['', '## 第十二轮日期语义与总体下界', '',
+              (ROOT/'round12-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()]
+if (ROOT/'round13-source-notes.md').exists():
+    lines += ['', '## 第十三轮同日查询来源日期', '',
+              (ROOT/'round13-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()]
+if (ROOT/'round14-source-notes.md').exists():
+    lines += ['', '## 第十四轮参与者与机构发言', '',
+              (ROOT/'round14-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()]
+if (ROOT/'round15-source-notes.md').exists():
+    lines += ['', '## 第十五轮全量缓存时间冲突', '',
+              (ROOT/'round15-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()]
+if (ROOT/'round16-source-notes.md').exists():
+    lines += ['', '## 第十六轮已识别事件日期', '',
+              (ROOT/'round16-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()]
 (ROOT/'随机历史查询核对进度.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
+if (ROOT/'round17-source-notes.md').exists():
+    with (ROOT/'随机历史查询核对进度.md').open('a',encoding='utf-8') as f:
+        f.write('\n## 第十七轮秘鲁计划与会谈日期\n\n'+(ROOT/'round17-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n')
+if (ROOT/'round18-source-notes.md').exists():
+    with (ROOT/'随机历史查询核对进度.md').open('a',encoding='utf-8') as f:
+        f.write('\n## 第十八轮寿命越位与回述语义\n\n'+(ROOT/'round18-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n')
+if (ROOT/'round19-source-notes.md').exists():
+    with (ROOT/'随机历史查询核对进度.md').open('a',encoding='utf-8') as f:
+        f.write('\n## 第十九轮配对固定真值界限\n\n'+(ROOT/'round19-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n')
+if (ROOT/'round20-source-notes.md').exists():
+    with (ROOT/'随机历史查询核对进度.md').open('a',encoding='utf-8') as f:
+        f.write('\n## 第二十轮原报道日期排除\n\n'+(ROOT/'round20-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n')
+if (ROOT/'round21-source-notes.md').exists():
+    with (ROOT/'随机历史查询核对进度.md').open('a',encoding='utf-8') as f:
+        f.write('\n## 第二十一轮主体与日期来源\n\n'+(ROOT/'round21-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n')
+if (ROOT/'round22-source-notes.md').exists():
+    with (ROOT/'随机历史查询核对进度.md').open('a',encoding='utf-8') as f:
+        f.write('\n## 第二十二轮原故事候选正文\n\n'+(ROOT/'round22-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n')
 interpretation_path=ROOT/'history-interpretation.json'
 interpretation=json.loads(interpretation_path.read_text(encoding='utf-8'))
 interpretation['representative_sample_progress']={k:v for k,v in report.items() if k!='records'}
@@ -166,4 +235,34 @@ if (ROOT/'round9-source-notes.md').exists():
     main_path.write_text(main_path.read_text(encoding='utf-8')+'\n## 第九轮实际发生日期与目标语义\n\n'+(ROOT/'round9-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n',encoding='utf-8')
 if (ROOT/'round10-source-notes.md').exists():
     main_path.write_text(main_path.read_text(encoding='utf-8')+'\n## 第十轮错误排名漂移下限\n\n'+(ROOT/'round10-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n',encoding='utf-8')
+if (ROOT/'round11-source-notes.md').exists():
+    main_path.write_text(main_path.read_text(encoding='utf-8')+'\n## 第十一轮原目标日期的实际正文\n\n'+(ROOT/'round11-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n',encoding='utf-8')
+if (ROOT/'round12-source-notes.md').exists():
+    main_path.write_text(main_path.read_text(encoding='utf-8')+'\n## 第十二轮日期语义与总体下界\n\n'+(ROOT/'round12-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n',encoding='utf-8')
+if (ROOT/'round13-source-notes.md').exists():
+    main_path.write_text(main_path.read_text(encoding='utf-8')+'\n## 第十三轮同日查询来源日期\n\n'+(ROOT/'round13-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n',encoding='utf-8')
+if (ROOT/'round14-source-notes.md').exists():
+    main_path.write_text(main_path.read_text(encoding='utf-8')+'\n## 第十四轮参与者与机构发言\n\n'+(ROOT/'round14-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n',encoding='utf-8')
+if (ROOT/'round15-source-notes.md').exists():
+    main_path.write_text(main_path.read_text(encoding='utf-8')+'\n## 第十五轮全量缓存时间冲突\n\n'+(ROOT/'round15-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n',encoding='utf-8')
+if (ROOT/'round16-source-notes.md').exists():
+    main_path.write_text(main_path.read_text(encoding='utf-8')+'\n## 第十六轮已识别事件日期\n\n'+(ROOT/'round16-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n',encoding='utf-8')
 print(json.dumps({k:v for k,v in report.items() if k!='records'},ensure_ascii=False,indent=2))
+if (ROOT/'round17-source-notes.md').exists():
+    with main_path.open('a',encoding='utf-8') as f:
+        f.write('\n## 第十七轮秘鲁计划与会谈日期\n\n'+(ROOT/'round17-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n')
+if (ROOT/'round18-source-notes.md').exists():
+    with main_path.open('a',encoding='utf-8') as f:
+        f.write('\n## 第十八轮寿命越位与回述语义\n\n'+(ROOT/'round18-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n')
+if (ROOT/'round19-source-notes.md').exists():
+    with main_path.open('a',encoding='utf-8') as f:
+        f.write('\n## 第十九轮配对固定真值界限\n\n'+(ROOT/'round19-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n')
+if (ROOT/'round20-source-notes.md').exists():
+    with main_path.open('a',encoding='utf-8') as f:
+        f.write('\n## 第二十轮原报道日期排除\n\n'+(ROOT/'round20-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n')
+if (ROOT/'round21-source-notes.md').exists():
+    with main_path.open('a',encoding='utf-8') as f:
+        f.write('\n## 第二十一轮主体与日期来源\n\n'+(ROOT/'round21-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n')
+if (ROOT/'round22-source-notes.md').exists():
+    with main_path.open('a',encoding='utf-8') as f:
+        f.write('\n## 第二十二轮原故事候选正文\n\n'+(ROOT/'round22-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n')
