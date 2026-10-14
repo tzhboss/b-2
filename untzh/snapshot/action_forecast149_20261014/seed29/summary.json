@@ -1,0 +1,798 @@
+{
+  "cases": {
+    "old_train": {
+      "anchor": {
+        "n": 16384,
+        "extra_rescues": 69,
+        "new_top10_harm": 2,
+        "prediction": {
+          "rrgain": {
+            "n": 16384,
+            "events": 69,
+            "ap": 0.020385858877658387,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 57,
+                "precision": 0.03477730323367907,
+                "recall": 0.8260869565217391
+              }
+            }
+          },
+          "rank_gain": {
+            "n": 16384,
+            "events": 69,
+            "ap": 0.1302737774608892,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 34,
+                "precision": 0.2073170731707317,
+                "recall": 0.4927536231884058
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 53,
+                "precision": 0.06463414634146342,
+                "recall": 0.7681159420289855
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 57,
+                "precision": 0.03477730323367907,
+                "recall": 0.8260869565217391
+              }
+            }
+          },
+          "predicted_rescue": {
+            "n": 16384,
+            "events": 69,
+            "ap": 0.004432379223144992,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 2,
+                "precision": 0.012195121951219513,
+                "recall": 0.028985507246376812
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 2,
+                "precision": 0.0024390243902439024,
+                "recall": 0.028985507246376812
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 3,
+                "precision": 0.0018303843807199512,
+                "recall": 0.043478260869565216
+              }
+            }
+          },
+          "current_rank": {
+            "n": 16384,
+            "events": 69,
+            "ap": 0.060231833015720646,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 15,
+                "precision": 0.09146341463414634,
+                "recall": 0.21739130434782608
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 46,
+                "precision": 0.05609756097560976,
+                "recall": 0.6666666666666666
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 57,
+                "precision": 0.03477730323367907,
+                "recall": 0.8260869565217391
+              }
+            }
+          },
+          "current_gap": {
+            "n": 16384,
+            "events": 69,
+            "ap": 0.09931617859425332,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 14,
+                "precision": 0.08536585365853659,
+                "recall": 0.2028985507246377
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 57,
+                "precision": 0.06951219512195123,
+                "recall": 0.8260869565217391
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 69,
+                "precision": 0.042098840756558877,
+                "recall": 1.0
+              }
+            }
+          },
+          "ordinary_forecast": {
+            "n": 16384,
+            "events": 69,
+            "ap": 0.1511598716975858,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 37,
+                "precision": 0.22560975609756098,
+                "recall": 0.5362318840579711
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 67,
+                "precision": 0.08170731707317073,
+                "recall": 0.9710144927536232
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 69,
+                "precision": 0.042098840756558877,
+                "recall": 1.0
+              }
+            }
+          },
+          "oldrank": {
+            "n": 16384,
+            "events": 69,
+            "ap": 0.020482678982554386,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 6,
+                "precision": 0.036585365853658534,
+                "recall": 0.08695652173913043
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 20,
+                "precision": 0.024390243902439025,
+                "recall": 0.2898550724637681
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 25,
+                "precision": 0.01525320317266626,
+                "recall": 0.36231884057971014
+              }
+            }
+          }
+        },
+        "actual_mean_rrgain": 0.002717709054029414,
+        "predicted_mean_rrgain": 0.010000135483701683,
+        "rrgain_mae": 0.011112241405579065,
+        "actual_rr_improved": 549,
+        "actual_rr_worsened": 4,
+        "positive_gain_sign_precision": 0.2616421568627451,
+        "go": false
+      },
+      "replay": {
+        "n": 16384,
+        "extra_rescues": 148,
+        "new_top10_harm": 0,
+        "prediction": {
+          "rrgain": {
+            "n": 16384,
+            "events": 148,
+            "ap": 0.02908873857894644,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 4,
+                "precision": 0.004878048780487805,
+                "recall": 0.02702702702702703
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 13,
+                "precision": 0.007931665649786455,
+                "recall": 0.08783783783783784
+              }
+            }
+          },
+          "rank_gain": {
+            "n": 16384,
+            "events": 148,
+            "ap": 0.33670853423652186,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 66,
+                "precision": 0.4024390243902439,
+                "recall": 0.44594594594594594
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 118,
+                "precision": 0.14390243902439023,
+                "recall": 0.7972972972972973
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 138,
+                "precision": 0.08419768151311775,
+                "recall": 0.9324324324324325
+              }
+            }
+          },
+          "predicted_rescue": {
+            "n": 16384,
+            "events": 148,
+            "ap": 0.05572196550659639,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 26,
+                "precision": 0.15853658536585366,
+                "recall": 0.17567567567567569
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 69,
+                "precision": 0.08414634146341464,
+                "recall": 0.46621621621621623
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 70,
+                "precision": 0.04270896888346553,
+                "recall": 0.47297297297297297
+              }
+            }
+          },
+          "current_rank": {
+            "n": 16384,
+            "events": 148,
+            "ap": 0.23250420267870214,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 58,
+                "precision": 0.35365853658536583,
+                "recall": 0.3918918918918919
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 115,
+                "precision": 0.1402439024390244,
+                "recall": 0.777027027027027
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 129,
+                "precision": 0.0787065283709579,
+                "recall": 0.8716216216216216
+              }
+            }
+          },
+          "current_gap": {
+            "n": 16384,
+            "events": 148,
+            "ap": 0.26159526148374923,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 50,
+                "precision": 0.3048780487804878,
+                "recall": 0.33783783783783783
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 127,
+                "precision": 0.1548780487804878,
+                "recall": 0.8581081081081081
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 148,
+                "precision": 0.09029896278218426,
+                "recall": 1.0
+              }
+            }
+          },
+          "ordinary_forecast": {
+            "n": 16384,
+            "events": 148,
+            "ap": 0.35397266241020053,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 73,
+                "precision": 0.4451219512195122,
+                "recall": 0.49324324324324326
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 141,
+                "precision": 0.1719512195121951,
+                "recall": 0.9527027027027027
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 148,
+                "precision": 0.09029896278218426,
+                "recall": 1.0
+              }
+            }
+          },
+          "oldrank": {
+            "n": 16384,
+            "events": 148,
+            "ap": 0.054984744137895586,
+            "budgets": {
+              "0.01": {
+                "selected": 164,
+                "hits": 16,
+                "precision": 0.0975609756097561,
+                "recall": 0.10810810810810811
+              },
+              "0.05": {
+                "selected": 820,
+                "hits": 45,
+                "precision": 0.054878048780487805,
+                "recall": 0.30405405405405406
+              },
+              "0.1": {
+                "selected": 1639,
+                "hits": 69,
+                "precision": 0.042098840756558877,
+                "recall": 0.46621621621621623
+              }
+            }
+          }
+        },
+        "actual_mean_rrgain": 0.004633800024196461,
+        "predicted_mean_rrgain": 0.03306337326797815,
+        "rrgain_mae": 0.03088247430419782,
+        "actual_rr_improved": 812,
+        "actual_rr_worsened": 0,
+        "positive_gain_sign_precision": 0.23294259092275324,
+        "go": false
+      }
+    },
+    "old_valid": {
+      "anchor": {
+        "n": 35200,
+        "extra_rescues": 187,
+        "new_top10_harm": 6,
+        "prediction": {
+          "rrgain": {
+            "n": 35200,
+            "events": 187,
+            "ap": 0.020359390882061255,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 5,
+                "precision": 0.002840909090909091,
+                "recall": 0.026737967914438502
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 101,
+                "precision": 0.02869318181818182,
+                "recall": 0.5401069518716578
+              }
+            }
+          },
+          "rank_gain": {
+            "n": 35200,
+            "events": 187,
+            "ap": 0.11905419100701839,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 63,
+                "precision": 0.17897727272727273,
+                "recall": 0.33689839572192515
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 140,
+                "precision": 0.07954545454545454,
+                "recall": 0.7486631016042781
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 153,
+                "precision": 0.04346590909090909,
+                "recall": 0.8181818181818182
+              }
+            }
+          },
+          "predicted_rescue": {
+            "n": 35200,
+            "events": 187,
+            "ap": 0.015826696361439883,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 19,
+                "precision": 0.05397727272727273,
+                "recall": 0.10160427807486631
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 41,
+                "precision": 0.023295454545454546,
+                "recall": 0.2192513368983957
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 45,
+                "precision": 0.01278409090909091,
+                "recall": 0.24064171122994651
+              }
+            }
+          },
+          "current_rank": {
+            "n": 35200,
+            "events": 187,
+            "ap": 0.14148233932635246,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 62,
+                "precision": 0.17613636363636365,
+                "recall": 0.3315508021390374
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 162,
+                "precision": 0.09204545454545454,
+                "recall": 0.8663101604278075
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 182,
+                "precision": 0.051704545454545454,
+                "recall": 0.9732620320855615
+              }
+            }
+          },
+          "current_gap": {
+            "n": 35200,
+            "events": 187,
+            "ap": 0.08788735947953567,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 32,
+                "precision": 0.09090909090909091,
+                "recall": 0.1711229946524064
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 136,
+                "precision": 0.07727272727272727,
+                "recall": 0.7272727272727273
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 179,
+                "precision": 0.050852272727272725,
+                "recall": 0.9572192513368984
+              }
+            }
+          },
+          "ordinary_forecast": {
+            "n": 35200,
+            "events": 187,
+            "ap": 0.13385811573336237,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 61,
+                "precision": 0.17329545454545456,
+                "recall": 0.32620320855614976
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 169,
+                "precision": 0.09602272727272727,
+                "recall": 0.9037433155080213
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 186,
+                "precision": 0.05284090909090909,
+                "recall": 0.9946524064171123
+              }
+            }
+          },
+          "oldrank": {
+            "n": 35200,
+            "events": 187,
+            "ap": 0.03506326867860189,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 16,
+                "precision": 0.045454545454545456,
+                "recall": 0.0855614973262032
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 75,
+                "precision": 0.04261363636363636,
+                "recall": 0.40106951871657753
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 115,
+                "precision": 0.032670454545454544,
+                "recall": 0.6149732620320856
+              }
+            }
+          }
+        },
+        "actual_mean_rrgain": 0.0014630674632085951,
+        "predicted_mean_rrgain": 0.011781369974512377,
+        "rrgain_mae": 0.0123815514770598,
+        "actual_rr_improved": 1077,
+        "actual_rr_worsened": 36,
+        "positive_gain_sign_precision": 0.1769651113913409,
+        "go": false
+      },
+      "replay": {
+        "n": 35200,
+        "extra_rescues": 260,
+        "new_top10_harm": 2,
+        "prediction": {
+          "rrgain": {
+            "n": 35200,
+            "events": 260,
+            "ap": 0.019820906765307147,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 1,
+                "precision": 0.0005681818181818182,
+                "recall": 0.0038461538461538464
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 33,
+                "precision": 0.009375,
+                "recall": 0.12692307692307692
+              }
+            }
+          },
+          "rank_gain": {
+            "n": 35200,
+            "events": 260,
+            "ap": 0.1487911413094437,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 73,
+                "precision": 0.20738636363636365,
+                "recall": 0.28076923076923077
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 194,
+                "precision": 0.11022727272727273,
+                "recall": 0.7461538461538462
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 225,
+                "precision": 0.06392045454545454,
+                "recall": 0.8653846153846154
+              }
+            }
+          },
+          "predicted_rescue": {
+            "n": 35200,
+            "events": 260,
+            "ap": 0.07638611388611388,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 41,
+                "precision": 0.11647727272727272,
+                "recall": 0.1576923076923077
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 172,
+                "precision": 0.09772727272727273,
+                "recall": 0.6615384615384615
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 175,
+                "precision": 0.04971590909090909,
+                "recall": 0.6730769230769231
+              }
+            }
+          },
+          "current_rank": {
+            "n": 35200,
+            "events": 260,
+            "ap": 0.1773832230990432,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 77,
+                "precision": 0.21875,
+                "recall": 0.29615384615384616
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 218,
+                "precision": 0.12386363636363637,
+                "recall": 0.8384615384615385
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 250,
+                "precision": 0.07102272727272728,
+                "recall": 0.9615384615384616
+              }
+            }
+          },
+          "current_gap": {
+            "n": 35200,
+            "events": 260,
+            "ap": 0.10875334627403743,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 43,
+                "precision": 0.12215909090909091,
+                "recall": 0.16538461538461538
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 176,
+                "precision": 0.1,
+                "recall": 0.676923076923077
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 239,
+                "precision": 0.06789772727272728,
+                "recall": 0.9192307692307692
+              }
+            }
+          },
+          "ordinary_forecast": {
+            "n": 35200,
+            "events": 260,
+            "ap": 0.1867207979091562,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 85,
+                "precision": 0.24147727272727273,
+                "recall": 0.3269230769230769
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 235,
+                "precision": 0.13352272727272727,
+                "recall": 0.9038461538461539
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 260,
+                "precision": 0.07386363636363637,
+                "recall": 1.0
+              }
+            }
+          },
+          "oldrank": {
+            "n": 35200,
+            "events": 260,
+            "ap": 0.049557878379831916,
+            "budgets": {
+              "0.01": {
+                "selected": 352,
+                "hits": 22,
+                "precision": 0.0625,
+                "recall": 0.08461538461538462
+              },
+              "0.05": {
+                "selected": 1760,
+                "hits": 105,
+                "precision": 0.05965909090909091,
+                "recall": 0.40384615384615385
+              },
+              "0.1": {
+                "selected": 3520,
+                "hits": 162,
+                "precision": 0.04602272727272727,
+                "recall": 0.6230769230769231
+              }
+            }
+          }
+        },
+        "actual_mean_rrgain": 0.0020484979449493864,
+        "predicted_mean_rrgain": 0.029195184986694756,
+        "rrgain_mae": 0.02814520509000504,
+        "actual_rr_improved": 1416,
+        "actual_rr_worsened": 8,
+        "positive_gain_sign_precision": 0.14672380737566257,
+        "go": false
+      }
+    }
+  },
+  "costs": {
+    "assets": {
+      "seconds": 0.36330029205419123,
+      "reference_probe": 256,
+      "gradient_cache_reused": true,
+      "reference_rule": "smallest original cohort fact ids, no resampling",
+      "no_valid_input": true
+    },
+    "forecast": {
+      "gradient_seconds": 0.10635731881484389,
+      "moment_seconds": 0.6627546560484916,
+      "total_seconds": 0.9016802788246423,
+      "protection_gradient_batches": 44,
+      "horizon": 220,
+      "ordinary_cache_equal": true,
+      "no_training_rollout": true
+    },
+    "scoring": {
+      "old_train": {
+        "seconds": 1.661231379956007,
+        "n": 16384,
+        "full_candidates": true,
+        "current_rank_equal": true,
+        "ordinary_forecast_rank_equal": true
+      },
+      "old_valid": {
+        "seconds": 2.4907729630358517,
+        "n": 35200,
+        "full_candidates": true,
+        "current_rank_equal": true,
+        "ordinary_forecast_rank_equal": true
+      }
+    }
+  }
+}

@@ -18,6 +18,7 @@ EXTENSIONS = {'.py', '.md', '.yaml', '.yml', '.toml', '.sh', '.bash', '.json',
               '.txt', '.rst', '.ini', '.cfg', '.csv', '.tsv', '.patch', '.diff',
               '.bib', '.tex'}
 ROW_NAMES = {'steps.json', 'online-steps.json', 'trajectory.json',
+             'proposal-records.json',
              'validation-selection.json', 'fixed40-new-outrankers.json',
              'fixed40-filtered-competitors.json', 'prediction-entities.json',
              'temporal-witness-candidates.json', 'sample-coded-event-context.json',
