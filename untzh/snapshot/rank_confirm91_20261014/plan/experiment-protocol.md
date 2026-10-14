@@ -1,0 +1,9 @@
+# 091 第二增量seed17的固定排名信号比较
+
+基于090 seed29看到的取舍，固定四个uniform信号absolute128/absolute_full/violation_full/budget_full，不加学习器、不改变rho .1或hinge/容量公式。在087 seed17父状态/initial/prefix10 Adam/tape/cohort/teacher/TRAIN truths上只读复用。按各父模型资格214239/419，不套088分母。
+
+共同20epoch440步，新训练后220步；uniform选择使用087既有32答案序列。所有非零保护梯度归一化到当前host新行梯度norm的.1、零则0。absolute128为归一化匹配控制，fullabsolute控制完整1876候选搜索预算，violation_full为合法正gap/qnorm平方，budget_full按10−oldrank允许最高gap并压其余最小正gap。两种rank信号已知思想的实验变体，不称原创。容量零损失不证明共享embedding安全；旧MRR与Top10同时评价。
+
+四新臂全训练提交后用087既有固定1024oldVALID/1024newVALID与全部260498oldTRAIN评价，TRAIN-only filtering及raw双报告，复用087none/absolute/absolute075结果（历史控制非独立重复）。重点比较三新方向保持、旧MRR/掉榜，关注090均匀rank信号有利取舍是否重复。固定两个父状态仍是同数据集模型且开发VALID已暴露，不称未见独立确认。
+
+新准备只需加载与完整legal mask，教师不重评分；复用原生成费用另计。无TEST/硬超时/独立CPU审计/SHA/归档。不追加阈值或强度点追正。

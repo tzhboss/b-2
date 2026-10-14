@@ -1,0 +1,132 @@
+{
+  "definition": "||P_j q||^2 / ||q||^2 on fixed TRAIN query space, sampled legal candidates128; theoretical first-order score direction only",
+  "feature_epoch": 10,
+  "max_numerical_violation": 3.1086244689504383e-15,
+  "sample_bytes": 8388608,
+  "pair_quantiles": [
+    0.0,
+    0.5640320181846619,
+    0.6614670753479004,
+    0.7822808027267456,
+    0.8526597023010254,
+    0.9097439646720886,
+    0.9692270755767822,
+    1.0
+  ],
+  "top_quantiles": [
+    2.220446049250313e-16,
+    0.22046078741550446,
+    0.4138320982456207,
+    0.6153880953788757,
+    0.7093206644058228,
+    0.786577582359314,
+    0.8739529848098755,
+    1.0
+  ],
+  "low_top_fraction_counts": {
+    "0.1": 50,
+    "0.25": 218,
+    "0.5": 1621,
+    "0.75": 10331,
+    "0.9": 16005
+  },
+  "pools": {
+    "anchor_tree": {
+      "answers": 820,
+      "top_fraction_mean": 0.6385961174964905,
+      "top_fraction_quantiles": [
+        0.052125878632068634,
+        0.5730515718460083,
+        0.6526716947555542,
+        0.7478169202804565,
+        0.9826505184173584
+      ],
+      "selected_unique": 2119,
+      "weighted_top_fraction": 0.6427925859054084
+    },
+    "anchor_pressure128": {
+      "answers": 820,
+      "top_fraction_mean": 0.6055390238761902,
+      "top_fraction_quantiles": [
+        0.021354028955101967,
+        0.5245248079299927,
+        0.6357395052909851,
+        0.7277861833572388,
+        0.9826505184173584
+      ],
+      "selected_unique": 2096,
+      "weighted_top_fraction": 0.6059855669083349
+    },
+    "anchor_random_pool": {
+      "answers": 820,
+      "top_fraction_mean": 0.6860193610191345,
+      "top_fraction_quantiles": [
+        4.440892098500626e-16,
+        0.6107964515686035,
+        0.7087693214416504,
+        0.7883318066596985,
+        0.9516764283180237
+      ],
+      "selected_unique": 4727,
+      "weighted_top_fraction": 0.6897609842459629
+    }
+  },
+  "bins": {
+    "0-0.25": {
+      "answers": 218,
+      "eligible": 218,
+      "a_drops": 8,
+      "b_drops": 8,
+      "a_rescues_b": 0,
+      "a_harms_b": 0,
+      "rr_improved": 1,
+      "rr_worse": 0,
+      "mrr_delta_a_minus_b": 5.096839959225275e-05
+    },
+    "0.25-0.5": {
+      "answers": 1403,
+      "eligible": 1403,
+      "a_drops": 40,
+      "b_drops": 42,
+      "a_rescues_b": 3,
+      "a_harms_b": 1,
+      "rr_improved": 38,
+      "rr_worse": 4,
+      "mrr_delta_a_minus_b": 0.0005376562931801705
+    },
+    "0.5-0.75": {
+      "answers": 8710,
+      "eligible": 8710,
+      "a_drops": 101,
+      "b_drops": 173,
+      "a_rescues_b": 74,
+      "a_harms_b": 2,
+      "rr_improved": 304,
+      "rr_worse": 25,
+      "mrr_delta_a_minus_b": 0.0025179194656514505
+    },
+    "0.75-0.9": {
+      "answers": 5674,
+      "eligible": 5674,
+      "a_drops": 27,
+      "b_drops": 37,
+      "a_rescues_b": 10,
+      "a_harms_b": 0,
+      "rr_improved": 51,
+      "rr_worse": 11,
+      "mrr_delta_a_minus_b": 0.0003917260724627662
+    },
+    "0.9-1.000001": {
+      "answers": 379,
+      "eligible": 379,
+      "a_drops": 2,
+      "b_drops": 2,
+      "a_rescues_b": 0,
+      "a_harms_b": 0,
+      "rr_improved": 2,
+      "rr_worse": 1,
+      "mrr_delta_a_minus_b": 0.00010679733634878745
+    }
+  },
+  "seconds": 1.5355089670047164
+}

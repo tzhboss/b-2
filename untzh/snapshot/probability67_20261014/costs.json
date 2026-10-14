@@ -1,0 +1,109 @@
+{
+  "prepare_seconds": 11.8063312349841,
+  "training": {
+    "host_mass_old": {
+      "seconds": 1.6658678529784083,
+      "spec": {
+        "host": "original",
+        "signal": "mass_old"
+      },
+      "frozen_rows_equal": true
+    },
+    "host_mass_gold": {
+      "seconds": 1.9074540110304952,
+      "spec": {
+        "host": "original",
+        "signal": "mass_gold"
+      },
+      "frozen_rows_equal": true
+    },
+    "host_mass_guard": {
+      "seconds": 2.249918805900961,
+      "spec": {
+        "host": "original",
+        "signal": "mass_guard"
+      },
+      "frozen_rows_equal": true
+    },
+    "host_mass_sample": {
+      "seconds": 2.1690572281368077,
+      "spec": {
+        "host": "original",
+        "signal": "mass_sample"
+      },
+      "frozen_rows_equal": true
+    },
+    "contrastive_none": {
+      "seconds": 1.4588862620294094,
+      "spec": {
+        "host": "contrastive",
+        "signal": "none"
+      },
+      "frozen_rows_equal": true
+    },
+    "contrastive_absolute": {
+      "seconds": 2.045480106025934,
+      "spec": {
+        "host": "contrastive",
+        "signal": "absolute"
+      },
+      "frozen_rows_equal": true
+    },
+    "contrastive_semantic": {
+      "seconds": 2.0814308589324355,
+      "spec": {
+        "host": "contrastive",
+        "signal": "semantic"
+      },
+      "frozen_rows_equal": true
+    },
+    "contrastive_mass_old": {
+      "seconds": 2.154351135948673,
+      "spec": {
+        "host": "contrastive",
+        "signal": "mass_old"
+      },
+      "frozen_rows_equal": true
+    },
+    "fullsoftmax_none": {
+      "seconds": 1.50473055918701,
+      "spec": {
+        "host": "fullsoftmax",
+        "signal": "none"
+      },
+      "frozen_rows_equal": true
+    },
+    "fullsoftmax_absolute": {
+      "seconds": 2.1251887609250844,
+      "spec": {
+        "host": "fullsoftmax",
+        "signal": "absolute"
+      },
+      "frozen_rows_equal": true
+    },
+    "fullsoftmax_semantic": {
+      "seconds": 2.0246808510273695,
+      "spec": {
+        "host": "fullsoftmax",
+        "signal": "semantic"
+      },
+      "frozen_rows_equal": true
+    },
+    "fullsoftmax_mass_old": {
+      "seconds": 2.1377794318832457,
+      "spec": {
+        "host": "fullsoftmax",
+        "signal": "mass_old"
+      },
+      "frozen_rows_equal": true
+    }
+  },
+  "evaluation": {
+    "seconds": 25.60622174316086,
+    "valid_seconds": 4.847095157019794,
+    "full_train_arms": [
+      "host_mass_sample"
+    ]
+  },
+  "total_seconds": 61.395960287190974
+}

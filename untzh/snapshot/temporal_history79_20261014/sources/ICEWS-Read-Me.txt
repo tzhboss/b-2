@@ -1,0 +1,136 @@
+PAGE 1
+1 
+ 
+ICEWS Coded Event Data Read Me  
+Event data consists of coded interactions between socio-political actors (i.e., cooperative or hostile 
+actions between individuals, groups, sectors and nation states). Events are automatically identified and 
+extracted from news articles by the BBN ACCENT event coder. These events are essentially triples 
+consisting of a source actor, an event type (according to the CAMEO taxonomy of events), and a target 
+actor. Geographical-temporal metadata are also extracted and associated with the relevant events 
+within a news article. 
+The data format is tab-delimited text, with fields optionally enclosed in quotation marks, in UTF-8 
+encoding. One year's worth of data is included in each file, with the most recent year worth of data 
+unavailable. 
+The first line consists of the header, and all subsequent lines contain data. The fields in the file are 
+defined in the table below. Optional fields, if not present, will be left blank. 
+Field Name Required? Description 
+Event ID Required A unique internal identifier for the event that is not guaranteed to be 
+consistent across different versions of the data. It is included for the 
+purposes of bug reporting only. 
+Event Date Required The date of the event, in YYYY-MM-DD format. 
+Source Name Required The name of the actor that is the source of the event. For a 
+description of actors, refer to the document "ICEWS Events and 
+Aggregations.pdf". Referenced actors and agents can be found in the 
+"ICEWS Dictionaries" Study hosted in this Dataverse. 
+Source Sectors Optional The name of zero of more sectors with which the source actor is 
+associated. In the case of multiple sector associations, the names will 
+be comma-separated. Referenced sectors can be found in the "ICEWS 
+Dictionaries" Study hosted in this Dataverse. 
+Source Country Optional The name of the country with which the source actor is associated, if 
+known. Referenced countries can be found in the "ICEWS 
+Dictionaries" Study hosted in this Dataverse. 
+Event Text Required The text of the event type, as expressed in the 
+"CAMEO.CDB.09b5.pdf" document. 
+CAMEO Code Required The CAMEO code of the event type, as expressed in the 
+"CAMEO.CDB.09b5.pdf" document. 
+Intensity Required The related intensity of the event type, as defined in the 
+"CAMEO.SCALE.txt" document. 
+Target Name Required The name of the actor that is the target of the event. This is similar to 
+the Source Name field, but for the target instead of the source. 
+Target Sectors Optional The name of zero or more sectors with which the target actor is 
+associated. This is similar to the Source Sectors field, but for the 
+target instead of the source. 
+Target Country Optional The name of the country with which the target actor is associated, if 
+known. This is similar to the Source Country field, but for the target 
+
+PAGE 2
+2 
+ 
+instead of the source. 
+Story ID Required A unique internal identifier for the story from which the event is 
+derived. Story ID values remain consistent across different versions of 
+the data. 
+Sentence Number Required The number of the sentence in the story body from which the event 
+was derived, starting at 1. Currently only sentences 1-6 are event 
+coded. Sentence delineation is performed by OpenNLP. 
+Publisher Required The publisher of the story, as identified by the story provider. 
+City Optional The city in which the event occurred, if known. 
+District Optional The district (or more accurately, second administrative level within 
+the relevant country) in which the event occurred, if known. District 
+information for cities is often not specified. 
+Province Optional The province (or more accurately, first administrative level within the 
+relevant country) in which the event occurred, if known. Province 
+information is typically available for cases in which a specific city is 
+given. 
+Country Optional The country in which the event occurred, if known. 
+Latitude Optional The latitude at which the event occurred, if known. For countries, 
+provinces, and districts the latitude is of the capital city of the most 
+specific administrative division identified for the event (e.g., for 
+provinces it will be the latitude of the capital city of the province). 
+Longitude Optional The longitude at which the event occurred, if known. For countries, 
+provinces, and districts the longitude is of the capital city of the most 
+specific administrative division identified for the event (e.g., for 
+provinces it will be the longitude of the capital city of the province). 
+Data Notes 
+Due to the nature of the actor dictionaries and CAMEO event scale, the event set is primarily geared 
+toward socio-political events. It contains worldwide events, though domestic US events1 have been 
+redacted. 
+Events are derived from English and foreign language (Spanish, Portuguese, French) news stories. For 
+foreign language stories, the stories are machine translated to English prior to event coding. Duplicate 
+stories from the same publisher, same headline, and some date are generally omitted2, but duplicate 
+stories across multiple publishers (as is the case in syndicated new stories) are permitted. Duplicate 
+events are not explicitly filtered. 
+The accrual rate of events has varied over time, following a generally increasing trend with occasional 
+dips and spikes. Significant spikes, such as in mid-1995 and again in 2001, correspond to changes in the 
+stream of underlying news stories. 
+                                                           
+1 That is, events in which both the source and target country are the United States, independent of where the 
+event is geolocated. 
+2 Due to changes in data processing there are an increased number of inadvertent duplicate stories in the 
+underlying story set starting around April 2014. 
+
+PAGE 3
+3 
+ 
+ 
+Additional Available Documentation 
+The following additional documents are available on the Dataverse Study page for this data. 
+Document Description 
+CAMEO.CDB.09b5.pdf CAMEO -- Conflict and Mediation Event Observations -- is a coding 
+scheme developed by Philip A. Schrodt in conjunction with third-party 
+mediation. It is used in ICEWS for the taxonomy of events, referenced 
+in the Event Text field. The 0.9b5 version (September 2007) version 
+used can be found online here: 
+http://eventdata.parusanalytics.com/cameo.dir/CAMEO.CDB.09b5.pdf 
+CAMEO.SCALE.txt The CAMEO Scale was developed by Philip A. Schrodt in an effort to 
+create a scale that is roughly equivalent to the Goldstein scale for the 
+WEIS event coding scheme. The scale runs from -10 to +10, where 
+negative numbers indicate increasingly hostile events, and positive 
+numbers indicate increasingly cooperative events, as described from a 
+neutral viewpoint. These values are found in the Intensity field of the 
+data. The original source URL online is here: 
+http://eventdata.parusanalytics.com/cameo.dir/CAMEO.scale.html 
+ICEWS Events and 
+Aggregations.pdf  
+Section 1 of this document explains the concepts related to ICEWS 
+event data. Also of potential interest is the glossary in Appendix F. 
+ICEWS Expanded CAMEO 
+Annotation Guidelines.pdf 
+Created by Raytheon BBN Technologies (the developers of the BBN 
+ACCENT event coder), this document augments the CAMEO  
+codebook with more specific details and examples as to events are 
+coded. 
+BBN ACCENT Event Coding 
+Evaluation.pdf 
+Created by Raytheon BBN Technologies (the developers of the BBN 
+ACCENT event coder), this document gives an evaluation of the BBN 
+ACCENT event coder, which was used to generate the event data. 
+0
+20000
+40000
+60000
+80000
+100000
+120000
+140000
+160000

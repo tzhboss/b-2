@@ -1,0 +1,51 @@
+# Protection mechanism search
+
+| Arm | New MRR | Old VALID MRR | VALID drops | Old-new ratio | New-old ratio | New-new ratio | TRAIN drops |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| new_only | 0.150805134 | 0.220174848 | 7 | 1.000000 | 1.000000 | 1.000000 | 5418 |
+| uniform | 0.149472384 | 0.220488438 | 4 | 0.984249 | 0.991402 | 1.002735 | 4432 |
+| historical_replay | 0.153509073 | 0.222396408 | 2 | 0.890150 | 1.042804 | 1.009809 | 2380 |
+| ordinary_query_scale_70 | 0.146625541 | 0.220231983 | 4 | 0.811973 | 1.000000 | 1.000000 | uncomputed |
+| ordinary_query_scale_80 | 0.148269787 | 0.220447597 | 5 | 0.885943 | 1.000000 | 1.000000 | uncomputed |
+| ordinary_query_scale_90 | 0.148987502 | 0.220368727 | 6 | 0.918230 | 1.000000 | 1.000000 | uncomputed |
+| ordinary_query_scale_95 | 0.149801066 | 0.220267973 | 6 | 0.954830 | 1.000000 | 1.000000 | uncomputed |
+| ordinary_relation_scale_70 | 0.149371608 | 0.220501117 | 5 | 0.935510 | 1.000000 | 1.000000 | uncomputed |
+| ordinary_relation_scale_80 | 0.149857137 | 0.220677204 | 6 | 0.957353 | 1.000000 | 1.000000 | uncomputed |
+| ordinary_relation_scale_90 | 0.150239418 | 0.220688182 | 6 | 0.974550 | 1.000000 | 1.000000 | uncomputed |
+| ordinary_relation_scale_95 | 0.150354159 | 0.220174788 | 6 | 0.979712 | 1.000000 | 1.000000 | uncomputed |
+| uniform_query_scale_70 | 0.145452844 | 0.220439662 | 3 | 0.803422 | 0.991402 | 1.002735 | uncomputed |
+| uniform_query_scale_80 | 0.146999883 | 0.220653725 | 3 | 0.873019 | 0.991402 | 1.002735 | uncomputed |
+| uniform_query_scale_90 | 0.147789365 | 0.220639903 | 4 | 0.908535 | 0.991402 | 1.002735 | uncomputed |
+| uniform_query_scale_95 | 0.148510349 | 0.220553001 | 4 | 0.940970 | 0.991402 | 1.002735 | uncomputed |
+| uniform_relation_scale_70 | 0.148024259 | 0.220708621 | 4 | 0.919102 | 0.991402 | 1.002735 | uncomputed |
+| uniform_relation_scale_80 | 0.148408527 | 0.220884631 | 4 | 0.936389 | 0.991402 | 1.002735 | uncomputed |
+| uniform_relation_scale_90 | 0.148951854 | 0.220967804 | 4 | 0.960832 | 0.991402 | 1.002735 | uncomputed |
+| uniform_relation_scale_95 | 0.149003028 | 0.220971811 | 4 | 0.963134 | 0.991402 | 1.002735 | uncomputed |
+| mixed_query_scale_70 | 0.153406812 | 0.216918168 | 16 | 0.981560 | 1.023265 | 1.025129 | uncomputed |
+| mixed_query_scale_80 | 0.154637502 | 0.216613843 | 18 | 1.036925 | 1.023265 | 1.025129 | uncomputed |
+| mixed_query_scale_90 | 0.156252594 | 0.216256104 | 18 | 1.109583 | 1.023265 | 1.025129 | uncomputed |
+| mixed_query_scale_95 | 0.156623794 | 0.216151603 | 18 | 1.126282 | 1.023265 | 1.025129 | uncomputed |
+| mixed_relation_scale_70 | 0.155497732 | 0.216712169 | 16 | 1.075624 | 1.023265 | 1.025129 | uncomputed |
+| mixed_relation_scale_80 | 0.156097733 | 0.216027575 | 17 | 1.102616 | 1.023265 | 1.025129 | uncomputed |
+| mixed_relation_scale_90 | 0.156891896 | 0.215827795 | 18 | 1.138343 | 1.023265 | 1.025129 | uncomputed |
+| mixed_relation_scale_95 | 0.157134401 | 0.215795443 | 19 | 1.149252 | 1.023265 | 1.025129 | uncomputed |
+| mixed_protected_query_scale_70 | 0.151923937 | 0.220184947 | 5 | 0.877907 | 1.030983 | 1.017067 | uncomputed |
+| mixed_protected_query_scale_80 | 0.153343593 | 0.220170564 | 6 | 0.941773 | 1.030983 | 1.017067 | uncomputed |
+| mixed_protected_query_scale_90 | 0.154939448 | 0.220251275 | 5 | 1.013566 | 1.030983 | 1.017067 | uncomputed |
+| mixed_protected_query_scale_95 | 0.155407555 | 0.220197751 | 6 | 1.034624 | 1.030983 | 1.017067 | uncomputed |
+| mixed_protected_relation_scale_70 | 0.153979233 | 0.219774428 | 7 | 0.970369 | 1.030983 | 1.017067 | uncomputed |
+| mixed_protected_relation_scale_80 | 0.154531541 | 0.219769294 | 8 | 0.995215 | 1.030983 | 1.017067 | uncomputed |
+| mixed_protected_relation_scale_90 | 0.154916742 | 0.219987236 | 7 | 1.012544 | 1.030983 | 1.017067 | uncomputed |
+| mixed_protected_relation_scale_95 | 0.155428063 | 0.219960526 | 7 | 1.035547 | 1.030983 | 1.017067 | uncomputed |
+| ordinary_query_shift_10 | 0.149498730 | 0.220640700 | 5 | 0.941229 | 1.000000 | 1.000000 | uncomputed |
+| ordinary_query_shift_25 | 0.147529202 | 0.221113373 | 1 | 0.852626 | 1.000000 | 1.000000 | uncomputed |
+| ordinary_query_shift_50 | 0.145341130 | 0.221596052 | 1 | 0.754192 | 1.000000 | 1.000000 | uncomputed |
+| uniform_query_shift_10 | 0.148212437 | 0.220891415 | 4 | 0.927568 | 0.991402 | 1.002735 | uncomputed |
+| uniform_query_shift_25 | 0.146119692 | 0.221348880 | 1 | 0.833422 | 0.991402 | 1.002735 | uncomputed |
+| uniform_query_shift_50 | 0.144082702 | 0.221730748 | 1 | 0.741784 | 0.991402 | 1.002735 | uncomputed |
+| mixed_query_shift_10 | 0.155876169 | 0.216694607 | 18 | 1.092648 | 1.023265 | 1.025129 | uncomputed |
+| mixed_query_shift_25 | 0.154259327 | 0.217542327 | 17 | 1.019912 | 1.023265 | 1.025129 | uncomputed |
+| mixed_query_shift_50 | 0.151570975 | 0.218523570 | 12 | 0.898971 | 1.023265 | 1.025129 | uncomputed |
+| mixed_protected_query_shift_10 | 0.154565316 | 0.220463160 | 5 | 0.996735 | 1.030983 | 1.017067 | uncomputed |
+| mixed_protected_query_shift_25 | 0.153448889 | 0.220952150 | 4 | 0.946510 | 1.030983 | 1.017067 | uncomputed |
+| mixed_protected_query_shift_50 | 0.150255399 | 0.221454452 | 3 | 0.802845 | 1.030983 | 1.017067 | uncomputed |

@@ -1,0 +1,464 @@
+{
+  "fixed_sample_n": 40,
+  "population_worsened_n": 42851,
+  "new_strict_outranker_total_n": 5549,
+  "temporal_witness_candidate_n": 13,
+  "temporal_witness_query_ids": [
+    "S04",
+    "S21",
+    "S38"
+  ],
+  "temporal_witness_query_n": 3,
+  "temporal_witness_query_coverage": 0.075,
+  "supported_gold_with_temporal_error_component_query_ids": [
+    "S38"
+  ],
+  "supported_gold_with_temporal_error_component_query_n": 1,
+  "supported_gold_with_temporal_error_component_sample_lower_bound_conditional": 0.025,
+  "reality_error_population_fraction": null,
+  "reasonable_whole_rank_fraction": null,
+  "conditions": "Organization/affiliation names refer to the named organization at query date, rather than retroactive aliases for predecessors. Source mapping is at benchmark semantic granularity. Fixed-sample witness coverage is not a population estimate or complete UFR.",
+  "excluded_identity_ambiguous_witnesses": [
+    {
+      "sample_ids": [
+        "S04",
+        "S22"
+      ],
+      "candidate": "Council for National Security",
+      "reason": "Country Thailand confirmed, but raw dates January/March 2006 predate coup junta; same name may cover longstanding security institution. Formation identity not resolved."
+    },
+    {
+      "sample_ids": [
+        "S33"
+      ],
+      "candidate": "Social Democratic Party (China)",
+      "reason": "RawcountryChina, four2010records; not linked toTaiwanSDPfounded2015. Excludedthatformationmapping."
+    },
+    {
+      "sample_ids": [
+        "S38"
+      ],
+      "candidate": "National Salvation Government",
+      "reason": "2014Libyanbody formation documented. Rawname hasJune7/25/26 records precedingAugustformation; generic/proposedgovernment and crosscountrycoding ambiguity. No strictmapping toAugustadministration."
+    },
+    {
+      "sample_ids": [
+        "S24"
+      ],
+      "candidate": "Democratic Alliance (Africa)",
+      "reason": "Rawcountryempty, SouthAfricancontexts; do not map to a laterfoundedAfricanparty to manufacture temporalnegative. ExistingSouthAfricanDApredates2009."
+    }
+  ],
+  "costs": {
+    "filtered_top5_diagnostic_scoring_seconds": 0.9433775290381163,
+    "all_new_outranker_diagnostic_scoring_seconds": 1.0312337439972907,
+    "raw_identity_context_seconds": 8.810798648977652,
+    "scope": "These two diagnostics did perform new neural scoring of unchanged checkpoints. No training. Does not include browsing, code creation, source interpretation, prior full raw scan, or mirror.",
+    "round8_raw_identity_seconds": 6.774842290906236,
+    "round9_raw_identity_seconds": 5.805915206903592
+  },
+  "witnesses": [
+    {
+      "sample_id": "S04",
+      "candidate_name": "Aam Aadmi Party",
+      "entity_id": 8641,
+      "fact": [
+        "Aam Aadmi Party",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "after_gap": 1.3525505065917969,
+      "before_gap": null,
+      "was_new_candidate": true,
+      "train_first_year": 2013,
+      "gold_fact": [
+        "Lucy Kibaki",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "original_rank": 1.0,
+      "final_rank": 2774.0,
+      "source_ids": [
+        "AAP_FORMATION_OFFICIAL"
+      ],
+      "gold_independent_support": false,
+      "label": "temporally_incompatible_under_named_organization_or_dated_affiliation_semantics",
+      "counterfactual_rank_reduction_if_this_candidate_removed": 1,
+      "qualification": "Not a raw Top1 label. Group existence is distinct from earlier members/predecessors. TRAIN first occurrence is not real formation date. Removal is a score-list diagnostic, not retraining or proof of complete rank justification."
+    },
+    {
+      "sample_id": "S04",
+      "candidate_name": "Free Egyptians Party",
+      "entity_id": 8351,
+      "fact": [
+        "Free Egyptians Party",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "after_gap": 0.8173847198486328,
+      "before_gap": null,
+      "was_new_candidate": true,
+      "train_first_year": 2012,
+      "gold_fact": [
+        "Lucy Kibaki",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "original_rank": 1.0,
+      "final_rank": 2774.0,
+      "source_ids": [
+        "FREE_EGYPTIANS_LAUNCH"
+      ],
+      "gold_independent_support": false,
+      "label": "temporally_incompatible_under_named_organization_or_dated_affiliation_semantics",
+      "counterfactual_rank_reduction_if_this_candidate_removed": 1,
+      "qualification": "Not a raw Top1 label. Group existence is distinct from earlier members/predecessors. TRAIN first occurrence is not real formation date. Removal is a score-list diagnostic, not retraining or proof of complete rank justification."
+    },
+    {
+      "sample_id": "S04",
+      "candidate_name": "March 23 Movement",
+      "entity_id": 8457,
+      "fact": [
+        "March 23 Movement",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "after_gap": 3.250068187713623,
+      "before_gap": null,
+      "was_new_candidate": true,
+      "train_first_year": 2012,
+      "gold_fact": [
+        "Lucy Kibaki",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "original_rank": 1.0,
+      "final_rank": 2774.0,
+      "source_ids": [
+        "M23_CANADA_HISTORY"
+      ],
+      "gold_independent_support": false,
+      "label": "temporally_incompatible_under_named_organization_or_dated_affiliation_semantics",
+      "counterfactual_rank_reduction_if_this_candidate_removed": 1,
+      "qualification": "Not a raw Top1 label. Group existence is distinct from earlier members/predecessors. TRAIN first occurrence is not real formation date. Removal is a score-list diagnostic, not retraining or proof of complete rank justification."
+    },
+    {
+      "sample_id": "S04",
+      "candidate_name": "Terrorist (Jabhat al-Nusra)",
+      "entity_id": 9647,
+      "fact": [
+        "Terrorist (Jabhat al-Nusra)",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "after_gap": 6.830564975738525,
+      "before_gap": null,
+      "was_new_candidate": true,
+      "train_first_year": 2014,
+      "gold_fact": [
+        "Lucy Kibaki",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "original_rank": 1.0,
+      "final_rank": 2774.0,
+      "source_ids": [
+        "NUSRA_USDOS_HISTORY",
+        "NUSRA_UN_HISTORY"
+      ],
+      "gold_independent_support": false,
+      "label": "temporally_incompatible_under_named_organization_or_dated_affiliation_semantics",
+      "counterfactual_rank_reduction_if_this_candidate_removed": 1,
+      "qualification": "Not a raw Top1 label. Group existence is distinct from earlier members/predecessors. TRAIN first occurrence is not real formation date. Removal is a score-list diagnostic, not retraining or proof of complete rank justification."
+    },
+    {
+      "sample_id": "S04",
+      "candidate_name": "Combatant (Jabhat al-Nusra)",
+      "entity_id": 8298,
+      "fact": [
+        "Combatant (Jabhat al-Nusra)",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "after_gap": 0.9214897155761719,
+      "before_gap": null,
+      "was_new_candidate": true,
+      "train_first_year": 2012,
+      "gold_fact": [
+        "Lucy Kibaki",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "original_rank": 1.0,
+      "final_rank": 2774.0,
+      "source_ids": [
+        "NUSRA_USDOS_HISTORY",
+        "NUSRA_UN_HISTORY"
+      ],
+      "gold_independent_support": false,
+      "label": "temporally_incompatible_under_named_organization_or_dated_affiliation_semantics",
+      "counterfactual_rank_reduction_if_this_candidate_removed": 1,
+      "qualification": "Not a raw Top1 label. Group existence is distinct from earlier members/predecessors. TRAIN first occurrence is not real formation date. Removal is a score-list diagnostic, not retraining or proof of complete rank justification."
+    },
+    {
+      "sample_id": "S21",
+      "candidate_name": "Liberal National Party",
+      "entity_id": 6404,
+      "fact": [
+        "Liberal National Party",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Antony Harold Curties \"Tony\" Windsor",
+        "2005-02-04"
+      ],
+      "after_gap": 5.375225067138672,
+      "before_gap": null,
+      "was_new_candidate": true,
+      "train_first_year": 2008,
+      "gold_fact": [
+        "Businessperson (Australia)",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Antony Harold Curties \"Tony\" Windsor",
+        "2005-02-04"
+      ],
+      "original_rank": 2.0,
+      "final_rank": 83.0,
+      "source_ids": [
+        "LNP_FORMATION_OFFICIAL",
+        "LNP_AEC_REGISTRATION"
+      ],
+      "gold_independent_support": false,
+      "label": "temporally_incompatible_under_named_organization_or_dated_affiliation_semantics",
+      "counterfactual_rank_reduction_if_this_candidate_removed": 1,
+      "qualification": "Not a raw Top1 label. Group existence is distinct from earlier members/predecessors. TRAIN first occurrence is not real formation date. Removal is a score-list diagnostic, not retraining or proof of complete rank justification."
+    },
+    {
+      "sample_id": "S38",
+      "candidate_name": "Terrorist (Jabhat al-Nusra)",
+      "entity_id": 9647,
+      "fact": [
+        "Terrorist (Jabhat al-Nusra)",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "after_gap": 0.09768939018249512,
+      "before_gap": null,
+      "was_new_candidate": true,
+      "train_first_year": 2014,
+      "gold_fact": [
+        "Foreign Affairs (Slovakia)",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "original_rank": 4.0,
+      "final_rank": 162.0,
+      "source_ids": [
+        "NUSRA_USDOS_HISTORY",
+        "NUSRA_UN_HISTORY"
+      ],
+      "gold_independent_support": true,
+      "label": "temporally_incompatible_under_named_organization_or_dated_affiliation_semantics",
+      "counterfactual_rank_reduction_if_this_candidate_removed": 1,
+      "qualification": "Not a raw Top1 label. Group existence is distinct from earlier members/predecessors. TRAIN first occurrence is not real formation date. Removal is a score-list diagnostic, not retraining or proof of complete rank justification."
+    },
+    {
+      "sample_id": "S04",
+      "candidate_name": "Jaysh al-Islam",
+      "entity_id": 9321,
+      "fact": [
+        "Jaysh al-Islam",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "after_gap": 6.549160957336426,
+      "before_gap": null,
+      "was_new_candidate": true,
+      "train_first_year": 2014,
+      "gold_fact": [
+        "Lucy Kibaki",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "original_rank": 1.0,
+      "final_rank": 2774.0,
+      "source_ids": [
+        "JAYSH_PREDECESSOR_MMP"
+      ],
+      "gold_independent_support": false,
+      "label": "temporally_incompatible_under_named_organization_or_dated_affiliation_semantics",
+      "counterfactual_rank_reduction_if_this_candidate_removed": 1,
+      "qualification": "Organization identity from rawcountry/sector; members interpreted at eventdate, not retroactiveperson labels. Formationyear source derived, not TRAINfirstyear. Goldsoundness stillseparate."
+    },
+    {
+      "sample_id": "S04",
+      "candidate_name": "Militant (Ahrar ash-Sham)",
+      "entity_id": 9421,
+      "fact": [
+        "Militant (Ahrar ash-Sham)",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "after_gap": 4.962845325469971,
+      "before_gap": null,
+      "was_new_candidate": true,
+      "train_first_year": 2014,
+      "gold_fact": [
+        "Lucy Kibaki",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "original_rank": 1.0,
+      "final_rank": 2774.0,
+      "source_ids": [
+        "AHRAR_FORMATION_MMP"
+      ],
+      "gold_independent_support": false,
+      "label": "temporally_incompatible_under_named_organization_or_dated_affiliation_semantics",
+      "counterfactual_rank_reduction_if_this_candidate_removed": 1,
+      "qualification": "Organization identity from rawcountry/sector; members interpreted at eventdate, not retroactiveperson labels. Formationyear source derived, not TRAINfirstyear. Goldsoundness stillseparate."
+    },
+    {
+      "sample_id": "S04",
+      "candidate_name": "Tasnim news agency",
+      "entity_id": 9641,
+      "fact": [
+        "Tasnim news agency",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "after_gap": 4.858198642730713,
+      "before_gap": null,
+      "was_new_candidate": true,
+      "train_first_year": 2014,
+      "gold_fact": [
+        "Lucy Kibaki",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "original_rank": 1.0,
+      "final_rank": 2774.0,
+      "source_ids": [
+        "TASMIN_FORMATION_PRIMARY",
+        "TASMIN_ABOUT_PRIMARY"
+      ],
+      "gold_independent_support": false,
+      "label": "temporally_incompatible_under_named_organization_or_dated_affiliation_semantics",
+      "counterfactual_rank_reduction_if_this_candidate_removed": 1,
+      "qualification": "Organization identity from rawcountry/sector; members interpreted at eventdate, not retroactiveperson labels. Formationyear source derived, not TRAINfirstyear. Goldsoundness stillseparate."
+    },
+    {
+      "sample_id": "S38",
+      "candidate_name": "Tasnim news agency",
+      "entity_id": 9641,
+      "fact": [
+        "Tasnim news agency",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "after_gap": 3.2973520755767822,
+      "before_gap": null,
+      "was_new_candidate": true,
+      "train_first_year": 2014,
+      "gold_fact": [
+        "Foreign Affairs (Slovakia)",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "original_rank": 4.0,
+      "final_rank": 162.0,
+      "source_ids": [
+        "TASMIN_FORMATION_PRIMARY",
+        "TASMIN_ABOUT_PRIMARY"
+      ],
+      "gold_independent_support": true,
+      "label": "temporally_incompatible_under_named_organization_or_dated_affiliation_semantics",
+      "counterfactual_rank_reduction_if_this_candidate_removed": 1,
+      "qualification": "Organization identity from rawcountry/sector; members interpreted at eventdate, not retroactiveperson labels. Formationyear source derived, not TRAINfirstyear. Goldsoundness stillseparate."
+    },
+    {
+      "sample_id": "S38",
+      "candidate_name": "Militant (Ahrar ash-Sham)",
+      "entity_id": 9421,
+      "fact": [
+        "Militant (Ahrar ash-Sham)",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "after_gap": 1.0360691547393799,
+      "before_gap": null,
+      "was_new_candidate": true,
+      "train_first_year": 2014,
+      "gold_fact": [
+        "Foreign Affairs (Slovakia)",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "original_rank": 4.0,
+      "final_rank": 162.0,
+      "source_ids": [
+        "AHRAR_FORMATION_MMP"
+      ],
+      "gold_independent_support": true,
+      "label": "temporally_incompatible_under_named_organization_or_dated_affiliation_semantics",
+      "counterfactual_rank_reduction_if_this_candidate_removed": 1,
+      "qualification": "Organization identity from rawcountry/sector; members interpreted at eventdate, not retroactiveperson labels. Formationyear source derived, not TRAINfirstyear. Goldsoundness stillseparate."
+    },
+    {
+      "sample_id": "S38",
+      "candidate_name": "Jaysh al-Islam",
+      "entity_id": 9321,
+      "fact": [
+        "Jaysh al-Islam",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "after_gap": 0.13318657875061035,
+      "before_gap": null,
+      "was_new_candidate": true,
+      "train_first_year": 2014,
+      "gold_fact": [
+        "Foreign Affairs (Slovakia)",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "original_rank": 4.0,
+      "final_rank": 162.0,
+      "source_ids": [
+        "JAYSH_PREDECESSOR_MMP"
+      ],
+      "gold_independent_support": true,
+      "label": "temporally_incompatible_under_named_organization_or_dated_affiliation_semantics",
+      "counterfactual_rank_reduction_if_this_candidate_removed": 1,
+      "qualification": "Organization identity from rawcountry/sector; members interpreted at eventdate, not retroactiveperson labels. Formationyear source derived, not TRAINfirstyear. Goldsoundness stillseparate."
+    }
+  ],
+  "known_error_rank_components_by_query": {
+    "S04": 8,
+    "S21": 1,
+    "S38": 4
+  },
+  "round8_new_witness_n": 6
+}

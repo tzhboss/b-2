@@ -1,0 +1,133 @@
+{
+  "prepare_seconds": 3.6159239690750837,
+  "training": {
+    "uniform_02": {
+      "seconds": 1.693193465936929,
+      "spec": {
+        "kind": "absolute",
+        "route": "uniform",
+        "rho": 0.2
+      },
+      "frozen_rows_equal": true
+    },
+    "uniform_03": {
+      "seconds": 1.6404295649845153,
+      "spec": {
+        "kind": "absolute",
+        "route": "uniform",
+        "rho": 0.3
+      },
+      "frozen_rows_equal": true
+    },
+    "relation_02": {
+      "seconds": 1.6970614599995315,
+      "spec": {
+        "kind": "relation_exclude",
+        "route": "uniform",
+        "rho": 0.2
+      },
+      "frozen_rows_equal": true
+    },
+    "relation_03": {
+      "seconds": 1.6388423091266304,
+      "spec": {
+        "kind": "relation_exclude",
+        "route": "uniform",
+        "rho": 0.3
+      },
+      "frozen_rows_equal": true
+    },
+    "query_soft_02": {
+      "seconds": 1.767902065999806,
+      "spec": {
+        "kind": "query_soft",
+        "route": "uniform",
+        "rho": 0.2
+      },
+      "frozen_rows_equal": true
+    },
+    "query_soft_03": {
+      "seconds": 1.8048919388093054,
+      "spec": {
+        "kind": "query_soft",
+        "route": "uniform",
+        "rho": 0.3
+      },
+      "frozen_rows_equal": true
+    },
+    "query_oldonly_02": {
+      "seconds": 1.7328478950075805,
+      "spec": {
+        "kind": "absolute",
+        "route": "old_only",
+        "rho": 0.2
+      },
+      "frozen_rows_equal": true
+    },
+    "query_oldonly_03": {
+      "seconds": 1.6749275990296155,
+      "spec": {
+        "kind": "absolute",
+        "route": "old_only",
+        "rho": 0.3
+      },
+      "frozen_rows_equal": true
+    },
+    "combined_01": {
+      "seconds": 1.823410133132711,
+      "spec": {
+        "kind": "combined",
+        "route": "uniform",
+        "rho": 0.1
+      },
+      "frozen_rows_equal": true
+    },
+    "combined_02": {
+      "seconds": 1.997401217930019,
+      "spec": {
+        "kind": "combined",
+        "route": "uniform",
+        "rho": 0.2
+      },
+      "frozen_rows_equal": true
+    },
+    "combined_03": {
+      "seconds": 2.044077032012865,
+      "spec": {
+        "kind": "combined",
+        "route": "uniform",
+        "rho": 0.3
+      },
+      "frozen_rows_equal": true
+    },
+    "oldonly_coordinate_02": {
+      "seconds": 1.636417255969718,
+      "spec": {
+        "kind": "absolute",
+        "route": "old_only",
+        "rho": 0.2,
+        "geometry": "coordinate"
+      },
+      "frozen_rows_equal": true
+    },
+    "oldonly_coordinate_03": {
+      "seconds": 1.8443184059578925,
+      "spec": {
+        "kind": "absolute",
+        "route": "old_only",
+        "rho": 0.3,
+        "geometry": "coordinate"
+      },
+      "frozen_rows_equal": true
+    }
+  },
+  "evaluation": {
+    "seconds": 50.432739700889215,
+    "valid_seconds": 7.156731088878587,
+    "full_train_arms": [
+      "combined_01",
+      "oldonly_coordinate_03"
+    ]
+  },
+  "total_seconds": 77.85634411685169
+}

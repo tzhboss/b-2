@@ -1,0 +1,4808 @@
+{
+  "train_samples": 79512,
+  "train_positive_events": 586,
+  "fit_seconds": 2.4930159100331366,
+  "columns": [
+    "old_rank",
+    "capacity",
+    "gold_over_tau",
+    "qnorm",
+    "head_train_count",
+    "relation_train_count",
+    "gold_train_count",
+    "known_new_count",
+    "max_gap32",
+    "max_gap128",
+    "top4_gap",
+    "mean_gap",
+    "std_gap",
+    "fraction_above",
+    "mean_softplus_gap",
+    "epoch_fraction"
+  ],
+  "groups": {
+    "development": {
+      "per_epoch": {
+        "8": {
+          "boundary": {
+            "safe": {
+              "n": 3124,
+              "positives": 2,
+              "prevalence": 0.0006402048655569782,
+              "average_precision": 0.021608191537419063,
+              "roc_auc": 0.9673286354900705,
+              "0.05": {
+                "selected": 157,
+                "hits": 1,
+                "precision": 0.006369426751592357,
+                "recall": 0.5
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 2,
+                "precision": 0.006389776357827476,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 2,
+                "precision": 0.0032,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 21,
+              "prevalence": 0.0066815144766146995,
+              "average_precision": 0.21223879943124596,
+              "roc_auc": 0.9740855983649065,
+              "0.05": {
+                "selected": 158,
+                "hits": 19,
+                "precision": 0.12025316455696203,
+                "recall": 0.9047619047619048
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 20,
+                "precision": 0.06349206349206349,
+                "recall": 0.9523809523809523
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 20,
+                "precision": 0.03179650238473768,
+                "recall": 0.9523809523809523
+              }
+            }
+          },
+          "pressure32": {
+            "safe": {
+              "n": 3124,
+              "positives": 2,
+              "prevalence": 0.0006402048655569782,
+              "average_precision": 0.043498168498168496,
+              "roc_auc": 0.9897501601537476,
+              "0.05": {
+                "selected": 157,
+                "hits": 2,
+                "precision": 0.012738853503184714,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 2,
+                "precision": 0.006389776357827476,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 2,
+                "precision": 0.0032,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 21,
+              "prevalence": 0.0066815144766146995,
+              "average_precision": 0.5852234552228406,
+              "roc_auc": 0.9950428601934047,
+              "0.05": {
+                "selected": 158,
+                "hits": 21,
+                "precision": 0.13291139240506328,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 21,
+                "precision": 0.06666666666666667,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 21,
+                "precision": 0.033386327503974564,
+                "recall": 1.0
+              }
+            }
+          },
+          "pressure128": {
+            "safe": {
+              "n": 3124,
+              "positives": 2,
+              "prevalence": 0.0006402048655569782,
+              "average_precision": 0.02513227513227513,
+              "roc_auc": 0.9817424727738628,
+              "0.05": {
+                "selected": 157,
+                "hits": 2,
+                "precision": 0.012738853503184714,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 2,
+                "precision": 0.006389776357827476,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 2,
+                "precision": 0.0032,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 21,
+              "prevalence": 0.0066815144766146995,
+              "average_precision": 0.6516034891392244,
+              "roc_auc": 0.9959275189896586,
+              "0.05": {
+                "selected": 158,
+                "hits": 21,
+                "precision": 0.13291139240506328,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 21,
+                "precision": 0.06666666666666667,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 21,
+                "precision": 0.033386327503974564,
+                "recall": 1.0
+              }
+            }
+          },
+          "lookahead": {
+            "safe": {
+              "n": 3124,
+              "positives": 2,
+              "prevalence": 0.0006402048655569782,
+              "average_precision": 0.025362318840579712,
+              "roc_auc": 0.9820627802690582,
+              "0.05": {
+                "selected": 157,
+                "hits": 2,
+                "precision": 0.012738853503184714,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 2,
+                "precision": 0.006389776357827476,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 2,
+                "precision": 0.0032,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 21,
+              "prevalence": 0.0066815144766146995,
+              "average_precision": 0.6346174952340276,
+              "roc_auc": 0.9955614532808639,
+              "0.05": {
+                "selected": 158,
+                "hits": 21,
+                "precision": 0.13291139240506328,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 21,
+                "precision": 0.06666666666666667,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 21,
+                "precision": 0.033386327503974564,
+                "recall": 1.0
+              }
+            }
+          },
+          "random": {
+            "safe": {
+              "n": 3124,
+              "positives": 2,
+              "prevalence": 0.0006402048655569782,
+              "average_precision": 0.0007012677290964312,
+              "roc_auc": 0.328955797565663,
+              "0.05": {
+                "selected": 157,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 21,
+              "prevalence": 0.0066815144766146995,
+              "average_precision": 0.007732676468530266,
+              "roc_auc": 0.5244501387999145,
+              "0.05": {
+                "selected": 158,
+                "hits": 1,
+                "precision": 0.006329113924050633,
+                "recall": 0.047619047619047616
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 1,
+                "precision": 0.0031746031746031746,
+                "recall": 0.047619047619047616
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 4,
+                "precision": 0.006359300476947536,
+                "recall": 0.19047619047619047
+              }
+            }
+          },
+          "transfer_current_tree": {
+            "safe": {
+              "n": 3124,
+              "positives": 2,
+              "prevalence": 0.0006402048655569782,
+              "average_precision": 0.04351851851851852,
+              "roc_auc": 0.9886290839205637,
+              "0.05": {
+                "selected": 157,
+                "hits": 2,
+                "precision": 0.012738853503184714,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 2,
+                "precision": 0.006389776357827476,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 2,
+                "precision": 0.0032,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 21,
+              "prevalence": 0.0066815144766146995,
+              "average_precision": 0.7004361549614047,
+              "roc_auc": 0.9959275189896586,
+              "0.05": {
+                "selected": 158,
+                "hits": 21,
+                "precision": 0.13291139240506328,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 21,
+                "precision": 0.06666666666666667,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 21,
+                "precision": 0.033386327503974564,
+                "recall": 1.0
+              }
+            }
+          },
+          "local_current_tree": {
+            "safe": {
+              "n": 3124,
+              "positives": 2,
+              "prevalence": 0.0006402048655569782,
+              "average_precision": 0.02088744588744589,
+              "roc_auc": 0.9766175528507367,
+              "0.05": {
+                "selected": 157,
+                "hits": 2,
+                "precision": 0.012738853503184714,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 2,
+                "precision": 0.006389776357827476,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 2,
+                "precision": 0.0032,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 21,
+              "prevalence": 0.0066815144766146995,
+              "average_precision": 0.7042358422827477,
+              "roc_auc": 0.9957597388731276,
+              "0.05": {
+                "selected": 158,
+                "hits": 21,
+                "precision": 0.13291139240506328,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 21,
+                "precision": 0.06666666666666667,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 21,
+                "precision": 0.033386327503974564,
+                "recall": 1.0
+              }
+            }
+          }
+        },
+        "9": {
+          "boundary": {
+            "safe": {
+              "n": 3122,
+              "positives": 2,
+              "prevalence": 0.0006406149903907751,
+              "average_precision": 0.02087829089339663,
+              "roc_auc": 0.9533653846153847,
+              "0.05": {
+                "selected": 157,
+                "hits": 1,
+                "precision": 0.006369426751592357,
+                "recall": 0.5
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 2,
+                "precision": 0.006389776357827476,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 2,
+                "precision": 0.0032,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 22,
+              "prevalence": 0.006999681832643971,
+              "average_precision": 0.2298994410904411,
+              "roc_auc": 0.9729034982960008,
+              "0.05": {
+                "selected": 158,
+                "hits": 19,
+                "precision": 0.12025316455696203,
+                "recall": 0.8636363636363636
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 21,
+                "precision": 0.06666666666666667,
+                "recall": 0.9545454545454546
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 21,
+                "precision": 0.033386327503974564,
+                "recall": 0.9545454545454546
+              }
+            }
+          },
+          "pressure32": {
+            "safe": {
+              "n": 3122,
+              "positives": 2,
+              "prevalence": 0.0006406149903907751,
+              "average_precision": 0.20512820512820512,
+              "roc_auc": 0.9958333333333333,
+              "0.05": {
+                "selected": 157,
+                "hits": 2,
+                "precision": 0.012738853503184714,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 2,
+                "precision": 0.006389776357827476,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 2,
+                "precision": 0.0032,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 22,
+              "prevalence": 0.006999681832643971,
+              "average_precision": 0.6107295313708503,
+              "roc_auc": 0.9950918994494772,
+              "0.05": {
+                "selected": 158,
+                "hits": 22,
+                "precision": 0.13924050632911392,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 22,
+                "precision": 0.06984126984126984,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 22,
+                "precision": 0.034976152623211444,
+                "recall": 1.0
+              }
+            }
+          },
+          "pressure128": {
+            "safe": {
+              "n": 3122,
+              "positives": 2,
+              "prevalence": 0.0006406149903907751,
+              "average_precision": 0.12127659574468086,
+              "roc_auc": 0.9921474358974359,
+              "0.05": {
+                "selected": 157,
+                "hits": 2,
+                "precision": 0.012738853503184714,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 2,
+                "precision": 0.006389776357827476,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 2,
+                "precision": 0.0032,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 22,
+              "prevalence": 0.006999681832643971,
+              "average_precision": 0.6457341417107161,
+              "roc_auc": 0.995397745477848,
+              "0.05": {
+                "selected": 158,
+                "hits": 22,
+                "precision": 0.13924050632911392,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 22,
+                "precision": 0.06984126984126984,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 22,
+                "precision": 0.034976152623211444,
+                "recall": 1.0
+              }
+            }
+          },
+          "lookahead": {
+            "safe": {
+              "n": 3122,
+              "positives": 2,
+              "prevalence": 0.0006406149903907751,
+              "average_precision": 0.12127659574468086,
+              "roc_auc": 0.9921474358974359,
+              "0.05": {
+                "selected": 157,
+                "hits": 2,
+                "precision": 0.012738853503184714,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 2,
+                "precision": 0.006389776357827476,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 2,
+                "precision": 0.0032,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 22,
+              "prevalence": 0.006999681832643971,
+              "average_precision": 0.6330150017025082,
+              "roc_auc": 0.9949462584835863,
+              "0.05": {
+                "selected": 158,
+                "hits": 22,
+                "precision": 0.13924050632911392,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 22,
+                "precision": 0.06984126984126984,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 22,
+                "precision": 0.034976152623211444,
+                "recall": 1.0
+              }
+            }
+          },
+          "random": {
+            "safe": {
+              "n": 3122,
+              "positives": 2,
+              "prevalence": 0.0006406149903907751,
+              "average_precision": 0.0007792536938435392,
+              "roc_auc": 0.38830128205128206,
+              "0.05": {
+                "selected": 157,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 22,
+              "prevalence": 0.006999681832643971,
+              "average_precision": 0.03225091040371956,
+              "roc_auc": 0.5261134251842359,
+              "0.05": {
+                "selected": 158,
+                "hits": 3,
+                "precision": 0.0189873417721519,
+                "recall": 0.13636363636363635
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 4,
+                "precision": 0.012698412698412698,
+                "recall": 0.18181818181818182
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 4,
+                "precision": 0.006359300476947536,
+                "recall": 0.18181818181818182
+              }
+            }
+          },
+          "transfer_current_tree": {
+            "safe": {
+              "n": 3122,
+              "positives": 2,
+              "prevalence": 0.0006406149903907751,
+              "average_precision": 0.05844155844155845,
+              "roc_auc": 0.9863782051282051,
+              "0.05": {
+                "selected": 157,
+                "hits": 2,
+                "precision": 0.012738853503184714,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 2,
+                "precision": 0.006389776357827476,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 2,
+                "precision": 0.0032,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 22,
+              "prevalence": 0.006999681832643971,
+              "average_precision": 0.645866655176491,
+              "roc_auc": 0.99472779703475,
+              "0.05": {
+                "selected": 158,
+                "hits": 22,
+                "precision": 0.13924050632911392,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 22,
+                "precision": 0.06984126984126984,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 22,
+                "precision": 0.034976152623211444,
+                "recall": 1.0
+              }
+            }
+          },
+          "local_current_tree": {
+            "safe": {
+              "n": 3122,
+              "positives": 2,
+              "prevalence": 0.0006406149903907751,
+              "average_precision": 0.03827913279132791,
+              "roc_auc": 0.9881410256410257,
+              "0.05": {
+                "selected": 157,
+                "hits": 2,
+                "precision": 0.012738853503184714,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 313,
+                "hits": 2,
+                "precision": 0.006389776357827476,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 625,
+                "hits": 2,
+                "precision": 0.0032,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3143,
+              "positives": 22,
+              "prevalence": 0.006999681832643971,
+              "average_precision": 0.6483971592153996,
+              "roc_auc": 0.9947132329381609,
+              "0.05": {
+                "selected": 158,
+                "hits": 22,
+                "precision": 0.13924050632911392,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 315,
+                "hits": 22,
+                "precision": 0.06984126984126984,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 629,
+                "hits": 22,
+                "precision": 0.034976152623211444,
+                "recall": 1.0
+              }
+            }
+          }
+        }
+      },
+      "operational": {
+        "boundary": {
+          "macro_safe_ap": 0.021243241215407847,
+          "prediction_seconds": 0.0,
+          "budgets": {
+            "0.05": {
+              "selected": 316,
+              "hits": 2,
+              "events": 4,
+              "recall": 0.5,
+              "precision": 0.006329113924050633
+            },
+            "0.1": {
+              "selected": 630,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.006349206349206349
+            },
+            "0.2": {
+              "selected": 1258,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.003179650238473768
+            }
+          }
+        },
+        "pressure32": {
+          "macro_safe_ap": 0.12431318681318682,
+          "prediction_seconds": 0.0,
+          "budgets": {
+            "0.05": {
+              "selected": 316,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.012658227848101266
+            },
+            "0.1": {
+              "selected": 630,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.006349206349206349
+            },
+            "0.2": {
+              "selected": 1258,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.003179650238473768
+            }
+          }
+        },
+        "pressure128": {
+          "macro_safe_ap": 0.07320443543847799,
+          "prediction_seconds": 0.0,
+          "budgets": {
+            "0.05": {
+              "selected": 316,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.012658227848101266
+            },
+            "0.1": {
+              "selected": 630,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.006349206349206349
+            },
+            "0.2": {
+              "selected": 1258,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.003179650238473768
+            }
+          }
+        },
+        "lookahead": {
+          "macro_safe_ap": 0.07331945729263029,
+          "prediction_seconds": 0.0,
+          "budgets": {
+            "0.05": {
+              "selected": 316,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.012658227848101266
+            },
+            "0.1": {
+              "selected": 630,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.006349206349206349
+            },
+            "0.2": {
+              "selected": 1258,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.003179650238473768
+            }
+          }
+        },
+        "random": {
+          "macro_safe_ap": 0.0007402607114699852,
+          "prediction_seconds": 0.0,
+          "budgets": {
+            "0.05": {
+              "selected": 316,
+              "hits": 0,
+              "events": 4,
+              "recall": 0.0,
+              "precision": 0.0
+            },
+            "0.1": {
+              "selected": 630,
+              "hits": 0,
+              "events": 4,
+              "recall": 0.0,
+              "precision": 0.0
+            },
+            "0.2": {
+              "selected": 1258,
+              "hits": 0,
+              "events": 4,
+              "recall": 0.0,
+              "precision": 0.0
+            }
+          }
+        },
+        "transfer_current_tree": {
+          "macro_safe_ap": 0.050980038480038486,
+          "prediction_seconds": 0.011922458186745644,
+          "budgets": {
+            "0.05": {
+              "selected": 316,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.012658227848101266
+            },
+            "0.1": {
+              "selected": 630,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.006349206349206349
+            },
+            "0.2": {
+              "selected": 1258,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.003179650238473768
+            }
+          }
+        },
+        "local_current_tree": {
+          "macro_safe_ap": 0.0295832893393869,
+          "prediction_seconds": 0.011414464097470045,
+          "budgets": {
+            "0.05": {
+              "selected": 316,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.012658227848101266
+            },
+            "0.1": {
+              "selected": 630,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.006349206349206349
+            },
+            "0.2": {
+              "selected": 1258,
+              "hits": 4,
+              "events": 4,
+              "recall": 1.0,
+              "precision": 0.003179650238473768
+            }
+          }
+        }
+      }
+    },
+    "late_query_time_holdout": {
+      "per_epoch": {
+        "10": {
+          "boundary": {
+            "safe": {
+              "n": 3229,
+              "positives": 3,
+              "prevalence": 0.0009290802105915144,
+              "average_precision": 0.03204526491447643,
+              "roc_auc": 0.9718950196321554,
+              "0.05": {
+                "selected": 162,
+                "hits": 2,
+                "precision": 0.012345679012345678,
+                "recall": 0.6666666666666666
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 3,
+                "precision": 0.009287925696594427,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 3,
+                "precision": 0.0046439628482972135,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 75,
+              "prevalence": 0.02271350696547547,
+              "average_precision": 0.1403990204574847,
+              "roc_auc": 0.9164549116826775,
+              "0.05": {
+                "selected": 166,
+                "hits": 20,
+                "precision": 0.12048192771084337,
+                "recall": 0.26666666666666666
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 36,
+                "precision": 0.10876132930513595,
+                "recall": 0.48
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 73,
+                "precision": 0.11043872919818457,
+                "recall": 0.9733333333333334
+              }
+            }
+          },
+          "pressure32": {
+            "safe": {
+              "n": 3229,
+              "positives": 3,
+              "prevalence": 0.0009290802105915144,
+              "average_precision": 0.11857379767827528,
+              "roc_auc": 0.9838809671419715,
+              "0.05": {
+                "selected": 162,
+                "hits": 3,
+                "precision": 0.018518518518518517,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 3,
+                "precision": 0.009287925696594427,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 3,
+                "precision": 0.0046439628482972135,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 75,
+              "prevalence": 0.02271350696547547,
+              "average_precision": 0.4813676006092127,
+              "roc_auc": 0.9835017043693832,
+              "0.05": {
+                "selected": 166,
+                "hits": 67,
+                "precision": 0.4036144578313253,
+                "recall": 0.8933333333333333
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 75,
+                "precision": 0.22658610271903323,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 75,
+                "precision": 0.11346444780635401,
+                "recall": 1.0
+              }
+            }
+          },
+          "pressure128": {
+            "safe": {
+              "n": 3229,
+              "positives": 3,
+              "prevalence": 0.0009290802105915144,
+              "average_precision": 0.4135472370766488,
+              "roc_auc": 0.9941103533787973,
+              "0.05": {
+                "selected": 162,
+                "hits": 3,
+                "precision": 0.018518518518518517,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 3,
+                "precision": 0.009287925696594427,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 3,
+                "precision": 0.0046439628482972135,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 75,
+              "prevalence": 0.02271350696547547,
+              "average_precision": 0.4612082965557242,
+              "roc_auc": 0.9839851255035637,
+              "0.05": {
+                "selected": 166,
+                "hits": 68,
+                "precision": 0.40963855421686746,
+                "recall": 0.9066666666666666
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 75,
+                "precision": 0.22658610271903323,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 75,
+                "precision": 0.11346444780635401,
+                "recall": 1.0
+              }
+            }
+          },
+          "lookahead": {
+            "safe": {
+              "n": 3229,
+              "positives": 3,
+              "prevalence": 0.0009290802105915144,
+              "average_precision": 0.4278155706727135,
+              "roc_auc": 0.9945236619136185,
+              "0.05": {
+                "selected": 162,
+                "hits": 3,
+                "precision": 0.018518518518518517,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 3,
+                "precision": 0.009287925696594427,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 3,
+                "precision": 0.0046439628482972135,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 75,
+              "prevalence": 0.02271350696547547,
+              "average_precision": 0.4707884329352363,
+              "roc_auc": 0.9844644148331784,
+              "0.05": {
+                "selected": 166,
+                "hits": 68,
+                "precision": 0.40963855421686746,
+                "recall": 0.9066666666666666
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 75,
+                "precision": 0.22658610271903323,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 75,
+                "precision": 0.11346444780635401,
+                "recall": 1.0
+              }
+            }
+          },
+          "random": {
+            "safe": {
+              "n": 3229,
+              "positives": 3,
+              "prevalence": 0.0009290802105915144,
+              "average_precision": 0.0034623491480648815,
+              "roc_auc": 0.6348419094854308,
+              "0.05": {
+                "selected": 162,
+                "hits": 1,
+                "precision": 0.006172839506172839,
+                "recall": 0.3333333333333333
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 1,
+                "precision": 0.0030959752321981426,
+                "recall": 0.3333333333333333
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 1,
+                "precision": 0.0015479876160990713,
+                "recall": 0.3333333333333333
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 75,
+              "prevalence": 0.02271350696547547,
+              "average_precision": 0.047008171432072886,
+              "roc_auc": 0.5323954136969321,
+              "0.05": {
+                "selected": 166,
+                "hits": 6,
+                "precision": 0.03614457831325301,
+                "recall": 0.08
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 8,
+                "precision": 0.02416918429003021,
+                "recall": 0.10666666666666667
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 19,
+                "precision": 0.028744326777609682,
+                "recall": 0.25333333333333335
+              }
+            }
+          },
+          "transfer_current_tree": {
+            "safe": {
+              "n": 3229,
+              "positives": 3,
+              "prevalence": 0.0009290802105915144,
+              "average_precision": 0.0811608734402852,
+              "roc_auc": 0.9932837363091548,
+              "0.05": {
+                "selected": 162,
+                "hits": 3,
+                "precision": 0.018518518518518517,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 3,
+                "precision": 0.009287925696594427,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 3,
+                "precision": 0.0046439628482972135,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 75,
+              "prevalence": 0.02271350696547547,
+              "average_precision": 0.8804442460013997,
+              "roc_auc": 0.9960086767895878,
+              "0.05": {
+                "selected": 166,
+                "hits": 72,
+                "precision": 0.43373493975903615,
+                "recall": 0.96
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 75,
+                "precision": 0.22658610271903323,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 75,
+                "precision": 0.11346444780635401,
+                "recall": 1.0
+              }
+            }
+          },
+          "local_current_tree": {
+            "safe": {
+              "n": 3229,
+              "positives": 3,
+              "prevalence": 0.0009290802105915144,
+              "average_precision": 0.047939560439560436,
+              "roc_auc": 0.9873940896879521,
+              "0.05": {
+                "selected": 162,
+                "hits": 3,
+                "precision": 0.018518518518518517,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 3,
+                "precision": 0.009287925696594427,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 3,
+                "precision": 0.0046439628482972135,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 75,
+              "prevalence": 0.02271350696547547,
+              "average_precision": 0.7723712429825229,
+              "roc_auc": 0.9934924078091106,
+              "0.05": {
+                "selected": 166,
+                "hits": 72,
+                "precision": 0.43373493975903615,
+                "recall": 0.96
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 75,
+                "precision": 0.22658610271903323,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 75,
+                "precision": 0.11346444780635401,
+                "recall": 1.0
+              }
+            }
+          }
+        },
+        "11": {
+          "boundary": {
+            "safe": {
+              "n": 3227,
+              "positives": 8,
+              "prevalence": 0.002479082739386427,
+              "average_precision": 0.015638178578553787,
+              "roc_auc": 0.8891542404473439,
+              "0.05": {
+                "selected": 162,
+                "hits": 2,
+                "precision": 0.012345679012345678,
+                "recall": 0.25
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 2,
+                "precision": 0.006191950464396285,
+                "recall": 0.25
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 8,
+                "precision": 0.01238390092879257,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.1361416764348074,
+              "roc_auc": 0.9114137181874612,
+              "0.05": {
+                "selected": 166,
+                "hits": 20,
+                "precision": 0.12048192771084337,
+                "recall": 0.25
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 35,
+                "precision": 0.10574018126888217,
+                "recall": 0.4375
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 78,
+                "precision": 0.11800302571860817,
+                "recall": 0.975
+              }
+            }
+          },
+          "pressure32": {
+            "safe": {
+              "n": 3227,
+              "positives": 8,
+              "prevalence": 0.002479082739386427,
+              "average_precision": 0.076238549233557,
+              "roc_auc": 0.9747592420006214,
+              "0.05": {
+                "selected": 162,
+                "hits": 7,
+                "precision": 0.043209876543209874,
+                "recall": 0.875
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 8,
+                "precision": 0.02476780185758514,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 8,
+                "precision": 0.01238390092879257,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.4749745560822984,
+              "roc_auc": 0.9828600248292986,
+              "0.05": {
+                "selected": 166,
+                "hits": 71,
+                "precision": 0.42771084337349397,
+                "recall": 0.8875
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 80,
+                "precision": 0.24169184290030213,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 80,
+                "precision": 0.12102874432677761,
+                "recall": 1.0
+              }
+            }
+          },
+          "pressure128": {
+            "safe": {
+              "n": 3227,
+              "positives": 8,
+              "prevalence": 0.002479082739386427,
+              "average_precision": 0.058857476299142994,
+              "roc_auc": 0.9770114942528735,
+              "0.05": {
+                "selected": 162,
+                "hits": 8,
+                "precision": 0.04938271604938271,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 8,
+                "precision": 0.02476780185758514,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 8,
+                "precision": 0.01238390092879257,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.4359043928106922,
+              "roc_auc": 0.9829996896337678,
+              "0.05": {
+                "selected": 166,
+                "hits": 72,
+                "precision": 0.43373493975903615,
+                "recall": 0.9
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 80,
+                "precision": 0.24169184290030213,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 80,
+                "precision": 0.12102874432677761,
+                "recall": 1.0
+              }
+            }
+          },
+          "lookahead": {
+            "safe": {
+              "n": 3227,
+              "positives": 8,
+              "prevalence": 0.002479082739386427,
+              "average_precision": 0.05366645762555891,
+              "roc_auc": 0.974798073936005,
+              "0.05": {
+                "selected": 162,
+                "hits": 8,
+                "precision": 0.04938271604938271,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 8,
+                "precision": 0.02476780185758514,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 8,
+                "precision": 0.01238390092879257,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.42889255979357427,
+              "roc_auc": 0.9827164804469274,
+              "0.05": {
+                "selected": 166,
+                "hits": 69,
+                "precision": 0.41566265060240964,
+                "recall": 0.8625
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 80,
+                "precision": 0.24169184290030213,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 80,
+                "precision": 0.12102874432677761,
+                "recall": 1.0
+              }
+            }
+          },
+          "random": {
+            "safe": {
+              "n": 3227,
+              "positives": 8,
+              "prevalence": 0.002479082739386427,
+              "average_precision": 0.0024638411502340123,
+              "roc_auc": 0.351273687480584,
+              "0.05": {
+                "selected": 162,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 1,
+                "precision": 0.0030959752321981426,
+                "recall": 0.125
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 1,
+                "precision": 0.0015479876160990713,
+                "recall": 0.125
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.028619370272544492,
+              "roc_auc": 0.4683775605214153,
+              "0.05": {
+                "selected": 166,
+                "hits": 6,
+                "precision": 0.03614457831325301,
+                "recall": 0.075
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 9,
+                "precision": 0.027190332326283987,
+                "recall": 0.1125
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 13,
+                "precision": 0.019667170953101363,
+                "recall": 0.1625
+              }
+            }
+          },
+          "transfer_current_tree": {
+            "safe": {
+              "n": 3227,
+              "positives": 8,
+              "prevalence": 0.002479082739386427,
+              "average_precision": 0.4220205601179866,
+              "roc_auc": 0.9932044113078595,
+              "0.05": {
+                "selected": 162,
+                "hits": 8,
+                "precision": 0.04938271604938271,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 8,
+                "precision": 0.02476780185758514,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 8,
+                "precision": 0.01238390092879257,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.894438767490725,
+              "roc_auc": 0.9961436995654873,
+              "0.05": {
+                "selected": 166,
+                "hits": 76,
+                "precision": 0.4578313253012048,
+                "recall": 0.95
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 80,
+                "precision": 0.24169184290030213,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 80,
+                "precision": 0.12102874432677761,
+                "recall": 1.0
+              }
+            }
+          },
+          "local_current_tree": {
+            "safe": {
+              "n": 3227,
+              "positives": 8,
+              "prevalence": 0.002479082739386427,
+              "average_precision": 0.14406426100988792,
+              "roc_auc": 0.9906997514756135,
+              "0.05": {
+                "selected": 162,
+                "hits": 8,
+                "precision": 0.04938271604938271,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 8,
+                "precision": 0.02476780185758514,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 646,
+                "hits": 8,
+                "precision": 0.01238390092879257,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.7692151066246014,
+              "roc_auc": 0.9936588299193048,
+              "0.05": {
+                "selected": 166,
+                "hits": 77,
+                "precision": 0.463855421686747,
+                "recall": 0.9625
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 80,
+                "precision": 0.24169184290030213,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 80,
+                "precision": 0.12102874432677761,
+                "recall": 1.0
+              }
+            }
+          }
+        },
+        "12": {
+          "boundary": {
+            "safe": {
+              "n": 3222,
+              "positives": 1,
+              "prevalence": 0.00031036623215394165,
+              "average_precision": 0.021739130434782608,
+              "roc_auc": 0.993014591741695,
+              "0.05": {
+                "selected": 162,
+                "hits": 1,
+                "precision": 0.006172839506172839,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 1,
+                "precision": 0.0030959752321981426,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 1,
+                "precision": 0.0015503875968992248,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 70,
+              "prevalence": 0.021199273167777106,
+              "average_precision": 0.12835325411464416,
+              "roc_auc": 0.9165487977369166,
+              "0.05": {
+                "selected": 166,
+                "hits": 19,
+                "precision": 0.1144578313253012,
+                "recall": 0.2714285714285714
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 34,
+                "precision": 0.1027190332326284,
+                "recall": 0.4857142857142857
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 68,
+                "precision": 0.10287443267776097,
+                "recall": 0.9714285714285714
+              }
+            }
+          },
+          "pressure32": {
+            "safe": {
+              "n": 3222,
+              "positives": 1,
+              "prevalence": 0.00031036623215394165,
+              "average_precision": 0.08333333333333333,
+              "roc_auc": 0.9965849115181621,
+              "0.05": {
+                "selected": 162,
+                "hits": 1,
+                "precision": 0.006172839506172839,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 1,
+                "precision": 0.0030959752321981426,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 1,
+                "precision": 0.0015503875968992248,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 70,
+              "prevalence": 0.021199273167777106,
+              "average_precision": 0.4501119720240876,
+              "roc_auc": 0.9835793847241867,
+              "0.05": {
+                "selected": 166,
+                "hits": 63,
+                "precision": 0.3795180722891566,
+                "recall": 0.9
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 70,
+                "precision": 0.21148036253776434,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 70,
+                "precision": 0.1059001512859304,
+                "recall": 1.0
+              }
+            }
+          },
+          "pressure128": {
+            "safe": {
+              "n": 3222,
+              "positives": 1,
+              "prevalence": 0.00031036623215394165,
+              "average_precision": 0.04,
+              "roc_auc": 0.9925488978578081,
+              "0.05": {
+                "selected": 162,
+                "hits": 1,
+                "precision": 0.006172839506172839,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 1,
+                "precision": 0.0030959752321981426,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 1,
+                "precision": 0.0015503875968992248,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 70,
+              "prevalence": 0.021199273167777106,
+              "average_precision": 0.41487072969098565,
+              "roc_auc": 0.9832522984441301,
+              "0.05": {
+                "selected": 166,
+                "hits": 63,
+                "precision": 0.3795180722891566,
+                "recall": 0.9
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 70,
+                "precision": 0.21148036253776434,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 70,
+                "precision": 0.1059001512859304,
+                "recall": 1.0
+              }
+            }
+          },
+          "lookahead": {
+            "safe": {
+              "n": 3222,
+              "positives": 1,
+              "prevalence": 0.00031036623215394165,
+              "average_precision": 0.037037037037037035,
+              "roc_auc": 0.9919279726792921,
+              "0.05": {
+                "selected": 162,
+                "hits": 1,
+                "precision": 0.006172839506172839,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 1,
+                "precision": 0.0030959752321981426,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 1,
+                "precision": 0.0015503875968992248,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 70,
+              "prevalence": 0.021199273167777106,
+              "average_precision": 0.40140959917644475,
+              "roc_auc": 0.9822356789250354,
+              "0.05": {
+                "selected": 166,
+                "hits": 61,
+                "precision": 0.3674698795180723,
+                "recall": 0.8714285714285714
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 70,
+                "precision": 0.21148036253776434,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 70,
+                "precision": 0.1059001512859304,
+                "recall": 1.0
+              }
+            }
+          },
+          "random": {
+            "safe": {
+              "n": 3222,
+              "positives": 1,
+              "prevalence": 0.00031036623215394165,
+              "average_precision": 0.0015873015873015873,
+              "roc_auc": 0.8047190313567215,
+              "0.05": {
+                "selected": 162,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 1,
+                "precision": 0.0015503875968992248,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 70,
+              "prevalence": 0.021199273167777106,
+              "average_precision": 0.019918240850730094,
+              "roc_auc": 0.4827439886845827,
+              "0.05": {
+                "selected": 166,
+                "hits": 2,
+                "precision": 0.012048192771084338,
+                "recall": 0.02857142857142857
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 5,
+                "precision": 0.015105740181268883,
+                "recall": 0.07142857142857142
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 12,
+                "precision": 0.018154311649016642,
+                "recall": 0.17142857142857143
+              }
+            }
+          },
+          "transfer_current_tree": {
+            "safe": {
+              "n": 3222,
+              "positives": 1,
+              "prevalence": 0.00031036623215394165,
+              "average_precision": 0.03571428571428571,
+              "roc_auc": 0.9916175100900342,
+              "0.05": {
+                "selected": 162,
+                "hits": 1,
+                "precision": 0.006172839506172839,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 1,
+                "precision": 0.0030959752321981426,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 1,
+                "precision": 0.0015503875968992248,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 70,
+              "prevalence": 0.021199273167777106,
+              "average_precision": 0.8584647821873367,
+              "roc_auc": 0.9953301803394625,
+              "0.05": {
+                "selected": 166,
+                "hits": 67,
+                "precision": 0.4036144578313253,
+                "recall": 0.9571428571428572
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 70,
+                "precision": 0.21148036253776434,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 70,
+                "precision": 0.1059001512859304,
+                "recall": 1.0
+              }
+            }
+          },
+          "local_current_tree": {
+            "safe": {
+              "n": 3222,
+              "positives": 1,
+              "prevalence": 0.00031036623215394165,
+              "average_precision": 0.03125,
+              "roc_auc": 0.9903756597330022,
+              "0.05": {
+                "selected": 162,
+                "hits": 1,
+                "precision": 0.006172839506172839,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 1,
+                "precision": 0.0030959752321981426,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 1,
+                "precision": 0.0015503875968992248,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 70,
+              "prevalence": 0.021199273167777106,
+              "average_precision": 0.7509844860523484,
+              "roc_auc": 0.9929367043847241,
+              "0.05": {
+                "selected": 166,
+                "hits": 66,
+                "precision": 0.39759036144578314,
+                "recall": 0.9428571428571428
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 70,
+                "precision": 0.21148036253776434,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 70,
+                "precision": 0.1059001512859304,
+                "recall": 1.0
+              }
+            }
+          }
+        },
+        "13": {
+          "boundary": {
+            "safe": {
+              "n": 3232,
+              "positives": 16,
+              "prevalence": 0.0049504950495049506,
+              "average_precision": 0.04524134664332102,
+              "roc_auc": 0.9006141169154229,
+              "0.05": {
+                "selected": 162,
+                "hits": 6,
+                "precision": 0.037037037037037035,
+                "recall": 0.375
+              },
+              "0.1": {
+                "selected": 324,
+                "hits": 6,
+                "precision": 0.018518518518518517,
+                "recall": 0.375
+              },
+              "0.2": {
+                "selected": 647,
+                "hits": 15,
+                "precision": 0.023183925811437404,
+                "recall": 0.9375
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 86,
+              "prevalence": 0.02604482132041187,
+              "average_precision": 0.15865050212509155,
+              "roc_auc": 0.9148226888811755,
+              "0.05": {
+                "selected": 166,
+                "hits": 25,
+                "precision": 0.15060240963855423,
+                "recall": 0.29069767441860467
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 40,
+                "precision": 0.12084592145015106,
+                "recall": 0.46511627906976744
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 83,
+                "precision": 0.12556732223903178,
+                "recall": 0.9651162790697675
+              }
+            }
+          },
+          "pressure32": {
+            "safe": {
+              "n": 3232,
+              "positives": 16,
+              "prevalence": 0.0049504950495049506,
+              "average_precision": 0.14956268343044848,
+              "roc_auc": 0.968866604477612,
+              "0.05": {
+                "selected": 162,
+                "hits": 11,
+                "precision": 0.06790123456790123,
+                "recall": 0.6875
+              },
+              "0.1": {
+                "selected": 324,
+                "hits": 16,
+                "precision": 0.04938271604938271,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 647,
+                "hits": 16,
+                "precision": 0.02472952086553323,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 86,
+              "prevalence": 0.02604482132041187,
+              "average_precision": 0.5074975690513946,
+              "roc_auc": 0.9819543272012032,
+              "0.05": {
+                "selected": 166,
+                "hits": 72,
+                "precision": 0.43373493975903615,
+                "recall": 0.8372093023255814
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 84,
+                "precision": 0.2537764350453172,
+                "recall": 0.9767441860465116
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 86,
+                "precision": 0.13010590015128592,
+                "recall": 1.0
+              }
+            }
+          },
+          "pressure128": {
+            "safe": {
+              "n": 3232,
+              "positives": 16,
+              "prevalence": 0.0049504950495049506,
+              "average_precision": 0.19100323982994957,
+              "roc_auc": 0.9772815609452736,
+              "0.05": {
+                "selected": 162,
+                "hits": 14,
+                "precision": 0.08641975308641975,
+                "recall": 0.875
+              },
+              "0.1": {
+                "selected": 324,
+                "hits": 16,
+                "precision": 0.04938271604938271,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 647,
+                "hits": 16,
+                "precision": 0.02472952086553323,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 86,
+              "prevalence": 0.02604482132041187,
+              "average_precision": 0.49134766121927365,
+              "roc_auc": 0.9834873597130626,
+              "0.05": {
+                "selected": 166,
+                "hits": 75,
+                "precision": 0.45180722891566266,
+                "recall": 0.872093023255814
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 86,
+                "precision": 0.2598187311178248,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 86,
+                "precision": 0.13010590015128592,
+                "recall": 1.0
+              }
+            }
+          },
+          "lookahead": {
+            "safe": {
+              "n": 3232,
+              "positives": 16,
+              "prevalence": 0.0049504950495049506,
+              "average_precision": 0.20267603800014466,
+              "roc_auc": 0.9791472325870647,
+              "0.05": {
+                "selected": 162,
+                "hits": 14,
+                "precision": 0.08641975308641975,
+                "recall": 0.875
+              },
+              "0.1": {
+                "selected": 324,
+                "hits": 16,
+                "precision": 0.04938271604938271,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 647,
+                "hits": 16,
+                "precision": 0.02472952086553323,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 86,
+              "prevalence": 0.02604482132041187,
+              "average_precision": 0.49159299586509553,
+              "roc_auc": 0.9834620502140461,
+              "0.05": {
+                "selected": 166,
+                "hits": 73,
+                "precision": 0.4397590361445783,
+                "recall": 0.8488372093023255
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 86,
+                "precision": 0.2598187311178248,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 86,
+                "precision": 0.13010590015128592,
+                "recall": 1.0
+              }
+            }
+          },
+          "random": {
+            "safe": {
+              "n": 3232,
+              "positives": 16,
+              "prevalence": 0.0049504950495049506,
+              "average_precision": 0.010133366413173047,
+              "roc_auc": 0.4964241293532339,
+              "0.05": {
+                "selected": 162,
+                "hits": 2,
+                "precision": 0.012345679012345678,
+                "recall": 0.125
+              },
+              "0.1": {
+                "selected": 324,
+                "hits": 2,
+                "precision": 0.006172839506172839,
+                "recall": 0.125
+              },
+              "0.2": {
+                "selected": 647,
+                "hits": 3,
+                "precision": 0.00463678516228748,
+                "recall": 0.1875
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 86,
+              "prevalence": 0.02604482132041187,
+              "average_precision": 0.027521138408559177,
+              "roc_auc": 0.4876019611246096,
+              "0.05": {
+                "selected": 166,
+                "hits": 7,
+                "precision": 0.04216867469879518,
+                "recall": 0.08139534883720931
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 8,
+                "precision": 0.02416918429003021,
+                "recall": 0.09302325581395349
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 15,
+                "precision": 0.0226928895612708,
+                "recall": 0.1744186046511628
+              }
+            }
+          },
+          "transfer_current_tree": {
+            "safe": {
+              "n": 3232,
+              "positives": 16,
+              "prevalence": 0.0049504950495049506,
+              "average_precision": 0.44401864311708283,
+              "roc_auc": 0.9915656094527363,
+              "0.05": {
+                "selected": 162,
+                "hits": 15,
+                "precision": 0.09259259259259259,
+                "recall": 0.9375
+              },
+              "0.1": {
+                "selected": 324,
+                "hits": 16,
+                "precision": 0.04938271604938271,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 647,
+                "hits": 16,
+                "precision": 0.02472952086553323,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 86,
+              "prevalence": 0.02604482132041187,
+              "average_precision": 0.8836978753240464,
+              "roc_auc": 0.9954388667129469,
+              "0.05": {
+                "selected": 166,
+                "hits": 82,
+                "precision": 0.4939759036144578,
+                "recall": 0.9534883720930233
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 86,
+                "precision": 0.2598187311178248,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 86,
+                "precision": 0.13010590015128592,
+                "recall": 1.0
+              }
+            }
+          },
+          "local_current_tree": {
+            "safe": {
+              "n": 3232,
+              "positives": 16,
+              "prevalence": 0.0049504950495049506,
+              "average_precision": 0.25119947406688437,
+              "roc_auc": 0.9910117381840796,
+              "0.05": {
+                "selected": 162,
+                "hits": 16,
+                "precision": 0.09876543209876543,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 324,
+                "hits": 16,
+                "precision": 0.04938271604938271,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 647,
+                "hits": 16,
+                "precision": 0.02472952086553323,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 86,
+              "prevalence": 0.02604482132041187,
+              "average_precision": 0.7750951504306796,
+              "roc_auc": 0.9935261917158393,
+              "0.05": {
+                "selected": 166,
+                "hits": 81,
+                "precision": 0.4879518072289157,
+                "recall": 0.9418604651162791
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 86,
+                "precision": 0.2598187311178248,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 86,
+                "precision": 0.13010590015128592,
+                "recall": 1.0
+              }
+            }
+          }
+        },
+        "14": {
+          "boundary": {
+            "safe": {
+              "n": 3216,
+              "positives": 6,
+              "prevalence": 0.0018656716417910447,
+              "average_precision": 0.013660704804381134,
+              "roc_auc": 0.8840342679127725,
+              "0.05": {
+                "selected": 161,
+                "hits": 1,
+                "precision": 0.006211180124223602,
+                "recall": 0.16666666666666666
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 1,
+                "precision": 0.003105590062111801,
+                "recall": 0.16666666666666666
+              },
+              "0.2": {
+                "selected": 644,
+                "hits": 6,
+                "precision": 0.009316770186335404,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.16713409628662532,
+              "roc_auc": 0.915171405984237,
+              "0.05": {
+                "selected": 166,
+                "hits": 26,
+                "precision": 0.1566265060240964,
+                "recall": 0.2857142857142857
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 41,
+                "precision": 0.12386706948640483,
+                "recall": 0.45054945054945056
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 89,
+                "precision": 0.1346444780635401,
+                "recall": 0.978021978021978
+              }
+            }
+          },
+          "pressure32": {
+            "safe": {
+              "n": 3216,
+              "positives": 6,
+              "prevalence": 0.0018656716417910447,
+              "average_precision": 0.04794362137422409,
+              "roc_auc": 0.9785046728971962,
+              "0.05": {
+                "selected": 161,
+                "hits": 6,
+                "precision": 0.037267080745341616,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 6,
+                "precision": 0.018633540372670808,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 644,
+                "hits": 6,
+                "precision": 0.009316770186335404,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.5256068529422814,
+              "roc_auc": 0.9823888350826999,
+              "0.05": {
+                "selected": 166,
+                "hits": 78,
+                "precision": 0.46987951807228917,
+                "recall": 0.8571428571428571
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 89,
+                "precision": 0.2688821752265861,
+                "recall": 0.978021978021978
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 91,
+                "precision": 0.13767019667170954,
+                "recall": 1.0
+              }
+            }
+          },
+          "pressure128": {
+            "safe": {
+              "n": 3216,
+              "positives": 6,
+              "prevalence": 0.0018656716417910447,
+              "average_precision": 0.08884960009546766,
+              "roc_auc": 0.9806334371754932,
+              "0.05": {
+                "selected": 161,
+                "hits": 6,
+                "precision": 0.037267080745341616,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 6,
+                "precision": 0.018633540372670808,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 644,
+                "hits": 6,
+                "precision": 0.009316770186335404,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.5237097725343588,
+              "roc_auc": 0.9849213383937768,
+              "0.05": {
+                "selected": 166,
+                "hits": 80,
+                "precision": 0.4819277108433735,
+                "recall": 0.8791208791208791
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 91,
+                "precision": 0.27492447129909364,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 91,
+                "precision": 0.13767019667170954,
+                "recall": 1.0
+              }
+            }
+          },
+          "lookahead": {
+            "safe": {
+              "n": 3216,
+              "positives": 6,
+              "prevalence": 0.0018656716417910447,
+              "average_precision": 0.07651392594602205,
+              "roc_auc": 0.9792834890965731,
+              "0.05": {
+                "selected": 161,
+                "hits": 6,
+                "precision": 0.037267080745341616,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 6,
+                "precision": 0.018633540372670808,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 644,
+                "hits": 6,
+                "precision": 0.009316770186335404,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.5134849667743819,
+              "roc_auc": 0.9840349622349,
+              "0.05": {
+                "selected": 166,
+                "hits": 78,
+                "precision": 0.46987951807228917,
+                "recall": 0.8571428571428571
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 91,
+                "precision": 0.27492447129909364,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 91,
+                "precision": 0.13767019667170954,
+                "recall": 1.0
+              }
+            }
+          },
+          "random": {
+            "safe": {
+              "n": 3216,
+              "positives": 6,
+              "prevalence": 0.0018656716417910447,
+              "average_precision": 0.0018033288555538423,
+              "roc_auc": 0.4220664589823468,
+              "0.05": {
+                "selected": 161,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.2": {
+                "selected": 644,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.029138822998099924,
+              "roc_auc": 0.5005458571325903,
+              "0.05": {
+                "selected": 166,
+                "hits": 4,
+                "precision": 0.024096385542168676,
+                "recall": 0.04395604395604396
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 8,
+                "precision": 0.02416918429003021,
+                "recall": 0.08791208791208792
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 14,
+                "precision": 0.02118003025718608,
+                "recall": 0.15384615384615385
+              }
+            }
+          },
+          "transfer_current_tree": {
+            "safe": {
+              "n": 3216,
+              "positives": 6,
+              "prevalence": 0.0018656716417910447,
+              "average_precision": 0.7406832298136645,
+              "roc_auc": 0.9962616822429906,
+              "0.05": {
+                "selected": 161,
+                "hits": 6,
+                "precision": 0.037267080745341616,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 6,
+                "precision": 0.018633540372670808,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 644,
+                "hits": 6,
+                "precision": 0.009316770186335404,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.9116302534846947,
+              "roc_auc": 0.9960917313766893,
+              "0.05": {
+                "selected": 166,
+                "hits": 86,
+                "precision": 0.5180722891566265,
+                "recall": 0.945054945054945
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 91,
+                "precision": 0.27492447129909364,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 91,
+                "precision": 0.13767019667170954,
+                "recall": 1.0
+              }
+            }
+          },
+          "local_current_tree": {
+            "safe": {
+              "n": 3216,
+              "positives": 6,
+              "prevalence": 0.0018656716417910447,
+              "average_precision": 0.19750917819134634,
+              "roc_auc": 0.9880062305295949,
+              "0.05": {
+                "selected": 161,
+                "hits": 5,
+                "precision": 0.031055900621118012,
+                "recall": 0.8333333333333334
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 6,
+                "precision": 0.018633540372670808,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 644,
+                "hits": 6,
+                "precision": 0.009316770186335404,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.8028133771538556,
+              "roc_auc": 0.993937392411388,
+              "0.05": {
+                "selected": 166,
+                "hits": 86,
+                "precision": 0.5180722891566265,
+                "recall": 0.945054945054945
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 91,
+                "precision": 0.27492447129909364,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 91,
+                "precision": 0.13767019667170954,
+                "recall": 1.0
+              }
+            }
+          }
+        },
+        "15": {
+          "boundary": {
+            "safe": {
+              "n": 3211,
+              "positives": 1,
+              "prevalence": 0.0003114294612270321,
+              "average_precision": 0.023809523809523808,
+              "roc_auc": 0.993613707165109,
+              "0.05": {
+                "selected": 161,
+                "hits": 1,
+                "precision": 0.006211180124223602,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 1,
+                "precision": 0.003105590062111801,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 1,
+                "precision": 0.0015552099533437014,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.1705659832098894,
+              "roc_auc": 0.9226004810676599,
+              "0.05": {
+                "selected": 166,
+                "hits": 26,
+                "precision": 0.1566265060240964,
+                "recall": 0.325
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 41,
+                "precision": 0.12386706948640483,
+                "recall": 0.5125
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 78,
+                "precision": 0.11800302571860817,
+                "recall": 0.975
+              }
+            }
+          },
+          "pressure32": {
+            "safe": {
+              "n": 3211,
+              "positives": 1,
+              "prevalence": 0.0003114294612270321,
+              "average_precision": 1.0,
+              "roc_auc": 1.0,
+              "0.05": {
+                "selected": 161,
+                "hits": 1,
+                "precision": 0.006211180124223602,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 1,
+                "precision": 0.003105590062111801,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 1,
+                "precision": 0.0015552099533437014,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.5397223897497728,
+              "roc_auc": 0.9828871818746121,
+              "0.05": {
+                "selected": 166,
+                "hits": 70,
+                "precision": 0.42168674698795183,
+                "recall": 0.875
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 78,
+                "precision": 0.23564954682779457,
+                "recall": 0.975
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 80,
+                "precision": 0.12102874432677761,
+                "recall": 1.0
+              }
+            }
+          },
+          "pressure128": {
+            "safe": {
+              "n": 3211,
+              "positives": 1,
+              "prevalence": 0.0003114294612270321,
+              "average_precision": 0.5,
+              "roc_auc": 0.9996884735202493,
+              "0.05": {
+                "selected": 161,
+                "hits": 1,
+                "precision": 0.006211180124223602,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 1,
+                "precision": 0.003105590062111801,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 1,
+                "precision": 0.0015552099533437014,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.5345564674114234,
+              "roc_auc": 0.9852770018621974,
+              "0.05": {
+                "selected": 166,
+                "hits": 73,
+                "precision": 0.4397590361445783,
+                "recall": 0.9125
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 80,
+                "precision": 0.24169184290030213,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 80,
+                "precision": 0.12102874432677761,
+                "recall": 1.0
+              }
+            }
+          },
+          "lookahead": {
+            "safe": {
+              "n": 3211,
+              "positives": 1,
+              "prevalence": 0.0003114294612270321,
+              "average_precision": 0.3333333333333333,
+              "roc_auc": 0.9993769470404984,
+              "0.05": {
+                "selected": 161,
+                "hits": 1,
+                "precision": 0.006211180124223602,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 1,
+                "precision": 0.003105590062111801,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 1,
+                "precision": 0.0015552099533437014,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.5216832138924781,
+              "roc_auc": 0.9844118559900683,
+              "0.05": {
+                "selected": 166,
+                "hits": 73,
+                "precision": 0.4397590361445783,
+                "recall": 0.9125
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 79,
+                "precision": 0.23867069486404835,
+                "recall": 0.9875
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 80,
+                "precision": 0.12102874432677761,
+                "recall": 1.0
+              }
+            }
+          },
+          "random": {
+            "safe": {
+              "n": 3211,
+              "positives": 1,
+              "prevalence": 0.0003114294612270321,
+              "average_precision": 0.0011312217194570137,
+              "roc_auc": 0.7249221183800623,
+              "0.05": {
+                "selected": 161,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.029920366453824253,
+              "roc_auc": 0.5561607697082558,
+              "0.05": {
+                "selected": 166,
+                "hits": 6,
+                "precision": 0.03614457831325301,
+                "recall": 0.075
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 11,
+                "precision": 0.03323262839879154,
+                "recall": 0.1375
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 19,
+                "precision": 0.028744326777609682,
+                "recall": 0.2375
+              }
+            }
+          },
+          "transfer_current_tree": {
+            "safe": {
+              "n": 3211,
+              "positives": 1,
+              "prevalence": 0.0003114294612270321,
+              "average_precision": 0.022727272727272728,
+              "roc_auc": 0.9866043613707165,
+              "0.05": {
+                "selected": 161,
+                "hits": 1,
+                "precision": 0.006211180124223602,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 1,
+                "precision": 0.003105590062111801,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 1,
+                "precision": 0.0015552099533437014,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.8648153452546775,
+              "roc_auc": 0.9949468497827436,
+              "0.05": {
+                "selected": 166,
+                "hits": 76,
+                "precision": 0.4578313253012048,
+                "recall": 0.95
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 80,
+                "precision": 0.24169184290030213,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 80,
+                "precision": 0.12102874432677761,
+                "recall": 1.0
+              }
+            }
+          },
+          "local_current_tree": {
+            "safe": {
+              "n": 3211,
+              "positives": 1,
+              "prevalence": 0.0003114294612270321,
+              "average_precision": 0.14285714285714285,
+              "roc_auc": 0.9981308411214953,
+              "0.05": {
+                "selected": 161,
+                "hits": 1,
+                "precision": 0.006211180124223602,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 1,
+                "precision": 0.003105590062111801,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 1,
+                "precision": 0.0015552099533437014,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 80,
+              "prevalence": 0.024227740763173834,
+              "average_precision": 0.7765123211017209,
+              "roc_auc": 0.993187461204221,
+              "0.05": {
+                "selected": 166,
+                "hits": 75,
+                "precision": 0.45180722891566266,
+                "recall": 0.9375
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 80,
+                "precision": 0.24169184290030213,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 80,
+                "precision": 0.12102874432677761,
+                "recall": 1.0
+              }
+            }
+          }
+        },
+        "16": {
+          "boundary": {
+            "safe": {
+              "n": 3222,
+              "positives": 12,
+              "prevalence": 0.0037243947858473,
+              "average_precision": 0.021780792420327304,
+              "roc_auc": 0.8702881619937695,
+              "0.05": {
+                "selected": 162,
+                "hits": 1,
+                "precision": 0.006172839506172839,
+                "recall": 0.08333333333333333
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 1,
+                "precision": 0.0030959752321981426,
+                "recall": 0.08333333333333333
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 12,
+                "precision": 0.018604651162790697,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.16575425873287472,
+              "roc_auc": 0.9149147333513575,
+              "0.05": {
+                "selected": 166,
+                "hits": 26,
+                "precision": 0.1566265060240964,
+                "recall": 0.2857142857142857
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 41,
+                "precision": 0.12386706948640483,
+                "recall": 0.45054945054945056
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 89,
+                "precision": 0.1346444780635401,
+                "recall": 0.978021978021978
+              }
+            }
+          },
+          "pressure32": {
+            "safe": {
+              "n": 3222,
+              "positives": 12,
+              "prevalence": 0.0037243947858473,
+              "average_precision": 0.06760740837797835,
+              "roc_auc": 0.9743769470404984,
+              "0.05": {
+                "selected": 162,
+                "hits": 12,
+                "precision": 0.07407407407407407,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 12,
+                "precision": 0.03715170278637771,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 12,
+                "precision": 0.018604651162790697,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.525189199063354,
+              "roc_auc": 0.9818275775921369,
+              "0.05": {
+                "selected": 166,
+                "hits": 76,
+                "precision": 0.4578313253012048,
+                "recall": 0.8351648351648352
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 89,
+                "precision": 0.2688821752265861,
+                "recall": 0.978021978021978
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 91,
+                "precision": 0.13767019667170954,
+                "recall": 1.0
+              }
+            }
+          },
+          "pressure128": {
+            "safe": {
+              "n": 3222,
+              "positives": 12,
+              "prevalence": 0.0037243947858473,
+              "average_precision": 0.07796943248060936,
+              "roc_auc": 0.9774402907580477,
+              "0.05": {
+                "selected": 162,
+                "hits": 11,
+                "precision": 0.06790123456790123,
+                "recall": 0.9166666666666666
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 12,
+                "precision": 0.03715170278637771,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 12,
+                "precision": 0.018604651162790697,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.520505930249406,
+              "roc_auc": 0.9845038175776263,
+              "0.05": {
+                "selected": 166,
+                "hits": 79,
+                "precision": 0.4759036144578313,
+                "recall": 0.8681318681318682
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 91,
+                "precision": 0.27492447129909364,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 91,
+                "precision": 0.13767019667170954,
+                "recall": 1.0
+              }
+            }
+          },
+          "lookahead": {
+            "safe": {
+              "n": 3222,
+              "positives": 12,
+              "prevalence": 0.0037243947858473,
+              "average_precision": 0.07680027850065987,
+              "roc_auc": 0.977128764278297,
+              "0.05": {
+                "selected": 162,
+                "hits": 11,
+                "precision": 0.06790123456790123,
+                "recall": 0.9166666666666666
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 12,
+                "precision": 0.03715170278637771,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 12,
+                "precision": 0.018604651162790697,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.5225599908705406,
+              "roc_auc": 0.9846099089325498,
+              "0.05": {
+                "selected": 166,
+                "hits": 78,
+                "precision": 0.46987951807228917,
+                "recall": 0.8571428571428571
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 91,
+                "precision": 0.27492447129909364,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 91,
+                "precision": 0.13767019667170954,
+                "recall": 1.0
+              }
+            }
+          },
+          "random": {
+            "safe": {
+              "n": 3222,
+              "positives": 12,
+              "prevalence": 0.0037243947858473,
+              "average_precision": 0.003074245098929527,
+              "roc_auc": 0.39740394600207685,
+              "0.05": {
+                "selected": 162,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.025474130251609294,
+              "roc_auc": 0.458352298588985,
+              "0.05": {
+                "selected": 166,
+                "hits": 5,
+                "precision": 0.030120481927710843,
+                "recall": 0.054945054945054944
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 8,
+                "precision": 0.02416918429003021,
+                "recall": 0.08791208791208792
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 10,
+                "precision": 0.015128593040847202,
+                "recall": 0.10989010989010989
+              }
+            }
+          },
+          "transfer_current_tree": {
+            "safe": {
+              "n": 3222,
+              "positives": 12,
+              "prevalence": 0.0037243947858473,
+              "average_precision": 0.8021735209235209,
+              "roc_auc": 0.9975856697819314,
+              "0.05": {
+                "selected": 162,
+                "hits": 12,
+                "precision": 0.07407407407407407,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 12,
+                "precision": 0.03715170278637771,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 12,
+                "precision": 0.018604651162790697,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.9140705616810815,
+              "roc_auc": 0.9962696910688191,
+              "0.05": {
+                "selected": 166,
+                "hits": 87,
+                "precision": 0.5240963855421686,
+                "recall": 0.9560439560439561
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 91,
+                "precision": 0.27492447129909364,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 91,
+                "precision": 0.13767019667170954,
+                "recall": 1.0
+              }
+            }
+          },
+          "local_current_tree": {
+            "safe": {
+              "n": 3222,
+              "positives": 12,
+              "prevalence": 0.0037243947858473,
+              "average_precision": 0.2906654656802455,
+              "roc_auc": 0.991484942886812,
+              "0.05": {
+                "selected": 162,
+                "hits": 11,
+                "precision": 0.06790123456790123,
+                "recall": 0.9166666666666666
+              },
+              "0.1": {
+                "selected": 323,
+                "hits": 12,
+                "precision": 0.03715170278637771,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 645,
+                "hits": 12,
+                "precision": 0.018604651162790697,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 91,
+              "prevalence": 0.027559055118110236,
+              "average_precision": 0.8033242438829911,
+              "roc_auc": 0.993576339574471,
+              "0.05": {
+                "selected": 166,
+                "hits": 85,
+                "precision": 0.5120481927710844,
+                "recall": 0.9340659340659341
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 91,
+                "precision": 0.27492447129909364,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 91,
+                "precision": 0.13767019667170954,
+                "recall": 1.0
+              }
+            }
+          }
+        },
+        "17": {
+          "boundary": {
+            "safe": {
+              "n": 3211,
+              "positives": 4,
+              "prevalence": 0.0012457178449081284,
+              "average_precision": 0.06337535014005602,
+              "roc_auc": 0.9900997817274713,
+              "0.05": {
+                "selected": 161,
+                "hits": 4,
+                "precision": 0.024844720496894408,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 4,
+                "precision": 0.012422360248447204,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 4,
+                "precision": 0.006220839813374806,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.18856281704215364,
+              "roc_auc": 0.9190373032675234,
+              "0.05": {
+                "selected": 166,
+                "hits": 30,
+                "precision": 0.18072289156626506,
+                "recall": 0.3157894736842105
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 45,
+                "precision": 0.13595166163141995,
+                "recall": 0.47368421052631576
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 93,
+                "precision": 0.14069591527987896,
+                "recall": 0.9789473684210527
+              }
+            }
+          },
+          "pressure32": {
+            "safe": {
+              "n": 3211,
+              "positives": 4,
+              "prevalence": 0.0012457178449081284,
+              "average_precision": 0.14657913709493928,
+              "roc_auc": 0.9504989086373559,
+              "0.05": {
+                "selected": 161,
+                "hits": 3,
+                "precision": 0.018633540372670808,
+                "recall": 0.75
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 3,
+                "precision": 0.009316770186335404,
+                "recall": 0.75
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 4,
+                "precision": 0.006220839813374806,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.5600879782180366,
+              "roc_auc": 0.9811957395828205,
+              "0.05": {
+                "selected": 166,
+                "hits": 78,
+                "precision": 0.46987951807228917,
+                "recall": 0.8210526315789474
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 91,
+                "precision": 0.27492447129909364,
+                "recall": 0.9578947368421052
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 94,
+                "precision": 0.1422087745839637,
+                "recall": 0.9894736842105263
+              }
+            }
+          },
+          "pressure128": {
+            "safe": {
+              "n": 3211,
+              "positives": 4,
+              "prevalence": 0.0012457178449081284,
+              "average_precision": 0.1831302393915824,
+              "roc_auc": 0.9837854692859369,
+              "0.05": {
+                "selected": 161,
+                "hits": 3,
+                "precision": 0.018633540372670808,
+                "recall": 0.75
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 4,
+                "precision": 0.012422360248447204,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 4,
+                "precision": 0.006220839813374806,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.5662991819323817,
+              "roc_auc": 0.9853740994206751,
+              "0.05": {
+                "selected": 166,
+                "hits": 81,
+                "precision": 0.4879518072289157,
+                "recall": 0.8526315789473684
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 95,
+                "precision": 0.28700906344410876,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 95,
+                "precision": 0.1437216338880484,
+                "recall": 1.0
+              }
+            }
+          },
+          "lookahead": {
+            "safe": {
+              "n": 3211,
+              "positives": 4,
+              "prevalence": 0.0012457178449081284,
+              "average_precision": 0.30155736863711,
+              "roc_auc": 0.9784845650140319,
+              "0.05": {
+                "selected": 161,
+                "hits": 3,
+                "precision": 0.018633540372670808,
+                "recall": 0.75
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 4,
+                "precision": 0.012422360248447204,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 4,
+                "precision": 0.006220839813374806,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.5575526116866051,
+              "roc_auc": 0.9846848177506441,
+              "0.05": {
+                "selected": 166,
+                "hits": 82,
+                "precision": 0.4939759036144578,
+                "recall": 0.8631578947368421
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 95,
+                "precision": 0.28700906344410876,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 95,
+                "precision": 0.1437216338880484,
+                "recall": 1.0
+              }
+            }
+          },
+          "random": {
+            "safe": {
+              "n": 3211,
+              "positives": 4,
+              "prevalence": 0.0012457178449081284,
+              "average_precision": 0.0011223534537025182,
+              "roc_auc": 0.3352821951980044,
+              "0.05": {
+                "selected": 161,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.031215396428298334,
+              "roc_auc": 0.4969589549176965,
+              "0.05": {
+                "selected": 166,
+                "hits": 8,
+                "precision": 0.04819277108433735,
+                "recall": 0.08421052631578947
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 13,
+                "precision": 0.03927492447129909,
+                "recall": 0.1368421052631579
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 23,
+                "precision": 0.03479576399394856,
+                "recall": 0.24210526315789474
+              }
+            }
+          },
+          "transfer_current_tree": {
+            "safe": {
+              "n": 3211,
+              "positives": 4,
+              "prevalence": 0.0012457178449081284,
+              "average_precision": 0.10466852146263912,
+              "roc_auc": 0.9778609292173371,
+              "0.05": {
+                "selected": 161,
+                "hits": 4,
+                "precision": 0.024844720496894408,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 4,
+                "precision": 0.012422360248447204,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 4,
+                "precision": 0.006220839813374806,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.9107371924877948,
+              "roc_auc": 0.9956870661218059,
+              "0.05": {
+                "selected": 166,
+                "hits": 89,
+                "precision": 0.536144578313253,
+                "recall": 0.9368421052631579
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 95,
+                "precision": 0.28700906344410876,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 95,
+                "precision": 0.1437216338880484,
+                "recall": 1.0
+              }
+            }
+          },
+          "local_current_tree": {
+            "safe": {
+              "n": 3211,
+              "positives": 4,
+              "prevalence": 0.0012457178449081284,
+              "average_precision": 0.07510449320794146,
+              "roc_auc": 0.9855004677268475,
+              "0.05": {
+                "selected": 161,
+                "hits": 4,
+                "precision": 0.024844720496894408,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 322,
+                "hits": 4,
+                "precision": 0.012422360248447204,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 643,
+                "hits": 4,
+                "precision": 0.006220839813374806,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.8063144115558841,
+              "roc_auc": 0.9935305991827088,
+              "0.05": {
+                "selected": 166,
+                "hits": 88,
+                "precision": 0.5301204819277109,
+                "recall": 0.9263157894736842
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 95,
+                "precision": 0.28700906344410876,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 95,
+                "precision": 0.1437216338880484,
+                "recall": 1.0
+              }
+            }
+          }
+        },
+        "18": {
+          "boundary": {
+            "safe": {
+              "n": 3207,
+              "positives": 0,
+              "prevalence": 0.0,
+              "average_precision": null,
+              "roc_auc": null,
+              "0.05": {
+                "selected": 161,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.18856281704215364,
+              "roc_auc": 0.9190373032675234,
+              "0.05": {
+                "selected": 166,
+                "hits": 30,
+                "precision": 0.18072289156626506,
+                "recall": 0.3157894736842105
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 45,
+                "precision": 0.13595166163141995,
+                "recall": 0.47368421052631576
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 93,
+                "precision": 0.14069591527987896,
+                "recall": 0.9789473684210527
+              }
+            }
+          },
+          "pressure32": {
+            "safe": {
+              "n": 3207,
+              "positives": 0,
+              "prevalence": 0.0,
+              "average_precision": null,
+              "roc_auc": null,
+              "0.05": {
+                "selected": 161,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.5618905494478356,
+              "roc_auc": 0.9810513186614807,
+              "0.05": {
+                "selected": 166,
+                "hits": 78,
+                "precision": 0.46987951807228917,
+                "recall": 0.8210526315789474
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 91,
+                "precision": 0.27492447129909364,
+                "recall": 0.9578947368421052
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 94,
+                "precision": 0.1422087745839637,
+                "recall": 0.9894736842105263
+              }
+            }
+          },
+          "pressure128": {
+            "safe": {
+              "n": 3207,
+              "positives": 0,
+              "prevalence": 0.0,
+              "average_precision": null,
+              "roc_auc": null,
+              "0.05": {
+                "selected": 161,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.5703815234857923,
+              "roc_auc": 0.9855414963976827,
+              "0.05": {
+                "selected": 166,
+                "hits": 81,
+                "precision": 0.4879518072289157,
+                "recall": 0.8526315789473684
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 95,
+                "precision": 0.28700906344410876,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 95,
+                "precision": 0.1437216338880484,
+                "recall": 1.0
+              }
+            }
+          },
+          "lookahead": {
+            "safe": {
+              "n": 3207,
+              "positives": 0,
+              "prevalence": 0.0,
+              "average_precision": null,
+              "roc_auc": null,
+              "0.05": {
+                "selected": 161,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.5643422978481776,
+              "roc_auc": 0.9849080137199876,
+              "0.05": {
+                "selected": 166,
+                "hits": 80,
+                "precision": 0.4819277108433735,
+                "recall": 0.8421052631578947
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 95,
+                "precision": 0.28700906344410876,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 95,
+                "precision": 0.1437216338880484,
+                "recall": 1.0
+              }
+            }
+          },
+          "random": {
+            "safe": {
+              "n": 3207,
+              "positives": 0,
+              "prevalence": 0.0,
+              "average_precision": null,
+              "roc_auc": null,
+              "0.05": {
+                "selected": 161,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.0278197343927439,
+              "roc_auc": 0.4765430883101111,
+              "0.05": {
+                "selected": 166,
+                "hits": 4,
+                "precision": 0.024096385542168676,
+                "recall": 0.042105263157894736
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 9,
+                "precision": 0.027190332326283987,
+                "recall": 0.09473684210526316
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 18,
+                "precision": 0.02723146747352496,
+                "recall": 0.18947368421052632
+              }
+            }
+          },
+          "transfer_current_tree": {
+            "safe": {
+              "n": 3207,
+              "positives": 0,
+              "prevalence": 0.0,
+              "average_precision": null,
+              "roc_auc": null,
+              "0.05": {
+                "selected": 161,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.9104792774898389,
+              "roc_auc": 0.9956378317168038,
+              "0.05": {
+                "selected": 166,
+                "hits": 89,
+                "precision": 0.536144578313253,
+                "recall": 0.9368421052631579
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 95,
+                "precision": 0.28700906344410876,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 95,
+                "precision": 0.1437216338880484,
+                "recall": 1.0
+              }
+            }
+          },
+          "local_current_tree": {
+            "safe": {
+              "n": 3207,
+              "positives": 0,
+              "prevalence": 0.0,
+              "average_precision": null,
+              "roc_auc": null,
+              "0.05": {
+                "selected": 161,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": null
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 95,
+              "prevalence": 0.02877044215626893,
+              "average_precision": 0.8112033789509786,
+              "roc_auc": 0.99370456074705,
+              "0.05": {
+                "selected": 166,
+                "hits": 88,
+                "precision": 0.5301204819277109,
+                "recall": 0.9263157894736842
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 95,
+                "precision": 0.28700906344410876,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 95,
+                "precision": 0.1437216338880484,
+                "recall": 1.0
+              }
+            }
+          }
+        },
+        "19": {
+          "boundary": {
+            "safe": {
+              "n": 3207,
+              "positives": 1,
+              "prevalence": 0.0003118178983473651,
+              "average_precision": 0.0038314176245210726,
+              "roc_auc": 0.9320024953212726,
+              "0.05": {
+                "selected": 161,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 1,
+                "precision": 0.003115264797507788,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 1,
+                "precision": 0.001557632398753894,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 96,
+              "prevalence": 0.029073288915808602,
+              "average_precision": 0.18937318460810584,
+              "roc_auc": 0.9193439384487418,
+              "0.05": {
+                "selected": 166,
+                "hits": 30,
+                "precision": 0.18072289156626506,
+                "recall": 0.3125
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 46,
+                "precision": 0.13897280966767372,
+                "recall": 0.4791666666666667
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 94,
+                "precision": 0.1422087745839637,
+                "recall": 0.9791666666666666
+              }
+            }
+          },
+          "pressure32": {
+            "safe": {
+              "n": 3207,
+              "positives": 1,
+              "prevalence": 0.0003118178983473651,
+              "average_precision": 0.0055248618784530384,
+              "roc_auc": 0.9438552713661884,
+              "0.05": {
+                "selected": 161,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 1,
+                "precision": 0.003115264797507788,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 1,
+                "precision": 0.001557632398753894,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 96,
+              "prevalence": 0.029073288915808602,
+              "average_precision": 0.5566418623771555,
+              "roc_auc": 0.9803395976294449,
+              "0.05": {
+                "selected": 166,
+                "hits": 77,
+                "precision": 0.463855421686747,
+                "recall": 0.8020833333333334
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 91,
+                "precision": 0.27492447129909364,
+                "recall": 0.9479166666666666
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 95,
+                "precision": 0.1437216338880484,
+                "recall": 0.9895833333333334
+              }
+            }
+          },
+          "pressure128": {
+            "safe": {
+              "n": 3207,
+              "positives": 1,
+              "prevalence": 0.0003118178983473651,
+              "average_precision": 0.010752688172043012,
+              "roc_auc": 0.9713038053649408,
+              "0.05": {
+                "selected": 161,
+                "hits": 1,
+                "precision": 0.006211180124223602,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 1,
+                "precision": 0.003115264797507788,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 1,
+                "precision": 0.001557632398753894,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 96,
+              "prevalence": 0.029073288915808602,
+              "average_precision": 0.566850681968753,
+              "roc_auc": 0.9851320440840091,
+              "0.05": {
+                "selected": 166,
+                "hits": 81,
+                "precision": 0.4879518072289157,
+                "recall": 0.84375
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 96,
+                "precision": 0.29003021148036257,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 96,
+                "precision": 0.14523449319213314,
+                "recall": 1.0
+              }
+            }
+          },
+          "lookahead": {
+            "safe": {
+              "n": 3207,
+              "positives": 1,
+              "prevalence": 0.0003118178983473651,
+              "average_precision": 0.010416666666666666,
+              "roc_auc": 0.9703680598877106,
+              "0.05": {
+                "selected": 161,
+                "hits": 1,
+                "precision": 0.006211180124223602,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 1,
+                "precision": 0.003115264797507788,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 1,
+                "precision": 0.001557632398753894,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 96,
+              "prevalence": 0.029073288915808602,
+              "average_precision": 0.5624228646306172,
+              "roc_auc": 0.9847194063214806,
+              "0.05": {
+                "selected": 166,
+                "hits": 81,
+                "precision": 0.4879518072289157,
+                "recall": 0.84375
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 96,
+                "precision": 0.29003021148036257,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 96,
+                "precision": 0.14523449319213314,
+                "recall": 1.0
+              }
+            }
+          },
+          "random": {
+            "safe": {
+              "n": 3207,
+              "positives": 1,
+              "prevalence": 0.0003118178983473651,
+              "average_precision": 0.00037893141341417203,
+              "roc_auc": 0.17716781035558327,
+              "0.05": {
+                "selected": 161,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 0,
+                "precision": 0.0,
+                "recall": 0.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 96,
+              "prevalence": 0.029073288915808602,
+              "average_precision": 0.033076696359109384,
+              "roc_auc": 0.4829616344354336,
+              "0.05": {
+                "selected": 166,
+                "hits": 8,
+                "precision": 0.04819277108433735,
+                "recall": 0.08333333333333333
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 13,
+                "precision": 0.03927492447129909,
+                "recall": 0.13541666666666666
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 20,
+                "precision": 0.030257186081694403,
+                "recall": 0.20833333333333334
+              }
+            }
+          },
+          "transfer_current_tree": {
+            "safe": {
+              "n": 3207,
+              "positives": 1,
+              "prevalence": 0.0003118178983473651,
+              "average_precision": 0.01098901098901099,
+              "roc_auc": 0.9719276356830941,
+              "0.05": {
+                "selected": 161,
+                "hits": 1,
+                "precision": 0.006211180124223602,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 1,
+                "precision": 0.003115264797507788,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 1,
+                "precision": 0.001557632398753894,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 96,
+              "prevalence": 0.029073288915808602,
+              "average_precision": 0.9045894961739179,
+              "roc_auc": 0.9952400447078396,
+              "0.05": {
+                "selected": 166,
+                "hits": 88,
+                "precision": 0.5301204819277109,
+                "recall": 0.9166666666666666
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 96,
+                "precision": 0.29003021148036257,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 96,
+                "precision": 0.14523449319213314,
+                "recall": 1.0
+              }
+            }
+          },
+          "local_current_tree": {
+            "safe": {
+              "n": 3207,
+              "positives": 1,
+              "prevalence": 0.0003118178983473651,
+              "average_precision": 0.01,
+              "roc_auc": 0.9691203992514037,
+              "0.05": {
+                "selected": 161,
+                "hits": 1,
+                "precision": 0.006211180124223602,
+                "recall": 1.0
+              },
+              "0.1": {
+                "selected": 321,
+                "hits": 1,
+                "precision": 0.003115264797507788,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 642,
+                "hits": 1,
+                "precision": 0.001557632398753894,
+                "recall": 1.0
+              }
+            },
+            "all": {
+              "n": 3302,
+              "positives": 96,
+              "prevalence": 0.029073288915808602,
+              "average_precision": 0.80764512744298,
+              "roc_auc": 0.9933929221251818,
+              "0.05": {
+                "selected": 166,
+                "hits": 88,
+                "precision": 0.5301204819277109,
+                "recall": 0.9166666666666666
+              },
+              "0.1": {
+                "selected": 331,
+                "hits": 96,
+                "precision": 0.29003021148036257,
+                "recall": 1.0
+              },
+              "0.2": {
+                "selected": 661,
+                "hits": 96,
+                "precision": 0.14523449319213314,
+                "recall": 1.0
+              }
+            }
+          }
+        }
+      },
+      "operational": {
+        "boundary": {
+          "macro_safe_ap": 0.026791301041104797,
+          "prediction_seconds": 0.0,
+          "budgets": {
+            "0.05": {
+              "selected": 1660,
+              "hits": 18,
+              "events": 52,
+              "recall": 0.34615384615384615,
+              "precision": 0.010843373493975903
+            },
+            "0.1": {
+              "selected": 3310,
+              "hits": 20,
+              "events": 52,
+              "recall": 0.38461538461538464,
+              "precision": 0.006042296072507553
+            },
+            "0.2": {
+              "selected": 6610,
+              "hits": 51,
+              "events": 52,
+              "recall": 0.9807692307692307,
+              "precision": 0.0077155824508320725
+            }
+          }
+        },
+        "pressure32": {
+          "macro_safe_ap": 0.188373710266801,
+          "prediction_seconds": 0.0,
+          "budgets": {
+            "0.05": {
+              "selected": 1660,
+              "hits": 35,
+              "events": 52,
+              "recall": 0.6730769230769231,
+              "precision": 0.02108433734939759
+            },
+            "0.1": {
+              "selected": 3310,
+              "hits": 49,
+              "events": 52,
+              "recall": 0.9423076923076923,
+              "precision": 0.014803625377643504
+            },
+            "0.2": {
+              "selected": 6610,
+              "hits": 51,
+              "events": 52,
+              "recall": 0.9807692307692307,
+              "precision": 0.0077155824508320725
+            }
+          }
+        },
+        "pressure128": {
+          "macro_safe_ap": 0.173789990371716,
+          "prediction_seconds": 0.0,
+          "budgets": {
+            "0.05": {
+              "selected": 1660,
+              "hits": 39,
+              "events": 52,
+              "recall": 0.75,
+              "precision": 0.023493975903614458
+            },
+            "0.1": {
+              "selected": 3310,
+              "hits": 52,
+              "events": 52,
+              "recall": 1.0,
+              "precision": 0.01570996978851964
+            },
+            "0.2": {
+              "selected": 6610,
+              "hits": 52,
+              "events": 52,
+              "recall": 1.0,
+              "precision": 0.007866868381240545
+            }
+          }
+        },
+        "lookahead": {
+          "macro_safe_ap": 0.16886851960213844,
+          "prediction_seconds": 0.0,
+          "budgets": {
+            "0.05": {
+              "selected": 1660,
+              "hits": 38,
+              "events": 52,
+              "recall": 0.7307692307692307,
+              "precision": 0.02289156626506024
+            },
+            "0.1": {
+              "selected": 3310,
+              "hits": 52,
+              "events": 52,
+              "recall": 1.0,
+              "precision": 0.01570996978851964
+            },
+            "0.2": {
+              "selected": 6610,
+              "hits": 52,
+              "events": 52,
+              "recall": 1.0,
+              "precision": 0.007866868381240545
+            }
+          }
+        },
+        "random": {
+          "macro_safe_ap": 0.0027952154266478444,
+          "prediction_seconds": 0.0,
+          "budgets": {
+            "0.05": {
+              "selected": 1660,
+              "hits": 3,
+              "events": 52,
+              "recall": 0.057692307692307696,
+              "precision": 0.0018072289156626507
+            },
+            "0.1": {
+              "selected": 3310,
+              "hits": 4,
+              "events": 52,
+              "recall": 0.07692307692307693,
+              "precision": 0.0012084592145015106
+            },
+            "0.2": {
+              "selected": 6610,
+              "hits": 6,
+              "events": 52,
+              "recall": 0.11538461538461539,
+              "precision": 0.000907715582450832
+            }
+          }
+        },
+        "transfer_current_tree": {
+          "macro_safe_ap": 0.2960173242561943,
+          "prediction_seconds": 0.06212738202884793,
+          "budgets": {
+            "0.05": {
+              "selected": 1660,
+              "hits": 46,
+              "events": 52,
+              "recall": 0.8846153846153846,
+              "precision": 0.027710843373493974
+            },
+            "0.1": {
+              "selected": 3310,
+              "hits": 52,
+              "events": 52,
+              "recall": 1.0,
+              "precision": 0.01570996978851964
+            },
+            "0.2": {
+              "selected": 6610,
+              "hits": 52,
+              "events": 52,
+              "recall": 1.0,
+              "precision": 0.007866868381240545
+            }
+          }
+        },
+        "local_current_tree": {
+          "macro_safe_ap": 0.13228773060588989,
+          "prediction_seconds": 0.06113021541386843,
+          "budgets": {
+            "0.05": {
+              "selected": 1660,
+              "hits": 46,
+              "events": 52,
+              "recall": 0.8846153846153846,
+              "precision": 0.027710843373493974
+            },
+            "0.1": {
+              "selected": 3310,
+              "hits": 52,
+              "events": 52,
+              "recall": 1.0,
+              "precision": 0.01570996978851964
+            },
+            "0.2": {
+              "selected": 6610,
+              "hits": 52,
+              "events": 52,
+              "recall": 1.0,
+              "precision": 0.007866868381240545
+            }
+          }
+        }
+      }
+    }
+  },
+  "total_seconds": 3.6875726638827473
+}

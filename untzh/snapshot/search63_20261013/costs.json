@@ -1,0 +1,158 @@
+{
+  "prepare_seconds": 3.6475488471332937,
+  "training": {
+    "absolute_control": {
+      "seconds": 1.6537863118574023,
+      "spec": {
+        "signal": "absolute"
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000002,
+      "historical_control_equal": true
+    },
+    "gap128": {
+      "seconds": 1.7230508930515498,
+      "spec": {
+        "signal": "gap"
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000002
+    },
+    "gap_full": {
+      "seconds": 1.7864297861233354,
+      "spec": {
+        "signal": "gap_full"
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000002
+    },
+    "margin_full": {
+      "seconds": 1.824437681119889,
+      "spec": {
+        "signal": "margin_full"
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000002
+    },
+    "forecast_margin": {
+      "seconds": 2.2504679998382926,
+      "spec": {
+        "signal": "forecast_margin"
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000002
+    },
+    "capacity_full": {
+      "seconds": 2.009038349147886,
+      "spec": {
+        "signal": "capacity_full"
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000003
+    },
+    "capacity_guard": {
+      "seconds": 2.196522952057421,
+      "spec": {
+        "signal": "capacity_guard"
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000002
+    },
+    "risk_margin": {
+      "seconds": 2.9021579360123724,
+      "spec": {
+        "signal": "margin_full",
+        "route": "risk"
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000002
+    },
+    "utility_absolute": {
+      "seconds": 2.638445412972942,
+      "spec": {
+        "signal": "absolute",
+        "route": "utility"
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000003
+    },
+    "entity_project_absolute": {
+      "seconds": 1.56097295996733,
+      "spec": {
+        "signal": "absolute",
+        "project": true
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000002
+    },
+    "entity_project_gap": {
+      "seconds": 1.736152381869033,
+      "spec": {
+        "signal": "gap_full",
+        "project": true
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000002
+    },
+    "postadam_absolute": {
+      "seconds": 1.4962176140397787,
+      "spec": {
+        "signal": "absolute",
+        "postadam": true
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000003
+    },
+    "postadam_margin": {
+      "seconds": 1.6608562809415162,
+      "spec": {
+        "signal": "margin_full",
+        "postadam": true
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000002
+    },
+    "reweight_only": {
+      "seconds": 1.2225433341227472,
+      "spec": {
+        "signal": "none",
+        "weight": 1.5
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.0
+    },
+    "reweight_absolute": {
+      "seconds": 1.4719288668129593,
+      "spec": {
+        "signal": "absolute",
+        "weight": 1.5
+      },
+      "steps": 370,
+      "frozen_rows_equal": true,
+      "max_gradient_ratio": 0.10000000000000002
+    }
+  },
+  "evaluation": {
+    "seconds": 46.12570172804408,
+    "valid_seconds": 5.804185513872653,
+    "full_train_arms": [
+      "entity_project_absolute",
+      "postadam_absolute"
+    ]
+  },
+  "total_seconds": 78.40384517982602
+}

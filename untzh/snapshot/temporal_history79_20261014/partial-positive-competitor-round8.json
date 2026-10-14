@@ -1,0 +1,57 @@
+{
+  "scope": "Samefixed40; conditionalcandidate-supportscenario, not adjudicatedwhole-rankreasonablefraction or newmodelscore",
+  "sample_id": "S17",
+  "gold_fact": [
+    "Lee Myung Bak",
+    "Express intent to meet or negotiate",
+    "Dmitry Anatolyevich Medvedev",
+    "2010-11-10"
+  ],
+  "original_rank": 1.0,
+  "final_rank": 8.0,
+  "candidate_evidence": [
+    {
+      "candidate": {
+        "entity_id": 329,
+        "fact": [
+          "Lee Myung Bak",
+          "Express intent to meet or negotiate",
+          "Barack Obama",
+          "2010-11-10"
+        ],
+        "after_gap": 0.5482597351074219,
+        "before_gap": -1.754837989807129,
+        "was_new_candidate": false,
+        "train_first_year": 2005
+      },
+      "source_ids": [
+        "LEE_INTENT_KOREATIMES"
+      ],
+      "semantic_truth": "conditional_support_for_announced_intent_with_date_and_attribution_qualification"
+    },
+    {
+      "candidate": {
+        "entity_id": 163,
+        "fact": [
+          "Lee Myung Bak",
+          "Express intent to meet or negotiate",
+          "Angela Merkel",
+          "2010-11-10"
+        ],
+        "after_gap": 0.3006753921508789,
+        "before_gap": -4.162407875061035,
+        "was_new_candidate": false,
+        "train_first_year": 2005
+      },
+      "source_ids": [
+        "LEE_INTENT_KOREATIMES"
+      ],
+      "semantic_truth": "conditional_support_for_announced_intent_with_date_and_attribution_qualification"
+    }
+  ],
+  "conditional_rank_after_supplemental_filter": 6.0,
+  "rank_drift_before": 7.0,
+  "conditional_rank_drift_after": 5.0,
+  "remaining_new_outrankers_unknown_n": 5,
+  "qualification": "Articlepublication19:05KSTNov10 and willmeetphrase;todaywordinconsistentwithactualNov11meeting and notdirectLeequotes. USdatedAP/CBSreflecttimezones. Onlyintentpredicate, noNov10Consultclaim. Nooriginalbenchmarkmodification."
+}

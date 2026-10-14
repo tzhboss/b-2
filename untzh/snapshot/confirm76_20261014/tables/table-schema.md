@@ -1,0 +1,1 @@
+8新组全部真实VALID/筛中TRAIN；onset10-controls独立JSON含来源与额外TRAIN数组。无mock/跨seedstd。

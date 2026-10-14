@@ -1,0 +1,2216 @@
+{
+  "population_n": 42851,
+  "sample_n": 40,
+  "sample_seed": 20261014,
+  "sampling_design": "simple random sample without replacement from cached directional-query population; no source-based exclusion or replacement",
+  "initial_lookup_n": 40,
+  "detailed_source_review_n": 34,
+  "detailed_source_attempt_blocked_n": 5,
+  "initial_only_unresolved_n": 0,
+  "coded_context_identity_review_n": 1,
+  "gold_supported_semantically_n": 8,
+  "gold_literal_physical_event_date_counterindication_n": 1,
+  "gold_literal_physical_event_date_counterindication_query_ids": [
+    "S32"
+  ],
+  "gold_literal_date_counterindication_note": "Conditional on actual occurrence semantics and official itinerary coverage; original report/coder semantics remains unresolved. Separate from final-answer truth and whole-rank error; not a population estimate.",
+  "top1_unchanged_n": 9,
+  "all40_original_coded_story_context_available": true,
+  "final_top1_supported_semantically_n": 2,
+  "final_top1_supported_fraction_of_fixed_sample": 0.05,
+  "final_top1_explicitly_contradicted_n": 0,
+  "final_top1_unresolved_n": 38,
+  "unrecorded_but_semantically_supported_n": 1,
+  "reasonable_rank_adjustment_confirmed_n": 0,
+  "world_reasonable_fraction": null,
+  "world_error_fraction": null,
+  "conditional_missing_positive_removes_benchmark_drift_n": 1,
+  "conditional_missing_positive_drift_fraction_of_fixed_sample": 0.025,
+  "missing_positive_diagnostic_note": "One conditional filter explanation, not adjudicated reasonable whole-rank proportion; source mapping and original gold validity qualifications apply.",
+  "caution": "2/40 is current final-Top1 support coverage, not a reasonable-change estimate; zero confirmed contradictions does not mean zero real errors. 38 final-Top1 truths remain unresolved. Do not estimate rates only among source-accessible cases.",
+  "finite_sample_partial_identification": {
+    "final_top1_false_fraction_bounds": [
+      0.0,
+      0.95
+    ],
+    "final_top1_supported_semantic_truth_fraction_bounds": [
+      0.05,
+      1.0
+    ],
+    "whole_rank_reasonable_fraction_bounds": [
+      0.0,
+      1.0
+    ],
+    "scope": "Finite fixed40 only, conditional on semantic mapping and source soundness; not population confidence intervals, whole-rank proportions, or newly introduced error rates."
+  },
+  "definition": "Final Top1 truth at query semantic granularity and whole-rank justification are separate. Country-level semantic evidence does not assert exact automatic coder output.",
+  "costs": {
+    "sampling_seconds": 0.3560873721726239,
+    "selected_story_scan_seconds": 10.215760502964258,
+    "all_story_scan_initial_seconds": null,
+    "cached_filter_interpretation_seconds": 0.0551980989985168,
+    "all_story_scan_2014_continuation_seconds": 2.816116173984483,
+    "diagnostic_scoring_and_identity_costs": {
+      "filtered_top5_diagnostic_scoring_seconds": 0.9433775290381163,
+      "all_new_outranker_diagnostic_scoring_seconds": 1.0312337439972907,
+      "raw_identity_context_seconds": 8.810798648977652,
+      "scope": "These two diagnostics did perform new neural scoring of unchanged checkpoints. No training. Does not include browsing, code creation, source interpretation, prior full raw scan, or mirror.",
+      "round8_raw_identity_seconds": 6.774842290906236,
+      "round9_raw_identity_seconds": 5.805915206903592
+    },
+    "scope": "Excludes browsing, code writing, source interpretation and mirror. No training. Initial provenance work had no scoring; subsequent Top5/all-crossing diagnostics rescored unchanged models."
+  },
+  "temporal_competitor_progress": {
+    "fixed_sample_n": 40,
+    "population_worsened_n": 42851,
+    "new_strict_outranker_total_n": 5549,
+    "temporal_witness_candidate_n": 13,
+    "temporal_witness_query_ids": [
+      "S04",
+      "S21",
+      "S38"
+    ],
+    "temporal_witness_query_n": 3,
+    "temporal_witness_query_coverage": 0.075,
+    "supported_gold_with_temporal_error_component_query_ids": [
+      "S38"
+    ],
+    "supported_gold_with_temporal_error_component_query_n": 1,
+    "supported_gold_with_temporal_error_component_sample_lower_bound_conditional": 0.025,
+    "reality_error_population_fraction": null,
+    "reasonable_whole_rank_fraction": null,
+    "conditions": "Organization/affiliation names refer to the named organization at query date, rather than retroactive aliases for predecessors. Source mapping is at benchmark semantic granularity. Fixed-sample witness coverage is not a population estimate or complete UFR.",
+    "excluded_identity_ambiguous_witnesses": [
+      {
+        "sample_ids": [
+          "S04",
+          "S22"
+        ],
+        "candidate": "Council for National Security",
+        "reason": "Country Thailand confirmed, but raw dates January/March 2006 predate coup junta; same name may cover longstanding security institution. Formation identity not resolved."
+      },
+      {
+        "sample_ids": [
+          "S33"
+        ],
+        "candidate": "Social Democratic Party (China)",
+        "reason": "RawcountryChina, four2010records; not linked toTaiwanSDPfounded2015. Excludedthatformationmapping."
+      },
+      {
+        "sample_ids": [
+          "S38"
+        ],
+        "candidate": "National Salvation Government",
+        "reason": "2014Libyanbody formation documented. Rawname hasJune7/25/26 records precedingAugustformation; generic/proposedgovernment and crosscountrycoding ambiguity. No strictmapping toAugustadministration."
+      },
+      {
+        "sample_ids": [
+          "S24"
+        ],
+        "candidate": "Democratic Alliance (Africa)",
+        "reason": "Rawcountryempty, SouthAfricancontexts; do not map to a laterfoundedAfricanparty to manufacture temporalnegative. ExistingSouthAfricanDApredates2009."
+      }
+    ],
+    "costs": {
+      "filtered_top5_diagnostic_scoring_seconds": 0.9433775290381163,
+      "all_new_outranker_diagnostic_scoring_seconds": 1.0312337439972907,
+      "raw_identity_context_seconds": 8.810798648977652,
+      "scope": "These two diagnostics did perform new neural scoring of unchanged checkpoints. No training. Does not include browsing, code creation, source interpretation, prior full raw scan, or mirror.",
+      "round8_raw_identity_seconds": 6.774842290906236,
+      "round9_raw_identity_seconds": 5.805915206903592
+    },
+    "known_error_rank_components_by_query": {
+      "S04": 8,
+      "S21": 1,
+      "S38": 4
+    },
+    "round8_new_witness_n": 6
+  },
+  "records": [
+    {
+      "sample_id": "S01",
+      "test_directional_index": 56272,
+      "direction": "head",
+      "gold_fact": [
+        "China",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Citizen (Sudan)",
+        "2008-05-16"
+      ],
+      "before_top1_fact": [
+        "Military Personnel - Special (Sudan)",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Citizen (Sudan)",
+        "2008-05-16"
+      ],
+      "after_top1_fact": [
+        "Sudan",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Citizen (Sudan)",
+        "2008-05-16"
+      ],
+      "original_gold_rank": 3.0,
+      "final_gold_rank": 47.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "13141289",
+        "year": 2008,
+        "row": 380317,
+        "story_id": "12626779",
+        "sentence_number": "5",
+        "publisher": "Xinhua News Agency"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "R6_SUDAN_COURSE"
+      ],
+      "rationale": "Actual April7 course and promise known; sampled May16 cooperation intention not established. Sudan finalTop1 not contradicted by China cooperation with Sudan."
+    },
+    {
+      "sample_id": "S02",
+      "test_directional_index": 45818,
+      "direction": "tail",
+      "gold_fact": [
+        "Mahmoud Abbas",
+        "Consult",
+        "Envoy (United States)",
+        "2013-09-17"
+      ],
+      "before_top1_fact": [
+        "Mahmoud Abbas",
+        "Consult",
+        "Barack Obama",
+        "2013-09-17"
+      ],
+      "after_top1_fact": [
+        "Mahmoud Abbas",
+        "Consult",
+        "Benjamin Netanyahu",
+        "2013-09-17"
+      ],
+      "original_gold_rank": 2.0,
+      "final_gold_rank": 4.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "20488840",
+        "year": 2013,
+        "row": 520215,
+        "story_id": "27890382",
+        "sentence_number": "5",
+        "publisher": "Xinhua News Agency"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "stage": "detailed_source_review",
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "supported_at_query_semantic_granularity",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "ABBAS_INDYK_2013"
+      ],
+      "rationale": "Gold US envoy consultation supported on exact date. Future Obama meeting is distinct. Neither Obama nor Netanyahu same-day consultation is exhaustively excluded."
+    },
+    {
+      "sample_id": "S03",
+      "test_directional_index": 62572,
+      "direction": "head",
+      "gold_fact": [
+        "Ananda",
+        "Make statement",
+        "Police (Indonesia)",
+        "2008-04-18"
+      ],
+      "before_top1_fact": [
+        "Lawyer/Attorney (Indonesia)",
+        "Make statement",
+        "Police (Indonesia)",
+        "2008-04-18"
+      ],
+      "after_top1_fact": [
+        "Lawyer/Attorney (Indonesia)",
+        "Make statement",
+        "Police (Indonesia)",
+        "2008-04-18"
+      ],
+      "original_gold_rank": 10.0,
+      "final_gold_rank": 121.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "13023657",
+        "year": 2008,
+        "row": 300021,
+        "story_id": "12471808",
+        "sentence_number": "6",
+        "publisher": "The Jakarta Post"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "stage": "coded_context_identity_review",
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "ANANDA_RAW_CONTEXT"
+      ],
+      "rationale": "Do not substitute the Indonesian racing driver for the Myanmar Buddhist actor code; final lawyer top1 is unchanged and exact article/identity remain unknown."
+    },
+    {
+      "sample_id": "S04",
+      "test_directional_index": 54040,
+      "direction": "head",
+      "gold_fact": [
+        "Lucy Kibaki",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "before_top1_fact": [
+        "Lucy Kibaki",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "after_top1_fact": [
+        "Raheel Sharif",
+        "Protest violently, riot",
+        "Nation Media Group",
+        "2005-05-16"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 2774.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "8781257",
+        "year": 2005,
+        "row": 387058,
+        "story_id": "5273848",
+        "sentence_number": "5",
+        "publisher": "Agence France-Presse"
+      },
+      "before_original_event_metadata": {
+        "event_id": "8781257",
+        "year": 2005,
+        "row": 387058,
+        "story_id": "5273848",
+        "sentence_number": "5",
+        "publisher": "Agence France-Presse"
+      },
+      "after_original_event_metadata": null,
+      "stage": "detailed_source_review",
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown_exact_date_with_incident_date_counterevidence",
+      "gold_truth": "unknown_exact_date_with_incident_date_counterevidence",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "KIBAKI_JUDGMENT_MIRROR",
+        "KIBAKI_NEWS",
+        "AAP_FORMATION_OFFICIAL",
+        "FREE_EGYPTIANS_LAUNCH",
+        "M23_CANADA_HISTORY",
+        "NUSRA_USDOS_HISTORY"
+      ],
+      "rationale": "The named historical incident involved Lucy on May 2-3; the May16 raw story also contains a lawsuit code in sentence2. Gold riot is sentence5, suggesting retrospective narration but source ID/article identity remains unproven. Raheel's final prediction is highly implausible; implausibility and different nationality do not suffice for a proven negative."
+    },
+    {
+      "sample_id": "S05",
+      "test_directional_index": 91398,
+      "direction": "head",
+      "gold_fact": [
+        "Benazir Bhutto",
+        "Consult",
+        "Georgios Papandreou",
+        "2007-10-21"
+      ],
+      "before_top1_fact": [
+        "Panhellenic Socialist Movement",
+        "Consult",
+        "Georgios Papandreou",
+        "2007-10-21"
+      ],
+      "after_top1_fact": [
+        "Alexis Tsipras",
+        "Consult",
+        "Georgios Papandreou",
+        "2007-10-21"
+      ],
+      "original_gold_rank": 2.0,
+      "final_gold_rank": 246.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "12243233",
+        "year": 2007,
+        "row": 813620,
+        "story_id": "10601815",
+        "sentence_number": "1",
+        "publisher": "Athens News Agency"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "stage": "detailed_source_review",
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "PAPANDREOU_NONMATCH_2007"
+      ],
+      "rationale": "Opened campaign article is not the sampled Bhutto call. HRI guessed archive path inaccessible; neither supports nor contradicts final Tsipras."
+    },
+    {
+      "sample_id": "S06",
+      "test_directional_index": 67938,
+      "direction": "head",
+      "gold_fact": [
+        "China",
+        "Host a visit",
+        "Envoy (France)",
+        "2009-11-05"
+      ],
+      "before_top1_fact": [
+        "France",
+        "Host a visit",
+        "Envoy (France)",
+        "2009-11-05"
+      ],
+      "after_top1_fact": [
+        "France",
+        "Host a visit",
+        "Envoy (France)",
+        "2009-11-05"
+      ],
+      "original_gold_rank": 4.0,
+      "final_gold_rank": 5.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "15224021",
+        "year": 2009,
+        "row": 751249,
+        "story_id": "10260211",
+        "sentence_number": "1",
+        "publisher": "Associated Press Newswires"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "supported_at_query_semantic_granularity",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "LANG_BEIJING_AP_EXCERPT",
+        "LANG_TAIWAN_FETCH"
+      ],
+      "rationale": "Read dated AP excerpt supports November5 Jack Lang arrival in Beijing. Final rawTop1 France unchanged; it does not explain new rank loss. Cache identifies The Hague as sole newly overtaking candidate (+0.3540363 after, -6.7071538 before). Generic French envoy may mean other people; without comprehensive itinerary or their identities The Hague cannot be proved false from Lang being in China."
+    },
+    {
+      "sample_id": "S07",
+      "test_directional_index": 20966,
+      "direction": "tail",
+      "gold_fact": [
+        "Thailand",
+        "Criticize or denounce",
+        "Cambodia",
+        "2009-11-16"
+      ],
+      "before_top1_fact": [
+        "Thailand",
+        "Criticize or denounce",
+        "Cambodia",
+        "2009-11-16"
+      ],
+      "after_top1_fact": [
+        "Thailand",
+        "Criticize or denounce",
+        "China",
+        "2009-11-16"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 2.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "15265376",
+        "year": 2009,
+        "row": 775024,
+        "story_id": "10911387",
+        "sentence_number": "1",
+        "publisher": "Thai News Service"
+      },
+      "before_original_event_metadata": {
+        "event_id": "15265376",
+        "year": 2009,
+        "row": 775024,
+        "story_id": "10911387",
+        "sentence_number": "1",
+        "publisher": "Thai News Service"
+      },
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "THAI_CAMBODIA_VOA_NOV2009",
+        "THAI_CAMBODIA_WSWS_NOV16"
+      ],
+      "rationale": "Regional dispute corroborated but exact November16 criticism not established. China is sole new filtered outranker (+0.2151604 after, -3.8191605 before); no direct support or contradiction for that same-day criticism."
+    },
+    {
+      "sample_id": "S08",
+      "test_directional_index": 72723,
+      "direction": "head",
+      "gold_fact": [
+        "Foreign Affairs (South Korea)",
+        "Expel or withdraw",
+        "Media Personnel (International)",
+        "2008-09-05"
+      ],
+      "before_top1_fact": [
+        "China",
+        "Expel or withdraw",
+        "Media Personnel (International)",
+        "2008-09-05"
+      ],
+      "after_top1_fact": [
+        "China",
+        "Expel or withdraw",
+        "Media Personnel (International)",
+        "2008-09-05"
+      ],
+      "original_gold_rank": 10.0,
+      "final_gold_rank": 97.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "13603816",
+        "year": 2008,
+        "row": 680367,
+        "story_id": "11405090",
+        "sentence_number": "6",
+        "publisher": "Reuters News"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "R6_KIM_REUTERS"
+      ],
+      "rationale": "Reuters body supplies date/relation counterindications: Thursday Sept4 briefing exclusion versus Sept5 Expel. Exact original story identity unlinked; China finalTop1 unchanged cannot be identified as newly introduced error."
+    },
+    {
+      "sample_id": "S09",
+      "test_directional_index": 11162,
+      "direction": "tail",
+      "gold_fact": [
+        "Joseph Ole Lenku",
+        "Make statement",
+        "Tanzania",
+        "2014-03-31"
+      ],
+      "before_top1_fact": [
+        "Joseph Ole Lenku",
+        "Make statement",
+        "Burundi",
+        "2014-03-31"
+      ],
+      "after_top1_fact": [
+        "Joseph Ole Lenku",
+        "Make statement",
+        "Burundi",
+        "2014-03-31"
+      ],
+      "original_gold_rank": 105.0,
+      "final_gold_rank": 210.0,
+      "before_recorded": true,
+      "after_recorded": true,
+      "gold_original_event_metadata": {
+        "event_id": "21098749",
+        "year": 2014,
+        "row": 208217,
+        "story_id": "33087140",
+        "sentence_number": "5",
+        "publisher": "BBC Monitoring Africa"
+      },
+      "before_original_event_metadata": {
+        "event_id": "21098751",
+        "year": 2014,
+        "row": 208214,
+        "story_id": "33087140",
+        "sentence_number": "5",
+        "publisher": "BBC Monitoring Africa"
+      },
+      "after_original_event_metadata": {
+        "event_id": "21098751",
+        "year": 2014,
+        "row": 208214,
+        "story_id": "33087140",
+        "sentence_number": "5",
+        "publisher": "BBC Monitoring Africa"
+      },
+      "stage": "detailed_source_review",
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "EAC_NONMATCH_2014"
+      ],
+      "rationale": "Original same Story33087140 sentence5 encodes five countries. June2 article is a different date. Multiple recorded answers do not prove which real-world candidates should outrank Tanzania on March31."
+    },
+    {
+      "sample_id": "S10",
+      "test_directional_index": 88409,
+      "direction": "head",
+      "gold_fact": [
+        "South Korea",
+        "Host a visit",
+        "Lee Myung Bak",
+        "2010-12-13"
+      ],
+      "before_top1_fact": [
+        "Malaysia",
+        "Host a visit",
+        "Lee Myung Bak",
+        "2010-12-13"
+      ],
+      "after_top1_fact": [
+        "Malaysia",
+        "Host a visit",
+        "Lee Myung Bak",
+        "2010-12-13"
+      ],
+      "original_gold_rank": 2.0,
+      "final_gold_rank": 9.0,
+      "before_recorded": true,
+      "after_recorded": true,
+      "gold_original_event_metadata": {
+        "event_id": "16727757",
+        "year": 2010,
+        "row": 691020,
+        "story_id": "8081386",
+        "sentence_number": "1",
+        "publisher": "Asia Pulse"
+      },
+      "before_original_event_metadata": {
+        "event_id": "16727758",
+        "year": 2010,
+        "row": 691022,
+        "story_id": "8081386",
+        "sentence_number": "2",
+        "publisher": "Asia Pulse"
+      },
+      "after_original_event_metadata": {
+        "event_id": "16727758",
+        "year": 2010,
+        "row": 691022,
+        "story_id": "8081386",
+        "sentence_number": "2",
+        "publisher": "Asia Pulse"
+      },
+      "stage": "detailed_source_review",
+      "final_event_truth": "unknown_with_identified_visit_date_counterevidence",
+      "original_top1_truth": "unknown_with_identified_visit_date_counterevidence",
+      "gold_truth": "unknown_exact_coded_host_relation",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "LEE_OFFICIAL_TRIP",
+        "LEE_BRIDGE_2010"
+      ],
+      "rationale": "The known Malaysian state visit ended Dec11 while the query is Dec13. Raw Story8081386 has Korea-visit in sentence1 and Malaysia-visit in sentence2, consistent with reporting a return and earlier trip. Final Top1 Malaysia is unchanged from before; even a confirmed wrong date would not be a newly introduced Top1 error."
+    },
+    {
+      "sample_id": "S11",
+      "test_directional_index": 8141,
+      "direction": "tail",
+      "gold_fact": [
+        "Angola",
+        "Engage in diplomatic cooperation",
+        "China",
+        "2006-06-20"
+      ],
+      "before_top1_fact": [
+        "Angola",
+        "Engage in diplomatic cooperation",
+        "China",
+        "2006-06-20"
+      ],
+      "after_top1_fact": [
+        "Angola",
+        "Engage in diplomatic cooperation",
+        "Portugal",
+        "2006-06-20"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 2.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "10318530",
+        "year": 2006,
+        "row": 509307,
+        "story_id": "5595966",
+        "sentence_number": "5",
+        "publisher": "BBC Monitoring Asia Pacific"
+      },
+      "before_original_event_metadata": {
+        "event_id": "10318530",
+        "year": 2006,
+        "row": 509307,
+        "story_id": "5595966",
+        "sentence_number": "5",
+        "publisher": "BBC Monitoring Asia Pacific"
+      },
+      "after_original_event_metadata": null,
+      "stage": "detailed_source_review",
+      "final_event_truth": "unknown",
+      "original_top1_truth": "supported_at_query_semantic_granularity",
+      "gold_truth": "supported_at_query_semantic_granularity",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "WEN_ANGOLA_2006",
+        "ANGOLA_EXTRADITION_2006"
+      ],
+      "rationale": "Completed China-Angola cooperation on June20 independently supported. Final Portugal cooperation not established or excluded; gold truth alone is insufficient to establish whole-rank error."
+    },
+    {
+      "sample_id": "S12",
+      "test_directional_index": 80482,
+      "direction": "head",
+      "gold_fact": [
+        "Other Authorities / Officials (Mexico)",
+        "Accuse",
+        "Men (United States)",
+        "2012-05-03"
+      ],
+      "before_top1_fact": [
+        "Juan De La Cruz",
+        "Accuse",
+        "Men (United States)",
+        "2012-05-03"
+      ],
+      "after_top1_fact": [
+        "Police (Australia)",
+        "Accuse",
+        "Men (United States)",
+        "2012-05-03"
+      ],
+      "original_gold_rank": 15.0,
+      "final_gold_rank": 42.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "18542185",
+        "year": 2012,
+        "row": 222852,
+        "story_id": "16728004",
+        "sentence_number": "3",
+        "publisher": "EFE News Service"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "R7_BOGAN_KPBS"
+      ],
+      "rationale": "May3 source describes previous charges, not a new same-day accusation. AustraliaPolice finalTop1 unknown; absence of mention of another US man cannot prove false."
+    },
+    {
+      "sample_id": "S13",
+      "test_directional_index": 45541,
+      "direction": "tail",
+      "gold_fact": [
+        "Envoy (United States)",
+        "Consult",
+        "China",
+        "2009-12-12"
+      ],
+      "before_top1_fact": [
+        "Envoy (United States)",
+        "Consult",
+        "Sudan",
+        "2009-12-12"
+      ],
+      "after_top1_fact": [
+        "Envoy (United States)",
+        "Consult",
+        "Sudan",
+        "2009-12-12"
+      ],
+      "original_gold_rank": 7.0,
+      "final_gold_rank": 9.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "15361640",
+        "year": 2009,
+        "row": 825189,
+        "story_id": "11283975",
+        "sentence_number": "4",
+        "publisher": "BBC Monitoring Asia Pacific"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "stage": "detailed_source_attempt_blocked",
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "GRATION_TRIP_LOOKUP"
+      ],
+      "rationale": "A multi-day itinerary snippet does not identify the precise consultation on Dec12; official page returned403. No label from snippet or failed fetch."
+    },
+    {
+      "sample_id": "S14",
+      "test_directional_index": 19698,
+      "direction": "tail",
+      "gold_fact": [
+        "International Federation of Red Cross and Red Crescent Societies",
+        "Make a visit",
+        "China",
+        "2014-10-25"
+      ],
+      "before_top1_fact": [
+        "International Federation of Red Cross and Red Crescent Societies",
+        "Make a visit",
+        "China",
+        "2014-10-25"
+      ],
+      "after_top1_fact": [
+        "International Federation of Red Cross and Red Crescent Societies",
+        "Make a visit",
+        "Iran",
+        "2014-10-25"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 2.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "22031225",
+        "year": 2014,
+        "row": 714154,
+        "story_id": "35773638",
+        "sentence_number": "1",
+        "publisher": "China Daily"
+      },
+      "before_original_event_metadata": {
+        "event_id": "22031225",
+        "year": 2014,
+        "row": 714154,
+        "story_id": "35773638",
+        "sentence_number": "1",
+        "publisher": "China Daily"
+      },
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "R6_CHINADAILY_LIST",
+        "R6_CHINADAILY_FETCH",
+        "R7_IFRC_DECLARATION"
+      ],
+      "rationale": "Official declaration gives Beijing conference22-24Oct; ChinaDaily Oct25 opening reports this week. Gold MakeVisit exactOct25 remains unknown. Iran sole new filtered outranker, original candidate, aftergap1.910790443. Beijing gathering does not exclude simultaneous other IFRC representatives in Iran."
+    },
+    {
+      "sample_id": "S15",
+      "test_directional_index": 53722,
+      "direction": "head",
+      "gold_fact": [
+        "Media Personnel (Iran)",
+        "Make statement",
+        "Iran",
+        "2014-08-27"
+      ],
+      "before_top1_fact": [
+        "Barack Obama",
+        "Make statement",
+        "Iran",
+        "2014-08-27"
+      ],
+      "after_top1_fact": [
+        "Barack Obama",
+        "Make statement",
+        "Iran",
+        "2014-08-27"
+      ],
+      "original_gold_rank": 15.0,
+      "final_gold_rank": 30.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "21749116",
+        "year": 2014,
+        "row": 558413,
+        "story_id": "35266399",
+        "sentence_number": "3",
+        "publisher": "BBC Monitoring Middle East"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_attempt_blocked",
+      "evidence_ids": [
+        "R7_STATE_FETCH"
+      ],
+      "rationale": "Official Aug27 briefing body inaccessible; snippets and later Aug29 sanctions not substituted for sampled Aug27 IranianMedia/Obama statements. No strict truth label."
+    },
+    {
+      "sample_id": "S16",
+      "test_directional_index": 56051,
+      "direction": "head",
+      "gold_fact": [
+        "Chief of Staff (Libyan Armed Forces)",
+        "Consult",
+        "Sedki Sobhi",
+        "2014-09-05"
+      ],
+      "before_top1_fact": [
+        "Chief of Staff (Libyan Armed Forces)",
+        "Consult",
+        "Sedki Sobhi",
+        "2014-09-05"
+      ],
+      "after_top1_fact": [
+        "Abdel Fattah Al-Sisi",
+        "Consult",
+        "Sedki Sobhi",
+        "2014-09-05"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 9.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "21795294",
+        "year": 2014,
+        "row": 583501,
+        "story_id": "35375931",
+        "sentence_number": "1",
+        "publisher": "All Africa"
+      },
+      "before_original_event_metadata": {
+        "event_id": "21795294",
+        "year": 2014,
+        "row": 583501,
+        "story_id": "35375931",
+        "sentence_number": "1",
+        "publisher": "All Africa"
+      },
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "NAZOURI_SOBHI_KHALEEJ"
+      ],
+      "rationale": "Libyan chief/Sobhi consultation corroborated in contemporary body but exact September5 event date not established. Eight filtered candidates newly overtake, all previously in candidate space; no new entity expansion in this sample. Sisi consultation is not disproved by another meeting."
+    },
+    {
+      "sample_id": "S17",
+      "test_directional_index": 41698,
+      "direction": "tail",
+      "gold_fact": [
+        "Lee Myung Bak",
+        "Express intent to meet or negotiate",
+        "Dmitry Anatolyevich Medvedev",
+        "2010-11-10"
+      ],
+      "before_top1_fact": [
+        "Lee Myung Bak",
+        "Express intent to meet or negotiate",
+        "Dmitry Anatolyevich Medvedev",
+        "2010-11-10"
+      ],
+      "after_top1_fact": [
+        "Lee Myung Bak",
+        "Express intent to meet or negotiate",
+        "Japan",
+        "2010-11-10"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 8.0,
+      "before_recorded": true,
+      "after_recorded": true,
+      "gold_original_event_metadata": {
+        "event_id": "16604445",
+        "year": 2010,
+        "row": 625967,
+        "story_id": "7412892",
+        "sentence_number": "1",
+        "publisher": "Asia Pulse"
+      },
+      "before_original_event_metadata": {
+        "event_id": "16604445",
+        "year": 2010,
+        "row": 625967,
+        "story_id": "7412892",
+        "sentence_number": "1",
+        "publisher": "Asia Pulse"
+      },
+      "after_original_event_metadata": {
+        "event_id": "16604818",
+        "year": 2010,
+        "row": 626327,
+        "story_id": "7655514",
+        "sentence_number": "1",
+        "publisher": "Joins.com"
+      },
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "supported_at_query_semantic_granularity",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "LEE_MEDVEDEV_PLANNED_NOV10",
+        "LEE_JOONGANG_FETCH",
+        "LEE_HERALD_FETCH",
+        "LEE_INTENT_KOREATIMES",
+        "LEE_OBAMA_AP_DATE",
+        "LEE_OBAMA_CBS_DATE"
+      ],
+      "rationale": "Contemporary November10 report supports planned Lee/Medvedev bilateral afternoon meeting. Japan final rawTop1 is a benchmark positive but still externally unverified and already filtered. Seven new filtered outrankers are UAE/Akihito/Obama/Merkel/Mongolian head/Kazakhstan/SouthKorea, all previously present. Japan cannot explain gold filteredrank1->8. Obama/Merkel planned talks potentially genuine; not assumed false. Later candidate review finds datedKoreaTimes reports Lee plannedUS/Germany meetings, with date/actor attribution qualifications; conditional filteringObama/Merkel gives8->6. Remaining5candidate truthsunknown. FinalJapan alreadyfiltered and stillunverified."
+    },
+    {
+      "sample_id": "S18",
+      "test_directional_index": 68074,
+      "direction": "head",
+      "gold_fact": [
+        "UN Security Council",
+        "Threaten with sanctions, boycott, embargo",
+        "Iran",
+        "2006-04-20"
+      ],
+      "before_top1_fact": [
+        "UN Security Council",
+        "Threaten with sanctions, boycott, embargo",
+        "Iran",
+        "2006-04-20"
+      ],
+      "after_top1_fact": [
+        "Barack Obama",
+        "Threaten with sanctions, boycott, embargo",
+        "Iran",
+        "2006-04-20"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 12.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "10060096",
+        "year": 2006,
+        "row": 321196,
+        "story_id": "34088749",
+        "sentence_number": "3",
+        "publisher": "Le Monde"
+      },
+      "before_original_event_metadata": {
+        "event_id": "10060096",
+        "year": 2006,
+        "row": 321196,
+        "story_id": "34088749",
+        "sentence_number": "3",
+        "publisher": "Le Monde"
+      },
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "R7_IRAN_LORIENT"
+      ],
+      "rationale": "Read April20 article discusses previous-day statements; UNSC threat at sampleddate not established. Obama being senator does not exclude his ability to threaten sanctions."
+    },
+    {
+      "sample_id": "S19",
+      "test_directional_index": 14542,
+      "direction": "tail",
+      "gold_fact": [
+        "China",
+        "Express intent to meet or negotiate",
+        "Xi Jinping",
+        "2014-11-02"
+      ],
+      "before_top1_fact": [
+        "China",
+        "Express intent to meet or negotiate",
+        "South Korea",
+        "2014-11-02"
+      ],
+      "after_top1_fact": [
+        "China",
+        "Express intent to meet or negotiate",
+        "South Korea",
+        "2014-11-02"
+      ],
+      "original_gold_rank": 10.0,
+      "final_gold_rank": 22.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "22065508",
+        "year": 2014,
+        "row": 733278,
+        "story_id": "35830096",
+        "sentence_number": "3",
+        "publisher": "ANSA - Spanish Service (BASP)"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_attempt_blocked",
+      "evidence_ids": [
+        "R7_PERU_FETCH"
+      ],
+      "rationale": "Official-associated Peru blog body not acquired. Raw gold same sentence codes China intentmeetXi and Peru cooperationChina, possible argument mapping ambiguity, not proof. Unchanged SouthKorea Top1 unknown."
+    },
+    {
+      "sample_id": "S20",
+      "test_directional_index": 39081,
+      "direction": "tail",
+      "gold_fact": [
+        "Tony Blair",
+        "Make statement",
+        "Iran",
+        "2007-04-13"
+      ],
+      "before_top1_fact": [
+        "Tony Blair",
+        "Make statement",
+        "China",
+        "2007-04-13"
+      ],
+      "after_top1_fact": [
+        "Tony Blair",
+        "Make statement",
+        "Labor Party (United Kingdom)",
+        "2007-04-13"
+      ],
+      "original_gold_rank": 3.0,
+      "final_gold_rank": 29.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "11456861",
+        "year": 2007,
+        "row": 298408,
+        "story_id": "11723272",
+        "sentence_number": "1",
+        "publisher": "The Scotsman"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "R7_BLAIR_GUARDIAN"
+      ],
+      "rationale": "Actual read article datedApril16, not sampledApril13; excluded as same-day support. Unknown gold/final rather than assigning error from wrongdate article."
+    },
+    {
+      "sample_id": "S21",
+      "test_directional_index": 51194,
+      "direction": "head",
+      "gold_fact": [
+        "Businessperson (Australia)",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Antony Harold Curties \"Tony\" Windsor",
+        "2005-02-04"
+      ],
+      "before_top1_fact": [
+        "Police (Australia)",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Antony Harold Curties \"Tony\" Windsor",
+        "2005-02-04"
+      ],
+      "after_top1_fact": [
+        "Citizen (Australia)",
+        "Express intent to engage in diplomatic cooperation (such as policy support)",
+        "Antony Harold Curties \"Tony\" Windsor",
+        "2005-02-04"
+      ],
+      "original_gold_rank": 2.0,
+      "final_gold_rank": 83.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "8360975",
+        "year": 2005,
+        "row": 90090,
+        "story_id": "7086840",
+        "sentence_number": "3",
+        "publisher": "AAP Bulletins"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "stage": "detailed_source_review",
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "LNP_FORMATION_OFFICIAL",
+        "LNP_AEC_REGISTRATION",
+        "WINDSOR_ABC_FEB3",
+        "WINDSOR_ABC_MAR11",
+        "WINDSOR_PARLIAMENT_FETCH",
+        "R9_WINDSOR_PRIMARY_FETCH"
+      ],
+      "rationale": "LNP is a newly outranking candidate, not raw Top1. Australia identity supported by raw country metadata; predecessor/merged-party naming remains an explicit condition. Gold exact dated event and final citizen support remain unknown. Read February and March Senate reports concern earlier events; no label based on plausibility or missing mention. Round9: AlternateparliamentprimaryPDFs failed; historicalfundraising/snippets notusedasFeb4support. Nochange togold/finaltruth."
+    },
+    {
+      "sample_id": "S22",
+      "test_directional_index": 47653,
+      "direction": "head",
+      "gold_fact": [
+        "Israeli Defense Forces",
+        "Consult",
+        "Israeli Defense Forces",
+        "2005-11-16"
+      ],
+      "before_top1_fact": [
+        "Israeli Defense Forces",
+        "Consult",
+        "Israeli Defense Forces",
+        "2005-11-16"
+      ],
+      "after_top1_fact": [
+        "Tzachi Hanegbi",
+        "Consult",
+        "Israeli Defense Forces",
+        "2005-11-16"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 763.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "9461909",
+        "year": 2005,
+        "row": 892378,
+        "story_id": "3658797",
+        "sentence_number": "1",
+        "publisher": "BBC Monitoring Middle East"
+      },
+      "before_original_event_metadata": {
+        "event_id": "9461909",
+        "year": 2005,
+        "row": 892378,
+        "story_id": "3658797",
+        "sentence_number": "1",
+        "publisher": "BBC Monitoring Middle East"
+      },
+      "after_original_event_metadata": null,
+      "stage": "detailed_source_review",
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "CNS_LIBRARY_OF_CONGRESS"
+      ],
+      "rationale": "CNS may refer to a junta or a preexisting Thai security institution. Raw January/March 2006 records predate the coup. Do not use the junta formation date as a strict negative for the ambiguous entity. IDF self-consultation and final Hanegbi consultation remain unverified."
+    },
+    {
+      "sample_id": "S23",
+      "test_directional_index": 11716,
+      "direction": "tail",
+      "gold_fact": [
+        "Coalition for Unity and Democracy",
+        "Make statement",
+        "Ethiopia",
+        "2005-09-22"
+      ],
+      "before_top1_fact": [
+        "Coalition for Unity and Democracy",
+        "Make statement",
+        "Ethiopia",
+        "2005-09-22"
+      ],
+      "after_top1_fact": [
+        "Coalition for Unity and Democracy",
+        "Make statement",
+        "Police (Ethiopia)",
+        "2005-09-22"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 4.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "9248635",
+        "year": 2005,
+        "row": 735653,
+        "story_id": "6002492",
+        "sentence_number": "1",
+        "publisher": "BBC Monitoring Newsfile"
+      },
+      "before_original_event_metadata": {
+        "event_id": "9248635",
+        "year": 2005,
+        "row": 735653,
+        "story_id": "6002492",
+        "sentence_number": "1",
+        "publisher": "BBC Monitoring Newsfile"
+      },
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "R7_CUD_AFP"
+      ],
+      "rationale": "AFP report dates CUD statement WednesdaySept21; ThursdaySept22 police warning is opposite actor direction. Police/CIA/ArgentinaLawyer three new filtered outrankers all original candidates; not independently verified or contradicted. BBCMonitoring story unlinked."
+    },
+    {
+      "sample_id": "S24",
+      "test_directional_index": 33823,
+      "direction": "tail",
+      "gold_fact": [
+        "Naledi Pandor",
+        "Consult",
+        "ANC Youth League",
+        "2009-02-17"
+      ],
+      "before_top1_fact": [
+        "Naledi Pandor",
+        "Consult",
+        "Education Ministry (South Africa)",
+        "2009-02-17"
+      ],
+      "after_top1_fact": [
+        "Naledi Pandor",
+        "Consult",
+        "Media (Africa)",
+        "2009-02-17"
+      ],
+      "original_gold_rank": 4.0,
+      "final_gold_rank": 88.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "21774223",
+        "year": 2009,
+        "row": 129580,
+        "story_id": "9824528",
+        "sentence_number": "4",
+        "publisher": "SAPA (South African Press Association)"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "supported_at_query_semantic_granularity",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "PANDOR_MALEMA_TUT"
+      ],
+      "rationale": "Tuesday February 17 closed-door consultation with youth-league leader explicitly confirmed. His later press comments do not confirm the final Pandor/Media(Africa) consultation or exclude one."
+    },
+    {
+      "sample_id": "S25",
+      "test_directional_index": 16458,
+      "direction": "tail",
+      "gold_fact": [
+        "Barack Obama",
+        "Demand",
+        "Government (Pakistan)",
+        "2011-02-04"
+      ],
+      "before_top1_fact": [
+        "Barack Obama",
+        "Demand",
+        "Ali Abdullah Saleh",
+        "2011-02-04"
+      ],
+      "after_top1_fact": [
+        "Barack Obama",
+        "Demand",
+        "Iran",
+        "2011-02-04"
+      ],
+      "original_gold_rank": 15.0,
+      "final_gold_rank": 164.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "17113012",
+        "year": 2011,
+        "row": 62860,
+        "story_id": "7934887",
+        "sentence_number": "4",
+        "publisher": "BBC Monitoring South Asia"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "R6_DAVIS_BRIEF"
+      ],
+      "rationale": "February4 brief describes Thursday February3 embassy criticism of Davis due process. Actor is US embassy spokesperson, not Obama personally; exact BBCMonitoringSouthAsia story unlinked. No same-day truth label for Obama demandPakistan or finalIran."
+    },
+    {
+      "sample_id": "S26",
+      "test_directional_index": 75150,
+      "direction": "head",
+      "gold_fact": [
+        "VARIG",
+        "Engage in negotiation",
+        "Party Member (Brazil)",
+        "2005-03-11"
+      ],
+      "before_top1_fact": [
+        "VARIG",
+        "Engage in negotiation",
+        "Party Member (Brazil)",
+        "2005-03-11"
+      ],
+      "after_top1_fact": [
+        "Citizen (Brazil)",
+        "Engage in negotiation",
+        "Party Member (Brazil)",
+        "2005-03-11"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 27.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "8505755",
+        "year": 2005,
+        "row": 195002,
+        "story_id": "13865249",
+        "sentence_number": "3",
+        "publisher": "Reuters News"
+      },
+      "before_original_event_metadata": {
+        "event_id": "8505755",
+        "year": 2005,
+        "row": 195002,
+        "story_id": "13865249",
+        "sentence_number": "3",
+        "publisher": "Reuters News"
+      },
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "R6_VARIG_FOLHA"
+      ],
+      "rationale": "Mar11 body dates parliamentarians/Alencar meeting yesterday; not same-day Varig negotiation. CitizenBrazil may include party members, without identity relation annotation cannot decide false."
+    },
+    {
+      "sample_id": "S27",
+      "test_directional_index": 47506,
+      "direction": "head",
+      "gold_fact": [
+        "Jakaya Mrisho Kikwete",
+        "Make statement",
+        "Tanzania",
+        "2014-09-01"
+      ],
+      "before_top1_fact": [
+        "Jakaya Mrisho Kikwete",
+        "Make statement",
+        "Tanzania",
+        "2014-09-01"
+      ],
+      "after_top1_fact": [
+        "John Pombe Magufuli",
+        "Make statement",
+        "Tanzania",
+        "2014-09-01"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 3.0,
+      "before_recorded": true,
+      "after_recorded": true,
+      "gold_original_event_metadata": {
+        "event_id": "21771644",
+        "year": 2014,
+        "row": 570308,
+        "story_id": "35330934",
+        "sentence_number": "3",
+        "publisher": "All Africa"
+      },
+      "before_original_event_metadata": {
+        "event_id": "21771644",
+        "year": 2014,
+        "row": 570308,
+        "story_id": "35330934",
+        "sentence_number": "3",
+        "publisher": "All Africa"
+      },
+      "after_original_event_metadata": {
+        "event_id": "21771645",
+        "year": 2014,
+        "row": 570309,
+        "story_id": "35330934",
+        "sentence_number": "6",
+        "publisher": "All Africa"
+      },
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_attempt_blocked",
+      "evidence_ids": [
+        "KIKWETE_MBEYA_FETCH",
+        "KIKWETE_MPWPWA_FETCH"
+      ],
+      "rationale": "Two potential bodies inaccessible; snippets/September report dates cannot establish exact dated Kikwete or Magufuli statement. No negative label from failed fetching."
+    },
+    {
+      "sample_id": "S28",
+      "test_directional_index": 44662,
+      "direction": "tail",
+      "gold_fact": [
+        "Rioter (Nigeria)",
+        "Use unconventional violence",
+        "Citizen (Nigeria)",
+        "2012-06-18"
+      ],
+      "before_top1_fact": [
+        "Rioter (Nigeria)",
+        "Use unconventional violence",
+        "Military Personnel - Special (Cote d'Ivoire)",
+        "2012-06-18"
+      ],
+      "after_top1_fact": [
+        "Rioter (Nigeria)",
+        "Use unconventional violence",
+        "Criminal (Hungary)",
+        "2012-06-18"
+      ],
+      "original_gold_rank": 6.0,
+      "final_gold_rank": 36.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "18723473",
+        "year": 2012,
+        "row": 307322,
+        "story_id": "16905273",
+        "sentence_number": "3",
+        "publisher": "Agence France-Presse"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "NIGERIA_RIOT_AFP_JUNE18",
+        "NIGERIA_RIOT_VOA_JUNE18",
+        "NIGERIA_RIOT_REUTERS_JUNE18",
+        "NIGERIA_AFP_INQUIRER_FETCH"
+      ],
+      "rationale": "Three read contemporary sources place identified attacks/rioting on June17 while reporting June18. Exact AFP Story16905273 and all June18 violence unlinked; retain unknown gold and final Hungarian criminal truth. 33 new outrankers and3 cease to outrank explains net30 loss; absurd-looking participants are not automatically negative evidence."
+    },
+    {
+      "sample_id": "S29",
+      "test_directional_index": 50359,
+      "direction": "head",
+      "gold_fact": [
+        "Ivan Gasparovic",
+        "Praise or endorse",
+        "Portugal",
+        "2005-10-24"
+      ],
+      "before_top1_fact": [
+        "Foreign Affairs (Portugal)",
+        "Praise or endorse",
+        "Portugal",
+        "2005-10-24"
+      ],
+      "after_top1_fact": [
+        "International Monetary Fund",
+        "Praise or endorse",
+        "Portugal",
+        "2005-10-24"
+      ],
+      "original_gold_rank": 285.0,
+      "final_gold_rank": 385.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "9366545",
+        "year": 2005,
+        "row": 822757,
+        "story_id": "4120316",
+        "sentence_number": "3",
+        "publisher": "SITA Slovenska Tlacova Agentura"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "R6_GASPAROVIC_LUSA",
+        "R7_PORTUGAL_ARCHIVE_FETCH"
+      ],
+      "rationale": "Actual body supports positive bilateral economic assessment during statevisit, but exact CAMEO PraisePortugal and date independently unresolved. IMF may issue same-day assessment; visit report alone cannot disprove finalTop1."
+    },
+    {
+      "sample_id": "S30",
+      "test_directional_index": 3814,
+      "direction": "tail",
+      "gold_fact": [
+        "Javier Solana",
+        "Consult",
+        "Tzipi Livni",
+        "2007-01-16"
+      ],
+      "before_top1_fact": [
+        "Javier Solana",
+        "Consult",
+        "Tzipi Livni",
+        "2007-01-16"
+      ],
+      "after_top1_fact": [
+        "Javier Solana",
+        "Consult",
+        "Federica Mogherini",
+        "2007-01-16"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 89.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "11197328",
+        "year": 2007,
+        "row": 39382,
+        "story_id": "10993159",
+        "sentence_number": "6",
+        "publisher": "Associated Press Newswires"
+      },
+      "before_original_event_metadata": {
+        "event_id": "11197328",
+        "year": 2007,
+        "row": 39382,
+        "story_id": "10993159",
+        "sentence_number": "6",
+        "publisher": "Associated Press Newswires"
+      },
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "SOLANA_JAN2007_FETCH",
+        "SOLANA_MIDEAST_SCHEDULE_JAN16"
+      ],
+      "rationale": "Read contemporary schedule dates identified Livni meeting to January21, not January16 news dateline. AP story context may encode planned meeting as Consult. Exact story identity and separate January16 phone contact unresolved; final Mogherini consultation unknown."
+    },
+    {
+      "sample_id": "S31",
+      "test_directional_index": 74866,
+      "direction": "head",
+      "gold_fact": [
+        "Member of Legislative (Govt) (Kazakhstan)",
+        "Consult",
+        "Chen Zhili",
+        "2012-01-10"
+      ],
+      "before_top1_fact": [
+        "Member of Legislative (Govt) (Kazakhstan)",
+        "Consult",
+        "Chen Zhili",
+        "2012-01-10"
+      ],
+      "after_top1_fact": [
+        "Ministry (Shura Council)",
+        "Consult",
+        "Chen Zhili",
+        "2012-01-10"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 3.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "18100281",
+        "year": 2012,
+        "row": 13273,
+        "story_id": "16310788",
+        "sentence_number": "4",
+        "publisher": "BBC Monitoring Asia Pacific"
+      },
+      "before_original_event_metadata": {
+        "event_id": "18100281",
+        "year": 2012,
+        "row": 13273,
+        "story_id": "16310788",
+        "sentence_number": "4",
+        "publisher": "BBC Monitoring Asia Pacific"
+      },
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "CHEN_KYRGYZ_SPEAKER_JAN10",
+        "CHEN_KAZAKH_MAMI_PREVIEW"
+      ],
+      "rationale": "Read official January10 report concerns Kyrgyz speaker. Sample is Kazakhstan legislature in Astana; relevant Mami meeting preview January9 lacks independently read source text and exact story mapping. Avoid declaring sample date wrong solely from another meeting."
+    },
+    {
+      "sample_id": "S32",
+      "test_directional_index": 33288,
+      "direction": "tail",
+      "gold_fact": [
+        "South Korea",
+        "Host a visit",
+        "Barack Obama",
+        "2009-10-13"
+      ],
+      "before_top1_fact": [
+        "South Korea",
+        "Host a visit",
+        "Cabinet / Council of Ministers / Advisors (United States)",
+        "2009-10-13"
+      ],
+      "after_top1_fact": [
+        "South Korea",
+        "Host a visit",
+        "Islam Karimov",
+        "2009-10-13"
+      ],
+      "original_gold_rank": 2.0,
+      "final_gold_rank": 6.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "15134632",
+        "year": 2009,
+        "row": 702826,
+        "story_id": "10206966",
+        "sentence_number": "4",
+        "publisher": "Agence France-Presse"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "stage": "detailed_source_review",
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "KARIMOV_VISITS_FETCH",
+        "R9_OBAMA_OFFICIAL_TRAVEL",
+        "R9_OBAMA_ZAPATERO",
+        "R9_OBAMA_FIESTA",
+        "R9_CAMEO_VISIT",
+        "R9_XI_FRANKFURT"
+      ],
+      "rationale": "Visit-year search result is not full article and not exhaustive informal travel. Exact Oct13 host visit unknown. Round9: Under actualphysicalvisit eventdate semantics and officialforeigntravel coverage, October13 Obama visit is contradicted; actualKorea visitNovember18-19. Futurevisit announcement semantics not adjudicated because originalAFP Story10206966 remains unlinked. DomesticOct13EDT snapshots areOct14KST, so not alone a sameinstant negative. FinalKarimov truth unknown. Xi newcrossing hasGermany itinerary counterevidence but not a full-day strictnegative. Invalidgold decline cannot be classified as reasonableworldchange or modelerror by itself.",
+      "gold_literal_occurrence_truth": "contradicted_under_actual_physical_visit_event_date_and_official_itinerary_coverage",
+      "gold_original_report_or_coder_semantics_truth": "unknown",
+      "evaluation_target_counterindication": {
+        "classification": "physical_event_date_incompatible_with_official_visit_inventory",
+        "query_date": "2009-10-13",
+        "documented_physical_visit_interval": [
+          "2009-11-18",
+          "2009-11-19"
+        ],
+        "announcement_at_query_date": "unresolved_original_AFP_body_not_linked",
+        "conditions": [
+          "043 interpreted as actualphysicalhosting",
+          "date interpreted as eventoccurrence",
+          "officialpresidentialforeigntravel inventory coversphysicalvisits"
+        ],
+        "not_a_whole_rank_reasonableness_or_model_error_label": true
+      }
+    },
+    {
+      "sample_id": "S33",
+      "test_directional_index": 81942,
+      "direction": "head",
+      "gold_fact": [
+        "Qin Gang",
+        "Make statement",
+        "China",
+        "2014-06-27"
+      ],
+      "before_top1_fact": [
+        "Wang Yi",
+        "Make statement",
+        "China",
+        "2014-06-27"
+      ],
+      "after_top1_fact": [
+        "Xi Jinping",
+        "Make statement",
+        "China",
+        "2014-06-27"
+      ],
+      "original_gold_rank": 3.0,
+      "final_gold_rank": 62.0,
+      "before_recorded": false,
+      "after_recorded": true,
+      "gold_original_event_metadata": {
+        "event_id": "21486955",
+        "year": 2014,
+        "row": 415964,
+        "story_id": "34816614",
+        "sentence_number": "5",
+        "publisher": "BBC Monitoring Newsfile"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": {
+        "event_id": "21486800",
+        "year": 2014,
+        "row": 415823,
+        "story_id": "34816298",
+        "sentence_number": "2",
+        "publisher": "Xinhua News Agency"
+      },
+      "stage": "detailed_source_review",
+      "final_event_truth": "supported_at_query_semantic_granularity",
+      "original_top1_truth": "unknown",
+      "gold_truth": "supported_at_query_semantic_granularity",
+      "reasonable_rank_adjustment": "unknown_whole_ranking",
+      "evidence_ids": [
+        "XI_FRONTIER_2014",
+        "QIN_PRESS_2014"
+      ],
+      "rationale": "Both Xi and Qin made China-related statements June27. Final Top1 switched WangYi->Xi while gold Qin worsened3->62. A supported final Top1 cannot prove all rank deterioration justified or the prior Top1 false.",
+      "cached_filter_note": "Xi is a recorded positive already filtered from Qin rank; his supported raw Top1 cannot cause or justify Qin filtered rank3->62."
+    },
+    {
+      "sample_id": "S34",
+      "test_directional_index": 49099,
+      "direction": "head",
+      "gold_fact": [
+        "Vietnam",
+        "Host a visit",
+        "Laos",
+        "2005-05-03"
+      ],
+      "before_top1_fact": [
+        "Vietnam",
+        "Host a visit",
+        "Laos",
+        "2005-05-03"
+      ],
+      "after_top1_fact": [
+        "Nguyen Xuan Phuc",
+        "Host a visit",
+        "Laos",
+        "2005-05-03"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 2.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "8727192",
+        "year": 2005,
+        "row": 346872,
+        "story_id": "6708924",
+        "sentence_number": "1",
+        "publisher": "Thai News Service"
+      },
+      "before_original_event_metadata": {
+        "event_id": "8727192",
+        "year": 2005,
+        "row": 346872,
+        "story_id": "6708924",
+        "sentence_number": "1",
+        "publisher": "Thai News Service"
+      },
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "R7_VIETNAM_GREENLEFT",
+        "R9_VIETNAM_SGGP"
+      ],
+      "rationale": "April30 celebration commentary is not May3 ThaiNewsService visit. Sole new filtered outrankerNguyenXuanPhuc was absent2005 candidate space/firstTRAIN2014, gap3.898614883; benchmark first appearance not birth, and lack of premiership2005 does not exclude hosting as provincial official. Actual history still unresolved. Round9: ReadApril30ceremony inHoChiMinhCity withLao/Cambodiandelegates, publishedMay1. Plausibleidentifiedretrospectivecontext but noMay3visit or originalTNSstorymatch. Phuc solecrossing truth staysunknown; no false label from firstTRAINyear or sourceabsence."
+    },
+    {
+      "sample_id": "S35",
+      "test_directional_index": 35058,
+      "direction": "tail",
+      "gold_fact": [
+        "Barack Obama",
+        "Consult",
+        "Wen Jiabao",
+        "2010-05-26"
+      ],
+      "before_top1_fact": [
+        "Barack Obama",
+        "Consult",
+        "Benjamin Netanyahu",
+        "2010-05-26"
+      ],
+      "after_top1_fact": [
+        "Barack Obama",
+        "Consult",
+        "Benjamin Netanyahu",
+        "2010-05-26"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 29.0,
+      "before_recorded": true,
+      "after_recorded": true,
+      "gold_original_event_metadata": {
+        "event_id": "15972424",
+        "year": 2010,
+        "row": 303953,
+        "story_id": "8255477",
+        "sentence_number": "1",
+        "publisher": "BBC Monitoring Asia Pacific"
+      },
+      "before_original_event_metadata": {
+        "event_id": "15972706",
+        "year": 2010,
+        "row": 304228,
+        "story_id": "8255740",
+        "sentence_number": "5",
+        "publisher": "Xinhua News Agency"
+      },
+      "after_original_event_metadata": {
+        "event_id": "15972706",
+        "year": 2010,
+        "row": 304228,
+        "story_id": "8255740",
+        "sentence_number": "5",
+        "publisher": "Xinhua News Agency"
+      },
+      "stage": "detailed_source_review",
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "NETANYAHU_INVITATION_2010"
+      ],
+      "rationale": "The article describes an invitation delivered by Emanuel and a future Obama meeting. A separate Obama-Netanyahu consultation or call is not excluded. Top1 Netanyahu is unchanged before/after although Wen gold drops1->29."
+    },
+    {
+      "sample_id": "S36",
+      "test_directional_index": 60321,
+      "direction": "head",
+      "gold_fact": [
+        "Jens Stoltenberg",
+        "Consult",
+        "Mikhail Yefimovich Fradkov",
+        "2007-06-08"
+      ],
+      "before_top1_fact": [
+        "Jens Stoltenberg",
+        "Consult",
+        "Mikhail Yefimovich Fradkov",
+        "2007-06-08"
+      ],
+      "after_top1_fact": [
+        "Alexander Vasilyevich Bortnikov",
+        "Consult",
+        "Mikhail Yefimovich Fradkov",
+        "2007-06-08"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 3.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "11694284",
+        "year": 2007,
+        "row": 455542,
+        "story_id": "10092395",
+        "sentence_number": "2",
+        "publisher": "ITAR Tass"
+      },
+      "before_original_event_metadata": {
+        "event_id": "11694284",
+        "year": 2007,
+        "row": 455542,
+        "story_id": "10092395",
+        "sentence_number": "2",
+        "publisher": "ITAR Tass"
+      },
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_review",
+      "evidence_ids": [
+        "FRADKOV_STOLTENBERG_TIMELINE",
+        "FRADKOV_NETTAVISEN_FETCH"
+      ],
+      "rationale": "June 8 joint boundary agreement corroborated; exact Consult event requires actual meeting text. Bortnikov consultation with Fradkov not excluded by Stoltenberg activity."
+    },
+    {
+      "sample_id": "S37",
+      "test_directional_index": 70374,
+      "direction": "head",
+      "gold_fact": [
+        "Mauritania",
+        "Make an appeal or request",
+        "UN Security Council",
+        "2014-12-19"
+      ],
+      "before_top1_fact": [
+        "Protester (Western Sahara)",
+        "Make an appeal or request",
+        "UN Security Council",
+        "2014-12-19"
+      ],
+      "after_top1_fact": [
+        "Federica Mogherini",
+        "Make an appeal or request",
+        "UN Security Council",
+        "2014-12-19"
+      ],
+      "original_gold_rank": 385.0,
+      "final_gold_rank": 533.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "22287736",
+        "year": 2014,
+        "row": 856606,
+        "story_id": "36208914",
+        "sentence_number": "3",
+        "publisher": "Agence France-Presse"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "stage": "detailed_source_review",
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "supported_at_query_semantic_granularity",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "G5_SAHEL_APPEAL_2014"
+      ],
+      "rationale": "AFP same-day communique supports Mauritania UNSC appeal. No evidence to exclude a separate Mogherini appeal; final truth unknown."
+    },
+    {
+      "sample_id": "S38",
+      "test_directional_index": 58732,
+      "direction": "head",
+      "gold_fact": [
+        "Foreign Affairs (Slovakia)",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "before_top1_fact": [
+        "Citizen (Hungary)",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "after_top1_fact": [
+        "Foreign Affairs (Romania)",
+        "Criticize or denounce",
+        "Foreign Affairs (Hungary)",
+        "2009-09-17"
+      ],
+      "original_gold_rank": 4.0,
+      "final_gold_rank": 162.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "15045053",
+        "year": 2009,
+        "row": 655099,
+        "story_id": "11829159",
+        "sentence_number": "3",
+        "publisher": "SITA Slovenska Tlacova Agentura"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "stage": "detailed_source_review",
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "supported_at_query_semantic_granularity",
+      "reasonable_rank_adjustment": "unknown",
+      "evidence_ids": [
+        "SLOVAK_HUNGARY_SITA_SEP17",
+        "NUSRA_USDOS_HISTORY",
+        "NUSRA_UN_HISTORY",
+        "R9_NSG_FORMATION_DECREE",
+        "R9_NSG_USDOS",
+        "R9_NSG_UN_FETCH"
+      ],
+      "rationale": "Same-day ministerial criticism supports gold. A newly introduced, unfiltered Terrorist (Jabhat al-Nusra) candidate outranks it after learning. Under dated named-group-affiliation semantics, late-2011 formation excludes such affiliation in 2009. This demonstrates one erroneous rank component; not all 158 lost positions, not raw Top1 truth, not full-query exclusive error classification. Round9: 2014LibyanNationalSalvationGovernment formation documented, but exactrawname appearsJune7 before August25formation and inJune Iraq stories taggedLibya. Generic/proposedgovernment or automatedidentityconflation unresolved; exclude as strictfifthwitness. Existing4confirmederrorcomponents unchanged."
+    },
+    {
+      "sample_id": "S39",
+      "test_directional_index": 81929,
+      "direction": "head",
+      "gold_fact": [
+        "China",
+        "Consult",
+        "Yemen",
+        "2009-04-19"
+      ],
+      "before_top1_fact": [
+        "China",
+        "Consult",
+        "Yemen",
+        "2009-04-19"
+      ],
+      "after_top1_fact": [
+        "Iraq",
+        "Consult",
+        "Yemen",
+        "2009-04-19"
+      ],
+      "original_gold_rank": 1.0,
+      "final_gold_rank": 2.0,
+      "before_recorded": true,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "14459508",
+        "year": 2009,
+        "row": 307518,
+        "story_id": "10806432",
+        "sentence_number": "1",
+        "publisher": "Organisation of Asia-Pacific News Agencies"
+      },
+      "before_original_event_metadata": {
+        "event_id": "14459508",
+        "year": 2009,
+        "row": 307518,
+        "story_id": "10806432",
+        "sentence_number": "1",
+        "publisher": "Organisation of Asia-Pacific News Agencies"
+      },
+      "after_original_event_metadata": null,
+      "stage": "detailed_source_review",
+      "final_event_truth": "supported_at_query_semantic_granularity",
+      "original_top1_truth": "unknown_exact_date",
+      "gold_truth": "unknown_exact_date",
+      "reasonable_rank_adjustment": "unknown_whole_ranking_with_supported_alternative",
+      "evidence_ids": [
+        "SABA_IRAQ_YEMEN",
+        "CHINA_YEMEN_JUDICIAL"
+      ],
+      "rationale": "Country-level Iraq-Yemen Consult is supported for April19 though exact raw names return no match. Gold China is recorded, but external judicial talks found are dated April18. A correct final answer can be missed by both benchmark and full raw table. This is evidence against automatic reality-error labeling, not proof that all higher-ranked candidates or suppressed China facts are wrong.",
+      "conditional_missing_alternative_filter_explanation": {
+        "conditional_filter_rank_before": 1.0,
+        "conditional_filter_rank_after": 1.0,
+        "benchmark_drift": 1.0,
+        "conditional_drift_after_removing_supported_iraq": 0.0,
+        "assumptions": "Public article Iraq/Yemen Consult mapping accepted at country-query granularity; original China gold retained as benchmark target, not externally validated on exact date; cached score comparisons compatible across batches.",
+        "interpretation": "One omitted semantically supported alternative suffices to remove this observed filtered-rank worsening. Does not prove China event date, causal beneficial model update, or reality truth of all rankings."
+      },
+      "cached_filter_note": "Cached average-rank evaluator and scores show Iraq strictly above China, unique raw Top1, final filtered gold rank2. If Iraq is treated as an additional semantic positive, filtering it yields rank1 and zero gold drift; original China event validity remains unknown."
+    },
+    {
+      "sample_id": "S40",
+      "test_directional_index": 47025,
+      "direction": "head",
+      "gold_fact": [
+        "Labor Union (Nigeria)",
+        "Engage in diplomatic cooperation",
+        "Head of Government (Nigeria)",
+        "2011-07-26"
+      ],
+      "before_top1_fact": [
+        "Ministry (Nigeria)",
+        "Engage in diplomatic cooperation",
+        "Head of Government (Nigeria)",
+        "2011-07-26"
+      ],
+      "after_top1_fact": [
+        "Barack Obama",
+        "Engage in diplomatic cooperation",
+        "Head of Government (Nigeria)",
+        "2011-07-26"
+      ],
+      "original_gold_rank": 30.0,
+      "final_gold_rank": 82.0,
+      "before_recorded": false,
+      "after_recorded": false,
+      "gold_original_event_metadata": {
+        "event_id": "17507488",
+        "year": 2011,
+        "row": 363447,
+        "story_id": "15699991",
+        "sentence_number": "4",
+        "publisher": "All Africa"
+      },
+      "before_original_event_metadata": null,
+      "after_original_event_metadata": null,
+      "final_event_truth": "unknown",
+      "original_top1_truth": "unknown",
+      "gold_truth": "unknown",
+      "reasonable_rank_adjustment": "unknown",
+      "stage": "detailed_source_attempt_blocked",
+      "evidence_ids": [
+        "LABOUR_VANGUARD_AGREEMENT_FETCH",
+        "LABOUR_VANGUARD_CONTROVERSY_FETCH"
+      ],
+      "rationale": "Candidate labour-wage source bodies not acquired; exact AllAfrica Ibadan story unidentified. No semantic truth for original labour cooperation or final Obama cooperation from these reads. No replacement sample."
+    }
+  ]
+}

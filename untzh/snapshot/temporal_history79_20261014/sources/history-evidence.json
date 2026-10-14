@@ -1,0 +1,75 @@
+{
+  "review_date": "2026-10-14",
+  "evidence": [
+    {
+      "id": "AAP_FOUNDATION",
+      "entity": "Aam Aadmi Party",
+      "fact": "The named Indian political party was formally launched on 2012-11-26; the preceding anti-corruption movement began in 2011.",
+      "source_url": "https://www.indiatoday.in/india/north/story/arvind-kejriwal-aam-aadmi-party-formal-launch-jantar-mantar-122520-2012-11-25",
+      "source_title": "Arvind Kejriwal formally launches Aam Aadmi Party",
+      "publisher": "India Today / PTI",
+      "visible_published_date": "Nov 26, 2012 00:00 IST",
+      "visible_updated_date": "Mar 8, 2013 21:27 IST",
+      "exact_excerpts": [
+        "The Aam Aadmi Party (AAP), India's newest political party, was on Monday formally launched by activist Arvind Kejriwal"
+      ],
+      "corroboration_url": "https://en.wikipedia.org/wiki/Aam_Aadmi_Party",
+      "corroboration_visible_fact": "Founded: 26 November 2012; preceding movement: 2011 Indian anti-corruption movement",
+      "conservative_rule": "Flag only actor predictions dated before 2011-01-01, or a pre-2011 target in an actual Engage in negotiation event. Do not flag mere statements, intentions, requests directed toward a target, or later pre-launch activity.",
+      "identity_basis": "Exact distinctive party name plus Indian counterpart context; no external ICEWS actor-ID/QID mapping supplied.",
+      "limitations": "This witnesses impossible final predictions under the named-party interpretation; it does not independently corroborate every original gold event or estimate total world error."
+    },
+    {
+      "id": "HOWARD_TERM",
+      "entity": "John Howard",
+      "source_url": "https://handbook.aph.gov.au/parliamentarians/ZD4",
+      "source_title": "HOWARD, the Hon. John Winston, AC - Parliamentary Handbook",
+      "publisher": "Parliament of Australia",
+      "visible_section": "Ministry Appointments",
+      "exact_excerpts": ["Prime Minister", "Start Date: 11/3/1996", "End Date: 3/12/2007"],
+      "date_interpretation": "Australian day/month/year: 1996-03-11 through 2007-12-03.",
+      "raw_dataset_location": "data/src_data/wikidata/train, line 650888",
+      "raw_end": "+2007-03-12T00:00:00Z",
+      "judgment": "Confirmed raw dataset date disagreement. Preserve original data; external corrected boundary stored separately.",
+      "not_a_model_result": true
+    },
+    {
+      "id": "SAJJAN_NEWS_CANDIDATE",
+      "source_url": "https://timesofindia.indiatimes.com/city/delhi/sajjan-to-face-trial-in-1984-riots-case/articleshow/5935822.cms",
+      "source_title": "Sajjan to face trial in 1984 riots case",
+      "publisher": "The Times of India / TNN",
+      "visible_published_date": "May 16, 2010, 00:58 IST",
+      "exact_excerpt": "Additional sessions judge Sunita Gupta allowed CBI's plea seeking prosecution of Kumar after finding prima facie evidence against him.",
+      "paraphrase": "A city court ordered charges on the preceding Saturday, with formal framing scheduled for May 18.",
+      "related_test_directional_index": 65534,
+      "raw_story_id": "8134209",
+      "judgment": "Same publisher, publication date, target person and judicial context as raw event; candidate originating article, not an externally proved Story ID mapping. Supports judicial involvement, but does not independently establish exact Investigate relation on May 16. Publication date and action date differ.",
+      "additional_world_truth_labels_assigned": 0
+    },
+    {
+      "id": "RUDD_TERM",
+      "entity": "Kevin Rudd",
+      "source_url": "https://handbook.aph.gov.au/parliamentarians/83T",
+      "source_title": "RUDD, the Hon. Dr Kevin Michael, AC - Parliamentary Handbook",
+      "publisher": "Parliament of Australia",
+      "visible_section": "Ministry Appointments",
+      "exact_excerpts": ["Prime Minister", "Start Date: 3/12/2007", "End Date: 24/6/2010"],
+      "date_interpretation": "Australian day/month/year: first term begins 2007-12-03.",
+      "raw_dataset_location": "data/src_data/wikidata/train, line 5041507",
+      "raw_begin": "+2007-03-12T00:00:00Z",
+      "judgment": "Confirmed raw dataset date disagreement. Howard to Rudd is a real current-time officeholder change at 2007-12-03, not at the raw dataset's 2007-03-12 boundary.",
+      "not_a_model_result": true
+    }
+  ],
+  "excluded_evidence": [
+    {
+      "case": "2005-04-25 Lawyer/Attorney (United States) -> Make statement -> Noorzai (Social Group)",
+      "source_url": "https://en.wikipedia.org/wiki/Bashir_Noorzai",
+      "judgment": "Biography concerns a person, while dataset target is a social group. Background consistency does not verify the exact event; world truth unknown."
+    },
+    {
+      "entities": ["Liberal National Party", "National United Front for Democracy Against Dictatorship", "Your Party"],
+      "judgment": "Extracted for investigation, not assigned false labels: organizational predecessors, alias ambiguity, or sources not yet independently read."
+    }
+  ]
+}

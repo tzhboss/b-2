@@ -1,0 +1,143 @@
+{
+  "prepare_seconds": 8.968503907090053,
+  "warmup": {
+    "shared": 3.1716066459193826,
+    "split": 1.3507736560422927
+  },
+  "training": {
+    "shared_none": {
+      "seconds": 1.6831400790251791,
+      "architecture": "shared",
+      "host": "original",
+      "signal": "none",
+      "rho": 0.1,
+      "trainable_parameters": 750600,
+      "old_head_tail_R_frozen": true
+    },
+    "shared_absolute": {
+      "seconds": 2.3312999778427184,
+      "architecture": "shared",
+      "host": "original",
+      "signal": "absolute",
+      "rho": 0.1,
+      "trainable_parameters": 750600,
+      "old_head_tail_R_frozen": true
+    },
+    "split_original_none_1": {
+      "seconds": 1.723245209082961,
+      "architecture": "split",
+      "host": "original",
+      "signal": "none",
+      "rho": 0.1,
+      "trainable_parameters": 1501200,
+      "old_head_tail_R_frozen": true
+    },
+    "split_original_absolute_1": {
+      "seconds": 2.2946404011454433,
+      "architecture": "split",
+      "host": "original",
+      "signal": "absolute",
+      "rho": 0.1,
+      "trainable_parameters": 1501200,
+      "old_head_tail_R_frozen": true
+    },
+    "split_original_absolute_3": {
+      "seconds": 2.251007497077808,
+      "architecture": "split",
+      "host": "original",
+      "signal": "absolute",
+      "rho": 0.3,
+      "trainable_parameters": 1501200,
+      "old_head_tail_R_frozen": true
+    },
+    "split_original_mass_sample_1": {
+      "seconds": 2.439443880924955,
+      "architecture": "split",
+      "host": "original",
+      "signal": "mass_sample",
+      "rho": 0.1,
+      "trainable_parameters": 1501200,
+      "old_head_tail_R_frozen": true
+    },
+    "split_mixed_none_1": {
+      "seconds": 2.2211971930228174,
+      "architecture": "split",
+      "host": "mixed",
+      "signal": "none",
+      "rho": 0.1,
+      "trainable_parameters": 1501200,
+      "old_head_tail_R_frozen": true
+    },
+    "split_mixed_absolute_1": {
+      "seconds": 2.3962675579823554,
+      "architecture": "split",
+      "host": "mixed",
+      "signal": "absolute",
+      "rho": 0.1,
+      "trainable_parameters": 1501200,
+      "old_head_tail_R_frozen": true
+    },
+    "split_mixed_absolute_3": {
+      "seconds": 2.212545885005966,
+      "architecture": "split",
+      "host": "mixed",
+      "signal": "absolute",
+      "rho": 0.3,
+      "trainable_parameters": 1501200,
+      "old_head_tail_R_frozen": true
+    },
+    "split_mixed_mass_sample_1": {
+      "seconds": 1.9609973640181124,
+      "architecture": "split",
+      "host": "mixed",
+      "signal": "mass_sample",
+      "rho": 0.1,
+      "trainable_parameters": 1501200,
+      "old_head_tail_R_frozen": true
+    },
+    "split_contrastive_none_1": {
+      "seconds": 1.4524492141790688,
+      "architecture": "split",
+      "host": "contrastive",
+      "signal": "none",
+      "rho": 0.1,
+      "trainable_parameters": 1501200,
+      "old_head_tail_R_frozen": true
+    },
+    "split_contrastive_absolute_3": {
+      "seconds": 1.7811053008772433,
+      "architecture": "split",
+      "host": "contrastive",
+      "signal": "absolute",
+      "rho": 0.3,
+      "trainable_parameters": 1501200,
+      "old_head_tail_R_frozen": true
+    },
+    "split_contrastive_absolute_10": {
+      "seconds": 1.782043174142018,
+      "architecture": "split",
+      "host": "contrastive",
+      "signal": "absolute",
+      "rho": 1.0,
+      "trainable_parameters": 1501200,
+      "old_head_tail_R_frozen": true
+    },
+    "split_contrastive_mass_sample_3": {
+      "seconds": 2.3356600829865783,
+      "architecture": "split",
+      "host": "contrastive",
+      "signal": "mass_sample",
+      "rho": 0.3,
+      "trainable_parameters": 1501200,
+      "old_head_tail_R_frozen": true
+    }
+  },
+  "evaluation": {
+    "seconds": 16.7754290078301,
+    "valid_seconds": 6.784167828038335,
+    "full_train_arms": [
+      "shared_absolute"
+    ]
+  },
+  "total_seconds": 60.018993276171386
+}
