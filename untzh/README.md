@@ -1,20 +1,22 @@
 # untzh：2026-10-14 远程实验快照
 
 这是原 `experiment4/` 工作线在服务器独立目录 `untzh` 中继续开展的实验记录。
-本次从服务器只读复制50个目录中的688份源码、协议、汇总和轻量证据，原文件逐字节保留。
+本次快照截至2026-10-14 10:34（北京时间），从服务器只读复制51个目录中的706份源码、协议、汇总和轻量证据，原文件逐字节保留。
 完整来源、大小、SHA-256和排除原因见 [上传清单](provenance/upload-manifest.json)。
 这些哈希只验证快照与传输一致，不代表科学审计通过。没有重新训练或评价模型。
 
 ## 阅读入口
 
-- [实验登记索引](experiments/index.json)：包括056–102、优化诊断、时序实验和历史核查。
+- [实验登记索引](experiments/index.json)：包括056–103、优化诊断、时序实验和历史核查。
 - [早期063–078筛选报告](snapshot/method_search_summary_20261014/方法筛选结果.md)：仅反映该报告当时的实验范围。
 - [第二增量088主线建议](snapshot/risk_increment88_20261014/主线建议.md)。
 - [094累计差投影结论](snapshot/anchor_space94_20261014/conclusion-zh.md)。
 - [101查询级分配协议](snapshot/query_budget101_20261014/protocol.md)及[汇总](snapshot/query_budget101_20261014/summary.json)。
 - [102完整VALID扩展协议](snapshot/full_valid102_20261014/protocol.md)及[汇总](snapshot/full_valid102_20261014/summary.json)。
+- [103累计差排名保护协议](snapshot/anchor_rank103_20261014/protocol.md)及[汇总](snapshot/anchor_rank103_20261014/summary.json)。
 - [历史79随机查询核对](snapshot/temporal_history79_20261014/随机历史查询核对进度.md)。
 - [历史79错误竞争成分](snapshot/temporal_history79_20261014/错误排名成分核对.md)。
+- [历史79第十轮错误漂移界限](snapshot/temporal_history79_20261014/false-rank-drift-bounds-round10.json)。
 
 ## 文件与状态
 

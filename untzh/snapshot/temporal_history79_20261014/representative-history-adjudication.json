@@ -24,6 +24,33 @@
   "reasonable_rank_adjustment_confirmed_n": 0,
   "world_reasonable_fraction": null,
   "world_error_fraction": null,
+  "reality_corrected_rank_drift_bounds_progress": {
+    "sample_n": 40,
+    "population_worsened_query_n": 42851,
+    "definition": "Reality-corrected rank counts false query answers above a valid gold, with half weight for ties; hypothetical true alternatives are filtered at both checkpoints.",
+    "inequality": "D_false >= known_false_above_after - all_possibly_false_above_before. Before upper can use raw scores without assuming benchmark positives are sound; filtered upper requires their soundness.",
+    "conditions": [
+      "independent gold evidence accepted at query semantic granularity",
+      "temporal witnesses refer to the named organization or dated affiliation",
+      "existing cached scores and candidate spaces define the compared ranks"
+    ],
+    "raw_confirmed_query_ids": [
+      "S38"
+    ],
+    "raw_confirmed_query_n": 1,
+    "raw_fixed_sample_error_drift_lower_bound": 0.025,
+    "benchmark_filter_soundness_conditional_query_ids": [
+      "S38"
+    ],
+    "benchmark_filter_soundness_conditional_query_n": 1,
+    "benchmark_filter_soundness_conditional_fixed_sample_lower_bound": 0.025,
+    "world_error_population_fraction": null,
+    "world_reasonable_population_fraction": null,
+    "not_population_estimate_or_complete_UFR": true,
+    "training": false,
+    "neural_rescoring": false,
+    "seconds": 0.08269055397249758
+  },
   "conditional_missing_positive_removes_benchmark_drift_n": 1,
   "conditional_missing_positive_drift_fraction_of_fixed_sample": 0.025,
   "missing_positive_diagnostic_note": "One conditional filter explanation, not adjudicated reasonable whole-rank proportion; source mapping and original gold validity qualifications apply.",
@@ -466,9 +493,11 @@
       "stage": "detailed_source_review",
       "evidence_ids": [
         "THAI_CAMBODIA_VOA_NOV2009",
-        "THAI_CAMBODIA_WSWS_NOV16"
+        "THAI_CAMBODIA_WSWS_NOV16",
+        "R10_THAILAND_DPA",
+        "R10_TNA_FETCH"
       ],
-      "rationale": "Regional dispute corroborated but exact November16 criticism not established. China is sole new filtered outranker (+0.2151604 after, -3.8191605 before); no direct support or contradiction for that same-day criticism."
+      "rationale": "Regional dispute corroborated but exact November16 criticism not established. China is sole new filtered outranker (+0.2151604 after, -3.8191605 before); no direct support or contradiction for that same-day criticism. Round10: dpaNovember16bodyretrospective; Chinaregionalcontext nottargetofThaidatedcriticism. Bothgoldexactdate andChinacrossingunknown."
     },
     {
       "sample_id": "S08",
@@ -687,9 +716,12 @@
       "reasonable_rank_adjustment": "unknown",
       "evidence_ids": [
         "WEN_ANGOLA_2006",
-        "ANGOLA_EXTRADITION_2006"
+        "ANGOLA_EXTRADITION_2006",
+        "R10_CPLP_PUBLICATION",
+        "R10_ANGOLA_FINANCE",
+        "R10_ANGOLA_JUDICIAL"
       ],
-      "rationale": "Completed China-Angola cooperation on June20 independently supported. Final Portugal cooperation not established or excluded; gold truth alone is insufficient to establish whole-rank error."
+      "rationale": "Completed China-Angola cooperation on June20 independently supported. Final Portugal cooperation not established or excluded; gold truth alone is insufficient to establish whole-rank error. Round10: Knowncooperationdates2002/April5/May5 do notestablishJune20cooperationevent. Portugalsolecrossing staysunknown; noabsence-basednegative."
     },
     {
       "sample_id": "S12",
@@ -2001,9 +2033,12 @@
       "stage": "detailed_source_review",
       "evidence_ids": [
         "FRADKOV_STOLTENBERG_TIMELINE",
-        "FRADKOV_NETTAVISEN_FETCH"
+        "FRADKOV_NETTAVISEN_FETCH",
+        "R10_NORWAY_TREATY",
+        "R10_STOLTENBERG_VG",
+        "R10_NLM_FETCH"
       ],
-      "rationale": "June 8 joint boundary agreement corroborated; exact Consult event requires actual meeting text. Bortnikov consultation with Fradkov not excluded by Stoltenberg activity."
+      "rationale": "June 8 joint boundary agreement corroborated; exact Consult event requires actual meeting text. Bortnikov consultation with Fradkov not excluded by Stoltenberg activity. Round10: OfficialJuly11treaty andJune9PutinmeetingnotJune8Consult evidence. ContemporaneousXinhuaPDFbodyfetchpending, indexedexcerptnotadjudicated. Bortnikov/Gryzlovtruthsunknown."
     },
     {
       "sample_id": "S37",
@@ -2100,7 +2135,10 @@
         "R9_NSG_USDOS",
         "R9_NSG_UN_FETCH"
       ],
-      "rationale": "Same-day ministerial criticism supports gold. A newly introduced, unfiltered Terrorist (Jabhat al-Nusra) candidate outranks it after learning. Under dated named-group-affiliation semantics, late-2011 formation excludes such affiliation in 2009. This demonstrates one erroneous rank component; not all 158 lost positions, not raw Top1 truth, not full-query exclusive error classification. Round9: 2014LibyanNationalSalvationGovernment formation documented, but exactrawname appearsJune7 before August25formation and inJune Iraq stories taggedLibya. Generic/proposedgovernment or automatedidentityconflation unresolved; exclude as strictfifthwitness. Existing4confirmederrorcomponents unchanged."
+      "rationale": "Same-day ministerial criticism supports gold. A newly introduced, unfiltered Terrorist (Jabhat al-Nusra) candidate outranks it after learning. Under dated named-group-affiliation semantics, late-2011 formation excludes such affiliation in 2009. This demonstrates one erroneous rank component; not all 158 lost positions, not raw Top1 truth, not full-query exclusive error classification. Round9: 2014LibyanNationalSalvationGovernment formation documented, but exactrawname appearsJune7 before August25formation and inJune Iraq stories taggedLibya. Generic/proposedgovernment or automatedidentityconflation unresolved; exclude as strictfifthwitness. Existing4confirmederrorcomponents unchanged. Round10: Cachedrawbeforehas3aboveand0ties;after4knownfalseabove. Conditionalongoldsupportedanddatedorganizationidentity,false-competitorrankdriftatleast1, evenwithmaximallyfavorablemissingpositives. Strongerthancomponentexistence; no benchmarkfilter-soundness assumption. Samplelowerbound1/40,notpopulationestimate.",
+      "reality_corrected_false_rank_drift_lower_bound": 1.0,
+      "unjustified_rank_drift": "confirmed_conditional_on_gold_semantics_and_dated_organization_identity",
+      "rank_bound_file": "false-rank-drift-bounds-round10.json"
     },
     {
       "sample_id": "S39",

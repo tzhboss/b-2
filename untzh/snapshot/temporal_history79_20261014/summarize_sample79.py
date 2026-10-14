@@ -11,6 +11,8 @@ context=json.loads((ROOT/'sample-coded-event-context.json').read_text(encoding='
 filter_check=json.loads((ROOT/'sample-filter-interpretation.json').read_text(encoding='utf-8'))
 temporal_path=ROOT/'temporal-competitor-evidence.json'
 temporal=json.loads(temporal_path.read_text(encoding='utf-8')) if temporal_path.exists() else None
+rank_bound_path=ROOT/'false-rank-drift-bounds-round10.json'
+rank_bounds=json.loads(rank_bound_path.read_text(encoding='utf-8')) if rank_bound_path.exists() else None
 s38_component_n=temporal.get('known_error_rank_components_by_query',{}).get('S38',1) if temporal else 0
 assert len(sample['records'])==sample['sample_n']==40
 assert len({c['test_directional_index'] for c in sample['records']})==40
@@ -56,6 +58,7 @@ report={
     'unrecorded_but_semantically_supported_n':sum(not c['after_recorded'] for c in supported),
     'reasonable_rank_adjustment_confirmed_n':0,
     'world_reasonable_fraction':None,'world_error_fraction':None,
+    'reality_corrected_rank_drift_bounds_progress':{k:v for k,v in rank_bounds.items() if k!='records'} if rank_bounds else None,
     'conditional_missing_positive_removes_benchmark_drift_n':filter_check['supported_missing_alternative_removes_drift_n'],
     'conditional_missing_positive_drift_fraction_of_fixed_sample':filter_check['fixed_sample_fraction_with_this_verified_conditional_filter_explanation'],
     'missing_positive_diagnostic_note':'One conditional filter explanation, not adjudicated reasonable whole-rank proportion; source mapping and original gold validity qualifications apply.',
@@ -133,6 +136,9 @@ if (ROOT/'round8-source-notes.md').exists():
 if (ROOT/'round9-source-notes.md').exists():
     lines += ['', '## 第九轮实际发生日期与目标语义', '',
               (ROOT/'round9-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()]
+if (ROOT/'round10-source-notes.md').exists():
+    lines += ['', '## 第十轮错误排名漂移下限', '',
+              (ROOT/'round10-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()]
 (ROOT/'随机历史查询核对进度.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
 interpretation_path=ROOT/'history-interpretation.json'
 interpretation=json.loads(interpretation_path.read_text(encoding='utf-8'))
@@ -158,4 +164,6 @@ if (ROOT/'round8-source-notes.md').exists():
     main_path.write_text(main_path.read_text(encoding='utf-8')+'\n## 第八轮实际竞争者证据\n\n'+(ROOT/'round8-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n',encoding='utf-8')
 if (ROOT/'round9-source-notes.md').exists():
     main_path.write_text(main_path.read_text(encoding='utf-8')+'\n## 第九轮实际发生日期与目标语义\n\n'+(ROOT/'round9-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n',encoding='utf-8')
+if (ROOT/'round10-source-notes.md').exists():
+    main_path.write_text(main_path.read_text(encoding='utf-8')+'\n## 第十轮错误排名漂移下限\n\n'+(ROOT/'round10-source-notes.md').read_text(encoding='utf-8').split('\n',1)[1].strip()+'\n',encoding='utf-8')
 print(json.dumps({k:v for k,v in report.items() if k!='records'},ensure_ascii=False,indent=2))

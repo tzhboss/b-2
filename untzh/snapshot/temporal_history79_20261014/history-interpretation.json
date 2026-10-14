@@ -1987,6 +1987,33 @@
     "reasonable_rank_adjustment_confirmed_n": 0,
     "world_reasonable_fraction": null,
     "world_error_fraction": null,
+    "reality_corrected_rank_drift_bounds_progress": {
+      "sample_n": 40,
+      "population_worsened_query_n": 42851,
+      "definition": "Reality-corrected rank counts false query answers above a valid gold, with half weight for ties; hypothetical true alternatives are filtered at both checkpoints.",
+      "inequality": "D_false >= known_false_above_after - all_possibly_false_above_before. Before upper can use raw scores without assuming benchmark positives are sound; filtered upper requires their soundness.",
+      "conditions": [
+        "independent gold evidence accepted at query semantic granularity",
+        "temporal witnesses refer to the named organization or dated affiliation",
+        "existing cached scores and candidate spaces define the compared ranks"
+      ],
+      "raw_confirmed_query_ids": [
+        "S38"
+      ],
+      "raw_confirmed_query_n": 1,
+      "raw_fixed_sample_error_drift_lower_bound": 0.025,
+      "benchmark_filter_soundness_conditional_query_ids": [
+        "S38"
+      ],
+      "benchmark_filter_soundness_conditional_query_n": 1,
+      "benchmark_filter_soundness_conditional_fixed_sample_lower_bound": 0.025,
+      "world_error_population_fraction": null,
+      "world_reasonable_population_fraction": null,
+      "not_population_estimate_or_complete_UFR": true,
+      "training": false,
+      "neural_rescoring": false,
+      "seconds": 0.08269055397249758
+    },
     "conditional_missing_positive_removes_benchmark_drift_n": 1,
     "conditional_missing_positive_drift_fraction_of_fixed_sample": 0.025,
     "missing_positive_diagnostic_note": "One conditional filter explanation, not adjudicated reasonable whole-rank proportion; source mapping and original gold validity qualifications apply.",
